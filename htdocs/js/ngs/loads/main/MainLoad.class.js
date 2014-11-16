@@ -86,8 +86,8 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             return false;
         });
         
-        jQuery("#navMenu .dropdown-toggle").click(function(){
-        	jQuery("#navMenu .dropdown-menu").slideToggle(500);
+        jQuery("#lang_btn").click(function(){
+        	jQuery("#lang_menu").slideToggle(500);
         	if(jQuery(this).hasClass("active")){
         		jQuery(this).removeClass("active");
         	}

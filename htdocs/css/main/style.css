@@ -7,7 +7,7 @@
 	outline:none;
 	color:#333;
 	font-size:15px;
-	font-family:"Helvetica_Regular";
+	font-family:OpenSans;
 }
 
 
@@ -84,7 +84,7 @@ body{
 .navbar .container {
     padding:0px 20px;
     width:100%;
-    max-width:1000px;
+    max-width:1200px;
     margin:auto;
 }
 /*======= Navigation Bar Header =======*/
@@ -105,18 +105,17 @@ body{
 	float:left;
 }
 
-.navbar .navMenu .navMenuList>li a{
+.navbar .navMenu .navMenuList>li>a{
 	display:block;
-	color:#999;
-	/*font-weight:600;*/
-	font-size:15px;
+	color:#777;
+	font-size:14px;
 	padding:0 20px;
-	margin-top:20px;
+	height: 50px;
+    line-height: 50px;
     transition: all 0.5s ease 0s;
 }
 .navbar .navMenu .navMenuList>li a:hover{
 	color:#fff;
-	text-decoration:underline;
 }
 /*.navbar .navMenu .navMenuList > li a:hover {
     background-color: #3399ff;
@@ -130,57 +129,51 @@ body{
 	position:relative;
 }
 
-.navbar .navMenu .navMenuList li.dropdown a{
-	padding-right:30px;
+.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle{
 	position:relative;
 }
-.navbar .navMenu .navMenuList li.dropdown a .caret{
-	color: #999;
-    display: inline-block;
-    font-family: "glyphicons-halflings";
-    margin-left: 5px;
-    vertical-align: middle;
-}
-.navbar .navMenu .navMenuList li.dropdown a .caret:before{
+.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:before{
 	content:"";
+	font-family: "glyphicons-halflings";
+	position:absolute;
+	right:3px;
 }
-.navbar .navMenu .navMenuList li.dropdown a.active .caret:before{
+.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle.active:before{
 	content:"";
 }
-.navbar .navMenu .navMenuList li.dropdown a:hover .caret{
+.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:hover{
 	color:#fff;
 }
 
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu{
+	display:none;
 	position:absolute;
 	top:50px;
-	left:-25px;
+	left:10px;
 	background-color:#fff;
-	box-shadow:0 0 5px #548dc2;
-	padding:20px;
-	border-radius:10px;
-	z-index: 1000;
+	box-shadow:0 0 5px #555;
+	padding:5px;
+	border-radius:3px;
+	z-index: 100;
 }
 
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a{
-	padding:10px;
+	padding:5px;
 	clear:both;
-	width:120px;
+	display:block;
+	width:100px;
 	color:#777;
-	line-height:initial;
-	margin-top:10px;
-	border-radius:10px;	
+	border-radius:3px;	
 }
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a:hover{
 	background:linear-gradient(#eee, #ddd) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
-.navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li:first-child a{
-	margin-top:0px
-}
 
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a img{
-	float:left;
-	margin-right:10px;	
+	display:inline-block;
+	vertical-align:middle;
+	width:25px;
+	margin-right:5px;	
 }
 
 /*====================================== Signup - Creat Account - Social Signup ================================*/
@@ -776,8 +769,7 @@ body{
     padding-bottom: 10px;
 }
 .filter_container .from-group label{
-	background: linear-gradient(#777, #555) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    color: #fff;
+	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding: 10px;
 }
 .filter_container .from-group a{
@@ -829,8 +821,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
     overflow:hidden;
 }
 .main-page-left-panel h1{
-	background-color:#6A6A6A;
-	color:#fff;
+	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding: 10px;
 }
 .main-page-left-panel ul li{
@@ -867,22 +858,21 @@ MAIN LEFT PANEL TOP COMPANIES LIST
     text-overflow: ellipsis;
     top: calc(50% - 12px);
     white-space: nowrap;
-	background-color:#6A6A6A;
+	background-color:#777;
 }
 .main-page-left-panel ul li .dropdown-toggle{
     width: 35px;
     height: calc(100% - 2px);
-    border: 1px solid #555;
-    color: #fff;
+    border: 1px solid #999;
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     cursor: pointer;
-	background: linear-gradient(#777, #555) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
-.main-page-left-panel ul li.opened .dropdown-toggle{
-	background: linear-gradient(#555,#777) repeat scroll 0 0 rgba(0, 0, 0, 0);	
+.main-page-left-panel ul li.opened>a>.dropdown-toggle{
+	background: linear-gradient(to bottom,#e8e8e8 100%, #f5f5f5 0%) repeat scroll 0 0 rgba(0, 0, 0, 0);	
 }
 .main-page-left-panel ul li .dropdown-toggle:before{
 	font-family:"glyphicons-halflings";
@@ -897,7 +887,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 	content:"";
 }
 .main-page-left-panel ul li.dropdown{
-	border-bottom:3px solid #555;
+	border-bottom:3px solid #999;
 }
 .main-page-left-panel ul li.dropdown.opened{
 	border:3px solid #559EDD;
@@ -1230,6 +1220,13 @@ LEFT SIDE
     box-shadow: 0 0 1px 2px #c2c2c2;
     overflow: hidden;
 }
+.news-letter-wrapper .container{
+	max-width:1200px;
+	margin:auto;
+}
+.news-letter-block{
+	float:right;
+}
 .news-letter-below-block {
     color:#FFFFFF;
 }
@@ -1239,6 +1236,7 @@ LEFT SIDE
 .socialNetworks-linkes-pages{
     margin:0px;
     padding:10px 0px;
+    float:left;
 }
 .socialNetworks-linkes-pages li{
     list-style:none;
@@ -1267,6 +1265,8 @@ LEFT SIDE
 .socialNetworks-linkes-pages li a .img.twitter{
     background-image:url("../../img/linkedin.png");
 }
+
+
 /*******
 
 BUILD PC PAGE
@@ -1437,7 +1437,7 @@ PAGINATION
 
 }
 .pagination .current-page-number{
-    background-color: #556270;
+    background-color: #777;
     border-radius: 5px;
     color: #fff;
     padding: 6px 11px;
@@ -1452,5 +1452,5 @@ PAGINATION
     text-decoration: none;
 }
 .pagination .current.current-page-number{
-    background-color: #333;
+    background-color: #428bca ;
 }

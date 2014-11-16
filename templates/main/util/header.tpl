@@ -16,8 +16,8 @@
                     </li>
                 {/if}
                 <li class="dropdown">
-                    <a class="f_drop_down_btn dropdown-toggle" href="javascript:void(0);">Languages<span class="caret"></span></a>
-                    <ul style="display:none;" role="menu" class="f_drop_down_menu dropdown-menu">
+                    <a id="lang_btn" class="dropdown-toggle" href="javascript:void(0);">Languages<span class="caret"></span></a>
+                    <ul id="lang_menu" role="menu" class="dropdown-menu">
                         <li>
                             <a href="javascript:void(0);" class="mainSetLanguage" lang="en">
                                 <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>

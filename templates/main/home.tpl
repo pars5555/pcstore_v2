@@ -7,7 +7,7 @@
                 <h3>Filter</h3> 
                     <div class="from-group">
                         <label>
-                            Sort By Price
+                            Sort By:
                         </label>
                         {foreach from=$ns.sort_by_values item=value key=key}
                             <a href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['s'=>$value])}" 
