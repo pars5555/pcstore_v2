@@ -7,7 +7,7 @@
 	outline:none;
 	color:#333;
 	font-size:15px;
-	font-family: openSans;
+	font-family: "helvetica";
 }
 
 
@@ -1127,6 +1127,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 }
 .product-wrapper .product-title,
  .product-wrapper .product-title h4{
+ 	font-weight:500;
     font-size:18px;
     color:#428bca;
     transition:all 0.5s ease;

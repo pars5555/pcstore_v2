@@ -130,3 +130,8 @@
 	font-family:"glyphicons-halflings";
 	src:url(../../fonts/glyphicons-halflings-regular.ttf);
 }
+
+@font-face{
+	font-family:"helvetica";
+	src:url(../../fonts/helvetica.ttf);
+}
