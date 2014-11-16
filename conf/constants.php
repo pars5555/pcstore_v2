@@ -7,9 +7,9 @@
  * 
  */
 date_default_timezone_set('Asia/Yerevan');
-mb_internal_encoding( 'UTF-8' );
+mb_internal_encoding('UTF-8');
 
-define('HTTP_PROTOCOL', isset($_SERVER["HTTPS"])?"https://":"http://");	
+define('HTTP_PROTOCOL', isset($_SERVER["HTTPS"]) ? "https://" : "http://");
 
 define("HTTP_HOST", $_SERVER["HTTP_HOST"] . "");
 
@@ -40,8 +40,11 @@ define("COMPILE_DIR", TEMPLATES_DIR . "/compile");
 define("CONFIG_DIR", TEMPLATES_DIR . "/config");
 
 //---defining data dir path
-define("DATA_DIR", NGS_ROOT . "/data");
-
+if (isset($_SERVER['ENV']) && $_SERVER['ENV'] == 'dev') {
+    define("DATA_DIR", NGS_ROOT . "/../pcstore_v2_data");
+} else {
+    define("DATA_DIR", NGS_ROOT . "/data");
+}
 //---defining temp dir path
 define("TEMP_DIR", NGS_ROOT . "/tmp");
 
@@ -50,20 +53,20 @@ define("TEMP_DIR", NGS_ROOT . "/tmp");
 define("BIN_DIR", NGS_ROOT . "/bin");
 
 //---defining image root dir
-define('DATA_IMAGE_DIR', DATA_DIR."/images");
+define('DATA_IMAGE_DIR', DATA_DIR . "/images");
 
 //---defining interface images dir
 define("IMG_ROOT_DIR", NGS_ROOT . "/htdocs/img");
 define("IMG_TMP_DIR", NGS_ROOT . "/htdocs/img/tmp");
 define("CSS_ROOT_DIR", NGS_ROOT . "/htdocs/css");
-define('HTDOCS_TMP_DIR', NGS_ROOT."/htdocs/tmp");
-define('HTDOCS_TMP_DIR_ATTACHMENTS', HTDOCS_TMP_DIR."/attachments");
+define('HTDOCS_TMP_DIR', NGS_ROOT . "/htdocs/tmp");
+define('HTDOCS_TMP_DIR_ATTACHMENTS', HTDOCS_TMP_DIR . "/attachments");
 
-define("DBMS", CLASSES_PATH."/util/db/ImprovedDBMS.class.php");
+define("DBMS", CLASSES_PATH . "/util/db/ImprovedDBMS.class.php");
 define("CONFIG_INI", CONF_PATH . "/config.ini");
 
-define("LOAD_MAPPER", CLASSES_PATH."/loads/LoadMapper.class.php");
-define("SESSION_MANAGER", CLASSES_PATH."/managers/SessionManager.class.php");
+define("LOAD_MAPPER", CLASSES_PATH . "/loads/LoadMapper.class.php");
+define("SESSION_MANAGER", CLASSES_PATH . "/managers/SessionManager.class.php");
 
 //defining load and action directories
 define("LOADS_DIR", "loads");
