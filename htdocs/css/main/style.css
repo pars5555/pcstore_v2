@@ -65,8 +65,8 @@ body{
 	width:30px;
 	height:30px;
 	position:absolute;
-	top:15px;
-	right:15px;
+	top:10px;
+	right:10px;
 	cursor:pointer;
 	background:url("../../img/close_btn.png") no-repeat scroll 50% 50% / 100% transparent;
 }
@@ -194,9 +194,9 @@ body{
 	width:100%;
 	margin:0 auto 0;
 	box-shadow:0 0 5px #999;
-	border-radius:10px;
+	border-radius:3px;
 	position:relative;
-	padding-top:30px;
+	padding-top:20px;
 	background-color:#fff;
 	opacity:0;
 	transition:all 1s ease;
@@ -243,12 +243,9 @@ body{
 }
 
 .modal.forgotModal .modal-content p {
-    color: #428bca;
     display: block;
     text-align:center;
 }
-
-
 
 .modal .modal-content .modal_cols{
 	float:left;
@@ -317,11 +314,10 @@ body{
 .modal .modal-content .social-network a{
 	width:230px;
 	display:block;
-	margin:20px auto 0;
+	margin:25px auto 0;
 	color:#fff;
 	font-size:16px;
 	line-height:40px;
-	border-radius:5px;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
