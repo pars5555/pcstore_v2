@@ -53,6 +53,9 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_category_details"] = function temp(){return new ngs.AdminCategoryDetailsLoad("admin_category_details", ajaxLoader);};
 	this.loads["admin_companies"] = function temp(){return new ngs.AdminCompaniesLoad("admin_companies", ajaxLoader);};
 	this.loads["admin_service_companies"] = function temp(){return new ngs.AdminServiceCompaniesLoad("admin_service_companies", ajaxLoader);};
+	this.loads["admin_settings"] = function temp(){return new ngs.AdminSettingsLoad("admin_settings", ajaxLoader);};
+	this.loads["admin_actions"] = function temp(){return new ngs.AdminActionsLoad("admin_actions", ajaxLoader);};
+	this.loads["admin_users"] = function temp(){return new ngs.AdminUsersLoad("admin_users", ajaxLoader);};
 },
 	
     getLoad: function (name) {

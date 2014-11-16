@@ -132,7 +132,12 @@ abstract class AbstractMapper {
      */
     public function updateTextField($id, $fieldName, $fieldValue, $esc = true) {
         // Create query.
-        $q = sprintf("UPDATE `%s` SET `%s` = '%s' WHERE `%s` = %d ", $this->getTableName(), $fieldName, ($esc) ? $this->dbms->escape($fieldValue) : $fieldValue, $this->getPKFieldName(), $id);
+        if (is_int($fieldValue)) {
+            $q = "UPDATE `%s` SET `%s` = '%s' WHERE `%s` = %d ";
+        } else {
+            $q = "UPDATE `%s` SET `%s` = '%s' WHERE `%s` = '%s' ";
+        }
+        $q = sprintf($q, $this->getTableName(), $fieldName, ($esc) ? $this->dbms->escape($fieldValue) : $fieldValue, $this->getPKFieldName(), $id);
         // Execute query.
         $res = $this->dbms->query($q);
         if ($res) {
@@ -225,6 +230,26 @@ abstract class AbstractMapper {
      */
     public function deleteByPK($id) {
         $q = sprintf("DELETE FROM `%s` WHERE `%s` = %d ", $this->getTableName(), $this->getPKFieldName(), $id);
+        // Execute query.
+        $res = $this->dbms->query($q);
+        if ($res) {
+            $result = $this->dbms->getAffectedRows();
+            return $result;
+        }
+        return -1;
+    }
+
+    /**    
+     *
+     * @param object $id - the unique identifier of table
+     * @return affacted rows count or -1 if something goes wrong
+     */
+    public function deleteByField($fieldName, $fieldValue) {
+        if (is_int($fieldValue)) {
+            $q = sprintf("DELETE FROM `%s` WHERE `%s` = %d ", $this->getTableName(), $fieldName, $fieldValue);
+        } else {
+            $q = sprintf("DELETE FROM `%s` WHERE `%s` = '%s' ", $this->getTableName(), $fieldName, $fieldValue);
+        }
         // Execute query.
         $res = $this->dbms->query($q);
         if ($res) {

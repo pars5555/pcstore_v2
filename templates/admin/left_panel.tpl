@@ -23,4 +23,10 @@
     <a href="{$SITE_PATH}/admin/categories">
         <li>categories</li>
     </a>
+    <a href="{$SITE_PATH}/admin/settings">
+        <li>settings</li>
+    </a>
+    <a href="{$SITE_PATH}/admin/actions">
+        <li>actions</li>
+    </a>
 </ul>
