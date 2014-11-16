@@ -37,7 +37,7 @@ class ItemsCategoryMenuView {
 
         $categoryTotalItemsCount = array_key_exists($node->getId(), $this->categories_count_array) ? $this->categories_count_array[$node->getId()] : 0;
         if ($categoryTotalItemsCount ===0) return ;
-        $ret = '<li><a href="' . $url . '">' . $node->getTitle() . ' (' . $categoryTotalItemsCount . ')' . '</a>';
+        $ret = '<li><a href="' . $url . '">'.$node->getTitle().' <span class="cat_count">'.$categoryTotalItemsCount.'</span>' . '<div class="dropdown-toggle"></div></a>';
 
         $nodeChildren = $this->model->getNodeChildren($node);
         if (!empty($nodeChildren)) {

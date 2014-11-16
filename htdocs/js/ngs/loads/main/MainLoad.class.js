@@ -24,6 +24,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         ngs.action('ping_pong', {});
         ngs.nestLoad(jQuery('#contentLoad').val());
         this.notificationCustomScroll();
+        this.leftMenu();
     },
     notificationCustomScroll: function () {
         jQuery("#notificationListWrapper").mCustomScrollbar({
@@ -116,5 +117,39 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         var email = jQuery('#mainLoginEmail').val();
         var password = jQuery('#mainLoginPassword').val();
         ngs.action('login', {email: email, password: password});
+    },
+    leftMenu: function(){
+    	jQuery("#mainLeftPanel ul li").has("ul").addClass("dropdown");
+    	
+    	jQuery("#mainLeftPanel li ul").slideUp(0);
+    	
+    	jQuery(".dropdown-toggle").click(function(event){
+    		event.preventDefault();
+    		var closest_li = jQuery(this).closest("li");
+    		
+    		if(closest_li.hasClass("opened")){
+	    		closest_li.removeClass("opened");
+	    		jQuery(this).closest("a").siblings("ul").slideUp(500);  
+	    		if(!jQuery(this).parents("li").hasClass("opened")){
+	    			jQuery("#mainLeftPanel a").removeClass("dark_bg");  	
+	    		}		
+    		}
+    		else{
+    			if(!jQuery(this).parents("li").hasClass("opened")){
+	    			jQuery("#mainLeftPanel li").removeClass("opened");
+	    			jQuery("#mainLeftPanel li ul").slideUp(500); 
+	    			jQuery("#mainLeftPanel a").addClass("dark_bg");  				
+    			}
+	    		closest_li.addClass("opened");
+	    		closest_li.find("a").removeClass("dark_bg");
+	    		jQuery(this).closest("a").siblings("ul").slideDown(500);    			
+    		}
+    	});
+    	var count = jQuery(".cat_count");
+    	count.each(function(){
+	    	if(parseInt(jQuery(this).text())>9999){
+	    		jQuery(this).text("10k+")
+	    	}    		
+    	});
     }
 });
