@@ -116,6 +116,9 @@
                 <file>ngs/loads/admin/AdminCategoryDetailsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminCompaniesLoad.class.js</file>
                 <file>ngs/loads/admin/AdminServiceCompaniesLoad.class.js</file>
+                <file>ngs/loads/admin/AdminSettingsLoad.class.js</file>
+                <file>ngs/loads/admin/AdminActionsLoad.class.js</file>
+                <file>ngs/loads/admin/AdminUsersLoad.class.js</file>
             </files>
         </input>
     </builder>
@@ -151,6 +154,7 @@
                 <file>ngs/actions/admin/RemoveCategoryAction.class.js</file>
                 <file>ngs/actions/admin/ChangeCategoryOrderAction.class.js</file>
                 <file>ngs/actions/admin/AddCategoryAction.class.js</file>
+                <file>ngs/actions/admin/AdminGroupActionsAction.class.js</file>
             </files>
         </input>
     </builder>

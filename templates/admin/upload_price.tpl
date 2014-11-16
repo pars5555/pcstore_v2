@@ -9,7 +9,7 @@
 
 
 {if isset($ns.selectedCompanyDto)}
-<h1>{$ns.selectedCompanyDto->getName()}</h1>
+    <h1>{$ns.selectedCompanyDto->getName()}</h1>
     <form id="price_upload_form" target="upload_target" enctype="multipart/form-data" method="post" action="{$SITE_PATH}/dyn/company/do_upload_price" autocomplete="off">
         {$ns.lm->getPhrase(67)}:
         <input id="up_selected_file_name" type="text" readonly="readonly" value="{$ns.lm->getPhrase(517)}"/>
@@ -31,32 +31,32 @@
             <img src = "{$SITE_PATH}/img/revert_48x48.png"  alt="revert"/> 				
         </div>
     </a>
-        
-        
-        
-        <table>
-    <thead>
-        <tr>
-            <th>{$ns.lm->getPhrase(60)}</th>
-            <th>{$ns.lm->getPhrase(69)}</th>
-            <th>{$ns.lm->getPhrase(70)}</th>
-            <th>delete</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        {foreach from=$ns.company_prices item=company_price name=cp}
+
+
+    <table>
+        <thead>
             <tr>
-                <td>{$smarty.foreach.cp.index+1}</td>
-                <td><a href="{$SITE_PATH}/price/zipped_price_unzipped/{$company_price->getId()}"> 
-                        <img src = "{$SITE_PATH}/img/zip_file_download.png"  alt="zip"/> </a>
-                </td>
-                <td>{$company_price->getUploadDateTime()}</td>
-                <th><a href="{$SITE_PATH}/dyn/admin/do_remove_company_price?price_id={$company_price->getId()}">delete</a></th>
+                <th>{$ns.lm->getPhrase(60)}</th>
+                <th>{$ns.lm->getPhrase(69)}</th>
+                <th>{$ns.lm->getPhrase(70)}</th>
+                <th>delete</th>
+
             </tr>
-        {/foreach}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {foreach from=$ns.company_prices item=company_price name=cp}
+                <tr>
+                    <td>{$smarty.foreach.cp.index+1}</td>
+                    <td><a href="{$SITE_PATH}/price/zipped_price_unzipped/{$company_price->getId()}"> 
+                            <img src = "{$SITE_PATH}/img/zip_file_download.png"  alt="zip"/> </a>
+                    </td>
+                    <td>{$company_price->getUploadDateTime()}</td>
+                    <th><a href="{$SITE_PATH}/dyn/admin/do_remove_company_price?price_id={$company_price->getId()}">delete</a></th>
+                </tr>
+            {/foreach}
+        </tbody>
+    </table>
 
 
 {/if}

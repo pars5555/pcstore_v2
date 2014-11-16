@@ -60,6 +60,9 @@
                                 <li>
                                     <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
                                 </li>
+                                <li>
+                                    <a href="{$SITE_PATH}/uinvite">invite</a>
+                                </li>
                             {/if}
                             {if $ns.userLevel === $ns.userGroupsCompany}
                                 <li>
