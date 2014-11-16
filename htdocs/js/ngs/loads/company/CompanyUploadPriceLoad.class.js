@@ -54,7 +54,7 @@ ngs.CompanyUploadPriceLoad = Class.create(ngs.AbstractLoad, {
                         click: function () {
                             var company_id = jQuery('#up_selected_company').val();
                             jQuery(this).remove();
-                            ngs.action('revert_company_last_price_action', {'company_id': company_id});
+                            ngs.action('revert_company_last_price', {});
                         }
                     },
                     {

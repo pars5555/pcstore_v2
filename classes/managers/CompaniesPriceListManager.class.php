@@ -16,8 +16,6 @@ require_once (CLASSES_PATH . "/util/ExcelUtils.class.php");
  */
 class CompaniesPriceListManager extends AbstractManager {
 
-  
-
     /**
      * @var singleton instance of class
      */
@@ -85,10 +83,10 @@ class CompaniesPriceListManager extends AbstractManager {
         return $this->mapper->getCompanyTodayPriceUploadedTimes($companyId);
     }
 
-    public function removeCompanyPrice($id, $removeFromTableToo = true) {
+    public function removeCompanyPrice($id) {
         $dto = $this->mapper->selectByPK($id);
         if ($dto) {
-            $companyId = $dto->getCompanyId();
+            $companyId = $dto->getCompanyId();           
             $fileName = $dto->getFileName();
             $fileExt = $dto->getFileExt();
             $dir = DATA_DIR . "/companies_prices/" . $companyId . '/';
@@ -96,11 +94,8 @@ class CompaniesPriceListManager extends AbstractManager {
             if (is_file($fileFullPath)) {
                 unlink($fileFullPath);
             }
-            if ($removeFromTableToo === true) {
-                return $this->mapper->deleteByPK($dto->getId());
-            } else {
-                return true;
-            }
+            $this->mapper->deleteByPK($dto->getId());
+            return $companyId;
         } else {
             return false;
         }

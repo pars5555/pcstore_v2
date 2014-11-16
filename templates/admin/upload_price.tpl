@@ -18,6 +18,7 @@
         <label for="merge_uploaded_price_into_last_price">{$ns.lm->getPhrase(619)}: </label>
         <input type="checkbox" name="merge_into_last_price" id ="merge_uploaded_price_into_last_price" value="1" />
         <button id ="upload_company_price_button">{$ns.lm->getPhrase(95)}</button>
+        <input type="hidden" name="company_id" value="{$ns.selectedCompanyDto->getId()}"/>
     </form>
     <iframe id="upload_target" name="upload_target" style="width:0;height:0;border:0px solid #fff;display: none;" ></iframe>
 
@@ -30,5 +31,32 @@
             <img src = "{$SITE_PATH}/img/revert_48x48.png"  alt="revert"/> 				
         </div>
     </a>
+        
+        
+        
+        <table>
+    <thead>
+        <tr>
+            <th>{$ns.lm->getPhrase(60)}</th>
+            <th>{$ns.lm->getPhrase(69)}</th>
+            <th>{$ns.lm->getPhrase(70)}</th>
+            <th>delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from=$ns.company_prices item=company_price name=cp}
+            <tr>
+                <td>{$smarty.foreach.cp.index+1}</td>
+                <td><a href="{$SITE_PATH}/price/zipped_price_unzipped/{$company_price->getId()}"> 
+                        <img src = "{$SITE_PATH}/img/zip_file_download.png"  alt="zip"/> </a>
+                </td>
+                <td>{$company_price->getUploadDateTime()}</td>
+                <th><a href="{$SITE_PATH}/dyn/admin/do_remove_company_price?price_id={$company_price->getId()}">delete</a></th>
+            </tr>
+        {/foreach}
+    </tbody>
+</table>
+
 
 {/if}

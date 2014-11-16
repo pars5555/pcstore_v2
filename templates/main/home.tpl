@@ -3,23 +3,8 @@
 	<!--========================== Top Container ===============================-->
 	    
     <div  class="main-top-container container">
-        	<div class="search_block">
-            <div class="search_container">
-                    <form role="search" action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get" >
-                        <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
-                            <button type="submit" class="search_btn"></button>
-                        {if isset($ns.req.cid)}
-                            <input type="hidden" name="cid" value="{$ns.req.cid}"/>
-                        {/if}
-                        <input type="hidden" name="s" value="{$ns.selected_sort_by_value}"/>
-                        
-                    </form>
-                    <div class="clear"></div>
-                    </div>
-            </div>
             <div class="filter_container">
                 <h3>Filter</h3> 
-                <div class="col-sm-4 col-md-4">
                     <div class="from-group">
                         <label>
                             Sort By Price
@@ -30,8 +15,6 @@
                                {if $ns.selected_sort_by_value == $value}style="color:red"{/if}>{$ns.sort_by_display_names[$key]}</a>
                         {/foreach}
                     </div>
-                </div>
-                <div class="col-sm-4 col-md-4">
                     <div class="form-group">
                         {if ($ns.companiesIds|@count > 1)}
                             <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
@@ -46,9 +29,9 @@
                             {/foreach}
                         </select>
                     </div>
-                </div>
+                {*}
                 <div class="col-sm-4 col-md-4">
-                    {*} <div class="avo_style_price_range_block">
+                     <div class="avo_style_price_range_block">
                        
                     <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
@@ -64,10 +47,26 @@
                     <span> Դր.</span>
                     </div>
                     </div>
-                    </div> {*}
+                    </div>
                 </div>
-            </div>       
+                    {*}
+            </div>      
+        	<div class="search_block">
+            <div class="search_container">
+                    <form role="search" action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get" >
+                        <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
+                            <button type="submit" class="search_btn"></button>
+                        {if isset($ns.req.cid)}
+                            <input type="hidden" name="cid" value="{$ns.req.cid}"/>
+                        {/if}
+                        <input type="hidden" name="s" value="{$ns.selected_sort_by_value}"/>
+                        
+                    </form>
+                    <div class="clear"></div>
+                    </div>
+            </div> 
 
+            <div class="clear"></div>
             {nest ns=paging}
             <div class="clear"></div>
     </div>
@@ -105,10 +104,10 @@
 
 
         {if isset($ns.itemsCategoryMenuView)}
+        <h1>Categories</h1>
             {$ns.itemsCategoryMenuView->display(false)}
         {/if}
         {if ($ns.properties_views && $ns.properties_views|@count>0)}
-
             {foreach from=$ns.properties_views item=property_view}
                 {$property_view->display()}
             {/foreach}	
@@ -200,7 +199,7 @@
         {if $ns.foundItems|@count>0}
             {assign var="tree_days_ago" value='-3 day'|strtotime}
             {assign var="tree_days_ago" value=$tree_days_ago|date_format:"%Y-%m-%d %H:%M:%S"}				
-            {foreach from=$ns.foundItems item=item name=fi}
+            {foreach from=$ns.foundItems item=item name=product_row}
                 {assign var="brand" value=$item->getBrand()}
                 {if $item->getCreatedDate()>$tree_days_ago}
                     {assign var="new_item" value=true}			
@@ -214,9 +213,13 @@
                    
                 <div class="product-wrapper">
                     <div class="product_inner">
-                            <a class="" href="{$SITE_PATH}/item/{$item->getId()}"><h4 class="product-title">{$item->getDisplayName()}<span>{if !empty($brand)} by {$brand}{/if}</span> </h4></a>
-                            <div class="product-img" style="background-image:url('')">
-                                <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)}" />
+                            <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
+                            	<h4>{$item->getDisplayName()}<span>{if !empty($brand)} by {$brand}{/if}</span> </h4>
+                            	</a>
+                            <div class="product-img" ">
+                               <a class="" href="{$SITE_PATH}/item/{$item->getId()}">
+                               	 <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)}" />
+                                </a>
                                 {if $new_item == true}
                                     NEW ITEM!!!
                                 {/if}
@@ -278,10 +281,10 @@
 
                </div>
                 {if $count==4}
-                </div>
-                {$count=1}
+	                </div>
+	                {$count=1}
                 {/if}
-				{if $smarty.foreach.fi.last} </div> {/if}
+				{if $smarty.foreach.product_row.last} </div> {/if}
             {/foreach}
             {nest ns=paging}
         {else}

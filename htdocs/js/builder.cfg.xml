@@ -146,6 +146,7 @@
                 <file>ngs/actions/company/UploadAttachmentAction.class.js</file>
                 <file>ngs/actions/company/DeleteAttachmentAction.class.js</file>
                 <file>ngs/actions/company/SendPriceEmailAction.class.js</file>
+                <file>ngs/actions/company/RevertCompanyLastPriceAction.class.js</file>
                 <file>ngs/actions/admin/ChangeCategoryAttributesAction.class.js</file>
                 <file>ngs/actions/admin/RemoveCategoryAction.class.js</file>
                 <file>ngs/actions/admin/ChangeCategoryOrderAction.class.js</file>

@@ -13,9 +13,8 @@ ngs.UploadPriceAction = Class.create(ngs.AbstractAction, {
     afterAction: function (transport) {
         var data = transport.evalJSON();
         jQuery('#upload_company_price_button').css({'visibility': 'visible'});
-        if (data.status === "ok") {
-            jQuery('#price_upload_form').trigger('reset');
-            alert('514'+ "513");
+        if (data.status === "ok") {            
+            ngs.DialogsManager.closeDialog(data.title, "<div>" + data.message + "</div>",data.button_title, function(){window.location.href=window.location.href;});
         } else if (data.status === "war") {
             this.showConfirmOrMergePriceDialog();
         } else if (data.status === "err") {

@@ -11,6 +11,18 @@
 }
 
 
+
+    /*-webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+	background: -webkit-linear-gradient(#fff, #FFF); 
+	background:    -moz-linear-gradient(#fff, #FFF); 
+	background:     -ms-linear-gradient(#fff, #FFF); 
+	background:      -o-linear-gradient(#fff, #FFF); 
+	background:         linear-gradient(#fff, #FFF);*/
+
+
 /******************
 
 GLOBAL PROPERTIES
@@ -74,7 +86,6 @@ body{
     width:100%;
     max-width:1000px;
     margin:auto;
-    height:100%;
 }
 /*======= Navigation Bar Header =======*/
 .navbar .navbar-header{
@@ -89,27 +100,23 @@ body{
 
 .navbar .navMenu{
 	float:right;
-	height:100%;
-}
-.navbar .navMenu .navMenuList{
-	height:100%;
 }
 .navbar .navMenu .navMenuList>li{
 	float:left;
-	height:100%;
 }
 
 .navbar .navMenu .navMenuList>li a{
-	height:100%;
 	display:block;
-	color:#ccc;
-	font-weight:600;
+	color:#999;
+	/*font-weight:600;*/
 	font-size:15px;
-	line-height:95px;
 	padding:0 20px;
-	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+	margin-top:20px;
     transition: all 0.5s ease 0s;
+}
+.navbar .navMenu .navMenuList>li a:hover{
+	color:#fff;
+	text-decoration:underline;
 }
 /*.navbar .navMenu .navMenuList > li a:hover {
     background-color: #3399ff;
@@ -130,13 +137,16 @@ body{
 .navbar .navMenu .navMenuList li.dropdown a .caret{
 	display:block;
 	position:absolute;
-	top:50%;
+	top:45%;
 	right:10px;
 	width: 0;
 	height: 0;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	border-top: 7px solid #ccc;
+	border-top: 7px solid #999;
+}
+.navbar .navMenu .navMenuList li.dropdown a:hover .caret{
+	border-top: 7px solid #fff;	
 }
 
 /*.navbar .navMenu .navMenuList li.dropdown a:hover .caret{
@@ -146,7 +156,8 @@ body{
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu{
 	/*height: auto !important;*/
 	position:absolute;
-	left:-20px;
+	top:50px;
+	left:-25px;
 	background-color:#fff;
 	box-shadow:0 0 5px #548dc2;
 	padding:20px;
@@ -234,7 +245,6 @@ body{
 	border:1px solid #226baa;*/
 	background-color: #428bca;
 	border:1px solid #226baa;
-	border-bottom:4px solid #226baa;
 	margin: 20px auto 10px;
 	color:#fff;
 	cursor:pointer;
@@ -262,10 +272,10 @@ body{
 
 .modal .modal-content h4{
 	color:#555;
-	font-size:20px;
+	font-size:16px;
 	border-bottom:1px solid #999;
-	padding-bottom:9px;
-	margin-bottom:15px;
+	padding-bottom:5px;
+	margin-bottom:10px;
 }
 
 /*******
@@ -287,7 +297,7 @@ body{
 }
 
 .modal .modal-content .form-control:focus{
-    border: 1px solid #226baa;
+    border: 1px solid #569FDE;
     box-shadow: 0 0 5px #428bca;
 }
 
@@ -307,7 +317,6 @@ body{
 	padding:5px 0;
 	background-color: #428bca;
 	border:1px solid #226baa;
-	border-bottom:4px solid #226baa;
 	margin-top: 20px;
 	color:#fff;
 	cursor:pointer;
@@ -320,10 +329,11 @@ body{
 }
 
 .modal .modal-content .social-network a{
+	width:230px;
 	display:block;
 	margin:20px auto 0;
 	color:#fff;
-	font-size:22px;
+	font-size:16px;
 	line-height:40px;
 	border-radius:5px;
 	overflow:hidden;
@@ -336,7 +346,7 @@ body{
     display: block;
 }
 .modal .modal-content .social-network a img{
-	width:33px;
+	width:25px;
 	padding:7px;
 	display:block;
 	float:left;
@@ -371,7 +381,6 @@ body{
 
 .modal .modal-content .create-account-wrapper p{
 	/*color: #3aa031;*/
-    font-size: 17px;
     font-weight: 600;
     margin-bottom:7px;
 }
@@ -383,6 +392,7 @@ body{
 .modal .modal-content .create-account-wrapper ul li{
 	/*list-style-image: url("../../img/tick.png");*/
 	list-style-type: initial;
+	font-size:13px;
 }
 .modal .modal-content .create-account-wrapper .registration{
 	display:block;
@@ -390,11 +400,9 @@ body{
 	text-align:center;
 	color:#fff;
 	/*background-color:#3aa031;
-	border:1px solid #2A9021;
-	border-bottom:4px solid #2A9021;*/
+	border:1px solid #2A9021;*/
 	background-color: #428bca;
 	border:1px solid #226baa;
-	border-bottom:4px solid #226baa;
 	transition:all 0.5s ease;
 	border-radius:5px;
 	margin-top:35px;
@@ -721,29 +729,52 @@ body{
 }
 
 .search_block .search_container {
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    overflow: hidden;
-    padding: 10px 90px 10px 30px;
+    padding: 0 40px 0 0;
     margin:auto;
     position: relative;
     background-color: #fff;
 }
-
-.search_block .search_container .search_text{
-	width:100%;
+.search_block .search_container:focus{
+	border-color:#66afe9;
+	box-shadow:0 0 3px #66afe9;
 }
 
+.search_block .search_container .search_text{
+	width:calc(100% - 32px);
+	display:block;
+	padding:5px 15px;
+    border: 1px solid #ccc;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    transition:all 0.5s ease;
+}
+
+.search_block .search_container .search_text:focus{
+	border-color: #66afe9;
+	box-shadow: 0 0 7px #66afe9;	
+}
+
+
 .search_block .search_container .search_btn{
-	background: url("../../img/search_loop.png") no-repeat scroll 50% 50% / 22px auto #ccc;
+	background-color:#fff;
     height: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    width: 70px;
-    border-radius:30px;
+    width: 40px;
+    border: 1px solid #ccc;
+    border-left-color:transparent;
+    font-family:"glyphicons-halflings";
+    font-size:15px;
+    cursor:pointer;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    transition:all 0.5s ease;
 }
-
+.search_block .search_container .search_btn:hover{
+	background-color:#ccc;
+	border-color:#999;
+}
 
 /*******
  Filter Container
@@ -785,11 +816,87 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 
 *******/
 .main-page-left-panel {
-    max-width: 300px;
+    max-width: 270px;
     position:absolute;
     top:0;
     left:0;
+    width:100%;
+    border:1px solid #999;
+    border-radius:7px;
+    overflow:hidden;
 }
+.main-page-left-panel h1{
+	background-color:#6A6A6A;
+	color:#fff;
+    padding: 10px;
+}
+.main-page-left-panel ul li{
+}
+.main-page-left-panel ul li a{
+	display:block;
+	padding:10px 90px 10px 10px;
+	position:relative;
+	border-bottom: 1px solid #ccc;
+    border-top: 1px solid #555;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    background-color:#fff;
+}
+.main-page-left-panel ul li a:hover{
+    background-color:#428bca !important;
+    color:#fff;
+}
+.main-page-left-panel ul li a.dark_bg{
+	background-color:rgba(0,0,0,0.3) !important;
+}
+.main-page-left-panel ul li a span{
+	border-radius: 7px;
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    max-width: 30px;
+    overflow: hidden;
+    padding: 3px 5px;
+    position: absolute;
+    right: 45px;
+    text-overflow: ellipsis;
+    top: calc(50% - 12px);
+    white-space: nowrap;
+	background-color:#6A6A6A;
+}
+.main-page-left-panel ul li .dropdown-toggle{
+	display:none;
+	position:absolute;
+	top:0;
+	right:4px;
+	width:36px;
+	height:100%;
+	cursor:pointer;
+	background:url(../../img/dropdown_plus.png) no-repeat scroll 50% 50% / 100% ;transparent;
+}
+.main-page-left-panel ul li.opened>a>.dropdown-toggle{
+	background:url(../../img/dropdown_minus.png) no-repeat scroll 50% 50% / 100% ;transparent;	
+}
+.main-page-left-panel ul li.dropdown{
+}
+.main-page-left-panel ul li.dropdown>a>.dropdown-toggle{
+	display:block;
+}
+.main-page-left-panel ul li.dropdown ul li a{
+	background:url("../../img/arrow_right.png") no-repeat scroll 10px 50% / 20px auto rgba(0, 0, 0, 0);
+	padding-left:30px;
+}
+.main-page-left-panel ul li.dropdown ul li ul li a{
+	padding-left:60px;
+	background:url("../../img/arrow_right.png") no-repeat scroll 40px 50% / 20px auto rgba(0, 0, 0, 0);
+}
+
+.main-page-left-panel ul li.dropdown ul{
+	/*display:none;*/
+}
+/*********************************************************************/
 .left-panel-btn-controller {
     position: absolute;
     right: -15px;
@@ -982,8 +1089,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 .product-wrapper .button-wrapper {
     position: absolute;
     bottom:20px;
-    right:0px;
-    width:100%;
+    right:20px;
 }
 .product-wrapper .button-wrapper a{
 	display:block;
@@ -993,23 +1099,26 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 	padding: 5px 0px;
 	background-color: #428bca;
 	border:1px solid #226baa;
-	border-bottom:4px solid #226baa;
 	border-radius:5px;
 	color:#fff;
 	transition:all 0.5s ease;
+	font-weight: 600;
 }
 
 .product-wrapper .button-wrapper a:hover{
 	background-color: #226baa;
 	box-shadow: 0 0 5px #428bca;
 }
-.product-wrapper .product-title {
-    /*    overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 380px;
-        width:100%;*/
+.product-wrapper .product-title,
+ .product-wrapper .product-title h4{
     font-size:18px;
+    color:#428bca;
+    transition:all 0.5s ease;
+}
+.product-wrapper .product-title:hover,
+ .product-wrapper .product-title:hover h4{
+	text-decoration:underline;
+	color:#0E5796;
 }
 .product-wrapper .product-price p{
     margin:0px;

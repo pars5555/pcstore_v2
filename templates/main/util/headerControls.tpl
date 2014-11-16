@@ -35,10 +35,8 @@
 
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/prototype.js" ></script>
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jquery/jquery.js" ></script>
-{*}
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jquery/jquery-ui-1.9.2.js"></script>
-<script type="text/javascript"  src="{$SITE_PATH}/js/lib/bootstrap.js"></script>
-{*}
+
 <script type="text/javascript" src="{$SITE_PATH}/js/lib/tinymce4/tinymce/js/tinymce/tinymce.js"></script>
 <script type="text/javascript" src="{$SITE_PATH}/js/lib/customscroll/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="{$SITE_PATH}/js/lib/customscroll/jquery.mCustomScrollbar.js"></script>

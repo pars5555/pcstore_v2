@@ -105,7 +105,7 @@ class AdminMapper extends AbstractMapper {
     public static $GET_SMS_ENABLE_ADMINS = "SELECT * FROM `%s` WHERE  NOT ISNULL(`number_to_receive_sms_on_price_upload`) ";
 
     public function getSmsEnabledAdmins() {
-        $sqlQuery = sprintf(self::$GET_SMS_ENABLE_ADMINS, $this->getTableName(), $id, $hash);
+        $sqlQuery = sprintf(self::$GET_SMS_ENABLE_ADMINS, $this->getTableName());
         $result = $this->fetchRows($sqlQuery);
         return $result;
     }

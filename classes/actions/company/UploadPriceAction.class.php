@@ -58,10 +58,6 @@ class UploadPriceAction extends BaseCompanyAction {
             $companyId = $this->secure($_REQUEST["company_id"]);
         } else if ($userLevel === UserGroups::$COMPANY) {
             $companyId = $this->getUserId();
-        } else {
-            $jsonArr = array('status' => "err", "errText" => "Not Access!");
-            echo "<script>var l= new parent.ngs.UploadPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
-            return false;
         }
 
         $dir = DATA_DIR . "/companies_prices/";
@@ -92,7 +88,7 @@ class UploadPriceAction extends BaseCompanyAction {
             move_uploaded_file($tmp_name, $newFileFullName);
             $companiesPriceListManager->addCompanyPrice($companyId, $newFileName, $newFileExt, $userLevel == UserGroups::$ADMIN ? "admin" : "company", $this->getUserId());
             $this->updateCompanyPriceText($companyId, count($companyLastPriceDtos));
-            $jsonArr = array('status' => "ok");
+            $jsonArr = array('status' => "ok", 'title'=>$this->getPhrase(514), 'message'=>$this->getPhrase(513), 'button_title'=>$this->getPhrase(280));
             echo "<script>var l= new parent.ngs.UploadPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return true;
         }
@@ -151,7 +147,7 @@ class UploadPriceAction extends BaseCompanyAction {
         move_uploaded_file($tmp_name, $newFileFullName);
         $companiesPriceListManager->addCompanyPrice($companyId, $newFileName, $newFileExt, $userLevel == UserGroups::$ADMIN ? "admin" : "company", $this->getUserId());
 
-        $jsonArr = array('status' => "ok");
+        $jsonArr = array('status' => "ok", 'title'=>$this->getPhrase(514), 'message'=>$this->getPhrase(513), 'button_title'=>$this->getPhrase(280));
         echo "<script>var l= new parent.ngs.UploadPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
         $companyManager = new CompanyManager();
         $company = $companyManager->selectByPK($companyId);
@@ -315,7 +311,11 @@ class UploadPriceAction extends BaseCompanyAction {
         $uploadedFileContentMd5 = md5_file($tmp_name);
         $duplicatedUpload = false;
         foreach ($companyLastPrices as $companyLastPrice) {
-            $lastPriceContentMd5 = md5_file($companiesPriceListManager->getPricePath($companyLastPrice));
+            $prFile = $companiesPriceListManager->getPricePath($companyLastPrice);
+            $lastPriceContentMd5 = "";
+            if (file_exists($prFile)) {
+                $lastPriceContentMd5 = md5_file($prFile);
+            }
             if ($uploadedFileContentMd5 === $lastPriceContentMd5) {
                 $duplicatedUpload = true;
                 break;

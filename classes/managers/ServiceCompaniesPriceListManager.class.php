@@ -89,10 +89,10 @@ class ServiceCompaniesPriceListManager extends AbstractManager {
         return $this->mapper->getCompanyTodayPriceUploadedTimes($companyId);
     }
 
-    public function removeCompanyPrice($id, $removeFromTableToo = true) {
+    public function removeCompanyPrice($id) {
         $dto = $this->mapper->selectByPK($id);
         if ($dto) {
-            $companyId = $dto->getServiceCompanyId();
+            $companyId = $dto->getServiceCompanyId();           
             $fileName = $dto->getFileName();
             $fileExt = $dto->getFileExt();
             $dir = DATA_DIR . "/service_companies_prices/" . $companyId . '/';
@@ -100,11 +100,9 @@ class ServiceCompaniesPriceListManager extends AbstractManager {
             if (is_file($fileFullPath)) {
                 unlink($fileFullPath);
             }
-            if ($removeFromTableToo === true) {
-                return $this->mapper->deleteByPK($dto->getId());
-            } else {
-                return true;
-            }
+            
+            $this->mapper->deleteByPK($dto->getId());
+           return $companyId;
         } else {
             return false;
         }
