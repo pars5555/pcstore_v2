@@ -10,9 +10,8 @@
                             Sort By Price
                         </label>
                         {foreach from=$ns.sort_by_values item=value key=key}
-                            </br>
                             <a href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['s'=>$value])}" 
-                               {if $ns.selected_sort_by_value == $value}style="color:red"{/if}>{$ns.sort_by_display_names[$key]}</a>
+                               {if $ns.selected_sort_by_value == $value}class="active"{/if}>{$ns.sort_by_display_names[$key]}</a>
                         {/foreach}
                     </div>
                     <div class="form-group">
@@ -194,6 +193,9 @@
         </div>
         {*}
     </div>
+    
+    
+    <!-- ========================================= Product Wrapper =========================================== -->
     	
             {assign var="count" value=1}	
         {if $ns.foundItems|@count>0}
