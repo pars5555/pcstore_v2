@@ -132,6 +132,16 @@
 }
 
 @font-face{
-	font-family:"helvetica";
-	src:url(../../fonts/helvetica.ttf);
+	font-family:"Helvetica_CE_Regular";
+	src:url(../../fonts/Helvetica_CE_Regular.ttf);
+}
+
+@font-face{
+	font-family:"Helvetica_Cyrillic_Inclined";
+	src:url(../../fonts/Helvetica_Cyrillic_Inclined.ttf);
+}
+
+@font-face{
+	font-family:"Helvetica_Cyrillic_Upright";
+	src:url(../../fonts/Helvetica_Cyrillic_Upright.ttf);
 }
