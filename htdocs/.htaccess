@@ -1,0 +1,48 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^signup$ /dyn/main/main/$1/?page=signup [L,QSA]
+RewriteRule ^contactus /dyn/main/main/$1/?page=contactus [L,QSA]
+RewriteRule ^checkout /dyn/main/main/$1/?page=checkout [L,QSA]
+RewriteRule ^landingpage /dyn/main/main/$1/?page=landingpage [L,QSA]
+RewriteRule ^help /dyn/main/main/$1/?page=help [L,QSA]
+RewriteRule ^privatepolicy /dyn/main/main/$1/?page=privatepolicy [L,QSA]
+RewriteRule ^buildpc/?(.*)$ /dyn/main/main/$1/?page=buildpc [L,QSA]
+RewriteRule ^aboutus /dyn/main/main/$1/?page=aboutus [L,QSA]
+RewriteRule ^companies /dyn/main/main/$1/?page=companies [L,QSA]
+RewriteRule ^orders/?(.*)$ /dyn/main/main/$1/?page=orders [L,QSA]
+RewriteRule ^item/(.*)$ /dyn/main/main/$1/?page=item [L,QSA]
+RewriteRule ^cart /dyn/main/main/$1/?page=cart [L,QSA]
+RewriteRule ^googleaauth2callback$ /dyn/main/main [L,QSA]
+RewriteRule ^images/(.*)$	/dyn/main/do_get_image/$1/ [L,QSA]
+RewriteRule ^price/(.*)$	/dyn/main/do_get_price_file/$1/ [L,QSA]
+RewriteRule ^print_pcc(.*)$ /dyn/main/print_pcc [L,QSA] 
+
+#ADMIN
+RewriteRule ^admin/?$  /dyn/admin/main/$1/?page=home [L,QSA]
+RewriteRule ^admin/home  /dyn/admin/main/$1/?page=home [L,QSA]
+RewriteRule ^admin/login/?$  /dyn/admin/main/$1/?page=login [L,QSA]
+RewriteRule ^admin/items/?(.*)$ /dyn/admin/main/$1/?page=items [L,QSA]
+RewriteRule ^admin/uploadprice/?(.*)$ /dyn/admin/main/$1/?page=upload_price [L,QSA]
+RewriteRule ^admin/categories/?(.*)$ /dyn/admin/main/$1/?page=categories [L,QSA]
+RewriteRule ^admin/companies/new$ /dyn/admin/main/$1/?page=new_company [L,QSA]
+RewriteRule ^admin/companies/?(.*)$ /dyn/admin/main/$1/?page=companies [L,QSA]
+RewriteRule ^admin/scompanies/?(.*)$ /dyn/admin/main/$1/?page=service_companies [L,QSA]
+
+#USER
+RewriteRule ^uprofile/?$  /dyn/main/main/$1/?page=profile&dir=user [L,QSA]
+RewriteRule ^uinvite$  /dyn/main/main/$1/?page=invite&dir=user [L,QSA]
+RewriteRule ^uchangepass/?$  /dyn/main/main/$1/?page=change_password&dir=user [L,QSA]
+
+#COMPANY
+RewriteRule ^cprofile/?$  /dyn/main/main/$1/?page=profile&dir=company [L,QSA]
+RewriteRule ^branches/?(.*)$  /dyn/main/main/$1/?page=branches&dir=company [L,QSA]
+RewriteRule ^smsconf/?$  /dyn/main/main/$1/?page=smsconf&dir=company [L,QSA]
+RewriteRule ^dealers  /dyn/main/main/$1/?page=dealers&dir=company [L,QSA]
+RewriteRule ^uploadprice /dyn/main/main/$1/?page=upload_price&dir=company [L,QSA]
+
+#SERVICE COMPANY
+RewriteRule ^scprofile/?$  /dyn/main/main/$1/?page=profile&dir=servicecompany [L,QSA]
+
+RewriteRule ^/?$ /dyn/main/main [L,QSA] 
+RewriteRule ^dyn(/.+)?/?$ /index1.php?_url=$1 [L,QSA]
