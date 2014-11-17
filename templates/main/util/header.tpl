@@ -200,8 +200,8 @@
             <button id="close_button" class="close_button"></button>
             <div class="modal-body">
                 <div class="form-group">
-                    <div id="forgotPasswordErrorMessage"></div>
-                    <div id="forgotPasswordSuccessMessage"></div>
+                    <div id="forgotPasswordErrorMessage" calss="error"></div>
+                    <div id="forgotPasswordSuccessMessage" calss="success"></div>
                     <label for="email">Your Email Address</label>
                     <form id="forgotPasswordForm" autocomplete="off">
                         <input name="email" type="email" class="form-control" id="forgotPasswordEmailInput" placeholder="Enter email">

@@ -28,13 +28,11 @@
                         </li>
                     </ul>
                 <div class="news-letter-block">
-                    <div id="newsletter_error_message"></div>
-                    <div id="newsletter_success_message"></div>
+                    <div id="newsletter_error_message" class="error"></div>
+                    <div id="newsletter_success_message" class="success"></div>
                     <div class="input-group">
-                        <input id="newsLetterInp" name="" type="text" value="" class="form-control" placeholder="News letter" >
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="newsletterSubscribeBtn"><i class="glyphicon  glyphicon-envelope"></i></button>
-                        </div>
+                        <input id="newsLetterInp" name="" type="text" value="" class="text" placeholder="News letter" >
+                            <button class="newsletter_btn" id="newsletterSubscribeBtn"></button>
                         <div class="clear"></div>
                     </div>                
                     <div style="display:none;" id="newsLetterAboveBlock" class="news-letter-below-block">

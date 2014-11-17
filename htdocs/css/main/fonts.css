@@ -112,22 +112,12 @@
 }
 
 @font-face{
-	font-family:OpenSans;
-	src:url(../../fonts/OpenSans.ttf);
-}
-
-@font-face{
-	font-family:OpenSans-Light;
-	src:url(../../fonts/OpenSans-Light.ttf);
-}
-
-@font-face{
-	font-family:OpenSans-Bold;
-	src:url(../../fonts/OpenSans-Bold.ttf);
-}
-
-@font-face{
 	font-family:"glyphicons-halflings";
-	src:url(../../fonts/glyphicons-halflings-regular.ttf);
+	src:url(../../fonts/glyphicons-halflings-regular.woff);
+}
+
+@font-face{
+	font-family:"pictos-web";
+	src:url(../../fonts/pictos-web.woff);
 }
 
