@@ -138,13 +138,13 @@ body{
 	position:relative;
 }
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:before{
-	content:"";
+	content:"";
 	font-family: "glyphicons-halflings";
 	position:absolute;
 	right:3px;
 }
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle.active:before{
-	content:"";
+	content:"";
 }
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:hover{
 	color:#fff;
@@ -823,21 +823,36 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 
 *******/
 .main-page-left-panel {
-    max-width: 270px;
+    /*max-width: 270px;
     position:absolute;
     top:0;
     left:0;
-    width:100%;
-    border:1px solid #999;
+    width:100%;*/
+    display:table-cell;
+    width:300px;
+    vertical-align:top;
+}
+.main-page-left-panel .main-page-left-panel_content{
+    border:1px solid #999;	
     border-radius:7px;
     overflow:hidden;
 }
-.main-page-left-panel h1{
+.main-page-left-panel h1,
+.main-page-left-panel .any_categories{
+	display:block;
 	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding: 10px;
 	font-size: 15px;
 	color:#333;
+	border-bottom:1px solid #999;
 }
+/*.main-page-left-panel .any_categories:before{
+	content:"";
+	font-family:"glyphicons-halflings";
+	display:inline-block;
+	width:30px;
+	height:100%;
+}*/
 .main-page-left-panel ul li{
 }
 .main-page-left-panel ul li a{
@@ -892,7 +907,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 }
 .main-page-left-panel ul li .dropdown-toggle:before{
 	font-family:"glyphicons-halflings";
-	content:"";
+	content:"";
     width: 100%;
     position: absolute;
     top: calc(50% - 11px);
@@ -901,14 +916,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
     color:#777;
 }
 .main-page-left-panel ul li.opened>a>.dropdown-toggle:before{
-	content:"";
-}
-.main-page-left-panel ul li.dropdown{
-	border-bottom:3px solid #999;
-}
-.main-page-left-panel ul li.dropdown.opened{
-	border:3px solid #559EDD;
-	/*background: linear-gradient(#559EDD,#77C0FF) repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+	content:"";
 }
 .main-page-left-panel ul li.dropdown>a{
 	padding-left:40px;	
@@ -919,6 +927,37 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 .main-page-left-panel ul li.dropdown>ul>li{
 	margin-left:35px;
 }
+
+/*Checkbox categories*/
+
+.main-page-left-panel .product_categorie{
+	padding:10px;
+	color:#fff;
+	background-color:#428bca ;
+	font-weight:600;
+	font-size:15px;
+}
+.main-page-left-panel .product_title{
+	padding:5px 0 0 20px;
+	color:#777;
+	font-weight: 600;
+}
+.main-page-left-panel .product_checkbox{
+	padding:10px 0 5px 10px;
+	margin-left:20px;
+	border-bottom:1px solid #999;
+}
+.main-page-left-panel .product_checkbox:last-child{
+	border-bottom:none;
+}
+.main-page-left-panel .category_property{
+	margin-right:10px;
+}
+.main-page-left-panel .product_checkbox a{
+	color:#428bca;	
+	font-weight: 600;
+}
+
 /*********************************************************************/
 .left-panel-btn-controller {
     position: absolute;
@@ -1075,10 +1114,12 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 
 .products-wrapper{
 	position:relative;
-	padding-left:300px;
 	display:table;
 }
-
+.products-wrapper .product-table{
+	display:table-cell;
+	padding-left:30px;
+}
 .products-wrapper .products_row{
 	display:table-row;
 }
@@ -1146,7 +1187,7 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 }
  .product-wrapper .product-title h4 span{
 	font-size: 15px;
-	color:#333;
+	color:#777;
 	font-weight:600; 	
  }
 .product-wrapper .product-title:hover,
@@ -1234,8 +1275,30 @@ LEFT SIDE
 .footer-wrapper {
     padding:20px 0px;
 }
-.footer-wrapper .nav-footer-content {
+.footer-wrapper .container{
+	max-width:1100px;
+	margin:auto;
+	text-align:center;
+}
+.footer-wrapper .footer-nav-content{
     margin:15px 0px;
+    display:table;
+    width:100%;
+}
+.footer-wrapper .footer-nav-content .footer-column{
+	display:table-cell;
+	width: 33.3%
+}
+.footer-wrapper .footer-nav-content .footer-column h5{
+	font-size:16px;
+	color:#333;
+	font-weight:500;
+}
+.footer-wrapper .footer-nav-content .footer-column a{
+	color:#428bca;
+	font-size:15px;
+	margin-top:10px;
+	display:block;
 }
 /*******
     NEWSLETTER FOOTER
@@ -1493,8 +1556,10 @@ BUILD PC PAGE
 PAGINATION
 
 *******/
-.pagination {
+.navigation_pagination{
 	font-size: 15px;
+	float:right;
+	margin-top:20px;
 }
 .pagination .current-page-number{
     background-color: #777;

@@ -1,5 +1,5 @@
 {if $ns.pageCount>1}
-	<div class="navigation_pagination pull-right" id="f_pageingBox">
+	<div class="navigation_pagination" id="f_pageingBox">
 		<div id="pageBox" class="pagination">
 
 			{if $ns.page > 1}	

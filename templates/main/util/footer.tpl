@@ -42,8 +42,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="row nav-footer-content">
-                <div class="col-md-4 text-center">
+            <div class="footer-nav-content">
+                <div class="footer-column">
                     <h5>Make Money with Us</h5>
                     <a href="/aboutus">
                         <p>About PC Store</p>
@@ -52,7 +52,7 @@
                         <p>Private Policy</p>
                     </a>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="footer-column">
                     <h5>Make Money with Us</h5>
                     <a href="/signup">
                         <p>Registration</p>
@@ -61,7 +61,7 @@
                         <p>Invite Friends</p>
                     </a>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="footer-column">
                     <h5>Let Us Help You</h5>
                     <a href="/contactus">
                         <p>Contact Us </p>
@@ -71,7 +71,6 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
                 <div  class="container">
                     <ul class="payments">
                         <li>
@@ -91,7 +90,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
         </div>
     </div>
 {/if}

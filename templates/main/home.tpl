@@ -79,22 +79,23 @@
     		<!--========================== Left Panel ===============================-->
 	
     <div id="mainLeftPanel"  class="main-page-left-panel">
+    	<div class="main-page-left-panel_content">
 
         {if $ns.category_id > 0}
-            <a href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}">{$ns.lm->getPhrase(130)}</a>
+            <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}">{$ns.lm->getPhrase(130)}</a>
 
             {assign var="index" value=0}
             {if isset($ns.category_path)}		
                 {foreach from=$ns.category_path item=parent_category_dto name=fi}			
                     {assign var="index" value=$smarty.foreach.fi.index}
-                    <div style="margin: 5px 0 5px {$index*15+30}px" >
+                    <div class="product_test">
                         <a href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>$parent_category_dto->getId(), 'scpids'=>null])}" >{$parent_category_dto->getDisplayName()}</a>
                     </div>
                 {/foreach}
             {/if}
             {if $ns.category_id > 0}	
                 {assign var="index" value=$index+1}
-                <div style="padding-left: {$index*15+30}px;" >
+                <div class="product_categorie">
                     {$ns.category_dto->getDisplayName()}
                 </div>	
             {/if}
@@ -192,11 +193,12 @@
         </ul>
         </div>
         {*}
+        </div>
     </div>
     
     
     <!-- ========================================= Product Wrapper =========================================== -->
-    	
+    	<div class="product-table">
             {assign var="count" value=1}	
         {if $ns.foundItems|@count>0}
             {assign var="tree_days_ago" value='-3 day'|strtotime}
@@ -288,6 +290,7 @@
                 {/if}
 				{if $smarty.foreach.product_row.last} </div> {/if}
             {/foreach}
+        </div>
             {nest ns=paging}
         {else}
             <div style="text-align: center">

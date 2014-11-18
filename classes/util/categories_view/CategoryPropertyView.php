@@ -19,7 +19,7 @@ class CategoryPropertyView {
 
     function display() {
         $itemSearchManager = ItemSearchManager::getInstance();
-        echo '<div style="padding-left:10px;">' . $this->categoryManager->getCategoryById($this->groupCategoryId)->getDisplayName() . '</div>';
+        echo '<div class="product_title">' . $this->categoryManager->getCategoryById($this->groupCategoryId)->getDisplayName() . '</div>';
         $childrenHierarchyDtos = $this->categoryHierarchyManager->getCategoryChildren($this->groupCategoryId);
         foreach ($childrenHierarchyDtos as $key => $childrenHierarchyDto) {
             $categoryTotalItemsCount = array_key_exists($childrenHierarchyDto->getChildId(), $this->categories_count_array) ? $this->categories_count_array[$childrenHierarchyDto->getChildId()] : 0;
@@ -28,7 +28,7 @@ class CategoryPropertyView {
             if ($categoryTotalItemsCount === 0 && !$checked) {
                 continue;
             }
-            echo '<div style="padding-left:30px;padding-top:2px;padding-bottom:2px;">';
+            echo '<div class="product_checkbox">';
 
             if ($checked) {
                 $key = array_search($childrenHierarchyDto->getChildId(), $propertiesIds);
