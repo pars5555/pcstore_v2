@@ -86,14 +86,24 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             return false;
         });
         
-        jQuery("#lang_btn").click(function(){
-        	jQuery("#lang_menu").slideToggle(500);
+        jQuery("#navMenu .dropdown-toggle").click(function(){
+        	jQuery(this).siblings(".dropdown-menu").slideToggle(500);
         	if(jQuery(this).hasClass("active")){
         		jQuery(this).removeClass("active");
         	}
         	else{
         		jQuery(this).addClass("active");
         	}
+        	jQuery("body").click(function(event){
+        		if(jQuery(event.target).attr("class").indexOf("dropdown-menu")==-1 && jQuery(event.target).attr("class").indexOf("dropdown-toggle")==-1 || jQuery(event.target).parents("#navMenu").length==0){
+        			jQuery("#navMenu .dropdown-menu").slideUp(500);
+        			jQuery("#navMenu .dropdown-toggle").removeClass("active");
+        		}
+        		if(jQuery(event.target).attr("class").indexOf("dropdown-toggle")!=-1 && jQuery(event.target).parents("#navMenu").length>0){
+        			jQuery(event.target).closest(".dropdown").siblings(".dropdown").children(".dropdown-toggle").removeClass("active");
+        			jQuery(event.target).closest(".dropdown").siblings(".dropdown").children(".dropdown-menu").slideUp(500);        			
+        		};
+        	});
         });
 
     },

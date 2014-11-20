@@ -14,11 +14,11 @@
                                {if $ns.selected_sort_by_value == $value}class="active"{/if}>{$ns.sort_by_display_names[$key]}</a>
                         {/foreach}
                     </div>
-                    <div class="form-group">
-                        {if ($ns.companiesIds|@count > 1)}
+                    
+                       {if ($ns.companiesIds|@count > 1)}          
+                    <div class="form-group">                        
                             <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
-                        {/if}
-                        <select class="form-control" name='sci' id='selected_company_id'  style="{if !($ns.companiesIds|@count > 1)}display:none;{/if}">
+                        <select class="form-control" name='sci' id='selected_company_id'>
                             {foreach from=$ns.companiesIds item=value key=key}
                                 {if ($key == 0)}
                                     <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
@@ -28,6 +28,7 @@
                             {/foreach}
                         </select>
                     </div>
+                        {/if}
                 {*}
                 <div class="col-sm-4 col-md-4">
                      <div class="avo_style_price_range_block">

@@ -16,8 +16,8 @@
                     </li>
                 {/if}
                 <li class="dropdown">
-                    <a id="lang_btn" class="dropdown-toggle" href="javascript:void(0);">Languages<span class="caret"></span></a>
-                    <ul id="lang_menu" role="menu" class="dropdown-menu">
+                    <a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
                         <li>
                             <a href="javascript:void(0);" class="mainSetLanguage" lang="en">
                                 <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
@@ -51,11 +51,11 @@
                         </li>  
                     {/if}
                     <li class="dropdown">
-                        <a class="f_drop_down_btn dropdown-toggle" href="javascript:void(0);">{$ns.customer->getName()}
+                        <a id="user_menu_btn" class="dropdown-toggle" href="javascript:void(0);">{$ns.customer->getName()}
                             {if $ns.userLevel === $ns.userGroupsUser}
                                 ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
-                            {/if} <i class="glyphicon glyphicon-user"></i><span class="caret"></span> </a>
-                        <ul role="menu" class="f_drop_down_menu dropdown-menu">
+                            {/if}<span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
                             {if $ns.userLevel === $ns.userGroupsUser}
                                 <li>
                                     <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
