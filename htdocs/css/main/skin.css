@@ -8,3 +8,15 @@
 	background-color:rgba(255, 255, 255, 0.2);
 }
 
+.blue{
+	background-color: #428bca;
+	border:1px solid #226baa;
+	color:#fff;	
+	border-radius:3px;
+	transition:all 0.3s ease;
+}
+
+.blue:hover{
+	background-color: #226baa;
+	box-shadow: 0 0 5px #428bca;
+}

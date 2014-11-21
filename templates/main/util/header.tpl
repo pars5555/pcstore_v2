@@ -153,7 +153,7 @@
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">
-                            <input id="mainLoginBtn" type="submit" class="login_button" value="{$ns.lm->getPhrase(1)}"/>
+                            <input id="mainLoginBtn" type="submit" class="login_button blue" value="{$ns.lm->getPhrase(1)}"/>
                         </div>
                     </div>
                 </form>
@@ -187,7 +187,7 @@
                         </li>
                     </ul>
                     <div class="create-account-wrapper">
-                        <a href="{$SITE_PATH}/signup" class="registration">{$ns.lm->getPhrase(5)}</a>
+                        <a href="{$SITE_PATH}/signup" class="registration blue">{$ns.lm->getPhrase(5)}</a>
                     </div>
                 </div>
                 <div class="clear"></div>

@@ -25,6 +25,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         ngs.nestLoad(jQuery('#contentLoad').val());
         this.notificationCustomScroll();
         this.leftMenu();
+        this.sortBy();
     },
     notificationCustomScroll: function () {
         jQuery("#notificationListWrapper").mCustomScrollbar({
@@ -170,6 +171,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 	    	if(parseInt(jQuery(this).text())>9999){
 	    		jQuery(this).text("10k+");
 	    	}    		
+    	});
+    },
+    sortBy : function(){
+    	jQuery(".f_select_filter").on("change",function(event){
+    		window.location.href=jQuery(event.target).val();
     	});
     }
 });

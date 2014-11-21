@@ -13,40 +13,37 @@
     </div>
 {/if}
 <div class="container">
-    <div class="row">
-        <div style="margin:25px 0px;" class="companies-search-wrapper row">
-            <div class="col-md-4">
-                <div class="input-group">
-                    <input type="text" value="" class="form-control" placeholder="Search" name="st" id="srchCompanies">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon  glyphicon-search"></i></button>
-                    </div>
+    <div class="companies_container">
+        <div class="companies-search-wrapper row">
+            <div class="search_block">
+                <div class="search_container">
+                    <input type="text" value="" class="form-control search_text" placeholder="Search" name="st" id="srchCompanies">
+                        <button type="submit" class="search_btn"><span class="glyphicon"></span></button>
                 </div>
             </div>
-            <div class="col-md-4">
-                {$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}
+            <div class="show_com_price">
+                <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
+                <div class="select_wrapper">
                 <select id="f_show_only_last_hours_select" class="form-control">
                     {foreach from=$ns.show_only_last_hours_values item=value key=key}
                         <option value="{$value}" {if $ns.show_only_last_hours_selected == $value}selected="selected"{/if} class="translatable_element" phrase_id="{$ns.show_only_last_hours_names_phrase_ids_array[$key]}">{$ns.show_only_last_hours_names[$key]}</option>
                     {/foreach}
                 </select>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="download_all">
                 <a href="{$SITE_PATH}/price/all_zipped_prices">			
                     <span>Download All:</span>
                     <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>
                 </a>
             </div>
+	        <div class="company_filter">
+	                <a href="javascript:void(0)" companyTab="companyListTab" class="blue">Company</a>
+	                <a href="javascript:void(0)" companyTab="companyServiceTab" class="blue">Company Service</a>
+	        </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn btn btn-default btn-primary btn-block">Company</a>
-            </div>
-            <div class="col-md-6">
-                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn btn btn-default btn-primary btn-block">Company Service</a>
-            </div>
-        </div>
-        <div id="companyListTab" class="f_company_tab row">
+        <div class="clear"></div>
+        <div id="companyListTab" class="companies_main_content">
 
             {if (($ns.allCompanies|@count )>0)}
                 <h1 >{$ns.lm->getPhrase(578)}</h1>
@@ -54,7 +51,7 @@
                     {assign var="companyId" value = $company->getId()}
                     {assign var="passive" value=$company->getPassive()}
                     {assign var="url" value=$company->getUrl()}                    
-                    <div class="container-fluid">
+                    <div class="company_container">
                         <h3 class="company-tittle">{$company->getName()}</h3>
                         {if $passive != 1}
                             <span>
@@ -67,25 +64,25 @@
                         {/if}
                         {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
                             <div class="clear"></div>
-                            <div style="cursor: pointer" title="{$ns.lm->getPhrase(377)} {$company->getAccessKey()}"
+                            <div title="{$ns.lm->getPhrase(377)} {$company->getAccessKey()}"
                                  class="translatable_attribute_element" attribute_phrase_id="377" attribute_name_to_translate="title">
                                 <img src="{$SITE_PATH}/img/increase_rating.png" />
                             </div>
                         {/if}
-                        <div class="col-md-2 company-img">
-                           <a {if $url != ''}href="http://{$url}"{/if}
-                                          target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"									
-                                          class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title">
-                                <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/big_logo/{$companyId}" alt="logo"/>
-                            </a> 
-                        </div>
-                        <div class="col-md-10">
-                            <div class="col-md-4">
+                        <div class="company-info">                        	
+	                        <div class="company-img">
+	                           <a {if $url != ''}href="http://{$url}"{/if}
+	                                          target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"									
+	                                          class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title">
+	                                <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/big_logo/{$companyId}" alt="logo"/>
+	                            </a> 
+	                        </div>
+                            <div class="company_confirm">
                                {if ($ns.userLevel === $ns.userGroupsUser) && !in_array($companyId,$ns.userCompaniesIdsArray)}
                                 <div class="form-group">
                                     <label for="dealerCode">Code</label>
                                     <input id="company_access_key_input_{$companyId}"  type="text" class="form-control" placeholder="Code">
-                                    <a href="javascript:void(0)" class="btn btn-default btn-primary center-block f_company_access_key_confirm_btn" company_id="{$companyId}">Confirm</a>
+                                    <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue" company_id="{$companyId}">Confirm</a>
                                 </div>
                                 {else}
                                 <div class="documents-slider">
@@ -131,7 +128,7 @@
                                 </div>
                                     {/if}
                             </div>
-                            <div class="col-md-4">
+                            <div class="company-address">
                                 <div class="company-address">
                                     {assign var="addrs" value=";"|explode:$company->getStreet()}					
                                     {assign var="zips" value=","|explode:$company->getZip()}					
@@ -156,7 +153,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="company-tel">
                                  <h4>Tel Number</h4>
                                 <p class="tel-number">{assign var=phones value=","|explode:$company->getPhones()}
                                 {foreach from=$phones item=phone}
@@ -176,8 +173,6 @@
                                 <label for="receive_sms_from^{$companyId}"></label>
                             </div>
                         {/if}
-                        <div class="row">
-                        </div>
                     </div>
                 {/foreach}
             {/if}

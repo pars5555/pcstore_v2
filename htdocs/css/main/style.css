@@ -6,6 +6,7 @@
 	border:none;
 	outline:none;
 	font-family:sans-serif;
+	color:inherit;
 }
 
 
@@ -31,6 +32,9 @@ body{
 	/*background:url(../../img/doc_bg.png) repeat scroll 0 0 transparent;*/
 	font-size: 15px;
 	color:#333;
+}
+.glyphicon{
+	font-family:"glyphicons-halflings";	
 }
 .error{
 	color:#cc0000;
@@ -75,6 +79,66 @@ body{
 	cursor:pointer;
 	background:url("../../img/close_btn.png") no-repeat scroll 50% 50% / 100% transparent;
 }
+
+/* Select */
+	
+.select_wrapper{
+	overflow:hidden;
+	position:relative;
+	padding-right:40px;
+	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #E8EBED;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    transition: all 0.3s ease 0s;
+    width:250px;
+    display:inline-block;
+    vertical-align:middle;
+}
+.select_wrapper:after{
+	content:"";
+	font-family:"glyphicons-halflings";
+	font-size:18px;
+	display:block;
+	padding:5px 4px 3px;
+	position:absolute;
+	top:3px;
+	right:5px;
+	background-color:#777;
+	color:#fff;
+	text-align:center;
+	border-radius:3px;
+}
+
+.select_wrapper select{
+    width: calc(100% + 80px);
+	background-color: transparent;
+    border-radius: 3px;
+    display: block;
+    font-size: 15px;
+    padding: 3px 70px 3px 7px;
+    transition: all 0.3s ease;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+
+.select_wrapper select option{
+	padding:5px;
+}
+
+label{
+	padding:9px;
+	color:#333;
+	font-size:15px;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+input{
+	border:1px solid #999;
+	border-radius:3px;
+}
+
 /*******
 
   HEADER  
@@ -277,6 +341,7 @@ body{
 	font-weight:600;
 	font-size: 15px;
 	color:#333;
+	padding:0;
 }
 .modal .modal-content .form-control{
     border: 1px solid #ccc;
@@ -306,18 +371,10 @@ body{
 	display:block;
 	border-radius:5px;
 	padding:5px 0;
-	background-color: #428bca;
-	border:1px solid #226baa;
 	margin-top: 20px;
-	color:#fff;
 	cursor:pointer;
 	transition: all 0.5s ease;
 	font-size:15px;
-}
-
-.modal .modal-content .login_button:hover{
-	background-color: #226baa;
-	box-shadow: 0 0 5px #428bca;
 }
 
 .modal .modal-content .social-network a{
@@ -390,23 +447,11 @@ body{
 	display:block;
 	padding:7px 0;
 	text-align:center;
-	color:#fff;
-	/*background-color:#3aa031;
-	border:1px solid #2A9021;*/
-	background-color: #428bca;
-	border:1px solid #226baa;
 	transition:all 0.5s ease;
 	border-radius:5px;
 	margin-top:35px;
 	font-size: 15px;
 }
-.modal .modal-content .create-account-wrapper .registration:hover{
-	/*background-color: #1d8314;
-    box-shadow: 0 0 5px #3aa031;*/
-	background-color: #226baa;
-	box-shadow: 0 0 5px #428bca;
-}
-
 /*===============================*/
 
 .components-list-wrapper.row{
@@ -577,13 +622,100 @@ body{
    COMPANIES
 
 *************/
-.company-img {
+
+/*============ Companies Filter and Search block ============*/
+
+.companies_container{
+	width:100%;
+	margin:auto;
+	max-width:1000px;
+}
+.show_com_price{
+	float:left;
+	margin-right:20px;
+}
+.download_all{
+	float:left;
+	color:#428bca;
+}
+.company_filter{
+	float:left;
+}
+
+.company_filter a{
+	display: inline-block;
+    padding: 5px 30px;
+    vertical-align: middle;
+    margin-left:15px;
+}
+
+/*================== Companies main content ===================*/
+
+.company_container .company-info{
+	display:table;
+	width:100%;
+	margin-bottom:20px;
+}
+.company_container .company-info>div{
+	display:table-cell;
+	vertical-align:top;
+    padding:0 20px;
+    width:25%;
+    text-align:left;
+}
+
+/*Company Image*/
+.company_container .company-info .company-img {
+    width: 120px;
+}
+
+.company-img a{
+	display:block;
+}
+
+.company-img a img{
+	width:100%;
+}
+
+/*Company Confirm*/
+
+.company_container .company-info .company_confirm {
+    width: 250px;
+}
+.company_confirm label{
+	display:block;
+	font-weight:600;
+	font-size:15px;
+	color:#333;
+	padding:5px 0;
+}
+.company_confirm input{
+	display:block;
+	width:100%;
+	padding:5px;
+	border:1px solid #ccc;
+	font-size:15px;
+	color:#333;
+}
+.company_confirm a {
+    display: block;
+	width:100%;
+    padding: 5px;
     text-align: center;
 }
-.company-tittle {
-    display: inline-block;
-    vertical-align:top;
+
+.company_confirm .owl-carousel .owl-item span{
+	display:block;
 }
+
+/*Company Address*/
+
+
+
+/*Company Telefones*/
+
+
+
 /*******
 
  DOCUMENT SLIDER
@@ -591,6 +723,7 @@ body{
 *******/
 .documents-slider {
     position: relative;
+    width:300px;
 }
 .documents-slider .owl-buttons{
     display: none;
@@ -709,7 +842,7 @@ body{
 
 .search_block{
    clear:both;
-   margin-bottom: 20px;
+   margin: 20px auto;
 }
 
 .search_block .search_container {
@@ -717,10 +850,6 @@ body{
     margin:auto;
     position: relative;
     background-color: #fff;
-}
-.search_block .search_container:focus{
-	border-color:#66afe9;
-	box-shadow:0 0 3px #66afe9;
 }
 
 .search_block .search_container .search_text{
@@ -772,22 +901,15 @@ body{
 	float:left;
 	display:none;
 }
-.filter_container .from-group{
-	border-bottom: 3px solid #559edd;
-    padding-bottom: 10px;
+.filter_container .form-group{
+	float:left;
 }
-.filter_container .from-group label{
-	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    padding: 10px;
-	font-size: 15px;
-	color:#333;
-}
-.filter_container .from-group a{
+.filter_container .form-group a{
 	padding:10px;
 	font-size: 15px;
 	color:#333;
 }
-.filter_container .from-group a.active{
+.filter_container .form-group a.active{
 	background: linear-gradient(#77c0ff, #559edd) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
@@ -1165,18 +1287,10 @@ MAIN LEFT PANEL TOP COMPANIES LIST
 	margin:auto;
 	text-align:center;
 	padding: 5px 0px;
-	background-color: #428bca;
-	border:1px solid #226baa;
 	border-radius:5px;
-	color:#fff;
 	transition:all 0.5s ease;
 	font-weight: 600;
 	font-size:15px;
-}
-
-.product-wrapper .button-wrapper a:hover{
-	background-color: #226baa;
-	box-shadow: 0 0 5px #428bca;
 }
 .product-wrapper .product-title,
  .product-wrapper .product-title h4{

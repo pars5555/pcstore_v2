@@ -5,19 +5,22 @@
     <div  class="main-top-container container">
             <div class="filter_container">
                 <h3>Filter</h3> 
-                    <div class="from-group">
+                    <div class="form-group">
                         <label>
                             Sort By:
                         </label>
-                        {foreach from=$ns.sort_by_values item=value key=key}
-                            <a href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['s'=>$value])}" 
-                               {if $ns.selected_sort_by_value == $value}class="active"{/if}>{$ns.sort_by_display_names[$key]}</a>
-                        {/foreach}
+                        <div class="select_wrapper">
+	                        <select class="f_select_filter">
+	                        {foreach from=$ns.sort_by_values item=value key=key}
+	                            <option value="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['s'=>$value])}" >{$ns.sort_by_display_names[$key]}</option>
+	                        {/foreach}
+	                        </select>
+                        </div>
                     </div>
-                    
                        {if ($ns.companiesIds|@count > 1)}          
                     <div class="form-group">                        
                             <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
+                        <div class="select_wrapper">
                         <select class="form-control" name='sci' id='selected_company_id'>
                             {foreach from=$ns.companiesIds item=value key=key}
                                 {if ($key == 0)}
@@ -27,6 +30,7 @@
                                 {/if}
                             {/foreach}
                         </select>
+                        </div>
                     </div>
                         {/if}
                 {*}
@@ -50,6 +54,7 @@
                     </div>
                 </div>
                     {*}
+                    <div class="clear"></div>
             </div>      
         	<div class="search_block">
             <div class="search_container">
@@ -273,7 +278,7 @@
                             </div>
                         <div class="button-wrapper">
                             {if $ns.userLevel === $ns.userGroupsGuest}  
-                                <a data-toggle="modal" data-target="#myModal" href="#" class='btn btn-default btn-primary pull-right'>{$ns.lm->getPhrase(85)}</a>
+                                <a data-toggle="modal" data-target="#myModal" href="#" class='blue'>{$ns.lm->getPhrase(85)}</a>
                             {else}
                                 {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate())}			
                                     {if $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
