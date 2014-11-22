@@ -96,7 +96,7 @@
                         <a class="f_drop_down_btn" href="javascript:void(0)"> <i class="glyphicon glyphicon-search"></i> </a>
                         <div style="display:none;" class="f_drop_down_menu search-wrapper-pop-up-menu">
                             <div class="top-arrow"></div>
-                            <div style="width:85%;" class="input-group">
+                            <div class="input-group">
                                 <form method="GET" action="{$SITE_PATH}" autocomplete="off">
                                     <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="form-control">
                                     <div class="input-group-btn">
@@ -135,7 +135,8 @@
 {if $ns.userLevel === $ns.userGroupsGuest}
     <div id="loginDialog"></div>
     <!-- Modal -->
-    <div  class="modal myModal" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div  class="modal myModal hide" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="overlay"></div>
         <div class="modal-content">
             <button id="close_button" class="close_button"></button>
             <div class="modal-body">
@@ -143,17 +144,17 @@
                     <div class="login-wrapper">
                         <h4 class="title">Sign in with your existing account</h4>
                         <div class="form-group">
-                            <label for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
-                            <input name="email" type="email" class="form-control" id="mainLoginEmail" placeholder="Enter email">
+                            <label class="input_label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
+                            <input name="email" type="email" class="form-control text" id="mainLoginEmail" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
-                            <input name="password" type="password" class="form-control" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
+                            <label class="input_label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
+                            <input name="password" type="password" class="form-control text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
                             <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">
-                            <input id="mainLoginBtn" type="submit" class="login_button blue" value="{$ns.lm->getPhrase(1)}"/>
+                            <input id="mainLoginBtn" type="submit" class="login_button blue button" value="{$ns.lm->getPhrase(1)}"/>
                         </div>
                     </div>
                 </form>
@@ -187,25 +188,25 @@
                         </li>
                     </ul>
                     <div class="create-account-wrapper">
-                        <a href="{$SITE_PATH}/signup" class="registration blue">{$ns.lm->getPhrase(5)}</a>
+                        <a href="{$SITE_PATH}/signup" class="registration blue button">{$ns.lm->getPhrase(5)}</a>
                     </div>
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
-        <div class="modal-footer"></div>
     </div>
-    <div  class="modal forgotModal" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div  class="modal forgotModal hide" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="overlay"></div>
         <div class="modal-content">
             <button id="close_button" class="close_button"></button>
             <div class="modal-body">
                 <div class="form-group">
                     <div id="forgotPasswordErrorMessage" calss="error"></div>
                     <div id="forgotPasswordSuccessMessage" calss="success"></div>
-                    <label for="email">Your Email Address</label>
+                    <label class="input_label" for="email">Your Email Address</label>
                     <form id="forgotPasswordForm" autocomplete="off">
-                        <input name="email" type="email" class="form-control" id="forgotPasswordEmailInput" placeholder="Enter email">
-                        <button class="send_pass" id="forgotPasswordBtn">
+                        <input name="email" type="email" class="form-control text" id="forgotPasswordEmailInput" placeholder="Enter email">
+                        <button class="send_pass button blue" id="forgotPasswordBtn">
                             Send
                         </button>
                         <p>we'll send you email with your password</p>

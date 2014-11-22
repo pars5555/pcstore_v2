@@ -84,8 +84,8 @@
     	
     		<!--========================== Left Panel ===============================-->
 	
-    <div id="mainLeftPanel"  class="main-page-left-panel">
-    	<div class="main-page-left-panel_content">
+    <div id="mainLeftPanel"  class="left-panel">
+    	<div class="left-panel_content">
 
         {if $ns.category_id > 0}
             <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}">{$ns.lm->getPhrase(130)}</a>
@@ -119,86 +119,6 @@
             {/foreach}	
 
         {/if}
-        {*}<div id="leftSideProductCategories" class="panel panel-default closed">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Categories</div>
-        <!-- List group -->
-        <ul class="list-group">
-        <li class="list-group-item">
-        <div class="f_left_side_sub_menu is-sub-menu">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </div>
-        <ul class="f_left_side_sub_menu leftPanel-sub-menu list-group">
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="f_left_side_sub_menu is-sub-menu product-category">
-        Morbi leo risus
-        <span class="badge pull-right">14</span>
-        </div>
-        <ul class="f_left_side_sub_menu leftPanel-sub-menu list-group">
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        </ul>
-        </li>
-        </ul>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        <li class="list-group-item">
-        <div class="product-category">
-        aaa
-        <span class="badge pull-right">14</span>
-        </div>
-        </li>
-        </ul>
-        </div>
-        {*}
         </div>
     </div>
     
@@ -226,7 +146,7 @@
                             <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
                             	<h4>{$item->getDisplayName()}<span>{if !empty($brand)} by {$brand}{/if}</span> </h4>
                             	</a>
-                            <div class="product-img" ">
+                            <div class="product-img ">
                                <a class="" href="{$SITE_PATH}/item/{$item->getId()}">
                                	 <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)}" />
                                 </a>
@@ -278,7 +198,7 @@
                             </div>
                         <div class="button-wrapper">
                             {if $ns.userLevel === $ns.userGroupsGuest}  
-                                <a data-toggle="modal" data-target="#myModal" href="#" class='blue'>{$ns.lm->getPhrase(85)}</a>
+                                <a data-toggle="modal" data-target="#myModal" href="#" class='blue button'>{$ns.lm->getPhrase(85)}</a>
                             {else}
                                 {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate())}			
                                     {if $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}

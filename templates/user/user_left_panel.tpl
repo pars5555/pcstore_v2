@@ -1,7 +1,7 @@
 <div class="user-left-panel left-panel">
-    <div id="sidebar-wrapper">
-    	<div id="leftMenuBtn" class="left-menu-btn">
-    	</div>
+    	<!-- <div id="leftMenuBtn" class="left-menu-btn">  -->
+    	<div class="left-panel_content">
+    		<h1>Profile Settings</h1>
         <ul class="sidebar-nav">
             <li>
                 <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
