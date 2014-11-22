@@ -35,8 +35,10 @@
                             <button class="newsletter_btn" id="newsletterSubscribeBtn"></button>
                         <div class="clear"></div>
                     </div>                
+                    {if ($ns.userLevel === $ns.userGroupsGuest)}
                     <div style="display:none;" id="newsLetterAboveBlock" class="news-letter-below-block">
                         <p>Do you want to join us ? <a href="{$SITE_PATH}/signup">Create Account</a></p>
+                        {/if}
                     </div>
                 </div>
             </div>
