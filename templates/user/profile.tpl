@@ -1,17 +1,17 @@
 <div class="user-profile-wrapper profile-wrapper">
-	<div class="user-profile-content">
+	<div class="profile-main-content">
     {include file="$TEMPLATE_DIR/user/user_left_panel.tpl"}
     <div class="profile-content">
         <div class="current-user-info">
             <form role="form" method="post" action="{$SITE_PATH}/dyn/user/do_update_profile" autocomplete="off">
             	{if isset($ns.success_message)}
-                    <div class="alert alert-success">
-                        <strong><span class="glyphicon glyphicon-send"></span> {$ns.success_message}</strong>
+                    <div class="success">
+                        <strong> {$ns.success_message}</strong>
                     </div>
                 {/if}
                 {if isset($ns.error_message)}
-                    <div class="alert alert-danger">
-                        <span class="glyphicon glyphicon-alert"></span><strong> {$ns.error_message}</strong>
+                    <div class="error">
+                        <strong> {$ns.error_message}</strong>
                     </div>
                 {/if}
                 <div class="form-group">

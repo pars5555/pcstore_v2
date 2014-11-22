@@ -10,18 +10,6 @@
 }
 
 
-
-    /*-webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
-	background: -webkit-linear-gradient(#fff, #FFF); 
-	background:    -moz-linear-gradient(#fff, #FFF); 
-	background:     -ms-linear-gradient(#fff, #FFF); 
-	background:      -o-linear-gradient(#fff, #FFF); 
-	background:         linear-gradient(#fff, #FFF);*/
-
-
 /******************
 
 GLOBAL PROPERTIES
@@ -33,6 +21,24 @@ body{
 	font-size: 15px;
 	color:#333;
 }
+.transition{
+	-webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.linear-gradient{
+	background: -webkit-linear-gradient(#fff, #FFF); 
+	background:    -moz-linear-gradient(#fff, #FFF); 
+	background:     -ms-linear-gradient(#fff, #FFF); 
+	background:      -o-linear-gradient(#fff, #FFF); 
+	background:         linear-gradient(#fff, #FFF);
+}
+.break_text{
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
 .hide{
 	visibility:hidden !important;
 }
@@ -42,14 +48,23 @@ body{
 .error{
 	color:#cc0000;
 }
+/*.error:before{
+	content:"";
+	font-family:"glyphicons-halflings";	
+	vertical-align:middle;
+	margin-right: 5px;
+}*/
 .success{
 	color:#35AC19;
 }
+/*.success:before{
+	content:"";
+	font-family:"glyphicons-halflings";	
+	vertical-align:middle;
+	margin-right: 5px;
+}*/
 .clear{
 	clear:both;
-}
-.btn.option {
-    white-space: normal;
 }
 .control-group.inline-option {
     display: table;
@@ -203,6 +218,14 @@ label.input_label{
 .invite_mes{
 	padding:5px 20px;
 	text-align:center;
+}
+
+.link{
+	color:#428BCA;
+	vertical-align: middle;
+}
+.link:hover{
+	text-decoration:underline;
 }
 
 /*******
@@ -670,28 +693,62 @@ label.input_label{
 .show_com_price{
 	float:left;
 	margin-right:20px;
+	margin-bottom: 20px;
 }
 .download_all{
-	float:left;
+	float:right;
 	color:#428bca;
 }
 .company_filter{
-	float:left;
+	background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
+    clear: both;
+    display: table;
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
-
-.company_filter a{
-	display: inline-block;
-    padding: 5px 30px;
+.company_filter .company_tab_btn {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: table-cell;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
     vertical-align: middle;
-    margin-left:15px;
+    width: 50%;
+    
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.company_filter .company_tab_btn.active {
+    background-color: #428bca;
+    color: #fff;
 }
 
 /*================== Companies main content ===================*/
 
+.company_tab {
+    border: 3px solid #428bca;
+    padding: 20px;
+    border-radius: 3px;
+    margin-top: -3px;
+}
+.company_tab h1{
+	border-bottom: 1px solid #999;
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+.company_container{
+	margin-bottom:20px;
+	padding-left:30px;	
+}
 .company_container .company-info{
 	display:table;
 	width:100%;
-	margin-bottom:20px;
 }
 .company_container .company-info>div{
 	display:table-cell;
@@ -705,52 +762,26 @@ label.input_label{
 .company_container .company-info .company-img {
     width: 120px;
 }
-
 .company-img a{
 	display:block;
 }
-
 .company-img a img{
 	width:100%;
 }
-
 /*Company Confirm*/
-
-.company_container .company-info .company_confirm {
+.company_container .company-info .company_confirm,
+.company_container .company-info .company_confirm .form-group {
     width: 250px;
 }
-.company_confirm label{
-	display:block;
-	font-weight:600;
-	font-size:15px;
-	color:#333;
-	padding:5px 0;
+.company_confirm a{
+	margin:auto;
 }
-.company_confirm input{
-	display:block;
-	width:100%;
-	padding:5px;
-	border:1px solid #ccc;
-	font-size:15px;
-	color:#333;
-}
-.company_confirm a {
-    display: block;
-	width:100%;
-    padding: 5px;
-    text-align: center;
-}
-
 .company_confirm .owl-carousel .owl-item span{
 	display:block;
 }
-
-/*Company Address*/
-
-
-
-/*Company Telefones*/
-
+.company_container .company-info .doc_slider_wp{
+	vertical-align:middle;
+}
 
 
 /*******
@@ -760,7 +791,8 @@ label.input_label{
 *******/
 .documents-slider {
     position: relative;
-    width:300px;
+    width:250px;
+    padding:0 20px;
 }
 .documents-slider .owl-buttons{
     display: none;
@@ -779,11 +811,11 @@ label.input_label{
     opacity:0.8;
 }
 .documents-slider .doc-slider-arrow.left-arrow {
-    left:-20px;
+    left:-10px;
     background-image: url("../../img/arrow_left.png");
 }
 .documents-slider .doc-slider-arrow.right-arrow {
-    right:-20px;
+    right:-10px;
     background-image: url("../../img/arrow_right.png");
 }
 .classification {
@@ -1475,26 +1507,72 @@ BUILD PC PAGE
     border:1px solid transparent;
     margin:auto;
 }
-.user-profile-content{
+.profile-main-content{
 	display:table;	
 	width:100%;	
 }
-.profile-wrapper.user-profile-wrapper .profile-content {
+.profile-wrapper .profile-content {
 	display:table-cell;
 	padding-left: 30px;
 }
 
-.profile-wrapper.user-profile-wrapper .profile-content .current-user-info{
-	max-width:300px;	
+.profile-wrapper .profile-content .current-user-info{
+	max-width:550px;	
 }
 
-.profile-wrapper.user-profile-wrapper .profile-content .form-group{
+.profile-wrapper .profile-content .form-group{
 	margin-bottom:10px;
+	border:1px solid #ccc;
+	padding:10px;
 }
 
-.profile-wrapper.user-profile-wrapper .profile-content .profile_save_btn{
+.profile-wrapper .profile-content .chang_pic{
+	display: inline-block;
+    max-width: 120px;
+    vertical-align: bottom;
+    margin:auto;
 }
 
+.profile-wrapper .profile-content .profile_pic{
+	display: inline-block;
+    vertical-align: bottom;
+}
+
+.working_hours .select_wrapper{
+	width:40px;
+}
+
+.working_hours .glyphicon,
+.sms_time_ctl .glyphicon{
+	color:#777;
+	vertical-align:middle;
+	font-size: 20px;
+}
+.sms_time_ctl .sms_label,
+.sms_time_ctl .sms_chekbox{
+	display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.profile-wrapper .profile-content .current-user-info h3.sms_title{
+	margin-top:0;
+}
+.days_table{
+	border-collapse: collapse;
+	text-align:center;
+}
+
+.days_table th{
+	border:1px solid #ccc;
+}
+
+.days_table td{
+	padding:10px;
+	border:1px solid #ccc;
+}
+.profile-wrapper .profile-content .current-user-info h3{
+	margin:30px 0 10px;
+}
 
 /*******
 
