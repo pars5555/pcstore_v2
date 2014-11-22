@@ -47,7 +47,7 @@ ngs.BuildpcLoad = Class.create(ngs.AbstractLoad, {
         jQuery(".f_component").click(function() {
             jQuery(".f_component").removeClass("active");
             jQuery(this).addClass("active");
-            var componentIndex = jQuery(this).attr('component_index');
+            var componentIndex = jQuery(this).children("a").attr('component_index');
             ngs.PcConfiguratorManager.onTabChanged(componentIndex);
         });
     }
