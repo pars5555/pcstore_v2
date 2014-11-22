@@ -15,7 +15,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         return "main";
     },
     afterLoad: function () {
-        this.leftSideSubMenusController();
         this.initLoginFunctionallity();
         this.initLanguages();
         this.initSocialLogout();      
@@ -26,6 +25,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.notificationCustomScroll();
         this.leftMenu();
         this.sortBy();
+        this.overlay();
     },
     notificationCustomScroll: function () {
         jQuery("#notificationListWrapper").mCustomScrollbar({
@@ -49,15 +49,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery('#newsletterSubscribeBtn').click(function () {
             var email = jQuery('#newsLetterInp').val();
             ngs.action('add_newsletter_subscriber', {'email': email});
-        });
-    },
-    leftSideSubMenusController: function () {
-        jQuery(".f_left_side_sub_menu").click(function () {
-            jQuery(this).next().stop(true, false).slideToggle();
-        });
-        jQuery("#closeBtn").click(function () {
-            //@TODO
-            jQuery("#mainLeftPanel").toggleClass("closed");
         });
     },
     initSocialLogout: function () {
@@ -110,18 +101,29 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     initLoginFunctionallity: function () {
         jQuery(".f_myModal_toggle").click(function () {
-            jQuery("#myModal").addClass("active");
+            jQuery("#myModal").removeClass("hide"); 
+            jQuery("#myModal").addClass("active"); 
         });
         jQuery("#myModal #close_button").click(function () {
-            jQuery("#myModal").removeClass("active");
+            jQuery("#myModal").removeClass("active");  
+            jQuery("#myModal").addClass("hide");      
+        });        
+        jQuery("#myModal .overlay").click(function () {
+            jQuery("#myModal").removeClass("active");          	
         });
 
         jQuery("#forgot_pass").click(function () {
             jQuery("#forgotModal").addClass("active");
+            jQuery("#forgotModal").removeClass("hide"); 
         });
         jQuery("#forgotModal #close_button").click(function () {
             jQuery("#forgotModal").removeClass("active");
+            jQuery("#forgotModal").addClass("hide");      
+        });      
+        jQuery("#forgotModal .overlay").click(function () {
+            jQuery("#forgotModal").removeClass("active");          	
         });
+        
         ngs.checkLogin = true;
         var thisInstace = this;
         jQuery('#mainLoginBtn').click(function () {
@@ -176,6 +178,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     sortBy : function(){
     	jQuery(".f_select_filter").on("change",function(event){
     		window.location.href=jQuery(event.target).val();
+    	});
+    },
+    overlay : function(){
+    	jQuery(".overlay").click(function(){
+    		jQuery(this).parent().addClass("hide");
     	});
     }
 });

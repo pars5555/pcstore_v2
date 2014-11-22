@@ -1,8 +1,9 @@
-<div id="inviteSuccessMessage"></div>
-<div id="inviteErrorMessage"></div>
+<div id="inviteSuccessMessage" class="success invite_mes"></div>
+<div id="inviteErrorMessage" class="error invite_mes"></div>
 <form method="post" autocomplete="off" action="{$SITE_PATH}/dyn/user/do_invite" id="userInviteForm">
-    <input type="email" name="email"/>
-    <button  class="btn btn-default btn-primary">Invite</button>
+	<label class="input_label default_width" for="email">Email</label>
+    <input class="text default_width" type="email" name="email"/>
+    <button  class="button blue">Invite</button>
 </form>
 {if $ns.pendingUsers|@count>0}
     <h1>{$ns.lm->getPhrase(147)}</h1>
