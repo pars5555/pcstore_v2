@@ -112,18 +112,20 @@
                                         {/if}
                                         {* company previous prices*}
                                         {*assign var="companyHistoryPrices" value = $ns.companiesPriceListManager->getCompanyHistoryPricesOrderByDate($companyId,0,100)*}	
-                                        {foreach from=$ns.groupCompaniesZippedPricesByCompanyId[$companyId] item=pr}
-                                            <a  href="{$SITE_PATH}/price/zipped_price_unzipped/{$pr->getId()}"> 
-                                                <img  src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>
-                                                {assign var="uploadDateTime" value = $pr->getUploadDateTime()}					
-                                                <p > 
-                                                    {if $uploadDateTime}
-                                                        {$uploadDateTime|date_format:"%m/%d"}
-                                                        <br />
-                                                        {$uploadDateTime|date_format:"%H:%M"}												
-                                                    {/if} </p> 
-                                            </a>
-                                        {/foreach}
+                                        {if isset($ns.groupCompaniesZippedPricesByCompanyId[$companyId])}
+                                            {foreach from=$ns.groupCompaniesZippedPricesByCompanyId[$companyId] item=pr}
+                                                <a  href="{$SITE_PATH}/price/zipped_price_unzipped/{$pr->getId()}"> 
+                                                    <img  src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>
+                                                    {assign var="uploadDateTime" value = $pr->getUploadDateTime()}					
+                                                    <p > 
+                                                        {if $uploadDateTime}
+                                                            {$uploadDateTime|date_format:"%m/%d"}
+                                                            <br />
+                                                            {$uploadDateTime|date_format:"%H:%M"}												
+                                                        {/if} </p> 
+                                                </a>
+                                            {/foreach}
+                                            {/if}
                                     </div>
                                 </div>
                                     {/if}
