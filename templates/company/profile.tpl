@@ -36,7 +36,7 @@
                     {/if}
                     <input type="hidden" id="change_company_logo" name="change_logo" value="0"/>
                 </div>
-                <button type="submit" class="profile_save_btn button blue">Submit</button>
+                <button type="submit" class="profile_save_btn button blue">{$ns.lm->getPhrase(43)}</button>
             </form>
             <form id="logo_picture_form" target="upload_target" enctype="multipart/form-data" method="post" action="{$SITE_PATH}/dyn/company/do_upload_logo" >        
                 <input type="file" id="logo_picture" name="logo_picture" accept="image/*" style="display:none">

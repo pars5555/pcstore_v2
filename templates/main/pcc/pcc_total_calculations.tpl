@@ -1,4 +1,5 @@
-<a href="#" onclick="
+<h1 class="your_pc">Your PC</h1>
+<a href="#" class="facebook_share" onclick="
         var sharer = '//www.facebook.com/sharer/sharer.php?s=100&p[url]=' +
                 encodeURIComponent(location.href) + '&p[images][0]=' + '{$SITE_PATH}/img/icon_pc.png' +
                 '&p[title]=PcStore PC configurator' + '&p[summary]=';
@@ -6,11 +7,9 @@
                 'fb-share-dialog',
                 'width=626,height=436');
         return false;">	
-    share
 </a>
 
-<div style="clear:both"> </div>
-
+<div class="clear"> </div>
 {foreach from=$ns.selected_components item=item name=sc}
     {if $item}
         {if !($item|is_array)}			
@@ -25,10 +24,11 @@
 {/foreach}
 
 
-<div style="clear:both"> </div>
+<div class="clear"> </div>
 
 
 {*} PC build fee {*}
+<div class="pcc_build_pc_fee">
 {$ns.lm->getPhrase(320)}*
 <span style="{if $ns.pc_build_fee_amd==0}color:#008800{/if}"> 
     {if $ns.pc_build_fee_amd>0}
@@ -37,9 +37,11 @@
         {$ns.lm->getPhrase(289)}
     {/if} 
 </span>
+</div>
 
-<div style="clear:both"> </div>
+<div class="clear"> </div>
 {*   total price   *}
+<div class="pcc_total_price">
 {$ns.lm->getPhrase(261)}
 {if $ns.total_usd>0}
     ${$ns.total_usd|number_format:1} 
@@ -65,7 +67,7 @@
         0 Դր.
     {/if}
 {/if}
-
+</div>
 
 {if $ns.ready_to_order == "true"}
     {if ($ns.userLevel!=$ns.userGroupsGuest)}

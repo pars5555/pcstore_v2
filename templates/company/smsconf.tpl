@@ -80,7 +80,7 @@
 						</div>
 					</div>
 					<button type="submit" class="button blue">
-						Submit
+						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
 			</div>

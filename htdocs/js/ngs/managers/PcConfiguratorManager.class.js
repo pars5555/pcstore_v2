@@ -66,8 +66,7 @@ ngs.PcConfiguratorManager = {
             var itemsIds = thisInstance.getSelectedItemsIds();
             ngs.PcConfiguratorManager.onComponentChanged(componentIndex, itemsIds);
         });
-
-        jQuery('#deleteSelectedComponentBtn').click(function () {
+        jQuery('.f_deleteSelectedComponentBtn').click(function () {
             ngs.PcConfiguratorManager.onComponentChanged(componentIndex, '');
             return false;
         });

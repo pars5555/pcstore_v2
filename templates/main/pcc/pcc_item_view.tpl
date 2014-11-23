@@ -29,25 +29,27 @@
                     </div>
                 </div>
             {/if}
-            <div class="row">
+            <div class="component_block">
+                    <div class="component_check">
                 {if !isset($ns.multiselect_component)}
-                    {if isset($item_is_selected)}               
-                        <span class="item-delete pull-right" id="deleteSelectedComponentBtn" href="javascript:void(0);"> 
-                            <i class="glyphicon glyphicon-remove"></i>
+                    {if isset($item_is_selected)}              
+                        <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
+                        
                         </span>
                     {/if}	
-                    <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
+                   		<input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
+
                 {else}	
                     {if !isset($component_limit_over) || isset($item_is_selected)}
                         <input class="pull-left f_selectable_component" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="checkbox" {if isset($item_is_selected)}checked="checked"{/if}/>
                     {/if}
+                   {/if}
+					</div>
 
-                {/if}
-
-                <div class="col-md-2">
+                <div class="component_img">
                     <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(),'60_60', 1 , true)}" />
                 </div>
-                <div class="col-md-6">
+                <div class="component_info">
                     <p class="components-title">
                         {if ($item->getDisplayName()|strlen)>100}
                             {$item->getDisplayName()|substr:0:100}...
@@ -62,7 +64,7 @@
                         {/if}
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="component_price">
                     <p class="real-price">
                         {if $item->getIsDealerOfThisCompany()==1}
                             ${$item->getDealerPrice()|number_format:1}						
@@ -87,6 +89,7 @@
         </label> 
     </a>
     {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
+        <div class="select_wrapper">
         <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
             {section name=spid start=1 loop=$max_count+1 step=1}
                 {assign var="index" value=$smarty.section.spid.index}		
@@ -98,6 +101,7 @@
                 </option>
             {/section}
         </select>	
+        </div>
     {/if}
 
 

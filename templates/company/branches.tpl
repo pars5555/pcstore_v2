@@ -94,7 +94,7 @@
 						<input name='latitude' type="text" style="width:75px" value="{$ns.lat}"/>
 					</div>
 					<button type="submit" class="button blue">
-						Submit
+						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
 
@@ -117,7 +117,7 @@
 						<input type="text" class="form-control text" id="" placeholder="Postal Code">
 					</div>
 					<button style="width:100%;" type="submit" class="button blue">
-						Submit
+						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
 			</div>

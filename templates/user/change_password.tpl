@@ -28,7 +28,7 @@
 					</div>
 
 					<button class="btn btn-default btn-primary center-block button blue">
-						{$ns.lm->getPhrase(27)}
+						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
 			</div>

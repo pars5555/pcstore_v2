@@ -1365,14 +1365,17 @@ BUILD PC PAGE
     margin-left: 520px;
 }
 .build_pc_container{
-	width:100%;
+	width:calc(100% - 40px);
 	max-width:1440px;
 	margin:auto;
+	padding:0 20px;
+}
+.pc_components {
 }
 .item-sections-wrapper {
     display:table;
     width:100%;
-    border-collapse:collapse;
+    border-spacing: 5px 0;
     border-bottom:5px solid #3278b3;
 
     -webkit-transition: left 0.4s ease;
@@ -1386,6 +1389,10 @@ BUILD PC PAGE
     width:7.1%;
     vertical-align:top;
     border:1px solid #999;
+    border-bottom:none;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    position:relative;
     background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
 }
 .item-sections-wrapper .current-section.active{
@@ -1408,14 +1415,69 @@ BUILD PC PAGE
 .build-pc-component .build-pc-component-img {
     text-align: center;
 }
+
+.build-pc-component.ative {
+    border: 1px solid #285E8E;
+}
+.pcc_required_component .build-pc-component:before,
+.pcc_selected_component .build-pc-component:before{
+	content:"";
+	display:block;
+	width:70px;
+	height:70px;
+	position:absolute;
+	top:-10px;
+	left:-10px;
+}
+.pcc_required_component .build-pc-component:before{
+	background:url(../../img/required.png) no-repeat scroll 50% 50% / 100% transparent;
+}
+.pcc_selected_component .build-pc-component:before{
+	background:url(../../img/selected.png) no-repeat scroll 50% 50% / 100% transparent;    
+}
+
+
+/* Components List */
+
+.components-list-wrapper {
+    display: table;
+    margin-top: 20px;
+    width: 100%;
+}
 .build-pc-wrapper {
-    height:520px;
+    box-shadow: 0 0 7px #ccc;
+    display: table-cell;
+    height: 520px;
+    width: 800px;
+}
+.total_calculation_container{
+    display:table-cell;	
+    padding-left: 30px;
+    vertical-align: top;
 }
 .build-pc-wrapper .current-item-block .no-match-wrapper {
     position: absolute;
 }
+.select_component_inner_container{
+    padding: 15px 1px 15px 15px;	
+}
+.select_component_inner_container>div{
+    margin: 5px;    
+	
+	-webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.select_component_inner_container>div:hover{
+	box-shadow:0 0 7px #999;	
+}
+.select_component_inner_container .select_wrapper {
+    border: 1px solid #999;
+    margin-bottom: 10px;
+}
 .build-pc-wrapper .current-item-block {
-    padding: 20px;
+	display:block;
     position:relative;
 }
 .build-pc-wrapper .current-item-block.active,
@@ -1441,46 +1503,77 @@ BUILD PC PAGE
 .build-pc-wrapper .current-item-block.no-match:hover .no-match-wrapper {
     display:block;
 }
-.build-pc-wrapper label{
-    display:block;
-    cursor: pointer;
-}
-.build-pc-wrapper label .item-delete{
-    color: #afafaf;
-    font-size: 18px;
-    margin-right: 5px;
-    margin-top: -5px;
-}
-.build-pc-wrapper label .item-delete{
-    color: #333333;
-}
-.build-pc-component.ative {
-    border: 1px solid #285E8E;
-}
-.components-list-wrapper {
-    margin-top:20px;
-}
 .components-title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 380px;
 }
-.pcc_required_component:after{
-	content:"requerd*";
-	color:#cc0000;
+.build-pc-wrapper label{
+	display:block;
+	padding:0;
 }
-.pcc_selected_component:after{
-	content:"selected";
-	color:#35AC19;
+.your_pc{
+	background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
+    border: 1px solid #999;
+    border-radius: 3px;
+    color: #3278b3;
+    float: left;
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding: 5px 30px;
 }
-/*.pcc_required_component
-{
-    background-color: #ffad9c !important;
+.facebook_share{
+	background:url("../../img/share.png") no-repeat scroll 50% 50% / 100% auto transparent;
+	display:block;
+	width:150px;
+	height:30px;
+	float:right;
 }
-.pcc_selected_component
-{
-    background-color: #d0e9c6 !important;
+
+/* Component Block */
+
+.component_block{
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+}
+.component_block>div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	border:1px solid #ccc;
+	padding: 10px;
+}
+.component_block .component_check{
+	width:20px;
+}
+.component_block .component_img,
+.component_block .component_price{
+	width:70px;	
+}
+.component_block .component_info{
+	text-align:left;
+}
+.real-price {
+    color: #cc0000;
+    font-size: 17px;
+    font-weight: 600;
+}
+.component_check .item-delete{
+    display:block;
+    cursor: pointer;
+    font-size: 18px;
+    color: #cc0000;
+    margin-bottom: 10px;
+}
+
+/* Your PC */
+.pcc_total_calc_item_price_row_item_count {
+    color: #155b96;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .up_delete_attachment
@@ -1491,7 +1584,7 @@ BUILD PC PAGE
     background-repeat:no-repeat;  
     cursor: pointer;
     display: inline-block;
-}*/
+}
 
 /****************
  *

@@ -1,10 +1,10 @@
-<div id="pcc_select_component_inner_container" component_index="{$ns.componentIndex}">
+<div id="pcc_select_component_inner_container" class="select_component_inner_container" component_index="{$ns.componentIndex}">
         {if $ns.itemsDtos|@count>0}
             {foreach from=$ns.itemsDtos item=item name=fi}		
                 {include file="$TEMPLATE_DIR/main/pcc/pcc_item_view.tpl"}
             {/foreach}
         {else}
-            <div style="text-align: center;padding: 30px">
+            <div>
                 <h1>{$ns.lm->getPhrase(350)}</h1>
             </div>
         {/if}
