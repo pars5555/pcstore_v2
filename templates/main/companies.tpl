@@ -14,7 +14,7 @@
 {/if}
 <div class="container">
     <div class="companies_container">
-        <div class="companies-search-wrapper row">
+        <div class="companies-search-wrapper">
             <div class="search_block">
                 <div class="search_container">
                     <input type="text" value="" class="form-control search_text" placeholder="Search" name="st" id="srchCompanies">
@@ -38,12 +38,12 @@
                 </a>
             </div>
 	        <div class="company_filter">
-	                <a href="javascript:void(0)" companyTab="companyListTab" class="blue">Company</a>
-	                <a href="javascript:void(0)" companyTab="companyServiceTab" class="blue">Company Service</a>
+	                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn company_tab_btn active">Company</a>
+	                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn company_tab_btn">Company Service</a>
 	        </div>
         </div>
         <div class="clear"></div>
-        <div id="companyListTab" class="companies_main_content">
+        <div id="companyListTab" class="f_company_tab company_tab">
 
             {if (($ns.allCompanies|@count )>0)}
                 <h1 >{$ns.lm->getPhrase(578)}</h1>
@@ -80,9 +80,9 @@
                             <div class="company_confirm">
                                {if ($ns.userLevel === $ns.userGroupsUser) && !in_array($companyId,$ns.userCompaniesIdsArray)}
                                 <div class="form-group">
-                                    <label for="dealerCode">Code</label>
-                                    <input id="company_access_key_input_{$companyId}"  type="text" class="form-control" placeholder="Code">
-                                    <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue" company_id="{$companyId}">Confirm</a>
+                                    <label class="input_label" for="dealerCode">Code</label>
+                                    <input id="company_access_key_input_{$companyId}"  type="text" class="form-control text" placeholder="Code">
+                                    <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue button" company_id="{$companyId}">Confirm</a>
                                 </div>
                                 {else}
                                 <div class="documents-slider">
@@ -175,23 +175,26 @@
                                 <label for="receive_sms_from^{$companyId}"></label>
                             </div>
                         {/if}
+            			<div class="clear"></div>
                     </div>
                 {/foreach}
             {/if}
         </div>
-        <div id="companyServiceTab" style="display:none;" class="f_company_tab row">
+        <div id="companyServiceTab" style="display:none;" class="f_company_tab company_tab">
             {if (($ns.allServiceCompanies|@count )>0)}
-                <h1 class="avo_style_CompaniesBlockTitle">{$ns.lm->getPhrase(579)}</h1>
-                <div class="col-md-9">
+                <h1>{$ns.lm->getPhrase(579)}</h1>
+                <div class="company_container">
                     <h3 class="company-tittle">COMPANY TITLE</h3>
                     <div class="company-rating">RATING</div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="dealerCode">Code</label>
-                                <input id="dealerCode" name="email" type="text" class="form-control" placeholder="Code">
-                                <a href="javascript:void(0)" class="btn btn-default btn-primary center-block">Confirm</a>
+                    <div class="company-info">
+                        	<div class="company_confirm">
+	                            <div class="form-group">
+	                                <label class="input_label" for="dealerCode">Code</label>
+	                                <input id="dealerCode" name="email" type="text" class="form-control text" placeholder="Code">
+	                                <a href="javascript:void(0)" class="blue button">Confirm</a>
+	                            </div>
                             </div>
+                            <div class="doc_slider_wp">
                             <div class="documents-slider">
                                 <div class="f_left_arrow left-arrow doc-slider-arrow">
                                 </div>
@@ -218,16 +221,18 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
+                            </div>
                             <div class="company-address">
                                 <h4>Company Info</h4>
                                 <p class="address">Komitas 14</p>
-                                <p class="tel-number">010-34-53-12</p>
                             </div>
-                        </div>
-                    </div>
+                            <div class="company-tel">
+                            	<h4>Tel Number</h4>
+                                <p class="tel-number">010-34-53-12</p>                            	
+                            </div>
                 </div>
+            <div class="clear"></div>
+              </div>
             {/if}
         </div>
     </div>

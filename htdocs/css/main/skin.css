@@ -10,3 +10,16 @@
 	background-color: #226baa;
 	box-shadow: 0 0 5px #428bca;
 }
+
+.grey{
+	background-color: #999;
+	border:1px solid #777;
+	color:#fff;	
+	border-radius:3px;
+	transition:all 0.3s ease;
+}
+
+.grey:hover{
+	background-color: #777;
+	box-shadow: 0 0 5px #777;
+}

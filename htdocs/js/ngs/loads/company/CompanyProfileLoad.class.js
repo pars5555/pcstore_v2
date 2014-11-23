@@ -22,7 +22,7 @@ ngs.CompanyProfileLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#logo_picture").change(function () {
             jQuery('#logo_picture_form').submit();
         });
-        jQuery('#upload_photo_button, #user_profile_img').click(function () {
+        jQuery('#upload_photo_button, #user_profile_img, #logo_img').click(function () {
             jQuery("#logo_picture").trigger('click');
             return false;
         });

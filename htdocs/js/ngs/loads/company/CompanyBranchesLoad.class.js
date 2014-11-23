@@ -15,5 +15,9 @@ ngs.CompanyBranchesLoad = Class.create(ngs.AbstractLoad, {
         return "company_branches";
     },
     afterLoad: function() {
+    	this.wrapSelect();
+    },
+    wrapSelect : function(){
+    	jQuery("#working_hours select").wrap("<div class='select_wrapper'></div>");
     }
 });

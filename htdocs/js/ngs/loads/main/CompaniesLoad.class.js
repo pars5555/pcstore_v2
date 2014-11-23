@@ -32,6 +32,8 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
         jQuery(".f_company_tab_btn").click(function () {
             jQuery(".f_company_tab").hide(0);
             jQuery("#" + jQuery(this).attr("companyTab")).show(0);
+            jQuery(".f_company_tab_btn").removeClass("active");
+            jQuery(this).addClass("active");
         });
     },
     companiesListDocumentsSliderInit: function () {
