@@ -28,8 +28,14 @@
 
 
 {*} PC build fee {*}
-<div class="pcc_build_pc_fee">
+<div class="pcc_build_pc_fee">	
+<div class="component_block">
+<div class="component_check"></div>
+<div class="component_img"><span class="glyphicon"></span></div>
+<div class="component_info">
 {$ns.lm->getPhrase(320)}*
+</div>
+<div class="component_price">
 <span style="{if $ns.pc_build_fee_amd==0}color:#008800{/if}"> 
     {if $ns.pc_build_fee_amd>0}
         {$ns.pc_build_fee_amd} Դր.
@@ -37,6 +43,8 @@
         {$ns.lm->getPhrase(289)}
     {/if} 
 </span>
+</div>
+</div>
 </div>
 
 <div class="clear"> </div>
@@ -47,10 +55,10 @@
    <span class="text_red"> ${$ns.total_usd|number_format:1}  </span>
 {/if}
 {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-     <span class="text_green">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
+     <span class="text_blue">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
 {/if}
 {if $ns.total_amd==0 && $ns.total_usd==0}
-    <span class="text_green"> 0 Դր. </span>
+    <span class="text_blue"> 0 Դր. </span>
 {/if}
 
 {*   discounted price   *}

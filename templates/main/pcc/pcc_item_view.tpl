@@ -58,13 +58,13 @@
                         {/if}
                         {if $item->getBrand()} <span> by {$item->getBrand()}</span> {/if}		
                         {if $item->getIsDealerOfThisCompany()==1}
-                            <span title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}" > 
+                            <span class="company_name" title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}" > 
                                 {$ns.lm->getPhrase(66)}: <span>{$item->getCompanyName()} </span>
                             </span> 
                         {/if}
                     </p>
                 </div>
-                <div class="component_price">
+                <div class="component_price">    
                     <p class="real-price">
                         {if $item->getIsDealerOfThisCompany()==1}
                             ${$item->getDealerPrice()|number_format:1}						
@@ -76,33 +76,33 @@
                             </br>						
                             {if $item->getIsDealerOfThisCompany()!=1}					
                                 {math equation="1 - x/100" x=$ns.pc_configurator_discount assign="discountParam"}
-                                <span title="{$ns.pc_configurator_discount}% {$ns.lm->getPhrase(285)}"
-                                      class="translatable_attribute_element" attribute_phrase_id="{$ns.pc_configurator_discount}% `285`" attribute_name_to_translate="title">							
+                                <span title="{$ns.pc_configurator_discount}% {$ns.lm->getPhrase(285)}" class="translatable_attribute_element" attribute_phrase_id="{$ns.pc_configurator_discount}% `285`" attribute_name_to_translate="title" >							
                                     {$price_in_amd*$discountParam|number_format} Դր.
                                 </span>									
                             {/if}
 
                         {/if} 
                     </p>
+                                	
+				    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
+				        <div class="select_wrapper select_wrapper_min">
+				        <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
+				            {section name=spid start=1 loop=$max_count+1 step=1}
+				                {assign var="index" value=$smarty.section.spid.index}		
+				                <option value="{$index}" 			
+				                        {if $selected_component_count == $index} 
+				                            selected="selected"
+				                        {/if}>
+				                    {$index}
+				                </option>
+				            {/section}
+				        </select>	
+				        </div>
+				    {/if}
                 </div>
             </div>
         </label> 
     </a>
-    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
-        <div class="select_wrapper">
-        <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
-            {section name=spid start=1 loop=$max_count+1 step=1}
-                {assign var="index" value=$smarty.section.spid.index}		
-                <option value="{$index}" 			
-                        {if $selected_component_count == $index} 
-                            selected="selected"
-                        {/if}>
-                    {$index}
-                </option>
-            {/section}
-        </select>	
-        </div>
-    {/if}
 
 
 

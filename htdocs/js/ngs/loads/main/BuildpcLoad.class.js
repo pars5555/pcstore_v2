@@ -21,6 +21,7 @@ ngs.BuildpcLoad = Class.create(ngs.AbstractLoad, {
         this.itemsActive();
         ngs.PcConfiguratorManager.updateSelectedAndRequiredComponentsStatus();
         jQuery(".f_component[component_index=1]").addClass('active');
+        this.selectClick();
     },
     buildPcComponentMenuController:function(){
         jQuery("#mobileBtnComp").click(function(){
@@ -50,5 +51,11 @@ ngs.BuildpcLoad = Class.create(ngs.AbstractLoad, {
             var componentIndex = jQuery(this).attr('component_index');
             ngs.PcConfiguratorManager.onTabChanged(componentIndex);
         });
+    },
+    selectClick : function(){
+    	jQuery(".select_wrapper").on("click",function(event){
+    		event.preventDeafult();
+    		event.stopPropagation();
+    	});
     }
 });

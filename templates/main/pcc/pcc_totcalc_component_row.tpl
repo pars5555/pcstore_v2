@@ -13,7 +13,6 @@
 <div class="pcc_total_calc_item_price_row">
 	<div class="component_block">
 		<div class="component_check">
-			<span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" id="" href="javascript:void(0);"></span>
 			<span class="pcc_total_calc_item_price_row_item_count">{$count}x</span>
 		</div>
 		<div class="component_img">

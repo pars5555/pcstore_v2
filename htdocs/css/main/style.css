@@ -98,13 +98,11 @@ body{
 	background:url("../../img/close_btn.png") no-repeat scroll 50% 50% / 100% transparent;
 }
 
-/* Global style */
-
 .default_width{
 	max-width:300px;
 	margin:auto;
 }
-
+/*======= Select wrapper ======*/
 .select_wrapper{
 	overflow:hidden;
 	position:relative;
@@ -112,7 +110,6 @@ body{
 	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #E8EBED;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
-    transition: all 0.3s ease 0s;
     display:inline-block;
     vertical-align:middle;
 }
@@ -132,25 +129,34 @@ body{
 }
 
 .select_wrapper select{
-    width: calc(100% + 80px);
+    width: calc(100% + 50px);
 	background-color: transparent;
     border-radius: 3px;
     display: block;
     font-size: 15px;
-    padding: 3px 70px 3px 7px;
-    transition: all 0.3s ease;
+    padding: 3px 50px 3px 7px;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden;
-    
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
 }
 
 .select_wrapper select option{
 	padding:5px;
+}
+/*======= Select wrapper min ======*/
+.select_wrapper.select_wrapper_min{
+	padding-right:30px;
+}
+.select_wrapper.select_wrapper_min:after{
+	font-size:11px;
+	right:3px;
+}
+.select_wrapper.select_wrapper_min select{
+    font-size: 15px;
+}
+
+.select_wrapper.select_wrapper_min select option{
+	padding:0px;
 }
 
 label{
@@ -1393,6 +1399,7 @@ BUILD PC PAGE
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     position:relative;
+    cursor:pointer;
     background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
 }
 .item-sections-wrapper .current-section.active{
@@ -1476,7 +1483,7 @@ BUILD PC PAGE
 }
 .select_component_inner_container .select_wrapper {
     border: 1px solid #999;
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 .build-pc-wrapper .current-item-block {
 	display:block;
@@ -1488,6 +1495,11 @@ BUILD PC PAGE
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 380px;*/
+}
+.components-title .company_name{
+	display:block;
+	font-weight:600;
+	color:#3278b3;
 }
 .build-pc-wrapper label{
 	display:block;
@@ -1630,7 +1642,14 @@ BUILD PC PAGE
     color: #3278b3;
     font-weight: 600;
     padding: 10px 0;
-    text-decoration: underline;
+    border-bottom:1px solid #999;
+}
+.pcc_build_pc_fee .component_img{
+	width:40px;
+	font-size:30px;
+}
+.pcc_build_pc_fee .component_block>div{
+	padding:5px;
 }
 .pcc_total_price {
     font-size: 20px;
