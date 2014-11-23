@@ -1,4 +1,4 @@
-<h1 class="your_pc">Your PC</h1>
+<div class="your_pc"><span>Your PC</span><span class="your_pc_img"></span></div>
 <a href="#" class="facebook_share" onclick="
         var sharer = '//www.facebook.com/sharer/sharer.php?s=100&p[url]=' +
                 encodeURIComponent(location.href) + '&p[images][0]=' + '{$SITE_PATH}/img/icon_pc.png' +
@@ -72,14 +72,14 @@
 {if $ns.ready_to_order == "true"}
     {if ($ns.userLevel!=$ns.userGroupsGuest)}
         {if isset($ns.configurator_mode_edit_cart_row_id) && $ns.configurator_mode_edit_cart_row_id > 0}
-             <a href="{$SITE_PATH}/dyn/user/do_add_pc_to_cart?bundle_items_ids={$ns.selected_components_comma_separated}&replace_cart_row_id={$ns.configurator_mode_edit_cart_row_id}" class="btn btn-primary btn-block btn-default">{$ns.lm->getPhrase(43)}</a>
+             <a href="{$SITE_PATH}/dyn/user/do_add_pc_to_cart?bundle_items_ids={$ns.selected_components_comma_separated}&replace_cart_row_id={$ns.configurator_mode_edit_cart_row_id}" class="button blue save_pcc">{$ns.lm->getPhrase(43)}</a>
         {else}
-            <a href="{$SITE_PATH}/dyn/user/do_add_pc_to_cart?bundle_items_ids={$ns.selected_components_comma_separated}" class="btn btn-primary btn-block btn-default">{$ns.lm->getPhrase(284)}</a>
+            <a href="{$SITE_PATH}/dyn/user/do_add_pc_to_cart?bundle_items_ids={$ns.selected_components_comma_separated}" class="button blue add_to_cart"><span class="glyphicon"></span>{$ns.lm->getPhrase(284)}</a>
         {/if}            
     {else}
-        <a class="btn btn-primary btn-block btn-default f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
+        <a class="f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
     {/if}
-    <a href="javascript:void(0);" id="pcc_print_button" > 
-        {$ns.lm->getPhrase(629)}
+    <a href="javascript:void(0);" id="pcc_print_button" class="button blue pcc_print_button" > 
+        <span class="glyphicon"></span>{$ns.lm->getPhrase(629)}
     </a>
 {/if}

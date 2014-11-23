@@ -34,7 +34,7 @@
                 {if !isset($ns.multiselect_component)}
                     {if isset($item_is_selected)}              
                         <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
-                        
+                        
                         </span>
                     {/if}	
                    		<input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		

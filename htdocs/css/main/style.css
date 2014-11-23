@@ -1445,10 +1445,12 @@ BUILD PC PAGE
     width: 100%;
 }
 .build-pc-wrapper {
-    box-shadow: 0 0 7px #ccc;
     display: table-cell;
     height: 520px;
     width: 800px;
+}
+.build-pc-wrapper>div{
+    box-shadow: 0 0 7px #ccc;	
 }
 .total_calculation_container{
     display:table-cell;	
@@ -1513,24 +1515,6 @@ BUILD PC PAGE
 	display:block;
 	padding:0;
 }
-.your_pc{
-	background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
-    border: 1px solid #999;
-    border-radius: 3px;
-    color: #3278b3;
-    float: left;
-    font-size: 30px;
-    margin-bottom: 30px;
-    padding: 5px 30px;
-}
-.facebook_share{
-	background:url("../../img/share.png") no-repeat scroll 50% 50% / 100% auto transparent;
-	display:block;
-	width:150px;
-	height:30px;
-	float:right;
-}
-
 /* Component Block */
 
 .component_block{
@@ -1569,12 +1553,48 @@ BUILD PC PAGE
 }
 
 /* Your PC */
+
+.your_pc{
+	background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
+    border: 1px solid #999;
+    border-radius: 3px;
+    color: #3278b3;
+    float: left;
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding: 5px 30px;
+}
+.your_pc span{
+	display:inline-block;
+	vertical-align: middle;	
+}
+.your_pc_img{
+	width:40px;
+	height:40px;
+	margin-left:15px;
+	vertical-align: top !important;
+	background:url("../../img/your_pc.png") no-repeat scroll 50% 50% / 100% auto transparent;
+}
+.facebook_share{
+	background:url("../../img/share.png") no-repeat scroll 50% 50% / 100% auto transparent;
+	display:block;
+	width:150px;
+	height:30px;
+	float:right;
+}
 .pcc_total_calc_item_price_row_item_count {
     color: #155b96;
     font-size: 17px;
     font-weight: 600;
     text-decoration: underline;
 }
+.pcc_print_button .glyphicon,
+.add_to_cart .glyphicon{
+	vertical-align:middle;
+	margin-right:5px;
+}
+
+/****************************************************/
 
 .up_delete_attachment
 {
