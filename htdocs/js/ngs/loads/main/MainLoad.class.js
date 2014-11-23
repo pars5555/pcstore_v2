@@ -104,25 +104,19 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             jQuery("#myModal").removeClass("hide"); 
             jQuery("#myModal").addClass("active"); 
         });
-        jQuery("#myModal #close_button").click(function () {
+        jQuery("#myModal .close_button,#myModal .overlay").click(function () {
             jQuery("#myModal").removeClass("active");  
             jQuery("#myModal").addClass("hide");      
-        });        
-        jQuery("#myModal .overlay").click(function () {
-            jQuery("#myModal").removeClass("active");          	
         });
 
         jQuery("#forgot_pass").click(function () {
             jQuery("#forgotModal").addClass("active");
             jQuery("#forgotModal").removeClass("hide"); 
         });
-        jQuery("#forgotModal #close_button").click(function () {
+        jQuery("#forgotModal .close_button,#forgotModal .overlay").click(function () {
             jQuery("#forgotModal").removeClass("active");
             jQuery("#forgotModal").addClass("hide");      
-        });      
-        jQuery("#forgotModal .overlay").click(function () {
-            jQuery("#forgotModal").removeClass("active");          	
-        });
+        }); 
         
         ngs.checkLogin = true;
         var thisInstace = this;

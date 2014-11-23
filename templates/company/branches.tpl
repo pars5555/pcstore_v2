@@ -89,15 +89,20 @@
 						{html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingStart prefix="startWorking"} <span class="glyphicon">−</span> {html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingEnd prefix="endWorking"}
 					</div>
 					<div class="form-group">
-						<label for="longitute_latitude">Lng/Lat:</label>
-						<input name='longitute' type="text" style="width:75px" value="{$ns.lng}"/>
-						<input name='latitude' type="text" style="width:75px" value="{$ns.lat}"/>
+						<label class="input_label" for="longitute_latitude">Lng/Lat:</label>
+						<input class="text" name='longitute' type="text" value="{$ns.lng}"/>
+						<input class="text" name='latitude' type="text" value="{$ns.lat}"/>
 					</div>
 					<button type="submit" class="button blue">
 						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
-
+			
+			<button id="branch_btn" class="button green branch_btn">Add new branch</button>
+			<div class="branch_pop_up hide">
+				<div class="overlay"></div>
+				<div class="branch_wrapper">
+					<div class="close_button"></div>
 				<form role="form">
 					<h3>Add new branch</h3>
 					<div class="form-group">
@@ -116,10 +121,12 @@
 						<label class="input_label" for="">Postal Code</label>
 						<input type="text" class="form-control text" id="" placeholder="Postal Code">
 					</div>
-					<button style="width:100%;" type="submit" class="button blue">
+					<button type="submit" class="button blue">
 						{$ns.lm->getPhrase(43)}
 					</button>
 				</form>
+				</div>
+				</div>
 			</div>
 		</div>
 		{/if}

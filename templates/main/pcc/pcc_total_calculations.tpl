@@ -44,13 +44,13 @@
 <div class="pcc_total_price">
 {$ns.lm->getPhrase(261)}
 {if $ns.total_usd>0}
-    ${$ns.total_usd|number_format:1} 
+   <span class="text_red"> ${$ns.total_usd|number_format:1}  </span>
 {/if}
 {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-    {($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր.
+     <span class="text_green">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
 {/if}
 {if $ns.total_amd==0 && $ns.total_usd==0}
-    0 Դր.
+    <span class="text_green"> 0 Դր. </span>
 {/if}
 
 {*   discounted price   *}
@@ -79,7 +79,7 @@
     {else}
         <a class="f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
     {/if}
-    <a href="javascript:void(0);" id="pcc_print_button" class="button blue pcc_print_button" > 
+    <a href="javascript:void(0);" id="pcc_print_button" class="button grey pcc_print_button" > 
         <span class="glyphicon"></span>{$ns.lm->getPhrase(629)}
     </a>
 {/if}

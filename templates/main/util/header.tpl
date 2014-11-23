@@ -138,7 +138,7 @@
     <div  class="modal myModal hide" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="overlay"></div>
         <div class="modal-content">
-            <button id="close_button" class="close_button"></button>
+            <button class="close_button"></button>
             <div class="modal-body">
                 <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
                     <div class="login-wrapper">
@@ -198,7 +198,7 @@
     <div  class="modal forgotModal hide" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="overlay"></div>
         <div class="modal-content">
-            <button id="close_button" class="close_button"></button>
+            <button class="close_button"></button>
             <div class="modal-body">
                 <div class="form-group">
                     <div id="forgotPasswordErrorMessage" calss="error"></div>
