@@ -1,5 +1,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8">
 
+{if isset($ns.page_title)}
+    <meta content="{$ns.page_title}" name="title">
+    <title>{$ns.page_title}</title>
+{/if}
+{if isset($ns.page_description)}
+    <meta content="{$ns.page_description}" name="description">
+{/if}
+{if isset($ns.page_keywords)}
+    <meta content="{$ns.page_keywords}" name="keywords">
+{/if}
 
 <!-- NGS Theme Styles -->
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/jquery/jquery-ui.css?{$VERSION}" />
@@ -28,7 +39,7 @@
         var ngs = {};
     {/literal}	        
         var SITE_URL = "{$SITE_URL}";
-        var SITE_PATH = "{$SITE_PATH}";   
+        var SITE_PATH = "{$SITE_PATH}";
         var customer_ping_pong_timeout_seconds = {$ns.customer_ping_pong_timeout_seconds};
 </script>
 
@@ -56,8 +67,9 @@
 <script type="text/javascript"  src="//connect.facebook.net/en_US/sdk.js"></script>
 {* linkedin login setup *}
 <script type="text/javascript" src="//platform.linkedin.com/in.js">
-    api_key: 75ys1q9fcupeqq
-    authorize: true
+    api_key: 75
+    ys1q9fcupeqq
+            authorize: true
 </script> 
 {* google pluse login setup *}
 <script type="text/javascript" src="https://apis.google.com/js/client:plusone.js?onload=render"></script>

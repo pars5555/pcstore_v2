@@ -207,7 +207,7 @@ abstract class AbstractRequest {
     }
 
     public function setCookie($key, $value, $expire = 0) {
-        $domain = "." . HTTP_HOST;
+        $domain = "." . DOMAIN;
         setcookie($key, $value, $expire, "/", $domain);
     }
 

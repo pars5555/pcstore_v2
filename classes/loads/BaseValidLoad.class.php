@@ -43,6 +43,21 @@ abstract class BaseValidLoad extends AbstractLoad {
             $this->initSucessMessages();
             $this->initErrorMessages();
         }
+
+        $pageTitle = $this->getPageTitle();
+        $pageDescription = $this->getPageDescription();
+        $pageKeywords = $this->getPageKeywords();
+        if (isset($this->args['mainLoad'])) {
+            if (!empty($pageTitle)) {
+                $this->args['mainLoad']->addParam('page_title',  ucfirst(DOMAIN) . ': ' . $pageTitle);
+            }
+            if (!empty($pageDescription)) {
+                $this->args['mainLoad']->addParam('page_description', $pageDescription);
+            }
+            if (!empty($pageKeywords)) {
+                $this->args['mainLoad']->addParam('page_keywords', $pageKeywords);
+            }
+        }
     }
 
     public function getDefaultLoads($args) {
@@ -64,6 +79,18 @@ abstract class BaseValidLoad extends AbstractLoad {
             $this->addParam('success_message', $message);
             unset($_SESSION['success_message']);
         }
+    }
+
+    protected function getPageTitle() {
+        return "";
+    }
+
+    protected function getPageDescription() {
+        return "";
+    }
+
+    protected function getPageKeywords() {
+        return "";
     }
 
     public function isValidLoad($namespace, $load) {

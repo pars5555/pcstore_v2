@@ -18,41 +18,20 @@ require_once (CLASSES_PATH . "/util/ImageThumber.php");
  */
 class ItemManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    public $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+  
     /**
      * @var singleton instance of class
      */
     private static $instance = null;
 
-    /**
-     * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
-     */
+  
     function __construct() {
 
 
         $this->mapper = ItemMapper::getInstance();
     }
 
-    /**
-     * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
-     */
+   
     public static function getInstance() {
 
         if (self::$instance == null) {
@@ -61,7 +40,7 @@ class ItemManager extends AbstractManager {
         }
         return self::$instance;
     }
-
+   
     public function getItemsByIds($items_ids) {
         if (is_array($items_ids)) {
             $items_ids = implode(',', $items_ids);

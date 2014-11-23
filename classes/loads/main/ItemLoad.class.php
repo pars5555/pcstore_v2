@@ -25,30 +25,20 @@ class ItemLoad extends BaseGuestLoad {
             $pccDiscount = floatval($this->getCmsVar('pc_configurator_discount'));
         }
 
-
         $itemManager = ItemManager::getInstance();
-        if (isset($_REQUEST["item_id"])) {
-            $item_id = $_REQUEST["item_id"];
-        } elseif ($this->args[0]) {
-            $item_id = $this->args[0];
-        }
-        $selectedItemDto = $itemManager->selectByPK($item_id);
+        $item_id = intval($this->args[0]);
         $userLevel = $this->getUserLevel();
         $userId = $this->getUserId();
         $itemDto = $itemManager->getItemsForOrder($item_id, $userId, $userLevel, true);
 
-        $this->addParam('item_id', $item_id);
-
         if ($itemDto) {
+            $this->addParam('item_id', $itemDto->getId());
             $itemManager->growItemShowsCountByOne($itemDto);
             $itemPicturesCount = $itemDto->getPicturesCount();
             $this->addParam('item', $itemDto);
-
-            //$this->addParam('userLevel', $userLevel);
-
             $this->addParam('itemManager', $itemManager);
             $this->addParam('itemPicturesCount', $itemPicturesCount);
-            $this->addParam('itemPropertiesHierarchy', $itemManager->getItemProperties($item_id));
+            $this->addParam('itemPropertiesHierarchy', $itemManager->getItemProperties($itemDto->getId()));
         }
 
 
@@ -80,6 +70,57 @@ class ItemLoad extends BaseGuestLoad {
 
     public function getTemplate() {
         return TEMPLATES_DIR . "/main/item.tpl";
+    }
+
+    protected function getPageDescription() {
+        $item_id = intval($this->args[0]);
+        if ($item_id <= 0) {
+            return "";
+        }
+        $itemManager = ItemManager::getInstance();
+        $itemDto = $itemManager->selectByPK($item_id, true);
+        $brand = $itemDto->getBrand();
+        $model = $itemDto->getModel();
+        $displayName = $itemDto->getDisplayName();
+        $description = "";
+        if (!empty($brand)) {
+            $description .= ($brand . ' ');
+        }
+        if (!empty($model)) {
+            $description .= ($model . ' ');
+        }
+        if (!empty($displayName)) {
+            $description .= $displayName;
+        }
+        return $description;
+    }
+
+    protected function getPageKeywords() {
+         $item_id = intval($this->args[0]);
+        if ($item_id <= 0) {
+            return "";
+        }
+        $itemManager = ItemManager::getInstance();
+        $itemDto = $itemManager->selectByPK($item_id, true);
+        $brand = $itemDto->getBrand();
+        $model = $itemDto->getModel();
+        $displayName = $itemDto->getDisplayName();
+        $keywords = "";
+        if (!empty($brand)) {
+            $keywords .= ($brand . ',');
+        }
+        if (!empty($model)) {
+            $keywords .= ($model . ',');
+        }
+        if (!empty($displayName)) {
+            $parts = preg_split('/ +/', $displayName);
+            $keywords .= implode(',', $parts);
+        }
+        return $keywords;
+    }
+
+    protected function getPageTitle() {
+        return $this->getPageDescription();
     }
 
 }

@@ -37,7 +37,7 @@ abstract class AbstractManager {
         return true;
     }
 
-   public function secure($var) {
+    public function secure($var) {
         if (isset($var)) {
             return trim(htmlspecialchars(strip_tags($var)));
         } else {
@@ -80,17 +80,15 @@ abstract class AbstractManager {
     public function getLastSelectFoundRows() {
         return $this->mapper->getLastSelectFoundRows();
     }
-    
-    
-    
+
     public function lockTableWrite() {
-         $this->mapper->lockTableWrite();
+        $this->mapper->lockTableWrite();
     }
-    
+
     public function unlockTables() {
-         $this->mapper->unlockTables();
+        $this->mapper->unlockTables();
     }
-    
+
     public function selectByField($fieldName, $fieldValue) {
         return $this->mapper->selectByField($fieldName, $fieldValue);
     }
@@ -103,8 +101,12 @@ abstract class AbstractManager {
         return $this->mapper->deleteByField($fieldName, $fieldValue);
     }
 
-    public function selectByPK($pk) {
-        return $this->mapper->selectByPK($pk);
+    private $selectByPkCache = null;
+    public function selectByPK($pk, $cache = false) {
+        if (!isset($this->selectByPkCache) || !$cache) {
+            $this->selectByPkCache = $this->mapper->selectByPK($pk);
+        }
+        return $this->selectByPkCache;
     }
 
     public function selectByPKs($pks) {

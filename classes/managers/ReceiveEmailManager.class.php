@@ -50,12 +50,12 @@ class ReceiveEmailManager {
     }
 
     public function checkPriceEmailsAndAddAlertsToOnlineAdmins() {
-        $emailServersManager = new EmailAccountsManager(null, null);
+        $emailServersManager = new EmailAccountsManager();
         $infoEmailDto = $emailServersManager->selectByPK('info');
         $login = $infoEmailDto->getLogin();
         $pass = $infoEmailDto->getPass();
         $imapInbox = $infoEmailDto->getImapInbox();
-        $connection = @imap_open($imapInbox, $login, $pass);
+        $connection = imap_open($imapInbox, $login, $pass);
         if (!$connection) {
             return imap_last_error();
         }

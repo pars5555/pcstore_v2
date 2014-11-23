@@ -12,6 +12,7 @@ mb_internal_encoding('UTF-8');
 define('HTTP_PROTOCOL', isset($_SERVER["HTTPS"]) ? "https://" : "http://");
 
 define("HTTP_HOST", $_SERVER["HTTP_HOST"] . "");
+define('DOMAIN', get_domain(HTTP_HOST));
 
 //---defining document root
 define("DOCUMENT_ROOT", $_SERVER["DOCUMENT_ROOT"]);
@@ -72,4 +73,20 @@ define("SESSION_MANAGER", CLASSES_PATH . "/managers/SessionManager.class.php");
 //defining load and action directories
 define("LOADS_DIR", "loads");
 define("ACTIONS_DIR", "actions");
+
+
+
+function get_domain($url) {
+    if (substr($url, 0, 4) !== 'http') {
+        $url = 'http://' . $url;
+    }
+    $pieces = parse_url($url);
+    $domain = isset($pieces['host']) ? $pieces['host'] : '';
+
+    if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
+        return $regs['domain'];
+    }
+    return false;
+}
+
 ?>

@@ -299,6 +299,9 @@ class HomeLoad extends BaseGuestLoad {
     public function getTemplate() {
         return TEMPLATES_DIR . "/main/home.tpl";
     }
+    
+    
+    
 
 }
 

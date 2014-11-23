@@ -4,42 +4,42 @@
     <div class="footer-wrapper">
         <div class="news-letter-wrapper">
             <div class="container">
-                    <ul class="socialNetworks-linkes-pages">
-                        <li>
-                            <a href="https://www.facebook.com/pages/Pcstoream/101732636647846" target="_blank">
-                                <div class="img facebook">
+                <ul class="socialNetworks-linkes-pages">
+                    <li>
+                        <a href="https://www.facebook.com/pages/Pcstoream/101732636647846" target="_blank">
+                            <div class="img facebook">
 
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/111993997426489489686" target="_blank">
-                                <div class="img google">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/111993997426489489686" target="_blank">
+                            <div class="img google">
 
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/company/3743120" target="_blank">
-                                <div class="img twitter">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/3743120" target="_blank">
+                            <div class="img twitter">
 
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
                 <div class="news-letter-block">
                     <div id="newsletter_error_message" class="error"></div>
                     <div id="newsletter_success_message" class="success"></div>
                     <div class="input-group">
                         <input id="newsLetterInp" name="" type="text" value="" class="text" placeholder="News letter" >
-                            <button class="newsletter_btn" id="newsletterSubscribeBtn"></button>
+                        <button class="newsletter_btn" id="newsletterSubscribeBtn"></button>
                         <div class="clear"></div>
                     </div>                
                     {if ($ns.userLevel === $ns.userGroupsGuest)}
-                    <div style="display:none;" id="newsLetterAboveBlock" class="news-letter-below-block">
-                        <p>Do you want to join us ? <a href="{$SITE_PATH}/signup">Create Account</a></p>
-                        {/if}
-                    </div>
+                        <div style="display:none;" id="newsLetterAboveBlock" class="news-letter-below-block">
+                            <p>Do you want to join us ? <a href="{$SITE_PATH}/signup">Create Account</a></p>
+                        </div>
+                    {/if}
                 </div>
             </div>
         </div>
@@ -73,25 +73,25 @@
                     </a>
                 </div>
             </div>
-                <div  class="container">
-                    <ul class="payments">
-                        <li>
-                            <img  src="{$SITE_PATH}/img/cash_del_payment.png" />
-                        </li>
-                        <li>
-                            <img  src="{$SITE_PATH}/img/paypal_payment.png" />
-                        </li>
-                        <li>
-                            <img  src="{$SITE_PATH}/img/bank_wire_payment.png" />
-                        </li>
-                        <li>
-                            <img  src="{$SITE_PATH}/img/credit_payment.png" />
-                        </li>
-                        <li>
-                            <img  src="{$SITE_PATH}/img/card_payment.png" />
-                        </li>
-                    </ul>
-                </div>
+            <div  class="container">
+                <ul class="payments">
+                    <li>
+                        <img  src="{$SITE_PATH}/img/cash_del_payment.png" />
+                    </li>
+                    <li>
+                        <img  src="{$SITE_PATH}/img/paypal_payment.png" />
+                    </li>
+                    <li>
+                        <img  src="{$SITE_PATH}/img/bank_wire_payment.png" />
+                    </li>
+                    <li>
+                        <img  src="{$SITE_PATH}/img/credit_payment.png" />
+                    </li>
+                    <li>
+                        <img  src="{$SITE_PATH}/img/card_payment.png" />
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 {/if}

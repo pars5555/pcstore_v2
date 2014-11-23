@@ -101,7 +101,7 @@ class SessionManager extends AbstractSessionManager {
     }
 
     private function setOnlineStatus() {
-        $domain = "." . HTTP_HOST;
+        $domain = "." . DOMAIN;
         setcookie("ustatus", 1, null, "/", $domain);
         return false;
     }
