@@ -16,7 +16,7 @@
 {/if}
 
 {*if ($item->getPccItemCompatible()==1)}#EEFFEE{else}#FFBBBB{/if*}
-<div>
+<div class="{if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}select_count{/if}">
     <a href="javascript:void(0);" {if isset($error_message)} class="f_current_item_block list-group-item current-item-block no-match"{else}class="f_current_item_block list-group-item current-item-block"{/if}>
         <label for="item_{$item->getId()}">
             {if isset($error_message)}
@@ -83,26 +83,26 @@
 
                         {/if} 
                     </p>
-                                	
-				    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
-				        <div class="select_wrapper select_wrapper_min">
-				        <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
-				            {section name=spid start=1 loop=$max_count+1 step=1}
-				                {assign var="index" value=$smarty.section.spid.index}		
-				                <option value="{$index}" 			
-				                        {if $selected_component_count == $index} 
-				                            selected="selected"
-				                        {/if}>
-				                    {$index}
-				                </option>
-				            {/section}
-				        </select>	
-				        </div>
-				    {/if}
+                    
                 </div>
             </div>
-        </label> 
-    </a>
+        </label>  
+    </a>                   	
+	    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
+	        <div class="select_wrapper select_wrapper_min pcc_select_wrapper">
+	        <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
+	            {section name=spid start=1 loop=$max_count+1 step=1}
+	                {assign var="index" value=$smarty.section.spid.index}		
+	                <option value="{$index}" 			
+	                        {if $selected_component_count == $index} 
+	                            selected="selected"
+	                        {/if}>
+	                    {$index}
+	                </option>
+	            {/section}
+	        </select>	
+	        </div>
+	    {/if}
 
 
 

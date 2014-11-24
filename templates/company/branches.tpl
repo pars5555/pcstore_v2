@@ -98,7 +98,7 @@
 					</button>
 				</form>
 			
-			<button id="branch_btn" class="button green branch_btn">Add new branch</button>
+			<button id="branch_btn" class="button grey branch_btn">Add new branch</button>
 			<div class="branch_pop_up hide">
 				<div class="overlay"></div>
 				<div class="branch_wrapper">

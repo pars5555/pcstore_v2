@@ -21,7 +21,7 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
         var thisInstance = this;
         jQuery('#pcc_print_button').click(function () {
             var selected_components = jQuery.param(ngs.PcConfiguratorManager.getSelectedComponentsParam());
-            var iframe = "<div><iframe style='width:100%;height:100%;'  scrolling='no' id='pcc_print_iframe' src='//" + SITE_URL + "/print_pcc?" + selected_components + "'></iframe></div>";
+            var iframe = "<div><iframe name='print' style='width:100%;height:100%;'  scrolling='no' id='pcc_print_iframe' src='//" + SITE_URL + "/print_pcc?" + selected_components + "'></iframe></div>";
             jQuery(iframe).dialog({
                 resizable: true,
                 modal: true,
@@ -44,7 +44,15 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
                 close: function () {
                     jQuery(this).remove();
                 }
-            });
+            }); 
+             
+			jQuery('#pcc_print_iframe').load(function(){
+       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/style.css" />');
+       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/skin.css" />');
+       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/fonts.css" />');
+       			jQuery("#pcc_print_iframe").contents().find('head').append('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="UTF-8">');
+       		});
+       		
         });
     }
 });

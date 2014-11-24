@@ -15,31 +15,49 @@
 
 
 {*} PC build fee {*}
-{$ns.lm->getPhrase(320)}: 
-{if $ns.pc_build_fee_amd>0}
-    {$ns.pc_build_fee_amd} Դր.
-{else}
-    {$ns.lm->getPhrase(289)}
-{/if} 
-<div style="clear:both"> </div>
-total:
-{if $ns.total_usd>0}
-    ${$ns.total_usd|number_format:1} 
-{/if}
-<span style="{if $ns.total_amd>0}text-decoration: line-through{/if}">
-    {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-        {$ns.total_amd+$ns.pc_build_fee_amd|number_format:0} Դր.
-    {/if}
-</span>
-<div style="clear:both"> </div>
-{if $ns.total_amd>0}
+<div class="pcc_build_pc_fee">
+	<div class="component_block">
+		<div class="component_check"></div>
+		<div class="component_img">
+			<span class="glyphicon"></span>
+		</div>
+		<div class="component_info">
+			{$ns.lm->getPhrase(320)}*
+		</div>
+		<div class="component_price">
+			<span style="{if $ns.pc_build_fee_amd==0}color:#008800{/if}"> {if $ns.pc_build_fee_amd>0}
+				{$ns.pc_build_fee_amd} Դր.
+				{else}
+				{$ns.lm->getPhrase(289)}
+				{/if} </span>
+		</div>
+	</div>
+</div>
 
-    {$ns.lm->getPhrase(285)} {$ns.pc_configurator_discount}%
+<div class="pcc_total_price">
+	{$ns.lm->getPhrase(261)}
+	{if $ns.total_usd>0}
+	<span class="text_green"> ${$ns.total_usd|number_format:1} </span>
+	{/if}
+	{if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
+	<span class="text_blue">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
+	{/if}
+	{if $ns.total_amd==0 && $ns.total_usd==0}
+	<span class="text_blue"> 0 Դր. </span>
+	{/if}
 
-    {if $ns.total_usd>0}
-        ${$ns.total_usd|number_format:1} 
-    {/if}
-    {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-        {$ns.grand_total_amd|number_format:0} Դր.
-    {/if}
-{/if}
+	{*   discounted price   *}
+	{if $ns.total_amd>0}
+	{$ns.lm->getPhrase(285)} {$ns.pc_configurator_discount}%
+
+	{if $ns.total_usd>0}
+	${$ns.total_usd|number_format:1}
+	{/if}
+	{if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
+	{$ns.grand_total_amd|number_format:0} Դր.
+	{/if}
+	{if $ns.total_amd==0 && $ns.total_usd==0}
+	0 Դր.
+	{/if}
+	{/if}
+</div>

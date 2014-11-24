@@ -8,8 +8,6 @@
 	font-family:sans-serif;
 	color:inherit;
 }
-
-
 /******************
 
 GLOBAL PROPERTIES
@@ -129,12 +127,12 @@ body{
 }
 
 .select_wrapper select{
-    width: calc(100% + 50px);
+    width: calc(100% + 60px);
 	background-color: transparent;
     border-radius: 3px;
     display: block;
     font-size: 15px;
-    padding: 3px 50px 3px 7px;
+    padding: 3px 60px 3px 7px;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden;
@@ -1550,7 +1548,7 @@ BUILD PC PAGE
 	vertical-align:middle;
 	text-align:center;
 	/*border:1px solid #ccc;*/
-	padding: 10px;
+	padding: 5px;
 }
 .component_block .component_check{
 	width:20px;
@@ -1563,7 +1561,7 @@ BUILD PC PAGE
 	text-align:left;
 }
 .real-price {
-    color: #cc0000;
+    color: #508b01;
     font-size: 17px;
     font-weight: 600;
 }
@@ -1574,11 +1572,21 @@ BUILD PC PAGE
     color: #cc0000;
     margin-bottom: 10px;
 }
+.build-pc-wrapper .select_count .current-item-block{
+	vertical-align:middle;
+	display: inline-block;
+    width: calc(100% - 90px);
+}
+.build-pc-wrapper .select_count .pcc_select_wrapper.select_wrapper.select_wrapper_min{
+	vertical-align:middle;
+	display: inline-block;
+	width:50px;
+}
 
 /* Your PC */
 
 .pcc_total_calc_item_price_row .component_block > div{
-	padding:5px;
+	padding:3px 5px;
 }
 .pcc_total_calc_item_price_row .component_block .component_price{
 	width:50px;
@@ -1586,11 +1594,17 @@ BUILD PC PAGE
 .pcc_total_calc_item_price_row .component_block .component_img{
 	width:40px;
 }
+.pcc_total_calc_item_price_row .component_block .component_count{
+	width:20px;
+}
 .pcc_total_calc_item_price_row .component_block .component_img img{
 	width:100%;
 }
 .pcc_total_calc_item_price_row .component_block .component_check .item-delete{
-	font-size:15px;
+	display: inline-block;
+    font-size: 15px;
+    margin-bottom: 0;
+    vertical-align: top;
 }
 
 .your_pc{
@@ -1641,7 +1655,6 @@ BUILD PC PAGE
 .pcc_build_pc_fee {
     color: #3278b3;
     font-weight: 600;
-    padding: 10px 0;
     border-bottom:1px solid #999;
 }
 .pcc_build_pc_fee .component_img{
@@ -1738,7 +1751,7 @@ BUILD PC PAGE
 }
 
 .working_hours .select_wrapper{
-	width:40px;
+	width:50px;
 }
 
 .working_hours .glyphicon,
