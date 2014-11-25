@@ -202,8 +202,12 @@ class UserManager extends AbstractManager {
      * Returns user's phones array
      */
     public function getUserPhonesArray($user_id) {
-        $user = $this->mapper->selectByPK($user_id);
-        $userPhones = $user->getPhones();
+        $userDto = $this->mapper->selectByPK($user_id);
+        if (!isset($userDto))
+        {
+            return array();
+        }
+        $userPhones = $userDto->getPhones();
         $userPhonesArray = array();
         if (strlen($userPhones) > 0) {
             $userPhonesArray = explode(",", $userPhones);

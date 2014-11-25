@@ -16,6 +16,14 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
     },
     afterLoad: function () {
         this.initPrintBtn();
+        this.initRemoveItem();
+    },
+    initRemoveItem: function () {
+        jQuery('.pcc_total_calc_item_price_row .f_deleteSelectedComponentBtn').click(function () {
+            var componentTypeIndex = jQuery(this).attr('componentTypeIndex');
+            ngs.PcConfiguratorManager.onComponentChanged(componentTypeIndex, '');
+            return false;
+        });
     },
     initPrintBtn: function () {
         var thisInstance = this;
@@ -44,15 +52,15 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
                 close: function () {
                     jQuery(this).remove();
                 }
-            }); 
-             
-			jQuery('#pcc_print_iframe').load(function(){
-       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/style.css" />');
-       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/skin.css" />');
-       			jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/fonts.css" />');
-       			jQuery("#pcc_print_iframe").contents().find('head').append('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="UTF-8">');
-       		});
-       		
+            });
+
+            jQuery('#pcc_print_iframe').load(function () {
+                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/style.css" />');
+                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/skin.css" />');
+                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/fonts.css" />');
+                jQuery("#pcc_print_iframe").contents().find('head').append('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="UTF-8">');
+            });
+
         });
     }
 });
