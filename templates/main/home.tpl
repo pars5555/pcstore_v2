@@ -202,7 +202,7 @@
                             {else}
                                 {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate())}			
                                     {if $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
-                                        <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="btn btn-default btn-primary pull-right" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
+                                        <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="button blue" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
                                     {/if}
                                 {/if}
                             {/if}

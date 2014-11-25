@@ -69,7 +69,7 @@
                         {if $item->getIsDealerOfThisCompany()==1}
                             ${$item->getDealerPrice()|number_format:1}						
                         {else}						
-                            <span style="text-decoration: line-through;">
+                            <span class="old_price">
                                 {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
                                 {$price_in_amd|number_format} Դր.
                             </span>

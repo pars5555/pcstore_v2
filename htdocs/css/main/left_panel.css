@@ -25,9 +25,8 @@
 .left-panel ul li{
 }
 .left-panel ul li a{
-	display:block;
-	padding:10px 50px 10px 10px;
-	position:relative;
+	display:table;
+	width:100%;
     border-top: 1px solid #999;
     background-color:#fff;
 	font-size: 15px;
@@ -45,30 +44,27 @@
 .left-panel ul li a.dark_bg{
 	background-color:rgba(0,0,0,0.3) !important;
 }
-.left-panel ul li a span{
+.left-panel ul li a .cat_count{
+    display: table-cell;
+    width: 50px;
+    text-align:center;
+}
+.left-panel ul li a .cat_count span{
 	border-radius: 7px;
     color: #fff;
-    display: block;
     font-size: 13px;
-    max-width: 30px;
-    overflow: hidden;
     padding: 3px 5px;
-    position: absolute;
-    right: 5px;
-    text-overflow: ellipsis;
-    top: calc(50% - 12px);
-    white-space: nowrap;
 	background-color:#777;
+	display:inline-block;
+	vertical-align:middle;
 }
 .left-panel ul li .dropdown-toggle{
     width: 35px;
-    height: calc(100% - 2px);
     border: 1px solid #999;
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
     cursor: pointer;
+    text-align: center;
+    vertical-align:middle;
 	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .left-panel ul li.opened>a>.dropdown-toggle{
@@ -77,24 +73,26 @@
 .left-panel ul li .dropdown-toggle:before{
 	font-family:"glyphicons-halflings";
 	content:"";
-    width: 100%;
-    position: absolute;
-    top: calc(50% - 11px);
-	left: 0;
-    text-align: center;
     color:#777;
+    display:inline-block;
+    vertical-align:middle;
 }
 .left-panel ul li.opened>a>.dropdown-toggle:before{
 	content:"";
 }
-.left-panel ul li.dropdown>a{
-	padding-left:40px;	
-}
 .left-panel ul li.dropdown>a>.dropdown-toggle{
-	display:block;
+	display:table-cell;
+}
+.left-panel ul li.dropdown>ul{
+	display:none;
 }
 .left-panel ul li.dropdown>ul>li{
 	margin-left:35px;
+}
+
+
+.left-panel ul li a .cat_name {
+    padding: 10px;
 }
 
 /*Checkbox categories*/

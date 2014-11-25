@@ -46,21 +46,9 @@ body{
 .error{
 	color:#cc0000;
 }
-/*.error:before{
-	content:"";
-	font-family:"glyphicons-halflings";	
-	vertical-align:middle;
-	margin-right: 5px;
-}*/
 .success{
 	color:#35AC19;
 }
-/*.success:before{
-	content:"";
-	font-family:"glyphicons-halflings";	
-	vertical-align:middle;
-	margin-right: 5px;
-}*/
 .clear{
 	clear:both;
 }
@@ -118,7 +106,7 @@ body{
 	display:block;
 	padding:5px 4px 3px;
 	position:absolute;
-	top:3px;
+	top:4px;
 	right:5px;
 	background-color:#777;
 	color:#fff;
@@ -136,6 +124,7 @@ body{
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden;
+    min-height: 36px;
 }
 
 .select_wrapper select option{
@@ -723,25 +712,19 @@ label.input_label{
     padding-bottom: 10px;
 }
 .company_container{
-	margin-bottom:20px;
-	padding-left:30px;	
+	display:table-row;
 }
-.company_container .company-info{
-	display:table;
-	width:100%;
-}
-.company_container .company-info>div{
+.company_container>div{
 	display:table-cell;
 	vertical-align:top;
-    padding:0 20px;
-    width:25%;
+    padding:0 10px;
+    width:20%;
     text-align:left;
 }
-
-/*Company Image*/
-.company_container .company-info .company-img {
-    width: 120px;
+.company_container .squaredOne {
+    display: none;
 }
+/*Company Image*/
 .company-img a{
 	display:block;
 }
@@ -749,8 +732,8 @@ label.input_label{
 	width:100%;
 }
 /*Company Confirm*/
-.company_container .company-info .company_confirm,
-.company_container .company-info .company_confirm .form-group {
+.company_container .company_confirm,
+.company_container .company_confirm .form-group {
     width: 250px;
 }
 .company_confirm a{
@@ -759,10 +742,13 @@ label.input_label{
 .company_confirm .owl-carousel .owl-item span{
 	display:block;
 }
-.company_container .company-info .doc_slider_wp{
+.company_container .doc_slider_wp{
 	vertical-align:middle;
 }
-
+/*Company Telefon*/
+.company_container .company-tel{
+	
+}
 
 /*******
 
@@ -952,6 +938,7 @@ label.input_label{
 }
 .filter_container .form-group{
 	float:left;
+	margin-right: 30px;
 }
 .filter_container .form-group a{
 	padding:10px;
@@ -1140,6 +1127,9 @@ SMS CONF COMPANY
     -o-transition: box-shadow 0.4s ease;
     transition: box-shadow 0.4s ease;
 }
+.products-wrapper .products_row .product-wrapper:hover {
+    box-shadow:0px 0px 10px 1px #777;
+}
 .product-wrapper .product_inner{
     padding:30px 20px 70px;	
 }
@@ -1155,16 +1145,14 @@ SMS CONF COMPANY
     display:block;
     margin: auto;
 }
-.product-wrapper:hover {
-    box-shadow: 1px 1px 10px 1px #ccc;
-}
 .product-wrapper .button-wrapper {
     position: absolute;
     bottom:20px;
     right:20px;
 }
 .product-wrapper .button-wrapper a{
-	width:150px;
+	padding: 7px 10px;
+    width: calc(100% - 20px);
 	margin:auto;
 }
 .product-wrapper .product-title,
@@ -1553,9 +1541,11 @@ BUILD PC PAGE
 .component_block .component_check{
 	width:20px;
 }
-.component_block .component_img,
-.component_block .component_price{
+.component_block .component_img{
 	width:70px;	
+}
+.component_block .component_price{
+	width:120px;	
 }
 .component_block .component_info{
 	text-align:left;
@@ -1564,6 +1554,10 @@ BUILD PC PAGE
     color: #508b01;
     font-size: 17px;
     font-weight: 600;
+}
+.old_price{
+	color:#cc0000;
+	text-decoration:line-through;
 }
 .component_check .item-delete{
     display:block;
@@ -1589,7 +1583,7 @@ BUILD PC PAGE
 	padding:3px 5px;
 }
 .pcc_total_calc_item_price_row .component_block .component_price{
-	width:50px;
+	width:70px;
 }
 .pcc_total_calc_item_price_row .component_block .component_img{
 	width:40px;
