@@ -6,7 +6,7 @@
 <div class="pcc_total_calc_item_price_row">
     <div class="component_block">
         {if !isset($print)}	
-            <div class="component_check">
+            <div class="component_delete">
                 <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" componentTypeIndex="{$componentTypeIndex}" href="javascript:void(0);"></span>
             </div>
             <div class="component_img">

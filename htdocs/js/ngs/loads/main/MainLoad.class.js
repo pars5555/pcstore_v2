@@ -145,18 +145,15 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     		if(closest_li.hasClass("opened")){
 	    		closest_li.removeClass("opened");
 	    		closest_li.children("ul").slideUp(500);  
-	    		if(!jQuery(this).parents("li").hasClass("opened")){
-	    			jQuery("#mainLeftPanel a").removeClass("dark_bg");  	
+	    		if(!jQuery(this).parents("li").hasClass("opened")){ 	
 	    		}		
     		}
     		else{
     			if(!jQuery(this).parents("li").hasClass("opened")){
 	    			jQuery("#mainLeftPanel li").removeClass("opened");
-	    			jQuery("#mainLeftPanel li.dropdown ul").slideUp(500); 
-	    			jQuery("#mainLeftPanel a").addClass("dark_bg");  				
+	    			jQuery("#mainLeftPanel li.dropdown ul").slideUp(500); 			
     			}
 	    		closest_li.addClass("opened");
-	    		closest_li.find("a").removeClass("dark_bg");
 	    		closest_li.children("ul").slideDown(500);    			
     		}
     	});

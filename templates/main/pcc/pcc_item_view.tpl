@@ -16,7 +16,14 @@
 {/if}
 
 {*if ($item->getPccItemCompatible()==1)}#EEFFEE{else}#FFBBBB{/if*}
-<div class="{if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}select_count{/if}">
+<div class="{if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}select_count{/if} {if isset($item_is_selected)}checked_component{/if}">
+    {if isset($item_is_selected)}  
+	    <div class="component_delete">        	
+	          <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
+	          
+	          </span>
+	    </div>
+    {/if}	
     <a href="javascript:void(0);" {if isset($error_message)} class="f_current_item_block list-group-item current-item-block no-match"{else}class="f_current_item_block list-group-item current-item-block"{/if}>
         <label for="item_{$item->getId()}">
             {if isset($error_message)}
@@ -32,11 +39,6 @@
             <div class="component_block">
                 <div class="component_check">
                     {if !isset($ns.multiselect_component)}
-                        {if isset($item_is_selected)}              
-                            <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
-                                
-                            </span>
-                        {/if}	
                         <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
 
                     {else}	
@@ -87,7 +89,8 @@
         </label>  
     </a>                   	
     {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
-        <div class="select_wrapper select_wrapper_min pcc_select_wrapper">
+        <div class="pcc_select_wrapper">
+        <div class="select_wrapper select_wrapper_min">
             <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
                 {section name=spid start=1 loop=$max_count+1 step=1}
                     {assign var="index" value=$smarty.section.spid.index}		
@@ -99,6 +102,7 @@
                     </option>
                 {/section}
             </select>	
+        </div>
         </div>
     {/if}
 

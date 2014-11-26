@@ -140,6 +140,8 @@ body{
 }
 .select_wrapper.select_wrapper_min select{
     font-size: 15px;
+    min-height: 30px;
+    padding-top:5px;
 }
 
 .select_wrapper.select_wrapper_min select option{
@@ -655,9 +657,10 @@ label.input_label{
 /*============ Companies Filter and Search block ============*/
 
 .companies_container{
-	width:100%;
-	margin:auto;
-	max-width:1000px;
+	margin: auto;
+    max-width: 1500px;
+    padding: 0 25px;
+    width: calc(100% - 50px);
 }
 .show_com_price{
 	float:left;
@@ -727,17 +730,41 @@ label.input_label{
 /*Company Image*/
 .company-img a{
 	display:block;
+	margin: auto;
+    max-width: 120px;
 }
 .company-img a img{
 	width:100%;
 }
 /*Company Confirm*/
-.company_container .company_confirm,
+.company_container .company_confirm{
+    vertical-align: middle;	
+}
 .company_container .company_confirm .form-group {
     width: 250px;
+    margin: auto;
+    display:table;
 }
-.company_confirm a{
-	margin:auto;
+.company_confirm .text {
+    display: table-cell;
+    padding: 8px 14px;
+    vertical-align: middle;
+    border-bottom-right-radius:0;
+    border-top-right-radius:0;
+}
+.company_confirm a {
+    display: table-cell;
+    font-size: 20px;
+    margin: auto;
+    padding: 0;
+    vertical-align: middle;
+    width: 50px;
+    border-bottom-left-radius:0;
+    border-top-left-radius:0;
+}
+.company_confirm a .glyphicon{
+	display:inline-block;
+	vertical-align:middle;
 }
 .company_confirm .owl-carousel .owl-item span{
 	display:block;
@@ -862,7 +889,7 @@ label.input_label{
 .main-search-wrapper{
     margin:25px 0px;
     padding:0 30px;
-    max-width:1440px;
+    max-width:1920px;
     margin:auto;
 	border:1px solid transparent;
 }
@@ -1358,7 +1385,7 @@ BUILD PC PAGE
 }
 .build_pc_container{
 	width:calc(100% - 40px);
-	max-width:1440px;
+	max-width:1920px;
 	margin:auto;
 	padding:0 20px;
 }
@@ -1467,20 +1494,17 @@ BUILD PC PAGE
 .select_component_inner_container>div:hover{
 	box-shadow:0 0 7px #999;	
 }
-.select_component_inner_container .select_wrapper {
-    border: 1px solid #999;
-    margin: 10px auto;
-}
 .build-pc-wrapper .current-item-block {
 	display:block;
     position:relative;
 }
-
+.build-pc-wrapper .checked_component .current-item-block,
+.build-pc-wrapper .select_count .current-item-block{
+	display: table-cell;
+	width:100%;
+	vertical-align:middle;
+}
 .components-title {
-    /*overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 380px;*/
 }
 .components-title .company_name{
 	display:block;
@@ -1493,28 +1517,18 @@ BUILD PC PAGE
 }
 
 /*Not Available Product*/
-
-.build-pc-wrapper .current-item-block.no-match:before {
-	content:"";
-	display:block;
-	width:100%;
-	height:100%;
-	position:absolute;
-	top:0;
-	left:0;
-    background:url(../../img/not_available.png) no-repeat scroll 50% 50% / auto 77% rgba(0,0,0,0.5);
-}
 .build-pc-wrapper .current-item-block .no-match-wrapper{
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     border-radius: 5px;
     padding: 5px 10px;
     position: absolute;
-    right: 0;
+    left: 100px;
     top: 0;
     background-color:#fff;
     color:#cc0000;
     display:block;
     opacity:0;
+    height:calc(100% - 10px);
     
 	-webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
@@ -1559,22 +1573,26 @@ BUILD PC PAGE
 	color:#cc0000;
 	text-decoration:line-through;
 }
-.component_check .item-delete{
+.component_delete{
+	display:table-cell;
+	vertical-align: middle;
+	padding: 5px;
+	width:0;
+}
+.component_delete .item-delete{
     display:block;
     cursor: pointer;
     font-size: 18px;
     color: #cc0000;
-    margin-bottom: 10px;
 }
-.build-pc-wrapper .select_count .current-item-block{
+.build-pc-wrapper .select_count .pcc_select_wrapper{
 	vertical-align:middle;
-	display: inline-block;
-    width: calc(100% - 90px);
+	display: table-cell;
+	padding:5px;
 }
-.build-pc-wrapper .select_count .pcc_select_wrapper.select_wrapper.select_wrapper_min{
-	vertical-align:middle;
-	display: inline-block;
-	width:50px;
+.build-pc-wrapper .select_count .pcc_select_wrapper .select_wrapper {
+    border: 1px solid #999;
+	width:40px;
 }
 
 /* Your PC */
@@ -1594,7 +1612,7 @@ BUILD PC PAGE
 .pcc_total_calc_item_price_row .component_block .component_img img{
 	width:100%;
 }
-.pcc_total_calc_item_price_row .component_block .component_check .item-delete{
+.pcc_total_calc_item_price_row .component_block .item-delete{
 	display: inline-block;
     font-size: 15px;
     margin-bottom: 0;
@@ -1664,6 +1682,10 @@ BUILD PC PAGE
     padding: 10px 0;
     text-align: right;
 }
+.pcc_total_price .total_ph,
+.pcc_total_price .discount{
+	float:left;
+}
 .pcc_print_button{
 	float: right;
     width: 150px;
@@ -1709,7 +1731,7 @@ BUILD PC PAGE
  */
 .profile-wrapper {
     padding:25px;
-    max-width:1440px;
+    max-width:1920px;
     border:1px solid transparent;
     margin:auto;
 }

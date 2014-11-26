@@ -51,8 +51,6 @@
                     <div class="company_container">
                         <div class="company-info">
                             <h3 class="company-tittle">{$company->getName()}</h3>
-                            <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
-						
                             {if $passive != 1}
                                 <span> {assign var="rating" value=$company->getRating()}
                                     <div class="classification" title="{$rating}%">
@@ -61,7 +59,8 @@
                                     </div> 
                                 </span>
                             {/if}
-                            {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
+                            <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
+						   {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
                                 <div class="clear"></div>
                                 <div title="{$ns.lm->getPhrase(377)} {$company->getAccessKey()}"
                                      class="translatable_attribute_element" attribute_phrase_id="377" attribute_name_to_translate="title">
@@ -79,7 +78,7 @@
                                 <div class="form-group">
                                     <!-- <label class="input_label" for="dealerCode">Code</label> -->
                                     <input id="company_access_key_input_{$companyId}"  type="text" class="form-control text" placeholder="Code">
-                                    <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue button" company_id="{$companyId}">Confirm</a>
+                                    <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue button" company_id="{$companyId}"><span class="glyphicon"></span></a>
                                 </div>
                             {else}
                                 <div class="documents-slider">
@@ -183,7 +182,7 @@
                 <th>{$ns.lm->getPhrase(13)}</th>                     
             </tr>
         </thead>
-        <tbody style="line-height: 14px">
+        <tbody>
             {foreach from=$ns.allServiceCompanies item=company name=cl}
 
                 {assign var="companyId" value = $company->getId()}
