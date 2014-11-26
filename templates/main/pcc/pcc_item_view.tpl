@@ -30,21 +30,21 @@
                 </div>
             {/if}
             <div class="component_block">
-                    <div class="component_check">
-                {if !isset($ns.multiselect_component)}
-                    {if isset($item_is_selected)}              
-                        <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
-                        
-                        </span>
-                    {/if}	
-                   		<input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
+                <div class="component_check">
+                    {if !isset($ns.multiselect_component)}
+                        {if isset($item_is_selected)}              
+                            <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
+                                
+                            </span>
+                        {/if}	
+                        <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
 
-                {else}	
-                    {if !isset($component_limit_over) || isset($item_is_selected)}
-                        <input class="pull-left f_selectable_component" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="checkbox" {if isset($item_is_selected)}checked="checked"{/if}/>
+                    {else}	
+                        {if !isset($component_limit_over) || isset($item_is_selected)}
+                            <input class="pull-left f_selectable_component" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="checkbox" {if isset($item_is_selected)}checked="checked"{/if}/>
+                        {/if}
                     {/if}
-                   {/if}
-					</div>
+                </div>
 
                 <div class="component_img">
                     <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(),'60_60', 1 , true)}" />
@@ -69,40 +69,38 @@
                         {if $item->getIsDealerOfThisCompany()==1}
                             ${$item->getDealerPrice()|number_format:1}						
                         {else}						
+                            {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
                             <span class="old_price">
-                                {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
                                 {$price_in_amd|number_format} Դր.
                             </span>
-                            </br>						
-                            {if $item->getIsDealerOfThisCompany()!=1}					
-                                {math equation="1 - x/100" x=$ns.pc_configurator_discount assign="discountParam"}
-                                <span title="{$ns.pc_configurator_discount}% {$ns.lm->getPhrase(285)}" class="translatable_attribute_element" attribute_phrase_id="{$ns.pc_configurator_discount}% `285`" attribute_name_to_translate="title" >							
-                                    {$price_in_amd*$discountParam|number_format} Դր.
-                                </span>									
-                            {/if}
+                            </br>		
+                            {math equation="1 - x/100" x=$ns.pc_configurator_discount assign="discountParam"}                                
+                            <span title="{$ns.pc_configurator_discount}% {$ns.lm->getPhrase(285)}" >							
+                                {($price_in_amd*$discountParam)|number_format} Դր.
+                            </span>	
 
                         {/if} 
                     </p>
-                    
+
                 </div>
             </div>
         </label>  
     </a>                   	
-	    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
-	        <div class="select_wrapper select_wrapper_min pcc_select_wrapper">
-	        <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
-	            {section name=spid start=1 loop=$max_count+1 step=1}
-	                {assign var="index" value=$smarty.section.spid.index}		
-	                <option value="{$index}" 			
-	                        {if $selected_component_count == $index} 
-	                            selected="selected"
-	                        {/if}>
-	                    {$index}
-	                </option>
-	            {/section}
-	        </select>	
-	        </div>
-	    {/if}
+    {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
+        <div class="select_wrapper select_wrapper_min pcc_select_wrapper">
+            <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
+                {section name=spid start=1 loop=$max_count+1 step=1}
+                    {assign var="index" value=$smarty.section.spid.index}		
+                    <option value="{$index}" 			
+                            {if $selected_component_count == $index} 
+                                selected="selected"
+                            {/if}>
+                        {$index}
+                    </option>
+                {/section}
+            </select>	
+        </div>
+    {/if}
 
 
 
