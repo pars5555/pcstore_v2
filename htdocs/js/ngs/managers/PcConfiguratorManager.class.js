@@ -54,7 +54,7 @@ ngs.PcConfiguratorManager = {
         return selected_components_ids_array;
     },
     onComponentAfterLoad: function () {
-        
+
         var componentIndex = parseInt(jQuery('#pcc_select_component_inner_container').attr('component_index'));
 
         var thisInstance = this;
@@ -129,7 +129,7 @@ ngs.PcConfiguratorManager = {
     onComponentChanged: function (componentIndex, item_id) {
         if (item_id instanceof Array) {
             item_id = item_id.join(',');
-        }
+        }       
         this.selectedComponentsArray[componentIndex] = item_id;
 
         var params = this.getSelectedComponentsParam(componentIndex, item_id);
@@ -142,8 +142,10 @@ ngs.PcConfiguratorManager = {
         if (jQuery('#pcc_print_button').length > 0) {
             jQuery('#pcc_print_button').css({'visibility': 'hidden'});
         }
-        var loadName = this.getComponentLoadName(componentIndex);
-        ngs.load(loadName, params);
+        if (jQuery( ".f_component[component_index="+componentIndex+"]").hasClass('active')) {
+            var loadName = this.getComponentLoadName(componentIndex);
+            ngs.load(loadName, params);
+        }
         ngs.load('pcc_total_calculations', params);
         ngs.action('get_selected_and_require_components', params);
     },

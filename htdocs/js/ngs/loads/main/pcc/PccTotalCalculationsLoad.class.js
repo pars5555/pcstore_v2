@@ -53,14 +53,6 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
                     jQuery(this).remove();
                 }
             });
-
-            jQuery('#pcc_print_iframe').load(function () {
-                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/style.css" />');
-                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/skin.css" />');
-                jQuery("#pcc_print_iframe").contents().find('head').append('<link rel="stylesheet" type="text/css" href="css/main/fonts.css" />');
-                jQuery("#pcc_print_iframe").contents().find('head').append('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="UTF-8">');
-            });
-
         });
     }
 });
