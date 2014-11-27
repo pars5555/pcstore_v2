@@ -11,10 +11,12 @@ require_once (CLASSES_PATH . "/managers/search/ItemSearchManager.class.php");
 class PagingLoad extends BaseGuestLoad {
 
     public function load() {
-        if ($this->args["current_page_number"]) {
+        $current_page_number = 1;
+        if (isset($this->args["current_page_number"])) {
             $current_page_number = $this->args["current_page_number"];
         }
-        if ($this->args["total_items_count"]) {
+        $total_items_count = 0;
+        if (isset($this->args["total_items_count"])) {
             $total_items_count = $this->args["total_items_count"];
         }
         $item_search_limit_rows = $this->getCmsVar("item_search_limit_rows");

@@ -39,11 +39,11 @@
             <div class="component_block">
                 <div class="component_check">
                     {if !isset($ns.multiselect_component)}
-                        <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if}/>		
+                        <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if} autocomplete="off"/>		
 
                     {else}	
                         {if !isset($component_limit_over) || isset($item_is_selected)}
-                            <input class="pull-left f_selectable_component" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="checkbox" {if isset($item_is_selected)}checked="checked"{/if}/>
+                            <input class="pull-left f_selectable_component" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="checkbox" {if isset($item_is_selected)}checked="checked"{/if} autocomplete="off"/>
                         {/if}
                     {/if}
                 </div>

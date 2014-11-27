@@ -23,8 +23,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         ngs.action('ping_pong', {});
         ngs.nestLoad(jQuery('#contentLoad').val());
         this.notificationCustomScroll();
-        this.leftMenu();
-        this.sortBy();
+        this.leftMenu();        
         this.overlay();
     },
     notificationCustomScroll: function () {
@@ -164,11 +163,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 	    	}    		
     	});
     },
-    sortBy : function(){
-    	jQuery(".f_select_filter").on("change",function(event){
-    		window.location.href=jQuery(event.target).val();
-    	});
-    },
+   
     overlay : function(){
     	jQuery(".overlay").click(function(){
     		jQuery(this).parent().addClass("hide");

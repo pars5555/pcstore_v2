@@ -1,20 +1,25 @@
 ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
-    initialize: function($super, shortCut, ajaxLoader) {
+    initialize: function ($super, shortCut, ajaxLoader) {
         $super(shortCut, "main", ajaxLoader);
     },
-    getUrl: function() {
+    getUrl: function () {
         return "home";
     },
-    getMethod: function() {
+    getMethod: function () {
         return "POST";
     },
-    getContainer: function() {
+    getContainer: function () {
         return "content";
     },
-    getName: function() {
+    getName: function () {
         return "main_home";
     },
-    afterLoad: function() {
-    	
+    afterLoad: function () {
+        this.sortBy();
+    },
+    sortBy: function () {
+        jQuery(".f_select_filter, #selected_company_id").change(function () {
+            jQuery('#search_text_form').trigger('submit');
+        });
     }
 });
