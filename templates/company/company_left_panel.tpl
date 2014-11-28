@@ -9,13 +9,13 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="{$SITE_PATH}/cprofile">Dashboard </a>
+	                <a href="{$SITE_PATH}/cprofile"><span class="cat_name">Dashboard</span></a>
 	            </li>
 	            <li>
-	                <a href="{$SITE_PATH}/branches">Branches</a>
+	                <a href="{$SITE_PATH}/branches"><span class="cat_name">Branches</span></a>
 	            </li>
 	            <li>
-	                <a href="{$SITE_PATH}/smsconf">SMS Configuration</a>
+	                <a href="{$SITE_PATH}/smsconf"><span class="cat_name">SMS Configuration</span></a>
 	            </li>
 	        </ul>
         </div>

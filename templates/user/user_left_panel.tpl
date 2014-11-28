@@ -4,11 +4,15 @@
     		<h1>Profile Settings</h1>
         <ul class="sidebar-nav">
             <li>
-                <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
+                <a href="{$SITE_PATH}/uprofile">
+                	<span class="cat_name">{$ns.lm->getPhrase(94)}</span>
+                </a>
             </li>
             {if $ns.customer->getLoginType()=='pcstore'}
                 <li>
-                    <a href="{$SITE_PATH}/uchangepass">{$ns.lm->getPhrase(27)}</a>
+                    <a href="{$SITE_PATH}/uchangepass">
+                    	<span class="cat_name">{$ns.lm->getPhrase(27)}</span>
+                    </a>
                 </li>
             {/if}
         </ul>

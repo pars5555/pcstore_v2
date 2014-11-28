@@ -5,7 +5,6 @@
     <div  class="main-top-container container">
 
         <div class="search_block">
-            <div class="search_container">
                 <form role="search" action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get" >
 
                     <div class="filter_container">
@@ -41,16 +40,16 @@
                         <div class="clear"></div>
                     </div> 
 
-
+					<div class="search_container">
                     <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
                     <button type="submit" class="search_btn"></button>
                     {if isset($ns.req.cid)}
                         <input type="hidden" name="cid" value="{$ns.req.cid}"/>
-                    {/if}                    
+                    {/if} 
+                    </div>                   
 
                 </form>
                 <div class="clear"></div>
-            </div>
         </div> 
 
         <div class="clear"></div>

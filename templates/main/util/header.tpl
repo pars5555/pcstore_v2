@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a  href="{$SITE_PATH}" class="site_logo"> <img src="{$SITE_PATH}/img/logo_pcstore.png" alt=""> </a>
+            <a  href="{$SITE_PATH}" class="site_logo"> <img src="{$SITE_PATH}/img/pcstore_logo.png" alt=""> </a>
         </div>
         <nav id="navMenu" class="navMenu" role="navigation">
             <ul class="navMenuList">

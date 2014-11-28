@@ -90,6 +90,7 @@
 
 .left-panel ul li a .cat_name {
     padding: 10px;
+    display:block;
 }
 
 /*Checkbox categories*/
