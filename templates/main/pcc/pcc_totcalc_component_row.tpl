@@ -7,20 +7,20 @@
     <div class="component_block">
         {if !isset($print)}	
             <div class="component_delete">
-                <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" componentTypeIndex="{$componentTypeIndex}" href="javascript:void(0);"></span>
+                <span class="item-delete glyphicon f_deleteSelectedComponentBtn" componentTypeIndex="{$componentTypeIndex}" href="javascript:void(0);"></span>
             </div>
             <div class="component_img">
                 <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(),'60_60', 1 , true)}" />
             </div>
         {/if}
         <div class="component_info">
-            <span class="pcc_total_calc_item_price_row_item_title">{$item->getDisplayName()} </span>
+            <span class="pcc_total_calc_item_price_title">{$item->getDisplayName()} </span>
         </div>
         <div class="component_count">			
-            <span class="pcc_total_calc_item_price_row_item_count">{$count}x</span>
+            <span class="pcc_total_calc_item_price_count">{$count}x</span>
         </div>
         <div class="component_price">
-            <span class="pcc_total_calc_item_price_row_item_price real-price"> 
+            <span class="pcc_total_calc_item_price price"> 
                 {if $showDealerPrice == true}
                     {assign var="price" value=$item->getDealerPrice()}
                     ${$price*$count|number_format:1}

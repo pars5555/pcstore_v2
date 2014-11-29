@@ -15,7 +15,7 @@ ngs.CartLoad = Class.create(ngs.AbstractLoad, {
         return "main_cart";
     },
     afterLoad: function () {
-        this.componentsSliderInit();
+        // this.componentsSliderInit();
         this.componentsBlocksController();
     },
     componentsBlocksController: function () {

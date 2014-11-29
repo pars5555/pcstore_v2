@@ -1,9 +1,9 @@
 <div class="container build_pc_container">
     <div class="pc_components">
         <div id="itemSections" class="item-sections-wrapper">
-            <div id="mobileBtnComp" class="mobile-btn">
+            <!-- <div id="mobileBtnComp" class="mobile-btn">
                 <i class="glyphicon glyphicon-align-justify"></i>
-            </div>
+            </div> -->
             {section name=pid start=1 loop=$ns.pcc_components_count+1 step=1}
                 {assign var="index" value=$smarty.section.pid.index-1}  
                 <div class="current-section f_component" component_index="{$smarty.section.pid.index}">

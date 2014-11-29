@@ -54,10 +54,10 @@
                 <span class="text_blue"> ${$ns.total_usd|number_format:1} </span>
             {/if}
             {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-                <span class="text_green">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
+                <span class="text_blue">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
             {/if}
             {if $ns.total_amd==0 && $ns.total_usd==0}
-                <span class="text_green"> 0 Դր. </span>
+                <span class="text_blue"> 0 Դր. </span>
             {/if}
 <div class="clear"></div>
             {*   discounted price   *}
@@ -68,10 +68,10 @@
                     <span class="text_blue">${$ns.total_usd|number_format:1}</span>
                 {/if}
                 {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-                   <span class="text_green"> {$ns.grand_total_amd|number_format:0} Դր. </span>
+                   <span class="text_blue"> {$ns.grand_total_amd|number_format:0} Դր. </span>
                 {/if}
                 {if $ns.total_amd==0 && $ns.total_usd==0}
-                    <span class="text_green">0 Դր. </span>
+                    <span class="text_blue">0 Դր. </span>
                 {/if}
             {/if}
         </div>

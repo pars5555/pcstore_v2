@@ -17,13 +17,7 @@
 
 {*if ($item->getPccItemCompatible()==1)}#EEFFEE{else}#FFBBBB{/if*}
 <div class="{if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}select_count{/if} {if isset($item_is_selected)}checked_component{/if}">
-    {if isset($item_is_selected)}  
-	    <div class="component_delete">        	
-	          <span class="item-delete pull-right glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
-	          
-	          </span>
-	    </div>
-    {/if}	
+	
     <a href="javascript:void(0);" {if isset($error_message)} class="f_current_item_block list-group-item current-item-block no-match"{else}class="f_current_item_block list-group-item current-item-block"{/if}>
         <label for="item_{$item->getId()}">
             {if isset($error_message)}
@@ -58,7 +52,7 @@
                         {else}
                             {$item->getDisplayName()}
                         {/if}
-                        {if $item->getBrand()} <span> by {$item->getBrand()}</span> {/if}		
+                        {if $item->getBrand()} <span class="brand_name"> by {$item->getBrand()}</span> {/if}		
                         {if $item->getIsDealerOfThisCompany()==1}
                             <span class="company_name" title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}" > 
                                 {$ns.lm->getPhrase(66)}: <span>{$item->getCompanyName()} </span>
@@ -67,9 +61,9 @@
                     </p>
                 </div>
                 <div class="component_price">    
-                    <p class="real-price">
+                    <p class="price">
                         {if $item->getIsDealerOfThisCompany()==1}
-                            ${$item->getDealerPrice()|number_format:1}						
+                            <span>${$item->getDealerPrice()|number_format:1}</span>						
                         {else}						
                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
                             <span class="old_price">
@@ -105,7 +99,13 @@
         </div>
         </div>
     {/if}
-
+    {if isset($item_is_selected)}  
+	    <div class="component_delete">        	
+	          <span class="item-delete glyphicon f_deleteSelectedComponentBtn" href="javascript:void(0);"> 
+	          
+	          </span>
+	    </div>
+    {/if}
 
 
 </div>
