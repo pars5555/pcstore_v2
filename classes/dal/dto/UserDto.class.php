@@ -15,6 +15,7 @@ class UserDto extends AbstractDto {
         "sub_users_registration_code" => "subUsersRegistrationCode", "active" => "active", "activation_code" => "activationCode", "last_ping" => "lastPing",
         "hidden" => "hidden", "last_sms_validation_code" => "lastSmsValidationCode", "blocked" => "blocked", "login_type" => "loginType", "social_profile" => "socialProfile",
         "vip" => "vip", "enable_vip" => "enableVip", "language_code" => "languageCode", "sound_on" => "soundOn",
+        "cart_included_vat"=>"cartIncludedVat",
         //for left join to online_users table
         "online_status" => "onlineStatus"
     );

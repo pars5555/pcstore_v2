@@ -15,30 +15,19 @@ ngs.CartLoad = Class.create(ngs.AbstractLoad, {
         return "main_cart";
     },
     afterLoad: function () {
-        // this.componentsSliderInit();
         this.componentsBlocksController();
+        this.initChangeItemCount();
+    },
+    initChangeItemCount: function () {
+        jQuery('.cart_item_count').change(function () {
+            var locationUrl = jQuery('option:selected', this).attr('location_url');
+            window.location.href = locationUrl;
+        });
     },
     componentsBlocksController: function () {
         jQuery(".f_bundle_btn").click(function () {
             console.log(jQuery(this).siblings(".f_bundle_wrapper"))
             jQuery(this).siblings(".f_bundle_wrapper").stop(true, false).slideToggle();
-        });
-    },
-    componentsSliderInit: function () {
-        jQuery(".f_current_bundle_slider").owlCarousel({
-            itemsCustom: [
-                [0, 2],
-                [450, 4],
-                [600, 4],
-                [700, 4],
-                [1000, 4],
-                [1200, 4],
-                [1400, 4],
-                [1600, 4]
-            ],
-            navigation: true,
-            navigationText: false,
-            rewindNav: false
         });
     }
 });

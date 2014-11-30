@@ -46,11 +46,11 @@ abstract class AbstractRequest {
         $this->requestGroup = $requestGroup;
     }
 
-    public function secure($var) {
+    public function secure($var, $defaultValue = null) {
         if (isset($var)) {
             return trim(htmlspecialchars(strip_tags($var)));
         } else {
-            return null;
+            return $defaultValue;
         }
     }
 

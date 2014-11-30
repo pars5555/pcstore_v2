@@ -42,8 +42,7 @@ class CartLoad extends BaseUserCompanyLoad {
         $customerCartChangesMessages = $checkoutManager->getCustomerCartChangesMessages($cartChanges);
 
         //all cart items, bundle items grouped in sub array
-        $includeVat = isset($_REQUEST['include_vat']) ? 1 : 0;
-
+        $includeVat = intval($customer->getCartIncludedVat());
 
         if (!empty($_REQUEST['promo_codes'])) {
             $promoCodes = $this->secure($_REQUEST['promo_codes']);
@@ -83,8 +82,6 @@ class CartLoad extends BaseUserCompanyLoad {
         $this->addParam('grandTotalAMD', $grandTotalAMD);
         $this->addParam('grandTotalUSD', $grandTotalUSD);
         $this->addParam('maxItemCartCount', intval($this->getCmsVar('max_item_cart_count')));
-        $this->addParam('req_params', $_REQUEST);
-        $this->addParam('include_vat', $includeVat);
     }
 
     public function getTemplate() {
