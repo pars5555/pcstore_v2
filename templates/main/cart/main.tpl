@@ -1,6 +1,6 @@
 <div class="container cart-wrapper">
     {if isset($ns.customerMessages)}
-        <h1 class="cart_title">The current Products are not available</h1>
+        <h1 class="title">The current Products are not available</h1>
         <ul class="list-customer-message">
             {foreach from=$ns.customerMessages item=customerMessage}
                 <li>
@@ -12,34 +12,43 @@
     {if $ns.emptyCart == true}
         <h1>{$ns.lm->getPhrase(296)}</h1>		
     {else}   
-        <h1 class="cart_title">Shopping Cart Summary</h1>
+        <h1 class="title">Shopping Cart Summary</h1>
         {foreach from=$ns.cartItems item=cartItem}
             {if is_array($cartItem)}
+            <div class="cart-item bundle-cart-item">
                 {include file="$TEMPLATE_DIR/main/cart/cart_bundle_item.tpl" bundleItems=$cartItem}
+                </div>
             {else}
+            <div class="cart-item">
                 {include file="$TEMPLATE_DIR/main/cart/cart_item.tpl" cartItem=$cartItem}
+                </div>
             {/if}
         {/foreach}
     {/if}
 </div>
-
+<div class="cart_checkout">
 {if !$ns.emptyCart}
+<div class="vat">
     <a href="{$SITE_PATH}/dyn/main/do_set_customer_cart_included_vat?include_vat={if $ns.customer->getCartIncludedVat()==1}0{else}1{/if}" >
         {if $ns.customer->getCartIncludedVat()==1}Exclude Vat{else}Include Vat{/if}
     </a>
-    {$ns.lm->getPhrase(565)}
-    {$ns.lm->getPhrase(262)}
+    <span>{$ns.lm->getPhrase(565)}</span>
+<div class="clear"></div>
+</div>
+<div class="cart_total">
+    <span class="total_ph">{$ns.lm->getPhrase(262)}</span>
     {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
-        ${$ns.grandTotalUSD|number_format:1}
+        <span class="price">${$ns.grandTotalUSD|number_format:1}</span>
     {/if}
     {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
         {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
             {$ns.lm->getPhrase(270)}
         {/if}
-        {$ns.grandTotalAMD|number_format:0} Դր.
+        <span class="price">{$ns.grandTotalAMD|number_format:0} Դր.</span>
     {/if}
 {/if}
-
+<div class="clear"></div>
+</div>
 {if $ns.emptyCart}
     {assign var="nextButtonTitlePhraseId" value="296"}
 {else}
@@ -57,7 +66,9 @@
 {else}
     {assign var="disableButton" value=0}
 {/if}
-<button {if $disableButton == 1}disabled{/if}>checkout</button>
+<button class="button blue" {if $disableButton == 1}disabled{/if}>checkout</button>
 {if isset($nextButtonTitlePhraseId)}
     {$ns.lm->getPhrase($nextButtonTitlePhraseId)}
 {/if}
+</div>
+<div class="clear"></div>

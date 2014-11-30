@@ -55,6 +55,13 @@ body{
 .clear{
 	clear:both;
 }
+.title{
+	text-align:center;
+	margin-bottom:70px;
+	font-size: 40px;
+    font-weight: 500;
+    color:#444;
+}
 .control-group.inline-option {
     display: table;
     margin:20px 0px;
@@ -1035,13 +1042,6 @@ SMS CONF COMPANY
     border-radius: 4px;
 }
 
-.cart_title{
-	text-align:center;
-	margin-bottom:50px;
-	font-size:40px;
-	font-weight:500;
-}
-
 /*======= Cart Item =======*/
 
 .cart-wrapper .cart-item{
@@ -1055,11 +1055,29 @@ SMS CONF COMPANY
 .bundle {
     position:relative;
     margin-bottom: 10px;
+	text-align:center;
 }
 .bundle .bundle-components-wrapper{
     display: none;
     margin:20px 15%;
     width:70%;
+    border-bottom: 1px solid #ccc;
+}
+.bundle_components_table{
+	display:table;
+	width:100%;
+}
+.bundle_components_table .component_block{
+	display:table-row;
+}
+.bundle_components_table .component_block .component_count{
+	color:#555;
+	font-weight:600;
+	text-decoration:underline;	
+}
+.bundle_components_table .component_block .component_img .glyphicon.build_pcc_fee{
+	font-size:30px;
+	color:#3278b3;	
 }
 .bundle .bundle-components-wrapper.open{
     display:block;
@@ -1070,13 +1088,119 @@ SMS CONF COMPANY
     position: absolute;
     top: 35px;
 }
-.bundle{
-	text-align:center;
-}
 .component_edit.button.blue,
 .see_more.button.blue{
 	display:inline-block;
 }
+
+/* Cart Checkout */
+
+.cart_checkout{
+	float:right;
+	width:100%;
+	max-width:500px;
+	margin-top: 50px;
+}
+.cart_checkout .vat,
+.cart_checkout .cart_total{
+	margin-bottom:10px;
+	padding:10px;
+	border-bottom:1px solid #ccc;
+}
+.cart_checkout .vat a{
+	float:left;
+	font-size: 18px;
+    font-weight: 600;
+	color:#555;
+}
+.cart_checkout .vat span{
+	float:right;	
+}
+.cart_checkout .cart_total .total_ph{
+	float:left;
+	font-size: 18px;
+    font-weight: 600;
+	color:#555;
+}
+.cart_checkout .cart_total .price{
+	float:right;	
+}
+.cart_checkout .button.blue{
+	float:right;
+    font-size: 17px;
+    padding: 10px 0;
+    width: 150px;
+}
+
+/*******
+
+ ORDERS PAGE
+
+*******/
+
+/*=======Orders Header=======*/
+.orders_main_header{
+	display:table;
+	width:100%;
+	margin-bottom:20px;
+}
+.orders_main_header>div{
+	width:25%;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	font-size:20px;
+	font-weight:600;
+	color:#555;
+}
+
+/*======= Order Main Block =======*/
+
+.order_main_block{	
+    border-top:1px solid #ccc;
+    position: relative;
+    padding:15px;
+}
+.order_main_block .button.blue{
+	margin:auto;
+}
+/*Order Info*/
+.order_info{
+	display:table;
+	width:100%;
+}
+.order_info>div{
+	width:25%;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	padding: 0 20px;
+}
+/*Order Header*/
+.order_header{
+	display:table;
+	width:100%;
+}
+.order_header>div{
+	width:25%;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	padding: 0 20px;
+}
+/*Order Item*/
+.order_item_block{
+	display:table;
+	width:100%;
+}
+.order_item_block>div{
+	width:25%;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	padding: 0 20px;
+}
+
 /*******
 
  PROFILE HEADER
@@ -1585,7 +1709,6 @@ BUILD PC PAGE
 .discount{
 	color:#555;
 	font-weight:600;
-	text-decoration:underline;	
 }
 .component_delete{
 	display:table-cell;

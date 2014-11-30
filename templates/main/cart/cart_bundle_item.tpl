@@ -1,5 +1,4 @@
-<div class="cart-item bundle-cart-item" id="cart_bundle_container^{$bundleItems.0->getId()}" >
-    <div class="component_block">
+<div class="component_block" id="cart_bundle_container^{$bundleItems.0->getId()}" >
 
 
         {assign var="bundlePrice" value=$ns.bundleItemsManager->calcBundlePriceForCustomerWithoutDiscount($bundleItems, $ns.userLevel)}
@@ -106,7 +105,8 @@
         <div class="component_delete">
             <a  href="{$SITE_PATH}/dyn/main/do_delete_cart_item?id={$bundleItems.0->getId()}"> <span class="item-delete glyphicon"></span> </a>
         </div>
-    </div>
+</div>
+
 
     <!-- =======================Computer Bundle Details==================== -->
 
@@ -114,11 +114,11 @@
         <a href="javascript:void(0)" class="f_bundle_btn see_more button blue">See Components</a>
         <a class="component_edit button blue" href="{$SITE_PATH}/buildpc/{$bundleItems.0->getId()}">{$ns.lm->getPhrase(288)}...</a>
         <div class="f_bundle_wrapper bundle-components-wrapper" id="cart_bundle_items_container_{$bundleItems.0->getId()}">
+            <div class="bundle_components_table">
             {assign var="bundle_items" value = "true"}
             {foreach from=$bundleItems item=cartItem}
                 {include file="$TEMPLATE_DIR/main/cart/cart_item.tpl" cartItem=$cartItem bundle="true"}
             {/foreach}
+            </div>
         </div>
     </div>
-</div>
-

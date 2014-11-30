@@ -1,7 +1,5 @@
-<div class="cart-item" style="{if $ns.customer->getCartIncludedVat()==1 && $cartItem->getCustomerVatItemPrice()==0 && $cartItem->getItemId()>0}color:red{/if}">
+<div class="component_block" style="{if $ns.customer->getCartIncludedVat()==1 && $cartItem->getCustomerVatItemPrice()==0 && $cartItem->getItemId()>0}color:red{/if}">
     <!-- ===============================Component Block================================= -->
-    {block name="component_block"}
-        <div class="component_block">
             {math equation="1 - x/100" x=$cartItem->getDiscount() assign="discountParam"}
             <!-- ==============Component image============== -->
 
@@ -20,6 +18,9 @@
                         <img src="{$ns.itemManager->getItemImageURL($itemId,$cartItem->getItemCategoriesIds(), '60_60', 1 , true)}"/>
                     {/if}
                 {/if}
+                {if $cartItem->getSpecialFeeId() > 0}
+                <span class="glyphicon build_pcc_fee"></span>
+                {/if}
             </div>
 
             <!-- ==============Component Information============== -->
@@ -27,7 +28,7 @@
             <div class="component_info"  style="{if $cartItem->getItemAvailable() == 0 && $cartItem->getSpecialFeeId() == 0}color:red;{/if}">
                 <span> {if $cartItem->getSpecialFeeId() > 0}
                     {assign var="spec_fee_desc_id" value = $cartItem->getSpecialFeeDescriptionTextId()}
-                    {$ns.lm->getPhrase($spec_fee_desc_id)}
+                    <span class="text_blue bold">{$ns.lm->getPhrase($spec_fee_desc_id)}</span>
                     {else}
                         {if $cartItem->getItemAvailable() == 1}
                             {$cartItem->getItemDisplayName()}
@@ -46,7 +47,9 @@
 
                     {if $cartItem->getItemAvailable() == 1}
                         {if isset($bundle)}
-                            <span class="component_count">{$cartItem->getBundleItemCount()}x</span>
+                        <div class="component_count">
+                            <span>{$cartItem->getBundleItemCount()}x</span>
+                        </div>
                         {else}
                             <div >
                                 <div class="select_wrapper">
@@ -202,6 +205,4 @@
                             <a  href="{$SITE_PATH}/dyn/main/do_delete_cart_item?id={$cartItem->getId()}"> <span class="item-delete glyphicon"></span> </a>
                         </div>
                     {/if}
-                </div>
-                {/block}
-                </div>
+   </div>

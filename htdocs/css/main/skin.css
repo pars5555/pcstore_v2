@@ -53,3 +53,9 @@
 .text_green{
 	color:#508B01;
 }
+.bold{
+	font-weight:600;
+}
+.text-center{
+	text-align:center;
+}
