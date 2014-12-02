@@ -212,7 +212,7 @@
                         <div class="company-info">
                                 <!-- <span class="company-num">{$smarty.foreach.cl.index+1}</span> -->
                             <h3 class="company-tittle">{$company->getName()}</h3>
-                            <a href="javascript:void(0);" class="service_company_gmap_pin" service_company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin_blue.png" width=20 alt="logo"/></a>
+                            <a href="javascript:void(0);" class="service_company_gmap_pin" service_company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin_blue.png" alt="logo"/></a>
                         </div>
                         <div class="company-img">
                             {assign var="url" value=$company->getUrl()}

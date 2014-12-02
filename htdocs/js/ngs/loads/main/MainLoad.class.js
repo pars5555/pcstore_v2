@@ -86,7 +86,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         		jQuery(this).addClass("active");
         	}
         	jQuery("body").click(function(event){
-        		if(!jQuery(event.target).hasClass("dropdown-menu") && !jQuery(event.target).hasClass("dropdown-toggle") || jQuery(event.target).parents("#navMenu").length==0){
+        		if(!jQuery(event.target).hasClass("dropdown-menu") && !jQuery(event.target).hasClass("dropdown-toggle") || jQuery(event.target).parents("#navMenu").length<1){
         			jQuery("#navMenu .dropdown-menu").slideUp(500);
         			jQuery("#navMenu .dropdown-toggle").removeClass("active");
         		}

@@ -92,18 +92,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="rel-block">
-                        <a class="f_drop_down_btn" href="javascript:void(0)"> <i class="glyphicon glyphicon-search"></i> </a>
-                        <div style="display:none;" class="f_drop_down_menu search-wrapper-pop-up-menu">
-                            <div class="top-arrow"></div>
-                            <div class="input-group">
+                    <li class="rel-block dropdown">
+                        <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
+                        <div class="dropdown-menu search_block">
+                        	<div class="top-arrow"></div>
+                            <div class="input-group search_container">
                                 <form method="GET" action="{$SITE_PATH}" autocomplete="off">
-                                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="form-control">
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="glyphicon  glyphicon-search"></i>
+                                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
+                                        <button type="submit" class="search_btn">
+                                            <span class="glyphicon"></span>
                                         </button>
-                                    </div>
                                 </form>
                             </div>
                         </div>

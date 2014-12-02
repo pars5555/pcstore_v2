@@ -710,7 +710,7 @@ label.input_label{
     transition: all 500ms ease;
 }
 .company_filter .company_tab_btn.active {
-    background-color: #428bca;
+    background-color: #3498DB;
     color: #fff;
 }
 
@@ -747,7 +747,7 @@ label.input_label{
 .company_container>div{
 	display:table-cell;
 	vertical-align:top;
-    padding:0 10px;
+    padding:0 10px 10px;
     width:20%;
     text-align:left;
 }
@@ -802,6 +802,14 @@ label.input_label{
 /*Company Telefon*/
 .company_container .company-tel{
 	
+}
+
+.service_company_gmap_pin{
+	margin-top:10px;
+	display:inline-block;
+}
+.service_company_gmap_pin img{
+	width:25px;
 }
 
 /*******
@@ -1206,21 +1214,30 @@ SMS CONF COMPANY
  PROFILE HEADER
 
 *******/
-.rel-block {
+.navbar .navMenu .navMenuList li.dropdown.rel-block a.dropdown-toggle{
+	font-size:17px;
+	color:#3498DB;
+}
+.navbar .navMenu .navMenuList li.dropdown.rel-block a.dropdown-toggle:before{
+	display:none;
+}
+.navbar .navMenu .navMenuList li.rel-block.dropdown {
     position:relative;
 }
-.rel-block .search-wrapper-pop-up-menu{
-    display: block;
-    padding: 15px;
-    background-color:#e2e2e2;
+.rel-block .dropdown-menu{
+    display: none;
+    padding: 5px;
+    background-color:#C6C6C6;
     border-radius: 5px;
     position: absolute;
-    right: -40px;
-    top: 50px;
+    right: -33px;
+    top: 70px;
     width: 380px;
+    margin:auto;
+    z-index:1000;
 }
-.rel-block .search-wrapper-pop-up-menu .top-arrow{
-    border-bottom: 15px solid #e2e2e2;
+.rel-block .dropdown-menu .top-arrow{
+    border-bottom: 15px solid #C6C6C6;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     height: 0;
@@ -1229,6 +1246,15 @@ SMS CONF COMPANY
     top: -15px;
     width: 0;
 }
+.rel-block .dropdown-menu .search_container .search_text{
+	padding: 10px 15px;
+}
+.rel-block .dropdown-menu .search_container .search_btn{
+	background-color:#3498DB;
+	color:#fff;
+	font-size: 20px;
+}
+
 .header-wrapper {
     width:100%;
     position: fixed;
