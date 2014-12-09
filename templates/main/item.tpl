@@ -14,13 +14,13 @@
     {/if}
 
     {if $ns.item}
-        <h2>{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h2>      
+        <h1>{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
     {/if}
     <div class="container-fluid">
-        <div class="col-md-5">
+        <div class="product-img">
             <img src="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '400_400', 1)}" /> 
         </div>
-        <div class="col-md-7">
+        <div class="product-info">
             <h2>{$ns.item->getDisplayName()}{if $ns.item->getBrand()} by {$ns.item->getBrand()}{/if}</h2>
             {if $ns.item}
                 <div class="current-product-price-list">
@@ -29,7 +29,7 @@
                     {/if}
 
                     {if $ns.item->getWarranty()>0 || $ns.item->getWarranty()=='lifetime'}
-                    <p>{$ns.lm->getPhrase(82)}:{$ns.item->getWarranty()} {if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</p>
+                    <span>{$ns.lm->getPhrase(82)}:{$ns.item->getWarranty()} {if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</span>
                     {/if}
 
                     {if $ns.item->getVatPrice()>0} 
@@ -38,64 +38,64 @@
 
                     {if $ns.item->getIsDealerOfThisCompany()==1 && $show_dealer_price == 1}
                         {if $ns.item->getDealerPriceAmd()>0}
-                            {$ns.item->getDealerPriceAmd()|number_format} Դր.
+                            <span>{$ns.item->getDealerPriceAmd()|number_format} Դր.</span>
                         {else}
-                            ${$ns.item->getDealerPrice()|number_format:1}
+                            <span>${$ns.item->getDealerPrice()|number_format:1}</span>
                         {/if}
                     {else}
                         {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerItemPrice())}                        
-                        <p>List price: {$ns.item->getListPriceAmd()} Դր.</p>
-                        <p>{$ns.lm->getPhrase(88)}:{$price_in_amd|number_format} Դր.</p>
+                        <p><span>List price:</span> <span>{$ns.item->getListPriceAmd()} Դր.</span></p>
+                        <p><span>{$ns.lm->getPhrase(88)}:</span> <span>{$price_in_amd|number_format} Դր.</span></p>
                         <p>{math equation="100-x*100/y" x=$price_in_amd y=$ns.item->getListPriceAmd() assign="list_price_discount"}
-                            you save: {$ns.item->getListPriceAmd()-$price_in_amd|number_format} ({$list_price_discount|number_format}%)</p>                        
+                            <span>you save:</span> <span>{$ns.item->getListPriceAmd()-$price_in_amd|number_format} ({$list_price_discount|number_format}%)</span></p>                        
                         {/if} 
                         {if isset($showvatprice)}
-                        VAT price: 
+                        <p><span>VAT price:</span>
                         {if $ns.item->getIsDealerOfThisCompany()==1 && $show_dealer_price == 1}
                             {if $ns.item->getVatPriceAmd()>0}
-                                ({$ns.item->getVatPriceAmd()|number_format} Դր.)
+                                <span>({$ns.item->getVatPriceAmd()|number_format} Դր.)</span>
                             {else}
-                                (${$ns.item->getVatPrice()|number_format:1})
+                                <span>(${$ns.item->getVatPrice()|number_format:1})</span>
                             {/if}	
                         {else}
                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerVatItemPrice())}
-                            ({$price_in_amd|number_format} Դր.)
+                            <span>({$price_in_amd|number_format} Դր.)</span>
                         {/if}	
+                        </p> 
                     {/if}
                     {if $ns.item->getIsDealerOfThisCompany()}
-                        {$ns.lm->getPhrase(66)}:
+                        <span>{$ns.lm->getPhrase(66)}:</span>
                     {/if}
                 </div>
+                <div class="product_other_info">
                 {if ($ns.userLevel!=$ns.userGroupsGuest)}
                     {if $smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate()}
                         {if $ns.item->getIsCompanyOnline()}
-                            {$ns.lm->getPhrase(86)}
-                            <br/>{$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}
+                            <p>{$ns.lm->getPhrase(86)}</p>
+                            <p>$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
                         {else}
-                            </br>{$ns.lm->getPhrase(525)}   {$ns.lm->getCmsVar('pcstore_sales_phone_number')}
+                            <p>{$ns.lm->getPhrase(525)}   {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
                         {/if}
                     {else}
-                        {$ns.lm->getPhrase(83)}
+                        <p>{$ns.lm->getPhrase(83)}</p>
                         {if $new_item == true}
-                            <br/>
-                            {$ns.lm->getPhrase(559)}
+                            <p>{$ns.lm->getPhrase(559)}</p>
                         {else}
-                            {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}
-                                <br/>
-                                {$ns.lm->getPhrase(453)}: {$ns.item->getUpdatedDate()|date_format:"%d/%m/%Y"}
+                            {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}p
+                                <p>{$ns.lm->getPhrase(453)}: {$ns.item->getUpdatedDate()|date_format:"%d/%m/%Y"}</p>
                             {/if}
                         {/if}
                     {/if}
                 {/if}
-
+				</div>
                 {if ($ns.userLevel!==$ns.userGroupsGuest)}
                     {if !($smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate())}
                         {if $ns.userLevel==$ns.userGroupsUser && !$ns.item->getIsDealerOfThisCompany()}
-                            {$ns.lm->getPhrase(284)}
+                            <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="button blue" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
                         {/if}
                     {/if}
                 {else}
-                    <a class="btn btn-default btn-primary center-block f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
+                    <a class="button blue f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
                 {/if}
             </div>
         </div>

@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="button-wrapper">
                                     {if $ns.userLevel === $ns.userGroupsGuest}  
-                                        <a data-toggle="modal" data-target="#myModal" href="#" class='blue button'>{$ns.lm->getPhrase(85)}</a>
+                                        <a class="button blue f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
                                     {else}
                                         {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate())}			
                                             {if $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
