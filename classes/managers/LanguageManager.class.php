@@ -15,7 +15,6 @@ class LanguageManager extends AbstractManager {
     /**
      * @var app config
      */
-    private $config;
     private $allPhrases;
     private $allPhrasesDtosMappedById;
     private $allPhrasesDtosMappedByPhraseEn;
@@ -77,16 +76,19 @@ class LanguageManager extends AbstractManager {
                 $pid = $this->getPhraseFormulaFirstPhraseId($ret);
             }
         } else {
-            $ret = $this->allPhrases[$phraseFormula][$lc];
+            if (array_key_exists($phraseFormula, $this->allPhrases)) {
+                $ret = $this->allPhrases[$phraseFormula][$lc];
+            } else {
+                $ret = null;
+            }
         }
         switch ($transform) {
             case 1:
-                return mb_strtolower($ret);
+                return isset($ret)?mb_strtolower($ret):null;
             case 2:
-                return mb_strtoupper($ret);
+                return isset($ret)?mb_strtoupper($ret):null;
             case 3:
-                return $this->mb_ucfirst($ret);
-                break;
+                return isset($ret)?$this->mb_ucfirst($ret):null;
             default:
                 return $ret;
         }

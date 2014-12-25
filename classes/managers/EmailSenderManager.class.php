@@ -142,12 +142,15 @@ class EmailSenderManager extends AbstractManager {
                 }
             }
         }
+        $rowId = $this->sentEmailsManager->addRow($emailAccountDto->getLogin(), implode(',', $recipients), $subject, $body);
         try {
             $this->mail->Send();
+            $this->sentEmailsManager->updateRowLogById($rowId, 'Email succussfully sent!');
             return true;
         } catch (Exception $e) {
+            $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage());
             return false;
-        }
+        }        
     }
 
     public function sendEmail($fromId, $recipients, $subject, $templateIdOrHtml, $params = array(), $fromEmail = '', $fromName = '', $log = true, $singleTo = false) {

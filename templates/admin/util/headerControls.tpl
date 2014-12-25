@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- NGS Theme Styles -->
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/jquery/jquery-ui.css?{$VERSION}" />
