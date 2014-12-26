@@ -1,64 +1,5 @@
 <div class="main-search-wrapper">
 
-    <!--========================== Top Container ===============================-->
-
-    <div  class="main-top-container container">
-
-        <div class="search_block">
-                <form role="search" action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get" >
-
-                    <div class="filter_container">
-                        <h3>Filter</h3> 
-                        <div class="form-group">
-                            <label>
-                                Sort By:
-                            </label>
-                            <div class="select_wrapper">
-                                <select class="f_select_filter" name="s">                                    
-                                    {foreach from=$ns.sort_by_values item=value key=key}
-                                        <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
-                                    {/foreach}
-                                </select>
-                            </div>
-                        </div>
-                        {if ($ns.companiesIds|@count > 1)}          
-                            <div class="form-group">                        
-                                <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
-                                <div class="select_wrapper">
-                                    <select class="form-control" name='sci' id='selected_company_id'>
-                                        {foreach from=$ns.companiesIds item=value key=key}
-                                            {if ($key == 0)}
-                                                <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
-                                            {else}
-                                                <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
-                                            {/if}
-                                        {/foreach}
-                                    </select>
-                                </div>
-                            </div>
-                        {/if}               
-                        <div class="clear"></div>
-                    </div> 
-
-					<div class="search_container">
-                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
-                    <button type="submit" class="search_btn"></button>
-                    {if isset($ns.req.cid)}
-                        <input type="hidden" name="cid" value="{$ns.req.cid}"/>
-                    {/if} 
-                    </div>                   
-
-                </form>
-                <div class="clear"></div>
-        </div> 
-
-        <div class="clear"></div>
-        {nest ns=paging}
-        <div class="clear"></div>
-    </div>
-
-
-
     <!--========================== Product Container ===============================-->
 
     <div class="products-wrapper">
@@ -102,6 +43,58 @@
                 {/if}
             </div>
         </div>
+<div class="right-content">
+	
+    <!--========================== Top Container ===============================-->
+
+    <div  class="main-top-container container">
+
+                <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
+                	<input type="search" />
+                </form>
+        <div class="search_block">
+
+                    <div class="filter_container">
+                        <h3>Filter</h3> 
+                        <div class="form-group">
+                            <label>
+                                Sort By:
+                            </label>
+                            <div class="select_wrapper">
+                                <select class="f_select_filter" name="s">                                    
+                                    {foreach from=$ns.sort_by_values item=value key=key}
+                                        <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        {if ($ns.companiesIds|@count > 1)}          
+                            <div class="form-group">                        
+                                <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
+                                <div class="select_wrapper">
+                                    <select class="form-control" name='sci' id='selected_company_id'>
+                                        {foreach from=$ns.companiesIds item=value key=key}
+                                            {if ($key == 0)}
+                                                <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
+                                            {else}
+                                                <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
+                                            {/if}
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        {/if}               
+                        <div class="clear"></div>
+                    </div>           
+
+                <div class="clear"></div>
+        </div> 
+
+        <div class="clear"></div>
+        {nest ns=paging}
+        <div class="clear"></div>
+    </div>
+
 
 
         <!-- ========================================= Product Wrapper =========================================== -->
@@ -125,7 +118,7 @@
                         <div class="product-wrapper">
                             <div class="product_inner">
                                 <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
-                                    <h4>{$item->getDisplayName()}<span>{if !empty($brand)} by {$brand}{/if}</span> </h4>
+                                    <h4>{$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p> </h4>
                                 </a>
                                 <div class="product-img ">
                                     <a class="" href="{$SITE_PATH}/item/{$item->getId()}">
@@ -197,6 +190,7 @@
                     {/if}
                     {if $smarty.foreach.product_row.last} </div> {/if}
                 {/foreach}
+                </div>
         </div>
         {nest ns=paging}
     {else}

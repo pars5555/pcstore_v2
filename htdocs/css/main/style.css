@@ -239,17 +239,31 @@ label.input_label{
 
 *******/
 
+.header_content{
+	clear:both;
+	display:table;
+	width:100%;
+}
+.site_logo{
+	display:table-cell;
+	vertical-align:middle;
+	width:160px;
+}
 .site_logo img{
 	width:160px;
 }
+.header_content .search_block{
+	display:table-cell;
+	vertical-align:middle;
+}
 
+/*======= Navigation Bar Header =======*/
 .navbar .container {
 	max-width:1200px;
 	width:calc(100% - 50px);
 	padding:0 25px;
 	margin:auto;
 }
-/*======= Navigation Bar Header =======*/
 .navbar .navbar-header{
 	float:left;
 	margin-top:5px;
@@ -266,7 +280,9 @@ label.input_label{
 .navbar .navMenu .navMenuList>li{
 	float:left;
 }
-
+.navbar .navMenu .navMenuList>li.clear{
+	float:none;
+}
 .navbar .navMenu .navMenuList>li>a{
 	display:block;
 	color:#777;
@@ -525,7 +541,7 @@ label.input_label{
     /*background:linear-gradient(#556270,#404D5B, #556270);
     border-bottom:5px solid #3399ff;
     box-shadow:0 0 15px 3px #3399ff;*/
-    background:linear-gradient(#3b3b3b,#222222);
+    /*background:linear-gradient(#3b3b3b,#222222);*/
     height:90px;
 }
 .hot-products-wrapper {
@@ -948,12 +964,12 @@ label.input_label{
 .search_block .search_container .search_text{
 	width:calc(100% - 32px);
 	display:block;
-	padding:5px 15px;
-    border: 1px solid #ccc;
+	padding:10px 20px;
+    border: 3px solid #ccc;
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
     transition:all 0.5s ease;
-    font-size:15px;
+    font-size:17px;
 }
 
 .search_block .search_container .search_text:focus{
@@ -963,19 +979,17 @@ label.input_label{
 
 
 .search_block .search_container .search_btn{
-	background-color:#fff;
+    background-color: #3498db;
     height: 100%;
     position: absolute;
     right: 0;
     top: 0;
     width: 40px;
-    border: 1px solid #ccc;
-    border-left-color:transparent;
     font-family:"glyphicons-halflings";
-    font-size:15px;
+    font-size: 20px;
+    color: #fff;
     cursor:pointer;
-    border-top-right-radius:5px;
-    border-bottom-right-radius:5px;
+    border-radius:0 5px 5px 0;
     transition:all 0.5s ease;
 }
 .search_block .search_container .search_btn:hover{

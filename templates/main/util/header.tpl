@@ -1,13 +1,5 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="{$SITE_PATH}" class="site_logo"> <img src="{$SITE_PATH}/img/pcstore_logo.png" alt=""> </a>
-        </div>
         <nav id="navMenu" class="navMenu" role="navigation">
             <ul class="navMenuList">
                 {if $ns.contentLoad != "main_buildpc"}
@@ -91,7 +83,9 @@
                                 <a id="mainLogoutBtn" href="{$SITE_PATH}/dyn/main/do_logout">{$ns.lm->getPhrase(65)}</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>                    
+                    
+                    {*}
                     <li class="rel-block dropdown">
                         <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
                         <div class="dropdown-menu search_block">
@@ -106,14 +100,14 @@
                             </div>
                         </div>
                     </li>
-                    <li class="notification" style="position:relative;display: none">
+                    <li class="notification" style="position:relative;">
                         <a id="notificationBtn" class="f_drop_down_btn" href="javascript:void(0);">
                             <i style="margin-left:5px;" class="glyphicon glyphicon-bell"></i> 
                         </a>
                         <ul style="display: none; position: absolute;" id="notificationListWrapper" class="f_drop_down_menu nofitication-list-wrapper"></ul>
                     </li>
 
-                    <li id="notificationRowTemplate" class="current-notif-wrapper container-fluid" style="display: none">
+                    <li id="notificationRowTemplate" class="current-notif-wrapper container-fluid">
                         <a href="{$SITE_PATH}/%url%">
                             <div class="col-md-10">
                                 <div class="current-notif-desc">
@@ -124,10 +118,32 @@
                             <div class="col-md-2">%icon%</div> 
                         </a>
                     </li>
+                    {*}
+                    
+                    
                 {/if}
+                <li class="clear"></li>
             </ul>
         </nav>
-        <div class="clear"></div>
+        <div class="header_content">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  href="{$SITE_PATH}" class="site_logo"> <img src="{$SITE_PATH}/img/pcstore_logo.png" alt=""> </a> 
+          
+            <div class="search_block">  
+            	<div class="search_container">
+                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
+                    <button type="submit" class="search_btn"></button>
+                    {if isset($ns.req.cid)}
+                        <input type="hidden" name="cid" value="{$ns.req.cid}"/>
+                    {/if} 
+				</div>    
+            </div>
+           
+        </div>
     </div>
 </header>
 {if $ns.userLevel === $ns.userGroupsGuest}
