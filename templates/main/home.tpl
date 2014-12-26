@@ -10,7 +10,7 @@
             <div class="left-panel_content">
 
                 {if $ns.category_id > 0}
-                    <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}">{$ns.lm->getPhrase(130)}</a>
+                    <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}"><span class="glyphicon"></span> {$ns.lm->getPhrase(130)}</a>
 
                     {assign var="index" value=0}
                     {if isset($ns.category_path)}		
@@ -32,7 +32,7 @@
 
 
                 {if isset($ns.itemsCategoryMenuView)}
-                    <h1>Categories</h1>
+                    <h1 class="any_categories"><span class="glyphicon"></span> Categories</h1>
                     {$ns.itemsCategoryMenuView->display(false)}
                 {/if}
                 {if ($ns.properties_views && $ns.properties_views|@count>0)}
@@ -48,10 +48,6 @@
     <!--========================== Top Container ===============================-->
 
     <div  class="main-top-container container">
-
-                <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
-                	<input type="search" />
-                </form>
         <div class="search_block">
 
                     <div class="filter_container">

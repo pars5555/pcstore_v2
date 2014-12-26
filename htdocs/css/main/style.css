@@ -103,7 +103,7 @@ body{
 	overflow:hidden;
 	position:relative;
 	padding-right:40px;
-	background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #E8EBED;
+	background-color:#f3f3f3;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     display:inline-block;
@@ -118,8 +118,7 @@ body{
 	position:absolute;
 	top:4px;
 	right:5px;
-	background-color:#777;
-	color:#fff;
+	color:#777;
 	text-align:center;
 	border-radius:3px;
 }
@@ -242,12 +241,15 @@ label.input_label{
 .header_content{
 	clear:both;
 	display:table;
-	width:100%;
+	max-width:1200px;
+	width:calc(100% - 50px);
+	padding:0 25px;
+	margin:auto;
 }
 .site_logo{
 	display:table-cell;
 	vertical-align:middle;
-	width:160px;
+	width:200px;
 }
 .site_logo img{
 	width:160px;
@@ -258,11 +260,11 @@ label.input_label{
 }
 
 /*======= Navigation Bar Header =======*/
-.navbar .container {
-	max-width:1200px;
-	width:calc(100% - 50px);
-	padding:0 25px;
-	margin:auto;
+.navbar .navMenu_container{
+	background-color:#f7f7f7;
+	border-bottom:1px solid #ccc;
+	margin-bottom:30px;
+    box-shadow: 0 0 10px 1px #eee;
 }
 .navbar .navbar-header{
 	float:left;
@@ -273,27 +275,38 @@ label.input_label{
 }
 
 /*======= Navigation Menu Header =======*/
-
 .navbar .navMenu{
+	max-width:1200px;
+	width:calc(100% - 50px);
+	padding:0 25px;
+	margin:auto;
+}
+.navbar .navMenu .navMenuList{
 	float:right;
 }
 .navbar .navMenu .navMenuList>li{
 	float:left;
+	padding:10px 0;
 }
 .navbar .navMenu .navMenuList>li.clear{
 	float:none;
+	padding:0;
 }
 .navbar .navMenu .navMenuList>li>a{
 	display:block;
-	color:#777;
-	font-size:14px;
-	padding:0 20px;
-	height: 70px;
-    line-height: 70px;
-    transition: all 0.5s ease 0s;
+	color:#555;
+	font-size:13px;
+	padding:0px 20px;
+	height:20px;
+	line-height:20px;
+	border-left:1px solid #ccc;
+    transition: all 0.5s ease;
+}
+.navbar .navMenu .navMenuList>li:first-child>a{
+	border-left:none;
 }
 .navbar .navMenu .navMenuList>li a:hover{
-	color:#fff;
+	color:#3498DB;
 }
 /*.navbar .navMenu .navMenuList > li a:hover {
     background-color: #3399ff;
@@ -309,18 +322,16 @@ label.input_label{
 
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle{
 	position:relative;
+	padding-right:35px;
 }
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:before{
 	content:"";
 	font-family: "glyphicons-halflings";
 	position:absolute;
-	right:3px;
-}
-.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle.active:before{
-	content:"";
+	right:15px;
 }
 .navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:hover{
-	color:#fff;
+	/*color:#fff;*/
 }
 
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu{
@@ -538,11 +549,6 @@ label.input_label{
 
 ******************/
 #headerWrapper{
-    /*background:linear-gradient(#556270,#404D5B, #556270);
-    border-bottom:5px solid #3399ff;
-    box-shadow:0 0 15px 3px #3399ff;*/
-    /*background:linear-gradient(#3b3b3b,#222222);*/
-    height:90px;
 }
 .hot-products-wrapper {
     margin:20px 0px;
@@ -938,8 +944,10 @@ label.input_label{
 
 *******/
 .main-search-wrapper{
-    margin:25px 0px;
 	border:1px solid transparent;
+}
+.right-content {
+    display: table-cell;
 }
 .main-top-container {
     margin:20px auto;
@@ -1457,9 +1465,10 @@ SMS CONF COMPANY
 *******/
 .news-letter-wrapper {
     padding:20px 0px;
-    background-color:#222222;
-    border: 1px solid #c2c2c2;
-    box-shadow: 0 0 1px 2px #c2c2c2;
+    background-color:#f7f7f7;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 10px 1px #eee;
     overflow: hidden;
 }
 .news-letter-wrapper .container{
@@ -1531,13 +1540,13 @@ SMS CONF COMPANY
     opacity:0.7;
 }
 .socialNetworks-linkes-pages li a .img.facebook{
-    background-image:url("../../img/facebook.png");
+    background-image:url("../../img/facebook_1.png");
 }
 .socialNetworks-linkes-pages li a .img.google{
-    background-image:url("../../img/googleplus.png");
+    background-image:url("../../img/googleplus_1.png");
 }
 .socialNetworks-linkes-pages li a .img.twitter{
-    background-image:url("../../img/linkedin.png");
+    background-image:url("../../img/linkedin_1.png");
 }
 
 
