@@ -14,16 +14,16 @@
     {/if}
 
     {if $ns.item}
-        <h1>{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
+        <h1 class="main_title">{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
     {/if}
-    <div class="container-fluid">
+    <div class="product-wrapper current_product_wp">
         <div class="product-img">
             <img src="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '400_400', 1)}" /> 
         </div>
         <div class="product-info">
             <h2>{$ns.item->getDisplayName()}{if $ns.item->getBrand()} by {$ns.item->getBrand()}{/if}</h2>
             {if $ns.item}
-                <div class="current-product-price-list">
+                <div class="product-price">
                     {if $new_item == true}
                         NEW ITEM!!!
                     {/if}
@@ -81,7 +81,7 @@
                         {if $new_item == true}
                             <p>{$ns.lm->getPhrase(559)}</p>
                         {else}
-                            {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}p
+                            {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}
                                 <p>{$ns.lm->getPhrase(453)}: {$ns.item->getUpdatedDate()|date_format:"%d/%m/%Y"}</p>
                             {/if}
                         {/if}

@@ -32,6 +32,30 @@ body{
 	background:      -o-linear-gradient(#fff, #FFF); 
 	background:         linear-gradient(#fff, #FFF);
 }
+.main_title{
+	border-bottom: 3px solid #3498DB;
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    text-align: center;	
+    font-weight:600;
+    color:#3498DB;
+}
+.tab_title{
+	background-color: #eee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: inline-block;
+    font-size: 17px;
+    padding: 10px 30px;
+    text-align: center;
+    transition: all 500ms ease 0s;
+    vertical-align: middle;
+}
+.tab_title.active{
+	background-color: #3498db;
+    color: #fff;
+}
 .break_text{
 	white-space:nowrap;
 	text-overflow:ellipsis;
@@ -54,13 +78,6 @@ body{
 }
 .clear{
 	clear:both;
-}
-.title{
-	text-align:center;
-	margin-bottom:70px;
-	font-size: 40px;
-    font-weight: 500;
-    color:#444;
 }
 .control-group.inline-option {
     display: table;
@@ -198,12 +215,12 @@ label.input_label{
 
 .button{	
 	display:block;
-	padding:7px 0;
+	padding:9px 0;
 	text-align:center;
 	max-width:300px;
 	width:100%;
 	margin:20px auto;
-	font-size:15px;
+	font-size:17px;
 	cursor:pointer;
 	font-weight:600;
 	
@@ -356,7 +373,8 @@ label.input_label{
 	font-size: 15px;
 }
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a:hover{
-	background:linear-gradient(#eee, #ddd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-color: #3498db;
+    color: #fff;
 }
 
 .navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a img{
@@ -705,16 +723,18 @@ label.input_label{
 }
 .download_all{
 	float:right;
-	color:#428bca;
+}
+.download_all .button.blue{
+	width:200px;
+}
+.download_all .glyphicon{
+	font-size:20px;
+	margin-left:5px;
+	font-weight:500;
+	vertical-align: middle;
 }
 .company_filter{
-	background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
     clear: both;
-    display: table;
-    text-align: center;
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 }
 .company_filter .company_tab_btn {
     border-top-left-radius: 5px;
@@ -739,17 +759,11 @@ label.input_label{
 /*================== Companies main content ===================*/
 
 .company_tab {
-    /*border: 3px solid #428bca;*/
+    border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 3px;
-    margin-top: -3px;
 }
-.company_tab h1{
-	border-bottom: 1px solid #999;
-    font-size: 30px;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    text-align: center;
+.companies-search-wrapper .main_title{
+	clear:both;
 }
 .companies_title_row{
 	display:table-row;
@@ -1079,6 +1093,9 @@ SMS CONF COMPANY
     position: relative;
     padding:15px;
 }
+.cart-wrapper .main_title{
+	border:none;
+}
 .cart-wrapper .cart-item .button.blue{
 	margin:auto;
 }
@@ -1343,6 +1360,23 @@ SMS CONF COMPANY
 .product-wrapper .product-price{
 	font-size: 15px;
 	color:#333;	
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+}
+.product-wrapper .product-price p{
+    margin:0px;
+    display:table-row;
+    border-bottom:1px solid #ddd;
+}
+.product-wrapper .product-price p span{
+	display:table-cell;
+	vertical-align:middle;
+	padding:5px;
+	color:#777;
+}
+.product-wrapper .product-price p span:first-child{
+	color:#555;
 }
 .product-wrapper .product-img img {
     display:block;
@@ -1375,18 +1409,58 @@ SMS CONF COMPANY
 	text-decoration:underline;
 	color:#0E5796;
 }
-.product-wrapper .product-price p{
-    margin:0px;
-}
 /*************
     CURRENT PRODUCT DESC
 **************/
+.product-wrapper.current_product_wp{
+	display:table;
+	width:100%;
+}
+.product-wrapper.current_product_wp .product-img{
+	display:table-cell;
+	vertical-align:middle;
+}
+.product-wrapper.current_product_wp .product-info{
+	display:table-cell;
+	vertical-align:middle;
+}
+.product-wrapper.current_product_wp .product-price{
+	margin:20px auto;
+}
 .current-product-description {
     margin-top: 15px;
 }
 .current-product-price-list {
     margin:10px 0px;
     font-size:16px;
+}
+
+/* Product Discription */
+
+.product-spec{
+	color:#777 !important;
+	display:table !important;
+	width:100% !important;
+	border-collapse: collapse;
+}
+.product-spec li{
+	display:table-row !important;
+	width:auto !important;	
+	border-bottom:1px solid #ccc !important;
+}
+.product-spec .spec-item{
+	display:table-cell !important;
+	vertical-align:middle !important;
+	float:none  !important;
+	color:#555 !important;
+	padding:0 100px 0 30px !important;
+	width:0 !important;	
+}
+.product-spec .spec-data{
+	display:table-cell !important;
+	vertical-align:middle !important;
+	float:none  !important;
+	border:none !important;
 }
 /*******
 
@@ -1570,6 +1644,8 @@ BUILD PC PAGE
 .item-sections-wrapper {
     display:table;
     width:100%;
+    max-width:1000px;
+    margin:0 auto 10px;
     border-spacing: 5px 0;
     border-bottom:5px solid #3278b3;
 
@@ -1581,7 +1657,7 @@ BUILD PC PAGE
 }
 .item-sections-wrapper .current-section{
     display:table-cell;
-    width:7.1%;
+    width:14.2%;
     vertical-align:top;
     border:1px solid #999;
     border-bottom:none;
@@ -1602,7 +1678,7 @@ BUILD PC PAGE
 }
 .build-pc-component img{
 	display:block;
-    width:60%;
+    width:50%;
     margin:auto;
 }
 .build-pc-component p{

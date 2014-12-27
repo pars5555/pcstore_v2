@@ -35,10 +35,15 @@
 	font-size: 15px;
 	color:#333;
     
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+.left-panel ul li a.active{
+	color:#3498DB;
+	font-weight:600;
+	font-size: 17px;
 }
 .left-panel ul li:first-child a{
 	border:none;

@@ -32,18 +32,22 @@
                 </div>
             </div>
             <div class="download_all">
-                <a href="{$SITE_PATH}/price/all_zipped_prices"> <span>Download All:</span> <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/> </a>
+                <a class="button blue" href="{$SITE_PATH}/price/all_zipped_prices">
+                	<span>Download All:</span>
+                	<span class="glyphicon"></span>
+                	<!-- <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>  -->
+                </a>
             </div>
             <div class="company_filter">
-                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn company_tab_btn active">Company</a>
-                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn company_tab_btn">Company Service</a>
+                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn tab_title active">Company</a>
+                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn tab_title">Company Service</a>
             </div>
         </div>
         <div class="clear"></div>
         <div id="companyListTab" class="f_company_tab company_tab">
 
             {if (($ns.allCompanies|@count )>0)}
-                <h1 >{$ns.lm->getPhrase(578)}</h1>
+                <h1 class="main_title">{$ns.lm->getPhrase(578)}</h1>
 
                 <div class="companies_title_row">
                     <h2>
@@ -186,7 +190,7 @@
         </div>
         <div id="companyServiceTab" style="display:none;" class="f_company_tab company_tab">
             {if (($ns.allServiceCompanies|@count )>0)}
-                <h1>{$ns.lm->getPhrase(579)}</h1>
+                <h1 class="main_title">{$ns.lm->getPhrase(579)}</h1>
 
                 <div class="companies_title_row">
                     <h2>

@@ -15,7 +15,7 @@
 	</div>
 	{/foreach}
 	{/if}
-	<h1 class="title">Orders</h1>
+	<h1 class="main_title">Orders</h1>
 	{include file="$TEMPLATE_DIR/main/orders/table_header.tpl"}
 	{foreach from=$ns.groupOrdersByOrderIdAndBundleId key=orderId item=orderItems name=foo}
 	<div class="order_main_block">

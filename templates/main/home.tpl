@@ -126,9 +126,10 @@
                                 </div>
                                 <div class="product-price">
                                     {if $item->getIsDealerOfThisCompany()!=1}
-                                        <p>{$ns.lm->getPhrase(588)}: <span>{$item->getListPriceAmd()|number_format} Դր.</span></p>
+                                        <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$item->getListPriceAmd()|number_format} Դր.</span></p>
                                     {/if}
-                                    <p>{$ns.lm->getPhrase(88)}: <span>
+                                    <p><span>{$ns.lm->getPhrase(88)}:</span>
+                                    	 <span>
                                             {if $item->getIsDealerOfThisCompany()==1}
                                                 {if $item->getDealerPriceAmd()>0}
                                                     {$item->getDealerPriceAmd()|number_format} Դր.
@@ -142,7 +143,8 @@
                                         </span>
                                     </p>
                                     {if $item->getVatPrice()>0}
-                                        <p>{$ns.lm->getPhrase(488)}: <span>
+                                        <p><span>{$ns.lm->getPhrase(488)}:</span>
+                                        	<span>
                                                 {if $item->getIsDealerOfThisCompany()==1}
                                                     {if $item->getVatPriceAmd()>0}
                                                         ({$item->getVatPriceAmd()|number_format} Դր.)
@@ -158,12 +160,15 @@
                                     {/if}                                        
                                     {if $item->getIsDealerOfThisCompany()!=1}
                                         {math equation="100-x*100/y" x=$price_in_amd y=$item->getListPriceAmd() assign="list_price_discount"}
-                                        <p>{$ns.lm->getPhrase(589)}: 
+                                        <p>
+                                        	<span>{$ns.lm->getPhrase(589)}: </span>
                                             <span>{($item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span>
                                         </p>
                                     {/if}
                                     {if $item->getUpdatedDate() && $item->getUpdatedDate() != "0000-00-00 00:00:00"}
-                                        <p>{$ns.lm->getPhrase(453)}:<span>{$item->getUpdatedDate()|date_format:"%d/%m/%Y"}</span></p>
+                                        <p>
+                                        	<span>{$ns.lm->getPhrase(453)}:</span>
+                                        	<span>{$item->getUpdatedDate()|date_format:"%d/%m/%Y"}</span></p>
                                     {/if}
                                 </div>
                                 <div class="button-wrapper">

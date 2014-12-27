@@ -12,7 +12,7 @@
     {if $ns.emptyCart == true}
         <h1>{$ns.lm->getPhrase(296)}</h1>		
     {else}   
-        <h1 class="title">Shopping Cart Summary</h1>
+        <h1 class="main_title">Shopping Cart Summary</h1>
         {foreach from=$ns.cartItems item=cartItem}
             {if is_array($cartItem)}
             <div class="cart-item bundle-cart-item">

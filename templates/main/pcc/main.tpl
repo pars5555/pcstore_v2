@@ -1,9 +1,10 @@
 <div class="container build_pc_container">
     <div class="pc_components">
-        <div id="itemSections" class="item-sections-wrapper">
+        <div id="itemSections">
             <!-- <div id="mobileBtnComp" class="mobile-btn">
                 <i class="glyphicon glyphicon-align-justify"></i>
             </div> -->
+            <div class="item-sections-wrapper">
             {section name=pid start=1 loop=$ns.pcc_components_count+1 step=1}
                 {assign var="index" value=$smarty.section.pid.index-1}  
                 <div class="current-section f_component" component_index="{$smarty.section.pid.index}">
@@ -14,7 +15,10 @@
                         <p class="text-center">{$ns.lm->getPhrase($ns.component_display_names.$index)}</p>
                     </a>
                 </div>
+                {if ($smarty.section.pid.index == 7)}</div><div class="item-sections-wrapper">{/if}
+                {if ($smarty.section.pid.index == $smarty.section.pid.loop)}</div>{/if}
             {/section}
+            </div>
         </div>
     </div>
     <div class="components-list-wrapper" id="pcc_components_container">

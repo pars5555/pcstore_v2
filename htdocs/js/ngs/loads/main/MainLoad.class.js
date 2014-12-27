@@ -25,6 +25,14 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.notificationCustomScroll();
         this.leftMenu();        
         this.overlay();
+        this.leftPanelActiveElement();
+    },
+    leftPanelActiveElement : function(){
+    	jQuery(".sidebar-nav a").each(function(){
+    		if(jQuery(this).attr("href") == window.location.href){
+    			jQuery(this).addClass("active");
+    		};
+    	});
     },
     notificationCustomScroll: function () {
         jQuery("#notificationListWrapper").mCustomScrollbar({
@@ -162,8 +170,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 	    		jQuery(this).text("10k+");
 	    	}    		
     	});
-    },
-   
+    },   
     overlay : function(){
     	jQuery(".overlay").click(function(){
     		jQuery(this).parent().addClass("hide");
