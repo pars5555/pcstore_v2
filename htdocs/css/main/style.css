@@ -2048,22 +2048,24 @@ PAGINATION
 	margin-top:20px;
 }
 .pagination .current-page-number{
-    background-color: #777;
-    border-radius: 5px;
-    color: #fff;
-    padding: 6px 11px;
-    -webkit-transition: background-color 0.4s ease;
-    -moz-transition: background-color 0.4s ease;
-    -ms-transition: background-color 0.4s ease;
-    -o-transition: background-color 0.4s ease;
-    transition: background-color 0.4s ease;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 10px 15px;
+    color: #999;
+    border:1px solid #999;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 .pagination .current-page-number:hover {
-    background-color: #333;
-    text-decoration: none;
+    color: #3498DB;
+    border:1px solid #3498DB;
 }
 .pagination .current.current-page-number{
-    background-color: #428bca ;
+    color: #3498DB;
+    border:1px solid #3498DB;
 }
 
 
