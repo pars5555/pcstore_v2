@@ -180,6 +180,7 @@ label{
     font-size:15px;
     display:inline-block;
     vertical-align:middle;
+    cursor:pointer;
 }
 
 label.input_label{
@@ -223,11 +224,12 @@ label.input_label{
     font-size:17px;
     cursor:pointer;
     font-weight:600;
+    border-radius:3px;
 
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
 }
 
 .overlay{
@@ -1230,7 +1232,7 @@ SMS CONF COMPANY
     margin-bottom:20px;
 }
 .orders_main_header>div{
-    width:25%;
+    width:20%;
     display:table-cell;
     vertical-align:middle;
     text-align:center;
@@ -1258,24 +1260,13 @@ SMS CONF COMPANY
     width:100%;
 }
 .order_info>div{
-    width:25%;
+    width:20%;
     display:table-cell;
     vertical-align:middle;
     text-align:center;
     padding: 0 20px;
 }
-/*Order Header*/
-.order_header{
-    display:table;
-    width:100%;
-}
-.order_header>div{
-    width:25%;
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
-    padding: 0 20px;
-}
+
 /*Order Item*/
 .order_item_block{
     display:table;
@@ -1286,8 +1277,64 @@ SMS CONF COMPANY
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    padding: 0 20px;
+    padding: 5px 15px;
 }
+
+/*Order Header*/
+.order_header{
+    display:table-row;
+}
+.order_header>div{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    padding: 10px 15px;
+    font-weight:600;
+    background-color: #3498db;
+    color: #fff;
+}
+
+/*Order Item Table*/
+.order_bundle_item_total{
+    display: table-row;
+}
+
+.order_bundle_item_total > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 15px;
+    font-weight: 600;
+    color:#3498DB;
+}
+
+/*Order Bundle Components*/
+.order_more_info{
+    display:table;
+    width:70%;
+    margin:auto;
+}
+.order_bundle_components{
+    display:table-row-group;
+}
+.order_bundle_components .order_bundle_item{
+    display:table-row;
+}
+.order_bundle_components .order_bundle_item>div{
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+    padding: 5px 15px;
+    font-size: 13px;
+}
+.order_bundle_components .order_bundle_item:nth-child(odd)>div{
+    background-color:#f9f9f9;
+}
+
+.order_bundle_components .order_bundle_item .order_bundle_price{
+    width:100px;
+}
+
 
 /*******
 
@@ -2007,17 +2054,6 @@ BUILD PC PAGE
     width: 150px;
 }
 
-/****************************************************/
-
-.up_delete_attachment
-{
-    width:14px;
-    height:14px;
-    background-image:url("../../../img/remove-icon.png");
-    background-repeat:no-repeat;  
-    cursor: pointer;
-    display: inline-block;
-}
 
 /****************
  *
@@ -2244,4 +2280,198 @@ Dealers
     vertical-align:middle;
     margin-left:5px;
 }
+
+/*******************************************************************
+***********************Upload Company Price*************************
+*******************************************************************/
+
+/*Upload Price Form*/
+.upload_company_price{
+    float:left;
+}
+.upload_company_price *{
+    display:inline-block;
+    vertical-align: middle;
+}
+.up_selected_file_name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+.select_price_btn{
+    width:50px;
+    padding:5px 0;
+    margin:0 20px 0 10px;
+}
+.submit_upload_price .glyphicon{
+    margin-left:5px;
+}
+/*More Actions*/
+
+.last_com_price{
+    float:right;
+    color:#555;
+}
+.last_com_price:hover{
+    color:#3498DB;
+}
+.last_com_price .glyphicon{
+    font-size:25px;
+}
+.last_com_price span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.revert_last_com_price{
+    float:right;
+    margin-left:10px;
+}
+.revert_last_com_price .glyphicon{
+    font-size:25px;    
+    color:#cc0000;
+}
+
+/*Sender Details*/
+
+.sender_details .text{
+    display:inline-block;
+    vertical-align: middle;
+    width:200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.sender_details .sender_email{
+    margin-right:10px;
+    width:300px;
+}
+
+/*Dealers Emails*/
+.dealer_emails{
+    margin-top:15px;
+}
+.dealer_emails textarea{
+    display:block;
+    height:200px;
+}
+
+.dealers_count{
+    text-align:right;
+}
+.dealers_count span{
+    color:#3498DB;
+    font-weight: 600;
+    margin-right:5px;
+}
+
+/*Send Main Title*/
+
+.send_mail_title{
+    margin-top:15px;
+}
+
+.send_mail_title input{
+    width:500px;
+}
+
+/*Price Email Container*/
+
+.price_email_container{
+    margin-top:15px;
+}
+
+/*Last Price File*/
+
+.last_price_file{
+    display:inline-block;
+    margin-top:15px;
+    color:#555;    
+}
+.last_price_file:hover{
+    color:#3498DB;    
+}
+.last_price_file span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.last_price_file .glyphicon{
+    font-size:25px;
+    margin-right:5px;
+}
+
+/*Attach More*/
+
+.attach_more{
+    display:inline-block;
+    margin-top:15px;
+}
+.attach_more .attach_more_btn{
+    display:inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    color:#555;
+}
+.attach_more .attach_more_btn:hover{
+    color:#3498DB;    
+}
+.attach_more .attach_more_btn span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.attach_more .attach_more_btn .glyphicon{
+    font-size:25px;   
+    margin-right:5px; 
+}
+/*Attachment Element*/
+.attachment_element{
+    margin-top:10px;
+}
+.up_delete_attachment{ 
+    display: inline-block;
+    vertical-align: middle;
+    font-size:20px;
+    color:#cc0000;
+    margin-left:10px;
+    cursor: pointer;
+}
+
+/*Upload Price Actions*/
+.upload_price_actions {
+    text-align: center;
+}
+.upload_price_actions .button{
+    display:inline-block;
+    margin:30px 15px;
+}
+
+/*All Prices Table*/
+
+.all_prices{
+    margin: auto;
+    max-width: 900px;
+    text-align: center;
+    width: 100%;
+}
+
+.all_prices thead th{
+    background-color: #3498DB;
+    color:#fff;
+    padding: 10px;
+}
+.all_prices tbody tr{
+    padding:5px 10px;
+}
+.all_prices tbody tr:nth-child(odd){
+    background-color:#f9f9f9;
+}
+
+
+
+
+
+
+
+
+
 

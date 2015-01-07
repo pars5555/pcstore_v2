@@ -3,13 +3,14 @@
 <div class="order_date">{$orderInfo->getOrderDateTime()}</div>
 <div class="order_price">
 {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
-    {$orderInfo->getOrderTotalAmd()|number_format:0} Դր.
-    <span class="price">{if $orderInfo->getUsedPoints()>0}</span>
+    <span class="price">{$orderInfo->getOrderTotalAmd()|number_format:0} Դր.</span>
+    {if $orderInfo->getUsedPoints()>0}
         </br>
         <span class="price">-{$orderInfo->getUsedPoints()|number_format:0} Դր. ({$ns.lm->getPhrase(434)})</span>
     {/if}
 {/if}
-</br>
+</div>
+    <div class="order_price">
 {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
     <span class="price">${$orderInfo->getOrderTotalUsd()|number_format:1}</span>
 {/if}

@@ -3,8 +3,6 @@
 	background-color: #3498DB;
 	border:1px solid #258CD1;
 	color:#fff;	
-	border-radius:3px;
-	transition:all 0.3s ease;
 }
 
 .blue:hover{
@@ -18,8 +16,6 @@
 	background-color: #777;
 	border:1px solid #555;
 	color:#fff;	
-	border-radius:3px;
-	transition:all 0.3s ease;
 }
 
 .grey:hover{
@@ -33,8 +29,6 @@
 	background-color: #7FBA00;
 	border:1px solid #559002;
 	color:#fff;	
-	border-radius:3px;
-	transition:all 0.3s ease;
 }
 
 .green:hover{

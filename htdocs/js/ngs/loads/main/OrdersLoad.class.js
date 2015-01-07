@@ -45,7 +45,7 @@ ngs.OrdersLoad = Class.create(ngs.AbstractLoad, {
     },
     OrderMoreInfoSlide : function(){
         jQuery(".f_order_slide_btn").click(function(){
-           jQuery(this).siblings(".f_order_more_info").slideToggle();
+           jQuery(this).siblings(".f_order_more_info").slideToggle(300);
         });
     }
 });
