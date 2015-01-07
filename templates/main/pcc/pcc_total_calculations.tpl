@@ -51,6 +51,9 @@
             <div class="total_ph">{$ns.lm->getPhrase(261)}</div>
             {if $ns.total_usd>0}
                 <span class="text_blue"> ${$ns.total_usd|number_format:1} </span>
+            {/if}            
+            {if $ns.total_usd>0 && ($ns.total_amd>0 || $ns.pc_build_fee_amd>0)}
+                <span class="and_phrase">{$ns.lm->getPhrase(270)}</span>
             {/if}
             {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
                 <span class="text_blue">{($ns.total_amd+$ns.pc_build_fee_amd)|number_format:0} Դր. </span>
@@ -58,7 +61,7 @@
             {if $ns.total_amd==0 && $ns.total_usd==0}
                 <span class="text_blue"> 0 Դր. </span>
             {/if}
-<div class="clear"></div>
+            <div class="clear"></div>
             {*   discounted price   *}
             {if $ns.total_amd>0}
                 <div class="discount text_red">{$ns.lm->getPhrase(285)} {$ns.pc_configurator_discount}%</div>
@@ -67,7 +70,7 @@
                     <span class="text_blue">${$ns.total_usd|number_format:1}</span>
                 {/if}
                 {if $ns.total_amd>0 || $ns.pc_build_fee_amd>0}
-                   <span class="text_blue"> {$ns.grand_total_amd|number_format:0} Դր. </span>
+                    <span class="text_blue"> {$ns.grand_total_amd|number_format:0} Դր. </span>
                 {/if}
                 {if $ns.total_amd==0 && $ns.total_usd==0}
                     <span class="text_blue">0 Դր. </span>

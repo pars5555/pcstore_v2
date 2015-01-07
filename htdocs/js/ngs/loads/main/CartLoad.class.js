@@ -26,8 +26,7 @@ ngs.CartLoad = Class.create(ngs.AbstractLoad, {
     },
     componentsBlocksController: function () {
         jQuery(".f_bundle_btn").click(function () {
-            console.log(jQuery(this).siblings(".f_bundle_wrapper"))
-            jQuery(this).siblings(".f_bundle_wrapper").stop(true, false).slideToggle();
+            jQuery(this).closest(".f_bundle_item").find(".f_bundle_wrapper").stop(true, false).slideToggle();
         });
     }
 });

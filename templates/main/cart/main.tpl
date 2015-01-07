@@ -1,6 +1,6 @@
 <div class="container cart-wrapper">
     {if isset($ns.customerMessages)}
-        <h1 class="title">The current Products are not available</h1>
+        <h1 class="main_title customer_mes_title">The current Products are not available</h1>
         <ul class="list-customer-message">
             {foreach from=$ns.customerMessages item=customerMessage}
                 <li>
@@ -15,7 +15,7 @@
         <h1 class="main_title">Shopping Cart Summary</h1>
         {foreach from=$ns.cartItems item=cartItem}
             {if is_array($cartItem)}
-            <div class="cart-item bundle-cart-item">
+            <div class="f_bundle_item cart-item bundle-cart-item">
                 {include file="$TEMPLATE_DIR/main/cart/cart_bundle_item.tpl" bundleItems=$cartItem}
                 </div>
             {else}
@@ -42,7 +42,7 @@
     {/if}
     {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
         {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
-            {$ns.lm->getPhrase(270)}
+            <span class="and_phrase">{$ns.lm->getPhrase(270)}</span>
         {/if}
         <span class="price">{$ns.grandTotalAMD|number_format:0} Դր.</span>
     {/if}
@@ -68,7 +68,7 @@
 {/if}
 <button class="button blue" {if $disableButton == 1}disabled{/if}>checkout</button>
 {if isset($nextButtonTitlePhraseId)}
-    {$ns.lm->getPhrase($nextButtonTitlePhraseId)}
+    <span class="warning_message">{$ns.lm->getPhrase($nextButtonTitlePhraseId)}</span>
 {/if}
 </div>
 <div class="clear"></div>

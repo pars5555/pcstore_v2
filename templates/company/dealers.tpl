@@ -1,4 +1,4 @@
-<h1 class="dealers_title">{$ns.lm->getPhrase(59)}</h1>
+<h1 class="dealers_title main_title">{$ns.lm->getPhrase(59)}</h1>
 {if isset($ns.success_message)}
     <div class="success">
         <strong> {$ns.success_message}</strong>

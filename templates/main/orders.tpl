@@ -28,12 +28,12 @@
 
 		{include file="$TEMPLATE_DIR/main/orders/orders_head_row.tpl"}
 
-		<div id="order_container_{$orderInfo->getId()}">
+                <div id="order_container_{$orderInfo->getId()}" class="order_more_info f_order_more_info" style="display: none" >
 			{include file="$TEMPLATE_DIR/main/orders/orders_head_row_table_head.tpl"}
 			{foreach from=$orderItems key=bundleId item=orderItem name=foo}
 			{if is_array($orderItem)}
 			{include file="$TEMPLATE_DIR/main/orders/order_bundle_item_head_row.tpl"}
-			<div id="bundle_container_{$orderItem[0]->getOrderDetailsBundleId()}" style="width:100%;position: relative;display: none">
+                        <div id="bundle_container_{$orderItem[0]->getOrderDetailsBundleId()}" style="display: none" class="order_more_info f_order_more_info">
 				{include file="$TEMPLATE_DIR/main/orders/order_bundle_item.tpl"}
 			</div>
 			{else}

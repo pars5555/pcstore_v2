@@ -16,6 +16,7 @@ ngs.OrdersLoad = Class.create(ngs.AbstractLoad, {
     },
     afterLoad: function () {
         this.initStripe();
+        this.OrderMoreInfoSlide();
     },
     initStripe: function () {
         var thisObject = this;
@@ -40,6 +41,11 @@ ngs.OrdersLoad = Class.create(ngs.AbstractLoad, {
                 email: user_email
             });
             e.preventDefault();
+        });
+    },
+    OrderMoreInfoSlide : function(){
+        jQuery(".f_order_slide_btn").click(function(){
+           jQuery(this).siblings(".f_order_more_info").slideToggle();
         });
     }
 });

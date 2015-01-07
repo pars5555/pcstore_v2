@@ -1,5 +1,5 @@
 {assign var="bundleInfo" value=$orderItem[0]}
-<div id="bundle_collapse_expande_button^{$bundleInfo->getOrderDetailsBundleId()}" class="order_expand_button collapse_expande_buttons"> </div>
+<div id="bundle_collapse_expande_button^{$bundleInfo->getOrderDetailsBundleId()}" class="order_slide_btn f_order_slide_btn">See more</div>
 {assign var="bundleDisplayNameId" value=$bundleInfo->getOrderDetailsBundleDisplayNameId()}
 {$ns.lm->getPhrase($bundleDisplayNameId)}  ({$bundleInfo->getOrderDetailsDiscount()}% {$ns.lm->getPhrase(285)})
 {$bundleInfo->getOrderDetailsBundleCount()}

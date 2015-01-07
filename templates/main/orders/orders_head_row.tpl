@@ -100,4 +100,4 @@
 {/if}
 </div>
 </div>
-<div id="order_collapse_expande_button^{$orderInfo->getId()}" class="button blue order_expand_button collapse_expande_buttons">Order Button</div>
+<div id="order_collapse_expande_button^{$orderInfo->getId()}" class="order_slide_btn f_order_slide_btn">See more</div>
