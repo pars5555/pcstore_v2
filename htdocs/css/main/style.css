@@ -283,7 +283,7 @@ label.input_label{
     background-color:#f7f7f7;
     border-bottom:1px solid #ccc;
     margin-bottom:30px;
-    box-shadow: 0 0 10px 1px #eee;
+    /*box-shadow: 0 0 10px 1px #eee;*/
 }
 .navbar .navbar-header{
     float:left;
@@ -568,7 +568,9 @@ label.input_label{
  LANDING HEADER
 
 ******************/
-#headerWrapper{
+.navbar{
+    border-bottom:1px solid #ddd;
+    padding-bottom: 30px;
 }
 .hot-products-wrapper {
     margin:20px 0px;
@@ -2150,7 +2152,11 @@ BUILD PC PAGE
 .profile-wrapper .profile-content .current-user-info h3{
     margin:30px 0 10px;
 }
-
+.lng_lat .text{
+    display:inline-block;
+    vertical-align: middle;
+    width: auto;
+}
 /****************
  *
  * COMPANY PROFILE WRAPPER	
@@ -2284,6 +2290,11 @@ Dealers
 /*******************************************************************
 ***********************Upload Company Price*************************
 *******************************************************************/
+
+.send_price_email_container {
+    border-bottom: 1px solid #999;
+    margin-bottom: 30px;
+}
 
 /*Upload Price Form*/
 .upload_company_price{

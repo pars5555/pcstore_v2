@@ -85,10 +85,10 @@
 					</div>
 
 					<div class="working_hours form-group" id="working_hours" class="form-group">
-						<label class="input_label" for="longitute_latitude">Working hours</label>
+						<label class="input_label" for="">Working hours</label>
 						{html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingStart prefix="startWorking"} <span class="glyphicon">−</span> {html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingEnd prefix="endWorking"}
 					</div>
-					<div class="form-group">
+					<div class="form-group lng_lat">
 						<label class="input_label" for="longitute_latitude">Lng/Lat:</label>
 						<input class="text" name='longitute' type="text" value="{$ns.lng}"/>
 						<input class="text" name='latitude' type="text" value="{$ns.lat}"/>
