@@ -4,6 +4,7 @@
         {include file="$TEMPLATE_DIR/main/util/headerControls.tpl"}
     </head>    
     <body>
+        <a style="visibility: hidden;position: fixed" href="https://plus.google.com/111746961998922666341" rel="publisher">Google+</a>
         <div id="fb-root"></div>
         {include file="$TEMPLATE_DIR/main/util/header.tpl"}       
         <div class="wrapper">
