@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-6">
                             <span> 51,061 Դր. </span>
-                            <select class="form-control">
+                            <select class=" ">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-md-6">
                             <span> 51,061 Դր. </span>
-                            <select class="form-control">
+                            <select class=" ">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="col-md-6">
                             <span> 51,061 Դր. </span>
-                            <select class="form-control">
+                            <select class=" ">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="col-md-6">
                             <span> 51,061 Դր. </span>
-                            <select class="form-control">
+                            <select class=" ">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-md-6">
                             <span> 51,061 Դր. </span>
-                            <select class="form-control">
+                            <select class=" ">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>

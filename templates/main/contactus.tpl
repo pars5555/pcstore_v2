@@ -16,19 +16,19 @@
                         <div class="form-group">
                             <label for="InputName">Your Name</label>
                             <div class="input-group">
-                                <input type="text" required="" placeholder="Enter Name" id="InputName" name="name" class="form-control" value='{$ns.req.name|default:""}'>
+                                <input type="text" required="" placeholder="Enter Name" id="InputName" name="name" class=" " value='{$ns.req.name|default:""}'>
                                 <span class="input-group-addon"><i style="margin-top:-25px; margin-right:-5px;" class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">Your Email</label>
                             <div class="input-group">
-                                <input type="email" required="" placeholder="Enter Email" name="email" id="InputEmail" class="form-control" value='{$ns.req.email|default:""}'>
+                                <input type="email" required="" placeholder="Enter Email" name="email" id="InputEmail" class=" " value='{$ns.req.email|default:""}'>
                                 <span class="input-group-addon"><i style="margin-top:-25px; margin-right:-5px;" class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
                         </div>
                         <div class="form-group">
                             <label for="InputMessage">Message</label>
                             <div class="input-group">
-                                <textarea required="" rows="5" class="form-control" id="InputMessage" name="msg">{$ns.req.msg|default:""}</textarea>
+                                <textarea required="" rows="5" class=" " id="InputMessage" name="msg">{$ns.req.msg|default:""}</textarea>
                                 <span class="input-group-addon"><i style="margin-right:-5px;" class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
                         </div>
                         <input type="submit" class="btn btn-info pull-right" value="Submit" id="submit" name="submit">

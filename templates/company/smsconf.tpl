@@ -58,7 +58,7 @@
 					</div>
 					<div class="form-group">
 						<label class="input_label" for="phone">Phone:</label>
-						<input type="text" name="phone" class="form-control text" value="{$ns.customer->getPriceUploadSmsPhoneNumber()}"/>
+						<input type="text" name="phone" class="  text" value="{$ns.customer->getPriceUploadSmsPhoneNumber()}"/>
 					</div>
 					<div class="form-group sms_time_ctl">
 						<label class="input_label sms_label" for="sms_time_control">{$ns.lm->getPhrase(403)}:</label>

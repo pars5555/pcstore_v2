@@ -14,39 +14,36 @@
     border:1px solid #E0E0E0;
 }
 .left-panel .any_categories{
-	display:block;
-	background-color:#3498DB;
+    display:block;
+    background-color:#f3f3f3;
     padding: 10px;
-	font-size: 16px;
-	color:#fff;
+    font-size: 16px;
+    color:#555;
 }
 .left-panel .any_categories .glyphicon{
-	font-weight:500;
-	position: relative;
+    font-weight:500;
+    position: relative;
     top: 3px;
 }
 .left-panel ul{	
 }
 .left-panel ul li a{
-	display:table;
-	width:100%;
+    display:table;
+    width:100%;
     border-top: 1px solid #E0E0E0;
     background-color:#fff;
-	font-size: 15px;
-	color:#333;
-    
+    font-size: 15px;
+    color:#333;
+
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     -o-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
 }
 .left-panel ul li a.active{
-	color:#3498DB;
-	font-weight:600;
-	font-size: 17px;
-}
-.left-panel ul li:first-child a{
-	border:none;
+    color:#3498DB;
+    font-weight:600;
+    font-size: 17px;
 }
 .left-panel ul li a:hover{
     background-color:#3498DB !important;
@@ -58,17 +55,17 @@
     text-align:center;
 }
 .left-panel ul li a .cat_count span{
-	border-radius: 7px;
+    border-radius: 7px;
     color: #333;
     font-size: 13px;
     padding: 3px 5px;
-	background-color:#eee;
-	display:inline-block;
-	vertical-align:middle;
+    background-color:#eee;
+    display:inline-block;
+    vertical-align:middle;
 }
 .left-panel ul li a:hover .cat_count span{
-	background-color:#fff;
-	color:#3498DB;
+    background-color:#fff;
+    color:#3498DB;
 }
 .left-panel ul li .dropdown-toggle{
     width: 35px;
@@ -76,31 +73,31 @@
     cursor: pointer;
     text-align: center;
     vertical-align:middle;
-	background-color:#3498DB;
+    background-color:#3498DB;
     color:#fff;
 }
 .left-panel ul li:hover .dropdown-toggle{
-	background-color:#fff;
-	color:#3498DB;	
-	border:1px solid #3498DB;
+    background-color:#fff;
+    color:#3498DB;	
+    border:1px solid #3498DB;
 }
 .left-panel ul li .dropdown-toggle:before{
-	font-family:"glyphicons-halflings";
-	content:"";
+    font-family:"glyphicons-halflings";
+    content:"";
     display:inline-block;
     vertical-align:middle;
 }
 .left-panel ul li.opened>a>.dropdown-toggle:before{
-	content:"";
+    content:"";
 }
 .left-panel ul li.dropdown>a>.dropdown-toggle{
-	display:table-cell;
+    display:table-cell;
 }
 .left-panel ul li.dropdown>ul{
-	display:none;
+    display:none;
 }
 .left-panel ul li.dropdown>ul>li{
-	margin-left:35px;
+    margin-left:35px;
 }
 
 
@@ -112,32 +109,32 @@
 /*Checkbox categories*/
 
 .left-panel .product_categorie{
-	padding:10px;
-	color:#3498db;
-	border-bottom:1px solid #3498db;
-	background-color:#fff;
-	font-weight:600;
-	font-size:15px;
+    padding:10px;
+    color:#3498db;
+    border-bottom:1px solid #3498db;
+    background-color:#fff;
+    font-weight:600;
+    font-size:15px;
 }
 .left-panel .product_title{
-	padding:5px 0 0 20px;
-	color:#777;
-	font-weight: 600;
+    padding:5px 0 0 20px;
+    color:#777;
+    font-weight: 600;
 }
 .left-panel .product_checkbox{
-	padding:10px 0 5px 10px;
-	margin-left:20px;
-	border-bottom:1px solid #e0e0e0;
+    padding:10px 0 5px 10px;
+    margin-left:20px;
+    border-bottom:1px solid #e0e0e0;
 }
 .left-panel .product_checkbox:last-child{
-	border-bottom:none;
+    border-bottom:none;
 }
 .left-panel .category_property{
-	margin-right:10px;
+    margin-right:10px;
 }
 .left-panel .product_checkbox a{
-	color:#428bca;	
-	font-weight: 600;
+    color:#428bca;	
+    font-weight: 600;
 }
 
 /*********************************************************************/

@@ -107,19 +107,19 @@
 					<h3>Add new branch</h3>
 					<div class="form-group">
 						<label class="input_label" for="">Add new Branch</label>
-						<input type="text" class="form-control text" id="" placeholder="New Branch">
+						<input type="text" class="  text" id="" placeholder="New Branch">
 					</div>
 					<div class="form-group">
 						<label for="">Region:</label>
 						<div class="select_wrapper">
-							<select class="form-control">
+							<select class=" ">
 								<option>1</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="input_label" for="">Postal Code</label>
-						<input type="text" class="form-control text" id="" placeholder="Postal Code">
+						<input type="text" class="  text" id="" placeholder="Postal Code">
 					</div>
 					<button type="submit" class="button blue">
 						{$ns.lm->getPhrase(43)}

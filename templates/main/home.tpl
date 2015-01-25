@@ -68,7 +68,7 @@
                             <div class="form-group">                        
                                 <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
                                 <div class="select_wrapper">
-                                    <select class="form-control" name='sci' id='selected_company_id'>
+                                    <select class=" " name='sci' id='selected_company_id'>
                                         {foreach from=$ns.companiesIds item=value key=key}
                                             {if ($key == 0)}
                                                 <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>

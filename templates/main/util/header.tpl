@@ -162,11 +162,11 @@
 					<h4 class="title">Sign in with your existing account</h4>
 					<div class="form-group">
 						<label class="input_label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
-						<input name="email" type="email" class="form-control text" id="mainLoginEmail" placeholder="Enter email">
+						<input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
 					</div>
 					<div class="form-group">
 						<label class="input_label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
-						<input name="password" type="password" class="form-control text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
+						<input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
 						<a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
 					</div>
 					<div style="color:#de4c34;" class="error"></div>
@@ -222,7 +222,7 @@
 				<div id="forgotPasswordSuccessMessage" calss="success"></div>
 				<label class="input_label" for="email">Your Email Address</label>
 				<form id="forgotPasswordForm" autocomplete="off">
-					<input name="email" type="email" class="form-control text" id="forgotPasswordEmailInput" placeholder="Enter email">
+					<input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
 					<button class="send_pass button blue" id="forgotPasswordBtn">
 						Send
 					</button>

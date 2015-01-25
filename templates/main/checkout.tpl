@@ -1,133 +1,127 @@
 <div class="checkout-wrapper container">
-	<h3>Checkout</h3>
-	<div class="col-md-9">
-		<div class="checkout-step">
-			<div class="f_chckout_top_part top-part">
-				<div class="number">
-					<span>1</span>
-				</div>
-				<span>First Step</span>
-			</div>
-			<div class="bottom-part">
-				<div class="f_checkout_bottom_part checkout-step-content">
-					<div class="input-row">
-						<span>First Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Last Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Address</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row">
-						<span>City</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row small">
-						<span>Zip code</span>
-						<input type="text" class="form-control" />
-					</div>
-				</div>
-				<div class="button-wrapper">
-					<a class="btn btn-default btn-primary" pointed-block="secondStepBlock"   href="javascript:void(0)">NEXT STEP</a>
-				</div>
-			</div>
-		</div>
-		<div class="checkout-step disabled">
-			<div class="top-part">
-				<div class="number">
-					<span>2</span>
-				</div>
-				<span>Second Step</span>
-			</div>
-			<div id="secondStepBlock" style="display:none;" class="f_checkout_bottom_part bottom-part">
-				<div class="checkout-step-content">
-					<div class="input-row">
-						<span>First Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Last Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Address</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row">
-						<span>City</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row small">
-						<span>Zip code</span>
-						<input type="text" class="form-control" />
-					</div>
-				</div>
-				<div class="button-wrapper">
-					<a class="btn btn-default btn-primary" href="javascript:void(0)">NEXT STEP</a>
-				</div>
-			</div>
-		</div>
-		<div class="checkout-step disabled">
-			<div class="top-part">
-				<div class="number">
-					<span>3</span>
-				</div>
-				<span>Third Step</span>
-			</div>
-			<div style="display:none;" class="f_checkout_bottom_part bottom-part">
-				<div class="checkout-step-content">
-					<div class="input-row">
-						<span>First Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Last Name</span>
-						<input type="text" class="form-control" />
-					</div>	
-					<div class="input-row">
-						<span>Address</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row">
-						<span>City</span>
-						<input type="text" class="form-control" />
-					</div>
-					<div class="input-row small">
-						<span>Zip code</span>
-						<input type="text" class="form-control" />
-					</div>
-				</div>
-				<div class="button-wrapper">
-					<a class="btn btn-default btn-primary" href="javascript:void(0)">NEXT STEP</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="total-price-wrapper">
-			<p>Price:<span>230</span></p>
-			<p>Price:<span>230</span></p>
-		</div>
-		<ul class="selected-products">
-			<li>
-				<div class="col-md-4">
-					<div class="product-img">
-						
-					</div>
-				</div>
-				<div class="col-md-8">
-					<h4></h4>
-					<p></p>
-				</div>
-				<div class="">
-					<div class="text-right">Quanity: <span>3</span></div>
-					<a class="pull-right btn btn-primary btn-default" href="javascript:void(0)">Remove From Cart</a>
-				</div>
-			</li>
-		</ul>
-	</div>
+    <h3 class="main_title">Checkout</h3>
+
+    {if isset($ns.success_message)}
+        <div class="success">
+            <strong> {$ns.success_message}</strong>
+        </div>
+    {/if}
+    {if isset($ns.error_message)}
+        <div class="error">
+            <strong> {$ns.error_message}</strong>
+        </div>
+    {/if}
+    <form role="form" method="post" action="{$SITE_PATH}/dyn/user/do_checkout" autocomplete="off">
+
+        {****************Shipping Address Container******************}
+
+        <div class="ship_addr_container">
+            <div class="form-group ship_addr_state f_ship_addr_state">
+                <input type="checkbox" class="ship_addr_checkbox" name="ship_addr_state" id="shipAddrState">
+                <label class="input_label" for="shipAddrState">{$ns.lm->getPhrase(297)}</label>
+            </div>
+            <div class="ship_addr_form f_ship_addr_form">
+                <div class="form-group">
+                    <label class="input_label" for="recipientName">{$ns.lm->getPhrase(293)}</label>
+                    <input type="text" class="text"  name= "recipient_name" id="recipientName" placeholder="{$ns.lm->getPhrase(293)}" />
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="shipAddr">{$ns.lm->getPhrase(13)}</label>
+                    <input type="text" class="text"  name= "ship_addr" id="shipAddr" placeholder="{$ns.lm->getPhrase(13)}" />
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="recipientName">{$ns.lm->getPhrase(45)}</label>
+                    <div class="select_wrapper">
+                        <select>
+                            <option>
+                                Yerevan
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="shipCellTel">{$ns.lm->getPhrase(309)}</label>
+                    <input type="text" class="text"  name= "ship_cell_tel" id="shipCellTel" placeholder="{$ns.lm->getPhrase(309)}" />
+                    <div>Բջջային հեռախոսի համարը պետք է լինի իրական և վավեր: Դուք կստանաք SMS այս համարին՝ պատվերը հաստատելու համար:</div>
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="shipTel">{$ns.lm->getPhrase(62)}</label>
+                    <input type="text" class="text"  name= "ship_tel" id="shipTel" placeholder="{$ns.lm->getPhrase(62)}" />
+                </div>
+
+                </form>
+            </div>
+        </div>
+
+        {****************Billing Address Container******************}
+
+        <div class="bill_addr_container">
+
+            <div class="form-group bill_addr_state f_bill_addr_state">
+                <input type="checkbox" class="bill_addr_checkbox" name="bill_addr_state" id="billAddrState">
+                <label class="input_label" for="billAddrState">{$ns.lm->getPhrase(297)}</label>
+            </div>
+            <div class="bill_addr_form f_bill_addr_form">
+                <div class="form-group">
+                    <label class="input_label" for="recipientName">{$ns.lm->getPhrase(304)}</label>
+                    <input type="text" class="text"  name= "recipient_name" id="recipientName" placeholder="{$ns.lm->getPhrase(304)}" />
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="billAddr">{$ns.lm->getPhrase(13)}</label>
+                    <input type="text" class="text"  name= "bill_addr" id="billAddr" placeholder="{$ns.lm->getPhrase(13)}" />
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="recipientName">{$ns.lm->getPhrase(45)}</label>
+                    <div class="select_wrapper">
+                        <select>
+                            <option>
+                                Yerevan
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="billCellTel">{$ns.lm->getPhrase(309)}</label>
+                    <input type="text" class="text"  name= "bill_cell_tel" id="billCellTel" placeholder="{$ns.lm->getPhrase(309)}" />
+                    <div>Բջջային հեռախոսի համարը պետք է լինի իրական և վավեր: Դուք կստանաք SMS այս համարին՝ պատվերը հաստատելու համար:</div>
+                </div>
+                <div class="form-group">
+                    <label class="input_label" for="billTel">{$ns.lm->getPhrase(62)}</label>
+                    <input type="text" class="text"  name= "bill_tel" id="billTel" placeholder="{$ns.lm->getPhrase(62)}" />
+                </div>
+
+            </div>
+        </div>
+
+        {****************Billing Address Container******************}
+
+        <div class="payment_type_container"> 
+            <h2>{$ns.lm->getPhrase(367)}</h2>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(363)}<img src="{$SITE_PATH}" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(364)}<img src="{$SITE_PATH}" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(365)}<img src="{$SITE_PATH}" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(366)}<img src="{$SITE_PATH}" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName">Bank Transfer <img src="{$SITE_PATH}" alt=""></label>
+            </div>
+            <div class="form-group">
+                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
+                <label class="input_label" for="recipientName"><img src="{$SITE_PATH}" alt=""></label>
+            </div>
+        </div>
+
+    </form>
 </div>

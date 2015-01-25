@@ -15,7 +15,7 @@
         <div class="companies-search-wrapper">
             <div class="search_block">
                 <div class="search_container">
-                    <input type="text" value="" class="form-control search_text" placeholder="Search" name="st" id="srchCompanies">
+                    <input type="text" value="" class="  search_text" placeholder="Search" name="st" id="srchCompanies">
                     <button type="submit" class="search_btn">
                         <span class="glyphicon"></span>
                     </button>
@@ -24,7 +24,7 @@
             <div class="show_com_price">
                 <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
                 <div class="select_wrapper">
-                    <select id="f_show_only_last_hours_select" class="form-control">
+                    <select id="f_show_only_last_hours_select" class=" ">
                         {foreach from=$ns.show_only_last_hours_values item=value key=key}
                             <option value="{$value}" {if $ns.show_only_last_hours_selected == $value}selected="selected"{/if} class="translatable_element" phrase_id="{$ns.show_only_last_hours_names_phrase_ids_array[$key]}">{$ns.show_only_last_hours_names[$key]}</option>
                         {/foreach}
@@ -98,7 +98,7 @@
                             {if ($ns.userLevel === $ns.userGroupsUser) && !in_array($companyId,$ns.userCompaniesIdsArray)}
                                 <div class="form-group">
                                     <!-- <label class="input_label" for="dealerCode">Code</label> -->
-                                    <input id="company_access_key_input_{$companyId}"  type="text" class="form-control text" placeholder="Code">
+                                    <input id="company_access_key_input_{$companyId}"  type="text" class="  text" placeholder="Code">
                                     <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue button" company_id="{$companyId}"><span class="glyphicon"></span></a>
                                 </div>
                             {else}

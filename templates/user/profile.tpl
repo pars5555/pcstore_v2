@@ -16,27 +16,27 @@
                 {/if}
                 <div class="form-group">
                     <label class="input_label" for="firstName">{$ns.lm->getPhrase(61)}</label>
-                    <input type="text" class="form-control text"  name= "first_name" id="firstName" placeholder="{$ns.lm->getPhrase(61)}" value="{$ns.customer->getName()}">
+                    <input type="text" class="  text"  name= "first_name" id="firstName" placeholder="{$ns.lm->getPhrase(61)}" value="{$ns.customer->getName()}">
                 </div>
                 <div class="form-group">
                     <label class="input_label" for="lastName">{$ns.lm->getPhrase(81)}</label>
-                    <input type="text" class="form-control text" name= "last_name"  id="lastName" placeholder="{$ns.lm->getPhrase(81)}" value="{$ns.customer->getLastName()}">
+                    <input type="text" class="  text" name= "last_name"  id="lastName" placeholder="{$ns.lm->getPhrase(81)}" value="{$ns.customer->getLastName()}">
                 </div>
                 <div class="form-group">
                     <label class="input_label" for="phone1">{$ns.lm->getPhrase(12)}1</label>
-                    <input type="text" class="form-control text"  name= "phone1"  id="phone1" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.0|default:''}">
+                    <input type="text" class="  text"  name= "phone1"  id="phone1" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.0|default:''}">
                 </div>
                 <div class="form-group">
                     <label class="input_label" for="phone2">{$ns.lm->getPhrase(12)}2</label>
-                    <input type="text" class="form-control text"  name= "phone2" id="phone2" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.1|default:''}">
+                    <input type="text" class="  text"  name= "phone2" id="phone2" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.1|default:''}">
                 </div>
                 <div class="form-group">
                     <label class="input_label" for="phone3">{$ns.lm->getPhrase(12)}3</label>
-                    <input type="text" class="form-control text"  name= "phone3" id="phone3" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.2|default:''}">
+                    <input type="text" class="  text"  name= "phone3" id="phone3" placeholder="{$ns.lm->getPhrase(12)}"  value="{$ns.phones.2|default:''}">
                 </div>
                 <div class="form-group">
                     <label class="input_label" for="address">{$ns.lm->getPhrase(13)}</label>
-                    <input type="text" class="form-control text" name= "address"  id="address" placeholder="{$ns.lm->getPhrase(13)}" value="{$ns.customer->getAddress()}">
+                    <input type="text" class="  text" name= "address"  id="address" placeholder="{$ns.lm->getPhrase(13)}" value="{$ns.customer->getAddress()}">
                 </div>
                 <div class="form-group">
                     <label for="region">{$ns.lm->getPhrase(45)}:</label>

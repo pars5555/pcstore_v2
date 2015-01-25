@@ -25,7 +25,7 @@
             {if $ns.item}
                 <div class="product-price">
                     {if $new_item == true}
-                        NEW ITEM!!!
+                       <div> NEW ITEM!!!</div>
                     {/if}
 
                     {if $ns.item->getWarranty()>0 || $ns.item->getWarranty()=='lifetime'}
