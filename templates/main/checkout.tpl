@@ -98,28 +98,28 @@
         <div class="payment_type_container"> 
             <h2>{$ns.lm->getPhrase(367)}</h2>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(363)}<img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_cash" />
+                <label class="input_label" for="payment_cash">{$ns.lm->getPhrase(363)}<img src="{$SITE_PATH}" alt=""></label>
             </div>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(364)}<img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_credit" />
+                <label class="input_label" for="payment_credit">{$ns.lm->getPhrase(364)}<img src="{$SITE_PATH}" alt=""></label>
             </div>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(365)}<img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_paypal" />
+                <label class="input_label" for="payment_paypal">{$ns.lm->getPhrase(365)}<img src="{$SITE_PATH}" alt=""></label>
             </div>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName">{$ns.lm->getPhrase(366)}<img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_arca" />
+                <label class="input_label" for="payment_arca">{$ns.lm->getPhrase(366)}<img src="{$SITE_PATH}" alt=""></label>
             </div>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName">Bank Transfer <img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_bank" />
+                <label class="input_label" for="payment_bank">Bank Transfer <img src="{$SITE_PATH}" alt=""></label>
             </div>
             <div class="form-group">
-                <input type="radio" class=""  name= "payment_type" id="payment_cash" />
-                <label class="input_label" for="recipientName"><img src="{$SITE_PATH}" alt=""></label>
+                <input type="radio" class=""  name="payment_type" id="payment_card" />
+                <label class="input_label" for="payment_card"><img src="{$SITE_PATH}" alt=""></label>
             </div>
         </div>
 

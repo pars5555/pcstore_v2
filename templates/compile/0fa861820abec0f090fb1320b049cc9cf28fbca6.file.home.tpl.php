@@ -93,7 +93,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                             <label for="selected_company_id"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(66);?>
 : </label>
                         <?php }?>
-                        <select class="form-control" name='sci' id='selected_company_id'  style="<?php if (!(count($_smarty_tpl->tpl_vars['ns']->value['companiesIds'])>1)){?>display:none;<?php }?>">
+                        <select class=" " name='sci' id='selected_company_id'  style="<?php if (!(count($_smarty_tpl->tpl_vars['ns']->value['companiesIds'])>1)){?>display:none;<?php }?>">
                             <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['ns']->value['companiesIds']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

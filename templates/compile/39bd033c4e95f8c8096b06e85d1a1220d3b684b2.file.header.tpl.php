@@ -153,7 +153,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <form method="GET" action="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 " autocomplete="off">
                                     <input type="text" id="srch-term" name="st" placeholder="<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(91);?>
-" class="form-control">
+" class=" ">
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
                                             <i class="glyphicon  glyphicon-search"></i>
@@ -202,12 +202,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="form-group">
                             <label for="mainLoginEmail"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(21);?>
 </label>
-                            <input name="email" type="email" class="form-control" id="mainLoginEmail" placeholder="Enter email">
+                            <input name="email" type="email" class=" " id="mainLoginEmail" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="mainLoginPassword"><?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(4);?>
 </label>
-                            <input name="password" type="password" class="form-control" id="mainLoginPassword" placeholder="<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(4);?>
+                            <input name="password" type="password" class=" " id="mainLoginPassword" placeholder="<?php echo $_smarty_tpl->tpl_vars['ns']->value['lm']->getPhrase(4);?>
 ">
                             <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                         </div>
@@ -270,7 +270,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div id="forgotPasswordSuccessMessage"></div>
                     <label for="email">Your Email Address</label>
                     <form id="forgotPasswordForm" autocomplete="off">
-                        <input name="email" type="email" class="form-control" id="forgotPasswordEmailInput" placeholder="Enter email">
+                        <input name="email" type="email" class=" " id="forgotPasswordEmailInput" placeholder="Enter email">
                         <button class="send_pass" id="forgotPasswordBtn">
                             Send
                         </button>

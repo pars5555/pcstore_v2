@@ -59,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                      <div id="newsletter_error_message"></div>
                      <div id="newsletter_success_message"></div>
                     <div class="input-group" style="margin: 5px 0px;">
-                        <input id="newsLetterInp" name="" type="text" value="" class="form-control" placeholder="News letter" >
+                        <input id="newsLetterInp" name="" type="text" value="" class=" " placeholder="News letter" >
                         <div class="input-group-btn">
                             <button class="btn btn-default" id="newsletterSubscribeBtn"><i class="glyphicon  glyphicon-envelope"></i></button>
                         </div>
