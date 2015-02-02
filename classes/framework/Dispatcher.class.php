@@ -98,7 +98,6 @@ class Dispatcher {
         //--replacing separarators for getting real package's path
         //$this->sessionManager->setArgs($args);
         //	$this->sessionManager->setDispatcher($this);
-
         $this->dispatch($package, $command, $args);
     }
 

@@ -31,7 +31,6 @@
     -webkit-transform:rotate(90deg);  
     -o-transform:rotate(90deg);  
     -ms-transform:rotate(90deg);  
-    behavior:url(-ms-transform.htc);
 }
 .crossbrowser_border_radius{
     -moz-border-radius: 5px;
@@ -41,7 +40,6 @@
     -ms-border-radius: 5px;
     -icab-border-radius: 5px; 
     border-radius: 5px; 
-    behavior: url(border-radius.htc);
 }
 
 .crossbrowser_opacity{
@@ -114,7 +112,14 @@ body{
     overflow:hidden;
 }
 .hide{
+    display: none !important;
+}
+.hidden{
     visibility:hidden !important;
+}
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
 }
 .glyphicon{
     font-family:"glyphicons-halflings";	
@@ -315,11 +320,82 @@ label.input_label{
     vertical-align: middle;
 }
 
-/*******
+/*************************** Pop Up Container **************************/
 
+.pop_up_container{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999999;
+}
+
+.pop_up_container .pop_up{
+    width:calc(100% - 40px);
+    max-width:700px;
+    padding:20px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color: #fff;
+    
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);  
+    -webkit-transform:translate(-50%,-50%);  
+    -o-transform:translate(-50%,-50%);  
+    -ms-transform:translate(-50%,-50%);  
+    
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
+}
+
+.pop_up_container .pop_up .pop_up_title{
+    font-size:20px;
+    padding:10px;
+    margin-bottom:20px;
+    border-bottom: 2px solid #3498db;
+    color:#3498db;
+    text-align: center;
+}
+
+/*************************** Checkbox Container **************************/
+.checkbox{
+    display:inline-block;
+    vertical-align: middle;
+    width:19px;
+    height:19px;
+    background:url(../../img/checkbox.png) no-repeat scroll 50% 50% / 100% auto transparent;    
+}
+.checkbox.checked{
+    background-image: url(../../img/checkboxChecked.png);
+}
+
+.checkbox_container{
+    display:table;
+    width:100%;
+}
+
+.checkbox_container .checkbox{
+    display: table-cell;
+    height:auto;
+}
+.checkbox_container .checkbox_label{
+    display: table-cell;
+    font-weight: 600;
+    padding:0 10px;
+}
+
+/****************************************************
+******************************************************
   HEADER  
-
-*******/
+****************************************************
+*****************************************************/
 
 .header_content{
     clear:both;
@@ -1153,6 +1229,9 @@ SMS CONF COMPANY
 
 /*======= Cart Item =======*/
 
+.cart-wrapper{    
+    margin-bottom:50px;
+}
 .cart-wrapper .cart-item{
     border-top:1px solid #ccc;
     position: relative;
@@ -1249,7 +1328,7 @@ SMS CONF COMPANY
     float:right;
     width:100%;
     max-width:500px;
-    margin-top: 50px;
+    background-color: #fff;
 }
 .cart_checkout .vat,
 .cart_checkout .cart_total{
@@ -1258,11 +1337,14 @@ SMS CONF COMPANY
     border-bottom:1px solid #ccc;
     text-align: right;
 }
-.cart_checkout .vat a{
-    float:left;
+.cart_checkout .vat{
+    text-align: left; 
+    font-weight: 600;   
     font-size: 18px;
-    font-weight: 600;
     color:#555;
+}
+.cart_checkout .vat a{
+    float:right;
 }
 .cart_checkout .cart_total .total_ph{
     float:left;
@@ -1290,6 +1372,64 @@ SMS CONF COMPANY
     border: 1px solid #D54000;
     border-radius: 3px;
     clear:both;
+}
+
+/***************** Checkout Confirm Container *******************/
+
+.checkout_confirm_container{
+    padding-right: 530px;
+    position:relative;
+}
+
+.checkout_confirm_container .checkout_confirm.cart_checkout{
+    position:absolute;
+    top:0;
+    right:0;
+    margin:auto;
+}
+.checkout_confirm_container .checkout_confirm.cart_checkout.fixed{
+    position: fixed;
+    right:25px;
+}
+
+
+/*Cell Phone Number Pop Up*/
+
+.cell_phone_number_pop_up{
+    text-align: center;    
+}
+.cell_phone_number_pop_up.pop_up_container .pop_up{
+    max-width: 550px;
+}
+.cell_phone_number_pop_up .text{
+    margin:20px auto;
+}
+.cell_phone_number_pop_up .form-group{
+    max-width: 300px;
+    margin:auto;
+}
+.cell_phone_number_pop_up .button{
+    max-width: none;
+    width:auto;
+    padding:10px 15px;
+}
+
+/*Promo Code Container*/
+
+.promo_code_container{
+    float:left;
+    width: 300px;
+}
+.promo_code_container .button{
+    margin:auto;
+    padding:9px
+}
+.promo_code_container .text{
+    padding:11px 15px;
+}
+.promo_code_container label.input_label{
+    font-size:18px;
+    padding:10px;
 }
 
 /*******
@@ -1977,6 +2117,10 @@ BUILD PC PAGE
 .component_block .component_img img{
     width:150px;	
 }
+.build_pc_container .component_block .component_img,
+.build_pc_container .component_block .component_img img{
+    width:70px;	
+}
 .bundle-components-wrapper  .component_block .component_img,
 .bundle-components-wrapper  .component_block .component_img img{
     width:50px;	
@@ -2002,6 +2146,7 @@ BUILD PC PAGE
     color:#cc0000;
     font-weight:500;
     text-decoration:line-through;
+    font-size: 17px;
 }
 .discount{
     color:#555;
@@ -2132,10 +2277,13 @@ BUILD PC PAGE
     float: left;
     width: 150px;
 }
-.button.blue.add_to_cart,
-.button.blue.save_pcc {
+.button.add_to_cart,
+.button.save_pcc {
     float: right;
-    width: 150px;
+    max-width: none;
+    min-width: 150px;
+    padding: 9px;
+    width: auto;
 }
 
 

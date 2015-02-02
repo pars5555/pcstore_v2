@@ -69,6 +69,7 @@
                 <file>ngs/loads/main/HomeLoad.class.js</file>
                 <file>ngs/loads/main/BuildpcLoad.class.js</file>
                 <file>ngs/loads/main/CheckoutLoad.class.js</file>
+                <file>ngs/loads/main/CheckoutCalculationLoad.class.js</file>
                 <file>ngs/loads/main/LandingpageLoad.class.js</file>
                 <file>ngs/loads/main/SignupLoad.class.js</file>
                 <file>ngs/loads/main/CompaniesLoad.class.js</file>
@@ -139,6 +140,8 @@
                 <file>ngs/actions/main/AddNewsletterSubscriberAction.class.js</file>
                 <file>ngs/actions/main/SendForgotPasswordAction.class.js</file>
                 <file>ngs/actions/main/ConfirmStripePaymentAction.class.js</file>
+                <file>ngs/actions/main/ConfirmCellPhoneNumberAction.class.js</file>
+                <file>ngs/actions/main/ConfirmCellPhoneNumberCodeAction.class.js</file>
                 <file>ngs/actions/main/pcc/GetSelectedAndRequireComponentsAction.class.js</file>
                 <file>ngs/actions/user/RegisterCompanyDealerAction.class.js</file>
                 <file>ngs/actions/user/InviteAction.class.js</file>

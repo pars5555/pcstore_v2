@@ -51,7 +51,12 @@ class OrdersManager extends AbstractManager {
         return self::$instance;
     }
 
-    public function addOrder($userEmail, $orderDealerPriceUsd, $cho_shipping_tel, $cho_billing_tel, $cho_shipping_cell, $cho_billing_cell, $paymentType, $userTypeString, $dollarExchange, $cho_do_shipping, $cho_shipping_address, $cho_billing_address, $cho_shipping_region, $cho_shipping_recipient_name, $cho_billing_recipient_name, $cho_billing_region, $billing_is_same_as_shipping, $usablePoints, $shippingCost, $grandTotalAMD, $grandTotalUSD, $usedDealsIds, $totalPromoDiscountAmd, $includedVat, $metadataObject) {
+    public function addOrder($userEmail, $orderDealerPriceUsd, $cho_shipping_tel, $cho_billing_tel,
+            $cho_shipping_cell, $cho_billing_cell, $paymentType, $userTypeString, $dollarExchange,
+            $cho_do_shipping, $cho_shipping_address, $cho_billing_address, $cho_shipping_region,
+            $cho_shipping_recipient_name, $cho_billing_recipient_name, $cho_billing_region, 
+            $billing_is_same_as_shipping, $usablePoints, $shippingCost, $grandTotalAMD,
+            $grandTotalUSD, $usedDealsIds, $totalPromoDiscountAmd, $includedVat, $metadataObject) {
 
         $dto = $this->mapper->createDto();
         $dto->setCustomerEmail($userEmail);

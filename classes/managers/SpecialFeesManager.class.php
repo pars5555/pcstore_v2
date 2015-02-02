@@ -87,6 +87,7 @@ class SpecialFeesManager extends AbstractManager {
 
     public function getShippingCost($regionKey) {
         $regionKey = strtolower($regionKey);
+        $dto = null;
         switch ($regionKey) {
             case
             'aragatsotn' :

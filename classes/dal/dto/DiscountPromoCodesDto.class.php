@@ -10,7 +10,7 @@ require_once (FRAMEWORK_PATH . "/dal/dto/AbstractDto.class.php");
 class DiscountPromoCodesDto extends AbstractDto {
 
     // Map of DB value to Field value
-    protected $mapArray = array("id" => "id", "code" => "code", "discount_percent" => "discountPercent", "used" => "used");
+    protected $mapArray = array("id" => "id", "code" => "code", "discount_percent" => "discountPercent", "enable" => "enable");
 
     // constructs class instance
     public function __construct() {

@@ -151,10 +151,10 @@ class BundleItemsManager extends AbstractManager {
     }
 
     public function calcBundlePriceForCustomerWithDiscount($bundleItems, $userLevel) {
-        $discountParam = floatval(1 - floatval($bundleItems[0]->getDiscount() / 100));
-        list($bundleTotAMD, $bundleTotUSD, $specialFeesTotalAMD) = $this->calcBundlePriceForCustomerWithoutDiscount($bundleItems, $userLevel);
-        $bundleTotalAMD += $bundleTotAMD * $discountParam + $specialFeesTotalAMD;
-        $bundleTotalUSD += $bundleTotUSD;
+         $discountParam = floatval(1 - floatval($bundleItems[0]->getDiscount() / 100));
+        list($bundleTotAMD, $bundleTotUSD, $specialFeesTotalAMD) = $this->calcBundlePriceForCustomerWithoutDiscount($bundleItems, $userLevel);        
+        $bundleTotalAMD = $bundleTotAMD * $discountParam + $specialFeesTotalAMD;        
+        $bundleTotalUSD = $bundleTotUSD;
         return array($bundleTotalAMD, $bundleTotalUSD);
     }
 

@@ -76,7 +76,6 @@ abstract class AbstractRequest {
         $this->dispatcher = $dispatcher;
     }
 
-   
     /**
      * @abstract  
      * @access
@@ -155,6 +154,17 @@ abstract class AbstractRequest {
 
     protected function getUser() {
         return $this->sessionManager->getUser();
+    }
+
+    public function getUserLevelString() {
+        switch ($this->getUserLevel()) {
+            case UserGroups::$USER:return "user";
+            case UserGroups::$COMPANY:return "company";
+            case UserGroups::$SERVICE_COMPANY:return "service_company";
+            case UserGroups::$ADMIN:return "admin";
+            case UserGroups::$GUEST:return "guest";
+        }
+        return 'unknown';
     }
 
     public function getCustomer() {

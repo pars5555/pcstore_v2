@@ -8,6 +8,7 @@ require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
 require_once (CLASSES_PATH . "/managers/SpecialFeesManager.class.php");
 require_once (CLASSES_PATH . "/managers/DealsManager.class.php");
 require_once (CLASSES_PATH . "/managers/DiscountPromoCodesManager.class.php");
+require_once (CLASSES_PATH . "/managers/SpecialFeesManager.class.php");
 
 /**
  * PcConfiguratorManager class is responsible for creating,
@@ -140,32 +141,35 @@ class CheckoutManager extends AbstractManager {
     public function applyDealsDiscountsOnCartItems($groupedCartItems, $promo_codes_arrray, $vatIncluded = 0) {
         $dealsManager = DealsManager::getInstance();
         $realDealsPromos = array();
+        $totalDiscountAmd = 0;
         foreach ($promo_codes_arrray as $promoCode) {
 
             $deal = $dealsManager->getDealsByPromoCode($promoCode);
 
             if (isset($deal)) {
-                $dealExist = $this->applyDealItemDiscountOnCustomerCartItems($groupedCartItems, $deal, $vatIncluded);
+                list($dealExist, $tdAmd) = $this->applyDealItemDiscountOnCustomerCartItems($groupedCartItems, $deal, $vatIncluded);
                 if ($dealExist) {
+                    $totalDiscountAmd+=$tdAmd;
                     if (!in_array($deal->getPromoCode(), $realDealsPromos)) {
                         $realDealsPromos[] = $deal->getPromoCode();
                     }
                 }
             }
         }
-        return $realDealsPromos;
+        return array($realDealsPromos, $totalDiscountAmd);
     }
 
     public function applyAllItemsPromoOnCartItems($groupedCartItems, $promo_codes_arrray, $vatIncluded = 0) {
         $discountPromoCodesManager = DiscountPromoCodesManager::getInstance();
+
         foreach ($promo_codes_arrray as $promoCode) {
             $dto = $discountPromoCodesManager->getByPromoCode($promoCode);
-            if (isset($dto) && $dto->getUsed() == 0) {
-                $this->applyDiscountPromoOnCustomerCartItems($groupedCartItems, $dto, $vatIncluded);
-                return $promoCode;
+            if (isset($dto) && $dto->getEnable() == 1) {
+                $totalDiscountAmd = $this->applyDiscountPromoOnCustomerCartItems($groupedCartItems, $dto, $vatIncluded);
+                return array($promoCode, $totalDiscountAmd);
             }
         }
-        return null;
+        return array(null, 0);
     }
 
     public function setCartItemsDiscount($groupedCartItems, $pccDiscount) {
@@ -210,6 +214,7 @@ class CheckoutManager extends AbstractManager {
         $dealItemId = $dealDto->getItemId();
         $dealPrice = $dealDto->getPriceAmd();
         $dealExist = false;
+        $totalDiscountAmd = 0;
         foreach ($groupedCartItems as $cartUnit) {
             if (is_array($cartUnit)) {
                 foreach ($cartUnit as $bundleItem) {
@@ -218,6 +223,7 @@ class CheckoutManager extends AbstractManager {
                         $customerItemPriceAmd = $itemManager->exchangeFromUsdToAMD($bundleItem->getCustomerItemPrice());
                         $discoutAMD = $customerItemPriceAmd - $dealPrice;
                         $bundleItem->setDealDiscountAmd($discoutAMD);
+                        $totalDiscountAmd+=intval($bundleItem->getBundleItemCount())*$discoutAMD;
                         $dealExist = true;
                     }
                 }
@@ -232,45 +238,64 @@ class CheckoutManager extends AbstractManager {
                         $customerItemPriceAmd = $itemManager->exchangeFromUsdToAMD($cartUnit->getCustomerItemPrice());
                         $discoutAMD = $customerItemPriceAmd - $dealPrice;
                     }
+                    $totalDiscountAmd+=intval($cartUnit->getCount())*$discoutAMD;
                     $cartUnit->setDealDiscountAmd($discoutAMD);
                     $dealExist = true;
                 }
             }
         }
-        return $dealExist;
+        return array($dealExist, $totalDiscountAmd);
     }
 
     public function applyDiscountPromoOnCustomerCartItems($groupedCartItems, $discountDto, $vatIncluded = 0) {
+        $totalDiscountAmd = 0;
         $itemManager = ItemManager::getInstance();
         $discountParam = 1 - intval($discountDto->getDiscountPercent()) / 100;
-        foreach ($groupedCartItems as $cartUnit) {
+        foreach ($groupedCartItems as $cartUnit) { var_dump($cartUnit);exit;
             if (is_array($cartUnit)) {
                 foreach ($cartUnit as $bundleItem) {
-                    if ($bundleItem->isDealerOfThisCompany() == 0) {
+                    if ($bundleItem->getIsDealerOfThisCompany() == 0) {
                         $itemId = $bundleItem->getBundleItemId();
                         $itemDto = $itemManager->selectByPK($itemId);
-                        $itemListPrice = $itemDto->getListPriceAmd();
-                        $itemPriceAfterDiscount = $itemListPrice * $discountParam;
-                        $customerItemPriceAmd = $itemManager->exchangeFromUsdToAMD($bundleItem->getCustomerItemPrice());
-                        $discoutAMD = $customerItemPriceAmd - $itemPriceAfterDiscount;
-                        $bundleItem->setDealDiscountAmd($discoutAMD);
+                        if (isset($itemDto)) {
+                            $itemListPrice = $itemDto->getListPriceAmd();
+                            $itemPriceAfterDiscount = $itemListPrice * $discountParam;
+                            $customerItemPriceAmd = $itemManager->exchangeFromUsdToAMD($bundleItem->getCustomerItemPrice());
+                            $discoutAMD = $customerItemPriceAmd - $itemPriceAfterDiscount;
+                            if ($discoutAMD <= 0) {
+                                $discoutAMD = 0;
+                            }
+                            if ($bundleItem->getDealDiscountAmd() < $discoutAMD) {
+                                
+                                $totalDiscountAmd+=intval($bundleItem->getBundleItemCount())*$discoutAMD;
+                                $bundleItem->setDealDiscountAmd($discoutAMD);
+                            }
+                        }
                     }
                 }
             } else {
                 $itemId = $cartUnit->getItemId();
                 if ($cartUnit->isDealerOfThisCompany() == 0) {
-                    $discoutAMD = 0;
                     if ($vatIncluded != 1) {
                         $itemDto = $itemManager->selectByPK($itemId);
+                        $itemListPrice = $itemDto->getListPriceAmd();
                         $itemListPrice = $itemDto->getListPriceAmd();
                         $itemPriceAfterDiscount = $itemListPrice * $discountParam;
                         $customerItemPriceAmd = $itemManager->exchangeFromUsdToAMD($cartUnit->getCustomerItemPrice());
                         $discoutAMD = $customerItemPriceAmd - $itemPriceAfterDiscount;
+                        if ($discoutAMD <= 0) {
+                            $discoutAMD = 0;
+                        }
+                        if ($cartUnit->getDealDiscountAmd() < $discoutAMD) {
+                            
+                            $totalDiscountAmd+=intval($cartUnit->getCount())*$discoutAMD;
+                            $cartUnit->setDealDiscountAmd($discoutAMD);
+                        }
                     }
-                    $cartUnit->setDealDiscountAmd($discoutAMD);
                 }
             }
         }
+        return $totalDiscountAmd;
     }
 
     public function getItemPriceChangedMessage($itemDisplayName, $itemOldPrice, $itemCurrentPrice) {
@@ -339,6 +364,75 @@ class CheckoutManager extends AbstractManager {
         $groupedCartItems = $customerCartManager->groupBundleItemsInArray($cartItemsDtos);
         list($grandTotalAMD, $grandTotalUSD) = $customerCartManager->calcCartTotal($groupedCartItems, true, $userLevel);
         return array($grandTotalAMD, $grandTotalUSD);
+    }
+
+    public function calculateCustomerCartParams($customer, $userLevel) {
+        $userManager = UserManager::getInstance();
+        $customerCartManager = CustomerCartManager::getInstance();
+        $checkoutManager = CheckoutManager::getInstance();
+
+
+        $vipCustomer = $userManager->isVip($customer);
+        if ($vipCustomer) {
+            $pccDiscount = floatval($this->getCmsVar('vip_pc_configurator_discount'));
+        } else {
+            $pccDiscount = floatval($this->getCmsVar('pc_configurator_discount'));
+        }
+        $customerEmail = strtolower($customer->getEmail());
+        $user_id = $customer->getId();
+
+        $_cartItemsDtos = $customerCartManager->getCustomerCart($customerEmail, $user_id, $userLevel);
+        $_groupedCartItems = $customerCartManager->groupBundleItemsInArray($_cartItemsDtos);
+        $checkoutManager->setCartItemsDiscount($_groupedCartItems, $pccDiscount);
+        $cartItemsDtos = $customerCartManager->getCustomerCart($customerEmail, $user_id, $userLevel);
+        $pv = $checkoutManager->getPriceVariety($cartItemsDtos, $userLevel);
+        $discountAvailable = $checkoutManager->isDiscountAvailableForAtleastOneItem($cartItemsDtos);
+        $groupedCartItems = $customerCartManager->groupBundleItemsInArray($cartItemsDtos);
+        $cartChanges = $customerCartManager->getCustomerCartItemsChanges($groupedCartItems);
+        $customerCartManager->setCustomerCartItemsPriceChangesToCurrentItemPrices($groupedCartItems);
+        $customerCartChangesMessages = $checkoutManager->getCustomerCartChangesMessages($cartChanges);
+
+        $calcCartTotalDealerPrice = $customerCartManager->calcCartTotalDealerPrice($cartItemsDtos, $customer->getCartIncludedVat());
+        //all cart items, bundle items grouped in sub array
+        $includeVat = intval($customer->getCartIncludedVat());
+        $totalPromoDiscountAmd = 0;
+        $totalDealDiscountAmd = 0;
+        if (!empty($_COOKIE['promo_codes'])) {
+            $promoCodes = $this->secure($_COOKIE['promo_codes']);
+            $promoCodsArray = explode(',', $promoCodes);
+            list($existingDealsPromoCodesArray, $totalDealDiscountAmd) = $checkoutManager->applyDealsDiscountsOnCartItems($groupedCartItems, $promoCodsArray, $includeVat);
+            list($validPromoDiscount, $totalPromoDiscountAmd) = $checkoutManager->applyAllItemsPromoOnCartItems($groupedCartItems, $promoCodsArray, $includeVat);
+            $existingDealsPromoCodesArray [] = $validPromoDiscount;
+            $_COOKIE['promo_codes'] = implode(',', $existingDealsPromoCodesArray);
+            setcookie('promo_codes', $_COOKIE['promo_codes'], time() + 60 * 60 * 24, '/', "." . DOMAIN);
+        }
+        list($grandTotalAMD, $grandTotalUSD) = $customerCartManager->calcCartTotal($groupedCartItems, true, $userLevel, $includeVat);
+        $all_non_bundle_items_has_vat = $customerCartManager->checkAllNonBundleItemsHasVatPrice($groupedCartItems);
+        if (!$all_non_bundle_items_has_vat && $includeVat == 1) {
+            $customerCartChangesMessages[] = $this->getPhraseSpan(566);
+        }
+        $minimum_order_amount_exceed = $grandTotalAMD >= intval($this->getCmsVar("minimum_order_amount_amd"));
+
+        if (!empty($customerCartChangesMessages)) {
+            //$this->addParam('customerMessages', $customerCartChangesMessages);
+        }
+        $allItemsAreAvailable = $customerCartManager->areAllItemsAvailableInCustomerCart($groupedCartItems);
+        return array($totalPromoDiscountAmd, $totalDealDiscountAmd, $all_non_bundle_items_has_vat, $minimum_order_amount_exceed, $customerCartChangesMessages,
+            $discountAvailable, $pv, $groupedCartItems, $allItemsAreAvailable, empty($cartItemsDtos), $grandTotalAMD, $grandTotalUSD, $calcCartTotalDealerPrice);
+    }
+
+    public function getShippingCost($region, $grandTotalAMD) {
+        $specialFeesManager = SpecialFeesManager::getInstance();
+        $shippingCostDto = $specialFeesManager->getShippingCost($region);
+        if (isset($shippingCostDto)) {
+            if ($grandTotalAMD < intval($this->getCmsVar('shipping_in_yerevan_free_amd_over'))) {
+                return intval($shippingCostDto->getPrice());
+            } else {
+                return 0;
+            }
+        } else {
+            return -1;
+        }
     }
 
     public function getMapper() {

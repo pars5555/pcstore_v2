@@ -121,11 +121,11 @@
                                 <span class="price {if $discountParam != 1 || $cartItem->getDealDiscountAmd()>0}old_price{/if}"> {$itemAmdPrice|number_format:0} Դր. </span>
                                 {if $discountParam != 1 && $cartItem->getDealDiscountAmd()<=0}
                                     <br/>
-                                    <span class="price"> {$itemAmdPrice*$discountParam|number_format:0} Դր. </span>
+                                    <span class="price"> {($itemAmdPrice*$discountParam)|number_format:0} Դր.</span>
                                 {/if}
                                 {if $cartItem->getDealDiscountAmd()>0}
                                     <br/>
-                                    <span class="price"> {$itemAmdPrice-$cartItem->getDealDiscountAmd()|number_format:0} Դր. </span>
+                                    <span class="price"> {($itemAmdPrice-$cartItem->getDealDiscountAmd())|number_format:0} Դր. </span>
 
                                 {/if}
                             {/if}
@@ -142,7 +142,7 @@
                 {/if}
             </div>
 
-            <!-- ==============Component Unit Price AMD============== -->
+            <!-- ==============Component Total Price AMD============== -->
 
             {* printing item total price *}
             <div class="component_total_price">
@@ -156,11 +156,11 @@
                                 <span  class="price {if $discountParam != 1 || $cartItem->getDealDiscountAmd()>0}old_price{/if}"> {$totPrAMD|number_format:0} Դր. </span>
                                 {if $discountParam != 1 && $cartItem->getDealDiscountAmd()<=0}
                                     <br/>
-                                    <span class="price"> {$totPrAMD*$discountParam|number_format:0} Դր. </span>
+                                    <span class="price"> {($totPrAMD*$discountParam)|number_format:0} Դր. </span>
                                 {/if}
                                 {if $cartItem->getDealDiscountAmd()>0}
                                     <br/>
-                                    <span class="price"> {$totPrAMD-$count*$cartItem->getDealDiscountAmd()|number_format:0} Դր. </span>
+                                    <span class="price"> {($totPrAMD-$count*$cartItem->getDealDiscountAmd())|number_format:0} Դր. </span>
 
                                 {/if}
                             {/if}
@@ -189,12 +189,12 @@
 
             <!-- ==============Component Discount============== -->
 
-            <div class="component_discount">
+            <div class="component_discount">               
                 {if isset($deal_discount_applied) || $discount_available}
                     {if $discount_available && $cartItem->getDealDiscountAmd()<=0}
                         <span class="discount">{$ns.lm->getPhrase(285)} {$cartItem->getDiscount()}%</span>
                     {/if}
-                    {if isset($deal_discount_applied)}
+                    {if isset($deal_discount_applied) && $discount_available}
                         <br/>
                         <span class="price">{$count} x {$cartItem->getDealDiscountAmd()|number_format:0} Դր.</span>
                     {/if}

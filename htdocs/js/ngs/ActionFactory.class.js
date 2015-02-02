@@ -11,6 +11,8 @@ ngs.ActionFactory.prototype={
         this.actions["send_forgot_password"] = function temp(){return new ngs.SendForgotPasswordAction("send_forgot_password", ajaxLoader);};
         this.actions["get_selected_and_require_components"] = function temp(){return new ngs.GetSelectedAndRequireComponentsAction("get_selected_and_require_components", ajaxLoader);};
         this.actions["confirm_stripe_payment"] = function temp(){return new ngs.ConfirmStripePaymentAction("confirm_stripe_payment", ajaxLoader);};
+        this.actions["confirm_cell_phone_number"] = function temp(){return new ngs.ConfirmCellPhoneNumberAction("confirm_cell_phone_number", ajaxLoader);};
+        this.actions["confirm_cell_phone_number_code"] = function temp(){return new ngs.ConfirmCellPhoneNumberCodeAction("confirm_cell_phone_number_code", ajaxLoader);};
 
         //user
         this.actions["register_company_dealer"] = function temp(){return new ngs.RegisterCompanyDealerAction("register_company_dealer", ajaxLoader);};

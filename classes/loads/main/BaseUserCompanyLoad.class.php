@@ -13,6 +13,7 @@ require_once (CLASSES_PATH . "/loads/BaseValidLoad.class.php");
  */
 abstract class BaseUserCompanyLoad extends BaseValidLoad {
 
+   
     public function getRequestGroup() {
         return RequestGroups::$userCompanyRequest;
     }

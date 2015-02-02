@@ -22,11 +22,12 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.newsLetterBlockController();
         this.initForgotPassword();
         ngs.action('ping_pong', {});
-        ngs.nestLoad(jQuery('#contentLoad').val());
         this.notificationCustomScroll();
         this.leftMenu();
         this.overlay();
         this.leftPanelActiveElement();
+        this.checkbox();
+        ngs.nestLoad(jQuery('#contentLoad').val());
     },
     initGoogleLogoutOnWindowUnload: function () {
         window.onbeforeunload = function (e) {
@@ -184,6 +185,14 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     overlay: function () {
         jQuery(".overlay").click(function () {
             jQuery(this).parent().addClass("hide");
+        });
+    },
+    checkbox: function () {
+        jQuery(".f_checkbox_label").click(function () {
+            jQuery(this).siblings(".f_checkbox").toggleClass("checked");
+        });
+        jQuery(".f_checkbox").click(function () {
+            jQuery(this).toggleClass("checked");
         });
     }
 });

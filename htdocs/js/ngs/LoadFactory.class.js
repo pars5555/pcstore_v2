@@ -9,6 +9,7 @@ ngs.LoadFactory.prototype={
 	this.loads["main_landingpage"] = function temp(){return new ngs.LandingpageLoad("main_landingpage", ajaxLoader);};
 	this.loads["main_signup"] = function temp(){return new ngs.SignupLoad("main_signup", ajaxLoader);};
 	this.loads["main_checkout"] = function temp(){return new ngs.CheckoutLoad("main_checkout", ajaxLoader);};
+	this.loads["main_checkout_calculation"] = function temp(){return new ngs.CheckoutCalculationLoad("main_checkout_calculation", ajaxLoader);};
 	this.loads["main_companies"] = function temp(){return new ngs.CompaniesLoad("main_companies", ajaxLoader);};
 	this.loads["main_item"] = function temp(){return new ngs.ItemLoad("main_item", ajaxLoader);};
 	this.loads["main_cart"] = function temp(){return new ngs.CartLoad("main_cart", ajaxLoader);};

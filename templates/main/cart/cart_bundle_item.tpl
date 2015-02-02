@@ -39,14 +39,14 @@
         {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
             {if !isset($someItemsMissing)}
                 {if $bundlePrice.0+$specialFee > 0}
-                    <span class="price {if $discountParam != 1 || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {$bundlePrice.0+$specialFee|number_format:0} Դր. </span>
+                    <span class="price {if $discountParam != 1 || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {($bundlePrice.0+$specialFee)|number_format:0} Դր. </span>
                     {if $discountParam != 1}
                         <br/>
-                        <span class="price {if $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {$bundlePrice.0*$discountParam+$specialFee|number_format:0} Դր. </span>
+                        <span class="price {if $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {($bundlePrice.0*$discountParam+$specialFee)|number_format:0} Դր. </span>
                     {/if}
                     {if $bundle_item_total_deal_discount_amd>0}
                         <br/>
-                        <span class="price"> {$bundlePrice.0*$discountParam+$specialFee-$bundle_item_total_deal_discount_amd|number_format:0} Դր. </span>
+                        <span class="price"> {($bundlePrice.0*$discountParam+$specialFee-$bundle_item_total_deal_discount_amd)|number_format:0} Դր. </span>
                     {/if}
                 {/if}
             {/if}
@@ -75,7 +75,7 @@
                     {/if}
                     {if $bundle_item_total_deal_discount_amd>0}
                         <br/>
-                        <span class="price"> {$totAMDWithDiscount-$count*$bundle_item_total_deal_discount_amd|number_format:0} Դր. </span>
+                        <span class="price"> {($totAMDWithDiscount-($count*$bundle_item_total_deal_discount_amd))|number_format:0} Դր. </span>
 
                     {/if}
                 {/if}
@@ -97,9 +97,9 @@
                 {$ns.lm->getPhrase(285)} {$bundleItems.0->getDiscount()}%
                 <br/>
             {/if}
-            {if $bundle_item_total_deal_discount_amd>0}
+            {*if $bundle_item_total_deal_discount_amd>0}
                 {$count} x {$bundle_item_total_deal_discount_amd|number_format:0} Դր.
-            {/if}
+            {/if*}
             </span>
         {/if}
     </div>

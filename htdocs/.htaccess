@@ -3,7 +3,7 @@ RewriteBase /
 
 RewriteRule ^signup$ /dyn/main/main/$1/?page=signup [L,QSA]
 RewriteRule ^contactus /dyn/main/main/$1/?page=contactus [L,QSA]
-RewriteRule ^checkout /dyn/main/main/$1/?page=checkout [L,QSA]
+RewriteRule ^checkout$ /dyn/main/main/$1/?page=checkout [L,QSA]
 RewriteRule ^landingpage /dyn/main/main/$1/?page=landingpage [L,QSA]
 RewriteRule ^help /dyn/main/main/$1/?page=help [L,QSA]
 RewriteRule ^privatepolicy /dyn/main/main/$1/?page=privatepolicy [L,QSA]
