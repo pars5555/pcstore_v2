@@ -8,7 +8,7 @@
 				</li>
 				{/if}
 				<li class="dropdown">
-					<a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages1</a>
+					<a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
 					<ul class="dropdown-menu">
 						<li>
 							<a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
