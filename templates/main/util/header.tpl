@@ -1,4 +1,4 @@
-<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
+﻿<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
 	<div class="navMenu_container">
 		<nav id="navMenu" class="navMenu" role="navigation">
 			<ul class="navMenuList">
@@ -8,7 +8,7 @@
 				</li>
 				{/if}
 				<li class="dropdown">
-					<a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
+					<a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages1</a>
 					<ul class="dropdown-menu">
 						<li>
 							<a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
