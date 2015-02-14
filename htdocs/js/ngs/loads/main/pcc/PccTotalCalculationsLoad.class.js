@@ -19,9 +19,10 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
         this.initRemoveItem();
     },
     initRemoveItem: function () {
-        jQuery('.pcc_total_calc_item_price_row .f_deleteSelectedComponentBtn').click(function () {
+        jQuery('.pcc_total_calc_item_price_row .f_deleteSelectedComponentFromTotalBtn').click(function () {
             var componentTypeIndex = jQuery(this).attr('componentTypeIndex');
-            ngs.PcConfiguratorManager.onComponentChanged(componentTypeIndex, '');
+            var itemId = jQuery(this).attr('itemId');
+            ngs.PcConfiguratorManager.onDeleteItem(componentTypeIndex, itemId);
             return false;
         });
     },

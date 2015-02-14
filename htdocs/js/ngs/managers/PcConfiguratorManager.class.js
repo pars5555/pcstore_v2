@@ -66,10 +66,6 @@ ngs.PcConfiguratorManager = {
             var itemsIds = thisInstance.getSelectedItemsIds();
             ngs.PcConfiguratorManager.onComponentChanged(componentIndex, itemsIds);
         });
-        jQuery('.f_deleteSelectedComponentBtn').click(function () {
-            ngs.PcConfiguratorManager.onComponentChanged(componentIndex, '');
-            return false;
-        });
 
         var selected_components_ids_array = this.getBackendSelectedComponentsIdsArray();
         for (var i = 1; i <= 14; i++) {
@@ -126,10 +122,32 @@ ngs.PcConfiguratorManager = {
         }
         return output;
     },
+    onDeleteItem: function (componentIndex, item_id) {
+        var selectedComponentItemsIds = this.selectedComponentsArray[componentIndex];
+        var selectedComponentItemsIdsArray = selectedComponentItemsIds.split(',');
+        while (selectedComponentItemsIdsArray.indexOf(item_id) >= 0)
+        {
+            selectedComponentItemsIdsArray.splice(selectedComponentItemsIdsArray.indexOf(item_id), 1);
+        }
+        if (selectedComponentItemsIdsArray.length > 0) {
+            this.selectedComponentsArray[componentIndex] = selectedComponentItemsIdsArray.join(',');
+        } else
+        {
+            this.selectedComponentsArray[componentIndex] = "";
+
+        }
+        var params = this.getSelectedComponentsParam(componentIndex, item_id);
+        if (jQuery(".f_component[component_index=" + componentIndex + "]").hasClass('active')) {
+            var loadName = this.getComponentLoadName(componentIndex);
+            ngs.load(loadName, params);
+        }
+        ngs.load('pcc_total_calculations', params);
+        ngs.action('get_selected_and_require_components', params);
+    },
     onComponentChanged: function (componentIndex, item_id) {
         if (item_id instanceof Array) {
             item_id = item_id.join(',');
-        }       
+        }
         this.selectedComponentsArray[componentIndex] = item_id;
 
         var params = this.getSelectedComponentsParam(componentIndex, item_id);
@@ -138,11 +156,10 @@ ngs.PcConfiguratorManager = {
             params.cem = parseInt(jQuery('#configurator_mode_edit_cart_row_id').val());
         }
 
-
         if (jQuery('#pcc_print_button').length > 0) {
             jQuery('#pcc_print_button').css({'visibility': 'hidden'});
         }
-        if (jQuery( ".f_component[component_index="+componentIndex+"]").hasClass('active')) {
+        if (jQuery(".f_component[component_index=" + componentIndex + "]").hasClass('active')) {
             var loadName = this.getComponentLoadName(componentIndex);
             ngs.load(loadName, params);
         }

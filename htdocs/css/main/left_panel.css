@@ -76,7 +76,7 @@
     background-color:#3498DB;
     color:#fff;
 }
-.left-panel ul li:hover .dropdown-toggle{
+.left-panel ul li:hover>a .dropdown-toggle{
     background-color:#fff;
     color:#3498DB;	
     border:1px solid #3498DB;
@@ -112,6 +112,7 @@
     padding:10px;
     color:#3498db;
     border-bottom:1px solid #3498db;
+    border-top: 1px solid #ddd;
     background-color:#fff;
     font-weight:600;
     font-size:15px;
@@ -131,6 +132,7 @@
 }
 .left-panel .category_property{
     margin-right:10px;
+    vertical-align: middle;
 }
 .left-panel .product_checkbox a{
     color:#428bca;	

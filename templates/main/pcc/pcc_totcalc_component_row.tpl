@@ -7,7 +7,9 @@
     <div class="component_block">
         {if !isset($print)}	
             <div class="component_delete">
-                <span class="item-delete glyphicon f_deleteSelectedComponentBtn" componentTypeIndex="{$componentTypeIndex}" href="javascript:void(0);"></span>
+                <span class="item-delete glyphicon f_deleteSelectedComponentFromTotalBtn" componentTypeIndex="{$componentTypeIndex}"
+                      itemId="{$item->getId()}"
+                      href="javascript:void(0);"></span>
             </div>
             <div class="component_img">
                 <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(),'60_60', 1 , true)}" />

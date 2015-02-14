@@ -39,8 +39,10 @@ class CategoryPropertyView {
             $url = HTTP_PROTOCOL . HTTP_HOST . '?' . $itemSearchManager->getUrlParams(array('scpids' => implode(',', $propertiesIds)));
             $propertyCountTextToBeAppend = $checked ? '' : ' (' . $categoryTotalItemsCount . ')';
             $displayName = $this->categoryManager->getCategoryById($childrenHierarchyDto->getChildId())->getDisplayName();
+            echo '<a href="' . $url . '">';
             echo '<input category_id="' . $childrenHierarchyDto->getChildId() . '" id = "category_property_' . $childrenHierarchyDto->getChildId() . '" class="category_property" type="checkbox" ' . ($checked ? 'checked' : '') . '/>';
-            echo '<a href="' . $url . '">' . $displayName . $propertyCountTextToBeAppend . '</a>';
+            echo  '<span>'. $displayName . $propertyCountTextToBeAppend . '</span>';
+            echo '</a>';
             echo '</div>';
         }
     }
