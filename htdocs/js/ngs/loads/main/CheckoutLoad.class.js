@@ -17,13 +17,13 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         this.checkoutStepsMenus();
         this.sendCellNumber();
-
     },
     checkoutStepsMenus: function () {
         this.shippingAddrSlide();
-        this.checkoutConfirm();
+        this.checkoutConfirmPosition();
         this.cellPhoneNumber();
         this.ConfirmCellPhoneNumberCode();
+        this.selectPaymentType();
         ngs.nestLoad('main_checkout_calculation');
     },
     shippingAddrSlide: function () {
@@ -34,8 +34,8 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
             if (jQuery(".f_ship_addr_container .f_checkbox").hasClass("checked")) {
                 jQuery("#do_shipping").val(1);
             }
-            else{
-                jQuery("#do_shipping").val(0);            
+            else {
+                jQuery("#do_shipping").val(0);
             }
         });
         jQuery('#shipping_region').change(function () {
@@ -48,9 +48,9 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         var doShipping = jQuery('.f_ship_addr_container .f_checkbox').hasClass('checked') ? 1 : 0;
         ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion});
     },
-    checkoutConfirm: function () {
+    checkoutConfirmPosition: function () {
         var top = jQuery("#checkout_confirm_container").offset().top;
-        jQuery(window).scroll(function () {
+        jQuery(window).on("scroll", function () {
             var scrollTop = jQuery(window).scrollTop();
             if (scrollTop >= top) {
                 jQuery("#checkout_confirm").addClass("fixed");
@@ -69,10 +69,10 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
             return false;
         });
     },
-    cellPhoneNumber: function () {        
+    cellPhoneNumber: function () {
         jQuery("#cell_phone_number .close_button,#cell_phone_number .overlay").click(function () {
             jQuery("#cell_phone_number").addClass("hide");
-             jQuery("#cell_phone_number .error").html("").slideUp(0);
+            jQuery("#cell_phone_number .error").html("").slideUp(0);
         });
     },
     ConfirmCellPhoneNumberCode: function () {
@@ -86,6 +86,15 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
             jQuery("#cell_phone_number_confirm").addClass("hide");
             jQuery("#confirm_code").val("");
             jQuery("#cell_phone_number_confirm .error").html("").slideUp(0);
+        });
+    },
+    selectPaymentType: function () {
+        var p_type = jQuery("#payment_type .f_payment_type");
+        p_type.on("click", function () {
+            p_type.each(function () {
+                jQuery(this).removeClass("active");
+            });
+            jQuery(this).addClass("active");
         });
     }
 

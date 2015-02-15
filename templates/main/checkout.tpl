@@ -65,14 +65,22 @@
 
             {****************Payment Type Container******************}
 
-            <div class="payment_type_container"> 
-                <h2>{$ns.lm->getPhrase(367)}</h2>
-                {foreach from=$ns.payment_option_values item=paymentTypeValue key=index}
-                <div class="form-group">
-                    <input type="radio" class=""  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
-                    <label class="input_label" for="payment_{$paymentTypeValue}">{$ns.lm->getPhrase($ns.payment_options_display_names_ids.$index)}<img src="{$SITE_PATH}" alt=""></label>
+            <h2 class="title">{$ns.lm->getPhrase(367)}</h2>
+            <div class="payment_method_container">
+                <div class="payment_type_container" id="payment_type"> 
+                    {foreach from=$ns.payment_option_values item=paymentTypeValue key=index}
+                        <label class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}">
+                            <input {if $paymentTypeValue === cash }checked="checked"{/if} type="radio" class="hide"  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
+                            <img class="payment_img" src="{$SITE_PATH}/img/checkout/{$paymentTypeValue}.png" alt="{$paymentTypeValue}" />
+                            <span class="label input_label payment_name">{$ns.lm->getPhrase($ns.payment_options_display_names_ids.$index)}</span>
+                        </label>
+                    {/foreach}
                 </div>
-              {/foreach}
+                <div class="payment_details"> 
+                    <div id="pd_cash" class="pd_cash">
+
+                    </div>
+                </div>
             </div>
         </div>
     </form>
@@ -81,7 +89,7 @@
 <div class="pop_up_container cell_phone_number_pop_up hide" id="cell_phone_number">
     <div class="overlay"></div>
     <form action="" autocomplete="off" id="receive_sms_form">
-          <div class="pop_up">
+        <div class="pop_up">
             <div class="close_button"></div>
             <div class="pop_up_title">{$ns.lm->getPhrase(316)}</div>
             <p> Դուք կստանաք հաղորդագրություն այս համարին,որպեսզի հաստատեք Ձեր պատվերը Բջջային հեռախոս</p>
@@ -97,7 +105,7 @@
 <div class="pop_up_container cell_phone_number_pop_up hide" id="cell_phone_number_confirm">
     <div class="overlay"></div>
     <form action="" autocomplete="off" id="confirm_code_form">
-          <div class="pop_up">
+        <div class="pop_up">
             <div class="close_button"></div>
             <div class="pop_up_title">{$ns.lm->getPhrase(316)}</div>
             <p>{$ns.lm->getPhrase(319)}</p>

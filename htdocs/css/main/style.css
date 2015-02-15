@@ -82,6 +82,15 @@ body{
     background:      -o-linear-gradient(#fff, #FFF); 
     background:         linear-gradient(#fff, #FFF);
 }
+.title{
+    border-bottom: 2px solid #555;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;	
+    font-weight:600;
+    color:#555;
+}
 .main_title{
     border-bottom: 3px solid #3498DB;
     font-size: 30px;
@@ -231,15 +240,22 @@ body{
     padding:0px;
 }
 
-label{
+label,.label{
     padding:9px;
     color:#555;
     font-size:15px;
     display:inline-block;
     vertical-align:middle;
     cursor:pointer;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
+.label.input_label,
 label.input_label{
     display:block;
     padding:5px 0;
@@ -339,13 +355,13 @@ label.input_label{
     top:50%;
     left:50%;
     background-color: #fff;
-    
+
     transform:translate(-50%,-50%);
     -moz-transform:translate(-50%,-50%);  
     -webkit-transform:translate(-50%,-50%);  
     -o-transform:translate(-50%,-50%);  
     -ms-transform:translate(-50%,-50%);  
-    
+
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px; 
@@ -368,8 +384,9 @@ label.input_label{
 .checkbox{
     display:inline-block;
     vertical-align: middle;
-    width:19px;
-    height:19px;
+    width:17px;
+    height:17px;
+    cursor:pointer;
     background:url(../../img/checkbox.png) no-repeat scroll 50% 50% / 100% auto transparent;    
 }
 .checkbox.checked{
@@ -859,8 +876,8 @@ label.input_label{
     /*margin: auto;
 padding: 0 25px;
 width: calc(100% - 50px);*/
-   max-width: 1440px;
-   margin: auto;
+    max-width: 1440px;
+    margin: auto;
 }
 .show_com_price{
     float:left;
@@ -1110,9 +1127,6 @@ width: calc(100% - 50px);*/
     display: table-cell;
     padding-left: 30px;
 }
-.main-top-container {
-    margin:20px auto;
-}
 
 /*******
  SEARCH BLOCK
@@ -1171,7 +1185,7 @@ width: calc(100% - 50px);*/
 *******/
 
 .filter_container{
-    margin:20px auto;
+    margin:0px auto 20px;
     text-align: right;
 }
 .filter_container h3{
@@ -1382,7 +1396,7 @@ SMS CONF COMPANY
 /***************** Checkout Confirm Container *******************/
 
 .checkout_confirm_container{
-    padding-right: 530px;
+    padding-right: 550px;
     position:relative;
 }
 
@@ -1391,12 +1405,107 @@ SMS CONF COMPANY
     top:0;
     right:0;
     margin:auto;
+    padding:10px 20px 0;
+    width: calc(100% - 40px);
+    box-shadow: 0 0 7px #ddd;
+    background-color: rgba(255,255,255,0.77);
+    z-index: 1000;
+
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px; 
+    -o-border-radius: 7px; 
+    -ms-border-radius: 7px;
+    -icab-border-radius: 7px; 
+    border-radius: 7px; 
 }
 .checkout_confirm_container .checkout_confirm.cart_checkout.fixed{
     position: fixed;
-    right:25px;
+    right:26px;
 }
 
+/******************************* Checkout Payment Method Container ****************************/
+
+.payment_method_container{
+    display:table;
+    width:100%;
+    border-collapse: collapse;
+}
+
+/* Payment Type Container */
+
+.payment_type_container{
+    display:table-cell;
+    vertical-align: top;
+    width: 180px;
+}
+
+.payment_type_container .payment_type{
+    padding:10px 5px;
+    display: block;
+    position: relative;
+    border:2px solid transparent;
+    border-right:none;
+    white-space: nowrap;
+    margin-bottom:-1px;
+
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -khtml-border-radius: 5px 0 0 5px; 
+    -o-border-radius: 5px 0 0 5px; 
+    -ms-border-radius: 5px 0 0 5px;
+    -icab-border-radius: 5px 0 0 5px; 
+    border-radius: 5px 0 0 5px; 
+}
+.payment_type_container .payment_type:first-child{
+    margin-top:-1px;    
+}
+.payment_type_container .payment_type.active{
+    border-color:#777;
+    width: calc(100% - 10px);
+    background-color: #fff;
+    z-index: 7;
+}
+.payment_type .payment_img{
+    display:inline-block;
+    vertical-align: middle;
+    width:50px;
+}
+
+.payment_type .payment_name.label{
+    display:inline-block;
+    vertical-align: middle;
+    padding:5px 10px;
+    width: 90px;
+    white-space: normal;
+}
+.payment_type .form-group:hover .payment_name.label{
+    color:#3498DB;
+}
+
+/* Payment Details */
+
+.payment_details{
+    display:table-cell;
+    vertical-align: top;
+    border: 2px solid #777;
+    padding: 10px;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
+}
+
+
+/* Shipping Information */
+
+.ship_addr_container .form-group {
+    display: inline-block;
+}
 
 /*Cell Phone Number Pop Up*/
 
@@ -1437,13 +1546,11 @@ SMS CONF COMPANY
     padding:10px;
 }
 
-/*******
 
- ORDERS PAGE
+/*=====================================================================================*/
+/*===================================  ORDERS PAGE ====================================*/
+/*=====================================================================================*/
 
-*******/
-
-/*=======Orders Header=======*/
 .orders_main_header{
     display:table;
     width:100%;

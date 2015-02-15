@@ -47,39 +47,37 @@
 
             <!--========================== Top Container ===============================-->
 
-            <div  class="main-top-container container">
-                <div class="filter_container">
-                    <h3>Filter</h3> 
-                    <div class="form-group">
-                        <label>
-                            Sort By:
-                        </label>
+            <div class="filter_container">
+                <h3>Filter</h3> 
+                <div class="form-group">
+                    <label>
+                        Sort By:
+                    </label>
+                    <div class="select_wrapper">
+                        <select id="sort_by">                                    
+                            {foreach from=$ns.sort_by_values item=value key=key}
+                                <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                {if ($ns.companiesIds|@count > 1)}          
+                    <div class="form-group">                        
+                        <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
                         <div class="select_wrapper">
-                            <select id="sort_by">                                    
-                                {foreach from=$ns.sort_by_values item=value key=key}
-                                    <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
+                            <select class="" id='selected_company_id'>
+                                {foreach from=$ns.companiesIds item=value key=key}
+                                    {if ($key == 0)}
+                                        <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
+                                    {else}
+                                        <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
+                                    {/if}
                                 {/foreach}
                             </select>
                         </div>
                     </div>
-                    {if ($ns.companiesIds|@count > 1)}          
-                        <div class="form-group">                        
-                            <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
-                            <div class="select_wrapper">
-                                <select class="" id='selected_company_id'>
-                                    {foreach from=$ns.companiesIds item=value key=key}
-                                        {if ($key == 0)}
-                                            <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
-                                        {else}
-                                            <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
-                                        {/if}
-                                    {/foreach}
-                                </select>
-                            </div>
-                        </div>
-                    {/if}               
-                </div>           
-            </div>
+                {/if}               
+            </div>           
 
             {nest ns=paging}
 
@@ -180,17 +178,17 @@
                             {if $count==4}
                             </div>
                             {$count=1}
-                            
+
                         {/if}
-                    {if $smarty.foreach.product_row.last && $count!=1}</div> {/if}
-                {/foreach}
+                        {if $smarty.foreach.product_row.last && $count!=1}</div> {/if}
+                    {/foreach}
+            </div>
+            {nest ns=paging}
         </div>
-        {nest ns=paging}
-    </div>
-{else}
-    <div style="text-align: center">
-        <h1>{$ns.lm->getPhrase(117)}</h1>
-    </div>
-{/if}
+    {else}
+        <div style="text-align: center">
+            <h1>{$ns.lm->getPhrase(117)}</h1>
+        </div>
+    {/if}
 </div>
 </div>
