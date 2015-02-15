@@ -1,4 +1,4 @@
-﻿<div class="main-search-wrapper">1
+﻿<div class="main-search-wrapper">
 
     <!--========================== Product Container ===============================-->
 
