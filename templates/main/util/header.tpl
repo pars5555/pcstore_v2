@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
-    <div class="navMenu_container">
-        <nav id="navMenu" class="navMenu" role="navigation">
-            <ul class="navMenuList">
-                {if $ns.contentLoad != "main_buildpc"}
-                    <li>
-                        <a  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
-                    </li>
-                {/if}
-                <li class="dropdown">
-                    <a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
-                        </li>
-                    </ul>
-                </li>
-                {if $ns.userLevel === $ns.userGroupsGuest}
-                    <li >
-                        <a class="f_myModal_toggle" href="javascript:void(0);"> Sign in / Register </a>
-                    </li>
-                {else}
-                    <li>
-                        <a href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
-                    </li>
-=======
 ﻿<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
 	<div class="navMenu_container">
 		<nav id="navMenu" class="navMenu" role="navigation">
@@ -62,8 +29,6 @@
 				<li>
 					<a href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
 				</li>
->>>>>>> b866ee075f681a2efd503d7b2bdea14e001b874f
-
                     {if $ns.userLevel !== $ns.userGroupsAdmin}
                         <li>
                             <a  href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} </a>
