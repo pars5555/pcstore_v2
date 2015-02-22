@@ -33,11 +33,11 @@
 
                     <div class="form-group">
                         <label class="input_label" for="recipientName">{$ns.lm->getPhrase(293)}</label>
-                        <input type="text" class="text"  name= "recipient_name" id="recipientName" placeholder="{$ns.lm->getPhrase(293)}" />
+                        <input required="" type="text" class="text"  name= "recipient_name" id="recipientName" placeholder="{$ns.lm->getPhrase(293)}" />
                     </div>
                     <div class="form-group">
                         <label class="input_label" for="shipAddr">{$ns.lm->getPhrase(13)}</label>
-                        <input type="text" class="text"  name= "ship_addr" id="shipAddr" placeholder="{$ns.lm->getPhrase(13)}" />
+                        <input required="" type="text" class="text"  name= "ship_addr" id="shipAddr" placeholder="{$ns.lm->getPhrase(13)}" />
                     </div>
                     <div class="form-group">
                         <label class="input_label" for="recipientName">{$ns.lm->getPhrase(45)}</label>
@@ -51,12 +51,12 @@
                     </div>
                     <div class="form-group">
                         <label class="input_label" for="shipCellTel">{$ns.lm->getPhrase(309)}</label>
-                        <input type="text" class="text"  name= "ship_cell_tel" id="shipCellTel" placeholder="{$ns.lm->getPhrase(309)}" />
+                        <input required="" type="text" class="text"  name= "ship_cell_tel" id="shipCellTel" placeholder="{$ns.lm->getPhrase(309)}" />
                         <div>Բջջային հեռախոսի համարը պետք է լինի իրական և վավեր: Դուք կստանաք SMS այս համարին՝ պատվերը հաստատելու համար:</div>
                     </div>
                     <div class="form-group">
                         <label class="input_label" for="shipTel">{$ns.lm->getPhrase(62)}</label>
-                        <input type="text" class="text"  name= "ship_tel" id="shipTel" placeholder="{$ns.lm->getPhrase(62)}" />
+                        <input required="" type="text" class="text"  name= "ship_tel" id="shipTel" placeholder="{$ns.lm->getPhrase(62)}" />
                     </div>
 
                 </div>
@@ -69,17 +69,15 @@
             <div class="payment_method_container">
                 <div class="payment_type_container" id="payment_type"> 
                     {foreach from=$ns.payment_option_values item=paymentTypeValue key=index}
-                        <label class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}">
-                            <input {if $paymentTypeValue === cash }checked="checked"{/if} type="radio" class="hide"  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
+                        <label class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}" p_type="{$paymentTypeValue}">
+                            <input {if $paymentTypeValue === cash }checked="checked"{/if} type="radio" class=""  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
                             <img class="payment_img" src="{$SITE_PATH}/img/checkout/{$paymentTypeValue}.png" alt="{$paymentTypeValue}" />
                             <span class="label input_label payment_name">{$ns.lm->getPhrase($ns.payment_options_display_names_ids.$index)}</span>
                         </label>
                     {/foreach}
                 </div>
-                <div class="payment_details"> 
-                    <div id="pd_cash" class="pd_cash">
-
-                    </div>
+                <div class="payment_details" id="payment_details"> 
+                    
                 </div>
             </div>
         </div>

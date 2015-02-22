@@ -10,22 +10,24 @@
                 <strong class="error"> {$ns.error_message}</strong>
             </div>
         {/if}
-            <label class="input_label" for="exampleInputEmail1">First Name</label>
-            <input type="text" class="  text" placeholder="First Name" name="first_name" value="{$ns.req.first_name|default:''}">
         <form method="post" action="{$SITE_PATH}/dyn/main/do_contact_us" role="form">
             <div class="form-group">
-                <label for="InputName">Your Name</label>
-                <input type="text" required="" placeholder="Enter Name" id="InputName" name="name" class=" " value='{$ns.req.name|default:""}'>
+                <label class="input_label" for="exampleInputEmail1">First Name</label>
+                <input type="text" class="text" required="" placeholder="First Name" name="first_name" value="{$ns.req.first_name|default:''}">
             </div>
             <div class="form-group">
-                <label for="InputEmail">Your Email</label>
-                <input type="email" required="" placeholder="Enter Email" name="email" id="InputEmail" class=" " value='{$ns.req.email|default:""}'>
+                <label class="input_label" for="InputName">Your Name</label>
+                <input type="text" required="" placeholder="Enter Name" id="InputName" name="name" class="text" value='{$ns.req.name|default:""}'>
             </div>
             <div class="form-group">
-                <label for="InputMessage">Message</label>
-                <textarea required="" rows="5" class=" " id="InputMessage" name="msg">{$ns.req.msg|default:""}</textarea>
+                <label class="input_label" for="InputEmail">Your Email</label>
+                <input type="email" required="" placeholder="Enter Email" name="email" id="InputEmail" class="text" value='{$ns.req.email|default:""}'>
             </div>
-            <input type="submit" class="btn btn-info pull-right" value="Submit" id="submit" name="submit">
+            <div class="form-group">
+                <label class="input_label" for="InputMessage">Message</label>
+                <textarea required="" rows="5" class="text" id="InputMessage" name="msg">{$ns.req.msg|default:""}</textarea>
+            </div>
+            <input type="submit" class="button blue" value="Submit" id="submit" name="submit">
         </form>
         <hr class="featurette-divider hidden-lg">
         <div class="col-lg-5 col-md-push-1">

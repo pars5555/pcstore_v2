@@ -11,6 +11,7 @@ ngs.LoadFactory.prototype={
 	this.loads["main_checkout"] = function temp(){return new ngs.CheckoutLoad("main_checkout", ajaxLoader);};
 	this.loads["main_checkout_calculation"] = function temp(){return new ngs.CheckoutCalculationLoad("main_checkout_calculation", ajaxLoader);};
 	this.loads["main_companies"] = function temp(){return new ngs.CompaniesLoad("main_companies", ajaxLoader);};
+	this.loads["main_contactus"] = function temp(){return new ngs.ContactusLoad("main_contactus", ajaxLoader);};
 	this.loads["main_item"] = function temp(){return new ngs.ItemLoad("main_item", ajaxLoader);};
 	this.loads["main_cart"] = function temp(){return new ngs.CartLoad("main_cart", ajaxLoader);};
 	this.loads["main_orders"] = function temp(){return new ngs.OrdersLoad("main_orders", ajaxLoader);};
@@ -28,7 +29,17 @@ ngs.LoadFactory.prototype={
         this.loads["pcc_select_mouse"] = function temp(){return new ngs.PccSelectMouseLoad("pcc_select_mouse", ajaxLoader);};
         this.loads["pcc_select_speaker"] = function temp(){return new ngs.PccSelectSpeakerLoad("pcc_select_speaker", ajaxLoader);};
         this.loads["pcc_select_graphics"] = function temp(){return new ngs.PccSelectGraphicsLoad("pcc_select_graphics", ajaxLoader);};   
-        this.loads["pcc_total_calculations"] = function temp(){return new ngs.PccTotalCalculationsLoad("pcc_total_calculations", ajaxLoader);};   
+        this.loads["pcc_total_calculations"] = function temp(){return new ngs.PccTotalCalculationsLoad("pcc_total_calculations", ajaxLoader);};
+        
+                //Payment Load
+	this.loads["payment_cash"] = function temp(){return new ngs.CashLoad("payment_cash", ajaxLoader);};
+	this.loads["payment_credit"] = function temp(){return new ngs.CreditLoad("payment_credit", ajaxLoader);};
+	this.loads["payment_creditcard"] = function temp(){return new ngs.CreditcardLoad("payment_creditcard", ajaxLoader);};
+	this.loads["payment_paypal"] = function temp(){return new ngs.PaypalLoad("payment_paypal", ajaxLoader);};
+	this.loads["payment_arca"] = function temp(){return new ngs.ArcaLoad("payment_arca", ajaxLoader);};
+	this.loads["payment_bank"] = function temp(){return new ngs.BankLoad("payment_bank", ajaxLoader);};
+                
+        
                 //user
         this.loads["user_profile"] = function temp(){return new ngs.UserProfileLoad("user_profile", ajaxLoader);};
         this.loads["user_invite"] = function temp(){return new ngs.UserInviteLoad("user_invite", ajaxLoader);};

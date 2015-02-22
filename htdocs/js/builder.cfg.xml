@@ -73,6 +73,7 @@
                 <file>ngs/loads/main/LandingpageLoad.class.js</file>
                 <file>ngs/loads/main/SignupLoad.class.js</file>
                 <file>ngs/loads/main/CompaniesLoad.class.js</file>
+                <file>ngs/loads/main/ContactusLoad.class.js</file>
                 <file>ngs/loads/main/ItemLoad.class.js</file>
                 <file>ngs/loads/main/CartLoad.class.js</file>
                 <file>ngs/loads/main/OrdersLoad.class.js</file>
@@ -92,6 +93,15 @@
                 <file>ngs/loads/main/pcc/PccSelectPowerLoad.class.js</file>
                 <file>ngs/loads/main/pcc/PccSelectSpeakerLoad.class.js</file>
                 <file>ngs/loads/main/pcc/PccSelectGraphicsLoad.class.js</file>
+                
+                <!-- Payment Load -->
+                <file>ngs/loads/main/payment/CashLoad.class.js</file>                
+                <file>ngs/loads/main/payment/CreditLoad.class.js</file>                
+                <file>ngs/loads/main/payment/PaypalLoad.class.js</file>                
+                <file>ngs/loads/main/payment/BankLoad.class.js</file>                
+                <file>ngs/loads/main/payment/ArcaLoad.class.js</file>                
+                <file>ngs/loads/main/payment/CreditcardLoad.class.js</file>                
+                
                 <!-- User -->
                 <file>ngs/loads/user/UserProfileLoad.class.js</file>
                 <file>ngs/loads/user/UserInviteLoad.class.js</file>
@@ -103,6 +113,7 @@
                 <file>ngs/loads/company/CompanySmsconfLoad.class.js</file>
                 <file>ngs/loads/company/CompanyBranchesLoad.class.js</file>
                 <file>ngs/loads/company/CompanyUploadPriceLoad.class.js</file>
+                
                 
                 <!-- Service Company -->
                 <file>ngs/loads/servicecompany/ServiceCompanyProfileLoad.class.js</file>

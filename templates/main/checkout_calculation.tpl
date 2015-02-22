@@ -3,17 +3,18 @@
     <span>{$ns.lm->getPhrase(565)}</span>
     <div class="clear"></div>
 </div>
-<div class="shipping" id="shipping_cost_container" {if $ns.do_shipping==0}style="display:none"{/if}>
-    {if isset($ns.shipping_not_available)}
-        <span>{$ns.lm->getPhrase(315)}</span>
-    {else}
-        <span>{$ns.shipping_cost} Դր.</span> 
-    {/if}
+<div class="shipping_info" id="shipping_cost_container" {if $ns.do_shipping==0}style="display:none"{/if}>
     <span>Shipping</span>
+    
+    {if isset($ns.shipping_not_available)}
+        <span class="text_blue">{$ns.lm->getPhrase(315)}</span>
+    {else}
+        <span class="price">{$ns.shipping_cost} Դր.</span> 
+    {/if}
     <div class="clear"></div>
 </div>
 <div class="cart_total">
-    <span class="total_ph">{$ns.lm->getPhrase(262)}</span>
+    <span class="total_ph">{$ns.lm->getPhrase(262)} {if $ns.customer->getCartIncludedVat()==1}<br><span class="vat_state">({$ns.lm->getPhrase(565)}){/if}</span></span>
     {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
         <span class="price">${$ns.grandTotalUSD|number_format:1}</span>
     {/if}
