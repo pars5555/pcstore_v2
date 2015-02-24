@@ -69,11 +69,11 @@
             <div class="payment_method_container">
                 <div class="payment_type_container" id="payment_type"> 
                     {foreach from=$ns.payment_option_values item=paymentTypeValue key=index}
-                        <label class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}" p_type="{$paymentTypeValue}">
+                        <div class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}" p_type="{$paymentTypeValue}">
                             <input {if $paymentTypeValue === cash }checked="checked"{/if} type="radio" class=""  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
                             <img class="payment_img" src="{$SITE_PATH}/img/checkout/{$paymentTypeValue}.png" alt="{$paymentTypeValue}" />
                             <span class="label input_label payment_name">{$ns.lm->getPhrase($ns.payment_options_display_names_ids.$index)}</span>
-                        </label>
+                        </div>
                     {/foreach}
                 </div>
                 <div class="payment_details" id="payment_details"> 

@@ -101,15 +101,21 @@ body{
     color:#3498DB;
 }
 .tab_title{
-    background-color: #eee;
+    background-color: transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     display: inline-block;
     font-size: 17px;
     padding: 10px 30px;
     text-align: center;
-    transition: all 500ms ease 0s;
+    transition: all 300ms ease 0s;
     vertical-align: middle;
+    color: #3498db;
+    font-weight: 600;
+    box-shadow: 0 0 0px 0px transparent;
+}
+.tab_title:hover{
+    box-shadow: 0 0 7px 0px #ddd;
 }
 .tab_title.active{
     background-color: #3498db;
@@ -904,6 +910,7 @@ width: calc(100% - 50px);*/
 }
 .download_all .button.blue{
     width:200px;
+    margin: auto;
 }
 .download_all .glyphicon{
     font-size:20px;
@@ -937,7 +944,8 @@ width: calc(100% - 50px);*/
 /*================== Companies main content ===================*/
 
 .company_tab {
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
+    box-shadow: 0 0 7px 0 #ddd;
     padding: 20px;
 }
 .companies-search-wrapper .main_title{
@@ -961,26 +969,47 @@ width: calc(100% - 50px);*/
 .company_container>div{
     display:table-cell;
     vertical-align:top;
-    padding:0 10px 10px;
-    width:20%;
+    padding:10px;
+    /*width:20%;*/
     text-align:left;
 }
 .company_container .squaredOne {
     display: none;
 }
 /*Company Image*/
+.company_container .company-img {
+    text-align: center;
+    width: 150px;
+}
 .company-img a{
     display:block;
     margin: auto;
-    max-width: 120px;
+    max-width: 55px;
 }
 .company-img a img{
     width:100%;
 }
+
+/* Company Info */
+
+.company_container .company-info {
+    white-space: nowrap;
+}
+.company_rating,
+.company_gmap_pin{
+    display:inline-block;
+    vertical-align: middle;
+}
+
 /*Company Confirm*/
 .company_container .company_confirm{
     /*vertical-align: middle;	*/
 }
+
+.company_confirm .price_file{
+    display: block;
+}
+
 .company_container .company_confirm .form-group {
     width: 250px;
     margin: auto;
@@ -993,7 +1022,7 @@ width: calc(100% - 50px);*/
     border-bottom-right-radius:0;
     border-top-right-radius:0;
 }
-.company_confirm a {
+.company_confirm .button {
     display: table-cell;
     font-size: 20px;
     margin: auto;
@@ -1015,11 +1044,15 @@ width: calc(100% - 50px);*/
 }
 /*Company Telefon*/
 .company_container .company-tel{
-
+    text-align: right;
+    width: 150px;
+}
+.company-tel p{
+    white-space: nowrap;
 }
 
 .service_company_gmap_pin{
-    margin-top:10px;
+    vertical-align: middle;
     display:inline-block;
 }
 .service_company_gmap_pin img{
@@ -1080,6 +1113,7 @@ width: calc(100% - 50px);*/
     position: absolute;
     width: 100%;
 }
+
 /*******
 
         CHECKOUT
@@ -2332,7 +2366,6 @@ BUILD PC PAGE
     display:block;
     position:relative;
 }
-.build-pc-wrapper .checked_component .current-item-block,
 .build-pc-wrapper .select_count .current-item-block{
     display: table-cell;
     width:100%;
@@ -2488,8 +2521,8 @@ BUILD PC PAGE
 }
 
 .your_pc{
-    background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
-    border: 1px solid #999;
+    /*background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;*/
+    border: 1px solid #ccc;
     border-radius: 3px;
     color: #3278b3;
     float: left;

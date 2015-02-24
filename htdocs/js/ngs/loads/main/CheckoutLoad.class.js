@@ -91,10 +91,10 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         });
 
     },
-    shippingDetailsChange : function(){
+    shippingDetailsChange: function () {
         var thisInstance = this;
-        jQuery(".f_ship_addr_container input,.f_ship_addr_container select").on("change",function(){
-            thisInstance.calculatePaymentDetails(jQuery(".f_payment_type.active").attr("p_type"));            
+        jQuery(".f_ship_addr_container input,.f_ship_addr_container select").on("change", function () {
+            thisInstance.calculatePaymentDetails(jQuery(".f_payment_type.active").attr("p_type"));
         })
     },
     selectPaymentType: function () {
@@ -102,16 +102,16 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         this.calculatePaymentDetails("cash");
 
         var p_type = jQuery("#payment_type .f_payment_type");
-        p_type.on("click", function (event) {
+        p_type.on("click", function () {
             p_type.each(function () {
                 jQuery(this).removeClass("active");
+                jQuery(this).find("input").prop('checked', false);
             });
             jQuery(this).addClass("active");
+            jQuery(this).find("input").prop('checked', true);
             thisInstance.calculatePaymentDetails(jQuery(this).attr("p_type"));
-
         });
     },
-    
     calculatePaymentDetails: function (type) {
         var do_shipping = 0;
         var ship_params = null;

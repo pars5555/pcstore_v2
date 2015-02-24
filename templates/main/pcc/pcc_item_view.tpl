@@ -83,7 +83,7 @@
         </label>  
     </a>                   	
     {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
-        <div class="pcc_select_wrapper">
+        <div class="pcc_select_wrapper f_pcc_select_wrapper">
         <div class="select_wrapper select_wrapper_min">
             <select class="pcc_selected_component_count" item_id="{$item->getId()}" id="selected_component_count_{$item->getId()}">
                 {section name=spid start=1 loop=$max_count+1 step=1}

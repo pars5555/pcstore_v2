@@ -1,34 +1,34 @@
 ﻿<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
-	<div class="navMenu_container">
-		<nav id="navMenu" class="navMenu" role="navigation">
-			<ul class="navMenuList">
-				{if $ns.contentLoad != "main_buildpc"}
-				<li>
-					<a  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
-				</li>
-				{/if}
-				<li class="dropdown">
-					<a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
-						</li>
-					</ul>
-				</li>
-				{if $ns.userLevel === $ns.userGroupsGuest}
-				<li >
-					<a class="f_myModal_toggle" href="javascript:void(0);"> Sign in / Register </a>
-				</li>
-				{else}
-				<li>
-					<a href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
-				</li>
+    <div class="navMenu_container">
+        <nav id="navMenu" class="navMenu" role="navigation">
+            <ul class="navMenuList">
+                {if $ns.contentLoad != "main_buildpc"}
+                    <li>
+                        <a  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
+                    </li>
+                {/if}
+                <li class="dropdown">
+                    <a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
+                        </li>
+                    </ul>
+                </li>
+                {if $ns.userLevel === $ns.userGroupsGuest}
+                    <li >
+                        <a class="f_myModal_toggle" href="javascript:void(0);"> Sign in / Register </a>
+                    </li>
+                {else}
+                    <li>
+                        <a href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
+                    </li>
                     {if $ns.userLevel !== $ns.userGroupsAdmin}
                         <li>
                             <a  href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} </a>
@@ -81,43 +81,43 @@
                         </ul>
                     </li>
 
-                    {*}
-                    <li class="rel-block dropdown">
-                    <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
-                    <div class="dropdown-menu search_block">
-                    <div class="top-arrow"></div>
-                    <div class="input-group search_container">
-                    <form method="GET" action="{$SITE_PATH}" autocomplete="off">
-                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
-                    <button type="submit" class="search_btn">
-                    <span class="glyphicon"></span>
-                    </button>
-                    </form>
-                    </div>
-                    </div>
-                    </li>
+
+                    {*<li class="rel-block dropdown">
+                        <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
+                        <div class="dropdown-menu search_block">
+                            <div class="top-arrow"></div>
+                            <div class="input-group search_container">
+                                <form method="GET" action="{$SITE_PATH}" autocomplete="off">
+                                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
+                                    <button type="submit" class="search_btn">
+                                        <span class="glyphicon"></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>*}
                     <li class="notification" style="position:relative;">
-                    <a id="notificationBtn" class="f_drop_down_btn" href="javascript:void(0);"> <i style="margin-left:5px;" class="glyphicon glyphicon-bell"></i> </a>
-                    <ul style="display: none; position: absolute;" id="notificationListWrapper" class="f_drop_down_menu nofitication-list-wrapper"></ul>
+                        <a id="notificationBtn" class="f_drop_down_btn" href="javascript:void(0);"> <i style="margin-left:5px;" class="glyphicon glyphicon-bell"></i> </a>
+                        <ul style="display: none; position: absolute;" id="notificationListWrapper" class="f_drop_down_menu nofitication-list-wrapper"></ul>
                     </li>
 
                     <li id="notificationRowTemplate" class="current-notif-wrapper container-fluid">
-                    <a href="{$SITE_PATH}/%url%">
-                    <div class="col-md-10">
-                    <div class="current-notif-desc">
-                    <p>
-                    %title%
-                    </p>
-                    </div>
-                    <p class="notif-date">
-                    %date%
-                    </p>
-                    </div>
-                    <div class="col-md-2">
-                    %icon%
-                    </div> </a>
+                        <a href="{$SITE_PATH}/%url%">
+                            <div class="col-md-10">
+                                <div class="current-notif-desc">
+                                    <p>
+                                        %title%
+                                    </p>
+                                </div>
+                                <p class="notif-date">
+                                    %date%
+                                </p>
+                            </div>
+                            <div class="col-md-2">
+                                %icon%
+                            </div> </a>
                     </li>
-                    {*}
+
 
                 {/if}
                 <li class="clear"></li>

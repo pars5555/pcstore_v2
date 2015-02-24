@@ -39,12 +39,12 @@
                         {html_options values=$ns.creditSuppliersIds selected=$ns.cho_credit_supplier_id output=$ns.creditSuppliersDisplayNames}
                     </select>
                 </p>
-                <p>
+                {*<p>
                     {$ns.credit_supplier_interest_percent}%
                     {if $ns.credit_supplier_annual_commision>0}
                         + {$ns.credit_supplier_annual_commision}% ({$ns.lm->getPhraseSpan(568)})
                     {/if}
-                </p>
+                </p>*}
             </div>
 
 

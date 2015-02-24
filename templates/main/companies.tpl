@@ -33,9 +33,9 @@
             </div>
             <div class="download_all">
                 <a class="button blue" href="{$SITE_PATH}/price/all_zipped_prices">
-                	<span>Download All:</span>
-                	<span class="glyphicon"></span>
-                	<!-- <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>  -->
+                    <span>Download All:</span>
+                    <span class="glyphicon"></span>
+                    <!-- <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>  -->
                 </a>
             </div>
             <div class="company_filter">
@@ -60,10 +60,10 @@
                         {$ns.lm->getPhrase(10)}
                     </h2>
                     <h2>
-                        {$ns.lm->getPhrase(12)}
+                        {$ns.lm->getPhrase(13)}
                     </h2>
                     <h2>
-                        {$ns.lm->getPhrase(13)}
+                        {$ns.lm->getPhrase(12)}
                     </h2>
                 </div>
                 {foreach from=$ns.allCompanies item=company name=cl}
@@ -72,16 +72,18 @@
                     {assign var="url" value=$company->getUrl()}
                     <div class="company_container">
                         <div class="company-info">
-                            <h3 class="company-tittle">{$company->getName()}</h3>
-                            {if $passive != 1}
-                                <span> {assign var="rating" value=$company->getRating()}
+                            <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
+                            <div class="company_rating">
+                                <h3 class="company-tittle">{$company->getName()}</h3>
+                                {if $passive != 1}
+                                    {assign var="rating" value=$company->getRating()}
                                     <div class="classification" title="{$rating}%">
                                         <div class="cover"></div>
                                         <div class="progress" style="width:{$rating}%;"></div>
-                                    </div> </span>
+                                    </div>
                                 {/if}
-                            <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
-                                {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
+                            </div>
+                            {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
                                 <div class="clear"></div>
                                 <div title="{$ns.lm->getPhrase(377)} {$company->getAccessKey()}"
                                      class="translatable_attribute_element" attribute_phrase_id="377" attribute_name_to_translate="title">
@@ -92,7 +94,7 @@
                         <div class="company-img">
                             <a {if $url != ''}href="http://{$url}"{/if}
                                               target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"
-                                              class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/big_logo/{$companyId}" alt="logo"/> </a>
+                                              class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/> </a>
                         </div>
                         <div class="company_confirm">
                             {if ($ns.userLevel === $ns.userGroupsUser) && !in_array($companyId,$ns.userCompaniesIdsArray)}
@@ -108,16 +110,17 @@
                                     <div id="documentSliderWrapper" class="f_document_slider owl-carousel owl-theme text-center">
                                         {* company last price*}
                                         {if $company->getPriceId()>0}
-                                            <a  href="{$SITE_PATH}/price/last_price/{$companyId}"> {assign var="company_last_price_ext" value=$company->getPriceExt()}
+                                            <a class="price_file" href="{$SITE_PATH}/price/last_price/{$companyId}"> {assign var="company_last_price_ext" value=$company->getPriceExt()}
                                                 {assign var="priceListDate" value=$company->getPriceUploadDateTime()}
                                                 {assign var="icon_local_path" value="`$ns.DOCUMENT_ROOT`/img/file_types_icons/`$company_last_price_ext`_icon.png"}
-                                                {assign var="icon_path" value="`$SITE_PATH`/img/file_types_icons/`$company_last_price_ext`_icon.png"} <img src = "{if file_exists($icon_local_path)}{$icon_path}{else}{$SITE_PATH}/img/file_types_icons/unknown_icon.png{/if}"  alt="document"/> <span style="color:{$ns.companiesPriceListManager->getCompanyPriceColor($priceListDate)}"> {if $priceListDate}
+                                                {assign var="icon_path" value="`$SITE_PATH`/img/file_types_icons/`$company_last_price_ext`_icon.png"} <img src = "{if file_exists($icon_local_path)}{$icon_path}{else}{$SITE_PATH}/img/file_types_icons/unknown_icon.png{/if}"  alt="document"/>
+                                                <p class="price_date" style="color:{$ns.companiesPriceListManager->getCompanyPriceColor($priceListDate)}"> {if $priceListDate}
                                                         {$priceListDate|date_format:"%m/%d"}
                                                         <br />
                                                         {$priceListDate|date_format:"%H:%M"}
                                                     {else}
                                                         {$ns.lm->getPhrase(14)}
-                                                    {/if} </span> </a>
+                                                    {/if} </p> </a>
                                                 {/if}
                                                 {* company previous prices*}
                                                 {*assign var="companyHistoryPrices" value = $ns.companiesPriceListManager->getCompanyHistoryPricesOrderByDate($companyId,0,100)*}
@@ -203,10 +206,10 @@
                         {$ns.lm->getPhrase(10)}
                     </h2>
                     <h2>
-                        {$ns.lm->getPhrase(12)}
+                        {$ns.lm->getPhrase(13)}
                     </h2>
                     <h2>
-                        {$ns.lm->getPhrase(13)}
+                        {$ns.lm->getPhrase(12)}
                     </h2>
                 </div>
                 {foreach from=$ns.allServiceCompanies item=company name=cl}
@@ -215,8 +218,10 @@
                     <div class="company_container">
                         <div class="company-info">
                                 <!-- <span class="company-num">{$smarty.foreach.cl.index+1}</span> -->
-                            <h3 class="company-tittle">{$company->getName()}</h3>
                             <a href="javascript:void(0);" class="service_company_gmap_pin" service_company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin_blue.png" alt="logo"/></a>
+                            <div class="company_rating">
+                                <h3 class="company-tittle">{$company->getName()}</h3>
+                            </div>
                         </div>
                         <div class="company-img">
                             {assign var="url" value=$company->getUrl()}
