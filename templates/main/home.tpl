@@ -50,7 +50,7 @@
             <div class="filter_container">
                 <h3>Filter</h3> 
                 <div class="form-group">
-                    <label>
+                    <label for="sort_by">
                         Sort By:
                     </label>
                     <div class="select_wrapper">
@@ -118,7 +118,8 @@
                                         {if $item->getIsDealerOfThisCompany()!=1}
                                             <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$item->getListPriceAmd()|number_format} Դր.</span></p>
                                         {/if}
-                                        <p><span>{$ns.lm->getPhrase(88)}:</span>
+                                        <p class="price">
+                                            <span>{$ns.lm->getPhrase(88)}:</span>
                                             <span>
                                                 {if $item->getIsDealerOfThisCompany()==1}
                                                     {if $item->getDealerPriceAmd()>0}
@@ -133,7 +134,8 @@
                                             </span>
                                         </p>
                                         {if $item->getVatPrice()>0}
-                                            <p><span>{$ns.lm->getPhrase(488)}:</span>
+                                            <p>
+                                                <span>{$ns.lm->getPhrase(488)}:</span>
                                                 <span>
                                                     {if $item->getIsDealerOfThisCompany()==1}
                                                         {if $item->getVatPriceAmd()>0}
@@ -165,10 +167,10 @@
                                         {if $ns.userLevel === $ns.userGroupsGuest}  
                                             <a class="button blue f_myModal_toggle" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
                                         {else}
-                                            {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate())}			
-                                                {if $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
-                                                    <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="button blue" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
-                                                {/if}
+                                            {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate()) && $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
+                                                <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="button blue" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
+                                            {else}
+                                                <a href="javascript:void(0)" class="button grey not-allowed" title="{$ns.lm->getPhrase(19)}">{$ns.lm->getPhrase(19)}</a>                                                
                                             {/if}
                                         {/if}
                                     </div>

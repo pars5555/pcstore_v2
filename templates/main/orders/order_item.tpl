@@ -2,6 +2,8 @@
 	<div class="order_item_name">
 		{$orderItem->getOrderDetailsItemDisplayName()}
 	</div>
+	<div>
+	</div>
 	<div class="order_item_count">
 		{$orderItem->getOrderDetailsItemCount()}x
 	</div>

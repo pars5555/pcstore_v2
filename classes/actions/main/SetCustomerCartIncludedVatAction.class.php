@@ -14,7 +14,6 @@ class SetCustomerCartIncludedVatAction extends GuestAction {
 
     public function service() {
         $include_vat = intval($_REQUEST['include_vat']);
-
         switch ($this->getUserLevel()) {
             case UserGroups::$USER:
                 $userManager = UserManager::getInstance();

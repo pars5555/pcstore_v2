@@ -99,6 +99,7 @@
         </div>
         </div>
     {/if}
+    {*}
     {if isset($item_is_selected)}  
 	    <div class="component_delete">        	
 	          <span class="item-delete glyphicon" href="javascript:void(0);"> 
@@ -106,6 +107,7 @@
 	          </span>
 	    </div>
     {/if}
+    {*}
 
 
 </div>

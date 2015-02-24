@@ -54,6 +54,7 @@
 <div class="cart_checkout">
     {if !$ns.emptyCart}
         <div class="vat">
+            <div>{$ns.customer->getCartIncludedVat()}</div>
             <a href="{$SITE_PATH}/dyn/main/do_set_customer_cart_included_vat?include_vat={if $ns.customer->getCartIncludedVat()==1}0{else}1{/if}" class="checkbox {if $ns.customer->getCartIncludedVat()==1}checked{/if}">
             </a>
             <span>{$ns.lm->getPhrase(565)}</span>

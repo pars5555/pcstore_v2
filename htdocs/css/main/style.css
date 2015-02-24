@@ -127,8 +127,11 @@ body{
     visibility:hidden !important;
 }
 .disabled{
-    pointer-events: none;
-    opacity: 0.5;
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+}
+.not-allowed{
+    cursor: not-allowed !important;
 }
 .glyphicon{
     font-family:"glyphicons-halflings";	
@@ -197,8 +200,10 @@ body{
     border-radius: 3px;
     display:inline-block;
     vertical-align:middle;
+    cursor: pointer;
+    background: url("../../img/arrow_down.png") no-repeat scroll right 7px top 7px / 25px auto #f3f3f3;
 }
-.select_wrapper:after{
+/*.select_wrapper:after{
     content:"";
     font-family:"glyphicons-halflings";
     font-size:18px;
@@ -210,7 +215,7 @@ body{
     color:#777;
     text-align:center;
     border-radius:3px;
-}
+}*/
 
 .select_wrapper select{
     width: calc(100% + 60px);
@@ -223,6 +228,7 @@ body{
     text-overflow:ellipsis;
     overflow:hidden;
     min-height: 36px;
+    cursor: pointer;
 }
 
 .select_wrapper select option{
@@ -231,11 +237,13 @@ body{
 /*======= Select wrapper min ======*/
 .select_wrapper.select_wrapper_min{
     padding-right:30px;
+    background-position: right 5px top 5px;
+    background-size: 20px auto;
 }
-.select_wrapper.select_wrapper_min:after{
+/*.select_wrapper.select_wrapper_min:after{
     font-size:11px;
     right:3px;
-}
+}*/
 .select_wrapper.select_wrapper_min select{
     font-size: 15px;
     min-height: 30px;
@@ -1417,7 +1425,7 @@ SMS CONF COMPANY
     font-size: 18px;
     font-weight: 600;
     text-align: center;
-    
+
 }
 
 .shipping_info .text_blue {
@@ -1712,7 +1720,7 @@ SMS CONF COMPANY
 
 /*Order Item*/
 .order_item_block{
-    display:table;
+    display:table-row;
     width:100%;
 }
 .order_item_block>div{
@@ -1728,13 +1736,14 @@ SMS CONF COMPANY
     display:table-row;
 }
 .order_header>div{
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
-    padding: 10px 15px;
-    font-weight:600;
-    background-color: #3498db;
-    color: #fff;
+    border-bottom: 2px solid #3498db;
+    color: #3498db;
+    display: table-cell;
+    font-weight: 600;
+    padding: 5px 15px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;    
 }
 
 /*Order Item Table*/
@@ -1753,9 +1762,11 @@ SMS CONF COMPANY
 
 /*Order Bundle Components*/
 .order_more_info{
-    display:table;
-    width:70%;
-    margin:auto;
+    box-shadow: 0 0 7px 0 #ddd;
+    display: table;
+    margin: auto;
+    padding: 10px;
+    width: 70%;
 }
 .order_bundle_components{
     display:table-row-group;
@@ -1906,9 +1917,17 @@ SMS CONF COMPANY
     vertical-align:middle;
     padding:5px;
     color:#777;
+    text-align: right;
 }
 .product-wrapper .product-price p span:first-child{
     color:#555;
+    text-align: left;
+}
+.product-wrapper .product-price p.price span,
+.product-wrapper .product-price p.price span:first-child{
+    color: #0e53a5;
+    font-size: 17px;
+    font-weight: 600;
 }
 .product-wrapper .product-img img {
     display:block;
@@ -1945,6 +1964,10 @@ SMS CONF COMPANY
 /*************
     CURRENT PRODUCT DESC
 **************/
+.current_product_container{
+    max-width: 1440px;
+    margin: auto;
+}
 .product-wrapper.current_product_wp{
     display:table;
     width:100%;
@@ -1952,13 +1975,18 @@ SMS CONF COMPANY
 .product-wrapper.current_product_wp .product-img{
     display:table-cell;
     vertical-align:middle;
+    width: 200px;
 }
 .product-wrapper.current_product_wp .product-info{
     display:table-cell;
     vertical-align:middle;
 }
+.product-wrapper.current_product_wp .product-info .button{
+    margin-left:0;
+}
 .product-wrapper.current_product_wp .product-price{
-    margin:20px auto;
+    margin: 20px 0;
+    max-width: 500px;
 }
 .current-product-description {
     margin-top: 15px;
@@ -2106,6 +2134,12 @@ SMS CONF COMPANY
     border:1px solid #999;
     cursor: pointer;
     background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .news-letter-block .input-group .newsletter_btn:active{
@@ -2116,9 +2150,23 @@ SMS CONF COMPANY
     content: "✉";
     font-family: "glyphicons-halflings";
     vertical-align: middle;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.news-letter-block .input-group .newsletter_btn:hover{
+    border-color:#3498db;
+}
+.news-letter-block .input-group .newsletter_btn:hover:before{
+    color:#3498db;
 }
 .news-letter-below-block p{
     color:#FFFFFF;
+    color: #333;
+    margin-top: 5px;
 }
 .news-letter-below-block a{
     color:#428bca;
@@ -2398,6 +2446,7 @@ BUILD PC PAGE
     font-size: 18px;
     color: #333;
 }
+
 .component_delete .item-delete:hover{
     color: #cc0000;	
 }
