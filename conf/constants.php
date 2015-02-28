@@ -41,11 +41,7 @@ define("COMPILE_DIR", TEMPLATES_DIR . "/compile");
 define("CONFIG_DIR", TEMPLATES_DIR . "/config");
 
 //---defining data dir path
-if (isset($_SERVER['ENV']) && $_SERVER['ENV'] == 'dev') {
-    define("DATA_DIR", NGS_ROOT . "/../pcstore_v2_data");
-} else {
-    define("DATA_DIR", NGS_ROOT . "/data");
-}
+define("DATA_DIR", NGS_ROOT . "/data");
 //---defining temp dir path
 define("TEMP_DIR", NGS_ROOT . "/tmp");
 
