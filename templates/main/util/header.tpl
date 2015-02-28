@@ -1,4 +1,4 @@
-﻿<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
+<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <div class="navMenu_container">
         <nav id="navMenu" class="navMenu" role="navigation">
             <ul class="navMenuList">
