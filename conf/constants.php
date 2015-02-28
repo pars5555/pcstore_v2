@@ -41,7 +41,7 @@ define("COMPILE_DIR", TEMPLATES_DIR . "/compile");
 define("CONFIG_DIR", TEMPLATES_DIR . "/config");
 
 //---defining data dir path
-define("DATA_DIR", NGS_ROOT . "/data");
+define("DATA_DIR", NGS_ROOT . "/../pcstore_v2_data");
 //---defining temp dir path
 define("TEMP_DIR", NGS_ROOT . "/tmp");
 
@@ -51,7 +51,7 @@ define("BIN_DIR", NGS_ROOT . "/bin");
 
 //---defining image root dir
 define('DATA_IMAGE_DIR', DATA_DIR . "/images");
-define('DATA_TEMP_DIR', DATA_DIR."/temp");
+define('DATA_TEMP_DIR', DATA_DIR . "/temp");
 
 //---defining interface images dir
 define("IMG_ROOT_DIR", NGS_ROOT . "/htdocs/img");
@@ -69,8 +69,6 @@ define("SESSION_MANAGER", CLASSES_PATH . "/managers/SessionManager.class.php");
 //defining load and action directories
 define("LOADS_DIR", "loads");
 define("ACTIONS_DIR", "actions");
-
-
 
 function get_domain($url) {
     if (substr($url, 0, 4) !== 'http') {
