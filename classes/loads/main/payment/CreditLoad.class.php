@@ -33,10 +33,10 @@ class CreditLoad extends BaseUserCompanyLoad {
             $creditSuppliersDisplayNames = $this->getPhrases($creditSuppliersDisplayNamesIds);
             $defaultCreditSupplierDto = reset($allCreditSuppliers);
             $selected_credit_supplier_id = $defaultCreditSupplierDto->getId();
-            if (isset($_REQUEST['cho_credit_supplier_id'])) {
-                $selected_credit_supplier_id = $_REQUEST['cho_credit_supplier_id'];
+            if (isset($_REQUEST['credit_supplier_id'])) {
+                $selected_credit_supplier_id = $_REQUEST['credit_supplier_id'];
             }
-            $_REQUEST['cho_credit_supplier_id'] = $selected_credit_supplier_id;
+            $_REQUEST['credit_supplier_id'] = $selected_credit_supplier_id;
             $this->addParam("creditSuppliersIds", array_keys($allCreditSuppliers));
             $this->addParam("creditSuppliersDisplayNames", $creditSuppliersDisplayNames);
 
@@ -45,16 +45,15 @@ class CreditLoad extends BaseUserCompanyLoad {
             //credit supplier possible months
             $possibleCreditMonths = explode(',', $selectedCreditSupplierDto->getPossibleCreditMonths());
 
-            $cho_selected_credit_months = $possibleCreditMonths[0];
-            if (isset($_REQUEST['cho_selected_credit_months'])) {
-                $cho_selected_credit_months = $_REQUEST['cho_selected_credit_months'];
+            $selected_credit_months = $possibleCreditMonths[0];
+            if (isset($_REQUEST['selected_credit_months'])) {
+                $selected_credit_months = $_REQUEST['selected_credit_months'];
             }
-            if (!in_array($cho_selected_credit_months, $possibleCreditMonths)) {
-                $cho_selected_credit_months = $possibleCreditMonths[0];
+            if (!in_array($selected_credit_months, $possibleCreditMonths)) {
+                $selected_credit_months = $possibleCreditMonths[0];
             }
-            $_REQUEST['cho_selected_credit_months'] = $cho_selected_credit_months;
-            $this->addParam("cho_selected_credit_months", $cho_selected_credit_months);
-
+            $_REQUEST['selected_credit_months'] = $selected_credit_months;
+            $this->addParam("selected_credit_months", $selected_credit_months);
             $this->addParam("possibleCreditMonths", $possibleCreditMonths);
 
             //deposit amount
@@ -75,7 +74,7 @@ class CreditLoad extends BaseUserCompanyLoad {
 
             //credit monthly payment calculation
             $creditManager = CreditManager::getInstance();
-            $monthlyPayment = $creditManager->calcCredit($grandTotalAMD, $depositAmd, $annualInterestPercent + $credit_supplier_annual_commision, $cho_selected_credit_months, $commission);
+            $monthlyPayment = $creditManager->calcCredit($grandTotalAMD, $depositAmd, $annualInterestPercent + $credit_supplier_annual_commision, $selected_credit_months, $commission);
             $this->addParam("credit_monthly_payment", round($monthlyPayment));
 
             $this->addParam("minimum_credit_amount", intval($selectedCreditSupplierDto->getMinimumCreditAmount()));

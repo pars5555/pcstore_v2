@@ -83,18 +83,18 @@
 
 
                     {*<li class="rel-block dropdown">
-                        <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
-                        <div class="dropdown-menu search_block">
-                            <div class="top-arrow"></div>
-                            <div class="input-group search_container">
-                                <form method="GET" action="{$SITE_PATH}" autocomplete="off">
-                                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
-                                    <button type="submit" class="search_btn">
-                                        <span class="glyphicon"></span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+                    <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
+                    <div class="dropdown-menu search_block">
+                    <div class="top-arrow"></div>
+                    <div class="input-group search_container">
+                    <form method="GET" action="{$SITE_PATH}" autocomplete="off">
+                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
+                    <button type="submit" class="search_btn">
+                    <span class="glyphicon"></span>
+                    </button>
+                    </form>
+                    </div>
+                    </div>
                     </li>*}
                     <li class="notification" style="position:relative;">
                         <a id="notificationBtn" class="f_drop_down_btn" href="javascript:void(0);"> <i style="margin-left:5px;" class="glyphicon glyphicon-bell"></i> </a>
@@ -142,8 +142,10 @@
                     {if isset($ns.req.cid)}
                         <input type="hidden" name="cid" value="{$ns.req.cid}"/>
                     {/if}
-                    <input type="hidden" id="sort_by_input" name="s" value=""/>
-                    <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
+                    {if $ns.contentLoad != "main_home"}
+                        <input type="hidden" id="sort_by_input" name="s" value=""/>
+                        <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
+                    {/if}
                 </form>
             </div>
         </div>

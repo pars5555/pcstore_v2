@@ -20,14 +20,14 @@ ngs.CreditLoad = Class.create(ngs.AbstractLoad, {
     calculateCreditMonthlyPayments: function () {
         jQuery("#calculate_credit_monthly_payments_button").click(function () {
             var deposit_amd = jQuery("#deposit_amd").val();
-            var cho_selected_credit_months = jQuery("#cp_cho_selected_credit_months").val();
-            var cho_credit_supplier_id = jQuery("#cho_credit_supplier_id").val();
+            var selected_credit_months = jQuery("#selected_credit_months").val();
+            var credit_supplier_id = jQuery("#credit_supplier_id").val();
 
             ngs.load("payment_credit", {
                 do_shipping: 0,
                 deposit_amd: deposit_amd,
-                cho_selected_credit_months: cho_selected_credit_months,
-                cho_credit_supplier_id: cho_credit_supplier_id
+                selected_credit_months: selected_credit_months,
+                credit_supplier_id: credit_supplier_id
             });
         });
     }

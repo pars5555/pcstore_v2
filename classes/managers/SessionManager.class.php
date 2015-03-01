@@ -29,8 +29,7 @@ class SessionManager extends AbstractSessionManager {
         session_start();
     }
 
-    public function getUser() {
-        $status = $this->setOnlineStatus();
+    public function getUser() {        
         if ($this->user != null) {
             return $this->user;
         }
@@ -97,12 +96,6 @@ class SessionManager extends AbstractSessionManager {
                 ($user->getLevel() == UserGroups::$SERVICE_COMPANY || $user->getLevel() == UserGroups::$COMPANY || $user->getLevel() == UserGroups::$USER)) {
             return true;
         }
-        return false;
-    }
-
-    private function setOnlineStatus() {
-        $domain = "." . DOMAIN;
-        setcookie("ustatus", 1, null, "/", $domain);
         return false;
     }
 

@@ -86,11 +86,11 @@ class ConfirmOrderAction extends GuestAction {
             $metadataObject->bank_account_number = $company_bank_account_number;
             $metadataObject->company_delivering_address = $company_delivering_address;
         }
-        $promo_codes="";
+        $promo_codes = "";
         if (isset($_COOKIE['promo_codes'])) {
             $promo_codes = $_COOKIE['promo_codes'];
         }
-        $orderId = $ordersManager->addOrder($userEmail, $calcCartTotalDealerPrice, $ship_tel, $ship_tel, $ship_cell_tel, $ship_cell_tel, $paymentType, $userTypeString, $dollarExchange, $doShipping, $ship_addr, $ship_addr, $shipping_region, $recipient_name, $recipient_name, $shipping_region, true, $usablePoints, $shippingCost, $grandTotalAMD, $grandTotalUSD,$promo_codes, ($totalPromoDiscountAmd + $totalDealDiscountAmd), $customer->getCartIncludedVat(), $metadataObject);
+        $orderId = $ordersManager->addOrder($userEmail, $calcCartTotalDealerPrice, $ship_tel, $ship_tel, $ship_cell_tel, $ship_cell_tel, $paymentType, $userTypeString, $dollarExchange, $doShipping, $ship_addr, $ship_addr, $shipping_region, $recipient_name, $recipient_name, $shipping_region, true, $usablePoints, $shippingCost, $grandTotalAMD, $grandTotalUSD, $promo_codes, ($totalPromoDiscountAmd + $totalDealDiscountAmd), $customer->getCartIncludedVat(), $metadataObject);
         $orderDetailsManager->addOrderDetails($orderId, $userEmail, $this->getUser(), $customer->getCartIncludedVat());
 
         //reduce user point if any used
@@ -99,18 +99,21 @@ class ConfirmOrderAction extends GuestAction {
           $description = "User points used to pay for order numer $orderId.";
           $userManager->subtractUserPoints($this->getUserId(), $usablePoints, $description);
           } */
-        /*
-          if ($paymentType == 'credit') {
-          $creditOrdersManager = CreditOrdersManager::getInstance();
-          $creditSuppliersManager = CreditSuppliersManager::getInstance();
-          $creditSupplierDto = $creditSuppliersManager->selectByPK($cho_credit_supplier_id);
-          $annualInterestPercent = floatval($creditSupplierDto->getAnnualInterestPercent());
-          $annualInterestPercent += floatval($creditSupplierDto->getAnnualCommision());
-          $commission = $creditSupplierDto->getCommission();
-          $creditMonthlyPayment = CreditManager::calcCredit($grandTotalAMD, $cho_selected_deposit_amount, $annualInterestPercent, $cho_selected_credit_months, $commission);
-          $creditOrdersManager->addCreditOrder($orderId, $cho_selected_deposit_amount, $cho_credit_supplier_id, $cho_selected_credit_months, $annualInterestPercent, $creditMonthlyPayment);
-          } */
-        // $customerCartManager->emptyCustomerCart($userEmail);
+
+        if ($paymentType == 'credit') {
+            $credit_supplier_id = intval($_REQUEST['credit_supplier_id']);
+            $deposit_amd= intval($_REQUEST['deposit_amd']);
+            $selected_credit_months = intval($_REQUEST['selected_credit_months']);
+            $creditOrdersManager = CreditOrdersManager::getInstance();
+            $creditSuppliersManager = CreditSuppliersManager::getInstance();
+            $creditSupplierDto = $creditSuppliersManager->selectByPK($credit_supplier_id);
+            $annualInterestPercent = floatval($creditSupplierDto->getAnnualInterestPercent());
+            $annualInterestPercent += floatval($creditSupplierDto->getAnnualCommision());
+            $commission = $creditSupplierDto->getCommission();
+            $creditMonthlyPayment = CreditManager::calcCredit($grandTotalAMD, $deposit_amd, $annualInterestPercent, $selected_credit_months, $commission);
+            $creditOrdersManager->addCreditOrder($orderId, $deposit_amd, $credit_supplier_id, $selected_credit_months, $annualInterestPercent, $creditMonthlyPayment);
+        }
+        //$customerCartManager->emptyCustomerCart($userEmail);
         $this->emailOrderDetails($orderId);
 
         /* if (isset($validPromoDiscount)) {

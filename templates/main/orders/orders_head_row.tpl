@@ -53,6 +53,7 @@
             <img title="{$orderInfo->getCancelReasonText()}" style="cursor: pointer" src="{$SITE_PATH}/img/warning_icon.png" />                
         {/if}
         {if $orderInfo->getStatus() == 3}
+             {* ORDER CONFIRMED *}
             {if $orderInfo->get3rdPartyPaymentReceived()==0}
 
                 {if $orderInfo->getPaymentType() == 'paypal'}                     
@@ -90,6 +91,9 @@
                 {/if}
                 {if $orderInfo->getPaymentType() == 'arca'}                     
                     <span>pay with arca</span>
+                {/if}
+                {if $orderInfo->getPaymentType() == 'credit'}                     
+                    <span>go to shop to finish the loan confirmation</span>
                 {/if}
             {else}
                 {* ORDER CONFIRMED PAYMENT*}

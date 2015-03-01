@@ -247,10 +247,9 @@ class HomeLoad extends BaseGuestLoad {
 
         $sort_by_values = array('rel', 'lth', 'htl');
         $sort_by_display_names = array($this->getPhrase(155), $this->getPhrase(649), $this->getPhrase(650));
-        if (isset($_REQUEST["s"])) {
+        $selected_sort_by_value = $sort_by_values[0];
+        if (isset($_REQUEST["s"]) && !empty($_REQUEST["s"])) {
             $selected_sort_by_value = $this->secure($_REQUEST["s"]);
-        } else {
-            $selected_sort_by_value = $sort_by_values[0];
         }
         $this->addParam("sort_by_values", $sort_by_values);
         $this->addParam("sort_by_display_names", $sort_by_display_names);
@@ -299,9 +298,6 @@ class HomeLoad extends BaseGuestLoad {
     public function getTemplate() {
         return TEMPLATES_DIR . "/main/home.tpl";
     }
-    
-    
-    
 
 }
 

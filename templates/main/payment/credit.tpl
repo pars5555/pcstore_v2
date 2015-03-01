@@ -33,10 +33,10 @@
                     {$ns.lm->getPhraseSpan(426)} : 
                 </p>
                 <p class="select_wrapper">
-                    <select id="cho_credit_supplier_id" name="cho_credit_supplier_id"
+                    <select id="credit_supplier_id" name="credit_supplier_id"
                             onkeyup="this.blur();
                                     this.focus();" class="cmf-skinned-select cmf-skinned-text"  >
-                        {html_options values=$ns.creditSuppliersIds selected=$ns.cho_credit_supplier_id output=$ns.creditSuppliersDisplayNames}
+                        {html_options values=$ns.creditSuppliersIds selected=$ns.credit_supplier_id output=$ns.creditSuppliersDisplayNames}
                     </select>
                 </p>
                 {*<p>
@@ -55,10 +55,10 @@
                         {$ns.lm->getPhraseSpan(424)} : 
                     </p>
                     <p class="select_wrapper">
-                        <select id="cp_cho_selected_credit_months" name="cho_selected_credit_months" 
+                        <select id="selected_credit_months" name="selected_credit_months" 
                                 onkeyup="this.blur();
                                         this.focus();" class="cmf-skinned-select cmf-skinned-text"  >
-                            {html_options values=$ns.possibleCreditMonths selected=$ns.cho_selected_credit_months output=$ns.possibleCreditMonths}
+                            {html_options values=$ns.possibleCreditMonths selected=$ns.selected_credit_months output=$ns.possibleCreditMonths}
                         </select>
                     </p>
                     <p>
