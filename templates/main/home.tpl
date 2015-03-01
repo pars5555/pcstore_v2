@@ -104,7 +104,7 @@
                             <div class="product-wrapper">
                                 <div class="product_inner">
                                     <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
-                                        <h4>{$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p> </h4>
+                                       {$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p>
                                     </a>
                                     <div class="product-img ">
                                         <a class="" href="{$SITE_PATH}/item/{$item->getId()}">

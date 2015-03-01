@@ -8,6 +8,12 @@
     font-family:sans-serif;
     color:inherit;
 }
+.pcstore_old_blue{
+    color:#3498DB;    
+}
+.pcstore_old_blue{
+    color:#63B4FB;
+}
 /******************/
 .crossbrowser_linear_gradient{	
     background: -webkit-linear-gradient(#585e64, #3b4147); /* For Safari 5.1 to 6.0 */
@@ -19,11 +25,11 @@
     background-color:#585e64;
 }
 .crossbrowser_transition{
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;	
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
 }
 .crossbrowser_transform{
     transform:rotate(90deg);
@@ -92,13 +98,13 @@ body{
     color:#555;
 }
 .main_title{
-    border-bottom: 3px solid #3498DB;
+    border-bottom: 3px solid #63B4FB;
     font-size: 30px;
     margin-bottom: 30px;
     padding-bottom: 10px;
     text-align: center;	
     font-weight:600;
-    color:#3498DB;
+    color:#63B4FB;
 }
 .tab_title{
     background-color: transparent;
@@ -110,7 +116,7 @@ body{
     text-align: center;
     transition: all 300ms ease 0s;
     vertical-align: middle;
-    color: #3498db;
+    color: #63B4FB;
     font-weight: 600;
     box-shadow: 0 0 0px 0px transparent;
 }
@@ -118,7 +124,7 @@ body{
     box-shadow: 0 0 7px 0px #ddd;
 }
 .tab_title.active{
-    background-color: #3498db;
+    background-color: #63B4FB;
     color: #fff;
 }
 .break_text{
@@ -127,10 +133,10 @@ body{
     overflow:hidden;
 }
 .hide{
-    display: none !important;
+    visibility:hidden !important;
 }
 .hidden{
-    visibility:hidden !important;
+    display: none !important;
 }
 .disabled{
     pointer-events: none !important;
@@ -396,8 +402,8 @@ label.input_label{
     font-size:20px;
     padding:10px;
     margin-bottom:20px;
-    border-bottom: 2px solid #3498db;
-    color:#3498db;
+    border-bottom: 2px solid #63B4FB;
+    color:#63B4FB;
     text-align: center;
 }
 
@@ -457,12 +463,6 @@ label.input_label{
 }
 
 /*======= Navigation Bar Header =======*/
-.navbar .navMenu_container{
-    background-color:#f7f7f7;
-    border-bottom:1px solid #ccc;
-    margin-bottom:30px;
-    /*box-shadow: 0 0 10px 1px #eee;*/
-}
 .navbar .navbar-header{
     float:left;
     margin-top:5px;
@@ -477,19 +477,22 @@ label.input_label{
     width:calc(100% - 50px);
     padding:0 25px;
     margin:auto;
+    background-color:#f7f7f7;
+    border-bottom:1px solid #ccc;
+    margin-bottom:30px;
 }
-.navbar .navMenu .navMenuList{
+.navMenuList{
     float:right;
 }
-.navbar .navMenu .navMenuList>li{
+.navMenuList>li{
     float:left;
     padding:10px 0;
 }
-.navbar .navMenu .navMenuList>li.clear{
+.navMenuList>li.clear{
     float:none;
     padding:0;
 }
-.navbar .navMenu .navMenuList>li>a{
+.navMenuList .navMenu_item{
     display:block;
     color:#555;
     font-size:13px;
@@ -497,53 +500,53 @@ label.input_label{
     height:20px;
     line-height:20px;
     border-left:1px solid #ccc;
-    transition: all 0.5s ease;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
 }
-.navbar .navMenu .navMenuList>li:first-child>a{
+.navMenuList>li:first-child .navMenu_item{
     border-left:none;
 }
-.navbar .navMenu .navMenuList>li a:hover{
-    color:#3498DB;
+.navMenuList>li a:hover{
+    color:#63B4FB;
 }
-/*.navbar .navMenu .navMenuList > li a:hover {
-    background-color: #3399ff;
-    color: #404d5b;
-    box-shadow:0 0 15px 3px #3399ff;
-}*/
 
 /*Drop Down Menu*/
 
-.navbar .navMenu .navMenuList li.dropdown{
+.navMenuList li.dropdown{
     position:relative;
 }
 
-.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle{
+.navMenuList li.dropdown a.dropdown-toggle{
     position:relative;
     padding-right:35px;
 }
-.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:before{
+.navMenuList li.dropdown a.dropdown-toggle:before{
     content:"";
     font-family: "glyphicons-halflings";
     position:absolute;
     right:15px;
 }
-.navbar .navMenu .navMenuList li.dropdown a.dropdown-toggle:hover{
+.navMenuList li.dropdown a.dropdown-toggle:hover{
     /*color:#fff;*/
 }
 
-.navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu{
+.navMenuList li.dropdown ul.dropdown-menu{
     display:none;
     position:absolute;
     top:50px;
     right:0;
     background-color:#fff;
-    box-shadow:0 0 5px #555;
+    box-shadow:0 0 7px #777;
     padding:5px;
     border-radius:3px;
     z-index: 100;
 }
 
-.navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a{
+.navMenuList li.dropdown ul.dropdown-menu li a{
     padding:5px;
     clear:both;
     display:block;
@@ -552,12 +555,12 @@ label.input_label{
     border-radius:3px;	
     font-size: 15px;
 }
-.navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a:hover{
-    background-color: #3498db;
+.navMenuList li.dropdown ul.dropdown-menu li a:hover{
+    background-color: #63B4FB;
     color: #fff;
 }
 
-.navbar .navMenu .navMenuList li.dropdown ul.dropdown-menu li a img{
+.navMenuList li.dropdown ul.dropdown-menu li a img{
     display:inline-block;
     vertical-align:middle;
     width:25px;
@@ -591,7 +594,7 @@ label.input_label{
     transition:all 0.5s ease;
 }
 
-.modal.myModal.active .modal-content{
+.modal .modal-content.active {
     top:100px;
     opacity:1;
 }
@@ -912,11 +915,14 @@ width: calc(100% - 50px);*/
     width:200px;
     margin: auto;
 }
+.download_all span{
+    display:inline-block;
+    vertical-align: middle;
+}
 .download_all .glyphicon{
     font-size:20px;
     margin-left:5px;
     font-weight:500;
-    vertical-align: middle;
 }
 .company_filter{
     clear: both;
@@ -937,7 +943,7 @@ width: calc(100% - 50px);*/
     transition: all 500ms ease;
 }
 .company_filter .company_tab_btn.active {
-    background-color: #3498DB;
+    background-color: #63B4FB;
     color: #fff;
 }
 
@@ -1196,7 +1202,7 @@ width: calc(100% - 50px);*/
     width:calc(100% - 32px);
     display:block;
     padding:10px 20px;
-    border: 3px solid #ccc;
+    border: 3px solid #66afe9;
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
     transition:all 0.5s ease;
@@ -1204,13 +1210,12 @@ width: calc(100% - 50px);*/
 }
 
 .search_block .search_container .search_text:focus{
-    border-color: #66afe9;
     box-shadow: 0 0 7px #66afe9;	
 }
 
 
 .search_block .search_container .search_btn{
-    background-color: #3498db;
+    background-color: #63B4FB;
     height: 100%;
     position: absolute;
     right: 0;
@@ -1224,9 +1229,7 @@ width: calc(100% - 50px);*/
     transition:all 0.5s ease;
 }
 .search_block .search_container .search_btn:hover{
-    background-color:#ccc;
-    border-color:#999;
-    color: #3498db;
+    color: #555;
 }
 
 /*******
@@ -1373,7 +1376,7 @@ SMS CONF COMPANY
     cursor:pointer;
 }
 .see_more{
-    color:#3498DB;
+    color:#63B4FB;
     text-decoration:underline;
 }
 .cart-item .component_block .cart_item_count .select_wrapper{
@@ -1569,7 +1572,7 @@ SMS CONF COMPANY
     white-space: normal;
 }
 .payment_type .form-group:hover .payment_name.label{
-    color:#3498DB;
+    color:#63B4FB;
 }
 
 /* Payment Details */
@@ -1644,7 +1647,7 @@ SMS CONF COMPANY
 
 .payment_details .title {
     border:none;
-    color:#3498db;
+    color:#63B4FB;
 }
 
 .pcstore_info_text{
@@ -1691,7 +1694,7 @@ SMS CONF COMPANY
 
 .payment_credit_wrapper .credit_no_ship{
     font-weight: 600;
-    color:#3498db;
+    color:#63B4FB;
     text-align: center;
     margin-bottom:10px;
     font-size:17px;
@@ -1735,7 +1738,7 @@ SMS CONF COMPANY
 }
 .order_slide_btn{
     display:inline-block;
-    color:#3498DB;
+    color:#63B4FB;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -1770,8 +1773,8 @@ SMS CONF COMPANY
     display:table-row;
 }
 .order_header>div{
-    border-bottom: 2px solid #3498db;
-    color: #3498db;
+    border-bottom: 2px solid #63B4FB;
+    color: #63B4FB;
     display: table-cell;
     font-weight: 600;
     padding: 5px 15px;
@@ -1791,7 +1794,7 @@ SMS CONF COMPANY
     vertical-align: middle;
     padding: 10px 15px;
     font-weight: 600;
-    color:#3498DB;
+    color:#63B4FB;
 }
 
 /*Order Bundle Components*/
@@ -1829,14 +1832,14 @@ SMS CONF COMPANY
  PROFILE HEADER
 
 *******/
-.navbar .navMenu .navMenuList li.dropdown.rel-block a.dropdown-toggle{
+.navMenuList li.dropdown.rel-block a.dropdown-toggle{
     font-size:17px;
-    color:#3498DB;
+    color:#63B4FB;
 }
-.navbar .navMenu .navMenuList li.dropdown.rel-block a.dropdown-toggle:before{
+.navMenuList li.dropdown.rel-block a.dropdown-toggle:before{
     display:none;
 }
-.navbar .navMenu .navMenuList li.rel-block.dropdown {
+.navMenuList li.rel-block.dropdown {
     position:relative;
 }
 .rel-block .dropdown-menu{
@@ -1865,7 +1868,7 @@ SMS CONF COMPANY
     padding: 10px 15px;
 }
 .rel-block .dropdown-menu .search_container .search_btn{
-    background-color:#3498DB;
+    background-color:#63B4FB;
     color:#fff;
     font-size: 20px;
 }
@@ -1925,10 +1928,10 @@ SMS CONF COMPANY
     transition: box-shadow 0.4s ease;
 }
 .products-wrapper .products_row .product-wrapper:hover {
-    box-shadow:0 0 15px 3px #3498db;
+    box-shadow:0 0 7px 3px #63B4FB;
 }
 .product-wrapper .product_inner{
-    padding:30px 20px 70px;	
+    padding:30px 20px 80px;	
 }
 .product-wrapper .product-img{
     cursor: pointer;
@@ -1966,7 +1969,7 @@ SMS CONF COMPANY
 .product-wrapper .product-img img {
     display:block;
     margin: auto;
-    width: 150px;
+    height: 100px;
 }
 .product-wrapper .button-wrapper {
     position: absolute;
@@ -1978,12 +1981,14 @@ SMS CONF COMPANY
     width: calc(100% - 20px);
     margin:auto;
 }
-.product-wrapper .product-title,
-.product-wrapper .product-title h4{
+.product-wrapper .product-title{
     font-weight:500;
     font-size:18px;
     color:#428bca;
     transition:all 0.5s ease;
+    display: block;
+    height: 90px;
+    overflow: hidden;
 }
 .product-wrapper .product-title h4 span{
     font-size: 15px;
@@ -2062,42 +2067,71 @@ SMS CONF COMPANY
     NOTIFICATION BLOCK
 
 *******/
-.current-notif-wrapper p{
-    margin:0px;
-    font-size:11px;
-}
-.current-notif-wrapper  img{
-}
+
 .notification {
     position:relative;
 }
+.navMenuList .notification .navMenu_item{
+    font-size:17px;
+}
+.navMenuList .notification .navMenu_item:after{
+    content:"";
+    font-family: "glyphicons-halflings";
+}
 .notification .nofitication-list-wrapper{
-    position:absolute;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 7px #777;
+    color: #555;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
     right: 15px;
-    top: 40px;
-    margin:0px;
-    padding:10px;
-    background-color:#F8F8F8;
-    box-shadow:1px 1px 1px 1px #e2e2e2;
-    color:#333;
-    z-index:99999;
+    top: 50px;
     width: 400px;
-    border-radius:5px;
-    max-height:200px;
-    overflow:hidden;
+    z-index: 99999;
 }
-.notification .nofitication-list-wrapper li {
-    list-style:none;
-    border-bottom: 1px solid #e2e2e2;
-    padding:5px 0px;
+.notification .notification_block {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
 }
-.notification .nofitication-list-wrapper li .current-notif-desc {
-    font-size: 12px;
+.notification .notification_block:hover {
+    background-color: #f7f7f7;
 }
-.notification .nofitication-list-wrapper li .notif-date {
-    color: #888888;
-    font-size: 12px;
+.notification_block .not_link {
+    display: table;
+    width: 100%;
 }
+.notification_block .nb_item{
+    display:table-cell;
+    vertical-align: top;
+    padding: 0 10px;
+}
+.notification_block .nb_item span{
+    display:block;
+}
+.notification_block .not_icon{
+    padding: 0;
+    width: 50px;
+}
+.notification_block .not_icon img {
+    width:inherit;
+}
+.notification_block .not_title{
+    margin-bottom:7px;   
+}
+.notification_block .not_date{
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+}
+
 /*******
     FOOTER
 *******/
@@ -2192,10 +2226,10 @@ SMS CONF COMPANY
     transition: all 0.3s ease;
 }
 .news-letter-block .input-group .newsletter_btn:hover{
-    border-color:#3498db;
+    border-color:#63B4FB;
 }
 .news-letter-block .input-group .newsletter_btn:hover:before{
-    color:#3498db;
+    color:#63B4FB;
 }
 .news-letter-below-block p{
     color:#FFFFFF;
@@ -2262,7 +2296,7 @@ BUILD PC PAGE
     max-width:1000px;
     margin:0 auto 10px;
     border-spacing: 5px 0;
-    border-bottom:5px solid #3278b3;
+    border-bottom:5px solid #4697de;
 
     -webkit-transition: left 0.4s ease;
     -moz-transition: left 0.4s ease;
@@ -2283,7 +2317,8 @@ BUILD PC PAGE
     background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
 }
 .item-sections-wrapper .current-section.active{
-    background:linear-gradient(to bottom, #428bca 0%, #3278b3 100%) repeat scroll 0 0 #3278b3;
+    background:linear-gradient(#63b4fb, #4697de) repeat scroll 0 0 #3278b3;
+    color: #000;
 }
 .build-pc-component {
     display:block;
@@ -2451,7 +2486,7 @@ BUILD PC PAGE
     text-align: center;
 }
 .price{
-    color: #0e53a5;
+    color: #0f60a7;
     font-size: 17px;
     font-weight: 600;
 }
@@ -2484,7 +2519,7 @@ BUILD PC PAGE
     color: #cc0000;	
 }
 .component_edit .glyphicon:hover{
-    color:#3498DB;
+    color:#63B4FB;
 }
 .build-pc-wrapper .select_count .pcc_select_wrapper{
     vertical-align:middle;
@@ -2774,12 +2809,12 @@ PAGINATION
     transition: all 0.4s ease;
 }
 .pagination .current-page-number:hover {
-    color: #3498DB;
-    border:1px solid #3498DB;
+    color: #63B4FB;
+    border:1px solid #63B4FB;
 }
 .pagination .current.current-page-number{
-    color: #3498DB;
-    border:1px solid #3498DB;
+    color: #63B4FB;
+    border:1px solid #63B4FB;
 }
 
 
@@ -2808,7 +2843,7 @@ Dealers
 
 .dealers table th{
     padding:20px 0;
-    background-color:#3498DB;
+    background-color:#63B4FB;
     color:#fff;
     font-size: 20px;
 }
@@ -2871,7 +2906,7 @@ Dealers
     color:#555;
 }
 .last_com_price:hover{
-    color:#3498DB;
+    color:#63B4FB;
 }
 .last_com_price .glyphicon{
     font-size:25px;
@@ -2917,7 +2952,7 @@ Dealers
     text-align:right;
 }
 .dealers_count span{
-    color:#3498DB;
+    color:#63B4FB;
     font-weight: 600;
     margin-right:5px;
 }
@@ -2946,7 +2981,7 @@ Dealers
     color:#555;    
 }
 .last_price_file:hover{
-    color:#3498DB;    
+    color:#63B4FB;    
 }
 .last_price_file span{
     display:inline-block;
@@ -2970,7 +3005,7 @@ Dealers
     color:#555;
 }
 .attach_more .attach_more_btn:hover{
-    color:#3498DB;    
+    color:#63B4FB;    
 }
 .attach_more .attach_more_btn span{
     display: inline-block;
@@ -3012,7 +3047,7 @@ Dealers
 }
 
 .all_prices thead th{
-    background-color: #3498DB;
+    background-color: #63B4FB;
     color:#fff;
     padding: 10px;
 }

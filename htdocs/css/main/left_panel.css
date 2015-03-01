@@ -41,12 +41,12 @@
     transition: background-color 0.3s ease;
 }
 .left-panel ul li a.active{
-    color:#3498DB;
+    color:#63B4FB;
     font-weight:600;
     font-size: 17px;
 }
 .left-panel ul li a:hover{
-    background-color:#3498DB !important;
+    background-color:#63B4FB !important;
     color:#fff;
 }
 .left-panel ul li a .cat_count{
@@ -65,7 +65,7 @@
 }
 .left-panel ul li a:hover .cat_count span{
     background-color:#fff;
-    color:#3498DB;
+    color:#63B4FB;
 }
 .left-panel ul li .dropdown-toggle{
     width: 35px;
@@ -73,13 +73,13 @@
     cursor: pointer;
     text-align: center;
     vertical-align:middle;
-    background-color:#3498DB;
+    background-color:#63B4FB;
     color:#fff;
 }
 .left-panel ul li:hover>a .dropdown-toggle{
     background-color:#fff;
-    color:#3498DB;	
-    border:1px solid #3498DB;
+    color:#63B4FB;	
+    border:1px solid #63B4FB;
 }
 .left-panel ul li .dropdown-toggle:before{
     font-family:"glyphicons-halflings";
@@ -110,8 +110,8 @@
 
 .left-panel .product_categorie{
     padding:10px;
-    color:#3498db;
-    border-bottom:1px solid #3498db;
+    color:#63B4FB;
+    border-bottom:1px solid #63B4FB;
     border-top: 1px solid #ddd;
     background-color:#fff;
     font-weight:600;

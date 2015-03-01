@@ -11,26 +11,20 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
     afterAction: function (transport) {
         var data = transport.responseText.evalJSON();
         if (data.status === "ok") {
-            jQuery('#notificationListWrapper').empty();
 
             if (typeof data.notifications !== 'undefined') {
-                var notifications = data.notifications;
-                if (notifications.length > 0)
-                {
-                    jQuery('.notification').css({'display': 'block'});
-                } else
-                {
-                    jQuery('.notification').css({'display': 'none'});
-                }
-                jQuery(notifications).each(function (index, notification) {
-                    var row = jQuery('#notificationRowTemplate').html().replace("%date%", notification.formatedDateTime).replace("%title%", notification.title).replace("%url%", notification.url).replace("%icon%", (notification.iconUrl != "" ? '<img src="' + notification.iconUrl + '" />' : ''));
-                    jQuery(row).removeAttr('id');
-                    jQuery('#notificationListWrapper').append(jQuery(row));
-                });
+                var notifications = data.notifications[0];
+                var new_not = jQuery("#notification_example .notification_block").clone(true);
+                jQuery("#notificationListWrapper").prepend(new_not);
+                new_not.attr("id",notifications.id);
+                new_not.find(".f_not_link").attr("href", notifications.url);
+                new_not.find(".f_not_icon img").attr("src",notifications.iconUrl);
+                new_not.find(".f_not_title").html(notifications.title);
+                new_not.find(".f_not_date").html(notifications.datetime);
             }
         }
         else if (data.status === "err") {
-
+            console.log("notifications error");
         }
         window.setTimeout(function () {
             ngs.action('ping_pong', {});

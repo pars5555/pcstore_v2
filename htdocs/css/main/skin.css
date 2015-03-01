@@ -1,13 +1,13 @@
 /*======= Blue Button =======*/
 .blue{
-	background-color: #3498DB;
-	border:1px solid #258CD1;
+	background-color: #63B4FB;
+	border:1px solid #3081C8;
 	color:#fff;	
 }
 
 .blue:hover{
-	background-color: #258CD1;
-	box-shadow: 0 0 5px #258CD1;
+	background-color: #3081C8;
+	box-shadow: 0 0 5px #3081C8;
 }
 
 /*======= Grey Button =======*/
@@ -41,7 +41,7 @@
 }
 /* Blue text */
 .text_blue{
-	color:#3498DB;
+	color:#63B4FB;
 }
 /* Green text */
 .text_green{

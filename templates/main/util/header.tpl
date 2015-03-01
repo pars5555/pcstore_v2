@@ -1,130 +1,132 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
-    <div class="navMenu_container">
-        <nav id="navMenu" class="navMenu" role="navigation">
-            <ul class="navMenuList">
-                {if $ns.contentLoad != "main_buildpc"}
-                    <li>
-                        <a  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
-                    </li>
-                {/if}
-                <li class="dropdown">
-                    <a id="lang_menu_btn" class="dropdown-toggle" href="javascript:void(0);">Languages</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
-                        </li>
-                    </ul>
+    <nav id="navMenu" class="navMenu" role="navigation">
+        <ul class="navMenuList">
+            {if $ns.contentLoad != "main_buildpc"}
+                <li>
+                    <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
                 </li>
-                {if $ns.userLevel === $ns.userGroupsGuest}
-                    <li >
-                        <a class="f_myModal_toggle" href="javascript:void(0);"> Sign in / Register </a>
+            {/if}
+            <li class="dropdown">
+                <a id="lang_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">Languages</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
+                    </li>
+                </ul>
+            </li>
+            {if $ns.userLevel === $ns.userGroupsGuest}
+                <li >
+                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> Sign in / Register </a>
+                </li>
+            {else}
+                <li>
+                    <a class="navMenu_item" href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
+                </li>
+                {if $ns.userLevel !== $ns.userGroupsAdmin}
+                    <li>
+                        <a class="navMenu_item" href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} </a>
                     </li>
                 {else}
                     <li>
-                        <a href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
+                        <a class="navMenu_item" href="{$SITE_PATH}/admin" target="_blank">{$ns.lm->getPhrase(496)}</a>
                     </li>
-                    {if $ns.userLevel !== $ns.userGroupsAdmin}
-                        <li>
-                            <a  href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} </a>
-                        </li>
-                    {else}
-                        <li>
-                            <a href="{$SITE_PATH}/admin" target="_blank">{$ns.lm->getPhrase(496)}</a>
-                        </li>
-                    {/if}
-                    <li class="dropdown">
-                        <a id="user_menu_btn" class="dropdown-toggle" href="javascript:void(0);"> {$ns.customer->getName()}
-                            {if $ns.userLevel === $ns.userGroupsUser}
-                                ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
-                            {/if}</a>
-                        <ul class="dropdown-menu">
-                            {if $ns.userLevel === $ns.userGroupsUser}
-                                <li>
-                                    <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
-                                </li>
-                                <li>
-                                    <a href="{$SITE_PATH}/uinvite">invite</a>
-                                </li>
-                            {/if}
-                            {if $ns.userLevel === $ns.userGroupsCompany}
-                                <li>
-                                    <a href="{$SITE_PATH}/cprofile">{$ns.lm->getPhrase(94)}</a>
-                                </li>
-                                <li>
-                                    <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
-                                </li>
-                            {/if}
-                            {if $ns.userLevel === $ns.userGroupsServiceCompany}
-                                <li>
-                                    <a href="{$SITE_PATH}/scprofile">{$ns.lm->getPhrase(94)}</a>
-                                </li>
-                            {/if}
-                            {if $ns.userLevel === $ns.userGroupsCompany || $ns.userLevel === $ns.userGroupsServiceCompany}
-                                <li>
-                                    <a href="{$SITE_PATH}/dealers">{$ns.lm->getPhrase(495)}</a>
-                                </li>
-                            {/if}
-                            {if $ns.userLevel != $ns.userGroupsAdmin}
-                                <li>
-                                    <a href="{$SITE_PATH}/orders">{$ns.lm->getPhrase(142)}</a>
-                                </li>
-                            {/if}
-                            <li>
-                                <a id="mainLogoutBtn" href="{$SITE_PATH}/dyn/main/do_logout">{$ns.lm->getPhrase(65)}</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                    {*<li class="rel-block dropdown">
-                    <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
-                    <div class="dropdown-menu search_block">
-                    <div class="top-arrow"></div>
-                    <div class="input-group search_container">
-                    <form method="GET" action="{$SITE_PATH}" autocomplete="off">
-                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
-                    <button type="submit" class="search_btn">
-                    <span class="glyphicon"></span>
-                    </button>
-                    </form>
-                    </div>
-                    </div>
-                    </li>*}
-                    <li class="notification" style="position:relative;">
-                        <a id="notificationBtn" class="f_drop_down_btn" href="javascript:void(0);"> <i style="margin-left:5px;" class="glyphicon glyphicon-bell"></i> </a>
-                        <ul style="display: none; position: absolute;" id="notificationListWrapper" class="f_drop_down_menu nofitication-list-wrapper"></ul>
-                    </li>
-
-                    <li id="notificationRowTemplate" class="current-notif-wrapper container-fluid">
-                        <a href="{$SITE_PATH}/%url%">
-                            <div class="col-md-10">
-                                <div class="current-notif-desc">
-                                    <p>
-                                        %title%
-                                    </p>
-                                </div>
-                                <p class="notif-date">
-                                    %date%
-                                </p>
-                            </div>
-                            <div class="col-md-2">
-                                %icon%
-                            </div> </a>
-                    </li>
-
-
                 {/if}
-                <li class="clear"></li>
-            </ul>
-            <div class="clear"></div>
-        </nav>
-    </div>
+                <li class="dropdown">
+                    <a id="user_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);"> {$ns.customer->getName()}
+                        {if $ns.userLevel === $ns.userGroupsUser}
+                            ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
+                        {/if}</a>
+                    <ul class="dropdown-menu">
+                        {if $ns.userLevel === $ns.userGroupsUser}
+                            <li>
+                                <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
+                            </li>
+                            <li>
+                                <a href="{$SITE_PATH}/uinvite">invite</a>
+                            </li>
+                        {/if}
+                        {if $ns.userLevel === $ns.userGroupsCompany}
+                            <li>
+                                <a href="{$SITE_PATH}/cprofile">{$ns.lm->getPhrase(94)}</a>
+                            </li>
+                            <li>
+                                <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
+                            </li>
+                        {/if}
+                        {if $ns.userLevel === $ns.userGroupsServiceCompany}
+                            <li>
+                                <a href="{$SITE_PATH}/scprofile">{$ns.lm->getPhrase(94)}</a>
+                            </li>
+                        {/if}
+                        {if $ns.userLevel === $ns.userGroupsCompany || $ns.userLevel === $ns.userGroupsServiceCompany}
+                            <li>
+                                <a href="{$SITE_PATH}/dealers">{$ns.lm->getPhrase(495)}</a>
+                            </li>
+                        {/if}
+                        {if $ns.userLevel != $ns.userGroupsAdmin}
+                            <li>
+                                <a href="{$SITE_PATH}/orders">{$ns.lm->getPhrase(142)}</a>
+                            </li>
+                        {/if}
+                        <li>
+                            <a id="mainLogoutBtn" href="{$SITE_PATH}/dyn/main/do_logout">{$ns.lm->getPhrase(65)}</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                {*<li class="rel-block dropdown">
+                <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
+                <div class="dropdown-menu search_block">
+                <div class="top-arrow"></div>
+                <div class="input-group search_container">
+                <form method="GET" action="{$SITE_PATH}" autocomplete="off">
+                <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
+                <button type="submit" class="search_btn">
+                <span class="glyphicon"></span>
+                </button>
+                </form>
+                </div>
+                </div>
+                </li>*}
+
+                <li class="notification" id="notification">
+                    <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
+                    </a>
+                    <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
+                   
+                    </ul>
+                </li>
+
+                <ul id="notification_example" class="hidden">
+                    <li class="notification_block">
+                        <a class="not_link f_not_link" href="javascript:void(0);">
+                            <span class="nb_item not_icon f_not_icon">
+                                <img src="" alt="">
+                            </span>  
+                            <span class="nb_item">
+                                <span class="not_title f_not_title">
+
+                                </span>  
+                                <span class="not_date f_not_date">
+
+                                </span>  
+                            </span>  
+                        </a>
+                    </li>
+                </ul>
+
+            {/if}
+            <li class="clear"></li>
+        </ul>
+        <div class="clear"></div>
+    </nav>
     <div class="header_content">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
             <span class="icon-bar"></span>
@@ -157,7 +159,7 @@
     <!-- Modal -->
     <div  class="modal myModal hide" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="overlay"></div>
-        <div class="modal-content">
+        <div class="modal-content f_modal_content">
             <button class="close_button"></button>
             <div class="modal-body">
                 <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">

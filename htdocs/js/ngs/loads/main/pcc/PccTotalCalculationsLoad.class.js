@@ -15,6 +15,9 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
         return "pcc_total_calculations";
     },
     afterLoad: function () {
+        var MainLoad = new ngs.MainLoad();
+        MainLoad.initLoginFunctionallity();
+        
         this.initPrintBtn();
         this.initRemoveItem();
     },

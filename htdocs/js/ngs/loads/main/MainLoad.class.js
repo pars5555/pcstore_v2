@@ -22,7 +22,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.newsLetterBlockController();
         this.initForgotPassword();
         ngs.action('ping_pong', {});
-        this.notificationCustomScroll();
         this.leftMenu();
         this.overlay();
         this.leftPanelActiveElement();
@@ -42,11 +41,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
                 jQuery(this).addClass("active");
             }
             ;
-        });
-    },
-    notificationCustomScroll: function () {
-        jQuery("#notificationListWrapper").mCustomScrollbar({
-            theme: "light-3"
         });
     },
     initForgotPassword: function () {
@@ -118,12 +112,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
     },
     initLoginFunctionallity: function () {
-        jQuery(".f_myModal_toggle").click(function () {
+        var modal = jQuery("#myModal .f_modal_content");
+        jQuery(".f_myModal_toggle").on("click", function () {
             jQuery("#myModal").removeClass("hide");
-            jQuery("#myModal").addClass("active");
+            modal.addClass("active");
         });
         jQuery("#myModal .close_button,#myModal .overlay").click(function () {
-            jQuery("#myModal").removeClass("active");
+            modal.removeClass("active");
             jQuery("#myModal").addClass("hide");
         });
 
