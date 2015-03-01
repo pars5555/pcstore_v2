@@ -239,16 +239,11 @@ FROM `%s` LEFT JOIN `company_branches` ON  `company_branches`.`company_id` = `%s
     public static $GET_ALL_COMPANIES_BY_PRICE_HOURS = "SELECT `companies`.*,		
 		`companies_price_list`.`id` as `price_id`, 
 		`companies_price_list`.`file_ext` as `price_ext`, 
-		`companies_price_list`.`upload_date_time` as `price_upload_date_time`, 
-                                                        GROUP_CONCAT(`company_branches`.`street` separator ';') as `street`,
-                                                        GROUP_CONCAT(`company_branches`.`phones`) as `phones`,
-                                                        GROUP_CONCAT(`company_branches`.`zip`) as `zip`,
-                                                        GROUP_CONCAT(`company_branches`.`region`) as `region`
-                                                        FROM `%s`
-                                                        LEFT JOIN `company_branches` ON `company_branches`.`company_id` = `companies`.`id`
-                                                        LEFT JOIN `companies_price_list` ON `companies_price_list`.`file_ext` <> 'zip' AND `companies_price_list`.`company_id`= `companies`.`id`
-                                                        %s
-                                                        WHERE 1=1 %s %s %s %s GROUP BY `companies`.`id` ORDER BY `passive`,`rating` DESC";
+		`companies_price_list`.`upload_date_time` as `price_upload_date_time`
+                FROM `%s`
+                LEFT JOIN `companies_price_list` ON `companies_price_list`.`file_ext` <> 'zip' AND `companies_price_list`.`company_id`= `companies`.`id`
+                %s
+                WHERE 1=1 %s %s %s %s GROUP BY `companies`.`id` ORDER BY `passive`,`rating` DESC";
 
     public function getAllCompaniesByPriceHours($show_only_last_hours, $searchText, $includePassiveCompanies, $includeHiddenCompanies) {
 

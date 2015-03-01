@@ -128,15 +128,10 @@ FROM `%s` LEFT JOIN `service_company_branches` ON  `service_company_branches`.`s
     public static $GET_ALL_COMPANIES_BY_PRICE_HOURS = "SELECT `service_companies`.*,		
 		`service_companies_price_list`.`id` as `price_id`, 
 		`service_companies_price_list`.`file_ext` as `price_ext`, 
-		`service_companies_price_list`.`upload_date_time` as `price_upload_date_time`, 
-                                                        GROUP_CONCAT(`service_company_branches`.`street` separator ';') as `street`,
-                                                        GROUP_CONCAT(`service_company_branches`.`phones`) as `phones`,
-                                                        GROUP_CONCAT(`service_company_branches`.`zip`) as `zip`,
-                                                        GROUP_CONCAT(`service_company_branches`.`region`) as `region`
-                                                        FROM `%s`
-                                                        LEFT JOIN `service_company_branches` ON `service_company_branches`.`service_company_id` = `service_companies`.`id`
-                                                        LEFT JOIN `service_companies_price_list` ON `service_companies_price_list`.`file_ext` <> 'zip' AND `service_companies_price_list`.`service_company_id`= `service_companies`.`id`                                                        
-                                                        GROUP BY `service_companies`.`id`";
+		`service_companies_price_list`.`upload_date_time` as `price_upload_date_time`                                                       
+                FROM `%s`
+                LEFT JOIN `service_companies_price_list` ON `service_companies_price_list`.`file_ext` <> 'zip' AND `service_companies_price_list`.`service_company_id`= `service_companies`.`id`                                                        
+                GROUP BY `service_companies`.`id`";
 
     public function getAllServiceCompaniesWithBranches() {
         $sqlQuery = sprintf(self::$GET_ALL_COMPANIES_BY_PRICE_HOURS, $this->getTableName());

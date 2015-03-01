@@ -66,43 +66,53 @@ class CompaniesLoad extends BaseUserCompanyLoad {
                 }
             }
         }
-
         if ($userLevel == UserGroups::$ADMIN) {
-            $companiesList = $companyManager->getAllCompaniesByPriceHours($show_only_last_hours_selected, $searchText);
+            $companiesList = $companyManager->getAllCompaniesByPriceHours($show_only_last_hours_selected, $searchText, true, true);
         } else {
             $companiesList = $companyManager->getAllCompaniesByPriceHours($show_only_last_hours_selected, $searchText);
         }
-        if ($this->getUserLevel() === UserGroups::$USER) {
-            $userCompaniesIdsArray = $companyDealersManager->getUserCompaniesIdsArray($userId);
-            $this->addParam('userCompaniesIdsArray', $userCompaniesIdsArray);
+        foreach ($companiesList as $c) {
+            $c->setShowPrice(1);
         }
 
-        if ($userLevel == UserGroups::$ADMIN) {
-            $companiesList = $companyManager->getAllCompaniesByPriceHours($show_only_last_hours_selected, $searchText, true, true);
+        if ($this->getUserLevel() === UserGroups::$USER) {
+            $userCompaniesIdsArray = $companyDealersManager->getUserCompaniesIdsArray($userId);
+            foreach ($companiesList as $c) {
+                if (in_array($c->getId(), $userCompaniesIdsArray)) {
+                    $c->setShowPrice(1);
+                } else {
+                    $c->setShowPrice(0);
+                }
+            }
         }
+
+
         $this->addParam('allCompanies', $companiesList);
         $this->addParam('allServiceCompanies', $allServiceCompaniesWithBranches);
 
-        $allNonHiddenCompanies = $companyManager->getAllCompanies();
-        $this->addParam('allNonHiddenCompanies', $allNonHiddenCompanies);
 
+        //for google map pins
         $this->addParam('allCompaniesDtosToArray', json_encode(AbstractDto::dtosToArray($companiesList, array("id" => "id", "name" => "name", "rating" => "rating"))));
         $this->addParam('allServiceCompaniesDtosToArray', json_encode(AbstractDto::dtosToArray($allServiceCompaniesWithBranches, array("id" => "id", "name" => "name"))));
-        // $this->addParam('userLevel', $userLevel);
-        // $this->addParam('userGroupsUser', UserGroups::$USER);
         $companyBranchesManager = CompanyBranchesManager::getInstance();
         $serviceCompanyBranchesManager = ServiceCompanyBranchesManager::getInstance();
         $cids = $this->getCompanyIdsArray($companiesList);
         $scids = $this->getCompanyIdsArray($allServiceCompaniesWithBranches);
         $companiesBranchesDtos = $companyBranchesManager->getCompaniesBranches($cids);
         $serviceCompaniesBranchesDtos = $serviceCompanyBranchesManager->getServiceCompaniesBranches($scids);
+
+        $groupCompanyBranchesByCompanyId = $this->groupCompanyBranchesByCompanyId($companiesBranchesDtos);
+        $groupServiceCompanyBranchesByServiceCompanyId = $this->groupServiceCompanyBranchesByServiceCompanyId($serviceCompaniesBranchesDtos);
+        $this->addParam('companyBranchesDtosMappedByCompanyId', $groupCompanyBranchesByCompanyId);
+        $this->addParam('serviceCompanyBranchesDtosMappedByServiceCompanyId', $groupServiceCompanyBranchesByServiceCompanyId);
+
         $this->addParam('allCompaniesBranchesDtosToArray', json_encode(AbstractDto::dtosToArray($companiesBranchesDtos)));
         $this->addParam('allServiceCompaniesBranchesDtosToArray', json_encode(AbstractDto::dtosToArray($serviceCompaniesBranchesDtos)));
 
         $this->addParam("companiesPriceListManager", $companiesPriceListManager);
         $this->addParam("serviceCompaniesPriceListManager", $serviceCompaniesPriceListManager);
-        $companiesZippedPricesByDaysNumber = $companiesPriceListManager->getCompaniesZippedPricesByDaysNumber($cids, 360);
-        $serviceCompaniesZippedPricesByDaysNumber = $serviceCompaniesPriceListManager->getCompaniesZippedPricesByDaysNumber($cids, 360);
+        $companiesZippedPricesByDaysNumber = $companiesPriceListManager->getCompaniesZippedPricesByDaysNumber($cids, 365);
+        $serviceCompaniesZippedPricesByDaysNumber = $serviceCompaniesPriceListManager->getCompaniesZippedPricesByDaysNumber($cids, 365);
         $groupCompaniesZippedPricesByCompanyId = $this->groupCompaniesZippedPricesByCompanyId($companiesZippedPricesByDaysNumber);
         $groupServiceCompaniesZippedPricesByCompanyId = $this->groupServiceCompaniesZippedPricesByCompanyId($serviceCompaniesZippedPricesByDaysNumber);
         $this->addParam("groupCompaniesZippedPricesByCompanyId", $groupCompaniesZippedPricesByCompanyId);
@@ -142,6 +152,24 @@ class CompaniesLoad extends BaseUserCompanyLoad {
 
     public function getTemplate() {
         return TEMPLATES_DIR . "/main/companies.tpl";
+    }
+
+    private function groupCompanyBranchesByCompanyId($companiesBranchesDtos) {
+        $ret = array();
+        foreach ($companiesBranchesDtos as $companiesBrancheDto) {
+            $companyId = $companiesBrancheDto->getCompanyId();
+            $ret [$companyId][] = $companiesBrancheDto;
+        }
+        return $ret;
+    }
+
+    private function groupServiceCompanyBranchesByServiceCompanyId($serviceCompaniesBranchesDtos) {
+        $ret = array();
+        foreach ($serviceCompaniesBranchesDtos as $companiesBrancheDto) {
+            $companyId = $companiesBrancheDto->getServiceCompanyId();
+            $ret [$companyId][] = $companiesBrancheDto;
+        }
+        return $ret;
     }
 
 }

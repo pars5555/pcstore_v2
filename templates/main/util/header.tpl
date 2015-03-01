@@ -142,7 +142,7 @@
                     {if isset($ns.req.cid)}
                         <input type="hidden" name="cid" value="{$ns.req.cid}"/>
                     {/if}
-                    {if $ns.contentLoad != "main_home"}
+                    {if $ns.contentLoad == "main_home"}
                         <input type="hidden" id="sort_by_input" name="s" value=""/>
                         <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
                     {/if}
