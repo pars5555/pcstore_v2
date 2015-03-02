@@ -21,7 +21,7 @@ class CustomerNotificationDto {
         $this->title = $title;
         $this->url = $url;
         $this->iconUrl = $iconUrl;
-        $this->id = uniqid('notif_', true);
+        $this->id = md5($datetime.$title);
     }
 
     function getDatetime() {
