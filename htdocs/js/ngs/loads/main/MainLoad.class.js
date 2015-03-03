@@ -103,8 +103,8 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
                     jQuery("#navMenu .dropdown-toggle").removeClass("active");
                 }
                 if (jQuery(event.target).hasClass("dropdown-toggle") && jQuery(event.target).parents("#navMenu").length > 0) {
-                    jQuery(event.target).closest(".dropdown").siblings(".dropdown").children(".dropdown-toggle").removeClass("active");
-                    jQuery(event.target).closest(".dropdown").siblings(".dropdown").children(".dropdown-menu").slideUp(500);
+                    jQuery(event.target).closest(".f_dropdown").siblings(".f_dropdown").children(".dropdown-toggle").removeClass("active");
+                    jQuery(event.target).closest(".f_dropdown").siblings(".f_dropdown").children(".dropdown-menu").slideUp(500);
                 }
                 ;
             });
@@ -164,7 +164,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             else {
                 if (!jQuery(this).parents("li").hasClass("opened")) {
                     jQuery("#mainLeftPanel li").removeClass("opened");
-                    jQuery("#mainLeftPanel li.dropdown ul").slideUp(500);
+                    jQuery("#mainLeftPanel li.f_dropdown ul").slideUp(500);
                 }
                 closest_li.addClass("opened");
                 closest_li.children("ul").slideDown(500);

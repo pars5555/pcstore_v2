@@ -10,7 +10,7 @@
             <div class="left-panel_content">
 
                 {if $ns.category_id > 0}
-                    <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}"><span class="glyphicon"></span> {$ns.lm->getPhrase(130)}</a>
+                    <a class="any_categories" href="{$SITE_PATH}?{$ns.itemSearchManager->getUrlParams(['cid'=>0, 'scpids'=>null])}"><span class="glyphicon"></span> <span>{$ns.lm->getPhrase(130)}</span></a>
 
                     {assign var="index" value=0}
                     {if isset($ns.category_path)}		
@@ -32,7 +32,7 @@
 
 
                 {if isset($ns.itemsCategoryMenuView)}
-                    <h1 class="any_categories"><span class="glyphicon"></span> Categories</h1>
+                    <h1 class="any_categories"><span class="glyphicon"></span><span>Categories</span></h1>
                     {$ns.itemsCategoryMenuView->display(false)}
                 {/if}
                 {if ($ns.properties_views && $ns.properties_views|@count>0)}
@@ -46,41 +46,45 @@
         <div class="right-content">
 
             <!--========================== Top Container ===============================-->
-
-            <div class="filter_container">
-                <h3>Filter</h3> 
-                <div class="form-group">
-                    <label for="sort_by">
-                        Sort By:
-                    </label>
-                    <div class="select_wrapper">
-                        <select id="sort_by">                                    
-                            {foreach from=$ns.sort_by_values item=value key=key}
-                                <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
-                            {/foreach}
-                        </select>
-                    </div>
-                </div>
-                {if ($ns.companiesIds|@count > 1)}          
-                    <div class="form-group">                        
-                        <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
-                        <div class="select_wrapper">
-                            <select class="" id='selected_company_id'>
-                                {foreach from=$ns.companiesIds item=value key=key}
-                                    {if ($key == 0)}
-                                        <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
-                                    {else}
-                                        <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
-                                    {/if}
-                                {/foreach}
-                            </select>
+            <div class="table filter_conainer_box">
+                <div class="table-cell">
+                    <div class="filter_container">
+                        <h3>Filter</h3> 
+                        <div class="form-group">
+                            <label for="sort_by">
+                                Sort By:
+                            </label>
+                            <div class="select_wrapper">
+                                <select id="sort_by">                                    
+                                    {foreach from=$ns.sort_by_values item=value key=key}
+                                        <option value="{$value}" {if $value==$ns.selected_sort_by_value}selected="selected"{/if}>{$ns.sort_by_display_names[$key]}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                {/if}               
-            </div>           
+                        {if ($ns.companiesIds|@count > 1)}          
+                            <div class="form-group">                        
+                                <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
+                                <div class="select_wrapper">
+                                    <select class="" id='selected_company_id'>
+                                        {foreach from=$ns.companiesIds item=value key=key}
+                                            {if ($key == 0)}
+                                                <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
+                                            {else}
+                                                <option value="{$value}" {if $ns.selectedCompanyId == $value}selected="selected"{/if} >{$ns.companiesNames[$key]}</option>
+                                            {/if}
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        {/if}               
+                    </div>           
+                </div>           
 
-            {nest ns=paging}
-
+                <div class="table-cell">
+                    {nest ns=paging}
+                </div>           
+            </div>
 
 
             <!-- ========================================= Product Wrapper =========================================== -->
@@ -104,7 +108,7 @@
                             <div class="product-wrapper">
                                 <div class="product_inner">
                                     <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
-                                       {$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p>
+                                        {$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p>
                                     </a>
                                     <div class="product-img ">
                                         <a class="" href="{$SITE_PATH}/item/{$item->getId()}">
@@ -170,7 +174,7 @@
                                             {if !($smarty.now|date_format:"%Y-%m-%d">$item->getItemAvailableTillDate()) && $ns.userLevel==$ns.userGroupsUser && !$item->getIsDealerOfThisCompany()}
                                                 <a href="{$SITE_PATH}/dyn/user/do_add_to_cart?item_id={$item->getId()}" class="button blue" title="{$ns.lm->getPhrase(284)}">{$ns.lm->getPhrase(284)}</a>
                                             {else}
-                                            {*}    <a href="javascript:void(0)" class="button grey not-allowed" title="{$ns.lm->getPhrase(19)}">{$ns.lm->getPhrase(19)}</a>                                                {*}
+                                                {*}    <a href="javascript:void(0)" class="button grey not-allowed" title="{$ns.lm->getPhrase(19)}">{$ns.lm->getPhrase(19)}</a>                                                {*}
                                             {/if}
                                         {/if}
                                     </div>

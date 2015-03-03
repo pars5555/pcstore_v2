@@ -15,15 +15,18 @@
 }
 .left-panel .any_categories{
     display:block;
-    background-color:#f3f3f3;
+    background-color:#f7f7f7;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     color:#555;
+    font-weight: 600;
 }
 .left-panel .any_categories .glyphicon{
     font-weight:500;
-    position: relative;
-    top: 3px;
+    margin-right: 3px;
+}
+.left-panel .any_categories span{
+    vertical-align: middle;
 }
 .left-panel ul{	
 }
@@ -133,6 +136,7 @@
 .left-panel .category_property{
     margin-right:10px;
     vertical-align: middle;
+    cursor: pointer;
 }
 .left-panel .product_checkbox a{
     color:#428bca;	

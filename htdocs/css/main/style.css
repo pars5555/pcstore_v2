@@ -207,7 +207,7 @@ body{
     overflow:hidden;
     position:relative;
     padding-right:40px;
-    background-color:#f3f3f3;
+    background-color:#f7f7f7;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     display:inline-block;
@@ -473,8 +473,6 @@ label.input_label{
 
 /*======= Navigation Menu Header =======*/
 .navbar .navMenu{
-    max-width:1440px;
-    width:calc(100% - 50px);
     padding:0 25px;
     margin:auto;
     background-color:#f7f7f7;
@@ -482,15 +480,17 @@ label.input_label{
     margin-bottom:30px;
 }
 .navMenuList{
-    float:right;
+    margin: auto;
+    max-width: 1440px;
+    text-align: right;
+    font-size: 0;
 }
 .navMenuList>li{
-    float:left;
-    padding:10px 0;
-}
-.navMenuList>li.clear{
-    float:none;
-    padding:0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    padding: 10px 0;
+    text-align: left;
 }
 .navMenuList .navMenu_item{
     display:block;
@@ -506,6 +506,9 @@ label.input_label{
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;	
+}
+.navMenuList .navMenu_item.active {
+    color: #63b4fb;
 }
 .navMenuList>li:first-child .navMenu_item{
     border-left:none;
@@ -984,16 +987,15 @@ width: calc(100% - 50px);*/
 }
 /*Company Image*/
 .company_container .company-img {
-    text-align: center;
-    width: 150px;
+    padding-left: 50px;
+    text-align: left;
 }
 .company-img a{
     display:block;
     margin: auto;
-    max-width: 55px;
 }
 .company-img a img{
-    width:100%;
+    width:55px;
 }
 
 /* Company Info */
@@ -1063,6 +1065,12 @@ width: calc(100% - 50px);*/
 }
 .service_company_gmap_pin img{
     width:25px;
+}
+/*Company Adress*/
+
+
+.company_container .company-address {
+    text-align: center;
 }
 
 /*******
@@ -1236,18 +1244,30 @@ width: calc(100% - 50px);*/
  Filter Container
 *******/
 
+.filter_conainer_box .table-cell{
+    vertical-align: bottom;
+}
+
 .filter_container{
-    margin:0px auto 20px;
-    text-align: right;
+    border-spacing: 0 11px;
+    display: inline-table;
+    margin: auto;
+    text-align: left;
 }
 .filter_container h3{
     float:left;
     display:none;
 }
 .filter_container .form-group{
-    display: inline-block;
+    display: table-row;
+    margin-bottom: 30px;
     vertical-align: middle;
-    margin-right: 30px;
+}
+.filter_container label {
+    display: table-cell;
+}
+.filter_container .select_wrapper {
+    display: table-cell;
 }
 .filter_container .form-group a{
     padding:10px;
@@ -1910,6 +1930,7 @@ SMS CONF COMPANY
 .products-wrapper .product-table{
     display: table;
     width: 100%;
+    margin: 10px auto 20px;
 }
 .products-wrapper .products_row{
     display:table-row;
@@ -1987,7 +2008,7 @@ SMS CONF COMPANY
     color:#428bca;
     transition:all 0.5s ease;
     display: block;
-    height: 90px;
+    height: 86px;
     overflow: hidden;
 }
 .product-wrapper .product-title h4 span{
@@ -2074,6 +2095,7 @@ SMS CONF COMPANY
 .navMenuList .notification .navMenu_item{
     font-size:17px;
 }
+
 .navMenuList .notification .navMenu_item:after{
     content:"";
     font-family: "glyphicons-halflings";
@@ -2792,7 +2814,7 @@ PAGINATION
 *******/
 .navigation_pagination{
     font-size: 15px;
-    margin:20px auto;
+    margin:10px auto;
     text-align: right;
 }
 .pagination .current-page-number{

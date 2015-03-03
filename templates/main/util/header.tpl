@@ -6,7 +6,7 @@
                     <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
                 </li>
             {/if}
-            <li class="dropdown">
+            <li class="dropdown f_dropdown">
                 <a id="lang_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">Languages</a>
                 <ul class="dropdown-menu">
                     <li>
@@ -37,7 +37,7 @@
                         <a class="navMenu_item" href="{$SITE_PATH}/admin" target="_blank">{$ns.lm->getPhrase(496)}</a>
                     </li>
                 {/if}
-                <li class="dropdown">
+                <li class="dropdown f_dropdown">
                     <a id="user_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);"> {$ns.customer->getName()}
                         {if $ns.userLevel === $ns.userGroupsUser}
                             ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
@@ -95,8 +95,10 @@
                 </div>
                 </div>
                 </li>*}
+                
+                {* Notifications Container *}
 
-                <li class="notification" id="notification">
+                <li class="notification f_dropdown" id="notification">
                     <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
                     </a>
                     <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
@@ -104,8 +106,10 @@
                     </ul>
                 </li>
 
+                {* Notification Example *}
+                
                 <ul id="notification_example" class="hidden">
-                    <li class="notification_block">
+                    <li class="notification_block f_notification_block">
                         <a class="not_link f_not_link" href="javascript:void(0);">
                             <span class="nb_item not_icon f_not_icon">
                                 <img src="" alt="">
