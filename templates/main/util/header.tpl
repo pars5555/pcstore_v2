@@ -95,19 +95,20 @@
                 </div>
                 </div>
                 </li>*}
-                
+
                 {* Notifications Container *}
 
                 <li class="notification f_dropdown" id="notification">
+{*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
                     <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
                     </a>
                     <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
-                   
+                        <li class="no_notifications">You have not notifications!</li>
                     </ul>
                 </li>
 
                 {* Notification Example *}
-                
+
                 <ul id="notification_example" class="hidden">
                     <li class="notification_block f_notification_block">
                         <a class="not_link f_not_link" href="javascript:void(0);">

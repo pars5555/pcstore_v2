@@ -27,7 +27,16 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.leftPanelActiveElement();
         this.checkbox();
         ngs.nestLoad(jQuery('#contentLoad').val());
+
+        this.notifications();
     },
+    notifications: function () {
+        jQuery("#notification").on("click", function () {
+            jQuery(this).removeClass("new_notification");
+            window.localStorage.setItem("unreadNotificationExist","");
+        });
+    }
+    ,
     initGoogleLogoutOnWindowUnload: function () {
         window.onbeforeunload = function (e) {
             if (typeof gapi.auth !== 'undefined') {

@@ -26,10 +26,14 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
         return !!(a.canPlayType && a.canPlayType('audio/mpeg;').replace(/no/, ''));
     },
     setNotifications: function (data) {
+        if (window.localStorage.getItem("unreadNotificationExist") === "exist") {
+            jQuery("#notification").addClass("new_notification");
+        }
         var self = this;
         if (typeof data.notifications !== 'undefined') {
             data.notifications.each(function (notifications) {
                 if (self.notificationNotExist(notifications.id)) {
+                    jQuery("#notificationListWrapper").addClass("active");
                     var new_not = jQuery("#notification_example .notification_block").clone(true);
                     jQuery("#notificationListWrapper").prepend(new_not);
                     new_not.attr("id", notifications.id);
@@ -37,10 +41,12 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
                     new_not.find(".f_not_icon img").attr("src", notifications.iconUrl);
                     new_not.find(".f_not_title").html(notifications.title);
                     new_not.find(".f_not_date").html(notifications.datetime);
+                    self.setDateCookie(notifications.datetime);
                 }
             });
         }
-    },
+    }
+    ,
     notificationNotExist: function (notification_id) {
         var result = true;
         jQuery("#notificationListWrapper .f_notification_block").each(function () {
@@ -50,6 +56,30 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
             }
         });
         return result;
+    },
+    setDateCookie: function (val) {
+        var result = new Date(val.slice(0, 4), val.slice(5, 7), val.slice(8, 10), val.slice(11, 13), val.slice(14, 16), val.slice(17, 19));
+        result = Date.parse(result);
+
+        if (result > this.getLastNotificationCookie()) {
+            document.cookie = "notificationDate=" + result + "; expires = 11 nov 11111 11:11:11 UTC;";
+            jQuery("#notification").addClass("new_notification");
+            window.localStorage.setItem("unreadNotificationExist","exist");
+        }
+
+        return result;
+    },
+    getLastNotificationCookie: function () {
+        var last_cookie = 0;
+        if (document.cookie.indexOf("notificationDate") >= 0) {
+            var cookie = document.cookie.split(';');
+            cookie.each(function (elem) {
+                if (elem.indexOf("notificationDate") >= 0) {
+                    last_cookie = elem.slice(elem.indexOf("=") + 1, elem.length);
+                }
+            });
+        }
+        return last_cookie;
     }
 
 });
