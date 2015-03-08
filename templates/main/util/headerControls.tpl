@@ -1,6 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" href="{$SITE_PATH}/img/pcstore_logo_2.png" />
 
 {if isset($ns.page_title)}
     <meta content="{$ns.page_title}" name="title">

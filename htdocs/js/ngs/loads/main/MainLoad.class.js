@@ -29,11 +29,30 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         ngs.nestLoad(jQuery('#contentLoad').val());
 
         this.notifications();
+        this.mainPopupActions();
+
     },
+    initPopup: function (title, content, button) {
+        title = typeof title === 'undefined' ? "Dialog message" : title;
+        button = typeof button === 'undefined' ? "done" : button;
+        content = typeof content === 'undefined' ? "Success" : content;
+        jQuery("#mainPopup").addClass("active");
+        jQuery("#mainPopup .f_pop_up_title").html(title);
+        jQuery("#mainPopup .f_pop_up_content").html(content);
+        jQuery("#mainPopup .f_pop_up_button").html(button);
+    },
+    mainPopupActions: function () {
+        jQuery(".main_pop_up .overlay,.main_pop_up .button,.main_pop_up .close_button").click(function (event) {
+            event.stopPropagation();
+            jQuery(this).closest(".main_pop_up").removeClass("active hide");
+            return;
+        });
+    }
+    ,
     notifications: function () {
         jQuery("#notification").on("click", function () {
             jQuery(this).removeClass("new_notification");
-            window.localStorage.setItem("unreadNotificationExist","");
+            window.localStorage.setItem("unreadNotificationExist", "");
         });
     }
     ,

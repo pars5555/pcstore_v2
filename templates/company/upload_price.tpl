@@ -65,14 +65,17 @@
     <div style="clear:both"> </div> 
     <div class="upload_price_actions">
         <a class="button blue" id="save_price_email" >{$ns.lm->getPhrase(43)}</a>         
-        <a class="button blue" id="send_price_email" >{$ns.lm->getPhrase(48)}</a>     
+        <a class="button blue" id="send_price_email" >{$ns.lm->getPhrase(48)}</a>  
+        <input id="send_price_email_title_text" type="hidden" value="{$ns.lm->getPhrase(514)}" />
+        <input id="send_price_email_send_text" type="hidden" value="{$ns.lm->getPhrase(573)}" />
+        <input id="send_price_email_save_text" type="hidden" value="{$ns.lm->getPhrase(586)}" />
     </div>
 </div>
 
     <table class="all_prices">
     <thead>
         <tr>
-            <th>{$ns.lm->getPhrase(60)}</th>
+{*            <th>{$ns.lm->getPhrase(60)}</th>*}
             <th>{$ns.lm->getPhrase(69)}</th>
             <th>{$ns.lm->getPhrase(70)}</th>
 
@@ -81,7 +84,7 @@
     <tbody>
         {foreach from=$ns.company_prices item=company_price name=cp}
             <tr>
-                <td># {$smarty.foreach.cp.index+1}</td>
+{*                <td># {$smarty.foreach.cp.index+1}</td>*}
                 <td><a href="{$SITE_PATH}/price/zipped_price_unzipped/{$company_price->getId()}"> 
                         <img src = "{$SITE_PATH}/img/zip_file_download.png"  alt="zip"/> </a>
                 </td>

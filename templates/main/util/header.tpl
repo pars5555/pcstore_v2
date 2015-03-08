@@ -99,7 +99,7 @@
                 {* Notifications Container *}
 
                 <li class="notification f_dropdown" id="notification">
-{*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
+                    {*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
                     <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
                     </a>
                     <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
@@ -245,3 +245,17 @@
         </div>
     </div>
 {/if}
+
+<div id="mainPopup" class="pop_up_container main_pop_up">
+    <div class="overlay"></div>
+    <div class="pop_up">
+        <div class="close_button"></div>
+        <h3 class="pop_up_title f_pop_up_title"></h3>
+        <div class="pop_up_content f_pop_up_content">
+
+        </div>
+        <div class="f_pop_up_button button blue"></div>
+    </div>
+</div>
+
+<div class="main_loader hidden" id="main_loader"></div>

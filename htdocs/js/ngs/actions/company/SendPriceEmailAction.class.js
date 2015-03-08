@@ -13,13 +13,19 @@ ngs.SendPriceEmailAction = Class.create(ngs.AbstractAction, {
     afterAction: function (transport) {
         var data = transport.responseText.evalJSON();
         if (data.status === "ok") {
-            if (this.params.save_only == 1) {
-                ngs.DialogsManager.closeDialog(514, "<div>" + 586 + "</div>");
+            jQuery("#main_loader").addClass("hidden");
+            var title_text = jQuery("#send_price_email_title_text").val();
+            var send_text = jQuery("#send_price_email_send_text").val();
+            var save_text = jQuery("#send_price_email_save_text").val();
+            var MainLoad = new ngs.MainLoad();
+
+            if (this.params.save_only === 1) {
+                MainLoad.initPopup(title_text, save_text);
             } else {
-                ngs.DialogsManager.closeDialog(514, "<div>" +573 + "</div>");
+                MainLoad.initPopup(title_text, send_text);
             }
         } else if (data.status === "err") {
-            ngs.DialogsManager.closeDialog(514, "<div>" + data.message + "</div>");
+            MainLoad.initPopup(title_text, data.message);
         }
     }
 });

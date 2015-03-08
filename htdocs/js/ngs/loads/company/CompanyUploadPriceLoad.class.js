@@ -24,6 +24,7 @@ ngs.CompanyUploadPriceLoad = Class.create(ngs.AbstractLoad, {
         });
         jQuery('#send_price_email').click(function () {
             thisInstance.onSendPriceEmail();
+            jQuery("#main_loader").removeClass("hidden");
         });
         this.addChangeHandlerToFormatRecipients();
         this.revertCompanyLastPriceHandler();

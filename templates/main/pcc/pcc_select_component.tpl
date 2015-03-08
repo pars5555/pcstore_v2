@@ -19,3 +19,5 @@
     <input id='selected_component_{$smarty.foreach.cl.index+1}' type="hidden" value="{$selectedComponentIds}"/>
 {/foreach}
 
+<div class="main_loader hidden pcc_loader" id="pcc_loader"></div>
+

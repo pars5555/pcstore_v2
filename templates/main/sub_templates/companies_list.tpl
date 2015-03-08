@@ -35,10 +35,9 @@
                             {/if}
                         </div>
                         {if $ns.userLevel === $ns.userGroupsCompany && $ns.userId == $companyId}
-                            <div class="clear"></div>
                             <div title="{$ns.lm->getPhrase(377)} {$company->getAccessKey()}"
-                                 class="translatable_attribute_element" attribute_phrase_id="377" attribute_name_to_translate="title">
-                                <img src="{$SITE_PATH}/img/increase_rating.png" />
+                                 class="increase_rating translatable_attribute_element" attribute_phrase_id="377" attribute_name_to_translate="title">
+                                <img src="{$SITE_PATH}/img/increase_rating.jpg" />
                             </div>
                         {/if}
                         <div class="company-img">

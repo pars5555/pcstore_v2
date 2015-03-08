@@ -4,23 +4,26 @@
 <input type="hidden" value='{$ns.allServiceCompaniesDtosToArray}' id="all_service_companies_dtos_to_array_json"/>
 <input type="hidden" value='{$ns.allServiceCompaniesBranchesDtosToArray}' id="all_service_companies_branches_dtos_to_array_json"/>
 <div id="cl_gmap" style="height:300px"></div>
-{if $ns.userLevel === $ns.userGroupsCompany}
-    <div style="text-align: left;margin:30px">
-        {$ns.lm->getPhrase(609)}</br></br>
-        <span style="font-size: 16px"> {$ns.lm->getPhrase(610)} <span style="font-size: 20px;color:#AA0000">{$ns.customer->getAccessKey()}</span> </span>
-    </div>
-{/if}
+
 <div class="container">
     <div class="companies_container">
+        {if $ns.userLevel === $ns.userGroupsCompany}
+            <div class="company_email_send_text">
+                <h3 class="title">{$ns.lm->getPhrase(609)}</h3>
+
+                <span style="font-size: 16px"> {$ns.lm->getPhrase(610)} <span style="font-size: 20px;color:#AA0000">{$ns.customer->getAccessKey()}</span> </span>
+            </div>
+        {/if}
+        
         <div class="companies-search-wrapper">
-            <div class="search_block">
+            {*<div class="search_block">
                 <div class="search_container">
                     <input type="text" value="" class="  search_text" placeholder="Search" name="st" id="srchCompanies">
                     <button type="submit" class="search_btn">
                         <span class="glyphicon"></span>
                     </button>
                 </div>
-            </div>
+            </div>*}
             <div class="show_com_price">
                 <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
                 <div class="select_wrapper">

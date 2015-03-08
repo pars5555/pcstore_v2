@@ -91,5 +91,5 @@
             {else}
                 <a class="f_myModal_toggle button blue" href="javascript:void(0);">{$ns.lm->getPhrase(85)}</a>
             {/if}
-            <a href="javascript:void(0);" id="pcc_print_button" class="button grey pcc_print_button" > <span class="glyphicon"></span>{$ns.lm->getPhrase(629)} </a>
+            <a href="javascript:void(0);" id="pcc_print_button" class="button blue pcc_print_button" > <span class="glyphicon"></span>{$ns.lm->getPhrase(629)} </a>
         {/if}

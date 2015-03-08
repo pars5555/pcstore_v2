@@ -31,6 +31,11 @@
                 </div>
             {/if}
             <div class="component_block">
+                <div class="component_link">
+                    <a class="button blue" target="_blank" href="{$SITE_PATH}/item/{$item->getId()}"> 
+                        Open
+                    </a>
+                </div>
                 <div class="component_check">
                     {if !isset($ns.multiselect_component)}
                         <input class="pull-left f_selectable_component" name="sssss" id="item_{$item->getId()}" item_id="{$item->getId()}" count="{$selected_component_count}" type="radio" {if isset($item_is_selected)}checked="checked"{/if} autocomplete="off"/>		

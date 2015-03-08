@@ -373,6 +373,26 @@ label.input_label{
     left:0;
     z-index: 9999999;
 }
+.main_pop_up.pop_up_container{
+    visibility: hidden !important;
+}
+.main_pop_up.pop_up_container.active{
+    visibility: visible !important;    
+}
+.main_pop_up.pop_up_container .pop_up{
+    top:calc(50% - 20px);
+    opacity: 0;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.main_pop_up.pop_up_container.active .pop_up{
+    top:50%;
+    opacity: 1;
+}
 
 .pop_up_container .pop_up{
     width:calc(100% - 40px);
@@ -382,6 +402,7 @@ label.input_label{
     top:50%;
     left:50%;
     background-color: #fff;
+    text-align: center;
 
     transform:translate(-50%,-50%);
     -moz-transform:translate(-50%,-50%);  
@@ -398,13 +419,41 @@ label.input_label{
     border-radius: 5px; 
 }
 
-.pop_up_container .pop_up .pop_up_title{
+.pop_up_container .pop_up_title{
     font-size:20px;
-    padding:10px;
+    padding-bottom: 10px;
     margin-bottom:20px;
     border-bottom: 2px solid #63B4FB;
     color:#63B4FB;
     text-align: center;
+}
+.pop_up_container .pop_up_content {
+    color: #555;
+    font-size: 17px;
+}
+.pop_up_container .button {
+    display: inline-block;
+    margin: 20px auto 0;
+    max-width: none;
+    padding: 9px;
+    width: auto;
+    min-width: 100px;
+}
+
+/*************************** Main Loader **************************/
+
+.main_loader{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999999;
+    background: url("../../img/loading.gif") no-repeat scroll center center / 300px auto rgba(255,255,255,0.77);
+}
+.main_loader.pcc_loader{
+    position: absolute;
+    background-position: top center;
 }
 
 /*************************** Checkbox Container **************************/
@@ -446,7 +495,7 @@ label.input_label{
     display:table;
     max-width:1440px;
     width:calc(100% - 50px);
-    padding:0 25px;
+    padding:20px 25px;
     margin:auto;
 }
 .site_logo{
@@ -456,6 +505,8 @@ label.input_label{
 }
 .site_logo img{
     width:160px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .header_content .search_block{
     display:table-cell;
@@ -477,7 +528,6 @@ label.input_label{
     margin:auto;
     background-color:#f7f7f7;
     border-bottom:1px solid #ccc;
-    margin-bottom:30px;
 }
 .navMenuList{
     margin: auto;
@@ -754,7 +804,6 @@ label.input_label{
 ******************/
 .navbar{
     border-bottom:1px solid #ddd;
-    padding-bottom: 30px;
 }
 .hot-products-wrapper {
     margin:20px 0px;
@@ -887,8 +936,8 @@ label.input_label{
     border: 1px solid transparent;
     margin: auto;
     max-width: 1920px;
-    padding: 25px;
-    width: calc(100% - 52px);
+    padding: 20px;
+    width: calc(100% - 42px);
 }
 
 /***************
@@ -950,6 +999,16 @@ width: calc(100% - 50px);*/
     color: #fff;
 }
 
+.company_email_send_text{
+    margin:20px auto;
+    padding:15px;
+    box-shadow: 0 0 7px #ccc;
+}
+
+.company_email_send_text .title{
+    font-size: 18px;
+}
+
 /*================== Companies main content ===================*/
 
 .company_tab {
@@ -1007,6 +1066,22 @@ width: calc(100% - 50px);*/
 .company_gmap_pin{
     display:inline-block;
     vertical-align: middle;
+}
+.increase_rating{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:15px;
+}
+.increase_rating img{
+    width:30px;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
 }
 
 /*Company Confirm*/
@@ -1990,7 +2065,7 @@ SMS CONF COMPANY
 .product-wrapper .product-img img {
     display:block;
     margin: auto;
-    height: 100px;
+    width: 200px;
 }
 .product-wrapper .button-wrapper {
     position: absolute;
@@ -2031,11 +2106,20 @@ SMS CONF COMPANY
 .product-wrapper.current_product_wp{
     display:table;
     width:100%;
+    position: relative;
 }
 .product-wrapper.current_product_wp .product-img{
     display:table-cell;
     vertical-align:middle;
     width: 200px;
+}
+.new_product{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:77px;
+    height:77px;
+    background: url("../../img/new.png") no-repeat scroll center center / 100% auto transparent;
 }
 .product-wrapper.current_product_wp .product-info{
     display:table-cell;
@@ -2051,6 +2135,13 @@ SMS CONF COMPANY
 .current-product-description {
     margin-top: 15px;
 }
+.current-product-description table td div{
+    height:auto !important;
+}
+.current-product-description .title {
+    margin-top: 50px;
+}
+
 .current-product-price-list {
     margin:10px 0px;
     font-size:16px;
@@ -2115,7 +2206,7 @@ SMS CONF COMPANY
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;	
-    
+
     -webkit-animation: new_notification 1s ease-in 0s infinite alternate;
     animation: new_notification 1s ease-in 0s infinite alternate;
 }
@@ -2370,17 +2461,19 @@ BUILD PC PAGE
     margin-left: 520px;
 }
 .build_pc_container{
-    width:calc(100% - 40px);
 }
 .pc_components {
+    font-size: 0px;
 }
 .item-sections-wrapper {
     display:inline-table;
-    width:49%;
+    vertical-align: bottom;
+    width:50%;
     max-width:1000px;
     margin:0 auto 10px;
     border-spacing: 5px 0;
     border-bottom:5px solid #4697de;
+    font-size: 15px;
 
     -webkit-transition: left 0.4s ease;
     -moz-transition: left 0.4s ease;
@@ -2398,7 +2491,8 @@ BUILD PC PAGE
     border-top-right-radius:5px;
     position:relative;
     cursor:pointer;
-    background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;
+    background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #f3f3f3;
+    height: 140px;
 }
 .item-sections-wrapper .current-section.active{
     background:linear-gradient(#63b4fb, #4697de) repeat scroll 0 0 #3278b3;
@@ -2541,6 +2635,14 @@ BUILD PC PAGE
     text-align:center;
     /*border:1px solid #ccc;*/
     padding: 5px;
+}
+
+.component_block .component_link {
+    width: 55px;
+}
+.component_link .button {
+    margin: auto;
+    width: 55px;
 }
 .component_block .component_check{
     width:20px;
@@ -2955,6 +3057,12 @@ Dealers
 /*******************************************************************
 ***********************Upload Company Price*************************
 *******************************************************************/
+
+#price_email_body_ifr{
+    height: 700px !important;
+}
+
+/****************************************************************************/
 
 .send_price_email_container {
     border-bottom: 1px solid #999;
