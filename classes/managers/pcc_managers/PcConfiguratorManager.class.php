@@ -1340,7 +1340,7 @@ class PcConfiguratorManager extends AbstractManager {
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
             if ($lastSelectedComponentTypeIndex == PcConfiguratorManager::$PCC_COMPONENTS['mb']) {
-                $mbSataIdeSupport = $this->getMbSataIdeSupport($mb);
+                $mbSataIdeSupport = $this->getMbSataIdeSupport($lastSelectedComponentTypeIndex);
                 if (!in_array(CategoriesConstants::MB_SATA_SUPPORTED, $mbSataIdeSupport)) {
                     unset($_REQUEST['ssds']);
                 } else {

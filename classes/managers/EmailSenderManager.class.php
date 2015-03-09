@@ -222,7 +222,10 @@ class EmailSenderManager extends AbstractManager {
     }
 
     private function compileIfTemplate($templateId, $params) {
+        $ul  = null;
+        if (isset($_COOKIE['ul'])){
         $ul = $_COOKIE['ul'];
+        }
         if (!($ul === 'en' || $ul === 'ru' || $ul === 'am')) {
             $ul = 'en';
         }

@@ -23,17 +23,17 @@
                         <span class="glyphicon"></span>
                     </button>
                 </div>
-            </div>*}
-            <div class="show_com_price">
+            </div>
+            <form class="show_com_price" method="POST" action="{$SITE_PATH}/companies" autocomplete="off">
                 <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
                 <div class="select_wrapper">
-                    <select id="f_show_only_last_hours_select" class=" ">
+                    <select id="f_show_only_last_hours_select" name="show_only_last_hours_selected">
                         {foreach from=$ns.show_only_last_hours_values item=value key=key}
                             <option value="{$value}" {if $ns.show_only_last_hours_selected == $value}selected="selected"{/if} class="translatable_element" phrase_id="{$ns.show_only_last_hours_names_phrase_ids_array[$key]}">{$ns.show_only_last_hours_names[$key]}</option>
                         {/foreach}
                     </select>
                 </div>
-            </div>
+            </form>
             <div class="download_all">
                 <a class="button blue" href="{$SITE_PATH}/price/all_zipped_prices">
                     <span>Download All:</span>

@@ -20,6 +20,13 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
         this.initGMaps();
         this.companyTabController();
         this.initAccessKeyInputs();
+        this.initShowLastHoursPrices();
+    }, 
+    initShowLastHoursPrices: function () {
+        jQuery('#f_show_only_last_hours_select').change(function () {
+            jQuery(this).closest('form').trigger("submit");
+            return true;
+        });
     },
     initAccessKeyInputs: function () {
         jQuery('.f_company_access_key_confirm_btn').click(function () {
