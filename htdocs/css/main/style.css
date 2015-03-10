@@ -2062,7 +2062,6 @@ SMS CONF COMPANY
     background-position: center center;
     background-size:contain;
     background-color: transparent;
-    border:1px solid #ccc;
 }
 
 .product-wrapper .product-other-images{
@@ -2173,6 +2172,7 @@ SMS CONF COMPANY
 .product-wrapper.current_product_wp .product-img .product-img-link{
     width:400px;
     height:400px;
+    border:1px solid #ccc;
 }
 .new_product{
     position: absolute;
