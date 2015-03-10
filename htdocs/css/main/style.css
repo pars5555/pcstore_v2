@@ -557,6 +557,11 @@ label.input_label{
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;	
 }
+.navMenuList .navMenu_item .glyphicon{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:7px;
+}
 .navMenuList .navMenu_item.active {
     color: #63b4fb;
 }
@@ -1210,6 +1215,17 @@ width: calc(100% - 50px);*/
 *******/
 .checkout-wrapper {
 
+}
+.back_to_cart.button{
+    display: inline-block;
+    max-width: none;
+    padding: 9px;
+    width: auto;
+}
+.back_to_cart.button .glyphicon{
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:7px;
 }
 .checkout-wrapper .checkout-step{
     background-color: #e3e7e8;
@@ -2029,10 +2045,55 @@ SMS CONF COMPANY
 .product-wrapper .product_inner{
     padding:30px 20px 80px;	
 }
+
+/********************* Product Images **********************/
+
 .product-wrapper .product-img{
-    cursor: pointer;
     margin:20px 0;
+    text-align: center;
 }
+
+.product-wrapper .product-img .product-img-link {
+    display:inline-block;
+    margin: auto;
+    width:150px;
+    height:150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    background-color: transparent;
+    border:1px solid #ccc;
+}
+
+.product-wrapper .product-other-images{
+    font-size:0;
+    
+}
+
+.product-other-images .poi_item{
+    display:inline-block;
+    vertical-align: middle;
+    width:60px;
+    height:60px;
+    margin:5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    box-shadow: 0 0 0px transparent;
+    cursor: pointer;
+    
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.product-other-images .poi_item:hover{
+    box-shadow: 0 0 7px #ccc;
+}
+
+/*******************************************************************/
 .product-wrapper .product-price{
     font-size: 15px;
     color:#333;	
@@ -2061,11 +2122,6 @@ SMS CONF COMPANY
     color: #0e53a5;
     font-size: 17px;
     font-weight: 600;
-}
-.product-wrapper .product-img img {
-    display:block;
-    margin: auto;
-    width: 200px;
 }
 .product-wrapper .button-wrapper {
     position: absolute;
@@ -2111,7 +2167,12 @@ SMS CONF COMPANY
 .product-wrapper.current_product_wp .product-img{
     display:table-cell;
     vertical-align:middle;
-    width: 200px;
+    width:400px;
+    text-align: left;
+}
+.product-wrapper.current_product_wp .product-img .product-img-link{
+    width:400px;
+    height:400px;
 }
 .new_product{
     position: absolute;

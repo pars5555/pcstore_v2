@@ -69,6 +69,7 @@
         <input id="send_price_email_title_text" type="hidden" value="{$ns.lm->getPhrase(514)}" />
         <input id="send_price_email_send_text" type="hidden" value="{$ns.lm->getPhrase(573)}" />
         <input id="send_price_email_save_text" type="hidden" value="{$ns.lm->getPhrase(586)}" />
+        <input id="send_price_email_done_btn" type="hidden" value="{$ns.lm->getPhrase(658)}" />
     </div>
 </div>
 

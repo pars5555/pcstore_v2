@@ -30,7 +30,7 @@
                 </li>
                 {if $ns.userLevel !== $ns.userGroupsAdmin}
                     <li>
-                        <a class="navMenu_item" href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} </a>
+                        <a class="navMenu_item" href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} <span class="glyphicon"></span></a>
                     </li>
                 {else}
                     <li>

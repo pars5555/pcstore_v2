@@ -89,6 +89,11 @@
 
             <!-- ========================================= Product Wrapper =========================================== -->
             <div class="product-table">
+                <div class="products_row">
+                    <div class="product-wrapper"></div>
+                    <div class="product-wrapper"></div>
+                    <div class="product-wrapper"></div>
+                </div>
                 {assign var="count" value=1}	
                 {if $ns.foundItems|@count>0}
                     {assign var="tree_days_ago" value='-3 day'|strtotime}
@@ -110,13 +115,12 @@
                                     <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
                                         {$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p>
                                     </a>
-                                    <div class="product-img ">
-                                        <a class="" href="{$SITE_PATH}/item/{$item->getId()}">
-                                            <img src="{$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)}" />
+                                    <div class="product-img">
+                                        <a class="product-img-link" href="{$SITE_PATH}/item/{$item->getId()}" style="background-image: url({$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)});">
+                                            {if $new_item == true}
+                                                <div class="new_product"></div>
+                                            {/if}
                                         </a>
-                                        {if $new_item == true}
-                                            NEW ITEM!!!
-                                        {/if}
                                     </div>
                                     <div class="product-price">
                                         {if $item->getIsDealerOfThisCompany()!=1}

@@ -10,21 +10,23 @@
         <h1 class="main_title">{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
         <div class="product-wrapper current_product_wp">
             <div class="product-img">
-                <img src="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '400_400', 1)}" /> 
-                {if $new_item == true}
-                    <div class="new_product"></div>
-                {/if}
-            </div>
+                <a class="product-img-link" href="{$SITE_PATH}/item/{$item->getId()}" style="background-image: url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', 1)});">
+                    {if $new_item == true}
+                        <div class="new_product"></div>
+                    {/if}
+                </a>
 
-            <div class="product-other-images">
-                {section name=images_counter start=2 loop=$ns.itemPicturesCount+1 step=1}
-                    <div style="float:left;border: 2px solid #666; border-radius: 5px;width: 30px;height: 30px;margin:2px;" >
-                        <a href="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', $smarty.section.images_counter.index)}">
-                            <img src="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '30_30', $smarty.section.images_counter.index)}" alt="" />
-                        </a>
-                    </div>
-                {/section}
-                <div class="clear"></div>
+                <div class="product-other-images">
+                    {section name=images_counter start=2 loop=$ns.itemPicturesCount+1 step=1}
+                        <div class="poi_item f_poi_item" data-image-url="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', $smarty.section.images_counter.index)}" style="background-image:url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '60_60', $smarty.section.images_counter.index)})">
+                        </div>
+                    {/section}
+                    <div class="clear"></div>
+                </div>
+
+                <div class="" id="zoom-img">
+                </div>
+
             </div>
         </div>
 

@@ -17,15 +17,16 @@ ngs.SendPriceEmailAction = Class.create(ngs.AbstractAction, {
             var title_text = jQuery("#send_price_email_title_text").val();
             var send_text = jQuery("#send_price_email_send_text").val();
             var save_text = jQuery("#send_price_email_save_text").val();
+            var done_btn = jQuery("#send_price_email_done_btn").val();
             var MainLoad = new ngs.MainLoad();
 
             if (this.params.save_only === 1) {
-                MainLoad.initPopup(title_text, save_text);
+                MainLoad.initPopup(title_text, save_text,done_btn);
             } else {
-                MainLoad.initPopup(title_text, send_text);
+                MainLoad.initPopup(title_text, send_text,done_btn);
             }
         } else if (data.status === "err") {
-            MainLoad.initPopup(title_text, data.message);
+            MainLoad.initPopup(title_text, data.message,done_btn);
         }
     }
 });

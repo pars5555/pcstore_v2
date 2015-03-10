@@ -1,4 +1,6 @@
 <div class="checkout-wrapper container">
+    <a class="button blue back_to_cart" href="{$SITE_PATH}/cart"><span class="glyphicon"></span>{$ns.lm->getPhrase(659)}</a>
+    
     <h3 class="main_title">Checkout</h3>
 
     {if isset($ns.success_message)}
