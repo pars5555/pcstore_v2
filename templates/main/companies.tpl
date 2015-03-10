@@ -16,7 +16,7 @@
         {/if}
         
         <div class="companies-search-wrapper">
-            {*<div class="search_block">
+            <div class="search_block">
                 <div class="search_container">
                     <input type="text" value="" class="  search_text" placeholder="Search" name="st" id="srchCompanies">
                     <button type="submit" class="search_btn">

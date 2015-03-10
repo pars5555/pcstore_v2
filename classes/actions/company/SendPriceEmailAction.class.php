@@ -42,7 +42,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
             $company_price_email_interval_hours = intval($this->getCmsVar('company_price_email_interval_hours'));
             $allowSend = $this->canCompanySendPriceEmail($companyId, $isServiceCompany ? "service_company" : "company", $company_price_email_interval_hours, $valid_addresses);
             if ($allowSend) {
-                $res = $this->sendEmailToDealersEmails($dto);
+                $res = $this->sendEmailToDealersEmails($dto, true);
                 if ($res !== true) {
                     $this->error(array('message' => $res));
                 }
