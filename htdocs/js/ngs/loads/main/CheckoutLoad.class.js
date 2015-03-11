@@ -33,7 +33,7 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion});
     },
     checkoutConfirmPosition: function () {
-        var top = jQuery("#checkout_confirm_container").offset().top + 30;
+        var top = jQuery("#checkout_confirm").offset().top;
         jQuery(window).on("scroll", function () {
             var scrollTop = jQuery(window).scrollTop();
             if (scrollTop >= top) {

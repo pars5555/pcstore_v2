@@ -14,16 +14,18 @@
                 <span style="font-size: 16px"> {$ns.lm->getPhrase(610)} <span style="font-size: 20px;color:#AA0000">{$ns.customer->getAccessKey()}</span> </span>
             </div>
         {/if}
-        
+
         <div class="companies-search-wrapper">
+            {*}
             <div class="search_block">
-                <div class="search_container">
-                    <input type="text" value="" class="  search_text" placeholder="Search" name="st" id="srchCompanies">
-                    <button type="submit" class="search_btn">
-                        <span class="glyphicon"></span>
-                    </button>
-                </div>
+            <div class="search_container">
+            <input type="text" value="" class="  search_text" placeholder="Search" name="st" id="srchCompanies">
+            <button type="submit" class="search_btn">
+            <span class="glyphicon"></span>
+            </button>
             </div>
+            </div>
+            {*}
             <form class="show_com_price" method="POST" action="{$SITE_PATH}/companies" autocomplete="off">
                 <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
                 <div class="select_wrapper">

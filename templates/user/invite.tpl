@@ -1,8 +1,8 @@
 <div id="inviteSuccessMessage" class="success invite_mes"></div>
 <div id="inviteErrorMessage" class="error invite_mes"></div>
 <form method="post" autocomplete="off" action="{$SITE_PATH}/dyn/user/do_invite" id="userInviteForm">
-	<label class="input_label default_width" for="email">Email</label>
-    <input class="text default_width" type="email" name="email"/>
+    <label class="input_label default_width" for="email">Email</label>
+    <input id="userInviteEmail" class="text default_width" type="email" name="email"/>
     <button  class="button blue">Invite</button>
 </form>
 {if $ns.pendingUsers|@count>0}
@@ -19,7 +19,7 @@
                 <td>{$pu_dto->getPendingSubUserEmail()}</td>			
                 <td>
                     {if $pu_dto->getLastSent()<$yesterday}
-                        <button pk="{$pu_dto->getId()}">{$ns.lm->getPhrase(612)}</button>
+                        <button data-invite-email="{$pu_dto->getPendingSubUserEmail()}" class="f_resend_invite button blue inline small" pk="{$pu_dto->getId()}">{$ns.lm->getPhrase(612)}</button>
                     {/if}
                 </td>			
 

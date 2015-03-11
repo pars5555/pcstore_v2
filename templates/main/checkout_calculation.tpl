@@ -7,7 +7,7 @@
     <span>Shipping</span>
     
     {if isset($ns.shipping_not_available)}
-        <span class="text_blue">{$ns.lm->getPhrase(315)}</span>
+        <span class="text_red">{$ns.lm->getPhrase(315)}</span>
     {else}
         <span class="price">{$ns.shipping_cost} Դր.</span> 
     {/if}
@@ -26,4 +26,4 @@
     {/if}
     <div class="clear"></div>
 </div>
-<a class="button blue {if isset($ns.shipping_not_available)} isabled {else} checkout_confirm_btn {/if}" href="javascript:void(0);">Checkout confirm</a>
+<a class="button blue {if isset($ns.shipping_not_available)} disabled {else} checkout_confirm_btn {/if}" href="javascript:void(0);">Checkout confirm</a>

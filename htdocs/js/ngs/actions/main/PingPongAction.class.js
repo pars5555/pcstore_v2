@@ -26,15 +26,15 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
         return !!(a.canPlayType && a.canPlayType('audio/mpeg;').replace(/no/, ''));
     },
     setNotifications: function (data) {
-        if (window.localStorage.getItem("unreadNotificationExist") === "exist") {
-            jQuery("#notification").addClass("new_notification");
-        }
-        var self = this;
-        if (typeof data.notifications !== 'undefined') {
+        if (typeof data.notifications !== 'undefined' && data.notifications.length) {
+            if (window.localStorage.getItem("unreadNotificationExist") === "exist" && jQuery("#notificationListWrapper .f_notification_block").length > 0) {
+                jQuery("#notification").addClass("new_notification");
+            }
+            var self = this;
             data.notifications.each(function (notifications) {
                 if (self.notificationNotExist(notifications.id)) {
                     jQuery("#notificationListWrapper").addClass("active");
-                    var new_not = jQuery("#notification_example .notification_block").clone(true);
+                    var new_not = jQuery("#notification_example .f_notification_block").clone(true);
                     jQuery("#notificationListWrapper").prepend(new_not);
                     new_not.attr("id", notifications.id);
                     new_not.find(".f_not_link").attr("href", notifications.url);
@@ -64,7 +64,7 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
         if (result > this.getLastNotificationCookie()) {
             document.cookie = "notificationDate=" + result + "; expires = 11 nov 11111 11:11:11 UTC;";
             jQuery("#notification").addClass("new_notification");
-            window.localStorage.setItem("unreadNotificationExist","exist");
+            window.localStorage.setItem("unreadNotificationExist", "exist");
         }
 
         return result;

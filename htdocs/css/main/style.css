@@ -332,6 +332,19 @@ label.input_label{
     transition: all 300ms ease;
 }
 
+.button.inline{
+    display:inline-block;
+    vertical-align: middle;
+    max-width:none;
+    width:auto;
+    padding:10px 20px;
+    margin:auto;
+}
+.button.small{
+    padding:5px 10px;
+    font-size:15px;
+}
+
 .overlay{
     width:100%;
     height:100%;
@@ -1543,8 +1556,8 @@ SMS CONF COMPANY
 .cart_checkout .button.blue{
     float:right;
     font-size: 17px;
-    padding: 15px 0;
-    width: 250px;
+    padding: 10px 20px;
+    width: auto;
 }
 
 .warning_message{    
@@ -1576,7 +1589,7 @@ SMS CONF COMPANY
 
 }
 
-.shipping_info .text_blue {
+.shipping_info .text_red {
     display: inline-block;
     max-width: 300px;
 }
@@ -1609,7 +1622,7 @@ SMS CONF COMPANY
 }
 .checkout_confirm_container .checkout_confirm.cart_checkout.fixed{
     position: fixed;
-    right:26px;
+    right:21px;
 }
 
 .checkout_confirm.cart_checkout .vat{
@@ -3049,6 +3062,15 @@ PAGINATION
     padding: 10px 15px;
     color: #999;
     border:1px solid #999;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
+    
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;

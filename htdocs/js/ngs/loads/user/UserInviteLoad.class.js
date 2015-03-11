@@ -15,10 +15,20 @@ ngs.UserInviteLoad = Class.create(ngs.AbstractLoad, {
         return "user_invite";
     },
     afterLoad: function () {
+        this.userInviteForm();
+        this.userInviteResend();
+    },
+    userInviteForm: function () {
         jQuery('#userInviteForm').submit(function () {
             var email = jQuery(this).find('input').val();
             ngs.action('invite', {'email': email});
             return false;
+        });
+    },
+    userInviteResend: function () {
+        jQuery(".f_resend_invite").click(function () {
+            var email = jQuery(this).attr("data-invite-email");
+            ngs.action('invite', {'email': email});
         });
     }
 });
