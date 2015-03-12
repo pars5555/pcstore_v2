@@ -10,23 +10,27 @@
         <h1 class="main_title">{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
         <div class="product-wrapper current_product_wp">
             <div class="product-img">
-                <a class="product-img-link" href="{$SITE_PATH}/item/{$item->getId()}" style="background-image: url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', 1)});">
-                    {if $new_item == true}
-                        <div class="new_product"></div>
-                    {/if}
-                </a>
+                <div class="product-img-inner">
+                    <div class="product-img-link f_product_img" style="background-image: url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', 1)});">
+                        {if $new_item == true}
+                            <div class="new_product"></div>
+                        {/if}
+                    </div>
 
-                <div class="product-other-images">
-                    {section name=images_counter start=2 loop=$ns.itemPicturesCount+1 step=1}
-                        <div class="poi_item f_poi_item" data-image-url="{$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', $smarty.section.images_counter.index)}" style="background-image:url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '60_60', $smarty.section.images_counter.index)})">
+                    <div id="product-other-images" class="product-other-images">
+                        {section name=images_counter start=1 loop=$ns.itemPicturesCount+1 step=1}
+                            <div class="poi_item f_poi_item {if $smarty.section.images_counter.index==1}active{/if}" style="background-image:url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', $smarty.section.images_counter.index)})">
+                            </div>
+                        {/section}
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="zoom_img_container" id="zoom-img">
+                        <div class="zoom_img f_zoom_img" style="background-image: url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', 1)});">
                         </div>
-                    {/section}
-                    <div class="clear"></div>
-                </div>
+                    </div>
 
-                <div class="" id="zoom-img">
                 </div>
-
             </div>
         </div>
 

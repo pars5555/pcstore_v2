@@ -45,6 +45,8 @@
         </div>
         <div class="right-content">
 
+                {include file="$TEMPLATE_DIR/main/banner_slider.tpl"} 
+
             <!--========================== Top Container ===============================-->
             <div class="table filter_conainer_box">
                 <div class="table-cell">

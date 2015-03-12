@@ -1295,9 +1295,97 @@ width: calc(100% - 50px);*/
     padding-left: 30px;
 }
 
-/*******
- SEARCH BLOCK
-*******/
+/******************************************************************************/
+/*                               BANNER SLIDER                                */
+/******************************************************************************/
+
+.banner-slider-container{
+    position: relative;
+    margin-bottom:30px;
+    overflow: hidden;
+    width:100%;
+    height:30vw;
+    
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px; 
+    -o-border-radius: 10px; 
+    -ms-border-radius: 10px;
+    -icab-border-radius: 10px; 
+    border-radius: 10px; 
+}
+
+.banner-slider{
+    position:relative;
+    top:0;
+    left:0;
+    font-size: 0;
+    white-space: nowrap;
+    height: 100%;
+    
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;	
+}
+
+.banner-slider .slider_item{
+    display:inline-block;
+    vertical-align: middle;
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color:transparent;
+}
+
+/* Slider Controls */
+
+.banner-slider-container .slide_left,
+.banner-slider-container .slide_right{
+    position: absolute;
+    width:70px;
+    height:100%;
+    top:0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 77% auto;
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    opacity: 0.7;
+    
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.banner-slider-container .slide_left:hover,
+.banner-slider-container .slide_right:hover{
+    opacity:1;
+    background-color: rgba(99,180,251,0.7);
+}
+.banner-slider-container .slide_left{
+    background-image: url("../../img/banner/slide_left.png");
+    left:0;
+}
+.banner-slider-container .slide_right{
+    background-image: url("../../img/banner/slide_right.png");
+    right:0;
+}
+
+/* Slider Navigation */
+
+.banner-slider-container .slider_navigation{
+    position: absolute;
+}
+
+
+/******************************************************************************/
+/*                                SEARCH BLOCK                                */
+/******************************************************************************/
 
 .search_block{
     clear:both;
@@ -2068,6 +2156,7 @@ SMS CONF COMPANY
 
 .product-wrapper .product-img .product-img-link {
     display:inline-block;
+    vertical-align: middle;
     margin: auto;
     width:150px;
     height:150px;
@@ -2075,34 +2164,46 @@ SMS CONF COMPANY
     background-position: center center;
     background-size:contain;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .product-wrapper .product-other-images{
     font-size:0;
-    
 }
 
 .product-other-images .poi_item{
     display:inline-block;
     vertical-align: middle;
-    width:60px;
-    height:60px;
-    margin:5px;
+    width:70px;
+    height:70px;
+    margin:7px 7px 0 0;
+    border:1px solid transparent;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     background-color: transparent;
     box-shadow: 0 0 0px transparent;
     cursor: pointer;
-    
+
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
 }
 .product-other-images .poi_item:hover{
-    box-shadow: 0 0 7px #ccc;
+    border-color: #999;
+}
+.product-other-images .poi_item.active{
+    border-color:#63B4FB;
 }
 
 /*******************************************************************/
@@ -2175,6 +2276,7 @@ SMS CONF COMPANY
     display:table;
     width:100%;
     position: relative;
+    margin-bottom: 30px;
 }
 .product-wrapper.current_product_wp .product-img{
     display:table-cell;
@@ -2182,10 +2284,81 @@ SMS CONF COMPANY
     width:400px;
     text-align: left;
 }
+.product-img .product-img-inner{
+    width:400px;    
+}
+
+/* Zoom Image */
+
+.zoom_img_container{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:0%;
+    height:0%;
+    z-index: 99999999;
+    visibility: hidden;
+    overflow: hidden;
+    background-color:rgba(255,255,255,0.77);
+    cursor: pointer;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.zoom_img_container.active{
+    visibility: visible;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+}
+
+.zoom_img_container .zoom_img{
+    width:100%;
+    height:100%;
+    max-width:0px;
+    max-height:0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    position: absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);  
+    -webkit-transform:translate(-50%,-50%);  
+    -o-transform:translate(-50%,-50%);  
+    -ms-transform:translate(-50%,-50%); 
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.zoom_img_container.active .zoom_img{
+    max-width:800px;
+    max-height:800px;    
+}
+
+/******************************************************************************/
 .product-wrapper.current_product_wp .product-img .product-img-link{
-    width:400px;
-    height:400px;
+    width:386px;
+    height:386px;
     border:1px solid #ccc;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px;  
 }
 .new_product{
     position: absolute;
@@ -3062,7 +3235,7 @@ PAGINATION
     padding: 10px 15px;
     color: #999;
     border:1px solid #999;
-    
+
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px; 
@@ -3070,7 +3243,7 @@ PAGINATION
     -ms-border-radius: 3px;
     -icab-border-radius: 3px; 
     border-radius: 3px; 
-    
+
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
