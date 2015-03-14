@@ -40,7 +40,7 @@
                             <div class="select_wrapper">
                                 <select   name='region' id="region">
                                     {foreach from=$ns.regions_phrase_ids_array item=value key=key}
-                                        <option value="{$ns.lm->getPhrase($value, 'en')}" {if $ns.region_selected == $ns.lm->getPhrase($value, 'en')}selected="selected"{/if}>{$ns.lm->getPhrase($value)}</option>
+                                        <option value="{$ns.lm->getPhrase($value, 'en')|lower}" {if $ns.region_selected == $ns.lm->getPhrase($value, 'en')|lower}selected="selected"{/if}>{$ns.lm->getPhrase($value)}</option>
                                     {/foreach}
                                 </select>
                             </div>
@@ -115,7 +115,8 @@
                                     <div class="select_wrapper">
                                         <select class=" " name="branch_region" >
                                             {foreach from=$ns.regions_phrase_ids_array item=value key=key}
-                                                <option value="{$ns.lm->getPhrase($value, 'en')}" {if $ns.region_selected == $ns.lm->getPhrase($value, 'en')}selected="selected"{/if}>{$ns.lm->getPhrase($value)}</option>
+                                                <option value="{$ns.lm->getPhrase($value, 'en')|lower}">{$ns.lm->getPhrase($value)}</option>
+                                          
                                             {/foreach}
                                         </select>
 
