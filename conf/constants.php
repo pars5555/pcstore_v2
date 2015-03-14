@@ -41,7 +41,7 @@ define("COMPILE_DIR", TEMPLATES_DIR . "/compile");
 define("CONFIG_DIR", TEMPLATES_DIR . "/config");
 
 //---defining data dir path
-define("DATA_DIR", NGS_ROOT . "/../pcstore_v2_data");
+define("DATA_DIR", NGS_ROOT . "/data");
 //---defining temp dir path
 define("TEMP_DIR", NGS_ROOT . "/tmp");
 
