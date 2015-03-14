@@ -41,9 +41,15 @@
                             </div>
                         {/if}
                         <div class="company-img">
+                            {if $company->getShowPrice()!=1}
+                                <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/>                             
+                            {else}    
                             <a {if $url != ''}href="http://{$url}"{/if}
                                               target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"
-                                              class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/> </a>
+                                              class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> 
+                                <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/> 
+                            </a>
+                            {/if}
                         </div>
                     </div>
                     <div class="company_confirm">

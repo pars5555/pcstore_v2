@@ -12,7 +12,7 @@ class CompanyBranchesDto extends AbstractDto {
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id", "company_id" => "companyId", "street" => "street", "region" => "region", "zip" => "zip",
         "lat" => "lat", "lng" => "lng", "phones" => "phones", "working_days" => "workingDays",
-        "working_hours" => "workingHours", "confirmed_by" => "confirmedBy", "created_at" => "createdAt"
+        "working_hours" => "workingHours", "confirmed_by" => "confirmedBy", "created_at" => "createdAt", "show_price" => "showPrice"
     );
 
     // constructs class instance

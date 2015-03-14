@@ -101,6 +101,20 @@ class CompaniesLoad extends BaseUserCompanyLoad {
         $companiesBranchesDtos = $companyBranchesManager->getCompaniesBranches($cids);
         $serviceCompaniesBranchesDtos = $serviceCompanyBranchesManager->getServiceCompaniesBranches($scids);
 
+        foreach ($companiesBranchesDtos as $c) {
+            $c->setShowPrice(1);
+        }
+        if ($this->getUserLevel() === UserGroups::$USER) {
+            foreach ($companiesBranchesDtos as $c) {
+                if (in_array($c->getCompanyId(), $userCompaniesIdsArray)) {
+                    $c->setShowPrice(1);
+                } else {
+                    $c->setShowPrice(0);
+                }
+            }
+        }
+        
+        
         $groupCompanyBranchesByCompanyId = $this->groupCompanyBranchesByCompanyId($companiesBranchesDtos);
         $groupServiceCompanyBranchesByServiceCompanyId = $this->groupServiceCompanyBranchesByServiceCompanyId($serviceCompaniesBranchesDtos);
         $this->addParam('companyBranchesDtosMappedByCompanyId', $groupCompanyBranchesByCompanyId);

@@ -21,7 +21,7 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
         this.companyTabController();
         this.initAccessKeyInputs();
         this.initShowLastHoursPrices();
-    }, 
+    },
     initShowLastHoursPrices: function () {
         jQuery('#f_show_only_last_hours_select').change(function () {
             jQuery(this).closest('form').trigger("submit");
@@ -191,14 +191,17 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
             var logoPath = SITE_PATH + '/images/small_logo/' + cbdto.company_id + '/logo.png';
             var priceLogoPath = SITE_PATH + '/img/file_types_icons/xls_icon.png';
             var pricePath = SITE_PATH + '/price/last_price/' + cbdto.company_id;
-            var infowindow = new google.maps.InfoWindow({
-                content: '<div style="min-width:180px;min-height:70px"><img src="' + logoPath + '" /><br>' + cname + ', ' + cbdto.street +
-                        '</div><div style="margin:5px"><a href="' + pricePath + '">' + '<img src="' + priceLogoPath + '" />' + 'Price List' + '</a></div>'
-            });
-            thisInstance.map_info_windows.push(infowindow);
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.open(map, this);
-            });
+            var showPrice = cbdto.show_price;
+            if (showPrice == 1) {
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<div style="min-width:180px;min-height:70px"><img src="' + logoPath + '" /><br>' + cname + ', ' + cbdto.street +
+                            '</div><div style="margin:5px"><a href="' + pricePath + '">' + '<img src="' + priceLogoPath + '" />' + 'Price List' + '</a></div>'
+                });
+                thisInstance.map_info_windows.push(infowindow);
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.open(map, this);
+                });
+            }
         });
         var all_service_companies_dtos_to_array = jQuery.parseJSON(jQuery('#all_service_companies_dtos_to_array_json').val());
         var all_service_companies_branches_dtos_to_array = jQuery.parseJSON(jQuery('#all_service_companies_branches_dtos_to_array_json').val());

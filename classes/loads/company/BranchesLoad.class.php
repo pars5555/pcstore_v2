@@ -43,8 +43,11 @@ class BranchesLoad extends BaseCompanyLoad {
         $this->addParam("phones", $companyPhonesArray);
         $this->addParam("working_days", $selectedCompanyBranchDto->getWorkingDays());
         $workingHours = $selectedCompanyBranchDto->getWorkingHours();
-        list($workingStart, $workingEnd) = explode('-', $workingHours);
-
+        $workingStart = "00:00";
+        $workingEnd= "00:00";
+        if (!empty($workingHours)) {
+            list($workingStart, $workingEnd) = explode('-', $workingHours);
+        }
         $this->addParam('workingStart', $workingStart);
         $this->addParam('workingEnd', $workingEnd);
 
