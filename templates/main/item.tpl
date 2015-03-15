@@ -112,6 +112,17 @@
             {/if}
         </div>
     </div>
+    <div class="clear"></div>
+    <div style="float: left;margin-top: 20px">		
+        <span style="font-size: 14px;color: #000;float:left;
+              word-wrap: break-word;display:block;white-space: normal">
+            {foreach from=$ns.itemPropertiesHierarchy key= k item=sp}
+                <span style="color: #308ECF">{$k} :</span> {', '|implode:$sp}</br>
+            {/foreach}	
+        </span>
+
+    </div>
+    <div class="clear"></div>
     <div class="current-product-description container-fluid">
         {assign var="short" value=$ns.item->getShortDescription()}
         {assign var="full" value=$ns.item->getFullDescription()}
