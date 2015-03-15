@@ -1,21 +1,20 @@
 <?php
 
-require_once (CLASSES_PATH . "/loads/company/BaseCompanyLoad.class.php");
-require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
+require_once (CLASSES_PATH . "/loads/servicecompany/BaseServiceCompanyLoad.class.php");
+require_once (CLASSES_PATH . "/managers/ServiceCompanyManager.class.php");
 
 /**
  *
  * @author Vahagn Sookiasian
  *
  */
-class BranchesLoad extends BaseCompanyLoad {
+class BranchesLoad extends BaseServiceCompanyLoad {
 
     public function load() {
-        $companyManager = CompanyManager::getInstance();
-        $companyAndBranchesDtos = $companyManager->getCompanyAndBranches($this->getUserId());
-        $companyBranchesNamesIdsMap = $this->getCompanyBranchesNamesArrayByCompanyAndBranchesDtos($companyAndBranchesDtos);
+        $serviceCompanyManager = ServiceCompanyManager::getInstance();
+        $companyAndBranchesDtos = $serviceCompanyManager->getCompanyAndBranches($this->getUserId());
+        $companyBranchesNamesIdsMap = $this->getServiceCompanyBranchesNamesArrayByCompanyAndBranchesDtos($companyAndBranchesDtos);
         $this->addParam("company_branches", $companyBranchesNamesIdsMap);
-
         $selectedCompanyBranchDto = null;
         if (isset($this->args[0])) {
             $selectedBranchId = intval($this->secure($this->args[0]));
@@ -44,7 +43,7 @@ class BranchesLoad extends BaseCompanyLoad {
         $this->addParam("working_days", $selectedCompanyBranchDto->getWorkingDays());
         $workingHours = $selectedCompanyBranchDto->getWorkingHours();
         $workingStart = "00:00";
-        $workingEnd = "00:00";
+        $workingEnd= "00:00";
         if (!empty($workingHours)) {
             list($workingStart, $workingEnd) = explode('-', $workingHours);
         }
@@ -77,7 +76,7 @@ class BranchesLoad extends BaseCompanyLoad {
         $this->addParam('times', $times);
     }
 
-    private function getCompanyBranchesNamesArrayByCompanyAndBranchesDtos($companyAndBranchesDtos) {
+    private function getServiceCompanyBranchesNamesArrayByCompanyAndBranchesDtos($companyAndBranchesDtos) {
         $ret = array();
         foreach ($companyAndBranchesDtos as $comAndBranchDto) {
             $street = $comAndBranchDto->getStreet();
@@ -96,7 +95,7 @@ class BranchesLoad extends BaseCompanyLoad {
     }
 
     public function getTemplate() {
-        return TEMPLATES_DIR . "/company/branches.tpl";
+        return TEMPLATES_DIR . "/servicecompany/branches.tpl";
     }
 
 }

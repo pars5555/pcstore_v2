@@ -1,6 +1,6 @@
 <div class="company-profile-wrapper profile-wrapper">
     <div class="profile-main-content">
-        {include file="$TEMPLATE_DIR/company/company_left_panel.tpl"}
+        {include file="$TEMPLATE_DIR/servicecompany/left_panel.tpl"}
         {if isset($ns.branch_not_exist)}
             Branch not exists!
         {else}
@@ -9,10 +9,10 @@
                     <div class="form-group">
                         <label for="cp_branch_select" >{$ns.lm->getPhrase(562)}: </label>
                         {foreach from=$ns.company_branches item=branch_name key=branch_id}
-                            <a class="link {if $branch_id == $ns.selected_company_branch_id}btn-primary{/if}" href="{$SITE_PATH}/branches/{$branch_id}">{$branch_name}</a>
+                            <a class="link {if $branch_id == $ns.selected_company_branch_id}btn-primary{/if}" href="{$SITE_PATH}/scbranches/{$branch_id}">{$branch_name}</a>
                         {/foreach}
                     </div>
-                    <form method="POST" action="{$SITE_PATH}/dyn/company/do_update_branch" autocomplete="off">
+                    <form method="POST" action="{$SITE_PATH}/dyn/servicecompany/do_update_branch" autocomplete="off">
                         <input type="hidden" value="{$ns.selected_company_branch_id}" name="branch_id"/>
                         <div class="form-group">
                             <label class="input_label" for="phone1">{$ns.lm->getPhrase(33)} 1</label>
@@ -103,7 +103,7 @@
                         <div class="overlay"></div>
                         <div class="branch_wrapper">
                             <div class="close_button"></div>
-                            <form action="{$SITE_PATH}/dyn/company/do_add_remove_company_branch" method="POST" autocomplete="off">
+                            <form action="{$SITE_PATH}/dyn/servicecompany/do_add_remove_company_branch" method="POST" autocomplete="off">
                                 <input type="hidden" name="action" value="add">
                                 <h3>Add new branch</h3>
                                 <div class="form-group">

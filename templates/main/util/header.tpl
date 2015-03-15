@@ -64,9 +64,14 @@
                                 <a href="{$SITE_PATH}/scprofile">{$ns.lm->getPhrase(94)}</a>
                             </li>
                         {/if}
-                        {if $ns.userLevel === $ns.userGroupsCompany || $ns.userLevel === $ns.userGroupsServiceCompany}
+                        {if $ns.userLevel === $ns.userGroupsCompany}
                             <li>
                                 <a href="{$SITE_PATH}/dealers">{$ns.lm->getPhrase(495)}</a>
+                            </li>
+                        {/if}
+                        {if $ns.userLevel === $ns.userGroupsServiceCompany}
+                            <li>
+                                <a href="{$SITE_PATH}/scdealers">{$ns.lm->getPhrase(495)}</a>
                             </li>
                         {/if}
                         {if $ns.userLevel != $ns.userGroupsAdmin}

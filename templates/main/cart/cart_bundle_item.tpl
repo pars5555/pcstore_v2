@@ -15,7 +15,7 @@
         {/if}
     {/foreach}
     <div class="component_img">
-        <img class="f_bundle_btn" src="{$ns.itemManager->getItemImageURL(0,0, '150_150', 1)}"/>
+        <img class="f_bundle_btn" src="{$SITE_PATH}/img/your_pc.png"/>
         <a href="javascript:void(0)" class="f_bundle_btn see_more">See Components</a>
     </div>
     <div class="component_info" style="{if isset($someItemsMissing)}color:red;{/if}">
@@ -39,8 +39,8 @@
         {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
             {if !isset($someItemsMissing)}
                 {if $bundlePrice.0+$specialFee > 0}
-                    <span class="price {if $discountParam != 1 || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {($bundlePrice.0+$specialFee)|number_format:0} Դր. </span>
-                    {if $discountParam != 1}
+                    <span class="price {if ($bundlePrice.0 >0 && $discountParam != 1) || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {($bundlePrice.0+$specialFee)|number_format:0} Դր. </span>
+                    {if $bundlePrice.0 >0 && $discountParam != 1}
                         <br/>
                         <span class="price {if $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {($bundlePrice.0*$discountParam+$specialFee)|number_format:0} Դր. </span>
                     {/if}
@@ -63,13 +63,12 @@
 
     {math equation="count*(price*discount+specFee)" discount=$discountParam count=$count price=$bundlePrice.0 specFee=$specialFee assign="totAMDWithDiscount"}
     {math equation="count*(price+specFee)" discount=$discountParam count=$count price=$bundlePrice.0 specFee=$specialFee assign="totAMDWithoutDiscount"}
-
     <div class="component_total_price">
         {if $ns.priceVariety == 'both' || $ns.priceVariety == 'amd'}
             {if !isset($someItemsMissing)}
                 {if $bundlePrice.0+$specialFee > 0}
-                    <span class="price {if $discountParam != 1 || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {$totAMDWithoutDiscount|number_format:0} Դր. </span>
-                    {if $discountParam != 1}
+                    <span class="price {if ($bundlePrice.0 >0 && $discountParam != 1) || $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {$totAMDWithoutDiscount|number_format:0} Դր. </span>
+                    {if $bundlePrice.0 >0 && $discountParam != 1}
                         <br/>
                         <span class="price {if $bundle_item_total_deal_discount_amd>0}old_price{/if}"> {$totAMDWithDiscount|number_format:0} Դր. </span>
                     {/if}

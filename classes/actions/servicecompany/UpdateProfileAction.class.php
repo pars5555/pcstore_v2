@@ -1,12 +1,12 @@
 <?php
 
-require_once (CLASSES_PATH . "/actions/company/BaseCompanyAction.class.php");
+require_once (CLASSES_PATH . "/actions/servicecompany/BaseServiceCompanyAction.class.php");
 require_once (CLASSES_PATH . "/managers/ServiceCompanyManager.class.php");
 
 /**
  * @author Vahagn Sookiasian
  */
-class UpdateProfileAction extends BaseCompanyAction {
+class UpdateProfileAction extends BaseServiceCompanyAction {
 
     public function service() {
         $serviceCompanyManager = new ServiceCompanyManager();
@@ -37,14 +37,14 @@ class UpdateProfileAction extends BaseCompanyAction {
             if ($this->getUserLevel() === UserGroups::$ADMIN) {
                 $this->redirect('/admin/scompanies/' . $serviceCompanyId);
             } else {
-                $this->redirect('cprofile');
+                $this->redirect('scprofile');
             }
         } else {
             $_SESSION['error_message'] = $validFields;
             if ($this->getUserLevel() === UserGroups::$ADMIN) {
                 $this->redirect('/admin/scompanies/' . $serviceCompanyId);
             } else {
-                $this->redirect('cprofile');
+                $this->redirect('scprofile');
             }
         }
     }

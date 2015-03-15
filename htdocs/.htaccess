@@ -46,6 +46,10 @@ RewriteRule ^uploadprice /dyn/main/main/$1/?page=upload_price&dir=company [L,QSA
 
 #SERVICE COMPANY
 RewriteRule ^scprofile/?$  /dyn/main/main/$1/?page=profile&dir=servicecompany [L,QSA]
+RewriteRule ^scbranches/?(.*)$  /dyn/main/main/$1/?page=branches&dir=servicecompany [L,QSA]
+RewriteRule ^scsmsconf/?$  /dyn/main/main/$1/?page=smsconf&dir=servicecompany [L,QSA]
+RewriteRule ^scdealers  /dyn/main/main/$1/?page=dealers&dir=servicecompany [L,QSA]
+RewriteRule ^scuploadprice /dyn/main/main/$1/?page=upload_price&dir=servicecompany [L,QSA]
 
 RewriteRule ^/?$ /dyn/main/main [L,QSA] 
 RewriteRule ^dyn(/.+)?/?$ /index1.php?_url=$1 [L,QSA]

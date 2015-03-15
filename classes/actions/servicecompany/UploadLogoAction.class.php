@@ -1,13 +1,13 @@
 <?php
 
-require_once (CLASSES_PATH . "/actions/company/BaseCompanyAction.class.php");
+require_once (CLASSES_PATH . "/actions/servicecompany/BaseServiceCompanyAction.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 require_once (CLASSES_PATH . "/util/ImageThumber.php");
 
 /**
  * @author Vahagn Sookiasian
  */
-class UploadLogoAction extends BaseCompanyAction {
+class UploadLogoAction extends BaseServiceCompanyAction {
 
     private $supported_file_formats = array('jpg', 'png', 'gif');
 
@@ -33,7 +33,7 @@ class UploadLogoAction extends BaseCompanyAction {
         $logoExt = strtolower(end($fileNameParts));
         if ($logoCheck === 'ok' && (!in_array($logoExt, $this->supported_file_formats))) {
             $jsonArr = array('status' => "err", 'message' => "Not supported file format!");
-            echo "<script>var l= new parent.ngs.CompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
+            echo "<script>var l= new parent.ngs.ServiceCompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return false;
         }
         if ($logoCheck === 'ok') {
@@ -52,14 +52,14 @@ class UploadLogoAction extends BaseCompanyAction {
             //resize image
             if ($logoCheck === 'ok' && $resret1 == false) {
                 $jsonArr = array('status' => "err", 'message' => "Error resizing image!");
-                echo "<script>var l= new parent.ngs.CompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
+                echo "<script>var l= new parent.ngs.ServiceCompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
                 return false;
             }
             if (is_file($originalLogoFullName)) {
                 unlink($originalLogoFullName);
             }
             $jsonArr = array('status' => "ok", "company_id" => $companyId);
-            echo "<script>var l= new parent.ngs.CompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
+            echo "<script>var l= new parent.ngs.ServiceCompanyUploadLogoAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return true;
         }
     }

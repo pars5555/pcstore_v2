@@ -1,15 +1,15 @@
 <?php
 
-require_once (CLASSES_PATH . "/actions/company/BaseCompanyAction.class.php");
+require_once (CLASSES_PATH . "/actions/servicecompany/BaseServiceCompanyAction.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 
 /**
  * @author Vahagn Sookiasian
  */
-class UpdateBranchAction extends BaseCompanyAction {
+class UpdateBranchAction extends BaseServiceCompanyAction {
 
     public function service() {
-        $companyBranchesManager = CompanyBranchesManager::getInstance();
+        $serviceCompanyBranchesManager = ServiceCompanyBranchesManager::getInstance();
         $branchId = $this->secure($_REQUEST["branch_id"]);
         $phone1 = $this->secure($_REQUEST["phone1"]);
         $phone2 = $this->secure($_REQUEST["phone2"]);
@@ -46,19 +46,19 @@ class UpdateBranchAction extends BaseCompanyAction {
         $validFields = $this->validateUserProfileFields($branchId, $address, $region, $phone1, $phone2, $phone3);
 
         if ($validFields === true) {
-            $companyBranchesManager->setBranchFields($branchId, implode(',', $phones), $address, $region, $workingDays, $workingHours, $zip, $lng, $lat);
+            $serviceCompanyBranchesManager->setBranchFields($branchId, implode(',', $phones), $address, $region, $workingDays, $workingHours, $zip, $lng, $lat);
             $_SESSION['success_message'] = $this->getPhrase(655);
-            $this->redirect('branches' . '/' . $branchId);
+            $this->redirect('scbranches' . '/' . $branchId);
         } else {
             $_SESSION['error_message'] = $validFields;
-            $this->redirect('branches' . '/' . $branchId);
+            $this->redirect('scbranches' . '/' . $branchId);
         }
     }
 
     public function validateUserProfileFields($branchId, $address, $region, $phone1, $phone2, $phone3) {
-        $companyBranchesManager = CompanyBranchesManager::getInstance();
-        $branchDto = $companyBranchesManager->selectByPK($branchId);
-        if (!isset($branchDto) || $branchDto->getCompanyId() != $this->getUserId()) {
+        $serviceCompanyBranchesManager = ServiceCompanyBranchesManager::getInstance();
+        $branchDto = $serviceCompanyBranchesManager->selectByPK($branchId);
+        if (!isset($branchDto) || $branchDto->getServiceCompanyId() != $this->getUserId()) {
             return "Branch desn't exists!";
         }
         if (empty($address)) {
