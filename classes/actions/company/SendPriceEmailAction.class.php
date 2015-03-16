@@ -42,7 +42,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
             $company_price_email_interval_hours = intval($this->getCmsVar('company_price_email_interval_hours'));
             $allowSend = $this->canCompanySendPriceEmail($companyId, $isServiceCompany ? "service_company" : "company", $company_price_email_interval_hours, $valid_addresses);
             if ($allowSend) {
-                $res = $this->sendEmailToDealersEmails($dto, true);
+                $res = $this->sendEmailToDealersEmails($dto);
                 if ($res !== true) {
                     $this->error(array('message' => $res));
                 }
@@ -53,8 +53,8 @@ class SendPriceEmailAction extends BaseCompanyAction {
         $this->ok();
     }
 
-    private function sendEmailToDealersEmails($companyExProfiledto, $byMandrill = false) {
-
+    private function sendEmailToDealersEmails($companyExProfiledto) {
+        
         $dealerEmailsText = $companyExProfiledto->getDealerEmails();
         $dealerEmailsArray = explode(';', $dealerEmailsText);
         $subject = $companyExProfiledto->getPriceEmailSubject();
@@ -111,7 +111,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
                 $allEmailFileAttachments[$fileDisplayName] = $fileFullPath;
             }
         }
-        if ($byMandrill == true) {
+        if ($this->getCmsVar("use_mandrill_for_price_emails") == 1) {
             $mandrillEmailSenderManager = new MandrillEmailSenderManager($this->getCmsVar("mandrill_api_key"));
             $body .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
             $body .= '<p style="font-size:10px"><a href="*|UNSUB:http://pcstore.am/unsub/' . ($isServiceCompany ? 'sc' : 's') . '/' . $companyId . '|*">Click here to unsubscribe.</a></p>';

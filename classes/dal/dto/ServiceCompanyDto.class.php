@@ -18,6 +18,7 @@ class ServiceCompanyDto extends AbstractDto {
         "has_price" => "hasPrice",
         "blocked" => "blocked",
         "language_code" => "languageCode", "sound_on" => "soundOn",
+        "cart_included_vat"=>"cartIncludedVat",
         // to left join service_company_branches table
         "branch_id" => "branchId", "street" => "street", "region" => "region", "zip" => "zip", "lat" => "lat", "lng" => "lng",
         "working_days" => "workingDays", "working_hours" => "workingHours", "phones" => "phones",

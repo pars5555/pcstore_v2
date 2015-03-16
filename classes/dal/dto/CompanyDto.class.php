@@ -24,6 +24,7 @@ class CompanyDto extends AbstractDto {
         "passive" => "passive",
         "receive_email_on_stock_update" => "receiveEmailOnStockUpdate",
         "language_code" => "languageCode", "sound_on" => "soundOn",
+        "cart_included_vat"=>"cartIncludedVat",
         // to left join company_branches table
         "branch_id" => "branchId", "street" => "street", "region" => "region", "zip" => "zip", "lat" => "lat", "lng" => "lng",
         "working_days" => "workingDays", "working_hours" => "workingHours", "phones" => "phones",
