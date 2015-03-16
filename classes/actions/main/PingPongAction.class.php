@@ -15,9 +15,7 @@ class PingPongAction extends GuestAction {
         $onlineUserManager = new OnlineUsersManager();
         $customer = $this->getCustomer();
         if ($this->getUserLevel() !== UserGroups::$GUEST) {
-
             //add to online users table
-            $customerEmail = $customer->getEmail();
             $newAdded = $onlineUserManager->addOnlineUser($this->getUserLevel(), $customer) > 0;
             $customerNotificationsManager = CustomerNotificationsManager::getInstance();
             $customerNotifications = $customerNotificationsManager->getCustomerNotifications($this->getUserLevel(), $customer, date('Y-m-d H:i:s', time() - 86400 * 3));

@@ -93,7 +93,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($rowsAddedAfterGivenDatetime as $usu) {
             $datetime = $usu->getTimestamp();
             $title = $this->getPhrase(543) . ' (' . $usu->getUserName() . ' ' . $usu->getUserLastName() . ' ' . $usu->getUserEmail() . ')';
-            $pageToRedirect = 'dealers';
+            $pageToRedirect = 'uinvite';
             $notifications[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect);
         }
         return $notifications;
@@ -119,7 +119,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($dealersAfterGivenDatetime as $cd) {
             $datetime = $cd->getTimestamp();
             $title = $this->getPhrase(543) . ' (' . $cd->getUserName() . ' ' . $cd->getUserLastName() . ' ' . $cd->getUserEmail() . ')';
-            $pageToRedirect = 'dealers';
+            $pageToRedirect = 'scdealers';
             $notifications[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect);
         }
         return $notifications;
@@ -135,7 +135,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($companyDealers as $cd) {
             $datetime = $cd->getTimestamp();
             $title = $this->getPhrase(543) . ' (' . $cd->getUserEmail() . '=>' . $cd->getCompanyName() . ')';
-            $pageToRedirect = 'dealers';
+            $pageToRedirect = 'admin';
             $notifications[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect);
         }
 
@@ -143,7 +143,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($serviceCompanyDealers as $cd) {
             $datetime = $cd->getTimestamp();
             $title = $this->getPhrase(543) . ' (' . $cd->getUserEmail() . '=>' . $cd->getCompanyName() . ')';
-            $pageToRedirect = 'dealers';
+            $pageToRedirect = 'admin';
             $notifications[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect);
         }
 
@@ -152,7 +152,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($rowsAddedAfterGivenDatetime as $usu) {
             $datetime = $usu->getTimestamp();
             $title = $this->getPhrase(546) . ' (' . $usu->getUserEmail() . ')';
-            $pageToRedirect = 'dealers';
+            $pageToRedirect = 'admin';
             $notifications[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect);
         }
         return $notifications;
