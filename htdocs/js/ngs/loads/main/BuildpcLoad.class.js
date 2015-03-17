@@ -18,7 +18,6 @@ ngs.BuildpcLoad = Class.create(ngs.AbstractLoad, {
         this.buildPcComponentController();
         this.customScroll();
         this.buildPcComponentMenuController();
-        this.itemsActive();
         ngs.PcConfiguratorManager.updateSelectedAndRequiredComponentsStatus();
         jQuery(".f_component[component_index=1]").addClass('active');
     },
@@ -26,12 +25,6 @@ ngs.BuildpcLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#mobileBtnComp").click(function(){
             jQuery("#itemSections").toggleClass("open");
         });
-    },
-    itemsActive: function(){
-      jQuery(".f_current_item_block").click(function(){
-          jQuery(".f_current_item_block").removeClass("active");
-          jQuery(this).addClass("active");
-      });  
     },
     customScroll: function() {
         jQuery("#buildPcWrapper").mCustomScrollbar({

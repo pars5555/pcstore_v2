@@ -1,9 +1,20 @@
 <h1 class="dealers_title main_title">{$ns.lm->getPhrase(59)}</h1>
-{if isset($ns.success_message)}
-    <div class="success">
-        <strong> {$ns.success_message}</strong>
-    </div>
-{/if}
+
+    {if isset($ns.success_message)}
+        <div class="pop_up_container main_pop_up active f_main_pop_up_container">
+            <div class="overlay"></div>
+            <div class="pop_up">
+                <div class="close_button"></div>
+                <div class="pop_up_content f_pop_up_content">
+                    <div class="success">
+                        {$ns.success_message}
+                    </div>
+                </div>
+                <div class="f_pop_up_confirm_btn button blue">{$ns.lm->getPhrase(485)}</div>
+            </div>
+        </div>
+    {/if}
+
 <div class="dealers" id="dl_dealers_container">
     {if $ns.dealers|@count>0}
         <table>

@@ -105,7 +105,6 @@
                     {if $company->getShowPrice()==1}
                         <div class="company-address">
 
-                            <h4>Company Info</h4>
                             <p class="address">
                                 {if (isset($ns.companyBranchesDtosMappedByCompanyId[$company->getId()]))}
                                     {foreach from=$ns.companyBranchesDtosMappedByCompanyId[$company->getId()] item=branchDto}
@@ -131,7 +130,6 @@
                             </p>
                         </div>
                         <div class="company-tel">
-                            <h4>Tel Number</h4>
                             <p class="tel-number">
                                 {if (isset($ns.companyBranchesDtosMappedByCompanyId[$company->getId()]))}
                                     {foreach from=$ns.companyBranchesDtosMappedByCompanyId[$company->getId()] item=branchDto}                                            

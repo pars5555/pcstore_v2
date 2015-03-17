@@ -259,8 +259,14 @@
         <div class="pop_up_content f_pop_up_content">
 
         </div>
-        <div class="f_pop_up_button button blue"></div>
+        <div class="f_pop_up_confirm_btn button blue"></div>
+        <div class="f_pop_up_cancel_btn button blue"></div>
     </div>
 </div>
+
+<input id="main_popup_default_title" type="hidden" value="{$ns.lm->getPhrase(463)}" />
+<input id="main_popup_default_content" type="hidden" value="{$ns.lm->getPhrase(374)}" />
+<input id="main_popup_default_confirm_btn" type="hidden" value="{$ns.lm->getPhrase(485)}" />
+<input id="main_popup_default_cancel_btn" type="hidden" value="{$ns.lm->getPhrase(49)}" />
 
 <div class="main_loader hidden" id="main_loader"></div>

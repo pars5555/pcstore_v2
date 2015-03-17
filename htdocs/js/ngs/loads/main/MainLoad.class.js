@@ -30,22 +30,47 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
         this.notifications();
         this.mainPopupActions();
+        this.categoriesProductCheckbox();
 
     },
-    initPopup: function (title, content, button) {
-        title = typeof title === 'undefined' ? "Dialog message" : title;
-        button = typeof button === 'undefined' ? "done" : button;
-        content = typeof content === 'undefined' ? "Success" : content;
+    initPopup: function (title, content, confirm, cancel, confirm_click) {
+        var default_title = jQuery("#main_popup_default_title").val();
+        var default_content = jQuery("#main_popup_default_content").val();
+        var default_confirm_btn = jQuery("#main_popup_default_confirm_btn").val();
+        var default_cancel_btn = jQuery("#main_popup_default_cancel_btn").val();
+
+        title = typeof title === 'undefined' ? default_title : title;
+        content = typeof content === 'undefined' ? default_content : content;
+        confirm = typeof confirm === 'undefined' ? default_confirm_btn : confirm;
+
+        if (typeof cancel === 'undefined') {
+            jQuery(".f_pop_up_cancel_btn").remove();
+        }
+        else {
+            jQuery("#mainPopup .f_pop_up_cancel_btn").html(cancel);
+        }
+
         jQuery("#mainPopup").addClass("active");
         jQuery("#mainPopup .f_pop_up_title").html(title);
         jQuery("#mainPopup .f_pop_up_content").html(content);
-        jQuery("#mainPopup .f_pop_up_button").html(button);
+        jQuery("#mainPopup .f_pop_up_confirm_btn").html(confirm);
+
+
+        jQuery("#mainPopup .f_pop_up_confirm_btn").on("click", function () {
+            if (typeof confirm_click === "function") {
+                confirm_click();
+            }
+            jQuery("#mainPopup").removeClass("active hide");
+
+        });
     },
     mainPopupActions: function () {
-        jQuery(".main_pop_up .overlay,.main_pop_up .button,.main_pop_up .close_button").click(function (event) {
-            event.stopPropagation();
-            jQuery(this).closest(".main_pop_up").removeClass("active hide");
-            return;
+        jQuery("#mainPopup .overlay,#mainPopup .f_pop_up_cancel_btn,#mainPopup .close_button").click(function () {
+            jQuery("#mainPopup").removeClass("active hide");
+        });
+        jQuery(".f_main_pop_up_container .overlay,.f_main_pop_up_container .f_pop_up_confirm_btn,.f_main_pop_up_container .close_button").click(function () {
+            jQuery(this).closest(".f_main_pop_up_container").removeClass("active hide");
+
         });
     }
     ,
@@ -216,6 +241,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
         jQuery(".f_checkbox").click(function () {
             jQuery(this).toggleClass("checked");
+        });
+    },
+    categoriesProductCheckbox : function(){
+        jQuery(".f_product_checkbox").on("click",function(){
+            window.location.href = jQuery(this).parent().attr("href");
         });
     }
 });

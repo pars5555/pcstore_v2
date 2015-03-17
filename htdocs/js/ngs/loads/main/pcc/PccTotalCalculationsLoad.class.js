@@ -17,7 +17,7 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         var MainLoad = new ngs.MainLoad();
         MainLoad.initLoginFunctionallity();
-        
+
         this.initPrintBtn();
         this.initRemoveItem();
     },
@@ -43,7 +43,8 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
                     "Action": {
                         text: "Print",
                         click: function () {
-                            thisInstance.printFrame("pcc_print_iframe");
+                            window.frames["pcc_print_iframe"].focus();
+                            window.frames.print();
                         }
                     },
                     "Cancel": {

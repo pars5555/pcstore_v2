@@ -14,7 +14,7 @@
     <div class="clear"></div>
 </div>
 <div class="cart_total">
-    <span class="total_ph">{$ns.lm->getPhrase(262)} {if $ns.customer->getCartIncludedVat()==1}<br><span class="vat_state">({$ns.lm->getPhrase(565)}){/if}</span></span>
+    <span class="total_ph">{$ns.lm->getPhrase(262)} {if $ns.customer->getCartIncludedVat()==1}<br><span class="vat_state">({$ns.lm->getPhrase(565)})</span>{/if}</span>
     {if $ns.priceVariety == 'both' || $ns.priceVariety == 'usd'}
         <span class="price">${$ns.grandTotalUSD|number_format:1}</span>
     {/if}

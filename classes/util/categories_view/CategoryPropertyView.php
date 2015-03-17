@@ -40,7 +40,7 @@ class CategoryPropertyView {
             $propertyCountTextToBeAppend = $checked ? '' : ' (' . $categoryTotalItemsCount . ')';
             $displayName = $this->categoryManager->getCategoryById($childrenHierarchyDto->getChildId())->getDisplayName();
             echo '<a href="' . $url . '">';
-            echo '<input category_id="' . $childrenHierarchyDto->getChildId() . '" id = "category_property_' . $childrenHierarchyDto->getChildId() . '" class="category_property" type="checkbox" ' . ($checked ? 'checked' : '') . '/>';
+            echo '<input category_id="' . $childrenHierarchyDto->getChildId() . '" id = "category_property_' . $childrenHierarchyDto->getChildId() . '" class="category_property f_product_checkbox" type="checkbox" ' . ($checked ? 'checked' : '') . '/>';
             echo  '<span>'. $displayName . $propertyCountTextToBeAppend . '</span>';
             echo '</a>';
             echo '</div>';

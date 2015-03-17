@@ -6,11 +6,27 @@
         {else}
             <div class="profile-content">
                 <div class="current-user-info">
-                    <div class="form-group">
+
+                    <button id="branch_btn" class="button blue branch_btn">Add new branch</button>
+
+                    <div class="form-group company_branches_container">
                         <label for="cp_branch_select" >{$ns.lm->getPhrase(562)}: </label>
-                        {foreach from=$ns.company_branches item=branch_name key=branch_id}
-                            <a class="link {if $branch_id == $ns.selected_company_branch_id}btn-primary{/if}" href="{$SITE_PATH}/branches/{$branch_id}">{$branch_name}</a>
-                        {/foreach}
+                        <div class="company_branches">
+                            {foreach from=$ns.company_branches item=branch_name key=branch_id}
+                                <a data-branch-id="{$branch_id}" class="{if $branch_id == $ns.selected_company_branch_id}active{/if} com_br_item f_com_br_item" href="{$SITE_PATH}/branches/{$branch_id}">
+                                    <span>{$branch_name}</span>
+                                    <span class="delete_branch f_remove_branch glyphicon"></span>
+                                </a>
+                            {/foreach}
+                            <input id="remove_branch_popup_title" type="hidden" value="{$ns.lm->getPhrase(71)} {$ns.lm->getPhrase(562)}" />
+                            <input id="remove_branch_popup_content" type="hidden" value="{$ns.lm->getPhrase(490)}" />
+                            <input id="remove_branch_popup_yes" type="hidden" value="{$ns.lm->getPhrase(489)}" />
+                            <input id="remove_branch_popup_cancel" type="hidden" value="{$ns.lm->getPhrase(49)}" />
+                            <form id="remove_branch_form" action="{$SITE_PATH}/dyn/company/do_add_remove_company_branch" method="POST" autocomplete="off">
+                                <input type="hidden" name="action" value="delete">
+                                <input id="branch_id_for_remove" type="hidden" name="branch_id" value="">
+                            </form>         
+                        </div>
                     </div>
                     <form method="POST" action="{$SITE_PATH}/dyn/company/do_update_branch" autocomplete="off">
                         <input type="hidden" value="{$ns.selected_company_branch_id}" name="branch_id"/>
@@ -98,7 +114,6 @@
                         </button>
                     </form>
 
-                    <button id="branch_btn" class="button grey branch_btn">Add new branch</button>
                     <div class="branch_pop_up hide">
                         <div class="overlay"></div>
                         <div class="branch_wrapper">
@@ -116,7 +131,7 @@
                                         <select class=" " name="branch_region" >
                                             {foreach from=$ns.regions_phrase_ids_array item=value key=key}
                                                 <option value="{$ns.lm->getPhrase($value, 'en')|lower}">{$ns.lm->getPhrase($value)}</option>
-                                          
+
                                             {/foreach}
                                         </select>
 

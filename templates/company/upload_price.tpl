@@ -12,6 +12,11 @@
 
 <a class="revert_last_com_price"  href="javascript:void(0);" id="revert_company_last_uploaded_price" company_id="{$ns.userId}" title="{$ns.lm->getPhrase(492)}"> 
     <span class="glyphicon"></span>
+    
+    <input class="f_revert_popup_title" value="{$ns.lm->getPhrase(483)}" type="hidden" />
+    <input class="f_revert_popup_text" value="{$ns.lm->getPhrase(491)}" type="hidden" />
+    <input class="f_revert_popup_yes" value="{$ns.lm->getPhrase(489)}" type="hidden" />
+    <input class="f_revert_popup_cancel" value="{$ns.lm->getPhrase(49)}" type="hidden" />
 </a>
 <a class="last_com_price"  href="{$SITE_PATH}/price/last_price/{$ns.userId}" title="{$ns.lm->getPhrase(68)}"> 
     <span>{$ns.lm->getPhrase(68)}</span>

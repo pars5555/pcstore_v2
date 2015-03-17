@@ -46,29 +46,18 @@ ngs.CompanyUploadPriceLoad = Class.create(ngs.AbstractLoad, {
     },
     revertCompanyLastPriceHandler: function () {
         jQuery("#revert_company_last_uploaded_price").click(function () {
-            jQuery("<div>" + 491 + "</div>").dialog({
-                resizable: false,
-                title: 483,
-                modal: true,
-                buttons: [{
-                        text: 489,
-                        click: function () {
-                            var company_id = jQuery('#up_selected_company').val();
-                            jQuery(this).remove();
-                            ngs.action('revert_company_last_price', {});
-                        }
-                    },
-                    {
-                        text: 49,
-                        click: function () {
-                            jQuery(this).remove();
-                        }
-                    }
-                ],
-                close: function () {
-                    jQuery(this).remove();
-                }
-            });
+
+            var title = jQuery(".f_revert_popup_title").val();
+            var text = jQuery(".f_revert_popup_text").val();
+            var yes = jQuery(".f_revert_popup_yes").val();
+            var cancel = jQuery(".f_revert_popup_cancel").val();
+            
+            function confirm_click() {
+                ngs.action('revert_company_last_price', {});
+            }
+
+            ngs.MainLoad.prototype.initPopup(title, text, yes, cancel, confirm_click);
+
         });
     },
     validateEmail: function (email) {
