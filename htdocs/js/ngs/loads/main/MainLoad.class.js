@@ -176,11 +176,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
 
         jQuery("#forgot_pass").click(function () {
-            jQuery("#forgotModal").addClass("active");
+            jQuery("#forgotModal .f_modal_content").addClass("active");
             jQuery("#forgotModal").removeClass("hide");
         });
         jQuery("#forgotModal .close_button,#forgotModal .overlay").click(function () {
-            jQuery("#forgotModal").removeClass("active");
+            jQuery("#forgotModal .f_modal_content").removeClass("active");
             jQuery("#forgotModal").addClass("hide");
         });
 

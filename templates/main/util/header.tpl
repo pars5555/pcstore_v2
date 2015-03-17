@@ -229,7 +229,7 @@
     </div>
     <div  class="modal forgotModal hide" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="overlay"></div>
-        <div class="modal-content">
+        <div class="modal-content f_modal_content">
             <button class="close_button"></button>
             <div class="modal-body">
                 <div class="form-group">

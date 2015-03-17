@@ -678,13 +678,6 @@ label.input_label{
 .modal.forgotModal .modal-content{
     max-width:300px;
     padding: 40px 20px 20px;
-    top:70px;
-    margin-left: -160px;
-}
-
-.modal.forgotModal.active .modal-content{
-    top:120px;
-    opacity:1;
 }
 
 .modal.forgotModal .modal-content .send_pass{
