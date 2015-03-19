@@ -19,11 +19,9 @@ class AddBannerAction extends BaseAdminAction {
             $_SESSION["error_message"] = "Please select banner";
             $this->redirect("admin/banners");
         }
-        $dir = BANNERS_ROOT_DIR;
-        if (!is_dir($dir)) {
-            mkdir($dir, 0777);
+        if (!is_dir(BANNERS_ROOT_DIR)) {
+            mkdir(BANNERS_ROOT_DIR, 0777);
         }
-
         $bannerId = $bannersManager->addBanner($path);
         $this->resizeImageToGivenType($tmp_name, BANNERS_ROOT_DIR . "/" . $bannerId . ".jpg");
         $this->redirect("admin/banners");
