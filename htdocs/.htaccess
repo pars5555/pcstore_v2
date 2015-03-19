@@ -31,6 +31,7 @@ RewriteRule ^admin/scompanies/?(.*)$ /dyn/admin/main/$1/?page=service_companies 
 RewriteRule ^admin/settings$ /dyn/admin/main/$1/?page=settings [L,QSA]
 RewriteRule ^admin/actions$ /dyn/admin/main/$1/?page=actions [L,QSA]
 RewriteRule ^admin/users$ /dyn/admin/main/$1/?page=users [L,QSA]
+RewriteRule ^admin/banners$ /dyn/admin/main/$1/?page=banners [L,QSA]
 
 #USER
 RewriteRule ^uprofile/?$  /dyn/main/main/$1/?page=profile&dir=user [L,QSA]

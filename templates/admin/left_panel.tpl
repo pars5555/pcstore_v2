@@ -2,6 +2,9 @@
     <a href="{$SITE_PATH}/admin/home">
         <li>home</li>
     </a>
+    <a href="{$SITE_PATH}/admin/banners">
+        <li>banners</li>
+    </a>
     <a href="{$SITE_PATH}/admin/users">
         <li>users</li>
     </a>

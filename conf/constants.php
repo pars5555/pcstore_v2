@@ -55,6 +55,7 @@ define('DATA_TEMP_DIR', DATA_DIR . "/temp");
 
 //---defining interface images dir
 define("IMG_ROOT_DIR", NGS_ROOT . "/htdocs/img");
+define("BANNERS_ROOT_DIR", NGS_ROOT . "/htdocs/img/banners");
 define("IMG_TMP_DIR", NGS_ROOT . "/htdocs/img/tmp");
 define("CSS_ROOT_DIR", NGS_ROOT . "/htdocs/css");
 define('HTDOCS_TMP_DIR', NGS_ROOT . "/htdocs/tmp");
