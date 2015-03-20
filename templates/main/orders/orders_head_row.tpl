@@ -105,4 +105,4 @@
 {/if}
 </div>
 </div>
-<div id="order_collapse_expande_button^{$orderInfo->getId()}" class="order_slide_btn f_order_slide_btn">See more</div>
+<div id="order_collapse_expande_button^{$orderInfo->getId()}" class="order_slide_btn f_order_slide_btn">{$ns.lm->getPhrase(672)}</div>

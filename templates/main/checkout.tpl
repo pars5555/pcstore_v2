@@ -1,7 +1,7 @@
 <div class="checkout-wrapper container">
     <a class="button blue back_to_cart" href="{$SITE_PATH}/cart"><span class="glyphicon"></span>{$ns.lm->getPhrase(659)}</a>
     
-    <h3 class="main_title">Checkout</h3>
+    <h3 class="main_title">{$ns.lm->getPhrase(281)}</h3>
 
     {if isset($ns.success_message)}
         <div class="success">
@@ -96,7 +96,7 @@
             <div class="form-group">
                 <input class="text" type="text" id="confirm_phone_number" />
                 <div class="error" style="display:none;"></div>
-                <button class="button blue">receive SMS</button>
+                <button class="button blue">{$ns.lm->getPhrase(317)}</button>
             </div>
         </div>
     </form>
@@ -112,7 +112,7 @@
             <div class="form-group">
                 <input class="text" type="text" id="confirm_code" />
                 <div class="error" style="display:none;"></div>
-                <button class="button blue">Confirm</button>
+                <button class="button blue">{$ns.lm->getPhrase(50)}</button>
             </div>
             <p>{$ns.lm->getPhrase(361)}</p>
         </div>

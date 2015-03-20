@@ -32,7 +32,7 @@
             {/if}
             <div class="component_block">
                 <div class="component_link">
-                    <a class="button blue" target="_blank" href="{$SITE_PATH}/item/{$item->getId()}">Open</a>
+                    <a class="button blue" target="_blank" href="{$SITE_PATH}/item/{$item->getId()}">{$ns.lm->getPhrase(658)}</a>
                 </div>
                 <div class="component_check">
                     {if !isset($ns.multiselect_component)}

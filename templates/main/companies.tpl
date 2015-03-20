@@ -38,14 +38,14 @@
             </form>
             <div class="download_all">
                 <a class="button blue" href="{$SITE_PATH}/price/all_zipped_prices">
-                    <span>Download All:</span>
+                    <span>{$ns.lm->getPhrase(659)}:</span>
                     <span class="glyphicon"></span>
                     <!-- <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>  -->
                 </a>
             </div>
             <div class="company_filter">
-                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn tab_title active">Company</a>
-                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn tab_title">Company Service</a>
+                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn tab_title active">{$ns.lm->getPhrase(494)}</a>
+                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn tab_title">{$ns.lm->getPhrase(579)}</a>
             </div>
         </div>
         <div class="clear"></div>

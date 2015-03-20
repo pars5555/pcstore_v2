@@ -29,7 +29,7 @@ class SendForgotPasswordAction extends GuestAction {
             $templateId = "customer_forgot_password";
             $params = array("name" => $userName, "password" => $password);
             $emailSenderManager->sendEmail('support', $customerEmail, $subject, $templateId, $params);
-            $jsonArr = array('status' => "ok", "message" => "Your password sent to your " . $email . " email.\nPlease check your email.");
+            $jsonArr = array('status' => "ok", "message" => sprintf($this->getPhrase(668), $email) );
             echo json_encode($jsonArr);
             return true;
         } else {

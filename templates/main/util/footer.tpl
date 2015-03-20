@@ -47,30 +47,30 @@
         <div class="container">
             <div class="footer-nav-content">
                 <div class="footer-column">
-                    <h5>Make Money with Us</h5>
+                    <h5>{$ns.lm->getPhrase(132)}</h5>
                     <a href="/aboutus">
-                        <p>About PC Store</p>
+                        <p>{$ns.lm->getPhrase(135)}</p>
                     </a>
                     <a href="/privatepolicy">
-                        <p>Private Policy</p>
+                        <p>{$ns.lm->getPhrase(138)}</p>
                     </a>
                 </div>
                 <div class="footer-column">
-                    <h5>Make Money with Us</h5>
+                    <h5>{$ns.lm->getPhrase(7)}</h5>
                     <a href="/signup">
-                        <p>Registration</p>
+                        <p>{$ns.lm->getPhrase(6)}</p>
                     </a>
-                    <a href="#">
-                        <p>Invite Friends</p>
+                    <a href="/invite">
+                        <p>{$ns.lm->getPhrase(139)}</p>
                     </a>
                 </div>
                 <div class="footer-column">
-                    <h5>Let Us Help You</h5>
+                    <h5>{$ns.lm->getPhrase(134)}</h5>
                     <a href="/contactus">
-                        <p>Contact Us </p>
+                        <p>{$ns.lm->getPhrase(46)}</p>
                     </a>
                     <a href="/help">
-                        <p>Help</p>
+                        <p>{$ns.lm->getPhrase(140)}</p>
                     </a>
                 </div>
             </div>

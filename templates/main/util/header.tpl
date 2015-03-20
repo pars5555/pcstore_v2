@@ -22,7 +22,7 @@
             </li>
             {if $ns.userLevel === $ns.userGroupsGuest}
                 <li >
-                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> Sign in / Register </a>
+                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> {$ns.lm->getPhrase(1)} / {$ns.lm->getPhrase(78)} </a>
                 </li>
             {else}
                 <li>
@@ -48,7 +48,7 @@
                                 <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
                             </li>
                             <li>
-                                <a href="{$SITE_PATH}/uinvite">invite</a>
+                                <a href="{$SITE_PATH}/uinvite">{$ns.lm->getPhrase(139)}</a>
                             </li>
                         {/if}
                         {if $ns.userLevel === $ns.userGroupsCompany}
@@ -108,7 +108,7 @@
                     <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
                     </a>
                     <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
-                        <li class="no_notifications">You have not notifications!</li>
+                        <li class="no_notifications">{$ns.lm->getPhrase(675)}</li>
                     </ul>
                 </li>
 
@@ -174,7 +174,7 @@
             <div class="modal-body">
                 <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
                     <div class="login-wrapper">
-                        <h4 class="title">Sign in with your existing account</h4>
+                        <h4 class="title">{$ns.lm->getPhrase(660)}</h4>
                         <div class="form-group">
                             <label class="input_label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
                             <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
@@ -182,7 +182,7 @@
                         <div class="form-group">
                             <label class="input_label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                             <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                            <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
+                            <a id="forgot_pass" class="forget_pass" href="javascript:void(0);" data-toggle="modal" data-target="#forgotModal" >{$ns.lm->getPhrase(6)}</a>
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">
@@ -192,7 +192,7 @@
                 </form>
                 <div class="modal_cols">
                     <div class="social-network-wrapper">
-                        <h4 class="title">Sign in with your social network</h4>
+                        <h4 class="title">{$ns.lm->getPhrase(661)}</h4>
                         <div class="social-network">
                             <a class="facebook" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
                             <a class="linkedin" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
@@ -201,22 +201,22 @@
                     </div>
                 </div>
                 <div class="modal_cols create-account-wrapper">
-                    <h4 class="title">Create your own account</h4>
+                    <h4 class="title">{$ns.lm->getPhrase(662)}</h4>
                     <p>
-                        It's fast, easy and personalized!
+                        {$ns.lm->getPhrase(663)}
                     </p>
                     <ul>
                         <li>
-                            Save billing & shipping info for Express Checkout
+                            {$ns.lm->getPhrase(664)}
                         </li>
                         <li>
-                            Follow favorite brands & hosts
+                            {$ns.lm->getPhrase(665)}
                         </li>
                         <li>
-                            Get product tips & extras
+                            {$ns.lm->getPhrase(666)}
                         </li>
                         <li>
-                            Customize settings & track purchases
+                            {$ns.lm->getPhrase(667)}
                         </li>
                     </ul>
                     <div class="create-account-wrapper">
@@ -235,14 +235,14 @@
                 <div class="form-group">
                     <div id="forgotPasswordErrorMessage" calss="error"></div>
                     <div id="forgotPasswordSuccessMessage" calss="success"></div>
-                    <label class="input_label" for="email">Your Email Address</label>
+                    <label class="input_label" for="email">{$ns.lm->getPhrase(21)}</label>
                     <form id="forgotPasswordForm" autocomplete="off">
-                        <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
+                        <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="{$ns.lm->getPhrase(3)}">
                         <button class="send_pass button blue" id="forgotPasswordBtn">
-                            Send
+                            {$ns.lm->getPhrase(48)}
                         </button>
                         <p>
-                            we'll send you email with your password
+                            {$ns.lm->getPhrase(355)}
                         </p>
                     </form>
                 </div>

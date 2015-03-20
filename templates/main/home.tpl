@@ -32,7 +32,7 @@
 
 
                 {if isset($ns.itemsCategoryMenuView)}
-                    <h1 class="any_categories"><span class="glyphicon"></span><span>Categories</span></h1>
+                    <h1 class="any_categories"><span class="glyphicon"></span><span>{$ns.lm->getPhrase(105)}</span></h1>
                     {$ns.itemsCategoryMenuView->display(false)}
                 {/if}
                 {if ($ns.properties_views && $ns.properties_views|@count>0)}
@@ -54,7 +54,7 @@
                         <h3>Filter</h3> 
                         <div class="form-group">
                             <label for="sort_by">
-                                Sort By:
+                                {$ns.lm->getPhrase(116)}:
                             </label>
                             <div class="select_wrapper">
                                 <select id="sort_by">                                    

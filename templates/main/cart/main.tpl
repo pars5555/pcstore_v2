@@ -12,29 +12,28 @@
     {if $ns.emptyCart == true}
         <h1>{$ns.lm->getPhrase(296)}</h1>		
     {else}   
-        <h1 class="main_title">Shopping Cart Summary</h1>
+        <h1 class="main_title">{$ns.lm->getPhrase(278)}</h1>
         <div class="cart-item cart_items_head">
             <div class="component_block">
                 <div class="component_img">
-                    Image
+                    {$ns.lm->getPhrase(108)}
                 </div>
                 <div class="component_info">
-                    Product
+                    {$ns.lm->getPhrase(109)}
                 </div>
                 <div class="cart_item_count">
-                    Count
+                    {$ns.lm->getPhrase(328)}
                 </div>
                 <div class="component_unit_prie">
-                    Unit Price
+                    {$ns.lm->getPhrase(674)}
                 </div>
                 <div class="component_total_price">
-                    Total Price
+                    {$ns.lm->getPhrase(313)}
                 </div>
                 <div class="component_discount">
-                    Discount
+                    {$ns.lm->getPhrase(285)}
                 </div>
                 <div class="component_actions">
-                    Actions
                 </div>
             </div>
         </div>
@@ -106,7 +105,7 @@
     {else}
         {assign var="disableButton" value=0}
     {/if}
-    <a class="button {if $disableButton == 1}grey{else}blue{/if}" {if $disableButton == 0}href="{$SITE_PATH}/checkout"{/if} {if $disableButton == 1}disabled{/if}>Proceed to Checkout</a>
+    <a class="button {if $disableButton == 1}grey{else}blue{/if}" {if $disableButton == 0}href="{$SITE_PATH}/checkout"{/if} {if $disableButton == 1}disabled{/if}>{$ns.lm->getPhrase(281)}</a>
     {if isset($warningMessage)}
         <span class="warning_message">{$ns.lm->getPhrase($warningMessage)}</span>
     {/if}
@@ -114,10 +113,9 @@
 <div class="promo_code_container">
     <form autocomplete="off" action="{$SITE_PATH}/dyn/user/do_set_promo_code" method="POST">
         <div class="form-group">    
-            <label class="input_label">Promo code</label>
             <div class="table">
                 <div class="table-cell">                
-                    <input class="text" type="text" placeholder="promo code" id="promo_code" name="promo_code" />
+                    <input class="text" type="text" placeholder="{$ns.lm->getPhrase(551)}" id="promo_code" name="promo_code" />
                 </div>
                 <div class="table-cell">                
                     <button class="button blue">Apply</button>
