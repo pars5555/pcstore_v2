@@ -31,7 +31,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.notifications();
         this.mainPopupActions();
         this.categoriesProductCheckbox();
-
+        this.pccLoader();
+    },
+    pccLoader: function () {
+        jQuery("#pcc_loader").addClass("hidden");
+        jQuery(".f_current_item_block,.f_component").on("click", function () {
+            jQuery("#pcc_loader").removeClass("hidden");
+        });
     },
     initPopup: function (title, content, confirm, cancel, confirm_click) {
         var default_title = jQuery("#main_popup_default_title").val();
@@ -243,8 +249,8 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             jQuery(this).toggleClass("checked");
         });
     },
-    categoriesProductCheckbox : function(){
-        jQuery(".f_product_checkbox").on("click",function(){
+    categoriesProductCheckbox: function () {
+        jQuery(".f_product_checkbox").on("click", function () {
             window.location.href = jQuery(this).parent().attr("href");
         });
     }

@@ -17,11 +17,5 @@ ngs.PccSelectCaseLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
 
         ngs.PcConfiguratorManager.onComponentAfterLoad();
-        this.componentBlock();
-    },
-    componentBlock : function(){
-        jQuery(".f_current_item_block").on("click",function(){
-            jQuery("#pcc_loader").removeClass("hidden");            
-        });
     }
 });

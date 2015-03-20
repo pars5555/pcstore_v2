@@ -96,7 +96,8 @@ ngs.PcConfiguratorManager = {
         }
         ngs.UrlChangeEventObserver.setFakeURL('/buildpc' + urlParams);
         jQuery("#buildPcWrapper").mCustomScrollbar('scrollTo', 'top');
-
+        
+        ngs.MainLoad.prototype.pccLoader();
     },
     getAllCurrentComponentSelectedItemsIdsArray: function () {
         var selectedItemsIds = new Array();

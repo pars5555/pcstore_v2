@@ -43,8 +43,10 @@ ngs.PccTotalCalculationsLoad = Class.create(ngs.AbstractLoad, {
                     "Action": {
                         text: "Print",
                         click: function () {
-                            window.frames["pcc_print_iframe"].focus();
-                            window.frames.print();
+                            var iframeElem = jQuery('#pcc_print_iframe')[0];
+                            var iframeWindow = iframeElem.contentWindow ? iframeElem.contentWindow : iframeElem.contentDocument.defaultView;
+                            iframeWindow.focus();
+                            iframeWindow.print();
                         }
                     },
                     "Cancel": {

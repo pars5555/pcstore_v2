@@ -480,7 +480,7 @@ label.input_label{
 }
 .main_loader.pcc_loader{
     position: absolute;
-    background-position: top center;
+    height: 520px;
 }
 
 /*************************** Checkbox Container **************************/
@@ -2875,10 +2875,13 @@ BUILD PC PAGE
     margin-top: 20px;
     width: 100%;
 }
-.build-pc-wrapper {
+.build-pc-main-container{
     display: table-cell;
-    height: 520px;
     width: 800px;
+    position: relative;
+}
+.build-pc-wrapper {
+    height: 520px;
 }
 .build-pc-wrapper>div{
     box-shadow: 0 0 7px #ccc;	

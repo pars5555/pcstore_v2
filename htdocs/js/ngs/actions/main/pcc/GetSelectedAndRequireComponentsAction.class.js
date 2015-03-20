@@ -16,6 +16,8 @@ ngs.GetSelectedAndRequireComponentsAction = Class.create(ngs.AbstractAction, {
                 this.scroolToRequiredComponent(data.required_components_ids);
             }
         }
+
+        ngs.MainLoad.prototype.pccLoader();
     },
     scroolToRequiredComponent: function (required_components_ids) {
         var firstRequiredComponentIndex = parseInt(required_components_ids[0]);
@@ -36,11 +38,5 @@ ngs.GetSelectedAndRequireComponentsAction = Class.create(ngs.AbstractAction, {
                 }
             }
         }
-
-
-
-
-
-
     }
 });
