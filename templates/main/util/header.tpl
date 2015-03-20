@@ -22,7 +22,7 @@
             </li>
             {if $ns.userLevel === $ns.userGroupsGuest}
                 <li >
-                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> {$ns.lm->getPhrase(1)} / {$ns.lm->getPhrase(78)} </a>
+                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> Sign in / Register </a>
                 </li>
             {else}
                 <li>
@@ -38,17 +38,19 @@
                     </li>
                 {/if}
                 <li class="dropdown f_dropdown">
-                    <a id="user_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);"> {$ns.customer->getName()}
+                    <a id="user_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
+                        {$ns.customer->getName()}
                         {if $ns.userLevel === $ns.userGroupsUser}
                             ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
-                        {/if}</a>
+                        {/if}
+                    </a>
                     <ul class="dropdown-menu">
                         {if $ns.userLevel === $ns.userGroupsUser}
                             <li>
                                 <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
                             </li>
                             <li>
-                                <a href="{$SITE_PATH}/uinvite">{$ns.lm->getPhrase(139)}</a>
+                                <a href="{$SITE_PATH}/uinvite">invite</a>
                             </li>
                         {/if}
                         {if $ns.userLevel === $ns.userGroupsCompany}
@@ -108,7 +110,7 @@
                     <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
                     </a>
                     <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
-                        <li class="no_notifications">{$ns.lm->getPhrase(675)}</li>
+                        <li class="no_notifications">You have not notifications!</li>
                     </ul>
                 </li>
 
@@ -174,7 +176,7 @@
             <div class="modal-body">
                 <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
                     <div class="login-wrapper">
-                        <h4 class="title">{$ns.lm->getPhrase(660)}</h4>
+                        <h4 class="title">Sign in with your existing account</h4>
                         <div class="form-group">
                             <label class="input_label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
                             <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
@@ -182,7 +184,7 @@
                         <div class="form-group">
                             <label class="input_label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                             <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                            <a id="forgot_pass" class="forget_pass" href="javascript:void(0);" data-toggle="modal" data-target="#forgotModal" >{$ns.lm->getPhrase(6)}</a>
+                            <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">
@@ -192,7 +194,7 @@
                 </form>
                 <div class="modal_cols">
                     <div class="social-network-wrapper">
-                        <h4 class="title">{$ns.lm->getPhrase(661)}</h4>
+                        <h4 class="title">Sign in with your social network</h4>
                         <div class="social-network">
                             <a class="facebook" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
                             <a class="linkedin" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
@@ -201,22 +203,22 @@
                     </div>
                 </div>
                 <div class="modal_cols create-account-wrapper">
-                    <h4 class="title">{$ns.lm->getPhrase(662)}</h4>
+                    <h4 class="title">Create your own account</h4>
                     <p>
-                        {$ns.lm->getPhrase(663)}
+                        It's fast, easy and personalized!
                     </p>
                     <ul>
                         <li>
-                            {$ns.lm->getPhrase(664)}
+                            Save billing & shipping info for Express Checkout
                         </li>
                         <li>
-                            {$ns.lm->getPhrase(665)}
+                            Follow favorite brands & hosts
                         </li>
                         <li>
-                            {$ns.lm->getPhrase(666)}
+                            Get product tips & extras
                         </li>
                         <li>
-                            {$ns.lm->getPhrase(667)}
+                            Customize settings & track purchases
                         </li>
                     </ul>
                     <div class="create-account-wrapper">
@@ -233,16 +235,16 @@
             <button class="close_button"></button>
             <div class="modal-body">
                 <div class="form-group">
-                    <div id="forgotPasswordErrorMessage" calss="error"></div>
-                    <div id="forgotPasswordSuccessMessage" calss="success"></div>
-                    <label class="input_label" for="email">{$ns.lm->getPhrase(21)}</label>
+                    <div id="forgotPasswordErrorMessage" class="error"></div>
+                    <div id="forgotPasswordSuccessMessage" class="success"></div>
+                    <label class="input_label" for="email">Your Email Address</label>
                     <form id="forgotPasswordForm" autocomplete="off">
-                        <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="{$ns.lm->getPhrase(3)}">
+                        <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
                         <button class="send_pass button blue" id="forgotPasswordBtn">
-                            {$ns.lm->getPhrase(48)}
+                            Send
                         </button>
                         <p>
-                            {$ns.lm->getPhrase(355)}
+                            we'll send you email with your password
                         </p>
                     </form>
                 </div>

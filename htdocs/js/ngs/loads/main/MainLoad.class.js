@@ -104,7 +104,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     initForgotPassword: function () {
         jQuery('#forgotPasswordForm').submit(function () {
-            jQuery(this).find('input, button').attr('disabled', 'disabled');
+            jQuery(this).find('#forgotPasswordEmailInput').attr('disabled', 'disabled');
             ngs.action('send_forgot_password', {'email': jQuery('#forgotPasswordEmailInput').val()});
             return false;
         });

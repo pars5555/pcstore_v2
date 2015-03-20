@@ -2360,12 +2360,12 @@ SMS CONF COMPANY
     display:table;
     width:100%;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .product-wrapper.current_product_wp .product-img{
     display:table-cell;
-    vertical-align:middle;
-    width:400px;
+    vertical-align:top;
+    width:420px;
     text-align: left;
 }
 .product-img .product-img-inner{
@@ -2431,10 +2431,22 @@ SMS CONF COMPANY
 }
 
 /******************************************************************************/
-.product-wrapper.current_product_wp .product-img .product-img-link{
+.product-img-link-wrapper{
     width:386px;
     height:386px;
     border:1px solid #ccc;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px;  
+}
+.product-wrapper.current_product_wp .product-img .product-img-link{
+    width:386px;
+    height:386px;
 
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -2448,20 +2460,28 @@ SMS CONF COMPANY
     position: absolute;
     top:0;
     left: 0;
-    width:77px;
-    height:77px;
+    width:111px;
+    height:111px;
     background: url("../../img/new.png") no-repeat scroll center center / 100% auto transparent;
 }
 .product-wrapper.current_product_wp .product-info{
     display:table-cell;
-    vertical-align:middle;
+    vertical-align:top;
+}
+.product-wrapper.current_product_wp .product-info .product-info-inner{
+    max-width: 555px;
+    text-align: center;
 }
 .product-wrapper.current_product_wp .product-info .button{
-    margin-left:0;
+    display: inline-block;
+    margin: auto;
+    max-width: none;
+    padding: 10px 20px;
+    width: auto;
 }
 .product-wrapper.current_product_wp .product-price{
     margin: 20px 0;
-    max-width: 500px;
+    text-align: left;
 }
 .current-product-description {
     margin-top: 15px;
@@ -2477,6 +2497,28 @@ SMS CONF COMPANY
     margin:10px 0px;
     font-size:16px;
 }
+
+/* Product SPecifications */
+
+.product_spec{
+    margin-bottom:20px;
+    text-align: left;
+}
+
+.product_spec .product_spec_title{
+    color:#63B4FB;
+    font-weight: 600;
+    padding:5px;
+    border-bottom:1px solid #ccc;
+}
+
+.product_spec .product_spec_value{
+    color:#555;
+    text-align: right;
+    padding:5px;
+    border-bottom:1px solid #ccc;
+}
+
 
 /* Product Discription */
 
