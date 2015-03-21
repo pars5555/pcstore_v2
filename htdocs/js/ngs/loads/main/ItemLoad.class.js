@@ -21,13 +21,15 @@ ngs.ItemLoad = Class.create(ngs.AbstractLoad, {
     changeMainPicture: function () {
         jQuery("#product-other-images .f_poi_item").on("click", function () {
             var self = jQuery(this);
-            jQuery(".f_product_img").fadeTo(200, 0, "swing", function () {
-                jQuery(".f_product_img,#zoom-img .f_zoom_img").attr("style", self.attr("style"));
-                jQuery(this).css("opacity", 0);
-                self.addClass("active");
-                self.siblings().removeClass("active");
-                jQuery(this).fadeTo(200, 1, "swing");
-            });
+            if (!self.hasClass("active")) {
+                jQuery(".f_product_img").fadeTo(200, 0, "swing", function () {
+                    jQuery(".f_product_img,#zoom-img .f_zoom_img").attr("style", self.attr("style"));
+                    jQuery(this).css("opacity", 0);
+                    self.addClass("active");
+                    self.siblings().removeClass("active");
+                    jQuery(this).fadeTo(200, 1, "swing");
+                });
+            }
         });
     },
     zoomProductImage: function () {

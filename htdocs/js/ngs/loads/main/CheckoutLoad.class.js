@@ -30,7 +30,11 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
     calculateShippingCost: function () {
         var shippingRegion = jQuery('#shipping_region').val();
         var doShipping = jQuery('.f_ship_addr_container .f_checkbox').hasClass('checked') ? 1 : 0;
-        ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion});
+        ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion, 'payment_type':jQuery('#payment_type input[type=radio]:checked').val()});
+        
+        var p_type_loader = jQuery("#main_loader").clone(false);
+        jQuery("#checkout_confirm").append(p_type_loader);
+        p_type_loader.removeClass("hidden");
     },
     checkoutConfirmPosition: function () {
         var top = jQuery("#checkout_confirm").offset().top;
@@ -76,8 +80,6 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         var thisInstance = this;
         jQuery(".f_ship_addr_container .f_checkbox,.f_ship_addr_container .f_checkbox_label").click(function () {
             jQuery(".f_ship_addr_form").slideToggle(500);
-            thisInstance.calculateShippingCost();
-            thisInstance.sele
             if (jQuery(".f_ship_addr_container .f_checkbox").hasClass("checked")) {
                 jQuery("#do_shipping").val(1);
             }
@@ -87,7 +89,7 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
             thisInstance.calculatePaymentDetails(jQuery(".f_payment_type.active").attr("p_type"));
         });
         jQuery('#shipping_region').change(function () {
-            thisInstance.calculateShippingCost();
+            thisInstance.calculatePaymentDetails(jQuery(".f_payment_type.active").attr("p_type"));
         });
 
     },
@@ -95,7 +97,7 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         var thisInstance = this;
         jQuery(".f_ship_addr_container input,.f_ship_addr_container select").on("change", function () {
             thisInstance.calculatePaymentDetails(jQuery(".f_payment_type.active").attr("p_type"));
-        })
+        });
     },
     selectPaymentType: function () {
         var thisInstance = this;
@@ -103,16 +105,21 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
 
         var p_type = jQuery("#payment_type .f_payment_type");
         p_type.on("click", function () {
-            p_type.each(function () {
-                jQuery(this).removeClass("active");
-                jQuery(this).find("input").prop('checked', false);
-            });
-            jQuery(this).addClass("active");
-            jQuery(this).find("input").prop('checked', true);
-            thisInstance.calculatePaymentDetails(jQuery(this).attr("p_type"));
+            var self = jQuery(this);
+            if (!self.hasClass("active")) {
+                p_type.siblings().removeClass("active");
+                p_type.siblings().find("input").prop('checked', false);
+                self.addClass("active");
+                self.find("input").prop('checked', true);
+                thisInstance.calculatePaymentDetails(self.attr("p_type"));
+            }
         });
     },
     calculatePaymentDetails: function (type) {
+        var p_type_loader = jQuery("#main_loader").clone(false);
+        jQuery("#payment_details").html(p_type_loader);
+        p_type_loader.removeClass("hidden");
+
         var do_shipping = 0;
         var ship_params = null;
         if (jQuery(".f_ship_addr_container .f_checkbox").hasClass("checked") && jQuery("#do_shipping").val() == 1) {
@@ -129,6 +136,8 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
             do_shipping: do_shipping,
             ship_params: JSON.stringify(ship_params)
         });
+
+        this.calculateShippingCost();
     }
 
 });

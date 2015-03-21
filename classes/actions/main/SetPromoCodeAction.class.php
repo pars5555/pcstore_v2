@@ -1,13 +1,13 @@
 <?php
 
-require_once (CLASSES_PATH . "/actions/user/BaseUserAction.class.php");
+require_once (CLASSES_PATH . "/actions/GuestAction.class.php");
 require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
 require_once (CLASSES_PATH . "/managers/CustomerCartManager.class.php");
 
 /**
  * @author Vahagn Sookiasian
  */
-class SetPromoCodeAction extends BaseUserAction {
+class SetPromoCodeAction extends GuestAction {
 
     public function service() {
         $promo_code = $this->secure($_POST['promo_code']);

@@ -22,7 +22,6 @@ ngs.CreditLoad = Class.create(ngs.AbstractLoad, {
             var deposit_amd = jQuery("#deposit_amd").val();
             var selected_credit_months = jQuery("#selected_credit_months").val();
             var credit_supplier_id = jQuery("#credit_supplier_id").val();
-
             ngs.load("payment_credit", {
                 do_shipping: 0,
                 deposit_amd: deposit_amd,

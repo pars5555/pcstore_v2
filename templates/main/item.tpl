@@ -45,21 +45,24 @@
                         {/if}                
 
                         {if $ns.item->getIsDealerOfThisCompany()==1}
-                            {if $ns.item->getDealerPriceAmd()>0}
-                                <span>{$ns.item->getDealerPriceAmd()|number_format} Դր.</span>
-                            {else}
-                                <span>${$ns.item->getDealerPrice()|number_format:1}</span>
-                            {/if}
+                            <p class="price">
+                                <span>{$ns.lm->getPhrase(88)}:</span>
+                                {if $ns.item->getDealerPriceAmd()>0}
+                                    <span>{$ns.item->getDealerPriceAmd()|number_format} Դր.</span>
+                                {else}
+                                    <span>${$ns.item->getDealerPrice()|number_format:1}</span>
+                                {/if}
+                            </p> 
                         {else}
                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerItemPrice())}                        
-                            <p><span>List price:</span> <span>{$ns.item->getListPriceAmd()} Դր.</span></p>
+                            <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$ns.item->getListPriceAmd()} Դր.</span></p>
                             <p class="price"><span>{$ns.lm->getPhrase(88)}:</span> <span>{$price_in_amd|number_format} Դր.</span></p>
                             <p>{math equation="100-x*100/y" x=$price_in_amd y=$ns.item->getListPriceAmd() assign="list_price_discount"}
-                                <span>you save:</span> <span>{$ns.item->getListPriceAmd()-$price_in_amd|number_format} ({$list_price_discount|number_format}%)</span></p>                        
+                                <span>{$ns.lm->getPhrase(589)}:</span> <span>{$ns.item->getListPriceAmd()-$price_in_amd|number_format} ({$list_price_discount|number_format}%)</span></p>                        
                             {/if} 
                             {if isset($showvatprice)}
                             <p>
-                                <span>VAT price:</span>
+                                <span>{$ns.lm->getPhrase(488)}:</span>
                                 {if $ns.item->getIsDealerOfThisCompany()==1}
                                     {if $ns.item->getVatPriceAmd()>0}
                                         <span>({$ns.item->getVatPriceAmd()|number_format} Դր.)</span>
@@ -73,9 +76,12 @@
                             </p> 
                         {/if}
                         {if $ns.item->getIsDealerOfThisCompany()}
-                            <span>{$ns.lm->getPhrase(66)}:</span>
-                            <span title="{$ns.lm->getPhrase(271)}: {$ns.item->getCompanyPhones()|replace:',':'&#13;&#10;'}" style="font-size: 14px; {if ($ns.item->getIsCompanyOnline())}color:green;{/if}"
-                                  >{$ns.item->getCompanyName()}</span>
+                            <p>
+                                <span>{$ns.lm->getPhrase(66)}:</span>
+                                <span title="{$ns.lm->getPhrase(271)}: {$ns.item->getCompanyPhones()|replace:',':'&#13;&#10;'}" style="font-size: 14px; {if ($ns.item->getIsCompanyOnline())}color:green;{/if}">
+                                    {$ns.item->getCompanyName()}
+                                </span>
+                            </p> 
                         {/if}
                     </div>
                     <div class="product_other_info">
@@ -87,7 +93,7 @@
                             {if $smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate()}
                                 {if $ns.item->getIsCompanyOnline()}
                                     <p>{$ns.lm->getPhrase(86)}</p>
-                                    <p>$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
+                                    <p>{$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
                                 {else}
                                     <p>{$ns.lm->getPhrase(525)}   {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
                                 {/if}

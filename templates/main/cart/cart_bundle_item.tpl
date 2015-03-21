@@ -90,16 +90,18 @@
         {/if}
     </div>
     <div class="component_discount">
-        {if !isset($someItemsMissing)}
-            <span class="discount">
-            {if $bundleItems.0->getDiscount() > 0}
-                {$ns.lm->getPhrase(285)} {$bundleItems.0->getDiscount()}%
-                <br/>
+        {if $ns.userLevel!=$ns.userGroupsCompany}
+            {if !isset($someItemsMissing)}
+                <span class="discount">
+                    {if $bundleItems.0->getDiscount() > 0}
+                        {$ns.lm->getPhrase(285)} {$bundleItems.0->getDiscount()}%
+                        <br/>
+                    {/if}
+                    {*if $bundle_item_total_deal_discount_amd>0}
+                    {$count} x {$bundle_item_total_deal_discount_amd|number_format:0} Դր.
+                    {/if*}
+                </span>
             {/if}
-            {*if $bundle_item_total_deal_discount_amd>0}
-                {$count} x {$bundle_item_total_deal_discount_amd|number_format:0} Դր.
-            {/if*}
-            </span>
         {/if}
     </div>
     <div class="component_edit">
@@ -109,15 +111,15 @@
         <a  href="{$SITE_PATH}/dyn/main/do_delete_cart_item?id={$bundleItems.0->getId()}" title="Delete"> <span class="item-delete glyphicon"></span> </a>
     </div>
 </div>
-    <!-- =======================Computer Bundle Details==================== -->
+<!-- =======================Computer Bundle Details==================== -->
 
-    <div class="bundle">
-        <div class="f_bundle_wrapper bundle-components-wrapper" id="cart_bundle_items_container_{$bundleItems.0->getId()}">
-            <div class="bundle_components_table">
-                {assign var="bundle_items" value = "true"}
-                {foreach from=$bundleItems item=cartItem}
-                    {include file="$TEMPLATE_DIR/main/cart/cart_item.tpl" cartItem=$cartItem bundle="true"}
-                {/foreach}
-            </div>
+<div class="bundle">
+    <div class="f_bundle_wrapper bundle-components-wrapper" id="cart_bundle_items_container_{$bundleItems.0->getId()}">
+        <div class="bundle_components_table">
+            {assign var="bundle_items" value = "true"}
+            {foreach from=$bundleItems item=cartItem}
+                {include file="$TEMPLATE_DIR/main/cart/cart_item.tpl" cartItem=$cartItem bundle="true"}
+            {/foreach}
         </div>
     </div>
+</div>

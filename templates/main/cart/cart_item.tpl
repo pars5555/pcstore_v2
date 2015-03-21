@@ -189,21 +189,23 @@
 
             <!-- ==============Component Discount============== -->
 
-            <div class="component_discount">               
-                {if isset($deal_discount_applied) || $discount_available}
-                    {if $discount_available && $cartItem->getDealDiscountAmd()<=0}
-                        <span class="discount">{$ns.lm->getPhrase(285)} {$cartItem->getDiscount()}%</span>
-                    {/if}
-                    {if isset($deal_discount_applied) && $discount_available}
-                        <br/>
-                        <span class="price">{$count} x {$cartItem->getDealDiscountAmd()|number_format:0} Դր.</span>
+            <div class="component_discount">   
+                {if $ns.userLevel!=$ns.userGroupsCompany}
+                    {if isset($deal_discount_applied) || $discount_available}
+                        {if $discount_available && $cartItem->getDealDiscountAmd()<=0}
+                            <span class="discount">{$ns.lm->getPhrase(285)} {$cartItem->getDiscount()}%</span>
+                        {/if}
+                        {if isset($deal_discount_applied) && $discount_available}
+                            <br/>
+                            <span class="price">{$count} x {$cartItem->getDealDiscountAmd()|number_format:0} Դր.</span>
+                        {/if}
                     {/if}
                 {/if}
             </div>
             <!-- ==============Component Delete============== -->
 
             <div class="component_edit">
-                
+
             </div>
             <div class="component_delete">
                 {if !isset($bundle_items)}

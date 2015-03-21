@@ -18,20 +18,17 @@ require_once (CLASSES_PATH . "/util/ImageThumber.php");
  */
 class ItemManager extends AbstractManager {
 
-  
     /**
      * @var singleton instance of class
      */
     private static $instance = null;
 
-  
     function __construct() {
 
 
         $this->mapper = ItemMapper::getInstance();
     }
 
-   
     public static function getInstance() {
 
         if (self::$instance == null) {
@@ -40,7 +37,7 @@ class ItemManager extends AbstractManager {
         }
         return self::$instance;
     }
-   
+
     public function getItemsByIds($items_ids) {
         if (is_array($items_ids)) {
             $items_ids = implode(',', $items_ids);
@@ -421,7 +418,9 @@ class ItemManager extends AbstractManager {
         $ret = array();
         $i = 0;
         foreach ($cat_ids_array as $key => $cid) {
-            $ret[$cid] = $cat_names_array[$i];
+            if (array_key_exists($i, $cat_names_array)) {
+                $ret[$cid] = $cat_names_array[$i];
+            }
             if (array_key_exists($cid, $catDtosArray) && $catDtosArray[$cid]->getLastClickable() === '1') {
                 break;
             }
@@ -888,8 +887,8 @@ class ItemManager extends AbstractManager {
             return "Not supported file format!";
         }
 
-       
-        $dir = DATA_IMAGE_DIR . "/items/";       
+
+        $dir = DATA_IMAGE_DIR . "/items/";
 
         $picsCount = $itemDto->getPicturesCount();
         $currentPicIndex = $picsCount + 1;

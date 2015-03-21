@@ -982,7 +982,7 @@ label.input_label{
 padding: 0 25px;
 width: calc(100% - 50px);*/
     max-width: 1440px;
-    margin: auto;
+    margin: 30px auto auto;
 }
 .show_com_price{
     float:left;
@@ -1713,6 +1713,20 @@ SMS CONF COMPANY
 .cart_checkout .vat a{
     float:right;
 }
+
+.cart_checkout .promo{
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.cart_checkout .promo .text_red{
+    float:right;
+}
+
 .cart_checkout .cart_total .total_ph{
     float:left;
     font-size: 18px;
@@ -1778,7 +1792,7 @@ SMS CONF COMPANY
     top:0;
     right:0;
     margin:auto;
-    padding:10px 20px 0;
+    padding:10px 20px;
     width: calc(100% - 40px);
     box-shadow: 0 0 7px #ddd;
     background-color: rgba(255,255,255,0.77);
@@ -1791,6 +1805,10 @@ SMS CONF COMPANY
     -ms-border-radius: 7px;
     -icab-border-radius: 7px; 
     border-radius: 7px; 
+}
+.checkout_confirm_container .checkout_confirm.cart_checkout .main_loader{
+    position:absolute;
+    background-size: 150px auto;
 }
 .checkout_confirm_container .checkout_confirm.cart_checkout.fixed{
     position: fixed;
@@ -1878,6 +1896,7 @@ SMS CONF COMPANY
     vertical-align: top;
     border: 2px solid #777;
     padding: 10px;
+    position: relative;
 
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -1886,6 +1905,9 @@ SMS CONF COMPANY
     -ms-border-radius: 5px;
     -icab-border-radius: 5px; 
     border-radius: 5px; 
+}
+.payment_details .main_loader{
+    position: absolute;
 }
 
 
@@ -2480,7 +2502,7 @@ SMS CONF COMPANY
     width: auto;
 }
 .product-wrapper.current_product_wp .product-price{
-    margin: 20px 0;
+    margin: 30px 0;
     text-align: left;
 }
 .current-product-description {
@@ -3042,7 +3064,7 @@ BUILD PC PAGE
     width:120px;	
 }
 .component_block .component_info{
-    text-align:left;
+    text-align:center;
 }
 .cart_items_head .component_block .component_info{
     text-align: center;

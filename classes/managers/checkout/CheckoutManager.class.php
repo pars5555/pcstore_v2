@@ -161,7 +161,6 @@ class CheckoutManager extends AbstractManager {
 
     public function applyAllItemsPromoOnCartItems($groupedCartItems, $promo_codes_arrray, $vatIncluded = 0) {
         $discountPromoCodesManager = DiscountPromoCodesManager::getInstance();
-
         foreach ($promo_codes_arrray as $promoCode) {
             $dto = $discountPromoCodesManager->getByPromoCode($promoCode);
             if (isset($dto) && $dto->getEnable() == 1) {
@@ -251,7 +250,7 @@ class CheckoutManager extends AbstractManager {
         $totalDiscountAmd = 0;
         $itemManager = ItemManager::getInstance();
         $discountParam = 1 - intval($discountDto->getDiscountPercent()) / 100;
-        foreach ($groupedCartItems as $cartUnit) { var_dump($cartUnit);exit;
+        foreach ($groupedCartItems as $cartUnit) {
             if (is_array($cartUnit)) {
                 foreach ($cartUnit as $bundleItem) {
                     if ($bundleItem->getIsDealerOfThisCompany() == 0) {

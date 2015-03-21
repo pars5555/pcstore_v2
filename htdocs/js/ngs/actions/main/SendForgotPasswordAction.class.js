@@ -12,6 +12,7 @@ ngs.SendForgotPasswordAction = Class.create(ngs.AbstractAction, {
     },
     afterAction: function (transport) {
         var data = transport.responseText.evalJSON();
+        ngs.MainLoad.prototype.mainLoader(false);
         jQuery('#forgotPasswordForm').find('#forgotPasswordEmailInput').removeAttr('disabled');
         if (data.status === "ok") {
             jQuery('#forgotPasswordErrorMessage').html('');

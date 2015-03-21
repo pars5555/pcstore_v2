@@ -58,11 +58,11 @@
             <span>{$ns.lm->getPhrase(565)}</span>
             <div class="clear"></div>
         </div>
-            
-            {if $ns.totalPromoDiscountAmd>0}
+
+        {if $ns.totalPromoDiscountAmd>0}
             <div class="promo">
-                <span>{$ns.totalPromoDiscountAmd|number_format:0} Դր.</span>
                 <span>Promo Discount</span>
+                <span class="text_red">{$ns.totalPromoDiscountAmd|number_format:0} Դր.</span>
                 <div class="clear"></div>
             </div>
         {/if}
@@ -86,7 +86,7 @@
             {/if}
             <div class="clear"></div>
         </div>
-        
+
     {/if}
     {if $ns.emptyCart}
         {assign var="warningMessage" value="296"}
@@ -110,18 +110,20 @@
         <span class="warning_message">{$ns.lm->getPhrase($warningMessage)}</span>
     {/if}
 </div>
-<div class="promo_code_container">
-    <form autocomplete="off" action="{$SITE_PATH}/dyn/user/do_set_promo_code" method="POST">
-        <div class="form-group">    
-            <div class="table">
-                <div class="table-cell">                
-                    <input class="text" type="text" placeholder="{$ns.lm->getPhrase(551)}" id="promo_code" name="promo_code" />
-                </div>
-                <div class="table-cell">                
-                    <button class="button blue">Apply</button>
+{if $ns.userLevel==$ns.userGroupsUser}
+    <div class="promo_code_container">
+        <form autocomplete="off" action="{$SITE_PATH}/dyn/main/do_set_promo_code" method="POST">
+            <div class="form-group">    
+                <div class="table">
+                    <div class="table-cell">                
+                        <input class="text" type="text" placeholder="{$ns.lm->getPhrase(551)}" id="promo_code" name="promo_code" />
+                    </div>
+                    <div class="table-cell">                
+                        <button class="button blue">Apply</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+{/if}
 <div class="clear"></div>

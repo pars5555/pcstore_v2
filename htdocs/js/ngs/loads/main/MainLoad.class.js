@@ -33,6 +33,14 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.categoriesProductCheckbox();
         this.pccLoader();
     },
+    mainLoader : function(param){
+        if(param === true){
+            jQuery("#main_loader").removeClass("hidden");
+        }
+        if(param === false){
+            jQuery("#main_loader").addClass("hidden");
+        }
+    },
     pccLoader: function () {
         jQuery("#pcc_loader").addClass("hidden");
         jQuery(".f_current_item_block,.f_component").on("click", function () {
@@ -171,6 +179,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
     },
     initLoginFunctionallity: function () {
+        var self = this;
         var modal = jQuery("#myModal .f_modal_content");
         jQuery(".f_myModal_toggle").on("click", function () {
             jQuery("#myModal").removeClass("hide");
@@ -188,6 +197,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#forgotModal .close_button,#forgotModal .overlay").click(function () {
             jQuery("#forgotModal .f_modal_content").removeClass("active");
             jQuery("#forgotModal").addClass("hide");
+            
+            jQuery("#forgotModal #forgotPasswordEmailInput").val("");
+            jQuery('#forgotPasswordErrorMessage').html("");
+            jQuery('#forgotPasswordSuccessMessage').html("");
+        });
+        jQuery("#forgotPasswordBtn").on("click",function(){
+            self.mainLoader(true);
         });
 
         ngs.checkLogin = true;

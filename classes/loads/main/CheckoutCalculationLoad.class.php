@@ -26,6 +26,9 @@ class CheckoutCalculationLoad extends BaseUserCompanyLoad {
         }
         $this->addParam('do_shipping', $doShipping);
         $shippingCost = 0;
+        if ($doShipping == 1 && $_POST['payment_type'] == 'credit') {
+            $this->addParam("shipping_not_available_for_credit", 1);    
+        }
         if ($doShipping == 1) {
             $region = $_POST['region'];
             $shippingCost = $checkoutManager->getShippingCost($region, $grandTotalAMD);
@@ -35,6 +38,7 @@ class CheckoutCalculationLoad extends BaseUserCompanyLoad {
                 $this->addParam('shipping_not_available', 1);
             }
         }
+        
         $this->addParam('grandTotalAMD', $grandTotalAMD + $shippingCost);
     }
 
