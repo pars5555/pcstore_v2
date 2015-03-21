@@ -27,7 +27,7 @@
         <label for="companyPassword">{$ns.lm->getPhrase(4)}</label>
         <input type="text" id="companyDealersAccessKey"  placeholder="{$ns.lm->getPhrase(4)}" name="password" value="{$ns.selectedCompanyDto->getPassword()}">
         <label for="">Logo</label>
-        <a id="upload_photo_button" href="javascript:void(0);">Select Logo...</a>
+        <a id="upload_photo_button" class="button blue" href="javascript:void(0);">Select Logo...</a>
         {if isset($ns.hasLogo)}
             <img id="logo_img" src="{$SITE_PATH}/images/big_logo/{$ns.selectedCompanyDto->getId()}/logo.png?{$smarty.now}" />
         {else}

@@ -1,13 +1,15 @@
 <div class="company-profile-wrapper profile-wrapper">
     <div class="profile-main-content">
         {include file="$TEMPLATE_DIR/company/company_left_panel.tpl"}
-        {if isset($ns.branch_not_exist)}
-            Branch not exists!
-        {else}
-            <div class="profile-content">
-                <div class="current-user-info">
-
-                    <button id="branch_btn" class="button blue branch_btn">Add new branch</button>
+        <div class="profile-content">
+            <div class="current-user-info">
+                {if isset($ns.error_message)}
+                    <div class="error">{$ns.error_message}</div>
+                {/if}
+                {if isset($ns.branch_not_exist)}
+                    Branch not exists!
+                {else}
+                    <button id="branch_btn" class="button blue branch_btn">{$ns.lm->getPhrase(563)}</button>
 
                     <div class="form-group company_branches_container">
                         <label for="cp_branch_select" >{$ns.lm->getPhrase(562)}: </label>
@@ -123,7 +125,7 @@
                                 <h3>Add new branch</h3>
                                 <div class="form-group">
                                     <label class="input_label" for="">Add new Branch</label>
-                                    <input type="text" class="  text" name="branch_address" placeholder="Branch Address">
+                                    <input type="text" class="  text" name="branch_address" required="" placeholder="Branch Address">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Region:</label>
@@ -131,11 +133,8 @@
                                         <select class=" " name="branch_region" >
                                             {foreach from=$ns.regions_phrase_ids_array item=value key=key}
                                                 <option value="{$ns.lm->getPhrase($value, 'en')|lower}">{$ns.lm->getPhrase($value)}</option>
-
                                             {/foreach}
                                         </select>
-
-
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -148,8 +147,9 @@
                             </form>
                         </div>
                     </div>
-                </div>
+
+                {/if}
             </div>
-        {/if}
+        </div>
     </div>
 </div>

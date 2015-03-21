@@ -54,6 +54,8 @@ ngs.LoadFactory.prototype={
 
                 //service company
         this.loads["servicecompany_profile"] = function temp(){return new ngs.ServiceCompanyProfileLoad("servicecompany_profile", ajaxLoader);};
+        this.loads["servicecompany_branches"] = function temp(){return new ngs.ServiceCompanyBranchesLoad("servicecompany_branches", ajaxLoader);};
+        this.loads["servicecompany_dealers"] = function temp(){return new ngs.ServiceCompanyDealersLoad("servicecompany_dealers", ajaxLoader);};
 
                 //admin
         this.loads["admin_main"] = function temp(){return new ngs.AdminMainLoad("admin_main", ajaxLoader);};

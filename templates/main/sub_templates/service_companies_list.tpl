@@ -1,4 +1,4 @@
-<div id="companyServiceTab" style="display:none;" class="f_company_tab company_tab">
+<div id="companyServiceTab" class="company_tab">
     {if (($ns.allServiceCompanies|@count )>0)}
         <h1 class="main_title">{$ns.lm->getPhrase(579)}</h1>
         <div class="table">

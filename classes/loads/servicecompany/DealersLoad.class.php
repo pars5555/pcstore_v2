@@ -19,7 +19,7 @@ class DealersLoad extends BaseServiceCompanyLoad {
     }
 
     public function getTemplate() {
-        return TEMPLATES_DIR . "/servicecompany/dealers.tpl";
+        return TEMPLATES_DIR . "/company/dealers.tpl";
     }
 
 }

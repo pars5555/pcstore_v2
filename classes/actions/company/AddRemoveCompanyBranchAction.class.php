@@ -17,18 +17,17 @@ class AddRemoveCompanyBranchAction extends BaseCompanyAction {
             $branch_region = $this->secure($_REQUEST['branch_region']);
             $branch_zip = $this->secure($_REQUEST['branch_zip']);
             if (empty($branch_address)) {
-                $this->error(array('errMsg' => 'Branch address is empty!'));
-            }
-            if ($this->getUserLevel() !== UserGroups::$COMPANY) {
-                $this->error(array('errMsg' => 'System Error: this action is for only companies!'));
+                $_SESSION['error_message'] = $this->getPhrase(677);
+                $this->redirect("branches");
             }
             $br_id = $companyBranchesManager->addBranch($this->getUserId(), $branch_address, strtolower($branch_region), $branch_zip);
+            $this->redirect("branches/" . $br_id);
         }
         if ($action == 'delete') {
             $branch_id = $this->secure($_REQUEST['branch_id']);
             $companyBranchesManager->deleteByPK($branch_id);
         }
-        $this->redirect("branches/".$br_id);
+        $this->redirect("branches");
     }
 
 }

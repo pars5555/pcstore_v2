@@ -18,7 +18,6 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
         this.companiesDocumentsSliderInit();
         this.companiesListDocumentsSliderInit();
         this.initGMaps();
-        this.companyTabController();
         this.initAccessKeyInputs();
         this.initShowLastHoursPrices();
     },
@@ -33,14 +32,6 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
             var companyId = jQuery(this).attr('company_id');
             var accessKey = jQuery('#company_access_key_input_' + companyId).val();
             ngs.action('register_company_dealer', {'access_key': accessKey});
-        });
-    },
-    companyTabController: function () {
-        jQuery(".f_company_tab_btn").click(function () {
-            jQuery(".f_company_tab").hide(0);
-            jQuery("#" + jQuery(this).attr("companyTab")).show(0);
-            jQuery(".f_company_tab_btn").removeClass("active");
-            jQuery(this).addClass("active");
         });
     },
     companiesListDocumentsSliderInit: function () {

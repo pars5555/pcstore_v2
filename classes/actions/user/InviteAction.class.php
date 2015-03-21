@@ -23,43 +23,48 @@ class InviteAction extends GuestAction {
             $userManager->setSubUsersRegistrationCode($userId, $subUsersRegistrationCode);
         }
 
-        $pendingUserEmail = $this->secure($_REQUEST["email"]);
-        if (filter_var($pendingUserEmail, FILTER_VALIDATE_EMAIL)) {
-            if ($userManager->getCustomerByEmail($pendingUserEmail)) {
-                $this->error(array("message" => $this->getPhrase(359)));
-            }
-            $byUserIdAndPendingSubUserEmail = $userPendingSubUsersManager->getByUserIdAndPendingSubUserEmail($userId, $pendingUserEmail);
-            if (!isset($byUserIdAndPendingSubUserEmail)) {
-                $userPendingSubUsersManager->addPendingSubUserEmailToUser($pendingUserEmail, $userId);
-                $from = $userManager->getRealEmailAddress($userId);
-                $username = $user->getName();
-                $subject = $username . " invites you to join PcStore!";
-                $template = "user_to_user_invitation";
-                $params = array("user_name" => $username, "invitation_code" => $subUsersRegistrationCode);
-                $fromName = $user->getName() . ' ' . $user->getLastName();
-                $emailSenderManager->sendEmail('news', $pendingUserEmail, $subject, $template, $params, $from, $fromName);
-                $this->ok(array("message" => $this->getPhrase(603)));
+        if (isset($_REQUEST["email"])) {
+            $pendingUserEmail = $this->secure($_REQUEST["email"]);
+            if (filter_var($pendingUserEmail, FILTER_VALIDATE_EMAIL)) {
+                if ($userManager->getCustomerByEmail($pendingUserEmail)) {
+                    $this->error(array("message" => $this->getPhrase(359)));
+                }
+                $byUserIdAndPendingSubUserEmail = $userPendingSubUsersManager->getByUserIdAndPendingSubUserEmail($userId, $pendingUserEmail);
+                if (!isset($byUserIdAndPendingSubUserEmail)) {
+                    $userPendingSubUsersManager->addPendingSubUserEmailToUser($pendingUserEmail, $userId);
+                    $from = $userManager->getRealEmailAddress($userId);
+                    $username = $user->getName();
+                    $subject = $username . " invites you to join PcStore!";
+                    $template = "user_to_user_invitation";
+                    $params = array("user_name" => $username, "invitation_code" => $subUsersRegistrationCode);
+                    $fromName = $user->getName() . ' ' . $user->getLastName();
+                    $emailSenderManager->sendEmail('news', $pendingUserEmail, $subject, $template, $params, $from, $fromName);
+                    $_SESSION['success_message'] = $this->getPhraseSpan(603);
+                    $this->redirect("uinvite");
+                } else {
+                    $_SESSION['error_message'] = $this->getPhraseSpan(605);
+                    $this->redirect("uinvite");
+                }
             } else {
-                $this->error(array("message" => $this->getPhrase(605)));
+                $_SESSION['error_message'] = $this->getPhraseSpan(471);
+                $this->redirect("uinvite");
             }
-        } else {
-            $this->error(array("message" => $this->getPhrase(471)));
+        } elseif (isset($_REQUEST["invitation_id"])) {
+            $invitationId = intval($_REQUEST["invitation_id"]);
+            $from = $userManager->getRealEmailAddress($userId);
+            $username = $user->getName();
+            $subject = $username . " invites you to join PcStore!";
+            $template = "user_to_user_invitation";
+            $params = array("user_name" => $username, "invitation_code" => $subUsersRegistrationCode);
+            $fromName = $user->getName() . ' ' . $user->getLastName();
+            $dto = $userPendingSubUsersManager->selectByPK($invitationId);
+            $pendingSubUserEmail = $dto->getPendingSubUserEmail();
+            $emailSenderManager->sendEmail('news', $pendingSubUserEmail, $subject, $template, $params, $from, $fromName);
+            $dto->setLastSent(date('Y-m-d H:i:s'));
+            $userPendingSubUsersManager->updateByPk($dto);
+            $_SESSION['success_message'] = $this->getPhraseSpan(603);
+            $this->redirect("uinvite");
         }
-        /* elseif (isset($_REQUEST["invitation_id"])) {
-          $invitationId = intval($_REQUEST["invitation_id"]);
-          $from = $userManager->getRealEmailAddress($userId);
-          $username = $user->getName();
-          $subject = $username . " invites you to join PcStore!";
-          $template = "user_to_user_invitation";
-          $params = array("user_name" => $username, "invitation_code" => $subUsersRegistrationCode);
-          $fromName = $user->getName() . ' ' . $user->getLastName();
-          $dto = $userPendingSubUsersManager->selectByPK($invitationId);
-          $pendingSubUserEmail = $dto->getPendingSubUserEmail();
-          $emailSenderManager->sendEmail('news', $pendingSubUserEmail, $subject, $template, $params, $from, $fromName);
-          $dto->setLastSent(date('Y-m-d H:i:s'));
-          $userPendingSubUsersManager->updateByPk($dto);
-          $this->ok(array("message" => $this->getPhraseSpan(603)));
-          } */
     }
 
     public function getRequestGroup() {

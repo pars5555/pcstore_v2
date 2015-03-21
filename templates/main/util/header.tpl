@@ -50,7 +50,7 @@
                                 <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
                             </li>
                             <li>
-                                <a href="{$SITE_PATH}/uinvite">invite</a>
+                                <a href="{$SITE_PATH}/uinvite">{$ns.lm->getPhrase(139)}</a>
                             </li>
                         {/if}
                         {if $ns.userLevel === $ns.userGroupsCompany}

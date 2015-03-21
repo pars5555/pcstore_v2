@@ -26,9 +26,9 @@
                     <label class="input_label" for="companyDealersAccessKey">{$ns.lm->getPhrase(30)}</label>
                     <input type="text" class="  text" id="companyDealersAccessKey"  placeholder="{$ns.lm->getPhrase(30)}" name="access_key" value="{$ns.customer->getAccessKey()}">
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="text-align: center">
                     <label class="input_label" for="change_logo">{$ns.lm->getPhrase(42)}</label>
-                    <a class="button grey chang_pic" id="upload_photo_button" href="javascript:void(0);">Select Logo...</a>
+                    <a class="button blue chang_pic" id="upload_photo_button" href="javascript:void(0);">Select Logo...</a>
                     {if isset($ns.hasLogo)}
                         <img id="logo_img" class="profile_pic" src="{$SITE_PATH}/images/service_big_logo/{$ns.customer->getId()}/logo.png?{$smarty.now}" />
                     {else}

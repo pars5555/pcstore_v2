@@ -10,13 +10,10 @@ ngs.InviteAction = Class.create(ngs.AbstractAction, {
     },
     afterAction: function (transport) {
         var data = transport.responseText.evalJSON();
-         if (data.status === "ok") {
-            jQuery('#inviteErrorMessage').html('');
-            jQuery('#inviteSuccessMessage').html(data.message);
-             window.location.reload();
+        if (data.status === "ok") {
+
         } else if (data.status === "err") {
-            jQuery('#inviteSuccessMessage').html('');
-            jQuery('#inviteErrorMessage').html(data.message);
+
         }
     }
 });

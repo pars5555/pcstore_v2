@@ -32,12 +32,28 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.mainPopupActions();
         this.categoriesProductCheckbox();
         this.pccLoader();
+        
+        this.initMainTabsContents();
+        this.showActiveTabContent(jQuery(".f_tab_title.active"));
     },
-    mainLoader : function(param){
-        if(param === true){
+    initMainTabsContents: function () {
+        var self=this;
+        jQuery(".f_tab_title").on("click", function () {
+            self.showActiveTabContent(jQuery(this));
+        });
+    },
+    showActiveTabContent: function (tab) {
+        var tab_id = tab.attr("data-tab-id");
+        jQuery(".f_tab_title").removeClass("active");
+        tab.addClass("active");
+        jQuery(".f_tab_content").hide();
+        jQuery(".f_tab_content[data-tab-id=" + tab_id + "]").show();
+    },
+    mainLoader: function (param) {
+        if (param === true) {
             jQuery("#main_loader").removeClass("hidden");
         }
-        if(param === false){
+        if (param === false) {
             jQuery("#main_loader").addClass("hidden");
         }
     },
@@ -197,12 +213,12 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#forgotModal .close_button,#forgotModal .overlay").click(function () {
             jQuery("#forgotModal .f_modal_content").removeClass("active");
             jQuery("#forgotModal").addClass("hide");
-            
+
             jQuery("#forgotModal #forgotPasswordEmailInput").val("");
             jQuery('#forgotPasswordErrorMessage').html("");
             jQuery('#forgotPasswordSuccessMessage').html("");
         });
-        jQuery("#forgotPasswordBtn").on("click",function(){
+        jQuery("#forgotPasswordBtn").on("click", function () {
             self.mainLoader(true);
         });
 

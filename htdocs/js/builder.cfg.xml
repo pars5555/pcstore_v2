@@ -118,6 +118,8 @@
                 
                 <!-- Service Company -->
                 <file>ngs/loads/servicecompany/ServiceCompanyProfileLoad.class.js</file>
+                <file>ngs/loads/servicecompany/ServiceCompanyBranchesLoad.class.js</file>
+                <file>ngs/loads/servicecompany/ServiceCompanyDealersLoad.class.js</file>
                 
                 <!-- Admin -->
                 <file>ngs/loads/admin/AdminMainLoad.class.js</file>

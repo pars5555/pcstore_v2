@@ -43,13 +43,24 @@
                     <!-- <img style="vertical-align: middle" src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/>  -->
                 </a>
             </div>
-            <div class="company_filter">
-                <a href="javascript:void(0)" companyTab="companyListTab" class="f_company_tab_btn tab_title active">{$ns.lm->getPhrase(494)}</a>
-                <a href="javascript:void(0)" companyTab="companyServiceTab" class="f_company_tab_btn tab_title">{$ns.lm->getPhrase(579)}</a>
+        </div>
+        <div class="tab_title_content_container">
+            <div class="tab_title_container">
+                <div class="tab_title f_tab_title active" data-tab-id="1">
+                    {$ns.lm->getPhrase(494)}
+                </div>
+                <div class="tab_title f_tab_title" data-tab-id="2">
+                    {$ns.lm->getPhrase(579)}
+                </div>
+            </div>
+            <div class="tab_content_container">
+                <div class="tab_content f_tab_content" data-tab-id="1" style="display: none">
+                    {include file="$TEMPLATE_DIR/main/sub_templates/companies_list.tpl"}
+                </div>
+                <div class="tab_content f_tab_content" data-tab-id="2" style="display: none">
+                    {include file="$TEMPLATE_DIR/main/sub_templates/service_companies_list.tpl"}
+                </div>
             </div>
         </div>
-        <div class="clear"></div>
-        {include file="$TEMPLATE_DIR/main/sub_templates/companies_list.tpl"}
-        {include file="$TEMPLATE_DIR/main/sub_templates/service_companies_list.tpl"}
     </div>
 </div>

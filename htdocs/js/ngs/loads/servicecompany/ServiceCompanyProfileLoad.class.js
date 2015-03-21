@@ -15,7 +15,9 @@ ngs.ServiceCompanyProfileLoad = Class.create(ngs.AbstractLoad, {
         return "servicecompany_profile";
     },
     afterLoad: function () {
-
+        this.uploadLogo();
+    },
+    uploadLogo: function () {
         jQuery("#logo_picture").change(function () {
             jQuery('#logo_picture_form').submit();
         });
