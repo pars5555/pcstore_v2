@@ -45,7 +45,9 @@
         </div>
         <div class="right-content">
 
+            {if empty($ns.search_text)}
                 {include file="$TEMPLATE_DIR/main/banner_slider.tpl"} 
+            {/if}
 
             <!--========================== Top Container ===============================-->
             <div class="table filter_conainer_box">
@@ -91,13 +93,13 @@
 
             <!-- ========================================= Product Wrapper =========================================== -->
             <div class="product-table">
-                <div class="products_row">
-                    <div class="product-wrapper"></div>
-                    <div class="product-wrapper"></div>
-                    <div class="product-wrapper"></div>
-                </div>
                 {assign var="count" value=1}	
                 {if $ns.foundItems|@count>0}
+                    <div class="products_row">
+                        <div class="product-wrapper"></div>
+                        <div class="product-wrapper"></div>
+                        <div class="product-wrapper"></div>
+                    </div>
                     {assign var="tree_days_ago" value='-3 day'|strtotime}
                     {assign var="tree_days_ago" value=$tree_days_ago|date_format:"%Y-%m-%d %H:%M:%S"}				
                     {foreach from=$ns.foundItems item=item name=product_row}

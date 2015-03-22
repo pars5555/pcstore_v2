@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image/png" href="{$SITE_PATH}/img/pcstore_logo_2.png" />
+<link rel="shortcut icon" type="image/png" href="{$SITE_PATH}/img/favico.png" />
 
 {if isset($ns.page_title)}
     <meta content="{$ns.page_title}" name="title">
@@ -35,7 +35,6 @@
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/owl.theme.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/owl.transitions.css?" />
 
-<link rel="icon" type="image/png"  href="{$SITE_PATH}/img/favico.png"/>
 <script type="text/javascript">
     {literal}
         var ngs = {};
