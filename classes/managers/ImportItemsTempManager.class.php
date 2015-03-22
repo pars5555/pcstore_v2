@@ -14,10 +14,8 @@ require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
  */
 class ImportItemsTempManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
+  
+   
     public static $ALL_BRANS = array("Asus", "Mitsubishi", "Toshiba", "Dell", "Acer", "AOC", "Elixir", "Mercury", "Lenovo", "Apple", " I-Nix", "Gigabyte", "Dany",
         "Eton", "MyGica", "Chicony", "Sony", "HP", "Compaq", "Samsung", "Gateway", "MSI", "Fujitsu", "Point Of View", "POV", "Hyundai",
         "Viewsonic", "MID", "Seagate", "Western Digital", "WD", "Hitachi", "Maxtor", "Corsair", "OCZ", "Kingston", "Intel", "Patriot",
@@ -46,10 +44,7 @@ class ImportItemsTempManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     function __construct() {
         $this->mapper = ImportItemsTempMapper::getInstance();
@@ -62,10 +57,7 @@ class ImportItemsTempManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     public static function getInstance() {
 

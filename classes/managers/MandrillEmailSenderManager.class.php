@@ -19,9 +19,7 @@ class MandrillEmailSenderManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct($mandrillApiKey) {

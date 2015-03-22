@@ -33,14 +33,9 @@ class PcAutoConfiguratorManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
-    function __construct($config, $args, $user) {
-
-
+    function __construct($user) {
         $this->user = $user;
         $this->pccm = PcConfiguratorManager::getInstance();
         $this->itemManager = ItemManager::getInstance();
@@ -65,15 +60,14 @@ class PcAutoConfiguratorManager extends AbstractManager {
     /**
      * Returns an singleton instance of this class
      *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
-    public static function getInstance($config, $args, $customer) {
+    public static function getInstance($customer) {
 
         if (self::$instance == null) {
 
-            self::$instance = new PcAutoConfiguratorManager($config, $args, $customer);
+            self::$instance = new PcAutoConfiguratorManager($customer);
         }
         return self::$instance;
     }

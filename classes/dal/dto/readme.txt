@@ -20,8 +20,6 @@ Be careful not to make the DTO depend on any new classes as a result of implemen
  
 * Example
   
-This an exmaple how can you use functionality using dto file.For example you have in database -"ngs_example"(this should identify in yourProjectName/conf/config.ini file) 2 fields:"id","example_id".
-The *.sql file is in yourProjectFolder/classes/dal/ngs_example_data.sql file.
 Just import in your Database.
 If you want get from database data, you should identify in the manager(classes/managers/NgsExampleManager.class.php) or in your template(templates/ngs_example.tpl) like this
 

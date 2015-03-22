@@ -3,16 +3,15 @@
 error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', true);
 defined('__DIR__') or define('__DIR__', dirname(__FILE__));
-$_dir = trim(__DIR__,'htdocs\/bin');
+$_dir = trim(__DIR__, 'htdocs\/bin');
+
+$_ENV['environment'] = 'prod';
 require_once ($_dir . "/conf/constants.php");
 require_once (CLASSES_PATH . "/framework/DBMSFactory.class.php");
 require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
 require_once (CLASSES_PATH . "/managers/CbaRatesManager.class.php");
 require_once (CLASSES_PATH . "/managers/ReceiveEmailManager.class.php");
-
-$config = parse_ini_file(CONF_PATH . "/config.ini");
-DBMSFactory::init($config);
-
+DBMSFactory::init();
 $onlineUsersManager = new OnlineUsersManager();
 $onlineUsersManager->removeTimeOutedUsers(120); //2 minutes	
 

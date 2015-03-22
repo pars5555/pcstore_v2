@@ -25,9 +25,7 @@ class ReceiveEmailManager {
     /**
      * Initializes DB mappers
      *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     function __construct() {
         
@@ -35,10 +33,7 @@ class ReceiveEmailManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     public static function getInstance() {
 

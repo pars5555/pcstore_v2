@@ -10,7 +10,7 @@ require_once (CLASSES_PATH . "/managers/CompaniesPriceListManager.class.php");
 class RemoveCompanyPriceAction extends BaseAdminAction {
 
     public function service() {
-        $companiesPriceListManager = CompaniesPriceListManager::getInstance($this->config, $this->args);
+        $companiesPriceListManager = CompaniesPriceListManager::getInstance();
         $userLevel = $this->getUserLevel();
         $price_id = $this->secure($_REQUEST["price_id"]);
         $priceCompanyId = $companiesPriceListManager->removeCompanyPrice($price_id);

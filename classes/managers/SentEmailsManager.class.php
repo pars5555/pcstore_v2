@@ -12,15 +12,6 @@ require_once (CLASSES_PATH . "/dal/mappers/SentEmailsMapper.class.php");
  */
 class SentEmailsManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
 
     /**
      * @var singleton instance of class
@@ -29,10 +20,7 @@ class SentEmailsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     function __construct() {
         $this->mapper = SentEmailsMapper::getInstance();
@@ -40,10 +28,7 @@ class SentEmailsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     public static function getInstance() {
 

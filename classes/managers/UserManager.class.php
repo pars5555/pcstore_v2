@@ -20,16 +20,10 @@ require_once (CLASSES_PATH . "/managers/ServiceCompanyManager.class.php");
  */
 class UserManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
+   
     private $companyMapper;
 
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
+    
 
     /**
      * @var singleton instance of class
@@ -38,10 +32,7 @@ class UserManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     function __construct() {
         $this->mapper = UserMapper::getInstance();
@@ -53,10 +44,7 @@ class UserManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     public static function getInstance() {
 

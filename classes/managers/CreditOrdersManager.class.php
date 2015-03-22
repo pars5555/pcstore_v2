@@ -13,15 +13,6 @@ require_once (CLASSES_PATH . "/dal/mappers/CreditOrdersMapper.class.php");
  */
 class CreditOrdersManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
 
     /**
      * @var singleton instance of class
@@ -30,9 +21,7 @@ class CreditOrdersManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct() {
@@ -41,9 +30,7 @@ class CreditOrdersManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     public static function getInstance() {

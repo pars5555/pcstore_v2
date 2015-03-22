@@ -12,9 +12,6 @@ require_once (CLASSES_PATH . "/dal/mappers/CategoryHierarchyMapper.class.php");
  */
 class CategoryHierarchyManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
     private $allCategoryHierarchyMap;
     private $selectAll;
 
@@ -25,9 +22,7 @@ class CategoryHierarchyManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct() {
@@ -52,9 +47,7 @@ class CategoryHierarchyManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+  
      * @return
      */
     public static function getInstance() {

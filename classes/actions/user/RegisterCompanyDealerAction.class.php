@@ -24,7 +24,7 @@ class RegisterCompanyDealerAction extends BaseUserAction {
             if (!$companyDealersManager->getByCompanyIdAndUserId($userId, $companyId)) {
                 $customer = $this->getCustomer();
                 $customerEmail = $customer->getEmail();
-                $customerCartManager = CustomerCartManager::getInstance($this->args, $this->config);
+                $customerCartManager = CustomerCartManager::getInstance();
                 $items = $customerCartManager->getCustomerItemsByCompanyId($customerEmail, $companyId);
                 $bundlesIds = $customerCartManager->getCustomerBundlesIdsByCompanyId($customerEmail, $companyId);
                 $customerCartManager->deleteCompanyRelatedItemsFromCustomerCart($customerEmail, $companyId);

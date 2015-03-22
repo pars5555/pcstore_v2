@@ -13,16 +13,10 @@ require_once (CLASSES_PATH . "/dal/mappers/BundleItemsMapper.class.php");
  */
 class BundleItemsManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
+  
     private $itemManager;
 
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
+ 
 
     /**
      * @var singleton instance of class
@@ -31,9 +25,7 @@ class BundleItemsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+ 
      * @return
      */
     function __construct() {
@@ -45,9 +37,7 @@ class BundleItemsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
     public static function getInstance() {

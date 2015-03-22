@@ -14,19 +14,12 @@ require_once (CLASSES_PATH . "/dal/mappers/OrderDetailsMapper.class.php");
  */
 class OrderDetailsManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
+   
     private $customerCartManager;
     private $itemManager;
     private $bundleItemsManager;
 
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+  
     /**
      * @var singleton instance of class
      */
@@ -34,10 +27,7 @@ class OrderDetailsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     function __construct() {
         $this->mapper = OrderDetailsMapper::getInstance();
@@ -50,10 +40,7 @@ class OrderDetailsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     public static function getInstance() {
 

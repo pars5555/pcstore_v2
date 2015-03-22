@@ -4,10 +4,10 @@ require_once (CLASSES_PATH . "/managers/LanguageManager.class.php");
 
 class MailSender {
 
-	private $config;
+	
 
-	public function __construct($config = null) {
-		$this->config = $config;
+	public function __construct() {
+		
 
 	}
 

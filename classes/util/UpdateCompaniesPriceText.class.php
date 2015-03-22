@@ -17,10 +17,10 @@ require_once(CLASSES_PATH . "/util/db/DBMSFactory.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 require_once (CLASSES_PATH . "/managers/CompaniesPriceListManager.class.php");
 
-$config = parse_ini_file(CONF_PATH . "/config.ini");
-DBMSFactory::init($config);
+$_ENV['environment'] = $argv[3];
+DBMSFactory::init();
 
-$companiesPriceListManager = CompaniesPriceListManager::getInstance($config, null);
+$companiesPriceListManager = CompaniesPriceListManager::getInstance();
 $companyIds = $argv[1];
 $priceIndex = 0;
 if (isset($argv[2])) {

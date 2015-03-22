@@ -2,8 +2,6 @@
 
 require_once (CLASSES_PATH . "/actions/admin/BaseAdminAction.class.php");
 
-
-
 /**
  * @author Vahagn Sookiasian
  */
@@ -124,10 +122,10 @@ class AdminGroupActionsAction extends BaseAdminAction {
     }
 
     private function updateCompanyPriceText($companyIdsString) {
-        if ($this->getCmsVar('dev_mode') == 'on') {
-            exec('d:\xampp\php\php.exe ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0");
+        if (ENVIRONMENT == 'local') {
+            exec('d:\xampp\php\php.exe ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 ".ENVIRONMENT);
         } else {
-            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 > /dev/null &");
+            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 ".ENVIRONMENT." > /dev/null &");
         }
     }
 

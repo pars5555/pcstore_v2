@@ -9,20 +9,10 @@ require_once (CLASSES_PATH . "/util/pcc_categories_constants/CategoriesConstants
  */
 class PcComponentValidatorManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
+ 
     private $itemManager;
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
+  
 
     /**
      * @var singleton instnce of class
@@ -31,10 +21,7 @@ class PcComponentValidatorManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     function __construct() {
 
@@ -44,10 +31,7 @@ class PcComponentValidatorManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     public static function getInstance() {
 

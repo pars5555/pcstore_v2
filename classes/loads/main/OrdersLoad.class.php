@@ -34,9 +34,9 @@ class OrdersLoad extends BaseUserCompanyLoad {
             $this->addParam('customerErrorMessages', array($_SESSION['error_message']));
             unset($_SESSION['error_message']);
         }
-        $this->addParam('itemManager', ItemManager::getInstance($this->config, $this->args));
-        $this->addParam('userManager', UserManager::getInstance($this->config, $this->args));
-        $this->addParam('orderManager', OrdersManager::getInstance($this->config, $this->args));
+        $this->addParam('itemManager', ItemManager::getInstance());
+        $this->addParam('userManager', UserManager::getInstance());
+        $this->addParam('orderManager', OrdersManager::getInstance());
         $this->addParam("orderStatusesValues", $ordersManager->orderStatusesValues);
         $this->addParam("orderStatusesDisplayNames", $ordersManager->getOrderStatusesDisplayNamesPhrases());
         $stripePublishableKey = $this->getCmsVar('stripe_publishable_key');

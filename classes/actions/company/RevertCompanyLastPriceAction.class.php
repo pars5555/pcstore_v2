@@ -18,7 +18,7 @@ class RevertCompanyLastPriceAction extends BaseCompanyAction {
         }
 
         if ($this->getUserLevel() === UserGroups::$COMPANY) {
-            $requestHistoryManager = RequestHistoryManager::getInstance($this->config, $this->args);
+            $requestHistoryManager = RequestHistoryManager::getInstance();
             $customerGivenRequestRecentCountByHours = $requestHistoryManager->getCustomerGivenRequestRecentCountByHours($this->getCustomerLogin(), 24, get_class());
             if ($customerGivenRequestRecentCountByHours > intval($this->getCmsVar('company_revert_price_limit'))) {
                 $jsonArr = array('status' => "err", "errText" => $this->getPhrase(557) . ' ' . intval($this->getCmsVar('company_revert_price_limit')));
@@ -28,7 +28,7 @@ class RevertCompanyLastPriceAction extends BaseCompanyAction {
         }
 
 
-        $companiesPriceListManager = CompaniesPriceListManager::getInstance($this->config, $this->args);
+        $companiesPriceListManager = CompaniesPriceListManager::getInstance();
         $ret = $companiesPriceListManager->removeCompanyLastPrice($companyId);
 
 

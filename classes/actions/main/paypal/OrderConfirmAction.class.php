@@ -12,13 +12,13 @@ class OrderConfirmAction extends GuestAction {
 
     public function service() {
         $token = urlencode($_SESSION['TOKEN']);
-        $ordersManager = OrdersManager::getInstance($this->config, $this->args);
+        $ordersManager = OrdersManager::getInstance();
         $orderBy3rdPartyToken = $ordersManager->getOrderBy3rdPartyToken($token);
         if (!isset($orderBy3rdPartyToken)) {
             $_SESSION['error_message'] = $this->getPhrase(595);
             $this->redirect('orders');
         }
-        $paypalTransactionsManager = PaypalTransactionsManager::getInstance($this->config, $this->args);
+        $paypalTransactionsManager = PaypalTransactionsManager::getInstance();
         $orderId = $orderBy3rdPartyToken->getId();
         $res = $this->getPaypalShippingDetails();
         if ($res === true) {

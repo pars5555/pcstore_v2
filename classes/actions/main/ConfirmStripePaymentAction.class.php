@@ -15,8 +15,8 @@ class ConfirmStripePaymentAction extends GuestAction {
     public function service() {
         $order_id = $_REQUEST['order_id'];
         $token = $_REQUEST['stripeToken'];
-        $userManager = UserManager::getInstance($this->config, $this->args);
-        $ordersManager = OrdersManager::getInstance($this->config, $this->args);
+        $userManager = UserManager::getInstance();
+        $ordersManager = OrdersManager::getInstance();
         $orderTotalUsdToPay = $ordersManager->getOrderTotalUsdToPay($order_id, true);
 
         Stripe::setApiKey($this->getCmsVar('stripe_secret_key'));

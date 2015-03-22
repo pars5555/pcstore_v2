@@ -28,9 +28,7 @@ class EmailSenderManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct($server) {

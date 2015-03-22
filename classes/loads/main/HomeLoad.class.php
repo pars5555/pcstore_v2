@@ -196,7 +196,7 @@ class HomeLoad extends BaseGuestLoad {
         //categories 
         if ($selectedCategoryDto->getLastClickable() == '0') {
             $itemCategoryModel = new ItemCategoryModel(!empty($selectedCategoryId) ? $selectedCategoryId : 0);
-            $itemsCategoryMenuView = new ItemsCategoryMenuView($itemCategoryModel, $this->categories_count_array, $this->config, false);
+            $itemsCategoryMenuView = new ItemsCategoryMenuView($itemCategoryModel, $this->categories_count_array, false);
             $this->addParam('itemsCategoryMenuView', $itemsCategoryMenuView);
         }
 

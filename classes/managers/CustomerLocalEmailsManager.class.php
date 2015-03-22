@@ -12,16 +12,7 @@ require_once (CLASSES_PATH . "/dal/mappers/CustomerLocalEmailsMapper.class.php")
  */
 class CustomerLocalEmailsManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+   
     /**
      * @var singleton instance of class
      */
@@ -29,9 +20,7 @@ class CustomerLocalEmailsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+  
      * @return
      */
     function __construct() {
@@ -40,9 +29,7 @@ class CustomerLocalEmailsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     public static function getInstance() {

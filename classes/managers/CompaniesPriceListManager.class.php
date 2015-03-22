@@ -23,9 +23,7 @@ class CompaniesPriceListManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct() {
@@ -34,9 +32,7 @@ class CompaniesPriceListManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
     public static function getInstance() {

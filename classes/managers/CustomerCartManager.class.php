@@ -14,17 +14,10 @@ require_once (CLASSES_PATH . "/dal/mappers/CustomerCartMapper.class.php");
  */
 class CustomerCartManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
+   
     private $bundleItemsManager;
 
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+   
     /**
      * @var singleton instance of class
      */
@@ -32,9 +25,7 @@ class CustomerCartManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
     function __construct() {
@@ -47,9 +38,7 @@ class CustomerCartManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     public static function getInstance() {

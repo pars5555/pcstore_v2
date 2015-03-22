@@ -13,15 +13,7 @@ require_once (CLASSES_PATH . "/dal/mappers/CbaRatesMapper.class.php");
  */
 class CbaRatesManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
+ 
 
     /**
      * @var singleton instance of class
@@ -30,9 +22,7 @@ class CbaRatesManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+    
      * @return
      */
     function __construct() {
@@ -41,9 +31,7 @@ class CbaRatesManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
     public static function getInstance() {

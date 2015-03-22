@@ -11,14 +11,14 @@ require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
 class HomeLoad extends BaseAdminLoad {
 
     public function load() {
-        $onlineUsersManager = OnlineUsersManager::getInstance($this->config, $this->args);
+        $onlineUsersManager = OnlineUsersManager::getInstance();
         $ac = $onlineUsersManager->selectAll();
         $this->addParam('onlineusers', $ac);
         $this->initTodayVisitors();
     }
 
     private function initTodayVisitors() {
-        $loginHistoryManager = LoginHistoryManager::getInstance($this->config, $this->args);
+        $loginHistoryManager = LoginHistoryManager::getInstance();
         $todayVisitors = $loginHistoryManager->getTodayVisitors();
         list($guestVisitors, $userVisitors, $companyVisitors, $serviceCompanyVisitors, $adminVisitors) = $this->filterVisitorsByType($todayVisitors);
         $this->addParam('today_visitors', $todayVisitors);

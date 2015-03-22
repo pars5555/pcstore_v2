@@ -3,11 +3,11 @@ require_once (CLASSES_PATH . "/util/categories_view/TreeView.php");
 require_once (CLASSES_PATH . "/managers/search/ItemSearchManager.class.php");
 class FilterItemsTreeView extends TreeView {
 	private $selectedCategoryId;
-	function __construct($treeViewModel, $showRoot, $treeViewId, $config,  $selectedCategoryId = null) {
+	function __construct($treeViewModel, $showRoot, $treeViewId,   $selectedCategoryId = null) {
 		parent::__construct($treeViewModel, $showRoot, $treeViewId);
 		$this->rowsIndent = 20;
 		$this->selectedCategoryId = $selectedCategoryId;
-		$this->config = $config;
+		
 	}
 
 	function getNodeTitle($node) {

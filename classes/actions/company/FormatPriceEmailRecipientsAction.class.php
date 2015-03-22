@@ -14,9 +14,9 @@ class FormatPriceEmailRecipientsAction extends BaseCompanyAction {
 
         $toEmails = strtolower(trim($_REQUEST['to_emails']));
         $valid_addresses = EmailSenderManager::getEmailsFromText($toEmails);
-        $uninterestingEmailsManager = UninterestingEmailsManager::getInstance($this->config, $this->args);
+        $uninterestingEmailsManager = UninterestingEmailsManager::getInstance();
         $valid_addresses = $uninterestingEmailsManager->removeUninterestingEmailsFromList($valid_addresses);
-        $companyExtendedProfileManager = CompanyExtendedProfileManager::getInstance($this->config, $this->args);
+        $companyExtendedProfileManager = CompanyExtendedProfileManager::getInstance();
         $dto = $companyExtendedProfileManager->getByCompanyId($this->getUserId());
         $dto->setDealerEmails(implode(';', $valid_addresses));
         $companyExtendedProfileManager->updateByPK($dto);

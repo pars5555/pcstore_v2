@@ -62,8 +62,30 @@ define('HTDOCS_TMP_DIR', NGS_ROOT . "/htdocs/tmp");
 define('HTDOCS_TMP_DIR_ATTACHMENTS', HTDOCS_TMP_DIR . "/attachments");
 
 define("DBMS", CLASSES_PATH . "/util/db/ImprovedDBMS.class.php");
-define("CONFIG_INI", CONF_PATH . "/config.ini");
+if (!isset($_ENV['environment'])) {
+    $_ENV['environment'] = "local";
+}
+define("ENVIRONMENT", $_ENV['environment']); 
+switch ($_ENV['environment']) {
+    case 'dev':
+        define('DB_HOST', '127.0.0.1');
+        define('DB_USER', 'pcstore');
+        define('DB_PASS', 'pcstore123');
+        define('DB_NAME', 'pcstore_dev');
+        break;
+    case 'prod':
+        define('DB_HOST', '127.0.0.1');
+        define('DB_USER', 'pcstore');
+        define('DB_PASS', 'pcstore123');
+        define('DB_NAME', 'pcstore');
+    case 'local':
+        define('DB_HOST', '127.0.0.1');
+        define('DB_USER', 'root');
+        define('DB_PASS', '');
+        define('DB_NAME', 'pcstore');
+}
 
+define("VERSION", "2.0");
 define("LOAD_MAPPER", CLASSES_PATH . "/loads/LoadMapper.class.php");
 define("SESSION_MANAGER", CLASSES_PATH . "/managers/SessionManager.class.php");
 

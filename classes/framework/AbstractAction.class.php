@@ -13,14 +13,14 @@ require_once(CLASSES_PATH . "/framework/AbstractSessionManager.class.php");
 abstract class AbstractAction extends AbstractRequest {
 
   /**
-   * Return a thing based on $sessionManager, $config, $loadMapper, $args parameters
+   * Return a thing based on $sessionManager, $loadMapper, $args parameters
    * @abstract  
    * @access
-   * @param $sessionManager, $config, $loadMapper, $args
+   * @param $sessionManager,  $loadMapper, $args
    * @return
   */
-    public function initialize($sessionManager, $config, $loadMapper, $args) {
-        parent::initialize($sessionManager, $config, $loadMapper, $args);
+    public function initialize($sessionManager, $loadMapper, $args) {
+        parent::initialize($sessionManager, $loadMapper, $args);
     }
 		
   /**

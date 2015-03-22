@@ -23,9 +23,9 @@ class SendPriceEmailAction extends BaseCompanyAction {
         $to = strtolower(trim($_REQUEST['to']));
         $isServiceCompany = ($this->getUserLevel() == UserGroups::$SERVICE_COMPANY);
         if ($isServiceCompany) {
-            $this->extendedProfileManager = ServiceCompanyExtendedProfileManager::getInstance($this->config, $this->args);
+            $this->extendedProfileManager = ServiceCompanyExtendedProfileManager::getInstance();
         } else {
-            $this->extendedProfileManager = CompanyExtendedProfileManager::getInstance($this->config, $this->args);
+            $this->extendedProfileManager = CompanyExtendedProfileManager::getInstance();
         }
         $companyId = $this->getUserId();
         $dto = $this->extendedProfileManager->getByCompanyId($companyId);
@@ -65,7 +65,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         $isServiceCompany = ($this->getUserLevel() == UserGroups::$SERVICE_COMPANY);
         $priceFiles = array();
         if ($isServiceCompany) {
-            $companiesPriceListManager = ServiceCompaniesPriceListManager::getInstance($this->config, $this->args);
+            $companiesPriceListManager = ServiceCompaniesPriceListManager::getInstance();
             $companyId = $companyExProfiledto->getServiceCompanyId();
             $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
             if (!empty($companyLastPrices)) {
@@ -75,7 +75,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
             }
             $tmpSubdirectoryName = 'service_companies';
         } else {
-            $companiesPriceListManager = CompaniesPriceListManager::getInstance($this->config, $this->args);
+            $companiesPriceListManager = CompaniesPriceListManager::getInstance();
             $companyId = $companyExProfiledto->getCompanyId();
             $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
             if (!empty($companyLastPrices)) {
@@ -125,7 +125,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         if ($sentSuccess !== true) {
             return $res;
         } else {
-            $companyPriceEmailHistoryManager = CompanyPriceEmailHistoryManager::getInstance($this->config, $this->args);
+            $companyPriceEmailHistoryManager = CompanyPriceEmailHistoryManager::getInstance();
             $companyPriceEmailHistoryManager->addRow($companyId, $isServiceCompany ? "service_company" : "company", $fromEmail, $dealerEmailsArray, $body, $subject, array_keys($allEmailFileAttachments));
         }
         return true;
@@ -135,7 +135,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         if (count($toEmails) <= 2) {
             return true;
         }
-        $companyPriceEmailHistoryManager = CompanyPriceEmailHistoryManager::getInstance($this->config, $this->args);
+        $companyPriceEmailHistoryManager = CompanyPriceEmailHistoryManager::getInstance();
         $companySentEmailsByHoursDtos = $companyPriceEmailHistoryManager->getCompanySentEmailsByHours($companyId, $companyType, $company_price_email_interval_hours);
         if (empty($companySentEmailsByHoursDtos)) {
             return true;

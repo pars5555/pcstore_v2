@@ -12,7 +12,7 @@ class CheckoutAction extends GuestAction {
     public function service() {
         $paypalManager = PaypalManager::getInstance();
         $order_id = $_REQUEST['order_id'];
-        $ordersManager = OrdersManager::getInstance($this->config, $this->args);
+        $ordersManager = OrdersManager::getInstance();
         list($paymentAmount, $shippingUsd) = $ordersManager->getOrderTotalUsdToPay($order_id);
         $currencyCodeType = "USD";
         $paymentType = "Sale";

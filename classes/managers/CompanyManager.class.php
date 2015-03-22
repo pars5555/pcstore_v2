@@ -23,10 +23,7 @@ class CompanyManager extends AbstractManager {
     private static $instance = null;
 
     /**
-     * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+     * Initializes DB mappers   
      * @return
      */
     function __construct() {
@@ -40,10 +37,7 @@ class CompanyManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     public static function getInstance() {
 

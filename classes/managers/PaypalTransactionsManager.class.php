@@ -12,16 +12,7 @@ require_once (CLASSES_PATH . "/dal/mappers/PaypalTransactionsMapper.class.php");
  */
 class PaypalTransactionsManager extends AbstractManager {
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+  
     /**
      * @var singleton instance of class
      */
@@ -29,10 +20,7 @@ class PaypalTransactionsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+     
      */
     function __construct() {
         $this->mapper = PaypalTransactionsMapper::getInstance();
@@ -40,10 +28,7 @@ class PaypalTransactionsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     public static function getInstance() {
 

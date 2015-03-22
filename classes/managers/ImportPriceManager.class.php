@@ -16,16 +16,7 @@ class ImportPriceManager extends AbstractManager {
         3 => "Dealer $", 4 => "Dealer Դր", 5 => "VAT $",
         6 => "VAT Դր", 7 => "Warranty Months", 8 => "Warranty Year", 9 => "Brand");
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
-
+  
     /**
      * @var singleton instance of class
      */
@@ -39,10 +30,7 @@ class ImportPriceManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     function __construct() {
         
@@ -50,10 +38,7 @@ class ImportPriceManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+   
      */
     public static function getInstance() {
 

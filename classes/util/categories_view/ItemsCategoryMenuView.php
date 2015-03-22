@@ -6,11 +6,10 @@ class ItemsCategoryMenuView {
 
     private $model;
     private $showRoot;
-    private $config;
 
-    function __construct(ItemCategoryModel $itemCategoryModel, $categories_count_array, $config, $showRoot = false) {
+    function __construct(ItemCategoryModel $itemCategoryModel, $categories_count_array,$showRoot = false) {
         $this->model = $itemCategoryModel;
-        $this->config = $config;
+      
         $this->showRoot = $showRoot;
         $this->categories_count_array = $categories_count_array;
        

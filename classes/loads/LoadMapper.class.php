@@ -6,25 +6,17 @@ class LoadMapper extends AbstractLoadMapper {
 
     public $isStatic = false;
     private $PROTOCOL;
-    private $STATIC_URL;
-    private $STATIC_PATH;
     private $SITE_URL;
     private $SITE_PATH;
-    private $CUSTOMER_ROOT_HOST;
-    private $CUSTOMER_ROOT_PATH;
 
     public function initialize() {
         $this->PROTOCOL = "http://";
         if (isset($_SERVER["HTTPS"])) {
             $this->PROTOCOL = "https://";
         }
-
-        $this->STATIC_URL = $this->config["static"];
-        $this->STATIC_PATH = $this->PROTOCOL . $this->STATIC_URL;
+       
         $this->SITE_URL = $_SERVER["HTTP_HOST"];
-        $this->SITE_PATH = $this->PROTOCOL . $this->SITE_URL;
-        $this->CUSTOMER_ROOT_HOST = HTTP_ROOT_HOST;
-        $this->CUSTOMER_ROOT_PATH = $this->PROTOCOL . CUSTOMER_ROOT_HOST;
+        $this->SITE_PATH = $this->PROTOCOL . $this->SITE_URL;      
     }
 
     public function notFoundHandler($exCode) {

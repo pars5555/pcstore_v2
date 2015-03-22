@@ -40,13 +40,13 @@ class ConfirmCellPhoneNumberLoad extends GuestLoad {
         if ($validNumber != null) {
             $lastSmsValidationCode = substr(uniqid(rand(), true), 0, 6);
             if ($this->getUserLevel() == UserGroups::$USER) {
-                $userManager = UserManager::getInstance($this->config, $this->args);
+                $userManager = UserManager::getInstance();
                 $userManager->setLastSmsValidationCode($customer->getId(), $lastSmsValidationCode);
             } elseif ($this->getUserLevel() == UserGroups::$COMPANY) {
-                $companyManager = CompanyManager::getInstance($this->config, $this->args);
+                $companyManager = CompanyManager::getInstance();
                 $companyManager->setLastSmsValidationCode($customer->getId(), $lastSmsValidationCode);
             }
-            $sentSmsManager = SentSmsManager::getInstance($this->config, $this->args);
+            $sentSmsManager = SentSmsManager::getInstance();
             $sentSmsManager->sendSmsToArmenia($validNumber, $lastSmsValidationCode);
             $this->addParam('infoMessage', "`319` ($validNumber)");
             $this->addParam('validNumber', "(" . $validNumber . ")");

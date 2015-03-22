@@ -19,9 +19,7 @@ class UserSubUsersManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
+   
      * @return
      */
     function __construct() {
@@ -30,10 +28,7 @@ class UserSubUsersManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+     
      */
     public static function getInstance() {
 

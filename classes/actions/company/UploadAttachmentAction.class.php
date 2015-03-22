@@ -84,10 +84,10 @@ class UploadAttachmentAction extends BaseCompanyAction {
     }
 
     public function addEventIntoEventsTableForOnlineCustomers($company) {
-        $customerAlertsManager = CustomerAlertsManager::getInstance($this->config, $this->args);
-        $companyDealersManager = CompanyDealersManager::getInstance($this->config, $this->args);
-        $onlineUsersManager = OnlineUsersManager::getInstance($this->config, $this->args);
-        $userManager = UserManager::getInstance($this->config, $this->args);
+        $customerAlertsManager = CustomerAlertsManager::getInstance();
+        $companyDealersManager = CompanyDealersManager::getInstance();
+        $onlineUsersManager = OnlineUsersManager::getInstance();
+        $userManager = UserManager::getInstance();
         $onlineRegisteredCustomers = $onlineUsersManager->getOnlineRegisteredCustomers();
         foreach ($onlineRegisteredCustomers as $onlineUsersDto) {
             $customerType = $userManager->getCustomerTypeByEmail($onlineUsersDto->getEmail());
@@ -104,9 +104,9 @@ class UploadAttachmentAction extends BaseCompanyAction {
     }
 
     public function sendSmsToAdminIfUploaderIsNotItself($companyName) {
-        $adminManager = AdminManager::getInstance($this->config, $this->args);
+        $adminManager = AdminManager::getInstance();
         $adminsToReceiveSms = $adminManager->getSmsEnabledAdmins();
-        $sentSmsManager = SentSmsManager::getInstance($this->config, $this->args);
+        $sentSmsManager = SentSmsManager::getInstance();
         foreach ($adminsToReceiveSms as $key => $admin) {
             if ($this->getUserLevel() === UserGroups::$ADMIN && $this->getUserId() == $admin->getId()) {
                 continue;
@@ -119,9 +119,9 @@ class UploadAttachmentAction extends BaseCompanyAction {
     }
 
     public function sendSmsToSmsInterestedCompanies($companyId, $companyName) {
-        $companyManager = CompanyManager::getInstance($this->config, $this->args);
+        $companyManager = CompanyManager::getInstance();
         $companiesToReceiveSMS = $companyManager->getCompanyPriceInterestedForSmsCompanies($companyId);
-        $sentSmsManager = SentSmsManager::getInstance($this->config, $this->args);
+        $sentSmsManager = SentSmsManager::getInstance();
         foreach ($companiesToReceiveSMS as $key => $company) {
             $numberToReceiveSmsOnPriceUpload = $company->getPriceUploadSmsPhoneNumber();
             if (empty($numberToReceiveSmsOnPriceUpload)) {
@@ -164,7 +164,7 @@ class UploadAttachmentAction extends BaseCompanyAction {
     }
 
     public function sendNewPriceUploadedEmailToCompanyDealers($company) {
-        $companyDealersManager = CompanyDealersManager::getInstance($this->config, $this->args);
+        $companyDealersManager = CompanyDealersManager::getInstance();
         $compayDealers = $companyDealersManager->getCompanyDealersUsersFullInfoHiddenIncluded($company->getId());
         $allUsersEmails = $this->getUsersEmailByUsersDtos($compayDealers);
         $emailSenderManager = new EmailSenderManager('gmail');

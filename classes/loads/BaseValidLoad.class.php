@@ -15,8 +15,8 @@ require_once (CLASSES_PATH . "/managers/CmsSettingsManager.class.php");
  */
 abstract class BaseValidLoad extends AbstractLoad {
 
-    public function initialize($sessionManager, $config, $loadMapper, $args) {
-        parent::initialize($sessionManager, $config, $loadMapper, $args);
+    public function initialize($sessionManager, $loadMapper, $args) {
+        parent::initialize($sessionManager, $loadMapper, $args);
         $lm = LanguageManager::getInstance();
         $this->addParam("lm", $lm);
         $userLevel = $this->getUserLevel();

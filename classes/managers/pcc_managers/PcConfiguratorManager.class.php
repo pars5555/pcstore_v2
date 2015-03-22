@@ -46,15 +46,7 @@ class PcConfiguratorManager extends AbstractManager {
 
     public static $PCC_ALL_NOT_COMPATIBILITY_REASONS_DB_FN = array(self::PCC_CASE_SIZE_COMPATIBLE_DB => self::PCC_CASE_SIZE_COMPATIBLE_FN, self::PCC_RAM_TYPE_COMPATIBLE_DB => self::PCC_RAM_TYPE_COMPATIBLE_FN, self::PCC_RAM_COUNT_COMPATIBLE_DB => self::PCC_RAM_COUNT_COMPATIBLE_FN, self::PCC_CPU_SOCKET_COMPATIBLE_DB => self::PCC_CPU_SOCKET_COMPATIBLE_FN, self::PCC_MB_SOCKET_COMPATIBLE_DB => self::PCC_MB_SOCKET_COMPATIBLE_FN, self::PCC_GRAPHICS_INTERFACE_COMPATIBLE_DB => self::PCC_GRAPHICS_INTERFACE_COMPATIBLE_FN, self::PCC_STORAGE_INTERFACE_COMPATIBLE_DB => self::PCC_STORAGE_INTERFACE_COMPATIBLE_FN, self::PCC_SATA_STORAGE_INTERFACE_COMPATIBLE_DB => self::PCC_SATA_STORAGE_INTERFACE_COMPATIBLE_FN, self::PCC_ATA_STORAGE_INTERFACE_COMPATIBLE_DB => self::PCC_ATA_STORAGE_INTERFACE_COMPATIBLE_FN, self::PCC_SATA_STORAGE_COUNT_COMPATIBLE_DB => self::PCC_SATA_STORAGE_COUNT_COMPATIBLE_FN, self::PCC_ATA_STORAGE_COUNT_COMPATIBLE_DB => self::PCC_ATA_STORAGE_COUNT_COMPATIBLE_FN, self::PCC_COOLER_SOCKET_COMPATIBLE_DB => self::PCC_COOLER_SOCKET_COMPATIBLE_FN);
 
-    /**
-     * @var app config
-     */
-    private $config;
-
-    /**
-     * @var passed arguemnts
-     */
-    private $args;
+  
 
     /**
      * @var singleton instnce of class
@@ -63,10 +55,7 @@ class PcConfiguratorManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     function __construct() {
 
@@ -77,10 +66,7 @@ class PcConfiguratorManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-     *
-     * @param object $config
-     * @param object $args
-     * @return
+    
      */
     public static function getInstance() {
 

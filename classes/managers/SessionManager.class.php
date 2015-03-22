@@ -22,9 +22,9 @@ require_once (CLASSES_PATH . "/security/users/AuthenticateUser.class.php");
 class SessionManager extends AbstractSessionManager {
 
     private $user = null;
-    private $config;
+   
 
-    public function __construct($config) {
+    public function __construct() {
         session_set_cookie_params(3600000);
         session_start();
     }
@@ -100,7 +100,7 @@ class SessionManager extends AbstractSessionManager {
     }
 
     private function updateUserHash($uId) {
-        $userManager = UserManager::getInstance($this->config, null);
+        $userManager = UserManager::getInstance();
         return $userManager->updateUserHash($uId);
     }
 

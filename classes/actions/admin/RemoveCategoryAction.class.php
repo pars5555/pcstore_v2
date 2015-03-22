@@ -10,8 +10,8 @@ require_once (CLASSES_PATH . "/managers/CategoryHierarchyManager.class.php");
 class RemoveCategoryAction extends BaseAdminAction {
 
     public function service() {
-        $categoryManager = CategoryManager::getInstance($this->config, $this->args);
-        $categoryHierarchyManager = CategoryHierarchyManager::getInstance($this->config, $this->args);
+        $categoryManager = CategoryManager::getInstance();
+        $categoryHierarchyManager = CategoryHierarchyManager::getInstance();
         $categoryId = $this->secure($_REQUEST["category_id"]);
         if ($categoryHierarchyManager->hasCategoryChildren($categoryId)) {
             $this->error(array('message' => "You can only remove 'Leaf' categories!"));
