@@ -398,11 +398,6 @@ label.input_label{
     background-color:rgba(0,0,0,0.5);
 }
 
-.invite_mes{
-    padding:5px 20px;
-    text-align:center;
-}
-
 .link{
     color:#428BCA;
     vertical-align: middle;
@@ -3805,6 +3800,13 @@ Dealers
     margin: auto;
 }
 
+.invite_form{
+    margin-top: 20px;
+}
+
+.invite_mes{
+    text-align:center;
+}
 
 
 

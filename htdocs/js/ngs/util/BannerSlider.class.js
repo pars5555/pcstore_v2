@@ -73,7 +73,6 @@ var bannerSlider = {
             new_pos = position;
         }
 
-
         left = -new_pos * 100 + "%";
         this.sliderContent.css("left", left);
 

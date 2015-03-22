@@ -13,28 +13,28 @@
                 {/if}
                 <h4 class="title">Create account</h4>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputEmail1">First Name</label>
-                    <input type="text" class="  text" placeholder="First Name" name="first_name" value="{$ns.req.first_name|default:''}">
+                    <label class="input_label" for="sign_up_first_name_input">First Name</label>
+                    <input required="" id="sign_up_first_name_input" type="text" class="text" placeholder="First Name" name="first_name" value="{$ns.req.first_name|default:''}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputEmail1">Last Name</label>
-                    <input type="text" class="  text" placeholder="Last Name" name="last_name" value="{$ns.req.last_name|default:''}">
+                    <label class="input_label" for="sign_up_last_name_input">Last Name</label>
+                    <input required="" id="sign_up_last_name_input" type="text" class="text" placeholder="Last Name" name="last_name" value="{$ns.req.last_name|default:''}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputEmail1">Phone</label>
-                    <input type="text" class="  text" placeholder="Phone" name="phone"  value="{$ns.req.phone|default:''}">
+                    <label class="input_label" for="sign_up_phone_input">Phone</label>
+                    <input id="sign_up_phone_input" type="text" class="text" placeholder="Phone" name="phone"  value="{$ns.req.phone|default:''}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputEmail1">Email address</label>
-                    <input type="email" placeholder="Enter email" class="  text" name="email"  value="{$ns.req.email|default:''}">
+                    <label class="input_label" for="sign_up_email_address_input">Email address</label>
+                    <input required="" id="sign_up_email_address_input" type="email" placeholder="Enter email" class="text" name="email"  value="{$ns.req.email|default:''}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputPassword1">Password</label>
-                    <input type="password" placeholder="Password" class="  text" name="password"  value="{$ns.req.password|default:''}">
+                    <label class="input_label" for="sign_up_password_input">Password</label>
+                    <input required="" id="sign_up_password_input" type="password" placeholder="Password" class="text" name="password"  value="{$ns.req.password|default:''}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" placeholder="Password" class="  text" name="repeat_password"  value="{$ns.req.repeat_password|default:''}">
+                    <label class="input_label" for="sign_up_confirm_password_input">Confirm Password</label>
+                    <input required="" id="sign_up_confirm_password_input" type="password" placeholder="Password" class="text" name="repeat_password"  value="{$ns.req.repeat_password|default:''}">
                 </div>
                 <div class="login-buttons">
                     <input class="button blue" type="submit" value="{$ns.lm->getPhrase(78)}"/>

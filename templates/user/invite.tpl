@@ -9,9 +9,9 @@
             {$ns.error_message}
         {/if}
     </div>
-    <form method="post" autocomplete="off" action="{$SITE_PATH}/dyn/user/do_invite">
+        <form class="unvite_form" method="post" autocomplete="off" action="{$SITE_PATH}/dyn/user/do_invite">
         <label class="input_label default_width" for="email">Email</label>
-        <input class="text default_width" type="email" name="email"/>
+        <input required="" class="text default_width" type="email" name="email"/>
         <button type="submit" class="button blue">Invite</button>
     </form>
     <div class="tab_title_content_container">
@@ -26,7 +26,6 @@
         <div class="tab_content_container">
             <div class="tab_content f_tab_content" data-tab-id="1" style="display: none">
                 {if $ns.pendingUsers|@count>0}
-                    <h2 class="main_title">{$ns.lm->getPhrase(147)}</h2>
                     {assign var="yesterday" value='-1 day'|strtotime}
                     {assign var="yesterday" value=$yesterday|date_format:"%Y-%m-%d %H:%M:%S"}
 
@@ -57,7 +56,6 @@
 
             <div class="tab_content f_tab_content" data-tab-id="2" style="display: none">
                 {if $ns.subUsers|@count>0}
-                    <h2 class="main_title">{$ns.lm->getPhraseSpan(143)}</h2>
                     <div class="table_striped">
                         <div class="table_header_group">
                             <div class="table-row">
