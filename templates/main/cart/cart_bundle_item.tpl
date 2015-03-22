@@ -90,7 +90,7 @@
         {/if}
     </div>
     <div class="component_discount">
-        {if $ns.userLevel!=$ns.userGroupsCompany}
+        {if $ns.userLevel!=$ns.userGroupsCompany && $ns.userLevel!=$ns.userGroupsServiceCompany}
             {if !isset($someItemsMissing)}
                 <span class="discount">
                     {if $bundleItems.0->getDiscount() > 0}

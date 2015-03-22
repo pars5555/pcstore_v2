@@ -698,11 +698,9 @@ label.input_label{
     padding:5px;
     clear:both;
     display:block;
-    width:100px;
     color:#777;
     border-radius:3px;	
     font-size: 15px;
-    white-space: nowrap;
 }
 .navMenuList li.dropdown ul.dropdown-menu li a:hover{
     background-color: #63B4FB;
@@ -2393,13 +2391,20 @@ SMS CONF COMPANY
     margin:auto;
 }
 .product-wrapper .product-title{
-    font-weight:500;
+    font-weight:600;
     font-size:18px;
-    color:#428bca;
+    color:#555;
     transition:all 0.5s ease;
     display: block;
     height: 86px;
     overflow: hidden;
+}
+.product-wrapper .product-title .brand_name{
+    color: #0e53a5;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
 }
 .product-wrapper .product-title h4 span{
     font-size: 15px;
@@ -2408,8 +2413,20 @@ SMS CONF COMPANY
 }
 .product-wrapper .product-title:hover,
 .product-wrapper .product-title:hover h4{
-    text-decoration:underline;
-    color:#0E5796;
+    color: #0e53a5;
+    text-decoration: underline;
+}
+/*Current Product Title*/
+.current_product_wp.product-wrapper .product-title{
+    height:auto;
+    font-size: 22px;
+}
+.current_product_wp.product-wrapper .product-title .brand_name{
+    font-size:17px;
+}
+.current_product_wp.product-wrapper .product-title:hover{
+    color:#555;
+    text-decoration: none;    
 }
 /*************
     CURRENT PRODUCT DESC
@@ -2497,6 +2514,7 @@ SMS CONF COMPANY
     width:386px;
     height:386px;
     border:1px solid #ccc;
+    position:relative;
 
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -2518,14 +2536,44 @@ SMS CONF COMPANY
     -icab-border-radius: 3px; 
     border-radius: 3px;  
 }
+
+/********************************** New & Warranty ***************************************/
+.product_new_warranty_wp{
+    margin:20px auto;
+    text-align: left;
+}
 .new_product{
-    position: absolute;
-    top:0;
-    left: 0;
+    display:inline-block;
+    vertical-align: top;
     width:111px;
     height:111px;
-    background: url("../../img/new.png") no-repeat scroll center center / 100% auto transparent;
+    background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
 }
+.product_warranty{
+    display:inline-block;
+    vertical-align: top;
+    background: url("../../img/warranty.png") no-repeat scroll center center / contain transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    height: 240px;
+    position: relative;
+    width: 160px;
+}
+.product_warranty .product_warranty_text{
+    left: 49%;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    transform: translate(-50%, 0px);
+    width: 80px;
+}
+.product_other_info{
+    display:inline-block;
+    vertical-align: top;    
+}
+
+
 .product-wrapper.current_product_wp .product-info{
     display:table-cell;
     vertical-align:top;
@@ -2536,7 +2584,6 @@ SMS CONF COMPANY
 }
 .product-wrapper.current_product_wp .product-info .button{
     display: inline-block;
-    margin: auto;
     max-width: none;
     padding: 10px 20px;
     width: auto;

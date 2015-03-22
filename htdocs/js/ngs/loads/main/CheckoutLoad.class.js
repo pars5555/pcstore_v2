@@ -30,15 +30,16 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
     calculateShippingCost: function () {
         var shippingRegion = jQuery('#shipping_region').val();
         var doShipping = jQuery('.f_ship_addr_container .f_checkbox').hasClass('checked') ? 1 : 0;
-        ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion, 'payment_type':jQuery('#payment_type input[type=radio]:checked').val()});
-        
+        ngs.load('main_checkout_calculation', {'do_shipping': doShipping, 'region': shippingRegion, 'payment_type': jQuery('#payment_type input[type=radio]:checked').val()});
+
         var p_type_loader = jQuery("#main_loader").clone(false);
         jQuery("#checkout_confirm").append(p_type_loader);
         p_type_loader.removeClass("hidden");
     },
     checkoutConfirmPosition: function () {
-        var top = jQuery("#checkout_confirm").offset().top;
+        var top = jQuery("#checkout_confirm_container").offset().top;
         jQuery(window).on("scroll", function () {
+            top = jQuery("#checkout_confirm_container").offset().top;
             var scrollTop = jQuery(window).scrollTop();
             if (scrollTop >= top) {
                 jQuery("#checkout_confirm").addClass("fixed");

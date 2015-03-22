@@ -62,7 +62,7 @@
             <div class="clear"></div>
             {*   discounted price   *}
 
-            {if $ns.userLevel!=$ns.userGroupsCompany}
+            {if $ns.userLevel!=$ns.userGroupsCompany && $ns.userLevel!=$ns.userGroupsServiceCompany}
 
                 <div class="discount text_red">{$ns.lm->getPhrase(285)} {$ns.pc_configurator_discount}%</div>
 

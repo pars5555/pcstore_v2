@@ -190,7 +190,7 @@
             <!-- ==============Component Discount============== -->
 
             <div class="component_discount">   
-                {if $ns.userLevel!=$ns.userGroupsCompany}
+                {if $ns.userLevel!=$ns.userGroupsCompany && $ns.userLevel!=$ns.userGroupsServiceCompany}
                     {if isset($deal_discount_applied) || $discount_available}
                         {if $discount_available && $cartItem->getDealDiscountAmd()<=0}
                             <span class="discount">{$ns.lm->getPhrase(285)} {$cartItem->getDiscount()}%</span>
