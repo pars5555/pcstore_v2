@@ -62,18 +62,18 @@ define('HTDOCS_TMP_DIR', NGS_ROOT . "/htdocs/tmp");
 define('HTDOCS_TMP_DIR_ATTACHMENTS', HTDOCS_TMP_DIR . "/attachments");
 
 define("DBMS", CLASSES_PATH . "/util/db/ImprovedDBMS.class.php");
-if (!isset($_ENV['environment'])) {
-    $_ENV['environment'] = "local";
+if (!isset($_SERVER['environment'])) {
+    $_SERVER['environment'] = "local";
 }
-define("ENVIRONMENT", $_ENV['environment']); 
-switch ($_ENV['environment']) {
-    case 'dev':
+define("ENVIRONMENT", $_SERVER['environment']); 
+switch (ENVIRONMENT) {
+    case 'development':
         define('DB_HOST', '127.0.0.1');
         define('DB_USER', 'pcstore');
         define('DB_PASS', 'pcstore123');
         define('DB_NAME', 'pcstore_dev');
         break;
-    case 'prod':
+    case 'production':
         define('DB_HOST', '127.0.0.1');
         define('DB_USER', 'pcstore');
         define('DB_PASS', 'pcstore123');

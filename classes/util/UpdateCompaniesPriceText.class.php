@@ -17,7 +17,7 @@ require_once(CLASSES_PATH . "/util/db/DBMSFactory.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 require_once (CLASSES_PATH . "/managers/CompaniesPriceListManager.class.php");
 
-$_ENV['environment'] = $argv[3];
+$_SERVER['environment'] = $argv[3];
 DBMSFactory::init();
 
 $companiesPriceListManager = CompaniesPriceListManager::getInstance();

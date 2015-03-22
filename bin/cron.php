@@ -5,7 +5,7 @@ ini_set('display_errors', true);
 defined('__DIR__') or define('__DIR__', dirname(__FILE__));
 $_dir = trim(__DIR__, 'htdocs\/bin');
 
-$_ENV['environment'] = 'prod';
+$_SERVER['environment'] = 'production';
 require_once ($_dir . "/conf/constants.php");
 require_once (CLASSES_PATH . "/framework/DBMSFactory.class.php");
 require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
