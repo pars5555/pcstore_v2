@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', true);
 defined('__DIR__') or define('__DIR__', dirname(__FILE__));
 
-$_SERVER["DOCUMENT_ROOT"] = trim(__DIR__, 'bin');
+$_SERVER["DOCUMENT_ROOT"] = rtrim(__DIR__, 'bin');
 $_SERVER['environment'] = 'production';
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/conf/constants.php");
 require_once (CLASSES_PATH . "/framework/DBMSFactory.class.php");
