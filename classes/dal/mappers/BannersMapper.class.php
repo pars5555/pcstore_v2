@@ -58,8 +58,6 @@ class BannersMapper extends AbstractMapper {
     public function getTableName() {
         return $this->tableName;
     }
-    
-   
 
 }
 

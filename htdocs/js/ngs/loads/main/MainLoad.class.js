@@ -32,12 +32,21 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.mainPopupActions();
         this.categoriesProductCheckbox();
         this.pccLoader();
-        
+
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
+
+        this.hideErrorSuccessMessages();
+    },
+    hideErrorSuccessMessages: function () {
+        window.setInterval(function () {
+            jQuery(".error,.success").slideUp(300, function () {
+                jQuery(".error,.success").html("");
+            });
+        }, 7000);
     },
     initMainTabsContents: function () {
-        var self=this;
+        var self = this;
         jQuery(".f_tab_title").on("click", function () {
             self.showActiveTabContent(jQuery(this));
         });

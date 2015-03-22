@@ -114,10 +114,10 @@
 
                             <div class="product-wrapper">
                                 <div class="product_inner">
-                                    <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}">
-                                        {$item->getDisplayName()}<p>{if !empty($brand)} by {$brand}{/if}</p>
+                                    <a class="product-title" href="{$SITE_PATH}/item/{$item->getId()}" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
+                                        {$item->getDisplayName()} {if !empty($brand)}<span class="brand_name"> by {$brand}</span>{/if}
                                     </a>
-                                    <div class="product-img">
+                                    <div class="product-img" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
                                         <a class="product-img-link" href="{$SITE_PATH}/item/{$item->getId()}" style="background-image: url({$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '150_150', 1)});">
                                             {if $new_item == true}
                                                 <div class="new_product"></div>
@@ -149,13 +149,13 @@
                                                 <span>
                                                     {if $item->getIsDealerOfThisCompany()==1}
                                                         {if $item->getVatPriceAmd()>0}
-                                                            ({$item->getVatPriceAmd()|number_format} Դր.)
+                                                            {$item->getVatPriceAmd()|number_format} Դր.
                                                         {else}
-                                                            (${$item->getVatPrice()|number_format:1})
+                                                            ${$item->getVatPrice()|number_format:1}
                                                         {/if}
                                                     {else}
                                                         {assign var="vat_price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerVatItemPrice())}
-                                                        ({$vat_price_in_amd|number_format} Դր.)
+                                                        {$vat_price_in_amd|number_format} Դր.
                                                     {/if}
                                                 </span>
                                             </p>

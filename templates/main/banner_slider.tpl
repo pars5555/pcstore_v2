@@ -1,40 +1,37 @@
-<div class="banner-slider-container" id="banner-slider-container">
+{if !empty($ns.bannersDtos)}
+    <div class="banner-slider-container" id="banner-slider-container">
 
-    {*************************** Slider Items ****************************}
+        {*************************** Slider Items ****************************}
 
-    <div class="banner-slider f_banner_slider">
-        <a href="javascript:void(0);" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banner/slider_1.jpg)">
-        </a>
-        <a href="javascript:void(0);" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banner/slider_2.jpg)">
-        </a>
-        <a href="javascript:void(0);" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banner/slider_3.jpg)">
-        </a>
-        <a href="javascript:void(0);" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banner/slider_4.jpg)">
-        </a>
-        <a href="javascript:void(0);" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banner/slider_5.jpg)">
-        </a>
+        <div class="banner-slider f_banner_slider">
+            {foreach from=$ns.bannersDtos item=banner}
+                {if $banner->getActive()==1}
+                    <a href="{$SITE_PATH}/{$banner->getPath()}" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banners/{$banner->getId()}.jpg)">
+                    </a>
+                {/if}
+            {/foreach}
+        </div>
+
+        {*************************** Slider Controls ****************************}
+        {if $ns.bannersDtos|@count>1}
+            <div data-direction="-1" class="slide_left f_slide_control">
+                <span class="glyphicon"></span>
+            </div>
+            <div data-direction="1" class="slide_right f_slide_control">
+                <span class="glyphicon"></span>
+            </div>
+        {/if}
+        {*************************** Slider Navigation ****************************}
+
+        <nav class="slider_navigation">
+            {foreach from=$ns.bannersDtos item=banner name=bannerNav}
+                {if $banner->getActive()==1}
+                    <div data-position="{$smarty.foreach.bannerNav.index}" class="slider_nav_item f_slider_nav_item {if $smarty.foreach.bannerNav.index == 0}active{/if}">
+                    </div>
+                {/if}
+            {/foreach}
+        </nav>
+
     </div>
 
-    {*************************** Slider Controls ****************************}
-    <div data-direction="-1" class="slide_left f_slide_control">
-        <span class="glyphicon"></span>
-    </div>
-    <div data-direction="1" class="slide_right f_slide_control">
-        <span class="glyphicon"></span>
-    </div>
-
-    {*************************** Slider Navigation ****************************}
-
-    <nav class="slider_navigation">
-        <div data-position="0" class="slider_nav_item f_slider_nav_item active">
-        </div>
-        <div data-position="1" class="slider_nav_item f_slider_nav_item">
-        </div>
-        <div data-position="2" class="slider_nav_item f_slider_nav_item">
-        </div>
-        <div data-position="3" class="slider_nav_item f_slider_nav_item">
-        </div>
-        <div data-position="4" class="slider_nav_item f_slider_nav_item">
-        </div>
-    </nav>
-</div>
+{/if}

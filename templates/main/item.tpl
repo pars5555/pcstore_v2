@@ -13,9 +13,7 @@
                 <div class="product-img-inner">
                     <div class="product-img-link-wrapper">
                         <div class="product-img-link f_product_img" style="background-image: url({$ns.itemManager->getItemImageURL($ns.item->getId(),$ns.item->getCategoriesIds(), '800_800', 1)});">
-                            {if $new_item == true}
-                                <div class="new_product"></div>
-                            {/if}
+
                         </div>
                     </div>
 
@@ -36,7 +34,9 @@
             </div>
 
             <div class="product-info">
-                <h2>{$ns.item->getDisplayName()}{if $ns.item->getBrand()} by {$ns.item->getBrand()}{/if}</h2>
+                <h2 class="product-title" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
+                    {$item->getDisplayName()} {if $ns.item->getBrand()}<span class="brand_name"> by {$ns.item->getBrand()}</span>{/if}
+                </h2>
                 <div class="product-info-inner">
                     <div class="product-price">
 
@@ -55,24 +55,26 @@
                             </p> 
                         {else}
                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerItemPrice())}                        
-                            <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$ns.item->getListPriceAmd()} Դր.</span></p>
+                            <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$ns.item->getListPriceAmd()|number_format} Դր.</span></p>
                             <p class="price"><span>{$ns.lm->getPhrase(88)}:</span> <span>{$price_in_amd|number_format} Դր.</span></p>
                             <p>{math equation="100-x*100/y" x=$price_in_amd y=$ns.item->getListPriceAmd() assign="list_price_discount"}
-                                <span>{$ns.lm->getPhrase(589)}:</span> <span>{$ns.item->getListPriceAmd()-$price_in_amd|number_format} ({$list_price_discount|number_format}%)</span></p>                        
+                                <span>{$ns.lm->getPhrase(589)}:</span> <span>{($ns.item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span></p>                        
                             {/if} 
                             {if isset($showvatprice)}
                             <p>
                                 <span>{$ns.lm->getPhrase(488)}:</span>
-                                {if $ns.item->getIsDealerOfThisCompany()==1}
-                                    {if $ns.item->getVatPriceAmd()>0}
-                                        <span>({$ns.item->getVatPriceAmd()|number_format} Դր.)</span>
+                                <span>
+                                    {if $ns.item->getIsDealerOfThisCompany()==1}
+                                        {if $ns.item->getVatPriceAmd()>0}
+                                            {$ns.item->getVatPriceAmd()|number_format} Դր.
+                                        {else}
+                                            ${$ns.item->getVatPrice()|number_format:1}
+                                        {/if}	
                                     {else}
-                                        <span>(${$ns.item->getVatPrice()|number_format:1})</span>
-                                    {/if}	
-                                {else}
-                                    {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerVatItemPrice())}
-                                    <span>({$price_in_amd|number_format} Դր.)</span>
-                                {/if}	
+                                        {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerVatItemPrice())}
+                                        {$price_in_amd|number_format} Դր.
+                                    {/if}
+                                </span>
                             </p> 
                         {/if}
                         {if $ns.item->getIsDealerOfThisCompany()}
@@ -84,43 +86,56 @@
                             </p> 
                         {/if}
                     </div>
-                    <div class="product_other_info">
+                    <div class="product_new_warranty_wp">
                         {if $ns.item->getWarranty()>0 || $ns.item->getWarranty()=='lifetime'}
-                            <span>{$ns.lm->getPhrase(82)}:{$ns.item->getWarranty()} {if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</span>
+                            <div class="product_warranty">
+                                <div class="product_warranty_text">
+                                    {$ns.lm->getPhrase(82)}
+                                    {$ns.item->getWarranty()} {if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</p>
+                                </div>
+                            </div>
                         {/if}
-
-                        {if ($ns.userLevel!=$ns.userGroupsGuest)}
-                            {if $smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate()}
-                                {if $ns.item->getIsCompanyOnline()}
-                                    <p>{$ns.lm->getPhrase(86)}</p>
-                                    <p>{$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
-                                {else}
-                                    <p>{$ns.lm->getPhrase(525)}   {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
-                                {/if}
-                            {else}
-                                <p>{$ns.lm->getPhrase(83)}</p>
-                                {if $new_item == true}
-                                    <p>{$ns.lm->getPhrase(559)}</p>
-                                {else}
-                                    {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}
-                                        <p>{$ns.lm->getPhrase(453)}: {$ns.item->getUpdatedDate()|date_format:"%d/%m/%Y"}</p>
+                        {if $new_item != true}
+                            <div class="new_product"></div>
+                        {/if}
+                        <div class="product_other_info">
+                            {if ($ns.userLevel!=$ns.userGroupsGuest)}
+                                {if $smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate()}
+                                    {if $ns.item->getIsCompanyOnline()}
+                                        <p>{$ns.lm->getPhrase(86)}</p>
+                                        <p>{$ns.lm->getPhrase(526)} {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
+                                    {else}
+                                        <p>{$ns.lm->getPhrase(525)}   {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
                                     {/if}
+                                {else}
+                                    {*}
+                                    <p>{$ns.lm->getPhrase(83)}</p>
+                                    {if $new_item == true}
+                                    <p>{$ns.lm->getPhrase(559)}</p>
+                                    {else}
+                                    {if $ns.item->getUpdatedDate() && $ns.item->getUpdatedDate() != "0000-00-00 00:00:00"}
+                                    <p>{$ns.lm->getPhrase(453)}: {$ns.item->getUpdatedDate()|date_format:"%d/%m/%Y"}</p>
+                                    {/if}
+                                    {/if}
+                                    {*}
                                 {/if}
                             {/if}
-                        {/if}
-                    </div>
-
-                    <div class="product_spec">	
-                        <h1 class="title">{$ns.lm->getPhrase(100)}</h1>
-                        <div class="table">
-                            {foreach from=$ns.itemPropertiesHierarchy key= k item=sp}
-                                <div class="table-row">
-                                    <span class="table-cell product_spec_title">{$k} :</span>
-                                    <span class="table-cell product_spec_value">{', '|implode:$sp}</span>
-                                </div>
-                            {/foreach}	
                         </div>
                     </div>
+
+                    {if !empty($ns.itemPropertiesHierarchy)}
+                        <div class="product_spec">	
+                            <h1 class="title">{$ns.lm->getPhrase(100)}</h1>
+                            <div class="table">
+                                {foreach from=$ns.itemPropertiesHierarchy key= k item=sp}
+                                    <div class="table-row">
+                                        <span class="table-cell product_spec_title">{$k} :</span>
+                                        <span class="table-cell product_spec_value">{', '|implode:$sp}</span>
+                                    </div>
+                                {/foreach}	
+                            </div>
+                        </div>
+                    {/if}
 
                     {if ($ns.userLevel!==$ns.userGroupsGuest)}
                         {if !($smarty.now|date_format:"%Y-%m-%d">$ns.item->getItemAvailableTillDate())}

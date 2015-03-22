@@ -15,6 +15,7 @@ require_once (CLASSES_PATH . "/util/categories_view/FilterItemsTreeViewModel.php
 require_once (CLASSES_PATH . "/util/categories_view/ItemCategoryModel.php");
 require_once (CLASSES_PATH . "/util/categories_view/ItemsCategoryMenuView.php");
 require_once (CLASSES_PATH . "/util/categories_view/CategoryPropertyView.php");
+require_once (CLASSES_PATH . "/managers/BannersManager.class.php");
 
 /**
  *
@@ -27,6 +28,8 @@ class HomeLoad extends BaseGuestLoad {
     private $pageNumber = 1;
 
     public function load() {
+        $this->getAllBanners();
+        
         $this->addParam('req', $_REQUEST);
 
         //init managers
@@ -284,6 +287,12 @@ class HomeLoad extends BaseGuestLoad {
         }
         $this->addParam("selectedCompanyId", $selectedCompanyId);
         return $selectedCompanyId;
+    }
+
+    public function getAllBanners() {
+        $bannersManager = BannersManager::getInstance();
+        $bannersDtos = $bannersManager->selectAll();
+        $this->addParam('bannersDtos', $bannersDtos);
     }
 
     public function getDefaultLoads($args) {
