@@ -35,7 +35,7 @@
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/owl.theme.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/owl.transitions.css?" />
 
-<link rel="icon" type="image/png"  href="{$SITE_PATH}/img/favicon.png" />
+<link rel="icon" type="image/png"  href="{$SITE_PATH}/img/favico.png"/>
 <script type="text/javascript">
     {literal}
         var ngs = {};
