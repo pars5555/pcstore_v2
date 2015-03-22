@@ -78,11 +78,13 @@ switch (ENVIRONMENT) {
         define('DB_USER', 'pcstore');
         define('DB_PASS', 'pcstore123');
         define('DB_NAME', 'pcstore');
+        break;
     case 'local':
         define('DB_HOST', '127.0.0.1');
         define('DB_USER', 'root');
         define('DB_PASS', '');
         define('DB_NAME', 'pcstore');
+        break;
 }
 
 define("VERSION", "2.0");
