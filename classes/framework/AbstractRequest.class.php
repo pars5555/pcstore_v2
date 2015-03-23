@@ -3,6 +3,7 @@
 require_once(FRAMEWORK_PATH . "/AbstractSessionManager.class.php");
 require_once(CLASSES_PATH . "/managers/LanguageManager.class.php");
 require_once(CLASSES_PATH . "/managers/CmsSettingsManager.class.php");
+require_once (CLASSES_PATH . "/managers/RequestHistoryManager.class.php");
 
 /**
  * <p><b>AbstractRequest class</b> is a base class for all action classes.
@@ -14,7 +15,6 @@ require_once(CLASSES_PATH . "/managers/CmsSettingsManager.class.php");
  */
 abstract class AbstractRequest {
 
-  
     protected $customer;
     protected $args;
     protected $sessionManager;
@@ -30,8 +30,9 @@ abstract class AbstractRequest {
      */
     public function initialize($sessionManager, $loadMapper, $args) {
         $this->sessionManager = $sessionManager;
-        $this->loadMapper = $loadMapper;      
+        $this->loadMapper = $loadMapper;
         $this->args = $args;
+        $this->logRequestInDB();
     }
 
     /**
@@ -122,10 +123,10 @@ abstract class AbstractRequest {
     }
 
     /**
-   
+
      * @abstract  
      * @access
-    
+
      * @return
      */
     public static function notFoundHandler() {
@@ -218,6 +219,18 @@ abstract class AbstractRequest {
     public function setCookie($key, $value, $expire = 0) {
         $domain = "." . DOMAIN;
         setcookie($key, $value, $expire, "/", $domain);
+    }
+
+    public function logRequestInDB() {
+        if ($this->logRequest()) {
+            $requestHistoryManager = RequestHistoryManager::getInstance();
+            $cust = $this->getCustomer();
+            $requestHistoryManager->addRow($this->getUserLevelString(), $cust ? $cust->getEmail() : '', get_class($this), $_REQUEST);
+        }
+    }
+
+    protected function logRequest() {
+        return true;
     }
 
 }

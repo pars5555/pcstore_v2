@@ -51,6 +51,10 @@ class MainLoad extends BaseGuestLoad {
         }
     }
 
+    protected function logRequest() {
+        return false;
+    }
+
 }
 
 ?>
