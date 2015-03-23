@@ -60,6 +60,10 @@ class PagingLoad extends BaseGuestLoad {
         return TEMPLATES_DIR . "/main/paging.tpl";
     }
 
+    protected function logRequest() {
+        return false;
+    }
+
 }
 
 ?>
