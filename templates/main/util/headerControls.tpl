@@ -37,11 +37,12 @@
 
 <script type="text/javascript">
     {literal}
-        var ngs = {};
+        var ngs = {
+            };
     {/literal}	        
-        var SITE_URL = "{$SITE_URL}";
-        var SITE_PATH = "{$SITE_PATH}";
-        var customer_ping_pong_timeout_seconds = {$ns.customer_ping_pong_timeout_seconds};
+            var SITE_URL = "{$SITE_URL}";
+            var SITE_PATH = "{$SITE_PATH}";
+            var customer_ping_pong_timeout_seconds = {$ns.customer_ping_pong_timeout_seconds};
 </script>
 
 
@@ -53,7 +54,7 @@
 <script type="text/javascript" src="{$SITE_PATH}/js/lib/customscroll/jquery.mCustomScrollbar.js"></script>
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/owl.carousel.js"></script>
 <script type="text/javascript">
-    jQuery.noConflict();
+        jQuery.noConflict();
 </script>
 
 <script type="text/javascript" src="{$SITE_PATH}/js/out/ngs.js?4_2_6"></script>
@@ -68,9 +69,8 @@
 <script type="text/javascript"  src="//connect.facebook.net/en_US/sdk.js"></script>
 {* linkedin login setup *}
 <script type="text/javascript" src="//platform.linkedin.com/in.js">
-    api_key: 75
-    ys1q9fcupeqq
-            authorize: true
+        api_key: 75ys1q9fcupeqq
+        authorize: true
 </script> 
 {* google pluse login setup *}
 <script type="text/javascript" src="https://apis.google.com/js/client:plusone.js?onload=render"></script>
@@ -81,4 +81,13 @@
 <meta name="google-signin-callback" content="googleLoginCallback" />
 
 
+<script>
+                (function (i, s, o, g, r, a, m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)}, i[r].l = 1 * new Date()
+                ; a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-61087329-1', 'auto');
+        ga('send', 'pageview');
 
+</script>
