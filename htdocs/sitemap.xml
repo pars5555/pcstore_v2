@@ -5,7 +5,7 @@
         
     <url>
 
-        <loc>http://pcstore.am/signup</loc>
+        <loc>http://pc.am/signup</loc>
 
         <changefreq>weekly</changefreq>
 
@@ -15,7 +15,7 @@
     
     <url>
 
-        <loc>http://pcstore.am/aboutus</loc>
+        <loc>http://pc.am/aboutus</loc>
 
         <changefreq>weekly</changefreq>
 
@@ -26,7 +26,7 @@
  
     <url>
 
-        <loc>http://pcstore.am/privatepolicy</loc>
+        <loc>http://pc.am/privatepolicy</loc>
 
         <changefreq>weekly</changefreq>
 
@@ -38,7 +38,7 @@
 
     <url>
 
-        <loc>http://pcstore.am/contactus</loc>
+        <loc>http://pc.am/contactus</loc>
 
         <changefreq>weekly</changefreq>
 
@@ -48,7 +48,7 @@
 
     <url>
 
-        <loc>http://pcstore.am/help</loc>
+        <loc>http://pc.am/help</loc>
 
         <changefreq>weekly</changefreq>
 
@@ -58,7 +58,7 @@
 
     <url>
 
-        <loc>http://pcstore.am/buildpc</loc>
+        <loc>http://pc.am/buildpc</loc>
 
         <changefreq>daily</changefreq>
 
@@ -68,99 +68,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=1</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-  
-    <url>
-
-        <loc>http://pcstore.am?pg=2</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=3</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=4</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=5</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=6</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=7</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=8</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=9</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-    <url>
-
-        <loc>http://pcstore.am?pg=10</loc>
-
-        <changefreq>daily</changefreq>
-
-        <priority>0.8</priority>
-
-    </url>
-
-    <url>
-
-        <loc>http://pcstore.am?pg=11</loc>
+        <loc>http://pc.am?pg=1</loc>
 
         <changefreq>daily</changefreq>
 
@@ -170,7 +78,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=12</loc>
+        <loc>http://pc.am?pg=2</loc>
 
         <changefreq>daily</changefreq>
 
@@ -179,7 +87,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=13</loc>
+        <loc>http://pc.am?pg=3</loc>
 
         <changefreq>daily</changefreq>
 
@@ -188,7 +96,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=14</loc>
+        <loc>http://pc.am?pg=4</loc>
 
         <changefreq>daily</changefreq>
 
@@ -197,7 +105,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=15</loc>
+        <loc>http://pc.am?pg=5</loc>
 
         <changefreq>daily</changefreq>
 
@@ -206,7 +114,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=16</loc>
+        <loc>http://pc.am?pg=6</loc>
 
         <changefreq>daily</changefreq>
 
@@ -215,7 +123,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=17</loc>
+        <loc>http://pc.am?pg=7</loc>
 
         <changefreq>daily</changefreq>
 
@@ -224,7 +132,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=18</loc>
+        <loc>http://pc.am?pg=8</loc>
 
         <changefreq>daily</changefreq>
 
@@ -233,7 +141,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=19</loc>
+        <loc>http://pc.am?pg=9</loc>
 
         <changefreq>daily</changefreq>
 
@@ -242,7 +150,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=20</loc>
+        <loc>http://pc.am?pg=10</loc>
 
         <changefreq>daily</changefreq>
 
@@ -252,7 +160,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=21</loc>
+        <loc>http://pc.am?pg=11</loc>
 
         <changefreq>daily</changefreq>
 
@@ -262,7 +170,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=22</loc>
+        <loc>http://pc.am?pg=12</loc>
 
         <changefreq>daily</changefreq>
 
@@ -271,7 +179,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=23</loc>
+        <loc>http://pc.am?pg=13</loc>
 
         <changefreq>daily</changefreq>
 
@@ -280,7 +188,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=24</loc>
+        <loc>http://pc.am?pg=14</loc>
 
         <changefreq>daily</changefreq>
 
@@ -289,7 +197,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=25</loc>
+        <loc>http://pc.am?pg=15</loc>
 
         <changefreq>daily</changefreq>
 
@@ -298,7 +206,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=26</loc>
+        <loc>http://pc.am?pg=16</loc>
 
         <changefreq>daily</changefreq>
 
@@ -307,7 +215,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=27</loc>
+        <loc>http://pc.am?pg=17</loc>
 
         <changefreq>daily</changefreq>
 
@@ -316,7 +224,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=28</loc>
+        <loc>http://pc.am?pg=18</loc>
 
         <changefreq>daily</changefreq>
 
@@ -325,7 +233,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=29</loc>
+        <loc>http://pc.am?pg=19</loc>
 
         <changefreq>daily</changefreq>
 
@@ -334,7 +242,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=30</loc>
+        <loc>http://pc.am?pg=20</loc>
 
         <changefreq>daily</changefreq>
 
@@ -342,10 +250,9 @@
 
     </url>
 
-
     <url>
 
-        <loc>http://pcstore.am?pg=31</loc>
+        <loc>http://pc.am?pg=21</loc>
 
         <changefreq>daily</changefreq>
 
@@ -355,7 +262,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=32</loc>
+        <loc>http://pc.am?pg=22</loc>
 
         <changefreq>daily</changefreq>
 
@@ -364,7 +271,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=33</loc>
+        <loc>http://pc.am?pg=23</loc>
 
         <changefreq>daily</changefreq>
 
@@ -373,7 +280,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=34</loc>
+        <loc>http://pc.am?pg=24</loc>
 
         <changefreq>daily</changefreq>
 
@@ -382,7 +289,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=35</loc>
+        <loc>http://pc.am?pg=25</loc>
 
         <changefreq>daily</changefreq>
 
@@ -391,7 +298,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=36</loc>
+        <loc>http://pc.am?pg=26</loc>
 
         <changefreq>daily</changefreq>
 
@@ -400,7 +307,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=37</loc>
+        <loc>http://pc.am?pg=27</loc>
 
         <changefreq>daily</changefreq>
 
@@ -409,7 +316,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=38</loc>
+        <loc>http://pc.am?pg=28</loc>
 
         <changefreq>daily</changefreq>
 
@@ -418,7 +325,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=39</loc>
+        <loc>http://pc.am?pg=29</loc>
 
         <changefreq>daily</changefreq>
 
@@ -427,7 +334,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=40</loc>
+        <loc>http://pc.am?pg=30</loc>
 
         <changefreq>daily</changefreq>
 
@@ -435,9 +342,10 @@
 
     </url>
 
+
     <url>
 
-        <loc>http://pcstore.am?pg=41</loc>
+        <loc>http://pc.am?pg=31</loc>
 
         <changefreq>daily</changefreq>
 
@@ -447,7 +355,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=42</loc>
+        <loc>http://pc.am?pg=32</loc>
 
         <changefreq>daily</changefreq>
 
@@ -456,7 +364,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=43</loc>
+        <loc>http://pc.am?pg=33</loc>
 
         <changefreq>daily</changefreq>
 
@@ -465,7 +373,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=44</loc>
+        <loc>http://pc.am?pg=34</loc>
 
         <changefreq>daily</changefreq>
 
@@ -474,7 +382,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=45</loc>
+        <loc>http://pc.am?pg=35</loc>
 
         <changefreq>daily</changefreq>
 
@@ -483,7 +391,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=46</loc>
+        <loc>http://pc.am?pg=36</loc>
 
         <changefreq>daily</changefreq>
 
@@ -492,7 +400,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=47</loc>
+        <loc>http://pc.am?pg=37</loc>
 
         <changefreq>daily</changefreq>
 
@@ -501,7 +409,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=48</loc>
+        <loc>http://pc.am?pg=38</loc>
 
         <changefreq>daily</changefreq>
 
@@ -510,7 +418,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=49</loc>
+        <loc>http://pc.am?pg=39</loc>
 
         <changefreq>daily</changefreq>
 
@@ -519,7 +427,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=50</loc>
+        <loc>http://pc.am?pg=40</loc>
 
         <changefreq>daily</changefreq>
 
@@ -529,7 +437,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=51</loc>
+        <loc>http://pc.am?pg=41</loc>
 
         <changefreq>daily</changefreq>
 
@@ -539,7 +447,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=52</loc>
+        <loc>http://pc.am?pg=42</loc>
 
         <changefreq>daily</changefreq>
 
@@ -548,7 +456,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=53</loc>
+        <loc>http://pc.am?pg=43</loc>
 
         <changefreq>daily</changefreq>
 
@@ -557,7 +465,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=54</loc>
+        <loc>http://pc.am?pg=44</loc>
 
         <changefreq>daily</changefreq>
 
@@ -566,7 +474,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=55</loc>
+        <loc>http://pc.am?pg=45</loc>
 
         <changefreq>daily</changefreq>
 
@@ -575,7 +483,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=56</loc>
+        <loc>http://pc.am?pg=46</loc>
 
         <changefreq>daily</changefreq>
 
@@ -584,7 +492,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=57</loc>
+        <loc>http://pc.am?pg=47</loc>
 
         <changefreq>daily</changefreq>
 
@@ -593,7 +501,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=58</loc>
+        <loc>http://pc.am?pg=48</loc>
 
         <changefreq>daily</changefreq>
 
@@ -602,7 +510,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=59</loc>
+        <loc>http://pc.am?pg=49</loc>
 
         <changefreq>daily</changefreq>
 
@@ -611,7 +519,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=60</loc>
+        <loc>http://pc.am?pg=50</loc>
 
         <changefreq>daily</changefreq>
 
@@ -619,10 +527,9 @@
 
     </url>
 
-
     <url>
 
-        <loc>http://pcstore.am?pg=61</loc>
+        <loc>http://pc.am?pg=51</loc>
 
         <changefreq>daily</changefreq>
 
@@ -632,7 +539,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=62</loc>
+        <loc>http://pc.am?pg=52</loc>
 
         <changefreq>daily</changefreq>
 
@@ -641,7 +548,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=63</loc>
+        <loc>http://pc.am?pg=53</loc>
 
         <changefreq>daily</changefreq>
 
@@ -650,7 +557,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=64</loc>
+        <loc>http://pc.am?pg=54</loc>
 
         <changefreq>daily</changefreq>
 
@@ -659,7 +566,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=65</loc>
+        <loc>http://pc.am?pg=55</loc>
 
         <changefreq>daily</changefreq>
 
@@ -668,7 +575,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=66</loc>
+        <loc>http://pc.am?pg=56</loc>
 
         <changefreq>daily</changefreq>
 
@@ -677,7 +584,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=67</loc>
+        <loc>http://pc.am?pg=57</loc>
 
         <changefreq>daily</changefreq>
 
@@ -686,7 +593,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=68</loc>
+        <loc>http://pc.am?pg=58</loc>
 
         <changefreq>daily</changefreq>
 
@@ -695,7 +602,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=69</loc>
+        <loc>http://pc.am?pg=59</loc>
 
         <changefreq>daily</changefreq>
 
@@ -704,7 +611,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=70</loc>
+        <loc>http://pc.am?pg=60</loc>
 
         <changefreq>daily</changefreq>
 
@@ -715,7 +622,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=71</loc>
+        <loc>http://pc.am?pg=61</loc>
 
         <changefreq>daily</changefreq>
 
@@ -725,7 +632,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=72</loc>
+        <loc>http://pc.am?pg=62</loc>
 
         <changefreq>daily</changefreq>
 
@@ -734,7 +641,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=73</loc>
+        <loc>http://pc.am?pg=63</loc>
 
         <changefreq>daily</changefreq>
 
@@ -743,7 +650,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=74</loc>
+        <loc>http://pc.am?pg=64</loc>
 
         <changefreq>daily</changefreq>
 
@@ -752,7 +659,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=75</loc>
+        <loc>http://pc.am?pg=65</loc>
 
         <changefreq>daily</changefreq>
 
@@ -761,7 +668,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=76</loc>
+        <loc>http://pc.am?pg=66</loc>
 
         <changefreq>daily</changefreq>
 
@@ -770,7 +677,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=77</loc>
+        <loc>http://pc.am?pg=67</loc>
 
         <changefreq>daily</changefreq>
 
@@ -779,7 +686,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=78</loc>
+        <loc>http://pc.am?pg=68</loc>
 
         <changefreq>daily</changefreq>
 
@@ -788,7 +695,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=79</loc>
+        <loc>http://pc.am?pg=69</loc>
 
         <changefreq>daily</changefreq>
 
@@ -797,7 +704,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=80</loc>
+        <loc>http://pc.am?pg=70</loc>
 
         <changefreq>daily</changefreq>
 
@@ -808,7 +715,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=81</loc>
+        <loc>http://pc.am?pg=71</loc>
 
         <changefreq>daily</changefreq>
 
@@ -818,7 +725,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=82</loc>
+        <loc>http://pc.am?pg=72</loc>
 
         <changefreq>daily</changefreq>
 
@@ -827,7 +734,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=83</loc>
+        <loc>http://pc.am?pg=73</loc>
 
         <changefreq>daily</changefreq>
 
@@ -836,7 +743,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=84</loc>
+        <loc>http://pc.am?pg=74</loc>
 
         <changefreq>daily</changefreq>
 
@@ -845,7 +752,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=85</loc>
+        <loc>http://pc.am?pg=75</loc>
 
         <changefreq>daily</changefreq>
 
@@ -854,7 +761,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=86</loc>
+        <loc>http://pc.am?pg=76</loc>
 
         <changefreq>daily</changefreq>
 
@@ -863,7 +770,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=87</loc>
+        <loc>http://pc.am?pg=77</loc>
 
         <changefreq>daily</changefreq>
 
@@ -872,7 +779,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=88</loc>
+        <loc>http://pc.am?pg=78</loc>
 
         <changefreq>daily</changefreq>
 
@@ -881,7 +788,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=89</loc>
+        <loc>http://pc.am?pg=79</loc>
 
         <changefreq>daily</changefreq>
 
@@ -890,7 +797,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=90</loc>
+        <loc>http://pc.am?pg=80</loc>
 
         <changefreq>daily</changefreq>
 
@@ -901,7 +808,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=91</loc>
+        <loc>http://pc.am?pg=81</loc>
 
         <changefreq>daily</changefreq>
 
@@ -911,7 +818,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=92</loc>
+        <loc>http://pc.am?pg=82</loc>
 
         <changefreq>daily</changefreq>
 
@@ -920,7 +827,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=93</loc>
+        <loc>http://pc.am?pg=83</loc>
 
         <changefreq>daily</changefreq>
 
@@ -929,7 +836,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=94</loc>
+        <loc>http://pc.am?pg=84</loc>
 
         <changefreq>daily</changefreq>
 
@@ -938,7 +845,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=95</loc>
+        <loc>http://pc.am?pg=85</loc>
 
         <changefreq>daily</changefreq>
 
@@ -947,7 +854,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=96</loc>
+        <loc>http://pc.am?pg=86</loc>
 
         <changefreq>daily</changefreq>
 
@@ -956,7 +863,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=97</loc>
+        <loc>http://pc.am?pg=87</loc>
 
         <changefreq>daily</changefreq>
 
@@ -965,7 +872,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=98</loc>
+        <loc>http://pc.am?pg=88</loc>
 
         <changefreq>daily</changefreq>
 
@@ -974,7 +881,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=99</loc>
+        <loc>http://pc.am?pg=89</loc>
 
         <changefreq>daily</changefreq>
 
@@ -983,7 +890,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=100</loc>
+        <loc>http://pc.am?pg=90</loc>
 
         <changefreq>daily</changefreq>
 
@@ -992,16 +899,9 @@
     </url>
 
 
-
-
-
-
-
-
-
     <url>
 
-        <loc>http://pcstore.am?pg=101</loc>
+        <loc>http://pc.am?pg=91</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1011,7 +911,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=102</loc>
+        <loc>http://pc.am?pg=92</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1020,7 +920,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=103</loc>
+        <loc>http://pc.am?pg=93</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1029,7 +929,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=104</loc>
+        <loc>http://pc.am?pg=94</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1038,7 +938,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=105</loc>
+        <loc>http://pc.am?pg=95</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1047,7 +947,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=106</loc>
+        <loc>http://pc.am?pg=96</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1056,7 +956,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=107</loc>
+        <loc>http://pc.am?pg=97</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1065,7 +965,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=108</loc>
+        <loc>http://pc.am?pg=98</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1074,7 +974,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=109</loc>
+        <loc>http://pc.am?pg=99</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1083,7 +983,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=110</loc>
+        <loc>http://pc.am?pg=100</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1091,9 +991,17 @@
 
     </url>
 
+
+
+
+
+
+
+
+
     <url>
 
-        <loc>http://pcstore.am?pg=111</loc>
+        <loc>http://pc.am?pg=101</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1103,7 +1011,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=112</loc>
+        <loc>http://pc.am?pg=102</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1112,7 +1020,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=113</loc>
+        <loc>http://pc.am?pg=103</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1121,7 +1029,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=114</loc>
+        <loc>http://pc.am?pg=104</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1130,7 +1038,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=115</loc>
+        <loc>http://pc.am?pg=105</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1139,7 +1047,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=116</loc>
+        <loc>http://pc.am?pg=106</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1148,7 +1056,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=117</loc>
+        <loc>http://pc.am?pg=107</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1157,7 +1065,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=118</loc>
+        <loc>http://pc.am?pg=108</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1166,7 +1074,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=119</loc>
+        <loc>http://pc.am?pg=109</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1175,7 +1083,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=120</loc>
+        <loc>http://pc.am?pg=110</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1185,7 +1093,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=121</loc>
+        <loc>http://pc.am?pg=111</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1195,7 +1103,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=122</loc>
+        <loc>http://pc.am?pg=112</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1204,7 +1112,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=123</loc>
+        <loc>http://pc.am?pg=113</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1213,7 +1121,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=124</loc>
+        <loc>http://pc.am?pg=114</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1222,7 +1130,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=125</loc>
+        <loc>http://pc.am?pg=115</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1231,7 +1139,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=126</loc>
+        <loc>http://pc.am?pg=116</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1240,7 +1148,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=127</loc>
+        <loc>http://pc.am?pg=117</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1249,7 +1157,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=128</loc>
+        <loc>http://pc.am?pg=118</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1258,7 +1166,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=129</loc>
+        <loc>http://pc.am?pg=119</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1267,7 +1175,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=130</loc>
+        <loc>http://pc.am?pg=120</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1275,10 +1183,9 @@
 
     </url>
 
-
     <url>
 
-        <loc>http://pcstore.am?pg=131</loc>
+        <loc>http://pc.am?pg=121</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1288,7 +1195,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=132</loc>
+        <loc>http://pc.am?pg=122</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1297,7 +1204,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=133</loc>
+        <loc>http://pc.am?pg=123</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1306,7 +1213,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=134</loc>
+        <loc>http://pc.am?pg=124</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1315,7 +1222,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=135</loc>
+        <loc>http://pc.am?pg=125</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1324,7 +1231,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=136</loc>
+        <loc>http://pc.am?pg=126</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1333,7 +1240,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=137</loc>
+        <loc>http://pc.am?pg=127</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1342,7 +1249,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=138</loc>
+        <loc>http://pc.am?pg=128</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1351,7 +1258,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=139</loc>
+        <loc>http://pc.am?pg=129</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1360,7 +1267,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=140</loc>
+        <loc>http://pc.am?pg=130</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1368,9 +1275,10 @@
 
     </url>
 
+
     <url>
 
-        <loc>http://pcstore.am?pg=141</loc>
+        <loc>http://pc.am?pg=131</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1380,7 +1288,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=142</loc>
+        <loc>http://pc.am?pg=132</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1389,7 +1297,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=143</loc>
+        <loc>http://pc.am?pg=133</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1398,7 +1306,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=144</loc>
+        <loc>http://pc.am?pg=134</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1407,7 +1315,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=145</loc>
+        <loc>http://pc.am?pg=135</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1416,7 +1324,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=146</loc>
+        <loc>http://pc.am?pg=136</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1425,7 +1333,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=147</loc>
+        <loc>http://pc.am?pg=137</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1434,7 +1342,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=148</loc>
+        <loc>http://pc.am?pg=138</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1443,7 +1351,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=149</loc>
+        <loc>http://pc.am?pg=139</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1452,7 +1360,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=150</loc>
+        <loc>http://pc.am?pg=140</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1462,7 +1370,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=151</loc>
+        <loc>http://pc.am?pg=141</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1472,7 +1380,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=152</loc>
+        <loc>http://pc.am?pg=142</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1481,7 +1389,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=153</loc>
+        <loc>http://pc.am?pg=143</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1490,7 +1398,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=154</loc>
+        <loc>http://pc.am?pg=144</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1499,7 +1407,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=155</loc>
+        <loc>http://pc.am?pg=145</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1508,7 +1416,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=156</loc>
+        <loc>http://pc.am?pg=146</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1517,7 +1425,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=157</loc>
+        <loc>http://pc.am?pg=147</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1526,7 +1434,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=158</loc>
+        <loc>http://pc.am?pg=148</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1535,7 +1443,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=159</loc>
+        <loc>http://pc.am?pg=149</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1544,7 +1452,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=160</loc>
+        <loc>http://pc.am?pg=150</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1552,10 +1460,9 @@
 
     </url>
 
-
     <url>
 
-        <loc>http://pcstore.am?pg=161</loc>
+        <loc>http://pc.am?pg=151</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1565,7 +1472,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=162</loc>
+        <loc>http://pc.am?pg=152</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1574,7 +1481,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=163</loc>
+        <loc>http://pc.am?pg=153</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1583,7 +1490,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=164</loc>
+        <loc>http://pc.am?pg=154</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1592,7 +1499,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=165</loc>
+        <loc>http://pc.am?pg=155</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1601,7 +1508,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=166</loc>
+        <loc>http://pc.am?pg=156</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1610,7 +1517,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=167</loc>
+        <loc>http://pc.am?pg=157</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1619,7 +1526,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=168</loc>
+        <loc>http://pc.am?pg=158</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1628,7 +1535,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=169</loc>
+        <loc>http://pc.am?pg=159</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1637,7 +1544,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=170</loc>
+        <loc>http://pc.am?pg=160</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1648,7 +1555,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=171</loc>
+        <loc>http://pc.am?pg=161</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1658,7 +1565,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=172</loc>
+        <loc>http://pc.am?pg=162</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1667,7 +1574,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=173</loc>
+        <loc>http://pc.am?pg=163</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1676,7 +1583,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=174</loc>
+        <loc>http://pc.am?pg=164</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1685,7 +1592,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=175</loc>
+        <loc>http://pc.am?pg=165</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1694,7 +1601,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=176</loc>
+        <loc>http://pc.am?pg=166</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1703,7 +1610,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=177</loc>
+        <loc>http://pc.am?pg=167</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1712,7 +1619,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=178</loc>
+        <loc>http://pc.am?pg=168</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1721,7 +1628,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=179</loc>
+        <loc>http://pc.am?pg=169</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1730,7 +1637,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=180</loc>
+        <loc>http://pc.am?pg=170</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1741,7 +1648,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=181</loc>
+        <loc>http://pc.am?pg=171</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1751,7 +1658,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=182</loc>
+        <loc>http://pc.am?pg=172</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1760,7 +1667,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=183</loc>
+        <loc>http://pc.am?pg=173</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1769,7 +1676,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=184</loc>
+        <loc>http://pc.am?pg=174</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1778,7 +1685,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=185</loc>
+        <loc>http://pc.am?pg=175</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1787,7 +1694,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=186</loc>
+        <loc>http://pc.am?pg=176</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1796,7 +1703,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=187</loc>
+        <loc>http://pc.am?pg=177</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1805,7 +1712,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=188</loc>
+        <loc>http://pc.am?pg=178</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1814,7 +1721,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=189</loc>
+        <loc>http://pc.am?pg=179</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1823,7 +1730,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=190</loc>
+        <loc>http://pc.am?pg=180</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1834,7 +1741,7 @@
 
     <url>
 
-        <loc>http://pcstore.am?pg=191</loc>
+        <loc>http://pc.am?pg=181</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1844,7 +1751,7 @@
   
     <url>
 
-        <loc>http://pcstore.am?pg=192</loc>
+        <loc>http://pc.am?pg=182</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1853,7 +1760,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=193</loc>
+        <loc>http://pc.am?pg=183</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1862,7 +1769,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=194</loc>
+        <loc>http://pc.am?pg=184</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1871,7 +1778,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=195</loc>
+        <loc>http://pc.am?pg=185</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1880,7 +1787,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=196</loc>
+        <loc>http://pc.am?pg=186</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1889,7 +1796,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=197</loc>
+        <loc>http://pc.am?pg=187</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1898,7 +1805,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=198</loc>
+        <loc>http://pc.am?pg=188</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1907,7 +1814,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=199</loc>
+        <loc>http://pc.am?pg=189</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1916,16 +1823,109 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=200</loc>
+        <loc>http://pc.am?pg=190</loc>
 
         <changefreq>daily</changefreq>
 
         <priority>0.8</priority>
 
     </url>
+
+
+    <url>
+
+        <loc>http://pc.am?pg=191</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+  
+    <url>
+
+        <loc>http://pc.am?pg=192</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=193</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=194</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=195</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=196</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=197</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=198</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=199</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
+        <loc>http://pc.am?pg=200</loc>
+
+        <changefreq>daily</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
     <url>
 
-        <loc>http://pcstore.am?pg=201</loc>
+        <loc>http://pc.am?pg=201</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1934,7 +1934,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=202</loc>
+        <loc>http://pc.am?pg=202</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1943,7 +1943,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=203</loc>
+        <loc>http://pc.am?pg=203</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1952,7 +1952,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=204</loc>
+        <loc>http://pc.am?pg=204</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1961,7 +1961,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=205</loc>
+        <loc>http://pc.am?pg=205</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1970,7 +1970,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=206</loc>
+        <loc>http://pc.am?pg=206</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1979,7 +1979,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=207</loc>
+        <loc>http://pc.am?pg=207</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1988,7 +1988,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=208</loc>
+        <loc>http://pc.am?pg=208</loc>
 
         <changefreq>daily</changefreq>
 
@@ -1997,7 +1997,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=209</loc>
+        <loc>http://pc.am?pg=209</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2006,7 +2006,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=210</loc>
+        <loc>http://pc.am?pg=210</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2015,7 +2015,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=211</loc>
+        <loc>http://pc.am?pg=211</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2024,7 +2024,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=212</loc>
+        <loc>http://pc.am?pg=212</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2033,7 +2033,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=213</loc>
+        <loc>http://pc.am?pg=213</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2042,7 +2042,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=214</loc>
+        <loc>http://pc.am?pg=214</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2051,7 +2051,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=215</loc>
+        <loc>http://pc.am?pg=215</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2060,7 +2060,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=216</loc>
+        <loc>http://pc.am?pg=216</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2069,7 +2069,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=217</loc>
+        <loc>http://pc.am?pg=217</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2078,7 +2078,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=218</loc>
+        <loc>http://pc.am?pg=218</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2087,7 +2087,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=219</loc>
+        <loc>http://pc.am?pg=219</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2096,7 +2096,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=220</loc>
+        <loc>http://pc.am?pg=220</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2105,7 +2105,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=221</loc>
+        <loc>http://pc.am?pg=221</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2114,7 +2114,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=222</loc>
+        <loc>http://pc.am?pg=222</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2123,7 +2123,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=223</loc>
+        <loc>http://pc.am?pg=223</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2132,7 +2132,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=224</loc>
+        <loc>http://pc.am?pg=224</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2141,7 +2141,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=225</loc>
+        <loc>http://pc.am?pg=225</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2150,7 +2150,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=226</loc>
+        <loc>http://pc.am?pg=226</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2159,7 +2159,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=227</loc>
+        <loc>http://pc.am?pg=227</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2168,7 +2168,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=228</loc>
+        <loc>http://pc.am?pg=228</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2177,7 +2177,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=229</loc>
+        <loc>http://pc.am?pg=229</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2186,7 +2186,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=230</loc>
+        <loc>http://pc.am?pg=230</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2195,7 +2195,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=231</loc>
+        <loc>http://pc.am?pg=231</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2204,7 +2204,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=232</loc>
+        <loc>http://pc.am?pg=232</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2213,7 +2213,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=233</loc>
+        <loc>http://pc.am?pg=233</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2222,7 +2222,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=234</loc>
+        <loc>http://pc.am?pg=234</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2231,7 +2231,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=235</loc>
+        <loc>http://pc.am?pg=235</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2240,7 +2240,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=236</loc>
+        <loc>http://pc.am?pg=236</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2249,7 +2249,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=237</loc>
+        <loc>http://pc.am?pg=237</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2258,7 +2258,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=238</loc>
+        <loc>http://pc.am?pg=238</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2267,7 +2267,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=239</loc>
+        <loc>http://pc.am?pg=239</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2276,7 +2276,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=240</loc>
+        <loc>http://pc.am?pg=240</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2285,7 +2285,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=241</loc>
+        <loc>http://pc.am?pg=241</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2294,7 +2294,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=242</loc>
+        <loc>http://pc.am?pg=242</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2303,7 +2303,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=243</loc>
+        <loc>http://pc.am?pg=243</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2312,7 +2312,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=244</loc>
+        <loc>http://pc.am?pg=244</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2321,7 +2321,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=245</loc>
+        <loc>http://pc.am?pg=245</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2330,7 +2330,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=246</loc>
+        <loc>http://pc.am?pg=246</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2339,7 +2339,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=247</loc>
+        <loc>http://pc.am?pg=247</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2348,7 +2348,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=248</loc>
+        <loc>http://pc.am?pg=248</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2357,7 +2357,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=249</loc>
+        <loc>http://pc.am?pg=249</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2366,7 +2366,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=250</loc>
+        <loc>http://pc.am?pg=250</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2375,7 +2375,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=251</loc>
+        <loc>http://pc.am?pg=251</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2384,7 +2384,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=252</loc>
+        <loc>http://pc.am?pg=252</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2393,7 +2393,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=253</loc>
+        <loc>http://pc.am?pg=253</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2402,7 +2402,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=254</loc>
+        <loc>http://pc.am?pg=254</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2411,7 +2411,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=255</loc>
+        <loc>http://pc.am?pg=255</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2420,7 +2420,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=256</loc>
+        <loc>http://pc.am?pg=256</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2429,7 +2429,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=257</loc>
+        <loc>http://pc.am?pg=257</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2438,7 +2438,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=258</loc>
+        <loc>http://pc.am?pg=258</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2447,7 +2447,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=259</loc>
+        <loc>http://pc.am?pg=259</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2456,7 +2456,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=260</loc>
+        <loc>http://pc.am?pg=260</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2465,7 +2465,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=261</loc>
+        <loc>http://pc.am?pg=261</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2474,7 +2474,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=262</loc>
+        <loc>http://pc.am?pg=262</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2483,7 +2483,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=263</loc>
+        <loc>http://pc.am?pg=263</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2492,7 +2492,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=264</loc>
+        <loc>http://pc.am?pg=264</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2501,7 +2501,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=265</loc>
+        <loc>http://pc.am?pg=265</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2510,7 +2510,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=266</loc>
+        <loc>http://pc.am?pg=266</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2519,7 +2519,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=267</loc>
+        <loc>http://pc.am?pg=267</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2528,7 +2528,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=268</loc>
+        <loc>http://pc.am?pg=268</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2537,7 +2537,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=269</loc>
+        <loc>http://pc.am?pg=269</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2546,7 +2546,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=270</loc>
+        <loc>http://pc.am?pg=270</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2555,7 +2555,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=271</loc>
+        <loc>http://pc.am?pg=271</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2564,7 +2564,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=272</loc>
+        <loc>http://pc.am?pg=272</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2573,7 +2573,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=273</loc>
+        <loc>http://pc.am?pg=273</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2582,7 +2582,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=274</loc>
+        <loc>http://pc.am?pg=274</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2591,7 +2591,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=275</loc>
+        <loc>http://pc.am?pg=275</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2600,7 +2600,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=276</loc>
+        <loc>http://pc.am?pg=276</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2609,7 +2609,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=277</loc>
+        <loc>http://pc.am?pg=277</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2618,7 +2618,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=278</loc>
+        <loc>http://pc.am?pg=278</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2627,7 +2627,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=279</loc>
+        <loc>http://pc.am?pg=279</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2636,7 +2636,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=280</loc>
+        <loc>http://pc.am?pg=280</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2645,7 +2645,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=281</loc>
+        <loc>http://pc.am?pg=281</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2654,7 +2654,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=282</loc>
+        <loc>http://pc.am?pg=282</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2663,7 +2663,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=283</loc>
+        <loc>http://pc.am?pg=283</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2672,7 +2672,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=284</loc>
+        <loc>http://pc.am?pg=284</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2681,7 +2681,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=285</loc>
+        <loc>http://pc.am?pg=285</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2690,7 +2690,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=286</loc>
+        <loc>http://pc.am?pg=286</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2699,7 +2699,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=287</loc>
+        <loc>http://pc.am?pg=287</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2708,7 +2708,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=288</loc>
+        <loc>http://pc.am?pg=288</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2717,7 +2717,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=289</loc>
+        <loc>http://pc.am?pg=289</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2726,7 +2726,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=290</loc>
+        <loc>http://pc.am?pg=290</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2735,7 +2735,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=291</loc>
+        <loc>http://pc.am?pg=291</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2744,7 +2744,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=292</loc>
+        <loc>http://pc.am?pg=292</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2753,7 +2753,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=293</loc>
+        <loc>http://pc.am?pg=293</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2762,7 +2762,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=294</loc>
+        <loc>http://pc.am?pg=294</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2771,7 +2771,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=295</loc>
+        <loc>http://pc.am?pg=295</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2780,7 +2780,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=296</loc>
+        <loc>http://pc.am?pg=296</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2789,7 +2789,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=297</loc>
+        <loc>http://pc.am?pg=297</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2798,7 +2798,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=298</loc>
+        <loc>http://pc.am?pg=298</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2807,7 +2807,7 @@
     </url>
     <url>
 
-        <loc>http://pcstore.am?pg=299</loc>
+        <loc>http://pc.am?pg=299</loc>
 
         <changefreq>daily</changefreq>
 
@@ -2815,507 +2815,507 @@
 
     </url>
     <url>
-        <loc>http://pcstore.am?pg=300</loc>
+        <loc>http://pc.am?pg=300</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=301</loc>
+        <loc>http://pc.am?pg=301</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=302</loc>
+        <loc>http://pc.am?pg=302</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=303</loc>
+        <loc>http://pc.am?pg=303</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=304</loc>
+        <loc>http://pc.am?pg=304</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=305</loc>
+        <loc>http://pc.am?pg=305</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=306</loc>
+        <loc>http://pc.am?pg=306</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=307</loc>
+        <loc>http://pc.am?pg=307</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=308</loc>
+        <loc>http://pc.am?pg=308</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=309</loc>
+        <loc>http://pc.am?pg=309</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=310</loc>
+        <loc>http://pc.am?pg=310</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=311</loc>
+        <loc>http://pc.am?pg=311</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=312</loc>
+        <loc>http://pc.am?pg=312</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=313</loc>
+        <loc>http://pc.am?pg=313</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=314</loc>
+        <loc>http://pc.am?pg=314</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=315</loc>
+        <loc>http://pc.am?pg=315</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=316</loc>
+        <loc>http://pc.am?pg=316</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=317</loc>
+        <loc>http://pc.am?pg=317</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=318</loc>
+        <loc>http://pc.am?pg=318</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=319</loc>
+        <loc>http://pc.am?pg=319</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=320</loc>
+        <loc>http://pc.am?pg=320</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=321</loc>
+        <loc>http://pc.am?pg=321</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=322</loc>
+        <loc>http://pc.am?pg=322</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=323</loc>
+        <loc>http://pc.am?pg=323</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=324</loc>
+        <loc>http://pc.am?pg=324</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=325</loc>
+        <loc>http://pc.am?pg=325</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=326</loc>
+        <loc>http://pc.am?pg=326</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=327</loc>
+        <loc>http://pc.am?pg=327</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=328</loc>
+        <loc>http://pc.am?pg=328</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=329</loc>
+        <loc>http://pc.am?pg=329</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=330</loc>
+        <loc>http://pc.am?pg=330</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=331</loc>
+        <loc>http://pc.am?pg=331</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=332</loc>
+        <loc>http://pc.am?pg=332</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=333</loc>
+        <loc>http://pc.am?pg=333</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=334</loc>
+        <loc>http://pc.am?pg=334</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=335</loc>
+        <loc>http://pc.am?pg=335</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=336</loc>
+        <loc>http://pc.am?pg=336</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=337</loc>
+        <loc>http://pc.am?pg=337</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=338</loc>
+        <loc>http://pc.am?pg=338</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=339</loc>
+        <loc>http://pc.am?pg=339</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=340</loc>
+        <loc>http://pc.am?pg=340</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=341</loc>
+        <loc>http://pc.am?pg=341</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=342</loc>
+        <loc>http://pc.am?pg=342</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=343</loc>
+        <loc>http://pc.am?pg=343</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=344</loc>
+        <loc>http://pc.am?pg=344</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=345</loc>
+        <loc>http://pc.am?pg=345</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=346</loc>
+        <loc>http://pc.am?pg=346</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=347</loc>
+        <loc>http://pc.am?pg=347</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=348</loc>
+        <loc>http://pc.am?pg=348</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=349</loc>
+        <loc>http://pc.am?pg=349</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=350</loc>
+        <loc>http://pc.am?pg=350</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=351</loc>
+        <loc>http://pc.am?pg=351</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=352</loc>
+        <loc>http://pc.am?pg=352</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=353</loc>
+        <loc>http://pc.am?pg=353</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=354</loc>
+        <loc>http://pc.am?pg=354</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=355</loc>
+        <loc>http://pc.am?pg=355</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=356</loc>
+        <loc>http://pc.am?pg=356</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=357</loc>
+        <loc>http://pc.am?pg=357</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=358</loc>
+        <loc>http://pc.am?pg=358</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=359</loc>
+        <loc>http://pc.am?pg=359</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=360</loc>
+        <loc>http://pc.am?pg=360</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=361</loc>
+        <loc>http://pc.am?pg=361</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=362</loc>
+        <loc>http://pc.am?pg=362</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=363</loc>
+        <loc>http://pc.am?pg=363</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=364</loc>
+        <loc>http://pc.am?pg=364</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=365</loc>
+        <loc>http://pc.am?pg=365</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=366</loc>
+        <loc>http://pc.am?pg=366</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=367</loc>
+        <loc>http://pc.am?pg=367</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=368</loc>
+        <loc>http://pc.am?pg=368</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=369</loc>
+        <loc>http://pc.am?pg=369</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=370</loc>
+        <loc>http://pc.am?pg=370</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=371</loc>
+        <loc>http://pc.am?pg=371</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=372</loc>
+        <loc>http://pc.am?pg=372</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=373</loc>
+        <loc>http://pc.am?pg=373</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=374</loc>
+        <loc>http://pc.am?pg=374</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=375</loc>
+        <loc>http://pc.am?pg=375</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=376</loc>
+        <loc>http://pc.am?pg=376</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=377</loc>
+        <loc>http://pc.am?pg=377</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=378</loc>
+        <loc>http://pc.am?pg=378</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=379</loc>
+        <loc>http://pc.am?pg=379</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=380</loc>
+        <loc>http://pc.am?pg=380</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=381</loc>
+        <loc>http://pc.am?pg=381</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=382</loc>
+        <loc>http://pc.am?pg=382</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=383</loc>
+        <loc>http://pc.am?pg=383</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=384</loc>
+        <loc>http://pc.am?pg=384</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=385</loc>
+        <loc>http://pc.am?pg=385</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=386</loc>
+        <loc>http://pc.am?pg=386</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=387</loc>
+        <loc>http://pc.am?pg=387</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=388</loc>
+        <loc>http://pc.am?pg=388</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=389</loc>
+        <loc>http://pc.am?pg=389</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=390</loc>
+        <loc>http://pc.am?pg=390</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=391</loc>
+        <loc>http://pc.am?pg=391</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=392</loc>
+        <loc>http://pc.am?pg=392</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=393</loc>
+        <loc>http://pc.am?pg=393</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=394</loc>
+        <loc>http://pc.am?pg=394</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=395</loc>
+        <loc>http://pc.am?pg=395</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=396</loc>
+        <loc>http://pc.am?pg=396</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=397</loc>
+        <loc>http://pc.am?pg=397</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=398</loc>
+        <loc>http://pc.am?pg=398</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=399</loc>
+        <loc>http://pc.am?pg=399</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://pcstore.am?pg=400</loc>
+        <loc>http://pc.am?pg=400</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
