@@ -790,7 +790,7 @@ label.input_label{
     text-shadow:0 0 3px #428bca;
 }
 
-.modal .modal-content .social-network a{
+.modal .modal-content .social-login .social-login-link{
     width:230px;
     display:block;
     margin:25px auto 0;
@@ -801,12 +801,12 @@ label.input_label{
     text-overflow:ellipsis;
     white-space:nowrap;
 }
-.modal .modal-content .social-network a:after {
+.modal .modal-content .social-login .social-login-link:after {
     clear: both;
     content: "";
     display: block;
 }
-.modal .modal-content .social-network a img{
+.modal .modal-content .social-login .social-login-link img{
     width:25px;
     padding:7px;
     display:block;
@@ -815,24 +815,24 @@ label.input_label{
 }
 
 /* Facebook */
-.modal .modal-content .social-network a.facebook img {
+.modal .modal-content .social-login .social-login-link.facebook img {
     background-color:#354f88;
 }
-.modal .modal-content .social-network a.facebook {
+.modal .modal-content .social-login .social-login-link.facebook {
     background-color:#3b5998;
 }
 /* LinkedIn */
-.modal .modal-content .social-network a.linkedin img {
+.modal .modal-content .social-login .social-login-link.linkedin img {
     background-color:#40a2d1;
 }
-.modal .modal-content .social-network a.linkedin {
+.modal .modal-content .social-login .social-login-link.linkedin {
     background-color:#45b0e3;
 }
 /* Google+ */
-.modal .modal-content .social-network .google img {
+.modal .modal-content .social-login .google img {
     background-color:#ce3e26;
 }
-.modal .modal-content .social-network .google {
+.modal .modal-content .social-login .google {
     background-color:#de4c34;
 }
 
@@ -1348,7 +1348,7 @@ width: calc(100% - 50px);*/
     margin-bottom:30px;
     overflow: hidden;
     width:100%;
-    height:23.2vw;
+    /*height:23.2vw;*/
 
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -1357,6 +1357,16 @@ width: calc(100% - 50px);*/
     -ms-border-radius: 10px;
     -icab-border-radius: 10px; 
     border-radius: 10px; 
+    box-shadow:0 0 7px 0 #ccc;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;	
+}
+.banner-slider-container:hover{
+    /*box-shadow: 0 0 7px 3px #63b4fb;*/
 }
 
 .banner-slider{

@@ -44,8 +44,7 @@
             </div>
         </div>
         <div class="right-content">
-
-            {if empty($ns.search_text)}
+            {if !isset($ns.hideBannerSlider)}
                 {include file="$TEMPLATE_DIR/main/banner_slider.tpl"} 
             {/if}
 
