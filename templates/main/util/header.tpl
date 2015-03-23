@@ -198,7 +198,7 @@
                         <div class="social-network">
                             <a class="facebook" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
                             <a class="linkedin" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
-                            <a class="google" id="googleLoginBtnid" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </a>
+                            <a class="google" id="googleLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </a>
                         </div>
                     </div>
                 </div>
