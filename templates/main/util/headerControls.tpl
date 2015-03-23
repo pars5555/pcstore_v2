@@ -79,7 +79,7 @@
 <meta name="google-signin-requestvisibleactions" content="http://schemas.google.com/AddActivity" />
 <meta name="google-signin-cookiepolicy" content="single_host_origin" />
 <meta name="google-signin-callback" content="googleLoginCallback" />
-
+{literal}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -88,3 +88,4 @@
     ga('create', 'UA-61087329-3', 'auto');
     ga('send', 'pageview');
 </script>
+{/literal}
