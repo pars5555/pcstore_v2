@@ -107,14 +107,14 @@
     <form action="" autocomplete="off" id="confirm_code_form">
         <div class="pop_up">
             <div class="close_button"></div>
-            <div class="pop_up_title">{$ns.lm->getPhrase(316)}</div>
+            <div class="pop_up_title">{$ns.lm->getPhrase(447)}</div>
             <p>{$ns.lm->getPhrase(319)}</p>
             <div class="form-group">
                 <input class="text" type="text" id="confirm_code" />
                 <div class="error" style="display:none;"></div>
                 <button class="button blue">{$ns.lm->getPhrase(50)}</button>
             </div>
-            <p>{$ns.lm->getPhrase(361)}</p>
+            <p>{$ns.lm->getPhrase(361)} {$ns.pcstore_contact_number}</p>
         </div>
     </form>
 </div>

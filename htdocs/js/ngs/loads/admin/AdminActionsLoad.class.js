@@ -27,6 +27,10 @@ ngs.AdminActionsLoad = Class.create(ngs.AbstractLoad, {
             jQuery(this).css({'visibility':'hidden'});
             ngs.action('admin_group_actions', {'action': 'delete_all_unnecessary_items_pictures'});
         });
+        jQuery("#update_all_items_list_prices").click(function() {
+            jQuery(this).css({'visibility':'hidden'});
+            ngs.action('admin_group_actions', {'action': 'update_items_list_price'});
+        });
         jQuery("#deploy_latest_pcstore_changes").click(function() {
             alert('not implemented');
             //ngs.action('admin_group_actions', {'action': 'deploy_latest_pcstore_changes'});

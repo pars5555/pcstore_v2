@@ -83,6 +83,10 @@ class ItemManager extends AbstractManager {
     public function getAllItemsWithDealerAmdOrVatAmdPrices() {
         return $this->mapper->getAllItemsWithDealerAmdOrVatAmdPrices();
     }
+    
+    public function getAllItemsDealerPriceListPrice() {
+        return $this->mapper->getAllItemsDealerPriceListPrice();
+    }
 
     public function addItem($displayName, $shortDescription, $fullDescription, $warranty, $dealerPrice, $vatPrice, $dealerPriceAmd, $vatPriceAmd, $companyID, $item_model, $item_brand, $categories_ids, $item_available_till_date, $item_price_sort_index = 0, $createdByEmail) {
         $item = $this->mapper->createDto();
@@ -119,7 +123,7 @@ class ItemManager extends AbstractManager {
         //calculate fake list price
         $itemForOrderDto = $this->getItemWithCustomerPrice($itemId);
         $customerItemPriceAmd = $this->exchangeFromUsdToAMD($itemForOrderDto->getCustomerItemPrice());
-        $itemRandomDiscountPercent = rand(20, 28);
+        $itemRandomDiscountPercent = rand(15, 28);
         $itemRandomDiscountParam = 1 - $itemRandomDiscountPercent / 100;
         $itemListPrice = intval($customerItemPriceAmd / $itemRandomDiscountParam);
         $this->updateNumericField($itemId, "list_price_amd", $itemListPrice);

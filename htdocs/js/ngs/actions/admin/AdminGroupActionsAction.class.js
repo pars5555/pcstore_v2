@@ -18,6 +18,9 @@ ngs.AdminGroupActionsAction = Class.create(ngs.AbstractAction, {
                 case "delete_user":
                    ngs.load("admin_users" , {});
                     break;
+                case "update_items_list_price":
+                  jQuery('#update_all_items_list_prices').css({'visibility':'visible'});
+                    break;
                 case "update_all_amd_items_price":
                    jQuery('#update_all_amd_items_prices_link').css({'visibility':'visible'});
                     break;

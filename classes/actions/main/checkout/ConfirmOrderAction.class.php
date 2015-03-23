@@ -113,7 +113,7 @@ class ConfirmOrderAction extends GuestAction {
             $creditMonthlyPayment = CreditManager::calcCredit($grandTotalAMD, $deposit_amd, $annualInterestPercent, $selected_credit_months, $commission);
             $creditOrdersManager->addCreditOrder($orderId, $deposit_amd, $credit_supplier_id, $selected_credit_months, $annualInterestPercent, $creditMonthlyPayment);
         }
-        //$customerCartManager->emptyCustomerCart($userEmail);
+        $customerCartManager->emptyCustomerCart($userEmail);
         $this->emailOrderDetails($orderId);
 
         /* if (isset($validPromoDiscount)) {

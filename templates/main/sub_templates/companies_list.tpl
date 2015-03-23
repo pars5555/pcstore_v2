@@ -66,9 +66,10 @@
                                 <div id="documentSliderWrapper" class="f_document_slider owl-carousel owl-theme text-center">
                                     {* company last price*}
                                     {if $company->getPriceId()>0}
-                                        <a class="price_file" href="{$SITE_PATH}/price/last_price/{$companyId}"> {assign var="company_last_price_ext" value=$company->getPriceExt()}
+                                        <a class="price_file" href="{$SITE_PATH}/price/last_price/{$companyId}"> 
+                                            {assign var="company_last_price_ext" value=$company->getPriceExt()}
                                             {assign var="priceListDate" value=$company->getPriceUploadDateTime()}
-                                            {assign var="icon_local_path" value="`$ns.DOCUMENT_ROOT`/img/file_types_icons/`$company_last_price_ext`_icon.png"}
+                                            {assign var="icon_local_path" value="`$ns.DOCUMENT_ROOT`/htdocs/img/file_types_icons/`$company_last_price_ext`_icon.png"}
                                             {assign var="icon_path" value="`$SITE_PATH`/img/file_types_icons/`$company_last_price_ext`_icon.png"} <img src = "{if file_exists($icon_local_path)}{$icon_path}{else}{$SITE_PATH}/img/file_types_icons/unknown_icon.png{/if}"  alt="document"/>
                                             <p class="price_date" style="color:{$ns.companiesPriceListManager->getCompanyPriceColor($priceListDate)}"> 
                                                 {if $priceListDate}
