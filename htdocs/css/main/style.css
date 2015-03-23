@@ -829,10 +829,10 @@ label.input_label{
     background-color:#45b0e3;
 }
 /* Google+ */
-.modal .modal-content .social-network a.google img {
+.modal .modal-content .social-network .google img {
     background-color:#ce3e26;
 }
-.modal .modal-content .social-network a.google {
+.modal .modal-content .social-network .google {
     background-color:#de4c34;
 }
 
@@ -2916,7 +2916,7 @@ SMS CONF COMPANY
 .socialNetworks-linkes-pages li a .img.facebook{
     background-image:url("../../img/facebook_1.png");
 }
-.socialNetworks-linkes-pages li a .img.google{
+.socialNetworks-linkes-pages li .img.google{
     background-image:url("../../img/googleplus_1.png");
 }
 .socialNetworks-linkes-pages li a .img.twitter{

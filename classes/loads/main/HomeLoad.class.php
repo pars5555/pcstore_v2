@@ -29,7 +29,7 @@ class HomeLoad extends BaseGuestLoad {
 
     public function load() {
         $this->getAllBanners();
-        
+
         $this->addParam('req', $_REQUEST);
 
         //init managers

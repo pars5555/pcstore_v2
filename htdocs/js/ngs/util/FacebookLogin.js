@@ -1,26 +1,3 @@
-jQuery(document).ready(function() {
-    if (typeof FB !== 'undefined') {
-        FB.init({
-            appId: '647621848648600',
-            xfbml: true,
-            version: 'v2.0'
-        });
-
-        jQuery("#facebookLoginBtn").click(function() {
-
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    FB.api('/me', onFacebookLogin);
-                } else {
-                    FB.login(function(response) {
-                        FB.api('/me', onFacebookLogin);
-                    }, {scope: 'email'});
-                }
-
-            });
-        });
-    }
-});
 function onFacebookLogin(response)
 {
     var userId = response.id;

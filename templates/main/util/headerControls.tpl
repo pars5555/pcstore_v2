@@ -73,12 +73,14 @@
         authorize: true
 </script> 
 {* google pluse login setup *}
-<script type="text/javascript" src="https://apis.google.com/js/client:plusone.js?onload=render"></script>
-<meta name="google-signin-clientid" content="1035369249-j8j8uc4oacruo2iefonhdj1q0csjb9sj.apps.googleusercontent.com"/>                                             
+<script type="text/javascript" src="https://apis.google.com/js/client:plusone.js"></script>
+<meta name="google-signin-clientid" content="1035369249-j8j8uc4oacruo2iefonhdj1q0csjb9sj.apps.googleusercontent.com" />
 <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login  https://www.google.com/m8/feeds" />
-<meta name="google-signin-requestvisibleactions" content="http://schemas.google.com/AddActivity" />
+<meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
 <meta name="google-signin-cookiepolicy" content="single_host_origin" />
 <meta name="google-signin-callback" content="googleLoginCallback" />
+
+
 {literal}
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

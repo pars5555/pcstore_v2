@@ -1,12 +1,3 @@
-jQuery(document).ready(function() {
-    jQuery("#linkedinLoginBtn").click(function() {
-        IN.UI.Authorize().place();
-        IN.Event.on(IN, "auth", function() {
-            onLinkedLogin();
-        });       
-    });
-});
-
 
 function onLinkedLogin() {
     IN.API.Profile("me").fields(["id","firstName","lastName","headline","pictureUrl","publicProfileUrl","emailAddress",

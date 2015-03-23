@@ -37,6 +37,37 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
 
         this.hideErrorSuccessMessages();
+        this.initSocialLogins();
+    },
+    initSocialLogins: function () {
+        if (jQuery('#googleLoginBtn').length > 0) {
+            gapi.signin.render('googleLoginBtn', {});
+        }
+        jQuery("#linkedinLoginBtn").click(function () {
+            IN.UI.Authorize().place();
+            IN.Event.on(IN, "auth", function () {
+                onLinkedLogin();
+            });
+        });
+        if (typeof FB !== 'undefined') {
+            FB.init({
+                appId: '647621848648600',
+                xfbml: true,
+                version: 'v2.0'
+            });
+            jQuery("#facebookLoginBtn").click(function () {
+                FB.getLoginStatus(function (response) {
+                    if (response.status === 'connected') {
+                        FB.api('/me', onFacebookLogin);
+                    } else {
+                        FB.login(function (response) {
+                            FB.api('/me', onFacebookLogin);
+                        }, {scope: 'email'});
+                    }
+
+                });
+            });
+        }
     },
     hideErrorSuccessMessages: function () {
         window.setInterval(function () {
