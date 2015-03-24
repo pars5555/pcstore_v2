@@ -52,6 +52,7 @@ define("BIN_DIR", NGS_ROOT . "/bin");
 //---defining image root dir
 define('DATA_IMAGE_DIR', DATA_DIR . "/images");
 define('DATA_TEMP_DIR', DATA_DIR . "/temp");
+define('DATA_EMAIL_TEMPLATES_DIR', DATA_DIR . "/email_templates");
 
 //---defining interface images dir
 define("IMG_ROOT_DIR", NGS_ROOT . "/htdocs/img");

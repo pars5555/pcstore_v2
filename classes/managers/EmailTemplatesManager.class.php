@@ -1,7 +1,6 @@
 <?php
 
 require_once (FRAMEWORK_PATH . "/AbstractManager.class.php");
-require_once (CLASSES_PATH . "/dal/mappers/EmailTemplatesMapper.class.php");
 
 /**
  * CategoryHierarchyManager class is responsible for creating,
@@ -19,7 +18,7 @@ class EmailTemplatesManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-   
+
      * @return
      */
     function __construct() {
@@ -28,7 +27,7 @@ class EmailTemplatesManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-    
+
      * @return
      */
     public static function getInstance() {
@@ -40,23 +39,8 @@ class EmailTemplatesManager extends AbstractManager {
         return self::$instance;
     }
 
-    public function getTemplate($id, $lc = 'en') {
-
-        if (($lc == 'en' || $lc == 'am' || $lc == 'ru')) {
-            $fname = "getContent" . ucfirst($_COOKIE['ul']);
-        } else {
-            $fname = 'getContentEn';
-        }
-        $emailTemplateDto = $this->mapper->selectByPK($this->secure($id));
-        if (!isset($emailTemplateDto)) {
-            return null;
-        }
-        $ret = $emailTemplateDto->$fname();
-        if (!empty($ret)) {
-            return $ret;
-        } else {
-            return $emailTemplateDto->getContentEn();
-        }
+    public function getTemplate($templateName) {
+        return file_get_contents(DATA_EMAIL_TEMPLATES_DIR . "/" . $templateName . ".tpl");
     }
 
 }

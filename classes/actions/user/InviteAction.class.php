@@ -27,7 +27,8 @@ class InviteAction extends GuestAction {
             $pendingUserEmail = $this->secure($_REQUEST["email"]);
             if (filter_var($pendingUserEmail, FILTER_VALIDATE_EMAIL)) {
                 if ($userManager->getCustomerByEmail($pendingUserEmail)) {
-                    $this->error(array("message" => $this->getPhrase(359)));
+                    $_SESSION['error_message'] = $this->getPhraseSpan(359);
+                    $this->redirect("uinvite");
                 }
                 $byUserIdAndPendingSubUserEmail = $userPendingSubUsersManager->getByUserIdAndPendingSubUserEmail($userId, $pendingUserEmail);
                 if (!isset($byUserIdAndPendingSubUserEmail)) {
