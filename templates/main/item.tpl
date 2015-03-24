@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                         {/if}
-                        {if $new_item != true}
+                        {if $new_item == true}
                             <div class="new_product"></div>
                         {/if}
                         <div class="product_other_info">

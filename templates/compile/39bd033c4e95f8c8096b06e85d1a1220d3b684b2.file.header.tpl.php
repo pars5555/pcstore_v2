@@ -219,9 +219,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     </div>
                 </form>
                 <div class="modal_cols">
-                    <div class="social-network-wrapper">
+                    <div class="social-login-wrapper">
                         <h4 class="title">Sign in with your social network</h4>
-                        <div class="social-network">
+                        <div class="social-login">
                             <a class="facebook" href="javascript:void(0);" id="facebookLoginBtn" > <img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/facebook.png" alt=""/> sign in with facebook </a>
                             <a class="linkedin" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>

@@ -193,12 +193,12 @@
                     </div>
                 </form>
                 <div class="modal_cols">
-                    <div class="social-network-wrapper">
+                    <div class="social-login-wrapper">
                         <h4 class="title">Sign in with your social network</h4>
-                        <div class="social-network">
-                            <a class="facebook" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
-                            <a class="linkedin" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
-                            <div class="google" id="googleLoginBtn" > <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </div>
+                        <div class="social-login">
+                            <a class="facebook social-login-link" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
+                            <a class="linkedin social-login-link" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
+                            <div class="google social-login-link" id="googleLoginBtn" > <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </div>
                         </div>
                     </div>
                 </div>
