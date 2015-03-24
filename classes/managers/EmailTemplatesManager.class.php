@@ -22,7 +22,6 @@ class EmailTemplatesManager extends AbstractManager {
      * @return
      */
     function __construct() {
-        $this->mapper = EmailTemplatesMapper::getInstance();
     }
 
     /**
