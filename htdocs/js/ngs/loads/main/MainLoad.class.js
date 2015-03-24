@@ -99,8 +99,10 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     pccLoader: function () {
         jQuery("#pcc_loader").addClass("hidden");
-        jQuery(".f_current_item_block,.f_component").on("click", function () {
-            jQuery("#pcc_loader").removeClass("hidden");
+        jQuery(".f_current_item_block,.f_component").on("click", function (event) {
+            if (!jQuery(event.target).hasClass("f_product_link")) {
+                jQuery("#pcc_loader").removeClass("hidden");
+            }
         });
     },
     initPopup: function (title, content, confirm, cancel, confirm_click) {

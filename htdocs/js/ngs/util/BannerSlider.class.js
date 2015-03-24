@@ -9,6 +9,7 @@ var bannerSlider = {
         this.sliderAutoRotate();
         this.sliderControl();
         this.sliderNavigation();
+        this.sliderResponsiveSize();
     },
     //********************* Slider Constants *******************//
     initSliderElements: function () {
@@ -29,7 +30,7 @@ var bannerSlider = {
         var self = this;
         this.sliderIntervalId = setInterval(function () {
             self.sliderRotate();
-        },this.sliderRotateSpeed * 1000);
+        }, this.sliderRotateSpeed * 1000);
     },
     //***************** Slider Control ***************//
     sliderControl: function () {
@@ -45,7 +46,7 @@ var bannerSlider = {
         var self = this;
         this.sliderNavBtn.on("click", function () {
             var position = jQuery(this).attr("data-position");
-            self.sliderRotate(position,true);
+            self.sliderRotate(position, true);
             self.sliderAutoRotate();
         });
     },
@@ -55,7 +56,7 @@ var bannerSlider = {
         jQuery(this.sliderNavBtn[nav_btn_num]).addClass("active");
     },
     //***************** Slider Rotate ***************//
-    sliderRotate: function (position,navPos) {
+    sliderRotate: function (position, navPos) {
         var new_pos, left;
         var navPos = typeof navPos === "undefined" ? false : navPos;
         var position = typeof position === "undefined" ? 1 : parseInt(position);
@@ -79,5 +80,12 @@ var bannerSlider = {
         this.sliderCurPos = new_pos;
 
         this.changeNavActiveBtn(this.sliderCurPos);
+    },
+    sliderResponsiveSize: function () {
+        var self = this;
+        self.slider.height(self.slider.width() / 3 + "px");
+        jQuery(window).resize(function () {
+            self.slider.height(self.slider.width() / 3 + "px");
+        });
     }
 };

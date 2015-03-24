@@ -116,6 +116,22 @@ class AdminGroupActionsAction extends BaseAdminAction {
                 $itemManager = ItemManager::getInstance();
                 $itemManager->UpdateAllAmdItemsPrices();
                 break;
+            case 'update_items_list_price':
+                require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
+                $itemManager = ItemManager::getInstance();
+                $allItemsDealerPriceListPrice = $itemManager->getAllItemsDealerPriceListPrice();
+                foreach ($allItemsDealerPriceListPrice as $itemDto) {
+                    $itemDealerPrice = $itemDto->getDealerPrice();
+                    $itemListPriceAmd = $itemDto->getListPriceAmd();
+                    $dollarAmd = intval($this->getCmsVar("us_dollar_exchange"));
+                    $dealerPriceAmd = $dollarAmd * $itemDealerPrice;
+                    $averageSellingPrice = $dealerPriceAmd * 1.1;
+                    if ($itemListPriceAmd < $averageSellingPrice || $itemListPriceAmd > 2 * $averageSellingPrice) {
+                        $listPriceAmd = $averageSellingPrice * (1 + rand(15, 25) / 100);
+                        $itemManager->updateNumericField($itemDto->getId(), 'list_price_amd', $listPriceAmd);
+                    }
+                }
+                break;
         }
 
         $this->ok($params);
@@ -123,9 +139,9 @@ class AdminGroupActionsAction extends BaseAdminAction {
 
     private function updateCompanyPriceText($companyIdsString) {
         if (ENVIRONMENT == 'local') {
-            exec('d:\xampp\php\php.exe ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 ".ENVIRONMENT);
+            exec('d:\xampp\php\php.exe ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 " . ENVIRONMENT);
         } else {
-            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 ".ENVIRONMENT." > /dev/null &");
+            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyIdsString 0 " . ENVIRONMENT . " > /dev/null &");
         }
     }
 

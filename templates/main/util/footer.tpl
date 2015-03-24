@@ -56,10 +56,12 @@
                     </a>
                 </div>
                 <div class="footer-column">
-                    <h5>{$ns.lm->getPhrase(7)}</h5>
-                    <a href="/signup">
-                        <p>{$ns.lm->getPhrase(6)}</p>
-                    </a>
+                    <h5>{$ns.lm->getPhrase(5)}</h5>
+                    {if $ns.userLevel === $ns.userGroupsGuest}
+                        <a href="/signup">
+                            <p>{$ns.lm->getPhrase(6)}</p>
+                        </a>
+                    {/if}
                     <a href="/invite">
                         <p>{$ns.lm->getPhrase(139)}</p>
                     </a>

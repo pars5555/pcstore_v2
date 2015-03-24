@@ -115,6 +115,14 @@ class ItemMapper extends AbstractMapper {
         $result = $this->fetchRows($sqlQuery);
         return $result;
     }
+    
+    public static $GET_ALL_ITEMS_DEALER_PRICES = "SELECT `id`, `dealer_price`, `list_price_amd`  FROM `%s`";
+
+    public function getAllItemsDealerPriceListPrice() {
+        $sqlQuery = sprintf(self::$GET_ALL_ITEMS_DEALER_PRICES, $this->getTableName());
+        $result = $this->fetchRows($sqlQuery);
+        return $result;
+    }
 
     /**
      * This is the main function that is used in system item search tab.

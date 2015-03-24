@@ -5,6 +5,7 @@
     <a href="javascript:void(0);" id="delete_all_unnecessary_items_pictures_link" class="button">Delete All Unnecessary Items' Pictures</a>
     <a href="javascript:void(0);" id="delete_old_hidden_items" class="button">Delete old hidden items...</a>
     <a href="javascript:void(0);" id="deploy_latest_pcstore_changes" class="button">Deploy pcstore latest changes</a>
+    <a href="javascript:void(0);" id="update_all_items_list_prices" class="button">Update All Items List Prices</a>
 </div>
 
 <div id="select_company_to_update_price_text_dialog_root_div" style="display: none">

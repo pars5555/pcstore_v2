@@ -10,6 +10,10 @@ require_once (CLASSES_PATH . "/loads/main/BaseGuestLoad.class.php");
 class SignupLoad extends BaseGuestLoad {
 
     public function load() {
+        if ($this->getUserLevel() !== UserGroups::$GUEST)
+        {
+            $this->redirect();
+        }
         $this->addParam('req', isset($_SESSION['signup_req']) ? $_SESSION['signup_req'] : array());
     }
 

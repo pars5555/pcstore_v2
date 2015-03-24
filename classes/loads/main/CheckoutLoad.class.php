@@ -11,13 +11,13 @@ require_once (CLASSES_PATH . "/managers/checkout/CheckoutManager.class.php");
 class CheckoutLoad extends BaseUserCompanyLoad {
 
     public function load() {
-
+        $this->addParam('pcstore_contact_number', $this->getCmsVar('pcstore_sales_phone_number'));
         $regions_phrase_ids_array = explode(',', $this->getCmsVar('armenia_regions_phrase_ids'));
         $this->addParam('regions_phrase_ids_array', $regions_phrase_ids_array);
         $default_selected_region = 'yerevan';
         $this->addParam('default_selected_region', $default_selected_region);
-        
-        
+
+
         $payment_option_values = explode(',', $this->getCmsVar('payment_option_values'));
         $payment_options_display_names_ids = explode(',', $this->getCmsVar('payment_options_display_names_ids'));
         $this->addParam('payment_options_display_names_ids', $payment_options_display_names_ids);

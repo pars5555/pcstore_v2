@@ -29,6 +29,7 @@ class HomeLoad extends BaseGuestLoad {
 
     public function load() {
         $this->getAllBanners();
+        $this->bannerSlider();
 
         $this->addParam('req', $_REQUEST);
 
@@ -287,6 +288,12 @@ class HomeLoad extends BaseGuestLoad {
         }
         $this->addParam("selectedCompanyId", $selectedCompanyId);
         return $selectedCompanyId;
+    }
+
+    public function bannerSlider() {
+        if (isset($_REQUEST["st"]) || isset($_REQUEST["s"]) || isset($_REQUEST["sci"]) || isset($_REQUEST["cid"]) || isset($_REQUEST["pg"])) {
+            $this->addParam("hideBannerSlider", true);
+        } 
     }
 
     public function getAllBanners() {

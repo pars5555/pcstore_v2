@@ -44,8 +44,7 @@
             </div>
         </div>
         <div class="right-content">
-
-            {if empty($ns.search_text)}
+            {if !isset($ns.hideBannerSlider)}
                 {include file="$TEMPLATE_DIR/main/banner_slider.tpl"} 
             {/if}
 
@@ -164,10 +163,12 @@
                                         {/if}                                        
                                         {if $item->getIsDealerOfThisCompany()!=1}
                                             {math equation="100-x*100/y" x=$price_in_amd y=$item->getListPriceAmd() assign="list_price_discount"}
+                                            {if $list_price_discount>0}
                                             <p>
                                                 <span>{$ns.lm->getPhrase(589)}: </span>
                                                 <span>{($item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span>
                                             </p>
+                                            {/if}
                                         {/if}
                                         {if $item->getUpdatedDate() && $item->getUpdatedDate() != "0000-00-00 00:00:00"}
                                             <p>
