@@ -69,7 +69,7 @@
                             <div class="form-group">                        
                                 <label for="selected_company_id">{$ns.lm->getPhrase(66)}: </label>
                                 <div class="select_wrapper">
-                                    <select class="" id='selected_company_id'>
+                                    <select id='selected_company_id'>
                                         {foreach from=$ns.companiesIds item=value key=key}
                                             {if ($key == 0)}
                                                 <option value="{$value}" {if $ns.selectedCompanyId == 0}selected="selected"{/if} class="translatable_element" phrase_id="153">{$ns.companiesNames[$key]}</option>
@@ -81,6 +81,10 @@
                                 </div>
                             </div>
                         {/if}               
+                        <div class="form-group">                        
+                            <label for="show_only_vat_items">{$ns.lm->getPhrase(378)}: </label>
+                            <input type="checkbox" id="show_only_vat_items" {if $ns.show_only_vat_items!=0}checked{/if}/>
+                        </div>
                     </div>           
                 </div>           
 
@@ -176,8 +180,8 @@
                                                 <span>{$item->getUpdatedDate()|date_format:"%d/%m/%Y"}</span>
                                             </p>
                                         {/if}
-                                         {if $item->getIsDealerOfThisCompany()==1}
-                                             <p title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}">
+                                        {if $item->getIsDealerOfThisCompany()==1}
+                                            <p title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}">
                                                 <span>{$ns.lm->getPhrase(66)}:</span>
                                                 <span>{$item->getCompanyName()}</span>
                                             </p>

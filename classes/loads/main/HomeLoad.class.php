@@ -44,6 +44,9 @@ class HomeLoad extends BaseGuestLoad {
         if (isset($_REQUEST["pg"])) {
             $this->pageNumber = $this->secure($_REQUEST["pg"]);
         }
+
+        
+
         $userLevel = $this->getUserLevel();
         $selectedCompanyId = $this->initCompaniesSelectionList();
 
@@ -103,8 +106,9 @@ class HomeLoad extends BaseGuestLoad {
         $show_only_vat_items = 0;
         if (isset($_REQUEST['shv'])) {
             $show_only_vat_items = $this->secure($_REQUEST['shv']);
-            $this->addParam('show_only_vat_items', 1);
         }
+        $this->addParam('show_only_vat_items', $show_only_vat_items);
+
 
 
 
@@ -293,7 +297,7 @@ class HomeLoad extends BaseGuestLoad {
     public function bannerSlider() {
         if (isset($_REQUEST["st"]) || isset($_REQUEST["s"]) || isset($_REQUEST["sci"]) || isset($_REQUEST["cid"]) || isset($_REQUEST["pg"])) {
             $this->addParam("hideBannerSlider", true);
-        } 
+        }
     }
 
     public function getAllBanners() {

@@ -159,6 +159,7 @@
                     {if $ns.contentLoad == "main_home"}
                         <input type="hidden" id="sort_by_input" name="s" value=""/>
                         <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
+                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv'/>
                     {/if}
                 </form>
             </div>
