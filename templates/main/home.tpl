@@ -165,6 +165,15 @@
                                                 </span>
                                             </p>
                                         {/if}                                        
+                                        {if $ns.userLevel === $ns.userGroupsAdmin}
+                                            <p>
+                                                <span>Customer Price:</span>
+                                                <span>
+                                                    {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
+                                                    {$price_in_amd|number_format} Դր.
+                                                </span>
+                                            </p>
+                                        {/if}                                        
                                         {if $item->getIsDealerOfThisCompany()!=1}
                                             {math equation="100-x*100/y" x=$price_in_amd y=$item->getListPriceAmd() assign="list_price_discount"}
                                             {if $list_price_discount>0}
