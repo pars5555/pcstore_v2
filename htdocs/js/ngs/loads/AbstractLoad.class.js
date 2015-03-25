@@ -260,6 +260,9 @@ ngs.AbstractLoad.prototype = {
     initTinyMCE: function (selector) {
         tinymce.init({
             selector: selector,
+            relative_urls: false,
+            remove_script_host: false,
+            convert_urls: true,
             menubar: false,
             statusbar: true,
             resize: true,
