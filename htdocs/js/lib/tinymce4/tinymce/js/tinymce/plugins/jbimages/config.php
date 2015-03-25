@@ -37,7 +37,7 @@
 | 
 | -------------------------------------------------------------------*/
 
-	$config['img_path'] = '/img/tmp'; // Relative to domain name	
+	$config['img_path'] = '/img/tmpuploads'; // Relative to domain name
         $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . "/htdocs" . $config['img_path']; // Physical path. [Usually works fine like this]
 
 /*-------------------------------------------------------------------
