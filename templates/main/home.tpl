@@ -164,17 +164,24 @@
                                         {if $item->getIsDealerOfThisCompany()!=1}
                                             {math equation="100-x*100/y" x=$price_in_amd y=$item->getListPriceAmd() assign="list_price_discount"}
                                             {if $list_price_discount>0}
-                                            <p>
-                                                <span>{$ns.lm->getPhrase(589)}: </span>
-                                                <span>{($item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span>
-                                            </p>
+                                                <p>
+                                                    <span>{$ns.lm->getPhrase(589)}: </span>
+                                                    <span>{($item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span>
+                                                </p>
                                             {/if}
                                         {/if}
                                         {if $item->getUpdatedDate() && $item->getUpdatedDate() != "0000-00-00 00:00:00"}
                                             <p>
                                                 <span>{$ns.lm->getPhrase(453)}:</span>
-                                                <span>{$item->getUpdatedDate()|date_format:"%d/%m/%Y"}</span></p>
-                                            {/if}
+                                                <span>{$item->getUpdatedDate()|date_format:"%d/%m/%Y"}</span>
+                                            </p>
+                                        {/if}
+                                         {if $item->getIsDealerOfThisCompany()==1}
+                                             <p title="{$ns.lm->getPhrase(271)}: {$item->getCompanyPhones()|replace:',':'&#13;&#10;'}">
+                                                <span>{$ns.lm->getPhrase(66)}:</span>
+                                                <span>{$item->getCompanyName()}</span>
+                                            </p>
+                                        {/if}
                                     </div>
                                     <div class="button-wrapper">
                                         {if $ns.userLevel === $ns.userGroupsGuest}  
