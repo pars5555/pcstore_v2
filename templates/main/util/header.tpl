@@ -7,8 +7,8 @@
                 </li>
             {/if}
             <li class="dropdown f_dropdown">
-                <a id="lang_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">Languages</a>
-                <ul class="dropdown-menu">
+                <a id="lang_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">Languages</a>
+                <ul class="dropdown_menu f_dropdown_menu">
                     <li>
                         <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
                     </li>
@@ -38,13 +38,13 @@
                     </li>
                 {/if}
                 <li class="dropdown f_dropdown">
-                    <a id="user_menu_btn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
+                    <a id="user_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
                         {$ns.customer->getName()}
                         {if $ns.userLevel === $ns.userGroupsUser}
                             ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
                         {/if}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown_menu f_dropdown_menu">
                         {if $ns.userLevel === $ns.userGroupsUser}
                             <li>
                                 <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
@@ -89,8 +89,8 @@
 
 
                 {*<li class="rel-block dropdown">
-                <a class="dropdown-toggle glyphicon" href="javascript:void(0)"></a>
-                <div class="dropdown-menu search_block">
+                <a class="dropdown_toggle f_dropdown_toggle glyphicon" href="javascript:void(0)"></a>
+                <div class="dropdown_menu f_dropdown_menu search_block">
                 <div class="top-arrow"></div>
                 <div class="input-group search_container">
                 <form method="GET" action="{$SITE_PATH}" autocomplete="off">
@@ -107,9 +107,9 @@
 
                 <li class="notification f_dropdown" id="notification">
                     {*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
-                    <a id="notificationBtn" class="dropdown-toggle navMenu_item" href="javascript:void(0);">
+                    <a id="notificationBtn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
                     </a>
-                    <ul style="display: none;" id="notificationListWrapper" class="dropdown-menu nofitication-list-wrapper">
+                    <ul style="display: none;" id="notificationListWrapper" class="dropdown_menu f_dropdown_menu nofitication-list-wrapper">
                         <li class="no_notifications">You have not notifications!</li>
                     </ul>
                 </li>
@@ -160,6 +160,7 @@
                         <input type="hidden" id="sort_by_input" name="s" value=""/>
                         <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
                         <input type="hidden" id="show_only_vat_items_checkbox" name='shv'/>
+                        <input type="hidden" id="listing_cols_select" name='cols'/>
                     {/if}
                 </form>
             </div>
@@ -179,11 +180,11 @@
                     <div class="login-wrapper">
                         <h4 class="title">Sign in with your existing account</h4>
                         <div class="form-group">
-                            <label class="input_label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
+                            <label class="input_label label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
                             <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
+                            <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                             <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
                             <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                         </div>
@@ -238,7 +239,7 @@
                 <div class="form-group">
                     <div id="forgotPasswordErrorMessage" class="error"></div>
                     <div id="forgotPasswordSuccessMessage" class="success"></div>
-                    <label class="input_label" for="email">Your Email Address</label>
+                    <label class="input_label label" for="email">Your Email Address</label>
                     <form id="forgotPasswordForm" autocomplete="off">
                         <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
                         <button class="send_pass button blue" id="forgotPasswordBtn">

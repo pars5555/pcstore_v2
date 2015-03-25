@@ -15,19 +15,19 @@
                     </div>
                 {/if}
                 <div class="form-group">
-                    <label class="input_label" for="companyName">{$ns.lm->getPhrase(9)}</label>
+                    <label class="input_label label" for="companyName">{$ns.lm->getPhrase(9)}</label>
                     <input type="text" class="text" id="companyName" name="name" placeholder="{$ns.lm->getPhrase(9)}" value="{$ns.customer->getName()}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="companyWebsite">{$ns.lm->getPhrase(11)}</label>
+                    <label class="input_label label" for="companyWebsite">{$ns.lm->getPhrase(11)}</label>
                     <input type="url" class="text" id="companyWebsite" name="url" placeholder="{$ns.lm->getPhrase(11)}" value="{$ns.customer->getUrl()}">
                 </div>
                 <div class="form-group">
-                    <label class="input_label" for="companyDealersAccessKey">{$ns.lm->getPhrase(30)}</label>
+                    <label class="input_label label" for="companyDealersAccessKey">{$ns.lm->getPhrase(30)}</label>
                     <input type="text" disabled="" class="text" id="companyDealersAccessKey"  placeholder="" value="{$ns.customer->getAccessKey()}">
                 </div>
                 <div class="form-group" style="text-align: center">
-                    <label class="input_label" for="change_logo">{$ns.lm->getPhrase(42)}</label>
+                    <label class="input_label label" for="change_logo">{$ns.lm->getPhrase(42)}</label>
                     <a class="button blue chang_pic" id="upload_photo_button" href="javascript:void(0);">Select Logo...</a>
                     {if isset($ns.hasLogo)}
                         <img id="logo_img" class="profile_pic" src="{$SITE_PATH}/images/big_logo/{$ns.customer->getId()}/logo.png?{$smarty.now}" />

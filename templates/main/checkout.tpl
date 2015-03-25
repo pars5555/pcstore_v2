@@ -27,22 +27,22 @@
                 <div class="form-group">
                     <div class="checkbox_container">
                         <div class="checkbox f_checkbox"></div>
-                        <label class="checkbox_label f_checkbox_label">{$ns.lm->getPhrase(297)}</label>
+                        <label class="checkbox_label f_checkbox_label label">{$ns.lm->getPhrase(297)}</label>
                         <input type="hidden" id="do_shipping" name="do_shipping"/>
                     </div>
                 </div>
                 <div class="ship_addr_form f_ship_addr_form" style="display:none;">
 
                     <div class="form-group">
-                        <label class="input_label" for="recipientName">{$ns.lm->getPhrase(293)}</label>
+                        <label class="input_label label" for="recipientName">{$ns.lm->getPhrase(293)}</label>
                         <input required="" type="text" class="text"  name= "recipient_name" id="recipientName" placeholder="{$ns.lm->getPhrase(293)}" />
                     </div>
                     <div class="form-group">
-                        <label class="input_label" for="shipAddr">{$ns.lm->getPhrase(13)}</label>
+                        <label class="input_label label" for="shipAddr">{$ns.lm->getPhrase(13)}</label>
                         <input required="" type="text" class="text"  name= "ship_addr" id="shipAddr" placeholder="{$ns.lm->getPhrase(13)}" />
                     </div>
                     <div class="form-group">
-                        <label class="input_label" for="recipientName">{$ns.lm->getPhrase(45)}</label>
+                        <label class="input_label label" for="recipientName">{$ns.lm->getPhrase(45)}</label>
                         <div class="select_wrapper">
                             <select name="shipping_region" id="shipping_region">
                                 {foreach from=$ns.regions_phrase_ids_array item=value key=key}
@@ -52,12 +52,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="input_label" for="shipCellTel">{$ns.lm->getPhrase(309)}</label>
+                        <label class="input_label label" for="shipCellTel">{$ns.lm->getPhrase(309)}</label>
                         <input required="" type="text" class="text"  name= "ship_cell_tel" id="shipCellTel" placeholder="{$ns.lm->getPhrase(309)}" />
                         <div>Բջջային հեռախոսի համարը պետք է լինի իրական և վավեր: Դուք կստանաք SMS այս համարին՝ պատվերը հաստատելու համար:</div>
                     </div>
                     <div class="form-group">
-                        <label class="input_label" for="shipTel">{$ns.lm->getPhrase(62)}</label>
+                        <label class="input_label label" for="shipTel">{$ns.lm->getPhrase(62)}</label>
                         <input required="" type="text" class="text"  name= "ship_tel" id="shipTel" placeholder="{$ns.lm->getPhrase(62)}" />
                     </div>
 

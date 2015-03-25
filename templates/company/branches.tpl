@@ -12,7 +12,7 @@
                     <button id="branch_btn" class="button blue branch_btn">{$ns.lm->getPhrase(563)}</button>
 
                     <div class="form-group company_branches_container">
-                        <label for="cp_branch_select" >{$ns.lm->getPhrase(562)}: </label>
+                        <label class="label" for="cp_branch_select" >{$ns.lm->getPhrase(562)}: </label>
                         <div class="company_branches">
                             {foreach from=$ns.company_branches item=branch_name key=branch_id}
                                 <a data-branch-id="{$branch_id}" class="{if $branch_id == $ns.selected_company_branch_id}active{/if} com_br_item f_com_br_item" href="{$SITE_PATH}/branches/{$branch_id}">
@@ -33,28 +33,28 @@
                     <form method="POST" action="{$SITE_PATH}/dyn/company/do_update_branch" autocomplete="off">
                         <input type="hidden" value="{$ns.selected_company_branch_id}" name="branch_id"/>
                         <div class="form-group">
-                            <label class="input_label" for="phone1">{$ns.lm->getPhrase(33)} 1</label>
+                            <label class="input_label label" for="phone1">{$ns.lm->getPhrase(33)} 1</label>
                             <input class="text"  name='phone1' id="phone1" type="text" value="{$ns.phones[0]|default:""}" />
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="phone2">{$ns.lm->getPhrase(33)} 2</label>
+                            <label class="input_label label" for="phone2">{$ns.lm->getPhrase(33)} 2</label>
                             <input class="text" name='phone2' id="phone2" type="text" value="{$ns.phones[1]|default:""}"/>
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="phone3">{$ns.lm->getPhrase(33)} 3</label>
+                            <label class="input_label label" for="phone3">{$ns.lm->getPhrase(33)} 3</label>
                             <input class="text" name='phone3' id="phone3" type="text" value="{$ns.phones[2]|default:""}"/>
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="address">{$ns.lm->getPhrase(13)}</label>
+                            <label class="input_label label" for="address">{$ns.lm->getPhrase(13)}</label>
                             <input class="text" name="address" id="address" type="text" value="{$ns.branch_address}"/>
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="zip">{$ns.lm->getPhrase(604)}</label>
+                            <label class="input_label label" for="zip">{$ns.lm->getPhrase(604)}</label>
                             <input class="text" name="zip" id="zip" type="text" value="{$ns.zip}"/>
                         </div>
 
                         <div class="form-group">
-                            <label for="region">{$ns.lm->getPhrase(45)}:</label>
+                            <label class="label" for="region">{$ns.lm->getPhrase(45)}:</label>
                             <div class="select_wrapper">
                                 <select   name='region' id="region">
                                     {foreach from=$ns.regions_phrase_ids_array item=value key=key}
@@ -64,16 +64,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="input_label" for="working_days">{$ns.lm->getPhrase(34)}</label>
+                            <label class="input_label label" for="working_days">{$ns.lm->getPhrase(34)}</label>
                             <table class="days_table">
                                 <tr>
-                                    <th><label for='monday_checkbox'>{$ns.lm->getPhrase(35)}</label></th>
-                                    <th><label for='tuseday_checkbox'>{$ns.lm->getPhrase(36)}</label></th>
-                                    <th><label for='wednesday_checkbox'>{$ns.lm->getPhrase(37)}</label></th>
-                                    <th><label for='thursday_checkbox'>{$ns.lm->getPhrase(38)}</label></th>
-                                    <th><label for='friday_checkbox'>{$ns.lm->getPhrase(39)}</label></th>
-                                    <th><label for='saturday_checkbox'>{$ns.lm->getPhrase(40)}</label></th>
-                                    <th><label for='sunday_checkbox'>{$ns.lm->getPhrase(41)}</label></th>
+                                    <th><label class="label" for='monday_checkbox'>{$ns.lm->getPhrase(35)}</label></th>
+                                    <th><label class="label" for='tuseday_checkbox'>{$ns.lm->getPhrase(36)}</label></th>
+                                    <th><label class="label" for='wednesday_checkbox'>{$ns.lm->getPhrase(37)}</label></th>
+                                    <th><label class="label" for='thursday_checkbox'>{$ns.lm->getPhrase(38)}</label></th>
+                                    <th><label class="label" for='friday_checkbox'>{$ns.lm->getPhrase(39)}</label></th>
+                                    <th><label class="label" for='saturday_checkbox'>{$ns.lm->getPhrase(40)}</label></th>
+                                    <th><label class="label" for='sunday_checkbox'>{$ns.lm->getPhrase(41)}</label></th>
                                 </tr>
                                 <tr>
                                     <td>
@@ -103,11 +103,11 @@
                         </div>
 
                         <div class="working_hours form-group" id="working_hours" class="form-group">
-                            <label class="input_label" for="">Working hours</label>
+                            <label class="input_label label" for="">Working hours</label>
                             {html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingStart prefix="startWorking"} <span class="glyphicon">−</span> {html_select_time use_24_hours=true display_seconds=false minute_interval=15 time=$ns.workingEnd prefix="endWorking"}
                         </div>
                         <div class="form-group lng_lat">
-                            <label class="input_label" for="longitute_latitude">Lng/Lat:</label>
+                            <label class="input_label label" for="longitute_latitude">Lng/Lat:</label>
                             <input class="text" name='lng' type="text" value="{$ns.lng}"/>
                             <input class="text" name='lat' type="text" value="{$ns.lat}"/>
                         </div>
@@ -124,11 +124,11 @@
                                 <input type="hidden" name="action" value="add">
                                 <h3>Add new branch</h3>
                                 <div class="form-group">
-                                    <label class="input_label" for="">Add new Branch</label>
+                                    <label class="input_label label" for="">Add new Branch</label>
                                     <input type="text" class="  text" name="branch_address" required="" placeholder="Branch Address">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Region:</label>
+                                    <label class="label" for="">Region:</label>
                                     <div class="select_wrapper">
                                         <select class=" " name="branch_region" >
                                             {foreach from=$ns.regions_phrase_ids_array item=value key=key}
@@ -138,7 +138,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="input_label" for="">Postal Code</label>
+                                    <label class="input_label label" for="">Postal Code</label>
                                     <input type="text" class="  text" name="branch_zip"  placeholder="Postal Code">
                                 </div>
                                 <button type="submit" class="button blue">

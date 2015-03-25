@@ -18,18 +18,18 @@
 
 					<h3 class="sms_title">SMS receiving settings</h3>
 					<div class="form-group">
-						<label class="input_label">
+						<label class="input_label label">
 							Receive only these days:
 						</label>
 						<table class="days_table">
 							<tr>
-								<th><label for='monday_checkbox'>{$ns.lm->getPhrase(35)}</label></th>
-								<th><label for='tuseday_checkbox'>{$ns.lm->getPhrase(36)}</label></th>
-								<th><label for='wednesday_checkbox'>{$ns.lm->getPhrase(37)}</label></th>
-								<th><label for='thursday_checkbox'>{$ns.lm->getPhrase(38)}</label></th>
-								<th><label for='friday_checkbox'>{$ns.lm->getPhrase(39)}</label></th>
-								<th><label for='saturday_checkbox'>{$ns.lm->getPhrase(40)}</label></th>
-								<th><label for='sunday_checkbox'>{$ns.lm->getPhrase(41)}</label></th>
+								<th><label class="label" for='monday_checkbox'>{$ns.lm->getPhrase(35)}</label></th>
+								<th><label class="label" for='tuseday_checkbox'>{$ns.lm->getPhrase(36)}</label></th>
+								<th><label class="label" for='wednesday_checkbox'>{$ns.lm->getPhrase(37)}</label></th>
+								<th><label class="label" for='thursday_checkbox'>{$ns.lm->getPhrase(38)}</label></th>
+								<th><label class="label" for='friday_checkbox'>{$ns.lm->getPhrase(39)}</label></th>
+								<th><label class="label" for='saturday_checkbox'>{$ns.lm->getPhrase(40)}</label></th>
+								<th><label class="label" for='sunday_checkbox'>{$ns.lm->getPhrase(41)}</label></th>
 							<tr>
 							<tr>
 								<td>
@@ -57,11 +57,11 @@
 						</table>
 					</div>
 					<div class="form-group">
-						<label class="input_label" for="phone">Phone:</label>
+						<label class="input_label label" for="phone">Phone:</label>
 						<input type="text" name="phone" class="  text" value="{$ns.customer->getPriceUploadSmsPhoneNumber()}"/>
 					</div>
 					<div class="form-group sms_time_ctl">
-						<label class="input_label sms_label" for="sms_time_control">{$ns.lm->getPhrase(403)}:</label>
+						<label class="input_label sms_label label" for="sms_time_control">{$ns.lm->getPhrase(403)}:</label>
 						<input class="sms_chekbox" type="checkbox" id="sms_time_control" name="sms_time_control" {if ($ns.customer->
 						getSmsToDurationMinutes()>0)} checked="checked"{/if}/>
 						<div id="smsTimeControlContainer" {if $ns.customer->

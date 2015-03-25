@@ -40,7 +40,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_546753f0bf8e07_57958672')) {function content_546753f0bf8e07_57958672($_smarty_tpl) {?><?php if (!is_callable('smarty_function_nest')) include 'D:/xampp/htdocs/pcstorev2/classes/lib/smarty/plugins\\function.nest.php';
 if (!is_callable('smarty_modifier_date_format')) include 'D:/xampp/htdocs/pcstorev2/classes/lib/smarty/plugins\\modifier.date_format.php';
 if (!is_callable('smarty_function_math')) include 'D:/xampp/htdocs/pcstorev2/classes/lib/smarty/plugins\\function.math.php';
-?><div class="main-search-wrapper">
+?><div class="home_page_main_wrapper">
 	
 	<!--========================== Top Container ===============================-->
 	    
@@ -128,7 +128,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 	
 	<!--========================== Product Container ===============================-->
 	   
-    <div class="products-wrapper">
+    <div class="home_page_inner_container">
     	
     		<!--========================== Left Panel ===============================-->
 	

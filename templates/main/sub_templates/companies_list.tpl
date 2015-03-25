@@ -55,7 +55,7 @@
                     <div class="company_confirm">
                         {if ($ns.userLevel === $ns.userGroupsUser) && $company->getShowPrice()!=1}
                             <div class="form-group">
-                                <!-- <label class="input_label" for="dealerCode">Code</label> -->
+                                <!-- <label class="input_label label" for="dealerCode">Code</label> -->
                                 <input id="company_access_key_input_{$companyId}"  type="text" class="  text" placeholder="Code">
                                 <a href="javascript:void(0)" class="f_company_access_key_confirm_btn blue button" company_id="{$companyId}"><span class="glyphicon"></span></a>
                             </div>
@@ -151,7 +151,7 @@
 
                             <input type="checkbox" id="receive_sms_from^{$companyId}" autocomplete="off" class="f_receive_sms_from_checkboxes" value="1"	style="visibility: hidden;"
                                    {if in_array($companyId,$interested_companies_ids_for_sms_array)} checked="checked"{/if} >
-                            <label for="receive_sms_from^{$companyId}"></label>
+                            <label class="label" for="receive_sms_from^{$companyId}"></label>
                         </div>
                     {/if}
                 </div>

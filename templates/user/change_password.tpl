@@ -15,15 +15,15 @@
 					</div>
 					{/if}
 					<div class="form-group">
-						<label class="input_label" for="password">{$ns.lm->getPhrase(4)}</label>
+						<label class="input_label label" for="password">{$ns.lm->getPhrase(4)}</label>
 						<input type="password" class="  text"  name= "password" id="password" placeholder="{$ns.lm->getPhrase(4)}">
 					</div>
 					<div class="form-group">
-						<label class="input_label" for="new_password">{$ns.lm->getPhrase(28)}</label>
+						<label class="input_label label" for="new_password">{$ns.lm->getPhrase(28)}</label>
 						<input type="password" class="  text"  name= "new_password" id="new_password" placeholder="{$ns.lm->getPhrase(28)}">
 					</div>
 					<div class="form-group">
-						<label class="input_label" for="repeat_new_password">{$ns.lm->getPhrase(29)}</label>
+						<label class="input_label label" for="repeat_new_password">{$ns.lm->getPhrase(29)}</label>
 						<input type="password" class="  text"  name= "repeat_new_password" id="repeat_new_password" placeholder="{$ns.lm->getPhrase(29)}">
 					</div>
 

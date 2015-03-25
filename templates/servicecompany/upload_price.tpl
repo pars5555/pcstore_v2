@@ -1,11 +1,11 @@
 <form class="upload_company_price" id="price_upload_form" target="upload_target" enctype="multipart/form-data" method="post" action="{$SITE_PATH}/dyn/company/do_upload_price" autocomplete="off">
-    <label class="input_label" for="company_price_file_input">{$ns.lm->getPhrase(67)}:</label>
+    <label class="input_label label" for="company_price_file_input">{$ns.lm->getPhrase(67)}:</label>
     <input class="text up_selected_file_name" id="up_selected_file_name" type="text" disabled="" readonly="readonly" value="{$ns.lm->getPhrase(517)}"/>
     <input id="company_price_file_input" name="company_price"  type="file" style="display:none" />
     <input class="button blue select_price_btn glyphicon" type="button" id="select_price_file_button" value="" title="{$ns.lm->getPhrase(67)}"/>
 
     <input type="checkbox" name="merge_into_last_price" id ="merge_uploaded_price_into_last_price" value="1" />
-    <label for="merge_uploaded_price_into_last_price">{$ns.lm->getPhrase(619)}: </label>
+    <label class="label" for="merge_uploaded_price_into_last_price">{$ns.lm->getPhrase(619)}: </label>
     <button class="button blue submit_upload_price" id="upload_company_price_button" title="{$ns.lm->getPhrase(95)}">{$ns.lm->getPhrase(95)} <span class="glyphicon"></span></button>
 </form>
 <iframe id="upload_target" name="upload_target" style="width:0;height:0;border:0px solid #fff;display: none;" ></iframe>
@@ -20,25 +20,25 @@
 <div class="clear"></div>
 <div id="send_price_email_container" class="send_price_email_container">
     <div class="sender_details">
-        <label class="input_label" for="sender_email">{$ns.lm->getPhrase(614)}:</label>
+        <label class="input_label label" for="sender_email">{$ns.lm->getPhrase(614)}:</label>
         <input class="text sender_email" type="text" name='sender_email' type="text"  id="sender_email" value="{$ns.customer->getEmail()}" />
         <input class="text" type="text" name='sender_name' type="text"  disabled id="sender_name" value="{$ns.customer->getName()}" />
     </div>
     <div style="clear:both"> </div> 
     <div class="dealer_emails">
-        <label class="input_label" for="dealer_emails_textarea">{$ns.lm->getPhrase(464)}:</label>
+        <label class="input_label label" for="dealer_emails_textarea">{$ns.lm->getPhrase(464)}:</label>
         <textarea class="text" name='dealer_emails' type="text" id="dealer_emails_textarea">{$ns.companyExProfileDto->getDealerEmails()}</textarea>                    
         <div class="dealers_count"><span id="total_price_email_recipients_number">{$ns.total_price_email_recipients_count}</span>{$ns.lm->getPhrase(613)}</div>
     </div>
     <div style="clear:both"> </div> 
     <div class="send_mail_title">
-        <label class="input_label" for="price_email_subject">{$ns.lm->getPhrase(463)}</label>
+        <label class="input_label label" for="price_email_subject">{$ns.lm->getPhrase(463)}</label>
         <input class="text" type="text" id="price_email_subject" value="{$ns.companyExProfileDto->getPriceEmailSubject()}"/>
     </div>
 
     <div style="clear:both"> </div> 
     <div class="price_email_container">
-        <label class="input_label" for="price_email_body">{$ns.lm->getPhrase(465)}</label>
+        <label class="input_label label" for="price_email_body">{$ns.lm->getPhrase(465)}</label>
         <textarea name='price_email_body' type="text"  class="msgBodyTinyMCEEditor" id="price_email_body">{$ns.companyExProfileDto->getPriceEmailBody()}</textarea>
     </div>
 

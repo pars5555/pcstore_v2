@@ -16,6 +16,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     afterLoad: function () {
         this.initLoginFunctionallity();
+        this.dropDownMenu();
         this.initLanguages();
         this.initSocialLogout();
         this.initGoogleLogoutOnWindowUnload();
@@ -213,28 +214,24 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             ngs.action('set_language', {lang: l});
             return false;
         });
+    },
+    dropDownMenu: function () {
+        function hideAllDropdowns() {
+            jQuery("#navMenu .f_dropdown_menu").slideUp(500);
+            jQuery("#navMenu .f_dropdown_toggle").removeClass("active");
+        }
+        ;
+        jQuery("#navMenu .f_dropdown_toggle").click(function () {
+            hideAllDropdowns();
+            jQuery(this).siblings(".f_dropdown_menu").slideToggle(500);
+            jQuery(this).toggleClass("active");
 
-        jQuery("#navMenu .dropdown-toggle").click(function () {
-            jQuery(this).siblings(".dropdown-menu").slideToggle(500);
-            if (jQuery(this).hasClass("active")) {
-                jQuery(this).removeClass("active");
-            }
-            else {
-                jQuery(this).addClass("active");
-            }
-            jQuery("body").click(function (event) {
-                if (!jQuery(event.target).hasClass("dropdown-menu") && !jQuery(event.target).hasClass("dropdown-toggle") || jQuery(event.target).parents("#navMenu").length < 1) {
-                    jQuery("#navMenu .dropdown-menu").slideUp(500);
-                    jQuery("#navMenu .dropdown-toggle").removeClass("active");
+            jQuery(document).on("click", function (event) {
+                if (jQuery(event.target).closest(".f_dropdown").length < 1) {
+                    hideAllDropdowns();
                 }
-                if (jQuery(event.target).hasClass("dropdown-toggle") && jQuery(event.target).parents("#navMenu").length > 0) {
-                    jQuery(event.target).closest(".f_dropdown").siblings(".f_dropdown").children(".dropdown-toggle").removeClass("active");
-                    jQuery(event.target).closest(".f_dropdown").siblings(".f_dropdown").children(".dropdown-menu").slideUp(500);
-                }
-                ;
             });
         });
-
     },
     initLoginFunctionallity: function () {
         var self = this;
@@ -287,26 +284,16 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#mainLeftPanel .dropdown-toggle").click(function (event) {
             event.preventDefault();
             var closest_li = jQuery(this).closest("li");
-
-            if (closest_li.hasClass("opened")) {
-                closest_li.removeClass("opened");
-                closest_li.children("ul").slideUp(500);
-                if (!jQuery(this).parents("li").hasClass("opened")) {
-                }
-            }
-            else {
-                if (!jQuery(this).parents("li").hasClass("opened")) {
-                    jQuery("#mainLeftPanel li").removeClass("opened");
-                    jQuery("#mainLeftPanel li.f_dropdown ul").slideUp(500);
-                }
-                closest_li.addClass("opened");
-                closest_li.children("ul").slideDown(500);
-            }
+            jQuery(this).toggleClass("active");
+            closest_li.toggleClass("opened");
+            closest_li.children("ul").slideToggle(300);
         });
+
         var count = jQuery(".cat_count");
         count.each(function () {
-            if (parseInt(jQuery(this).text()) > 9999) {
-                jQuery(this).text("10k+");
+            var text = jQuery(this).find("span");
+            if (parseInt(text.text()) > 9999) {
+                text.text("10k+");
             }
         });
     },

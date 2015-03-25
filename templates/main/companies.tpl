@@ -27,7 +27,7 @@
             </div>
             {*}
             <form class="show_com_price" method="POST" action="{$SITE_PATH}/companies" autocomplete="off">
-                <label>{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
+                <label class="label">{$ns.lm->getPhrase(454)} {$ns.lm->getPhrase(458)}:</label>
                 <div class="select_wrapper">
                     <select id="f_show_only_last_hours_select" name="show_only_last_hours_selected">
                         {foreach from=$ns.show_only_last_hours_values item=value key=key}

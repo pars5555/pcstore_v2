@@ -17,6 +17,7 @@ ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         this.addListeners();
         this.setInputValuesToHeaderhiddenInputs();
+        this.listingCols();
     },
     setInputValuesToHeaderhiddenInputs: function () {
         var cehcked = jQuery('#show_only_vat_items').is(':checked');
@@ -30,6 +31,11 @@ ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
             thisInstance.setInputValuesToHeaderhiddenInputs();
             jQuery('#search_text_form').trigger('submit');
         });
-
+    },
+    listingCols: function () {
+        jQuery("#listing_cols").on("change", function () {
+            jQuery("#listing_cols_select").val(jQuery(this).val());
+            jQuery("#search_text_form").trigger("submit");
+        });
     }
 });

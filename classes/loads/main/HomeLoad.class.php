@@ -30,6 +30,7 @@ class HomeLoad extends BaseGuestLoad {
     public function load() {
         $this->getAllBanners();
         $this->bannerSlider();
+        $this->listingCols();
 
         $this->addParam('req', $_REQUEST);
 
@@ -45,7 +46,7 @@ class HomeLoad extends BaseGuestLoad {
             $this->pageNumber = $this->secure($_REQUEST["pg"]);
         }
 
-        
+
 
         $userLevel = $this->getUserLevel();
         $selectedCompanyId = $this->initCompaniesSelectionList();
@@ -295,9 +296,26 @@ class HomeLoad extends BaseGuestLoad {
     }
 
     public function bannerSlider() {
-        if (isset($_REQUEST["st"]) || isset($_REQUEST["s"]) || isset($_REQUEST["sci"]) || isset($_REQUEST["cid"]) || isset($_REQUEST["pg"])) {
-            $this->addParam("hideBannerSlider", true);
+        $filterTypes = ["st", "s", "sci", "cid", "pg","cols"];
+        $hideSlider = false;
+
+        foreach ($filterTypes as $value) {
+            if (isset($_REQUEST[$value])) {
+                $hideSlider = true;
+            }
         }
+        
+        $this->addParam("hideBannerSlider", $hideSlider);
+    }
+
+    public function listingCols() {
+        $listingColsValues = [1, 3, 5];
+        $listing_cols = 3;
+        if (isset($_REQUEST["cols"])) {
+            $listing_cols = $_REQUEST["cols"];
+        }
+        $this->addParam("listing_cols_values", $listingColsValues);
+        $this->addParam("listing_cols", $listing_cols);
     }
 
     public function getAllBanners() {

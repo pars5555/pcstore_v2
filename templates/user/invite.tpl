@@ -10,7 +10,7 @@
         {/if}
     </div>
         <form class="unvite_form" method="post" autocomplete="off" action="{$SITE_PATH}/dyn/user/do_invite">
-        <label class="input_label default_width" for="email">Email</label>
+        <label class="input_label default_width label" for="email">Email</label>
         <input required="" class="text default_width" type="email" name="email"/>
         <button type="submit" class="button blue">Invite</button>
     </form>

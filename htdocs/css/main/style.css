@@ -242,39 +242,37 @@ body{
     margin:auto;
 }
 /*======= Select wrapper ======*/
+
+select{
+    appearance: none;
+    -ms-appearance: none; 
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance:none;
+}
+select::-ms-expand{
+    display: none;
+}
+
 .select_wrapper{
     overflow:hidden;
     position:relative;
-    padding-right:40px;
     background-color:#f7f7f7;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     display:inline-block;
     vertical-align:middle;
     cursor: pointer;
-    background: url("../../img/arrow_down.png") no-repeat scroll right 7px top 7px / 25px auto #f3f3f3;
+    background: url("../../img/arrow_down.png") no-repeat scroll right 7px center / 25px auto #f3f3f3;
 }
-/*.select_wrapper:after{
-    content:"";
-    font-family:"glyphicons-halflings";
-    font-size:18px;
-    display:block;
-    padding:5px 4px 3px;
-    position:absolute;
-    top:4px;
-    right:5px;
-    color:#777;
-    text-align:center;
-    border-radius:3px;
-}*/
 
 .select_wrapper select{
-    width: calc(100% + 60px);
+    width: 100%;
     background-color: transparent;
     border-radius: 3px;
     display: block;
     font-size: 15px;
-    padding: 3px 60px 3px 7px;
+    padding: 3px 37px 3px 7px;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden;
@@ -287,8 +285,7 @@ body{
 }
 /*======= Select wrapper min ======*/
 .select_wrapper.select_wrapper_min{
-    padding-right:30px;
-    background-position: right 5px top 5px;
+    background-position: right 5px center;
     background-size: 20px auto;
 }
 /*.select_wrapper.select_wrapper_min:after{
@@ -296,16 +293,16 @@ body{
     right:3px;
 }*/
 .select_wrapper.select_wrapper_min select{
-    font-size: 15px;
+    font-size: 14px;
     min-height: 30px;
-    padding-top:5px;
+    padding: 3px 30px 3px 5px;
 }
 
 .select_wrapper.select_wrapper_min select option{
-    padding:0px;
+    padding:3px;
 }
 
-label,.label{
+.label{
     padding:9px;
     color:#555;
     font-size:15px;
@@ -321,8 +318,7 @@ label,.label{
     transition: all 0.3s ease;
 }
 
-.label.input_label,
-label.input_label{
+.label.input_label{
     display:block;
     padding:5px 0;
     font-weight:600;
@@ -419,6 +415,10 @@ label.input_label{
 .table-cell{
     display:table-cell;
     vertical-align: middle;
+}
+
+.inline-block{
+    display:inline-block;
 }
 
 /*************************** Main Table **************************/
@@ -557,6 +557,7 @@ label.input_label{
 .checkbox_container{
     display:table;
     width:100%;
+    cursor: pointer;
 }
 
 .checkbox_container .checkbox{
@@ -567,6 +568,7 @@ label.input_label{
     display: table-cell;
     font-weight: 600;
     padding:0 10px;
+    cursor: pointer;
 }
 
 /****************************************************
@@ -663,21 +665,21 @@ label.input_label{
     position:relative;
 }
 
-.navMenuList li.dropdown a.dropdown-toggle{
+.navMenuList li.dropdown a.dropdown_toggle{
     position:relative;
     padding-right:35px;
 }
-.navMenuList li.dropdown a.dropdown-toggle:before{
+.navMenuList li.dropdown a.dropdown_toggle:before{
     content:"";
     font-family: "glyphicons-halflings";
     position:absolute;
     right:15px;
 }
-.navMenuList li.dropdown a.dropdown-toggle:hover{
+.navMenuList li.dropdown a.dropdown_toggle:hover{
     /*color:#fff;*/
 }
 
-.navMenuList li.dropdown ul.dropdown-menu{
+.navMenuList li.dropdown ul.dropdown_menu{
     display:none;
     position:absolute;
     top:50px;
@@ -689,7 +691,7 @@ label.input_label{
     z-index: 100;
 }
 
-.navMenuList li.dropdown ul.dropdown-menu li a{
+.navMenuList li.dropdown ul.dropdown_menu li a{
     padding:5px;
     clear:both;
     display:block;
@@ -697,12 +699,12 @@ label.input_label{
     border-radius:3px;	
     font-size: 15px;
 }
-.navMenuList li.dropdown ul.dropdown-menu li a:hover{
+.navMenuList li.dropdown ul.dropdown_menu li a:hover{
     background-color: #63B4FB;
     color: #fff;
 }
 
-.navMenuList li.dropdown ul.dropdown-menu li a img{
+.navMenuList li.dropdown ul.dropdown_menu li a img{
     display:inline-block;
     vertical-align:middle;
     width:25px;
@@ -1331,7 +1333,7 @@ width: calc(100% - 50px);*/
  MAIN SEARCH BLOCK
 
 *******/
-.main-search-wrapper{
+.home_page_main_wrapper{
     border:1px solid transparent;
 }
 .right-content {
@@ -1581,7 +1583,7 @@ width: calc(100% - 50px);*/
     margin-bottom: 30px;
     vertical-align: middle;
 }
-.filter_container label {
+.filter_container .label {
     display: table-cell;
 }
 .filter_container .select_wrapper {
@@ -1595,7 +1597,6 @@ width: calc(100% - 50px);*/
 .filter_container .form-group a.active{
     background: linear-gradient(#77c0ff, #559edd) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
-
 
 /*******
 
@@ -1959,8 +1960,7 @@ SMS CONF COMPANY
     margin-bottom:15px;
 }
 
-.ship_addr_container .form-group .label.input_label,
-.ship_addr_container .form-group label.input_label{
+.ship_addr_container .form-group .label.input_label{
     display: inline-block;
 }
 
@@ -1998,7 +1998,7 @@ SMS CONF COMPANY
 .promo_code_container .text{
     padding:11px 15px;
 }
-.promo_code_container label.input_label{
+.promo_code_container .label.input_label{
     font-size:18px;
     padding:10px;
 }
@@ -2192,17 +2192,17 @@ SMS CONF COMPANY
  PROFILE HEADER
 
 *******/
-.navMenuList li.dropdown.rel-block a.dropdown-toggle{
+.navMenuList li.dropdown.rel-block a.dropdown_toggle{
     font-size:17px;
     color:#63B4FB;
 }
-.navMenuList li.dropdown.rel-block a.dropdown-toggle:before{
+.navMenuList li.dropdown.rel-block a.dropdown_toggle:before{
     display:none;
 }
 .navMenuList li.rel-block.dropdown {
     position:relative;
 }
-.rel-block .dropdown-menu{
+.rel-block .dropdown_menu{
     display: none;
     padding: 5px;
     background-color:#C6C6C6;
@@ -2214,7 +2214,7 @@ SMS CONF COMPANY
     margin:auto;
     z-index:1000;
 }
-.rel-block .dropdown-menu .top-arrow{
+.rel-block .dropdown_menu .top-arrow{
     border-bottom: 15px solid #C6C6C6;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
@@ -2224,10 +2224,10 @@ SMS CONF COMPANY
     top: -15px;
     width: 0;
 }
-.rel-block .dropdown-menu .search_container .search_text{
+.rel-block .dropdown_menu .search_container .search_text{
     padding: 10px 15px;
 }
-.rel-block .dropdown-menu .search_container .search_btn{
+.rel-block .dropdown_menu .search_container .search_btn{
     background-color:#63B4FB;
     color:#fff;
     font-size: 20px;
@@ -2262,21 +2262,21 @@ SMS CONF COMPANY
 
 *******/
 
-.products-wrapper{
+.home_page_inner_container{
     position:relative;
     display:table;
     width: 100%;
 }
-.products-wrapper .product-table{
+.home_page_inner_container .product-table{
     display: table;
     width: 100%;
     margin: 10px auto 20px;
 }
-.products-wrapper .products_row{
+.home_page_inner_container .products_row{
     display:table-row;
 }
 
-.products-wrapper .products_row .product-wrapper {
+.home_page_inner_container .products_row .product-wrapper {
     position:relative;
     box-shadow: 0 0px 7px 0px #ccc;
     width:33.3%;
@@ -2288,7 +2288,7 @@ SMS CONF COMPANY
     -o-transition: box-shadow 0.4s ease;
     transition: box-shadow 0.4s ease;
 }
-.products-wrapper .products_row .product-wrapper:hover {
+.home_page_inner_container .products_row .product-wrapper:hover {
     box-shadow:0 0 7px 3px #63B4FB;
 }
 .product-wrapper .product_inner{
@@ -2313,6 +2313,7 @@ SMS CONF COMPANY
     background-size:contain;
     background-color: transparent;
     cursor: pointer;
+    position: relative;
 }
 
 .product-wrapper .product-other-images{
@@ -2553,6 +2554,15 @@ SMS CONF COMPANY
     height:111px;
     background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
 }
+.new_product_listing{
+    display:block;
+    width:70px;
+    height:70px;
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
+}
 .product_warranty{
     display:inline-block;
     vertical-align: top;
@@ -2568,9 +2578,13 @@ SMS CONF COMPANY
     left: 49%;
     position: absolute;
     text-align: center;
-    top: 50px;
+    top: 40px;
     transform: translate(-50%, 0px);
     width: 80px;
+}
+.product_warranty .warranty_month_count{
+    font-size: 35px;
+    line-height: 35px;
 }
 .product_other_info{
     display:inline-block;
@@ -3086,7 +3100,7 @@ BUILD PC PAGE
     font-weight:600;
     color:#3278b3;
 }
-.build-pc-wrapper label{
+.build-pc-wrapper .label{
     display:block;
     padding:0;
 }
@@ -3468,7 +3482,7 @@ BUILD PC PAGE
     display:table;
     width:100%;
 }
-.company_branches_container label{
+.company_branches_container .label{
     display: table-cell;
     vertical-align: top;   
     white-space: nowrap;
