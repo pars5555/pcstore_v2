@@ -13,10 +13,10 @@
                 {include file="$TEMPLATE_DIR/main/banner_slider.tpl"} 
             {/if}
 
+            {******************************** FILTER ******************************}
+            {include file="$TEMPLATE_DIR/main/filter.tpl"}
             {if $ns.foundItems|@count>0}
 
-                {******************************** FILTER ******************************}
-                {include file="$TEMPLATE_DIR/main/filter.tpl"}
 
                 {******************************** LISTING ******************************}
                 {include file="$TEMPLATE_DIR/main/listing.tpl"}

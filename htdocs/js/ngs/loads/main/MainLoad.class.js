@@ -40,11 +40,22 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
         this.hideErrorSuccessMessages();
         this.initSocialLogins();
+
+        jQuery('#search_text_form').submit(function () {
+            jQuery('#search_text_form :input').each(function(){
+                if (jQuery(this).val()=='' || jQuery(this).val()==0)
+                {
+                    jQuery(this).attr('name', '');
+                }
+            });
+            return true;
+        });
+
     },
     initAdminChatOnOff: function () {
         jQuery('#chat_on_off').change(function () {
-            var chatEnable = jQuery(this).is(':checked'); 
-            
+            var chatEnable = jQuery(this).is(':checked');
+
         });
     },
     initSocialLogins: function () {
