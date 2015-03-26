@@ -159,24 +159,12 @@
                         
                     </button>
 
-
-
                     {if $ns.contentLoad == "main_home"}
-                        {if isset($ns.req.cid)}
-                            <input type="hidden" name="cid" value="{$ns.req.cid}"/>
-                        {/if}
-                        {if isset($ns.req.scpids)}
-                            <input type="hidden" name="scpids" value="{$ns.req.scpids}"/>
-                        {/if}
-                        {if isset($ns.req.sci)}
-                            <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci}"/>
-                        {/if}
-                        {if isset($ns.req.s)}
-                            <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s}"/>
-                        {/if}
-                        {if isset($ns.req.shv)}
-                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv}"/>
-                        {/if}
+                        <input type="hidden" name="cid" value="{$ns.req.cid|default:''}"/>
+                        <input type="hidden" name="scpids" value="{$ns.req.scpids|default:''}"/>
+                        <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
+                        <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
+                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
                     {/if}
                 </form>
             </div>
