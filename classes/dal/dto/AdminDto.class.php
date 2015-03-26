@@ -11,7 +11,10 @@ class AdminDto extends AbstractDto {
 
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id", "title" => "title", "email" => "email", "password" => "password", "hash" => "hash", "type" => "type",
-        "last_ping" => "lastPing", "number_to_receive_sms_on_price_upload" => "numberToReceiveSmsOnPriceUpload", "sound_on" => "soundOn", "price_group" => "priceGroup");
+        "last_ping" => "lastPing", "number_to_receive_sms_on_price_upload" => "numberToReceiveSmsOnPriceUpload", "sound_on" => "soundOn"
+        , "price_group" => "priceGroup",
+        "ready_for_chat" => "readyForChat"
+    );
 
     // constructs class instance
     public function __construct() {

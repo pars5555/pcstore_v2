@@ -15,6 +15,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         return "main";
     },
     afterLoad: function () {
+        this.initAdminChatOnOff();
         this.initLoginFunctionallity();
         this.dropDownMenu();
         this.initLanguages();
@@ -39,6 +40,12 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
         this.hideErrorSuccessMessages();
         this.initSocialLogins();
+    },
+    initAdminChatOnOff: function () {
+        jQuery('#chat_on_off').change(function () {
+            var chatEnable = jQuery(this).is(':checked'); 
+            
+        });
     },
     initSocialLogins: function () {
         if (jQuery('#googleLoginBtn').length > 0) {

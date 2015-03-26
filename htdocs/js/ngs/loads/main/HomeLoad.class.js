@@ -15,8 +15,7 @@ ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
         return "main_home";
     },
     afterLoad: function () {
-        this.addListeners();
-        this.setInputValuesToHeaderhiddenInputs();
+        this.addListeners();       
         this.listingCols();
     },
     setInputValuesToHeaderhiddenInputs: function () {

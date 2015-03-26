@@ -1,6 +1,11 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <nav id="navMenu" class="navMenu" role="navigation">
         <ul class="navMenuList">
+            {if $ns.userLevel === $ns.userGroupsAdmin}
+                <li>
+                    <input type="checkbox" id="chat_on_off"/>
+                </li>
+            {/if}
             {if $ns.contentLoad != "main_buildpc"}
                 <li>
                     <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
@@ -153,14 +158,25 @@
                     <button type="submit" class="search_btn">
                         
                     </button>
-                    {if isset($ns.req.cid)}
-                        <input type="hidden" name="cid" value="{$ns.req.cid}"/>
-                    {/if}
+
+
+
                     {if $ns.contentLoad == "main_home"}
-                        <input type="hidden" id="sort_by_input" name="s" value=""/>
-                        <input type="hidden" id="selected_company_id_input" name='sci' value=""/>
-                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv'/>
-                        <input type="hidden" id="listing_cols_select" name='cols'/>
+                        {if isset($ns.req.cid)}
+                            <input type="hidden" name="cid" value="{$ns.req.cid}"/>
+                        {/if}
+                        {if isset($ns.req.scpids)}
+                            <input type="hidden" name="scpids" value="{$ns.req.scpids}"/>
+                        {/if}
+                        {if isset($ns.req.sci)}
+                            <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci}"/>
+                        {/if}
+                        {if isset($ns.req.s)}
+                            <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s}"/>
+                        {/if}
+                        {if isset($ns.req.shv)}
+                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv}"/>
+                        {/if}
                     {/if}
                 </form>
             </div>

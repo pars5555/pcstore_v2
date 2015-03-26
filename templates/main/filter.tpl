@@ -31,7 +31,7 @@
                     </div>
                 </div>
             {/if}  
-            <div class="form-group">
+            {*}<div class="form-group">
                 <label class="label" for="listing_cols">
                     Listing Cols:
                 </label>
@@ -43,6 +43,7 @@
                     </select>
                 </div>
             </div>
+            {*}
             <div class="form-group show_var_products">    
                 <div class="table-cell">
                 </div>           
