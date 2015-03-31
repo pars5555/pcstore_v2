@@ -17,6 +17,7 @@ RewriteRule ^googleaauth2callback$ /dyn/main/main [L,QSA]
 RewriteRule ^images/(.*)$	/dyn/main/do_get_image/$1/ [L,QSA]
 RewriteRule ^price/(.*)$	/dyn/main/do_get_price_file/$1/ [L,QSA]
 RewriteRule ^print_pcc(.*)$ /dyn/main/print_pcc [L,QSA] 
+RewriteRule ^unsub/?(.*)$ /dyn/main/unsubscribe_email_from_company/$1 [L,QSA]
 
 #ADMIN
 RewriteRule ^admin/?$  /dyn/admin/main/$1/?page=home [L,QSA]

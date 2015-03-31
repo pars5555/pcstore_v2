@@ -52,6 +52,7 @@
                 <file>ngs/util/LinkedinLogin.js</file>
                 <file>ngs/util/DialogsManager.class.js</file>
                 <file>ngs/util/BannerSlider.class.js</file>
+                <file>ngs/util/AdminChatManager.class.js</file>
             </files>
         </input >
     </builder>

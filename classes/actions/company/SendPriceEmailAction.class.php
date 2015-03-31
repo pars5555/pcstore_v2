@@ -54,9 +54,15 @@ class SendPriceEmailAction extends BaseCompanyAction {
     }
 
     private function sendEmailToDealersEmails($companyExProfiledto) {
-        
+
         $dealerEmailsText = $companyExProfiledto->getDealerEmails();
+        $unsubscribedEmails = $companyExProfiledto->getUnsubscribedEmails();
         $dealerEmailsArray = explode(';', $dealerEmailsText);
+        $unsubscribedEmailsArray=  array();
+        if (!empty($unsubscribedEmails)) {
+            $unsubscribedEmailsArray = explode(';', $unsubscribedEmails);
+        }
+        $dealerEmailsArray = array_diff($dealerEmailsArray, $unsubscribedEmailsArray);
         $subject = $companyExProfiledto->getPriceEmailSubject();
         $body = stripslashes($companyExProfiledto->getPriceEmailBody());
         $fromEmail = $companyExProfiledto->getFromEmail();
@@ -114,7 +120,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         if ($this->getCmsVar("use_mandrill_for_price_emails") == 1) {
             $mandrillEmailSenderManager = new MandrillEmailSenderManager($this->getCmsVar("mandrill_api_key"));
             $body .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
-            $body .= '<p style="font-size:10px"><a href="*|UNSUB:http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 's') . '/' . $companyId . '|*">Click here to unsubscribe.</a></p>';
+            $body .= '<p style="font-size:10px"><a href="*|UNSUB:http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 'c') . '/' . $companyId . '|*">Click here to unsubscribe.</a></p>';
             $res = $mandrillEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments, ($isServiceCompany ? 'service_company' : 'company') . '_' . $companyId);
             $sentSuccess = is_array($res);
         } else {
