@@ -15,7 +15,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         return "main";
     },
     afterLoad: function () {
-        this.initAdminChatOnOff();
+        ngs.AdminChatManager.adminInit();
         this.initLoginFunctionallity();
         this.dropDownMenu();
         this.initLanguages();
@@ -52,14 +52,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
 
     },
-    initAdminChatOnOff: function () {
-        jQuery('#chat_on_off').change(function () {
-            var chatEnable = jQuery(this).is(':checked');
-            if (chatEnable) {
-                ngs.AdminChatManager.initConnection();
-            }
-        });
-    },
+   
     initSocialLogins: function () {
         if (jQuery('#googleLoginBtn').length > 0) {
             gapi.signin.render('googleLoginBtn', {});

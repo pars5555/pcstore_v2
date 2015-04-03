@@ -1,9 +1,10 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <nav id="navMenu" class="navMenu" role="navigation">
         <ul class="navMenuList">
+            <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
             {if $ns.userLevel === $ns.userGroupsAdmin}
                 <li>
-                    <input type="checkbox" id="chat_on_off"/>
+                    <input type="checkbox" id="admin_chat_on_off"/>
                 </li>
             {/if}
             {if $ns.contentLoad != "main_buildpc"}

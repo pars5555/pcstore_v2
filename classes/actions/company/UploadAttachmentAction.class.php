@@ -41,6 +41,10 @@ class UploadAttachmentAction extends BaseCompanyAction {
             return false;
         }
 
+        $dir = HTDOCS_TMP_DIR ;
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777);
+        }
         $dir = HTDOCS_TMP_DIR_ATTACHMENTS . '/';
         if (!is_dir($dir)) {
             mkdir($dir, 0777);

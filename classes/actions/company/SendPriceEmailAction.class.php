@@ -5,6 +5,7 @@ require_once (CLASSES_PATH . "/managers/CompanyExtendedProfileManager.class.php"
 require_once (CLASSES_PATH . "/managers/ServiceCompanyExtendedProfileManager.class.php");
 require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
 require_once (CLASSES_PATH . "/managers/MandrillEmailSenderManager.class.php");
+require_once (CLASSES_PATH . "/managers/MailgunEmailSenderManager.class.php");
 require_once (CLASSES_PATH . '/managers/CompanyPriceEmailHistoryManager.class.php');
 
 /**
@@ -58,7 +59,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         $dealerEmailsText = $companyExProfiledto->getDealerEmails();
         $unsubscribedEmails = $companyExProfiledto->getUnsubscribedEmails();
         $dealerEmailsArray = explode(';', $dealerEmailsText);
-        $unsubscribedEmailsArray=  array();
+        $unsubscribedEmailsArray = array();
         if (!empty($unsubscribedEmails)) {
             $unsubscribedEmailsArray = explode(';', $unsubscribedEmails);
         }
@@ -117,12 +118,17 @@ class SendPriceEmailAction extends BaseCompanyAction {
                 $allEmailFileAttachments[$fileDisplayName] = $fileFullPath;
             }
         }
-        if ($this->getCmsVar("use_mandrill_for_price_emails") == 1) {
+
+        if ($this->getCmsVar("price_emails_service_provider_name") == 'mandrill') {
             $mandrillEmailSenderManager = new MandrillEmailSenderManager($this->getCmsVar("mandrill_api_key"));
             $body .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
             $body .= '<p style="font-size:10px"><a href="*|UNSUB:http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 'c') . '/' . $companyId . '|*">Click here to unsubscribe.</a></p>';
             $res = $mandrillEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments, ($isServiceCompany ? 'service_company' : 'company') . '_' . $companyId);
             $sentSuccess = is_array($res);
+        } elseif ($this->getCmsVar("price_emails_service_provider_name") == 'mailgun') {
+            $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"));
+            $res = $mailgunEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments);
+            $sentSuccess = $res === true;
         } else {
             $emailSenderManager = new EmailSenderManager('gmail');
             $res = $emailSenderManager->sendBulkEmailWithAttachmentsUsingPcstoreEmails($dealerEmailsArray, $subject, $body, array(), $allEmailFileAttachments, $fromEmail, $companyName);

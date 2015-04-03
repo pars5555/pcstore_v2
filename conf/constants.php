@@ -33,6 +33,8 @@ define("CLASSES_PATH", NGS_ROOT . "/classes");
 //---defining framework path
 define("FRAMEWORK_PATH", CLASSES_PATH . "/framework");
 
+define("SERVER_IP_ADDRESS", $_SERVER['SERVER_ADDR']);
+
 //---defining smarty paths
 
 define("TEMPLATES_DIR", NGS_ROOT . "/templates");
@@ -66,7 +68,7 @@ define("DBMS", CLASSES_PATH . "/util/db/ImprovedDBMS.class.php");
 if (!isset($_SERVER['environment'])) {
     $_SERVER['environment'] = "local";
 }
-define("ENVIRONMENT", $_SERVER['environment']); 
+define("ENVIRONMENT", $_SERVER['environment']);
 switch (ENVIRONMENT) {
     case 'development':
         define('DB_HOST', '127.0.0.1');

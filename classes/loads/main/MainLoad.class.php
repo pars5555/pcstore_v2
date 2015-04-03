@@ -6,6 +6,7 @@ class MainLoad extends BaseGuestLoad {
 
     public function load() {
         $this->addParam('req', $_REQUEST);
+        $this->addParam('server_ip_address', SERVER_IP_ADDRESS);
         $this->checkInvitation();
     }
 

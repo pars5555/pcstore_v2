@@ -63,6 +63,7 @@
         <div class="attachment_element_container" id="company_email_attachments_container">
             <div class="attachment_element" id="attachment_element_hidden_div" style="display:none">
                 <img style="max-width:32px;max-height:32px;vertical-align: middle"/>                               
+                <label></label>
                 <div class="up_delete_attachment f_up_delete_attachment" ><span class="glyphicon"></span></div>
             </div>
         </div>
@@ -71,6 +72,7 @@
     <div class="upload_price_actions">
         <a class="button blue" id="save_price_email" >{$ns.lm->getPhrase(43)}</a>         
         <a class="button blue" id="send_price_email" >{$ns.lm->getPhrase(48)}</a>  
+        <input id="error_send_price_email_title_text" type="hidden" value="{$ns.lm->getPhrase(583)}" />
         <input id="send_price_email_title_text" type="hidden" value="{$ns.lm->getPhrase(514)}" />
         <input id="send_price_email_send_text" type="hidden" value="{$ns.lm->getPhrase(573)}" />
         <input id="send_price_email_save_text" type="hidden" value="{$ns.lm->getPhrase(586)}" />
