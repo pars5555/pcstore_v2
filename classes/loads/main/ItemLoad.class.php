@@ -26,24 +26,24 @@ class ItemLoad extends BaseGuestLoad {
         }
 
         $itemManager = ItemManager::getInstance();
-        $item_id = intval($this->args[0]);
-        $userLevel = $this->getUserLevel();
-        $userId = $this->getUserId();
-        $itemDto = $itemManager->getItemsForOrder($item_id, $userId, $userLevel, true);
+        if (isset($this->args[0])) {
+            $item_id = intval($this->args[0]);
+            $userLevel = $this->getUserLevel();
+            $userId = $this->getUserId();
+            $itemDto = $itemManager->getItemsForOrder($item_id, $userId, $userLevel, true);
 
-        if ($itemDto) {
-            $this->addParam('item_id', $itemDto->getId());
-            $itemManager->growItemShowsCountByOne($itemDto);
-            $itemPicturesCount = $itemDto->getPicturesCount();
-            $this->addParam('item', $itemDto);
-            $this->addParam('itemManager', $itemManager);
-            $this->addParam('itemPicturesCount', $itemPicturesCount);
-            $this->addParam('itemPropertiesHierarchy', $itemManager->getItemProperties($itemDto->getId()));
-        }
-
-
-        if ($this->getUserLevel() === UserGroups::$ADMIN) {
-            $this->initRootCategories();
+            if ($itemDto) {
+                $this->addParam('item_id', $itemDto->getId());
+                $itemManager->growItemShowsCountByOne($itemDto);
+                $itemPicturesCount = $itemDto->getPicturesCount();
+                $this->addParam('item', $itemDto);
+                $this->addParam('itemManager', $itemManager);
+                $this->addParam('itemPicturesCount', $itemPicturesCount);
+                $this->addParam('itemPropertiesHierarchy', $itemManager->getItemProperties($itemDto->getId()));
+            }
+            if ($this->getUserLevel() === UserGroups::$ADMIN) {
+                $this->initRootCategories();
+            }
         }
     }
 
@@ -73,48 +73,58 @@ class ItemLoad extends BaseGuestLoad {
     }
 
     protected function getPageDescription() {
+        if (!isset($this->args[0])) {
+            return "";
+        }
         $item_id = intval($this->args[0]);
         if ($item_id <= 0) {
             return "";
         }
         $itemManager = ItemManager::getInstance();
         $itemDto = $itemManager->selectByPK($item_id, true);
-        $brand = $itemDto->getBrand();
-        $model = $itemDto->getModel();
-        $displayName = $itemDto->getDisplayName();
         $description = "";
-        if (!empty($brand)) {
-            $description .= ($brand . ' ');
-        }
-        if (!empty($model)) {
-            $description .= ($model . ' ');
-        }
-        if (!empty($displayName)) {
-            $description .= $displayName;
+        if (isset($itemDto)) {
+            $brand = $itemDto->getBrand();
+            $model = $itemDto->getModel();
+            $displayName = $itemDto->getDisplayName();
+            if (!empty($brand)) {
+                $description .= ($brand . ' ');
+            }
+            if (!empty($model)) {
+                $description .= ($model . ' ');
+            }
+            if (!empty($displayName)) {
+                $description .= $displayName;
+            }
         }
         return $description;
     }
 
     protected function getPageKeywords() {
-         $item_id = intval($this->args[0]);
+        if (!isset($this->args[0])) {
+            return "";
+        }
+        $item_id = intval($this->args[0]);
         if ($item_id <= 0) {
             return "";
         }
         $itemManager = ItemManager::getInstance();
         $itemDto = $itemManager->selectByPK($item_id, true);
-        $brand = $itemDto->getBrand();
-        $model = $itemDto->getModel();
-        $displayName = $itemDto->getDisplayName();
         $keywords = "";
-        if (!empty($brand)) {
-            $keywords .= ($brand . ',');
-        }
-        if (!empty($model)) {
-            $keywords .= ($model . ',');
-        }
-        if (!empty($displayName)) {
-            $parts = preg_split('/ +/', $displayName);
-            $keywords .= implode(',', $parts);
+        if (isset($itemDto)) {
+            $brand = $itemDto->getBrand();
+            $model = $itemDto->getModel();
+            $displayName = $itemDto->getDisplayName();
+            if (!empty($brand)) {
+                $keywords .= ($brand . ',');
+            }
+            if (!empty($model)) {
+                $keywords .= ($model . ',');
+            }
+            if (!empty($displayName)) {
+                $parts = preg_split('/ +/', $displayName);
+                $keywords .= implode(',', $parts);
+            }
         }
         return $keywords;
     }

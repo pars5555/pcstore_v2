@@ -162,6 +162,8 @@
             {$full|default:""}
         {/if}
     </div>
+{else}
+<h1>{$ns.lm->getPhrase(300)}</h1>
 {/if}
 </div>
 
