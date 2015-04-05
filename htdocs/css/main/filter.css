@@ -150,6 +150,7 @@
     }
     .filter_container{
         display:table;
+        width: 100%;
     }
     .show_vat_products,
     .filter_container .label,
