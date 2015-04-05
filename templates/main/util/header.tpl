@@ -216,7 +216,7 @@
                         <div class="form-group">
                             <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                             <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                            <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
+                            <a id="forgot_pass" class="forget_pass" href="javascript:void(0);">Forgot Your Password?</a>
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">
