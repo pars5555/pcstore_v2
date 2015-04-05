@@ -44,16 +44,13 @@ var bannerSlider = {
     },
     //***************** Slider Swipe Control ***************//
     sliderSwipeControl: function () {
-        alert(1);
         var self = this;
         this.slider.on("swiperight", function () {
-            alert("swiperight");
-            self.sliderRotate(1);
+            self.sliderRotate(-1);
             self.sliderAutoRotate();
         });
         this.slider.on("swipeleft", function () {
-            alert("swipeleft");
-            self.sliderRotate(-1);
+            self.sliderRotate(1);
             self.sliderAutoRotate();
         });
     },

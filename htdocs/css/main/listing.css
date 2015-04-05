@@ -217,7 +217,7 @@
 /**************************************************************************************/
 
 
-@media screen and (max-width : 1250px){
+@media (max-width : 1250px){
     .home_page_inner_container{
         display:block;
         width: auto;
@@ -228,7 +228,7 @@
     }
 }
 
-@media screen and (max-width : 1000px){
+@media (max-width : 1000px){
 
     /************************* LISTING **********************/
 
@@ -289,7 +289,7 @@
     }
 }
 
-@media screen and (max-width : 768px){
+@media (max-width : 768px){
     .listing .listing_row .listing_item{
         padding:10px;
     }
@@ -310,7 +310,7 @@
         font-size: 15px;
     }
 }
-@media screen and (max-width : 620px){
+@media (max-width : 620px){
     .listing_item .listing_item_img{
         width:150px;
     }
@@ -319,7 +319,7 @@
         height:150px;
     }    
 }
-@media screen and (max-width : 480px){
+@media (max-width : 480px){
     .listing_item .listing_item_inner{
         display:block;
         width:auto;

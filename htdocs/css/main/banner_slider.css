@@ -205,7 +205,7 @@
 /**************************************************************************************/
 
 
-@media screen and (max-width : 768px){
+@media (max-width : 768px){
     .banner-slider-container .slider_navigation{
         display:none;
     }

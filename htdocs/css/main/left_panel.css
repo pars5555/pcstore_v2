@@ -170,7 +170,7 @@
 /*                                                                                    */
 /**************************************************************************************/
 
-@media screen and (max-width : 1250px){
+@media (max-width : 1250px){
     .left-panel {
         background-color: #fff;
         height: calc(100% - 47px);
@@ -191,7 +191,7 @@
         border:none;
     }
 }
-@media screen and (max-width : 480px){
+@media (max-width : 480px){
     .left-panel {
         width:100%;
         left: -100%;

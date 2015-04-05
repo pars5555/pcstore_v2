@@ -372,7 +372,7 @@
     content:"";
     font-family: "FontAwesome";
 }
-@media screen and (min-width : 768px){
+@media (min-width : 768px){
     .build-pc-link:hover .icon{
         animation: 2s linear 0s normal infinite build_pc_icon_loading; 
     }
@@ -598,7 +598,7 @@
 /*                                                                                    */
 /**************************************************************************************/
 
-@media screen and (max-width : 1250px){
+@media (max-width : 1250px){
     .left-panel-btn{
         display:block;
     }
@@ -617,7 +617,7 @@
     }
 }
 
-@media screen and (max-width : 1000px){
+@media (max-width : 1000px){
     .nav_menu_btn{
         display:block;
     }
@@ -681,7 +681,7 @@
     }
 
 }
-@media screen and (max-width : 768px){
+@media (max-width : 768px){
 
     /**************************************MAIN POPUP*************************************/
     .modal-body .modal_cols{
@@ -701,7 +701,7 @@
     }
 }
 
-@media screen and (max-width : 700px){
+@media (max-width : 700px){
     .modal .modal-content{
         top:0;
         left:0;
@@ -738,7 +738,7 @@
         display:table-cell;
     }
 }
-@media screen and (max-width : 480px){
+@media (max-width : 480px){
     .navMenuContainer {
         width:100%;
         right: -100%;
