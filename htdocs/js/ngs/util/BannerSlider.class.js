@@ -8,6 +8,7 @@ var bannerSlider = {
         this.initSliderElements();
         this.sliderAutoRotate();
         this.sliderControl();
+        this.sliderSwipeControl();
         this.sliderNavigation();
         this.sliderResponsiveSize();
     },
@@ -38,6 +39,21 @@ var bannerSlider = {
         this.sliderControlBtn.on("click", function () {
             var direction = jQuery(this).attr("data-direction");
             self.sliderRotate(direction);
+            self.sliderAutoRotate();
+        });
+    },
+    //***************** Slider Swipe Control ***************//
+    sliderSwipeControl: function () {
+        alert(1);
+        var self = this;
+        this.slider.on("swiperight", function () {
+            alert("swiperight");
+            self.sliderRotate(1);
+            self.sliderAutoRotate();
+        });
+        this.slider.on("swipeleft", function () {
+            alert("swipeleft");
+            self.sliderRotate(-1);
             self.sliderAutoRotate();
         });
     },

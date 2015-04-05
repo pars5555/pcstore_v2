@@ -19,6 +19,9 @@
     background-color:#f7f7f7;
     border-bottom:1px solid #ccc;
 }
+
+/********************** Navigation Menu *****************/
+
 .navMenuList{
     margin: auto;
     text-align: right;
@@ -69,31 +72,9 @@
     color:#63B4FB;
 }
 
-/*Left panel button*/
-.navMenuList .left-panel-btn{
-    float: left;
-    display:none;
-}
-.left-panel-btn .navMenu_item{
-    border-right:none;
-    padding: 0;
-}
-.left-panel-btn .navMenu_item span{
-    display:inline-block;
-    vertical-align: middle;
-}
-.left-panel-btn .navMenu_item:after{
-    content:"";
-    font-family: "glyphicons-halflings";
-    display:inline-block;
-    vertical-align: middle;
-    margin-left:5px;
-}
-.left-panel-btn.active .navMenu_item:after{
-    content:"";
-}
-
-/*Drop Down Menu*/
+/****************************************************************************/
+/*                              Drop Down Menu                              */
+/****************************************************************************/
 
 .navMenuList li.dropdown{
     position:relative;
@@ -101,16 +82,12 @@
 
 .navMenuList li.dropdown a.dropdown_toggle{
     position:relative;
-    padding-right:35px;
 }
-.navMenuList li.dropdown a.dropdown_toggle:before{
+.navMenuList li.dropdown a.dropdown_toggle:after{
     content:"";
     font-family: "glyphicons-halflings";
-    position:absolute;
-    right:15px;
-}
-.navMenuList li.dropdown a.dropdown_toggle:hover{
-    /*color:#fff;*/
+    display:inline-block;
+    vertical-align: middle;
 }
 
 .dropdown_menu{
@@ -161,6 +138,61 @@
     vertical-align:middle;
     width:25px;
     margin-right:5px;	
+}
+
+/* Nav Menu Button */
+
+.nav_menu_btn{
+    display:none;
+    float:right;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.nav_menu_btn span{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.nav_menu_btn:hover span{
+    color: #63b4fb;
+}
+
+
+/*Left panel button*/
+.left-panel-btn{
+    float: left;
+    display:none;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.left-panel-btn span{
+    border-right:none;
+    padding: 0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.left-panel-btn:hover span{
+    color: #63b4fb;
 }
 
 /**************************************************************************************/
@@ -242,6 +274,9 @@
     text-align: right;
     white-space: nowrap;
     padding-left:10px;
+}
+.build-pc-link.buil_pc_link_top{
+    display:none;
 }
 .build-pc-link a{
     display:inline-block;
@@ -330,16 +365,28 @@
 .build-pc-link .icon{
     width:35px;
     height:35px;
-    font-size: 40px;
-
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-
-    animation: 2s linear 0s normal infinite build_pc_icon; 
+    font-size: 30px;
+    position:relative;
 }
-@keyframes build_pc_icon {
+.build-pc-link .icon:before{
+    content:"";
+    font-family: "FontAwesome";
+}
+@media screen and (min-width : 768px){
+    .build-pc-link:hover .icon{
+        animation: 2s linear 0s normal infinite build_pc_icon_loading; 
+    }
+    .build-pc-link:hover .icon{
+        width:35px;
+        height:41px;
+    }
+    .build-pc-link:hover .icon:before{
+        font-size: 40px;
+        content:""; 
+    }
+}
+
+@keyframes build_pc_icon_loading {
     0% {
         transform: rotate(0deg);
     }
@@ -348,7 +395,7 @@
     }
 } 
 
-@-webkit-keyframes build_pc_icon {
+@-webkit-keyframes build_pc_icon_loading {
     0% {
         transform: rotate(0deg);
     }
@@ -552,23 +599,11 @@
 /**************************************************************************************/
 
 @media screen and (max-width : 1250px){
-    .navMenuList .left-panel-btn{
-        display:inline-block;
+    .left-panel-btn{
+        display:block;
     }
-}
 
-@media screen and (max-width : 768px){
-
-    /**************************************************************************************/
-    /*                                     MAIN POPUP                                     */
-    /**************************************************************************************/
-    .modal-body .modal_cols{
-        padding:10px;
-    }
-    
-    /**************************************************************************************/
-    /*                                 MAIN NAVIGATION                                    */
-    /**************************************************************************************/
+    /**********************************MAIN NAVIGATION*************************************/
     .navbar{
         padding-top:46px;
     }
@@ -580,10 +615,80 @@
         padding:0 10px;
         z-index: 5000;
     }
+}
 
-    /**************************************************************************************/
-    /*                            HEADER SEARCH & LOGO & BUILD PC                         */
-    /**************************************************************************************/
+@media screen and (max-width : 1000px){
+    .nav_menu_btn{
+        display:block;
+    }
+
+    .navMenuContainer{
+        width:300px;
+        background-color: #fff;
+        height: calc(100% - 47px);
+        right: -330px;
+        overflow: auto;
+        padding: 0;
+        position: fixed;
+        top: 46px;
+        vertical-align: top;
+        z-index: 10000;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 0 15px #999;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;	
+    }
+    .navMenuContainer.active{
+        right:0;
+    }
+
+    /********************** Navigation Menu *****************/
+
+    .navMenuList>li{
+        height: auto;
+        line-height: initial;
+        display:block;
+        text-align: right;
+        border-bottom:1px solid #E0E0E0;
+    }
+    .navMenuList .navMenu_item{
+        display:inline-block;
+        font-size:13px;
+        padding:10px;
+        height:auto;
+        line-height:initial;
+        border-right:none;
+    }
+    /****************************************************************************/
+    /*                              Drop Down Menu                              */
+    /****************************************************************************/
+
+
+    .dropdown_menu{
+        position:static;
+    }
+    .dropdown_menu li a:hover{
+        background-color: transparent;
+        color:#777;
+    }
+    .dropdown_menu li a:active{
+        background-color: #63B4FB;
+        color: #fff;
+    }
+
+}
+@media screen and (max-width : 768px){
+
+    /**************************************MAIN POPUP*************************************/
+    .modal-body .modal_cols{
+        padding:10px;
+    }
+
+    /*****************************HEADER SEARCH & LOGO & BUILD PC*************************/
     .header_content{
         padding:10px;
     }
@@ -618,5 +723,56 @@
     }
     .modal-body .modal_cols{
         display:block;
+    }
+
+    /********************************** SEARCH & LOGO & BUILD PC ***************************/
+    .header_content .search_block{
+        display: table-caption;
+        caption-side: bottom;
+        margin: 10px auto;
+    }
+    .build-pc-link{
+        display:none;
+    }
+    .build-pc-link.buil_pc_link_top{
+        display:table-cell;
+    }
+}
+@media screen and (max-width : 480px){
+    .navMenuContainer {
+        width:100%;
+        right: -100%;
+    }
+    .site_logo,
+    .site_logo img{
+        width:120px;
+    }
+    .build-pc-link a{
+        font-size: 20px;
+    }
+    .build-pc-link a.buil_pc_link_am{
+        font-size: 15px;
+    }
+    .build-pc-link  a.buil_pc_link_am span{
+        width:100px;
+    }
+    .build-pc-link a.buil_pc_link_am span.icon {
+        width: auto;
+    }
+    .build-pc-link .icon {
+        font-size: 20px;
+        height: auto;
+        width: auto;
+    }
+    
+    /*Contact Info*/
+    .contact_info {
+        margin-bottom: 10px;
+    }
+    .contact_info .fontAwesome{
+        font-size: 20px;
+    }
+    .contact_info .contact_link{
+        font-size: 13px;
     }
 }

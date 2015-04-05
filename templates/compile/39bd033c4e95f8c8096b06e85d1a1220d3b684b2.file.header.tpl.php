@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 " class="site_logo"> <img src="<?php echo $_smarty_tpl->tpl_vars['SITE_PATH']->value;?>
 /img/logo_pcstore.png" alt=""> </a>
         </div>
-        <nav id="navMenu" class="navMenu" role="navigation">
+        <nav id="navMenu" class="navMenuList" role="navigation">
             <ul class="navMenuList">
                 <?php if ($_smarty_tpl->tpl_vars['ns']->value['contentLoad']!="main_buildpc"){?>
                     <li>

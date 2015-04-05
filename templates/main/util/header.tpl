@@ -1,139 +1,145 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <nav id="navMenu" class="navMenu" role="navigation">
         <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
-        <ul class="navMenuList">
-            <li class="left-panel-btn f_left-panel-btn">
-                <a class="navMenu_item" href="javascript:void(0);">
-                    <span>{$ns.lm->getPhrase(105)}</span>
-                </a>
-            </li>
+        <div class="left-panel-btn f_left-panel-btn">
+            <span class="fontAwesome"></span>
+            <span>{$ns.lm->getPhrase(105)}</span>
+        </div>
+        <div class="navMenuContainer f_nav_menu">
+            <ul class="navMenuList">
 
-            {if $ns.userLevel === $ns.userGroupsAdmin}
-                <li>
-                    <input type="checkbox" id="admin_chat_on_off"/>
-                </li>
-            {/if}
-
-            {*}
-            {if $ns.contentLoad != "main_buildpc"}
-            <li>
-            <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
-            </li>
-            {/if}
-            {*}
-
-            <li class="dropdown f_dropdown">
-                <a id="lang_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">Languages</a>
-                <ul class="dropdown_menu f_dropdown_menu">
+                {if $ns.userLevel === $ns.userGroupsAdmin}
                     <li>
-                        <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
-                    </li>
-                </ul>
-            </li>
-            {if $ns.userLevel === $ns.userGroupsGuest}
-                <li >
-                    <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> Sign in / Register </a>
-                </li>
-            {else}
-                <li>
-                    <a class="navMenu_item" href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
-                </li>
-                {if $ns.userLevel !== $ns.userGroupsAdmin}
-                    <li>
-                        <a class="navMenu_item" href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} <span class="glyphicon"></span></a>
-                    </li>
-                {else}
-                    <li>
-                        <a class="navMenu_item" href="{$SITE_PATH}/admin" target="_blank">{$ns.lm->getPhrase(496)}</a>
+                        <input type="checkbox" id="admin_chat_on_off"/>
                     </li>
                 {/if}
+
+                {*}
+                {if $ns.contentLoad != "main_buildpc"}
+                <li>
+                <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
+                </li>
+                {/if}
+                {*}
+
                 <li class="dropdown f_dropdown">
-                    <a id="user_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
-                        {$ns.customer->getName()}
-                        {if $ns.userLevel === $ns.userGroupsUser}
-                            ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
-                        {/if}
-                    </a>
+                    <a id="lang_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">Languages</a>
                     <ul class="dropdown_menu f_dropdown_menu">
-                        {if $ns.userLevel === $ns.userGroupsUser}
-                            <li>
-                                <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
-                            </li>
-                            <li>
-                                <a href="{$SITE_PATH}/uinvite">{$ns.lm->getPhrase(139)}</a>
-                            </li>
-                        {/if}
-                        {if $ns.userLevel === $ns.userGroupsCompany}
-                            <li>
-                                <a href="{$SITE_PATH}/cprofile">{$ns.lm->getPhrase(94)}</a>
-                            </li>
-                            <li>
-                                <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
-                            </li>
-                        {/if}
-                        {if $ns.userLevel === $ns.userGroupsServiceCompany}
-                            <li>
-                                <a href="{$SITE_PATH}/scprofile">{$ns.lm->getPhrase(94)}</a>
-                            </li>
-                        {/if}
-                        {if $ns.userLevel === $ns.userGroupsCompany}
-                            <li>
-                                <a href="{$SITE_PATH}/dealers">{$ns.lm->getPhrase(495)}</a>
-                            </li>
-                        {/if}
-                        {if $ns.userLevel === $ns.userGroupsServiceCompany}
-                            <li>
-                                <a href="{$SITE_PATH}/scdealers">{$ns.lm->getPhrase(495)}</a>
-                            </li>
-                        {/if}
-                        {if $ns.userLevel != $ns.userGroupsAdmin}
-                            <li>
-                                <a href="{$SITE_PATH}/orders">{$ns.lm->getPhrase(142)}</a>
-                            </li>
-                        {/if}
                         <li>
-                            <a id="mainLogoutBtn" href="{$SITE_PATH}/dyn/main/do_logout">{$ns.lm->getPhrase(65)}</a>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="en"> <img src="{$SITE_PATH}/img/en_s.png" alt="">English</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="am"> <img src="{$SITE_PATH}/img/am_s.png" alt="">Armenian</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="mainSetLanguage" lang="ru"> <img src="{$SITE_PATH}/img/ru_s.png" alt="">Russian</a>
                         </li>
                     </ul>
                 </li>
-
-                {* Notification Example *}
-
-                <ul id="notification_example" class="hidden">
-                    <li class="notification_block f_notification_block">
-                        <a class="not_link f_not_link" href="javascript:void(0);">
-                            <span class="nb_item not_icon f_not_icon">
-                                <img src="" alt="">
-                            </span>  
-                            <span class="nb_item">
-                                <span class="not_title f_not_title">
-
-                                </span>  
-                                <span class="not_date f_not_date">
-
-                                </span>  
-                            </span>  
-                        </a>
+                {if $ns.userLevel === $ns.userGroupsGuest}
+                    <li >
+                        <a class="f_myModal_toggle navMenu_item" href="javascript:void(0);"> Sign in / Register </a>
                     </li>
-                </ul>
+                {else}
+                    <li>
+                        <a class="navMenu_item" href="{$SITE_PATH}/companies">{$ns.lm->getPhrase(494)}</a>
+                    </li>
+                    {if $ns.userLevel !== $ns.userGroupsAdmin}
+                        <li>
+                            <a class="navMenu_item" href="{$SITE_PATH}/cart"> {$ns.lm->getPhrase(278)} <span class="glyphicon"></span></a>
+                        </li>
+                    {else}
+                        <li>
+                            <a class="navMenu_item" href="{$SITE_PATH}/admin" target="_blank">{$ns.lm->getPhrase(496)}</a>
+                        </li>
+                    {/if}
+                    <li class="dropdown f_dropdown">
+                        <a id="user_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
+                            {$ns.customer->getName()}
+                            {if $ns.userLevel === $ns.userGroupsUser}
+                                ({$ns.lm->getPhrase(434)}: {$ns.customer->getPoints()} Դր.)
+                            {/if}
+                        </a>
+                        <ul class="dropdown_menu f_dropdown_menu">
+                            {if $ns.userLevel === $ns.userGroupsUser}
+                                <li>
+                                    <a href="{$SITE_PATH}/uprofile">{$ns.lm->getPhrase(94)}</a>
+                                </li>
+                                <li>
+                                    <a href="{$SITE_PATH}/uinvite">{$ns.lm->getPhrase(139)}</a>
+                                </li>
+                            {/if}
+                            {if $ns.userLevel === $ns.userGroupsCompany}
+                                <li>
+                                    <a href="{$SITE_PATH}/cprofile">{$ns.lm->getPhrase(94)}</a>
+                                </li>
+                                <li>
+                                    <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
+                                </li>
+                            {/if}
+                            {if $ns.userLevel === $ns.userGroupsServiceCompany}
+                                <li>
+                                    <a href="{$SITE_PATH}/scprofile">{$ns.lm->getPhrase(94)}</a>
+                                </li>
+                            {/if}
+                            {if $ns.userLevel === $ns.userGroupsCompany}
+                                <li>
+                                    <a href="{$SITE_PATH}/dealers">{$ns.lm->getPhrase(495)}</a>
+                                </li>
+                            {/if}
+                            {if $ns.userLevel === $ns.userGroupsServiceCompany}
+                                <li>
+                                    <a href="{$SITE_PATH}/scdealers">{$ns.lm->getPhrase(495)}</a>
+                                </li>
+                            {/if}
+                            {if $ns.userLevel != $ns.userGroupsAdmin}
+                                <li>
+                                    <a href="{$SITE_PATH}/orders">{$ns.lm->getPhrase(142)}</a>
+                                </li>
+                            {/if}
+                            <li>
+                                <a id="mainLogoutBtn" href="{$SITE_PATH}/dyn/main/do_logout">{$ns.lm->getPhrase(65)}</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                {* Notifications Container *}
-                <li class="notification f_dropdown" id="notification">
-                    {*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
-                    <a id="notificationBtn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
-                    </a>
-                    <ul style="display: none;" id="notificationListWrapper" class="dropdown_menu f_dropdown_menu nofitication-list-wrapper">
-                        <li class="no_notifications">You have not notifications!</li>
+                    {* Notification Example *}
+
+                    <ul id="notification_example" class="hidden">
+                        <li class="notification_block f_notification_block">
+                            <a class="not_link f_not_link" href="javascript:void(0);">
+                                <span class="nb_item not_icon f_not_icon">
+                                    <img src="" alt="">
+                                </span>  
+                                <span class="nb_item">
+                                    <span class="not_title f_not_title">
+
+                                    </span>  
+                                    <span class="not_date f_not_date">
+
+                                    </span>  
+                                </span>  
+                            </a>
+                        </li>
                     </ul>
-                </li>
-            {/if}
-        </ul>
+
+                    {* Notifications Container *}
+                    <li class="notification f_dropdown" id="notification">
+                        <a id="notificationBtn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
+                            <span>Notifications</span>
+                            <span class="icon glyphicon"></span>
+                        </a>
+                        <ul style="display: none;" id="notificationListWrapper" class="dropdown_menu f_dropdown_menu nofitication-list-wrapper">
+                            <li class="no_notifications">You have not notifications!</li>
+                        </ul>
+                    </li>
+                {/if}
+            </ul>
+        </div>
+        <div class="nav_menu_btn f_nav_menu_btn">
+            <span>Menu</span>
+            <span class="fontAwesome"></span>
+        </div>
         <div class="clear"></div>
     </nav>
     <div class="header_content">
@@ -149,12 +155,14 @@
             </div>
             <div class="contact_info_item">
                 <span class="fontAwesome"></span>
-                <a class="contact_link" href="mailto:info@pcstore.am">info@pcstore.am</a>
+                <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
             </div>
+            {*}
             <div class="contact_info_item">
-                <span class="fontAwesome"></span>
-                <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
+            <span class="fontAwesome"></span>
+            <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
             </div>
+            {*}
         </div>
         <div class="header_content_inner">
             {**************************** LOGO ********************************}
@@ -162,6 +170,15 @@
             <a  href="{$SITE_PATH}" class="site_logo">
                 <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
             </a>
+            
+            {**************************** BUILD PC ********************************}
+            <div class="build-pc-link buil_pc_link_top">
+                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
+                    <span class="icon">
+                    </span>
+                    <span>{$ns.lm->getPhrase(226)}</span>
+                </a>
+            </div>
 
             <div class="search_block">
                 {**************************** SEARCH ********************************}
@@ -190,7 +207,8 @@
             {/if}
             <div class="build-pc-link">
                 <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
-                    <span class="icon fontAwesome"></span>
+                    <span class="icon">
+                    </span>
                     <span>{$ns.lm->getPhrase(226)}</span>
                 </a>
             </div>
@@ -216,7 +234,7 @@
                         <div class="form-group">
                             <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                             <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                            <a id="forgot_pass" class="forget_pass" href="javascript:void(0);">Forgot Your Password?</a>
+                            <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                         </div>
                         <div style="color:#de4c34;" class="error"></div>
                         <div class="login-buttons">

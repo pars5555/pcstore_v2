@@ -113,6 +113,9 @@
 .fontAwesome{
     font-family:"FontAwesome";	
 }
+.ionicon{
+    font-family: "ionicons";    
+}
 .error{
     color:#cc0000;
 }

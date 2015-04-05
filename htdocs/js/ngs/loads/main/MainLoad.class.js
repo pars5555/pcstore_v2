@@ -35,6 +35,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.categoriesProductCheckbox();
         this.pccLoader();
         this.leftPanel();
+        this.mainNavigationMenu();
 
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
@@ -332,6 +333,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     leftPanel : function(){
         jQuery(".f_left-panel-btn").on("click",function(){
            jQuery("#mainLeftPanel").toggleClass("active");
+        });
+    },
+    mainNavigationMenu : function(){
+        jQuery(".f_nav_menu_btn").on("click",function(){
+           jQuery(".f_nav_menu").toggleClass("active");
         });
     }
 });

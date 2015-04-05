@@ -62,13 +62,18 @@
     }
 }
 .navMenuList .notification .navMenu_item{
+}
+.navMenuList .notification .navMenu_item span{
+    display:none;
+}
+.navMenuList .notification .navMenu_item .icon{
     font-size:22px;
+    display:inline-block;
+    margin: auto;
 }
 
-.navMenuList .notification .navMenu_item:after{
-    content:"";
-    font-family: "glyphicons-halflings";
-}
+/*Notifications List*/
+
 .notification .nofitication-list-wrapper{
     background-color: #fff;
     border-radius: 3px;
@@ -130,4 +135,10 @@
     color: #777;
     font-size: 11px;
     font-weight: 600;
+}
+
+@media screen and (max-width : 1000px){
+    .navMenuList .notification .navMenu_item span{
+        display:inline-block;
+    }
 }

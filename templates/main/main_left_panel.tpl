@@ -2,7 +2,7 @@
     <div class="left-panel_content">
         {if isset($ns.itemsCategoryMenuView)}
             <h1 class="any_categories">
-                <span class="glyphicon"></span>
+                <span class="fontAwesome"></span>
                 <span>
                     {$ns.lm->getPhrase(105)}
                 </span>

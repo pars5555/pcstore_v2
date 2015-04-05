@@ -74,7 +74,8 @@
 }
 .left-panel ul li .dropdown-toggle{
     width: 35px;
-    display: none;
+    display:table-cell;
+    visibility: hidden;
     cursor: pointer;
     text-align: center;
     vertical-align:middle;
@@ -96,7 +97,7 @@
     content:"";
 }
 .left-panel ul li.dropdown>a>.dropdown-toggle{
-    display:table-cell;
+    visibility: visible;
 }
 .left-panel ul li.dropdown>ul{
     display:none;
@@ -172,17 +173,22 @@
 @media screen and (max-width : 1250px){
     .left-panel {
         background-color: #fff;
-        height: calc(100% - 46px);
-        left: -330px;
+        height: calc(100% - 47px);
+        left: -332px;
         overflow: auto;
         padding: 0;
         position: fixed;
         top: 46px;
         vertical-align: top;
         z-index: 10000;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 0 15px #999;
     }
     .left-panel.active{
         left:0;
+    }
+    .left-panel .left-panel_content {
+        border:none;
     }
 }
 @media screen and (max-width : 480px){

@@ -99,7 +99,7 @@
 }
 .banner-slider-container:hover .slide_left{
     left:10px;    
-    
+
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -111,7 +111,7 @@
 }
 .banner-slider-container:hover .slide_right{
     right:15px;    
-    
+
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -119,15 +119,17 @@
     transition: all 0.3s ease;	
 }
 
-.banner-slider-container .slide_right .glyphicon{
-    left: 1px;
-    position: absolute;
-    top: 5px;    
-}
+.banner-slider-container .slide_right .glyphicon,
 .banner-slider-container .slide_left .glyphicon{
-    left: 1px;
     position: absolute;
-    top: 7px;
+    top: 50%;
+    left: 50%;
+
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);  
+    -webkit-transform:translate(-50%,-50%);  
+    -o-transform:translate(-50%,-50%);  
+    -ms-transform:translate(-50%,-50%); 
 }
 
 /* Slider Navigation */
@@ -147,7 +149,7 @@
 }
 .banner-slider-container:hover .slider_navigation{
     bottom:20px;   
-    
+
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -185,4 +187,57 @@
 }
 .slider_navigation .slider_nav_item.active{
     background-color:#63B4FB;    
+}
+
+
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                             BANNER SLIDER RESPONSIVE                               */
+/*                                                                                    */
+/**************************************************************************************/
+
+
+@media screen and (max-width : 768px){
+    .banner-slider-container .slider_navigation{
+        display:none;
+    }
+    .banner-slider-container .slide_left,
+    .banner-slider-container .slide_right{
+        height:100%;
+        width:40px;
+        font-size: 35px;
+
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -khtml-border-radius: 0; 
+        -o-border-radius: 0; 
+        -ms-border-radius: 0;
+        -icab-border-radius: 0; 
+        border-radius: 0; 
+
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .banner-slider-container .slide_left:hover,
+    .banner-slider-container .slide_right:hover{
+        background-color: rgba(255, 255, 255, 0.77);
+        color:#555;
+    }
+    .banner-slider-container .slide_left:active,
+    .banner-slider-container .slide_right:active{
+        background-color: rgba(0,0,0,0.33);
+        color:#63B4FB;
+    }
+    .banner-slider-container:hover .slide_left,
+    .banner-slider-container .slide_left{
+        left:0px;
+    }
+    .banner-slider-container:hover .slide_right,
+    .banner-slider-container .slide_right{
+        right:0px;
+    }
 }
