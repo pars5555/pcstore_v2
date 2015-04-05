@@ -333,11 +333,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     leftPanel : function(){
         jQuery(".f_left-panel-btn").on("click",function(){
            jQuery("#mainLeftPanel").toggleClass("active");
+           jQuery(".f_nav_menu").removeClass("active");
         });
     },
     mainNavigationMenu : function(){
         jQuery(".f_nav_menu_btn").on("click",function(){
            jQuery(".f_nav_menu").toggleClass("active");
+           jQuery("#mainLeftPanel").removeClass("active");
         });
     }
 });

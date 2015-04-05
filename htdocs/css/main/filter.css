@@ -1,4 +1,9 @@
 
+.filter_conainer_box{
+    display:table;
+    width:100%;
+}
+
 /******************************************************************************/
 /*                                SEARCH BLOCK                                */
 /******************************************************************************/
@@ -88,15 +93,15 @@
 
 
 
-/*******
+/******************************************************************************/
+/*                                  PAGINATION                                */
+/******************************************************************************/
 
-PAGINATION
-
-*******/
 .navigation_pagination{
     font-size: 15px;
-    margin:10px auto;
+    margin:10px 0 10px 20px;
     text-align: right;
+    white-space: nowrap;
 }
 .pagination .current-page-number{
     display:inline-block;
@@ -129,3 +134,36 @@ PAGINATION
     border:1px solid #63B4FB;
 }
 
+/**************************************************************************************/
+/*                                                                                    */
+/*                                  FILTER RESPONSIVE                                 */
+/*                                                                                    */
+/**************************************************************************************/
+
+@media (max-width : 700px){
+    .filter_conainer_box{
+        display:block;
+        width:auto;
+    }
+    .filter_conainer_box>.table-cell{
+        display:block;
+    }
+    .filter_container{
+        display:table;
+    }
+    .show_vat_products,
+    .filter_container .label,
+    .filter_container select{
+        font-size:13px;
+    }
+    .filter_container .label{
+        padding:0 5px 0 0;
+    }
+    .navigation_pagination {
+        margin: 10px auto;
+        text-align: center;
+    }
+    .show_vat_products .checkbox_container .checkbox_label{
+        padding:0 0 0 5px;
+    }
+}

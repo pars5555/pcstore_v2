@@ -1,5 +1,4 @@
-
-<div class="table filter_conainer_box">
+<div class="filter_conainer_box">
     <div class="table-cell">
         <div class="filter_container">
             <h3>Filter</h3> 
@@ -45,7 +44,7 @@
             </div>
             {*}
             {*}
-            <div class="form-group show_var_products">    
+            <div class="form-group show_vat_products">    
                 <div class="table-cell">
                 </div>           
                 <div class="table-cell">        
