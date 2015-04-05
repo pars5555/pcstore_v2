@@ -1,7 +1,10 @@
-﻿<div class="home_page_main_wrapper">
+<div class="home_page_main_wrapper">
+        {******************************** CATEGORIES NAVIGATION ******************************}
+        {include file="$TEMPLATE_DIR/main/category_navigation.tpl"}
 
     <div class="home_page_inner_container">
-
+        
+        
         {******************************** LEFT PANEL ******************************}
         {include file="$TEMPLATE_DIR/main/main_left_panel.tpl"}
 

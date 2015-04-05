@@ -1,0 +1,455 @@
+
+/*******
+
+ CART
+
+*******/
+
+/* List Customer Message */
+
+.list-customer-message {
+    margin:0 auto 30px;
+    padding:0px;
+}
+.list-customer-message li{
+    list-style: none;
+    padding: 7px 15px;
+    margin-bottom: 7px;
+    color: #555;
+    background-color: #FDEBE8;
+    border: 1px solid #D54000;
+    border-radius: 3px;
+}
+
+/*======= Cart Item =======*/
+
+.cart-wrapper{    
+    margin-bottom:50px;
+}
+.cart-wrapper .cart-item{
+    border-top:1px solid #ccc;
+    position: relative;
+    padding:15px;
+}
+.cart-wrapper .cart-item.cart_items_head{
+    border:none;
+    font-weight: 600;
+    font-size: 17px;
+    color:#777;
+    padding: 20px 10px;
+}
+.cart-wrapper .main_title{
+    border:none;
+}
+.cart-wrapper .main_title.customer_mes_title{
+    margin-bottom:10px;
+}
+.bundle {
+    position:relative;
+    margin-bottom: 10px;
+    text-align:center;
+}
+.bundle .bundle-components-wrapper{
+    display: none;
+    margin:20px 15%;
+    width:70%;
+    border-bottom: 1px solid #ccc;
+}
+.bundle_components_table{
+    display:table;
+    width:100%;
+}
+.bundle_components_table .component_block{
+    display:table-row;
+}
+.bundle_components_table .component_block .component_count{
+    color:#555;
+    font-weight:600;
+    text-decoration:underline;	
+}
+.bundle_components_table .component_block .component_img .glyphicon.build_pcc_fee{
+    font-size:30px;
+    color:#3278b3;	
+}
+.bundle .bundle-components-wrapper.open{
+    display:block;
+}
+.bundle .bundle-components-wrapper .arrow {
+    font-size: 30px;
+    left: 50%;
+    position: absolute;
+    top: 35px;
+}
+
+.cart-item .bundle_components_table .component_block .component_count,
+.cart-item .bundle_components_table .component_block .component_unit_prie,
+.cart-item .bundle_components_table .component_block .component_discount,
+.cart-item .bundle_components_table .component_block .component_total_price{
+    width:100px;
+}
+.cart-item .bundle_components_table .component_edit,
+.cart-item .bundle_components_table .component_delete{
+    width:0;
+    padding:0;
+}
+
+/*Cart Component Block*/
+
+.f_bundle_btn{
+    cursor:pointer;
+}
+.see_more{
+    color:#63B4FB;
+    text-decoration:underline;
+}
+.cart-item .component_block .cart_item_count .select_wrapper{
+    width:50px;
+}
+.cart-item .component_block .cart_item_count,
+.cart-item .component_block .component_unit_prie,
+.cart-item .component_block .component_discount,
+.cart-item .component_block .component_total_price{
+    width:130px;
+}
+
+.not_avaible_img{
+    width:60px;
+}
+
+/* Cart Checkout */
+
+.cart_checkout{
+    float:right;
+    width:100%;
+    max-width:500px;
+    background-color: #fff;
+}
+.cart_checkout .vat,
+.cart_checkout .cart_total{
+    margin-bottom:10px;
+    padding:10px;
+    border-bottom:1px solid #ccc;
+    text-align: right;
+}
+.cart_checkout .vat{
+    text-align: left; 
+    font-weight: 600;   
+    font-size: 18px;
+    color:#555;
+}
+.cart_checkout .vat a{
+    float:right;
+}
+
+.cart_checkout .promo{
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.cart_checkout .promo .text_red{
+    float:right;
+}
+
+.cart_checkout .cart_total .total_ph{
+    float:left;
+    font-size: 18px;
+    font-weight: 600;
+    color:#555;
+    text-align: center;
+}
+.and_phrase{
+    display:inline-block;
+    margin:0 10px;
+    font-weight: 600;
+}
+.cart_checkout .button.blue{
+    float:right;
+    font-size: 17px;
+    padding: 10px 20px;
+    width: auto;
+}
+
+.warning_message{    
+    display:block;
+    padding: 7px 15px;
+    color: #555;
+    background-color: #FDEBE8;
+    border: 1px solid #D54000;
+    border-radius: 3px;
+    clear:both;
+}
+
+/* Shipping Info */
+
+.shipping_info{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: right;
+}
+
+.shipping_info span:first-child{
+    display:block;
+    float:left;
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.shipping_info .text_red {
+    display: inline-block;
+    max-width: 300px;
+}
+
+/***************** Checkout Confirm Container *******************/
+
+.checkout_confirm_container{
+    padding-right: 550px;
+    position:relative;
+}
+
+.checkout_confirm_container .checkout_confirm.cart_checkout{
+    position:absolute;
+    top:0;
+    right:0;
+    margin:auto;
+    padding:10px 20px;
+    width: calc(100% - 40px);
+    box-shadow: 0 0 7px #ddd;
+    background-color: rgba(255,255,255,0.77);
+    z-index: 1000;
+
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px; 
+    -o-border-radius: 7px; 
+    -ms-border-radius: 7px;
+    -icab-border-radius: 7px; 
+    border-radius: 7px; 
+}
+.checkout_confirm_container .checkout_confirm.cart_checkout .main_loader{
+    position:absolute;
+    background-size: 150px auto;
+}
+.checkout_confirm_container .checkout_confirm.cart_checkout.fixed{
+    position: fixed;
+    right:21px;
+}
+
+.checkout_confirm.cart_checkout .vat{
+    display:none;
+}
+
+.vat_state{
+    display:none;
+}
+.checkout_confirm.cart_checkout .vat_state{
+    display:inline;
+}
+
+/******************************* Checkout Payment Method Container ****************************/
+
+.payment_method_container{
+    display:table;
+    width:100%;
+    border-collapse: collapse;
+}
+
+/* Payment Type Container */
+
+.payment_type_container{
+    display:table-cell;
+    vertical-align: top;
+    width: 180px;
+}
+
+.payment_type_container .payment_type{
+    padding:10px 5px;
+    display: block;
+    position: relative;
+    border:2px solid transparent;
+    border-right:none;
+    white-space: nowrap;
+    margin-bottom:-1px;
+    cursor: pointer;
+
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -khtml-border-radius: 5px 0 0 5px; 
+    -o-border-radius: 5px 0 0 5px; 
+    -ms-border-radius: 5px 0 0 5px;
+    -icab-border-radius: 5px 0 0 5px; 
+    border-radius: 5px 0 0 5px; 
+}
+.payment_type_container .payment_type input{
+    cursor: pointer;    
+}
+.payment_type_container .payment_type:first-child{
+    margin-top:-1px;    
+}
+.payment_type_container .payment_type.active{
+    border-color:#777;
+    width: calc(100% - 10px);
+    background-color: #fff;
+    z-index: 7;
+}
+.payment_type .payment_img{
+    display:inline-block;
+    vertical-align: middle;
+    width:50px;
+}
+
+.payment_type .payment_name.label{
+    display:inline-block;
+    vertical-align: middle;
+    padding:5px 10px;
+    width: 90px;
+    white-space: normal;
+}
+.payment_type .form-group:hover .payment_name.label{
+    color:#63B4FB;
+}
+
+/* Payment Details */
+
+.payment_details{
+    display:table-cell;
+    vertical-align: top;
+    border: 2px solid #777;
+    padding: 10px;
+    position: relative;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
+}
+.payment_details .main_loader{
+    position: absolute;
+}
+
+
+/* Shipping Information */
+
+.ship_addr_container .form-group {
+    margin-bottom:15px;
+}
+
+.ship_addr_container .form-group .label.input_label{
+    display: inline-block;
+}
+
+/*Cell Phone Number Pop Up*/
+
+.cell_phone_number_pop_up{
+    text-align: center;    
+}
+.cell_phone_number_pop_up.pop_up_container .pop_up{
+    max-width: 550px;
+}
+.cell_phone_number_pop_up .text{
+    margin:20px auto;
+}
+.cell_phone_number_pop_up .form-group{
+    max-width: 300px;
+    margin:auto;
+}
+.cell_phone_number_pop_up .button{
+    max-width: none;
+    width:auto;
+    padding:10px 15px;
+}
+
+/*Promo Code Container*/
+
+.promo_code_container{
+    float:left;
+    width: 300px;
+}
+.promo_code_container .button{
+    margin:auto;
+    padding:9px
+}
+.promo_code_container .text{
+    padding:11px 15px;
+}
+.promo_code_container .label.input_label{
+    font-size:18px;
+    padding:10px;
+}
+
+/*======================== Payment Type Details Container ===================*/
+
+.payment_details .title {
+    border:none;
+    color:#63B4FB;
+}
+
+.pcstore_info_text{
+    color: #777;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Payment Cash */
+
+.pd_cash{
+    display:table;
+    min-width: 300px;
+}
+.pd_cash .form-group{
+    display:table-row;
+}
+.pd_cash .form-group p{
+    display:table-cell;
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+    color:#555;
+    font-size:15px;
+    text-align: right;
+}
+.pd_cash .form-group p:first-child{
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Payment Bank Transfer */
+
+.company_payment_details{
+    margin: 30px auto 0;
+    max-width: 700px;
+}
+
+.company_payment_details .form-group{
+    margin-bottom:10px;
+}
+
+/* Payment Credit */
+
+.payment_credit_wrapper .credit_no_ship{
+    font-weight: 600;
+    color:#63B4FB;
+    text-align: center;
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+.payment_credit_wrapper .form-group{
+    margin-bottom:10px;
+}
+
+.payment_credit_wrapper .form-group p{
+    display:inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}

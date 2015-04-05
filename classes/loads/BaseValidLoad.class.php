@@ -49,7 +49,7 @@ abstract class BaseValidLoad extends AbstractLoad {
         $pageKeywords = $this->getPageKeywords();
         if (isset($this->args['mainLoad'])) {
             if (!empty($pageTitle)) {
-                $this->args['mainLoad']->addParam('page_title',  ucfirst(DOMAIN) . ': ' . $pageTitle);
+                $this->args['mainLoad']->addParam('page_title', ucfirst(DOMAIN) . ': ' . $pageTitle);
             }
             if (!empty($pageDescription)) {
                 $this->args['mainLoad']->addParam('page_description', $pageDescription);
@@ -58,6 +58,18 @@ abstract class BaseValidLoad extends AbstractLoad {
                 $this->args['mainLoad']->addParam('page_keywords', $pageKeywords);
             }
         }
+        
+        $this->listingCols();
+    }
+
+    public function listingCols() {
+        $listingColsValues = [1, 3, 5];
+        $listing_cols = 3;
+        if (isset($_REQUEST["cols"])) {
+            $listing_cols = $_REQUEST["cols"];
+        }
+        $this->addParam("listing_cols_values", $listingColsValues);
+        $this->addParam("listing_cols", $listing_cols);
     }
 
     public function getDefaultLoads($args) {

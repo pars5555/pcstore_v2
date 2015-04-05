@@ -1,0 +1,133 @@
+
+/*******
+
+    NOTIFICATION BLOCK
+
+*******/
+
+.notification {
+    position:relative;
+}
+.notification .navMenu_item:before {
+    content:"new";
+    color: #dd0000;
+    display: none;
+    font-size: 11px;
+    font-weight: 600;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: -3px;
+    width: 15px;
+
+    transform:rotate(45deg);
+    -moz-transform:rotate(45deg);  
+    -webkit-transform:rotate(45deg);  
+    -o-transform:rotate(45deg);  
+    -ms-transform:rotate(45deg); 
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+
+    -webkit-animation: new_notification 1s ease-in 0s infinite alternate;
+    animation: new_notification 1s ease-in 0s infinite alternate;
+}
+.notification.new_notification .navMenu_item:before{
+    display:block;
+}
+@-webkit-keyframes new_notification {
+    0%{
+        color: #dd0000;
+    }
+    35%{
+        color: #63B4FB;        
+    }
+    100%{
+        color: #dd0000;
+    }
+}
+
+@-moz-keyframes new_notification {
+    0%{
+        color: #dd0000;
+    }
+    35%{
+        color: #63B4FB;        
+    }
+    100%{
+        color: #dd0000;
+    }
+}
+.navMenuList .notification .navMenu_item{
+    font-size:22px;
+}
+
+.navMenuList .notification .navMenu_item:after{
+    content:"";
+    font-family: "glyphicons-halflings";
+}
+.notification .nofitication-list-wrapper{
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 7px #777;
+    color: #555;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    right: 15px;
+    top: 50px;
+    width: 400px;
+    z-index: 99999;
+}
+.notification .nofitication-list-wrapper .no_notifications{
+    padding:15px;
+    font-weight: 600;
+    color:#555;
+    font-size: 20px;
+}
+.notification .nofitication-list-wrapper.active .no_notifications{
+    display:none;
+}
+.notification .notification_block {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.notification .notification_block:hover {
+    background-color: #f7f7f7;
+}
+.notification_block .not_link {
+    display: table;
+    width: 100%;
+}
+.notification_block .nb_item{
+    display:table-cell;
+    vertical-align: top;
+    padding: 0 10px;
+}
+.notification_block .nb_item span{
+    display:block;
+}
+.notification_block .not_icon{
+    padding: 0;
+    width: 50px;
+}
+.notification_block .not_icon img {
+    width:inherit;
+}
+.notification_block .not_title{
+    margin-bottom:7px;   
+}
+.notification_block .not_date{
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+}

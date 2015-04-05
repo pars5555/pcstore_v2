@@ -1,0 +1,676 @@
+
+/****************************************************
+******************************************************
+  HEADER  
+****************************************************
+*****************************************************/
+
+.header_content{
+    clear:both;
+    display:table;
+    max-width:1440px;
+    width:calc(100% - 50px);
+    padding:30px 20px 20px;
+    margin:auto;
+}
+.site_logo{
+    display:table-cell;
+    vertical-align:middle;
+    width:200px;
+}
+.site_logo img{
+    width:160px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header_content .search_block{
+    display:table-cell;
+    vertical-align:middle;
+    position:relative;
+}
+
+/********************************** BUILD PC LINK *************************************/
+
+.build-pc-link{
+    width:0;
+    display:table-cell;
+    vertical-align:middle;  
+    text-align: right;
+    white-space: nowrap;
+    padding:0 10px;
+}
+.build-pc-link a{
+    display:inline-block;
+    padding:7px 10px;
+    font-size: 30px;
+    font-weight: 600;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    -khtml-border-radius: 11px; 
+    -o-border-radius: 11px; 
+    -ms-border-radius: 11px;
+    -icab-border-radius: 11px; 
+    border-radius: 11px; 
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    animation: 2s linear 0s normal infinite build_pc;
+}
+
+@keyframes build_pc {
+    0% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+    25% {
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    50%{
+        color: #63b4fb;
+        box-shadow:0 0 11px #63b4fb;
+    }
+    75%{
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    100% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+} 
+
+@-webkit-keyframes build_pc {
+    0% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+    25% {
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    50%{
+        color: #63b4fb;
+        box-shadow:0 0 11px #63b4fb;
+    }
+    75%{
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    100% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+} 
+.build-pc-link a.buil_pc_link_am{
+    font-size:20px;   
+}
+.build-pc-link a.buil_pc_link_ru{
+    font-size:25px;    
+}
+.build-pc-link span{
+    display:inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+.build-pc-link .buil_pc_link_am span{
+    white-space: normal;
+}
+
+/*********************** Build PC Icon **********************/
+
+.build-pc-link .icon{
+    width:35px;
+    height:35px;
+    font-size: 40px;
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    animation: 2s linear 0s normal infinite build_pc_icon; 
+}
+@keyframes build_pc_icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@-webkit-keyframes build_pc_icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+/*======= Navigation Bar Header =======*/
+.navbar .navbar-header{
+    float:left;
+    margin-top:5px;
+}
+.navbar .navbar-toggle {
+    display:none;
+}
+
+/*======= Navigation Menu Header =======*/
+.navbar .navMenu{
+    padding:0 20px;
+    margin:auto;
+    background-color:#f7f7f7;
+    border-bottom:1px solid #ccc;
+}
+.navMenuList{
+    margin: auto;
+    max-width: 1440px;
+    text-align: right;
+    font-size: 0;
+    white-space: nowrap;
+}
+.navMenuList:after{
+    content:"";
+    display:block;
+    clear: both;
+}
+.navMenuList>li{
+    height: 45px;
+    line-height: 45px;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    text-align: left;
+}
+.navMenuList .navMenu_item{
+    display:inline-block;
+    vertical-align: middle;
+    color:#555;
+    font-size:13px;
+    padding:0px 20px;
+    height:20px;
+    line-height:20px;
+    border-right:1px solid #ccc;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.navMenuList .navMenu_item .glyphicon{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:7px;
+}
+.navMenuList .navMenu_item.active {
+    color: #63b4fb;
+}
+.navMenuList>li:last-child .navMenu_item{
+    border-right:none;
+}
+.navMenuList>li a:hover{
+    color:#63B4FB;
+}
+
+/*Left panel button*/
+.navMenuList .left-panel-btn{
+    float: left;
+    display:none;
+}
+.left-panel-btn .navMenu_item{
+    border-right:none;
+    padding: 0;
+}
+.left-panel-btn .navMenu_item span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.left-panel-btn .navMenu_item:after{
+    content:"";
+    font-family: "glyphicons-halflings";
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:5px;
+}
+.left-panel-btn.active .navMenu_item:after{
+    content:"";
+}
+
+/*Drop Down Menu*/
+
+.navMenuList li.dropdown{
+    position:relative;
+}
+
+.navMenuList li.dropdown a.dropdown_toggle{
+    position:relative;
+    padding-right:35px;
+}
+.navMenuList li.dropdown a.dropdown_toggle:before{
+    content:"";
+    font-family: "glyphicons-halflings";
+    position:absolute;
+    right:15px;
+}
+.navMenuList li.dropdown a.dropdown_toggle:hover{
+    /*color:#fff;*/
+}
+
+.dropdown_menu{
+    display:none;
+    position:absolute;
+    top:50px;
+    right:0;
+    background-color:#fff;
+    box-shadow:0 0 7px #777;
+    padding:5px;
+    z-index: 100;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
+}
+.dropdown_menu li {
+    height: auto;
+    line-height: initial;
+}
+
+.dropdown_menu li a{
+    padding:5px;
+    clear:both;
+    display:block;
+    color:#777;
+    font-size: 15px;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
+}
+.dropdown_menu li a:hover{
+    background-color: #63B4FB;
+    color: #fff;
+}
+
+.dropdown_menu li a img{
+    display:inline-block;
+    vertical-align:middle;
+    width:25px;
+    margin-right:5px;	
+}
+
+/*====================================== Signup - Creat Account - Social Signup ================================*/
+
+.modal{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    left:0;
+    z-index:1000000;
+}
+
+.modal .modal-content{
+    max-width:1000px;
+    width:100%;
+    box-shadow:0 0 5px #999;
+    position:absolute;
+    top:30%;
+    left:50%;
+    padding-top:20px;
+    background-color:#fff;
+    opacity:0;
+    transition:all 0.5s ease;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
+
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);  
+    -webkit-transform:translate(-50%,-50%);  
+    -o-transform:translate(-50%,-50%);  
+    -ms-transform:translate(-50%,-50%);  
+}
+
+.modal .modal-content.active {
+    top:50%;
+    opacity:1;
+}
+
+/*Forgot Modal*/
+.modal.forgotModal .modal-content{
+    max-width:300px;
+    padding: 40px 20px 20px;
+}
+
+.modal.forgotModal .modal-content .send_pass{
+    width:150px;
+}
+
+.modal.forgotModal .modal-content p {
+    display: block;
+    text-align:center;
+}
+
+.modal .modal-content .modal_cols{
+    float:left;
+    width:calc(33.3% - 40px);
+    padding:20px;
+}
+
+.modal .modal-content h4{
+    color:#555;
+    font-size:16px;
+    border-bottom:1px solid #999;
+    padding-bottom:5px;
+    margin-bottom:10px;
+}
+
+/*******
+    LOGIN POP UP 
+*******/
+.modal .modal-content .form-group{
+    margin-top:10px;
+}
+
+.modal .modal-content .forget_pass{
+    color:#428bca;
+    display:block;
+    transition: all 0.5s ease;
+}
+.modal .modal-content .forget_pass:hover{
+    text-shadow:0 0 3px #428bca;
+}
+
+.modal .modal-content .social-login .social-login-link{
+    width:230px;
+    display:block;
+    margin:25px auto 0;
+    color:#fff;
+    font-size:16px;
+    line-height:40px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.modal .modal-content .social-login .social-login-link:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.modal .modal-content .social-login .social-login-link img{
+    width:25px;
+    padding:7px;
+    display:block;
+    float:left;
+    margin-right:15px;
+}
+
+/* Facebook */
+.modal .modal-content .social-login .social-login-link.facebook img {
+    background-color:#354f88;
+}
+.modal .modal-content .social-login .social-login-link.facebook {
+    background-color:#3b5998;
+}
+/* LinkedIn */
+.modal .modal-content .social-login .social-login-link.linkedin img {
+    background-color:#40a2d1;
+}
+.modal .modal-content .social-login .social-login-link.linkedin {
+    background-color:#45b0e3;
+}
+/* Google+ */
+.modal .modal-content .social-login .google img {
+    background-color:#ce3e26;
+}
+.modal .modal-content .social-login .google {
+    background-color:#de4c34;
+}
+
+/*******
+   Creat Account
+*******/
+
+.modal .modal-content .create-account-wrapper p{
+    /*color: #3aa031;*/
+    font-weight: 600;
+    margin-bottom:7px;
+}
+
+.modal .modal-content .create-account-wrapper ul{
+    padding-left:30px;
+    margin-bottom:35px;
+}
+
+.modal .modal-content .create-account-wrapper ul li{
+    /*list-style-image: url("../../img/tick.png");*/
+    list-style-type: initial;
+    font-size:13px;
+    color:#333;
+}
+/******************
+
+ Sign Up Page
+
+******************/
+
+.sign_up_wrapper{
+    padding:20px;
+    width:calc(100% - 40px);
+    max-width:550px;
+    margin:auto;
+}
+
+.sign_up_wrapper .form-group{
+    margin-bottom:10px;
+}
+
+.sign_up_wrapper h4{
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 20px;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+
+/******************
+
+ LANDING HEADER
+
+******************/
+.navbar{
+    border-bottom:1px solid #ddd;
+}
+.hot-products-wrapper {
+    margin:20px 0px;
+    padding:10px 0px;
+    border-top:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC;
+}
+.features-wrapper {
+    background-color:#eee;
+    padding:20px 0px;
+    margin:20px 0px;
+}
+.features-wrapper  h2{
+    text-align:center;
+    font-size:55px;
+    color:#9f9f9f;
+    margin-bottom:20px;
+}
+.features-wrapper .ft-row {
+    margin:30px 0px;
+}
+.features-wrapper .ft-block{
+    display:inline-block;
+    vertical-align:top;
+}
+.f_ft_block {
+    -webkit-transition: opacity 0.4s ease;
+    -moz-transition: opacity 0.4s ease;
+    -ms-transition: opacity 0.4s ease;
+    -o-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
+}
+.features-wrapper .ft-block.ft-left {
+
+}
+.features-wrapper .ft-block h5 {
+    font-weight: bold;
+}
+.features-wrapper .ft-block p {
+    overflow: hidden;
+    width: 200px;
+    word-wrap: break-word;
+}
+.features-wrapper .ft-block.ft-left .img{
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    text-align:center;
+    background-color:#ea5859;
+    color:#FFFFFF;
+    font-size:24px;
+    line-height: 64px;
+    display:inline-block;
+}
+.features-wrapper .ft-block.ft-right {
+
+}
+.service-wrapper {
+    margin:20px 0px;
+}
+.service-wrapper  h2 {
+    text-align:center;
+    font-size:55px;
+    color:#9f9f9f;
+    margin-bottom:20px;
+}
+.service-wrapper .service-inner-container{
+    max-width:700px;
+    width:100%;
+    margin:0px auto;
+}
+.service-wrapper .service-inner-container p {
+    color: #797979;
+}
+.service-wrapper .service-inner-container .service-img-wrapper {
+    background-image:url("../../img/service_img.png");
+    background-size:cover;
+    height:60vh;
+}
+#lpSlider .item{
+    background-size:cover;
+    height:60vh;
+}
+#lpSlider .item .slide-desc {
+    color:#FFFFFF;
+    text-align:right;
+    padding:15px;
+}
+#hpSlider .owl-controls{
+    display:none !important;
+}
+#hpSlider .item{
+    color: #333;
+    -webkit-: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+#hpSlider .item .hp-img {
+    display:inline-block;
+    height:130px;
+    width:130px;
+    background-size:cover;
+    vertical-align: top;
+}
+#hpSlider .item .hp-text{
+    display:inline-block;
+    text-align:left;
+}
+.hp-slider-wrapper .arrows-wrapper{
+    text-align:right;
+}
+.hp-slider-wrapper .hp-arrow{
+    display:inline-block;
+    margin:0px 5px;
+    vertical-align:top;
+    cursor:pointer;
+}
+.hp-slider-wrapper .hp-arrow:hover {
+    color:#2a6496;
+}
+
+/******************************* Contact Inf ******************************/
+
+.contact_info {
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+
+.contact_info .contact_info_item{
+    display:inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-right:15px;
+}
+
+.contact_info .fontAwesome{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 25px;
+    color:#63B4FB;
+    margin-right:5px;
+}
+
+.contact_info .contact_link{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    color:#555;
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.contact_info .contact_link:hover{
+    color:#63B4FB;    
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                  HEDAER RESPONSIVE                                 */
+/*                                                                                    */
+/**************************************************************************************/
+
+@media screen and (max-width : 1250px){
+    .navMenuList .left-panel-btn{
+        display:inline-block;
+    }
+}

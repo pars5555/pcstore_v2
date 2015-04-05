@@ -1,0 +1,266 @@
+
+/*******
+
+ PROFILE HEADER
+
+*******/
+.navMenuList li.dropdown.rel-block a.dropdown_toggle{
+    font-size:17px;
+    color:#63B4FB;
+}
+.navMenuList li.dropdown.rel-block a.dropdown_toggle:before{
+    display:none;
+}
+.navMenuList li.rel-block.dropdown {
+    position:relative;
+}
+.rel-block .dropdown_menu{
+    display: none;
+    padding: 5px;
+    background-color:#C6C6C6;
+    border-radius: 5px;
+    position: absolute;
+    right: -33px;
+    top: 70px;
+    width: 380px;
+    margin:auto;
+    z-index:1000;
+}
+.rel-block .dropdown_menu .top-arrow{
+    border-bottom: 15px solid #C6C6C6;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    position: absolute;
+    right: 45px;
+    top: -15px;
+    width: 0;
+}
+.rel-block .dropdown_menu .search_container .search_text{
+    padding: 10px 15px;
+}
+.rel-block .dropdown_menu .search_container .search_btn{
+    background-color:#63B4FB;
+    color:#fff;
+    font-size: 20px;
+}
+
+.header-wrapper {
+    width:100%;
+    position: fixed;
+    top:0px;
+    background-color:#1f1f1f;
+    padding:15px 0px;
+    z-index:9999;
+    border-bottom:1px solid;
+    border-color:#428bca;
+}
+.top-menu-profile {
+    margin: 0;
+    max-width: 300px;
+    padding: 0;
+    width: 100%;
+}
+.top-menu-profile  li {
+    list-style:none;
+}
+.top-menu-profile  li a {
+    text-decoration:none;
+    color: #999999;
+}
+
+/****************
+ *
+ * PROFILE WRAPPER	
+ * 
+ *  
+ */
+.profile-wrapper {
+    border:1px solid transparent;
+}
+.profile-main-content{
+    display:table;	
+    width:100%;	
+}
+.profile-wrapper .profile-content {
+    display:table-cell;
+    padding-left: 30px;
+}
+
+.profile-wrapper .profile-content .current-user-info{
+    max-width:550px;	
+    padding: 0 15px;
+}
+
+.profile-wrapper .profile-content .form-group{
+    margin-bottom:10px;
+    /*border:1px solid #ccc;
+    padding:10px;*/
+}
+
+.profile-wrapper .profile-content .chang_pic{
+    display: inline-block;
+    max-width: 120px;
+    vertical-align: bottom;
+    margin:auto;
+}
+
+.profile-wrapper .profile-content .profile_pic{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.working_hours .select_wrapper{
+    width:50px;
+}
+
+.working_hours .glyphicon,
+.sms_time_ctl .glyphicon{
+    color:#777;
+    vertical-align:middle;
+    font-size: 20px;
+}
+.sms_time_ctl .sms_label,
+.sms_time_ctl .sms_chekbox{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.profile-wrapper .profile-content .current-user-info h3.sms_title{
+    margin-top:0;
+}
+.days_table{
+    border-collapse: collapse;
+    text-align:center;
+}
+
+.days_table th{
+    border:1px solid #ccc;
+}
+
+.days_table td{
+    padding:10px;
+    border:1px solid #ccc;
+}
+.profile-wrapper .profile-content .current-user-info h3{
+    margin:30px 0 10px;
+}
+.lng_lat .text{
+    display:inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+/****************
+ *
+ * COMPANY PROFILE WRAPPER	
+ * 
+ *  
+ */
+
+.branch_pop_up{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+}
+.branch_pop_up .branch_wrapper{
+    width:calc(100% - 40px);
+    padding:20px;
+    max-width:500px;
+    margin-left:-260px;
+    position:absolute;
+    top:0px;
+    left:50%;
+    opacity:0;
+    background-color:#fff;
+    border-radius:3px;
+
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.branch_pop_up.active .branch_wrapper{
+    top:100px;
+    opacity:1;	
+}
+.branch_wrapper h3{
+    color:#3278b3;
+    text-align:center;
+    font-size:20px;
+    margin-top: 0 !important;
+}
+.branch_wrapper .button.blue{
+    margin-bottom: 0;
+    max-width: initial;
+    min-width: 150px;
+    padding: 9px 15px;
+    width: auto;
+}
+
+.company_branches_container{
+    display:table;
+    width:100%;
+}
+.company_branches_container .label{
+    display: table-cell;
+    vertical-align: top;   
+    white-space: nowrap;
+    width: 0;
+}
+.company_branches{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.company_branches .com_br_item{
+    display:inline-block;
+    vertical-align: middle;
+    margin:0 7px 7px 0;
+    padding: 7px 10px;
+    background-color: #777;
+    color:#fff;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
+
+}
+.company_branches .com_br_item.active{
+    background-color: #63b4fb;
+}
+
+.company_branches .com_br_item span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.company_branches .com_br_item .glyphicon{
+    width:0;
+    text-align: right;
+    overflow: hidden;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
+}
+.company_branches .com_br_item:hover .glyphicon{
+    width:20px;
+}
+.company_branches .com_br_item .glyphicon:hover{
+    color:#cc0000;
+}
+
+.branch_btn{
+    width:auto;
+    max-width: none;
+    padding:10px 15px;
+    margin:0 auto 10px;
+}

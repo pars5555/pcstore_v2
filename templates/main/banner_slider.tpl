@@ -5,7 +5,7 @@
         <div class="banner-slider f_banner_slider">
             {foreach from=$ns.bannersDtos item=banner}
                 {if $banner->getActive()==1}
-                    <a href="{$SITE_PATH}/{$banner->getPath()}" target="_blank" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banners/{$banner->getId()}.jpg)">
+                    <a href="{$SITE_PATH}/{$banner->getPath()}" class="slider_item f_slider_item" style="background-image: url({$SITE_PATH}/img/banners/{$banner->getId()}.jpg)">
                     </a>
                 {/if}
             {/foreach}

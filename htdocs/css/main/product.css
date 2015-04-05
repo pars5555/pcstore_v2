@@ -1,0 +1,350 @@
+.current_product_container{
+    max-width: 1440px;
+    margin: auto;
+}
+.product-wrapper{
+    display:table;
+    width:100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/*****************************************************************************************/
+/*                                    PRODUCT TITLE                                      */
+/*****************************************************************************************/
+
+.product-wrapper .product-title{
+    font-weight:600;
+    color:#555;
+    transition:all 0.5s ease;
+    display: block;
+    overflow: hidden;
+    height:auto;
+    font-size: 22px;
+}
+.product-wrapper .product-title:hover{
+    color:#555;
+    text-decoration: none;    
+}
+.product-wrapper .product-title .product_brand{
+    color: #0e53a5;
+    font-size:17px;
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+/*****************************************************************************************/
+/*                                    PRODUCT PRICE                                      */
+/*****************************************************************************************/
+
+.product-wrapper .product-price{
+    font-size: 15px;
+    color:#333;	
+    display:table;
+    width:100%;
+    border-collapse:collapse;
+    margin: 30px 0;
+    text-align: left;
+}
+.product-wrapper .product-price p{
+    margin:0px;
+    display:table-row;
+    border-bottom:1px solid #ddd;
+}
+.product-wrapper .product-price p span{
+    display:table-cell;
+    vertical-align:middle;
+    padding:5px;
+    color:#777;
+    text-align: right;
+}
+.product-wrapper .product-price p span:first-child{
+    color:#555;
+    text-align: left;
+}
+.product-wrapper .product-price p.price span,
+.product-wrapper .product-price p.price span:first-child{
+    color: #0e53a5;
+    font-size: 17px;
+    font-weight: 600;
+}
+/*****************************************************************************************/
+/*                                    PRODUCT IMAGE                                      */
+/*****************************************************************************************/
+
+.product-wrapper .product-img{
+    display:table-cell;
+    vertical-align:top;
+    width:420px;
+    text-align: left;
+}
+.product-img .product-img-inner{
+    width:400px;    
+}
+.product-img-link-wrapper{
+    width:386px;
+    height:386px;
+    border:1px solid #ccc;
+    position:relative;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px;  
+}
+
+.product-wrapper .product-img .product-img-link {
+    width:100%;
+    height:100%;
+    display:inline-block;
+    vertical-align: middle;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    background-color: transparent;
+    
+    -moz-border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -khtml-border-radius: inherit; 
+    -o-border-radius: inherit; 
+    -ms-border-radius: inherit;
+    -icab-border-radius: inherit; 
+    border-radius: inherit;  
+}
+
+.product-wrapper .product-other-images{
+    font-size:0;
+}
+
+.product-other-images .poi_item{
+    display:inline-block;
+    vertical-align: middle;
+    width:70px;
+    height:70px;
+    margin:7px 7px 0 0;
+    border:1px solid transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    box-shadow: 0 0 0px transparent;
+    cursor: pointer;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
+}
+.product-other-images .poi_item:hover{
+    border-color: #999;
+}
+.product-other-images .poi_item.active{
+    border-color:#63B4FB;
+}
+
+/******************* Zoom Image **********************/
+
+.zoom_img_container{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:0%;
+    height:0%;
+    z-index: 99999999;
+    visibility: hidden;
+    overflow: hidden;
+    background-color:rgba(255,255,255,0.77);
+    cursor: pointer;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.zoom_img_container.active{
+    visibility: visible;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+}
+
+.zoom_img_container .zoom_img{
+    width:100%;
+    height:100%;
+    max-width:0px;
+    max-height:0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    position: absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);  
+    -webkit-transform:translate(-50%,-50%);  
+    -o-transform:translate(-50%,-50%);  
+    -ms-transform:translate(-50%,-50%); 
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.zoom_img_container.active .zoom_img{
+    max-width:800px;
+    max-height:800px;    
+}
+
+/*****************************************************************************************/
+/*                                    NEW & WARRANTY                                     */
+/*****************************************************************************************/
+
+.product_new_warranty_wp{
+    margin:20px auto;
+    text-align: left;
+}
+.new_product{
+    display:inline-block;
+    vertical-align: top;
+    width:111px;
+    height:111px;
+    background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
+}
+.product_warranty{
+    display:inline-block;
+    vertical-align: top;
+    background: url("../../img/warranty.png") no-repeat scroll center center / contain transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    height: 240px;
+    position: relative;
+    width: 160px;
+}
+.product_warranty .product_warranty_text{
+    left: 49%;
+    position: absolute;
+    text-align: center;
+    top: 40px;
+    transform: translate(-50%, 0px);
+    width: 80px;
+}
+.product_warranty .warranty_month_count{
+    font-size: 35px;
+    line-height: 35px;
+}
+
+/*****************************************************************************************/
+/*                                      PRODUCT INFO                                     */
+/*****************************************************************************************/
+
+.product_other_info{
+    display:inline-block;
+    vertical-align: top;    
+}
+.product-wrapper .product-info{
+    display:table-cell;
+    vertical-align:top;
+}
+.product-wrapper .product-info .product-info-inner{
+    max-width: 555px;
+    text-align: center;
+}
+.product-wrapper .product-info .button{
+    display: inline-block;
+    max-width: none;
+    padding: 10px 20px;
+    width: auto;
+}
+
+/*****************************************************************************************/
+/*                                PRODUCT DESCRIPTION                                    */
+/*****************************************************************************************/
+
+.current-product-description {
+    margin-top: 15px;
+}
+.current-product-description table td div{
+    height:auto !important;
+}
+.current-product-description .title {
+    margin-top: 50px;
+}
+
+.current-product-price-list {
+    margin:10px 0px;
+    font-size:16px;
+}
+
+/*****************************************************************************************/
+/*                                PRODUCT SPECIFICATIONS                                 */
+/*****************************************************************************************/
+
+.product_spec{
+    margin-bottom:20px;
+    text-align: left;
+}
+
+.product_spec .product_spec_title{
+    color:#63B4FB;
+    font-weight: 600;
+    padding:5px;
+    border-bottom:1px solid #ccc;
+}
+
+.product_spec .product_spec_value{
+    color:#555;
+    text-align: right;
+    padding:5px;
+    border-bottom:1px solid #ccc;
+}
+
+
+/* Product Specification On Other Sites */
+
+.product-spec{
+    color:#777 !important;
+    display:table !important;
+    width:100% !important;
+    border-collapse: collapse;
+}
+.product-spec li{
+    display:table-row !important;
+    width:auto !important;	
+    border-bottom:1px solid #ccc !important;
+}
+.product-spec .spec-item{
+    display:table-cell !important;
+    vertical-align:middle !important;
+    float:none  !important;
+    color:#555 !important;
+    padding:0 100px 0 30px !important;
+    width:0 !important;	
+}
+.product-spec .spec-data{
+    display:table-cell !important;
+    vertical-align:middle !important;
+    float:none  !important;
+    border:none !important;
+}

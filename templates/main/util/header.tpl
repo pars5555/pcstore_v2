@@ -1,17 +1,27 @@
 <header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
     <nav id="navMenu" class="navMenu" role="navigation">
+        <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
         <ul class="navMenuList">
-            <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
+            <li class="left-panel-btn f_left-panel-btn">
+                <a class="navMenu_item" href="javascript:void(0);">
+                    <span>{$ns.lm->getPhrase(105)}</span>
+                </a>
+            </li>
+            
             {if $ns.userLevel === $ns.userGroupsAdmin}
                 <li>
                     <input type="checkbox" id="admin_chat_on_off"/>
                 </li>
             {/if}
+
+            {*}
             {if $ns.contentLoad != "main_buildpc"}
-                <li>
-                    <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
-                </li>
+            <li>
+            <a class="navMenu_item"  href="{$SITE_PATH}/buildpc"> {$ns.lm->getPhrase(226)} </a>
+            </li>
             {/if}
+            {*}
+
             <li class="dropdown f_dropdown">
                 <a id="lang_menu_btn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">Languages</a>
                 <ul class="dropdown_menu f_dropdown_menu">
@@ -141,18 +151,38 @@
                 </ul>
 
             {/if}
-            <li class="clear"></li>
         </ul>
         <div class="clear"></div>
     </nav>
     <div class="header_content">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a  href="{$SITE_PATH}" class="site_logo"> <img src="{$SITE_PATH}/img/pcstore_logo.png" alt=""> </a>
+
+        {**************************** LOGO ********************************}
+
+        <a  href="{$SITE_PATH}" class="site_logo">
+            <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
+        </a>
+
         <div class="search_block">
+            {**************************** CONTACT ********************************}
+            <div class="contact_info">
+                <div class="contact_info_item">
+                    <span class="fontAwesome"></span>
+                    <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
+                </div>
+                <div class="contact_info_item">
+                    <span class="fontAwesome"></span>
+                    <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
+                </div>
+                <div class="contact_info_item">
+                    <span class="fontAwesome"></span>
+                    <a class="contact_link" href="mailto:info@pcstore.am">info@pcstore.am</a>
+                </div>
+                <div class="contact_info_item">
+                    <span class="fontAwesome"></span>
+                    <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
+                </div>
+            </div>
+            {**************************** SEARCH ********************************}
             <div class="search_container">
                 <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
                     <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
@@ -166,9 +196,21 @@
                         <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
                         <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
                         <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
+                        <input type="hidden" id="listing_cols_select" name="cols" />
                     {/if}
                 </form>
             </div>
+        </div>
+
+        {**************************** BUILD PC ********************************}
+
+        {if $ns.contentLoad != "main_buildpc"}
+        {/if}
+        <div class="build-pc-link">
+            <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
+                <span class="icon fontAwesome"></span>
+                <span>{$ns.lm->getPhrase(226)}</span>
+            </a>
         </div>
 
     </div>

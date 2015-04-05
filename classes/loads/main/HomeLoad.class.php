@@ -30,7 +30,6 @@ class HomeLoad extends BaseGuestLoad {
     public function load() {
         $this->getAllBanners();
         $this->bannerSlider();
-        $this->listingCols();
 
         $this->addParam('req', $_REQUEST);
 
@@ -306,16 +305,6 @@ class HomeLoad extends BaseGuestLoad {
         }
         
         $this->addParam("hideBannerSlider", $hideSlider);
-    }
-
-    public function listingCols() {
-        $listingColsValues = [1, 3, 5];
-        $listing_cols = 3;
-        if (isset($_REQUEST["cols"])) {
-            $listing_cols = $_REQUEST["cols"];
-        }
-        $this->addParam("listing_cols_values", $listingColsValues);
-        $this->addParam("listing_cols", $listing_cols);
     }
 
     public function getAllBanners() {

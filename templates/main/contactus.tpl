@@ -33,10 +33,12 @@
         <div class="col-lg-5 col-md-push-1">
             <address>
                 <h3>Office Location</h3>
-                <p class="lead"><a target="_blank" href="https://www.google.com/maps/preview?ie=UTF-8&amp;q=The+Pentagon&amp;fb=1&amp;gl=us&amp;hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&amp;cid=12647181945379443503&amp;ei=qmYfU4H8LoL2oATa0IHIBg&amp;ved=0CKwBEPwSMAo&amp;safe=on">PC STORE<br>
+                <p class="lead">
+                    <a target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">PC STORE<br>
                         {$ns.lm->getPhrase(643)}</a><br>
-                    {$ns.lm->getPhrase(12)}: {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}<br>
-                    {$ns.lm->getPhrase(309)}: {$ns.lm->getCmsVar('pcstore_sales_phone_number')}</p>
+                        {$ns.lm->getPhrase(12)}: <a href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a><br>
+                    {$ns.lm->getPhrase(309)}:  <a href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
+                </p>
             </address>
         </div>
     </div>

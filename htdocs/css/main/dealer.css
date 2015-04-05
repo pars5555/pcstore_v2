@@ -1,0 +1,26 @@
+
+
+/*******
+
+Dealers
+
+*******/
+
+.dealers{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.dealers .table_striped .table_header_group .glyphicon{
+    font-size:25px;
+    color:#cc0000;
+    vertical-align:middle;
+}
+
+.dealers .table_striped .glyphicon{
+    font-size:15px;
+    color:#cc0000;
+    vertical-align:middle;
+    margin-left:5px;
+}

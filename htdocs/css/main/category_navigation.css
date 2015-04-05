@@ -1,0 +1,29 @@
+.category_navigation{
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.category_navigation .cat_nav_elem{
+    display: inline-block;
+    vertical-align: middle;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.category_navigation .cat_nav_elem:hover{
+    color:#63B4FB;    
+}
+
+.category_navigation .glyphicon{
+    color: #63b4fb;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+    font-size: 11px;
+}
+.category_navigation .cat_nav_current{
+    font-weight: 600;
+}

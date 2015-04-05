@@ -8,7 +8,7 @@
             {assign var="new_item" value=false}			
         {/if}    
         <h1 class="main_title">{$ns.itemManager->getItemCategoriesPathToString($ns.item)}</h1>      
-        <div class="product-wrapper current_product_wp">
+        <div class="product-wrapper">
             <div class="product-img">
                 <div class="product-img-inner">
                     <div class="product-img-link-wrapper">
@@ -35,7 +35,7 @@
 
             <div class="product-info">
                 <h2 class="product-title" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
-                    {$item->getDisplayName()} {if $ns.item->getBrand()}<span class="brand_name"> by {$ns.item->getBrand()}</span>{/if}
+                    {$item->getDisplayName()} {if $ns.item->getBrand()}<span class="product_brand"> by {$ns.item->getBrand()}</span>{/if}
                 </h2>
                 <div class="product-info-inner">
                     <div class="product-price">

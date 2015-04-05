@@ -8,6 +8,7 @@ class MainLoad extends BaseGuestLoad {
         $this->addParam('req', $_REQUEST);
         $this->addParam('server_ip_address', SERVER_IP_ADDRESS);
         $this->checkInvitation();
+        $this->initLanguage();
     }
 
     public function getDefaultLoads($args) {
@@ -33,6 +34,14 @@ class MainLoad extends BaseGuestLoad {
         $loads["content"]["args"] = array("mainLoad" => &$this);
         $loads["content"]["loads"] = array();
         return $loads;
+    }
+    
+    public function initLanguage(){
+        $language = "en";
+        if(isset($_COOKIE["ul"])){
+            $language = $_COOKIE["ul"];
+        }
+        $this->addParam("language", $language);
     }
 
     public function getTemplate() {

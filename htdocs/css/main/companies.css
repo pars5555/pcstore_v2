@@ -1,0 +1,540 @@
+
+/***************
+
+   COMPANIES
+
+*************/
+
+/*============ Companies Filter and Search block ============*/
+
+.companies_container{
+    /*margin: auto;
+padding: 0 25px;
+width: calc(100% - 50px);*/
+    max-width: 1440px;
+    margin: 30px auto auto;
+}
+.show_com_price{
+    float:left;
+    margin-right:20px;
+    margin-bottom: 20px;
+}
+.download_all{
+    float:right;
+}
+.download_all .button.blue{
+    width:200px;
+    margin: auto;
+}
+.download_all span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.download_all .glyphicon{
+    font-size:20px;
+    margin-left:5px;
+    font-weight:500;
+}
+.company_filter{
+    clear: both;
+}
+
+.company_email_send_text{
+    margin:20px auto;
+    padding:15px;
+    box-shadow: 0 0 7px #ccc;
+}
+
+.company_email_send_text .title{
+    font-size: 18px;
+}
+
+/*================== Companies main content ===================*/
+
+.companies-search-wrapper .main_title{
+    clear:both;
+}
+.companies_title_row{
+    display:table-row;
+}
+.companies_title_row h2{
+    display:table-cell;
+    text-align:center;
+    padding-bottom:30px;
+    color: #555;
+}
+
+/*==================Company Comtainer==================*/
+
+.company_container{
+    display:table-row;
+}
+.company_container>div{
+    display:table-cell;
+    vertical-align:top;
+    padding:10px;
+    /*width:20%;*/
+    text-align:left;
+}
+.company_container .squaredOne {
+    display: none;
+}
+/*Company Image*/
+.company_container .company-img {
+    padding-left: 50px;
+    text-align: left;
+}
+.company-img a{
+    display:block;
+    margin: auto;
+}
+.company-img a img{
+    width:55px;
+}
+
+/* Company Info */
+
+.company_container .company-info {
+    white-space: nowrap;
+}
+.company_rating,
+.company_gmap_pin{
+    display:inline-block;
+    vertical-align: middle;
+}
+.increase_rating{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:15px;
+}
+.increase_rating img{
+    width:30px;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -ms-border-radius: 5px;
+    -icab-border-radius: 5px; 
+    border-radius: 5px; 
+}
+
+/*Company Confirm*/
+.company_container .company_confirm{
+    /*vertical-align: middle;	*/
+}
+
+.company_confirm .price_file{
+    display: block;
+}
+
+.company_container .company_confirm .form-group {
+    width: 250px;
+    margin: auto;
+    display:table;
+}
+.company_confirm .text {
+    display: table-cell;
+    padding: 8px 14px;
+    vertical-align: middle;
+    border-bottom-right-radius:0;
+    border-top-right-radius:0;
+}
+.company_confirm .button {
+    display: table-cell;
+    font-size: 20px;
+    margin: auto;
+    padding: 0;
+    vertical-align: middle;
+    width: 50px;
+    border-bottom-left-radius:0;
+    border-top-left-radius:0;
+}
+.company_confirm a .glyphicon{
+    display:inline-block;
+    vertical-align:middle;
+}
+.company_confirm .owl-carousel .owl-item span{
+    display:block;
+}
+.company_container .doc_slider_wp{
+    vertical-align:middle;
+}
+/*Company Telefon*/
+.company_container .company-tel{
+    text-align: right;
+    width: 150px;
+}
+.company-tel p{
+    white-space: nowrap;
+}
+
+.service_company_gmap_pin{
+    vertical-align: middle;
+    display:inline-block;
+}
+.service_company_gmap_pin img{
+    width:25px;
+}
+/*Company Adress*/
+
+
+.company_container .company-address {
+    text-align: center;
+}
+
+/*******
+
+ DOCUMENT SLIDER
+
+*******/
+.documents-slider {
+    position: relative;
+    width:250px;
+    padding:0 20px;
+}
+.documents-slider .owl-buttons{
+    display: none;
+}
+.documents-slider .doc-slider-arrow {
+    width:25px;
+    height:25px;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    opacity:1;
+    position: absolute;
+    z-index:9999;
+}
+.documents-slider .doc-slider-arrow:hover {
+    opacity:0.8;
+}
+.documents-slider .doc-slider-arrow.left-arrow {
+    left:-10px;
+    background-image: url("../../img/arrow_left.png");
+}
+.documents-slider .doc-slider-arrow.right-arrow {
+    right:-10px;
+    background-image: url("../../img/arrow_right.png");
+}
+.classification {
+    height: 23px;
+    position: relative;
+    width: 70px;
+}
+.classification .progress {
+    background-color: transparent;
+    background-image: url("../../img/stars_full.png");
+    box-shadow: none;
+    height: 13px;
+    position: absolute;
+    z-index: 9999;
+}
+.classification .cover{
+    background-color: transparent;
+    background-image: url("../../img/stars.png");
+    height: 13px;
+    position: absolute;
+    width: 100%;
+}
+
+/*******
+
+        CHECKOUT
+
+*******/
+.checkout-wrapper {
+
+}
+.back_to_cart.button{
+    display: inline-block;
+    max-width: none;
+    padding: 9px;
+    width: auto;
+}
+.back_to_cart.button .glyphicon{
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:7px;
+}
+.checkout-wrapper .checkout-step{
+    background-color: #e3e7e8;
+    padding: 25px;
+    border-radius: 5px;
+    border-bottom:1px solid #CCCCCC;
+}
+.checkout-wrapper .checkout-step .top-part{
+    margin:20px;
+}
+.checkout-wrapper .checkout-step .top-part .number{
+    border-radius:50%;
+    display:inline-block;
+    width:50px;
+    height:50px;
+    background-color:#F0AD4E;
+    color:#ffffff;
+    text-align:center;
+    line-height:50px;
+    font-size:24px;
+}
+.checkout-wrapper .checkout-step .top-part .number span{
+
+}
+.checkout-wrapper .checkout-step.disabled .top-part .number{
+    background-color:#CCCCCC;
+}
+.checkout-wrapper .checkout-step.disabled .top-part .number span{
+
+}
+.checkout-wrapper .checkout-step .checkout-step-content {
+
+}
+.checkout-wrapper .total-price-wrapper {
+
+}
+.checkout-wrapper .selected-products {
+    margin:0px;
+    padding:0px;	
+}
+.checkout-wrapper .selected-products li{
+    list-style:none;
+}
+/*******
+
+SMS CONF COMPANY
+
+*******/
+.sms-schedule-wrapper {
+    margin:0px;
+    padding:0px;
+    display:table;
+}
+.sms-schedule-wrapper li{
+    display:table-cell;
+    vertical-align:top;
+}
+.sms-schedule-wrapper li span {
+    vertical-align:top;
+}
+
+/*******************************************************************
+***********************Upload Company Price*************************
+*******************************************************************/
+
+#price_email_body_ifr{
+    height: 700px !important;
+}
+
+/****************************************************************************/
+
+.send_price_email_container {
+    border-bottom: 1px solid #999;
+    margin-bottom: 30px;
+}
+
+/*Upload Price Form*/
+.upload_company_price{
+    float:left;
+}
+.upload_company_price *{
+    display:inline-block;
+    vertical-align: middle;
+}
+.up_selected_file_name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+.select_price_btn{
+    width:50px;
+    padding:5px 0;
+    margin:0 20px 0 10px;
+}
+.submit_upload_price .glyphicon{
+    margin-left:5px;
+}
+/*More Actions*/
+
+.last_com_price{
+    float:right;
+    color:#555;
+}
+.last_com_price:hover{
+    color:#63B4FB;
+}
+.last_com_price .glyphicon{
+    font-size:25px;
+}
+.last_com_price span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.revert_last_com_price{
+    float:right;
+    margin-left:10px;
+}
+.revert_last_com_price .glyphicon{
+    font-size:25px;    
+    color:#cc0000;
+}
+
+/*Sender Details*/
+
+.sender_details .text{
+    display:inline-block;
+    vertical-align: middle;
+    width:200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.sender_details .sender_email{
+    margin-right:10px;
+    width:300px;
+}
+
+/*Dealers Emails*/
+.dealer_emails{
+    margin-top:15px;
+}
+.dealer_emails textarea{
+    display:block;
+    height:200px;
+}
+
+.dealers_count{
+    text-align:right;
+}
+.dealers_count span{
+    color:#63B4FB;
+    font-weight: 600;
+    margin-right:5px;
+}
+
+/*Send Main Title*/
+
+.send_mail_title{
+    margin-top:15px;
+}
+
+.send_mail_title input{
+    width:500px;
+}
+
+/*Price Email Container*/
+
+.price_email_container{
+    margin-top:15px;
+}
+
+/*Last Price File*/
+
+.last_price_file{
+    display:inline-block;
+    margin-top:15px;
+    color:#555;    
+}
+.last_price_file:hover{
+    color:#63B4FB;    
+}
+.last_price_file span{
+    display:inline-block;
+    vertical-align: middle;
+}
+.last_price_file .glyphicon{
+    font-size:25px;
+    margin-right:5px;
+}
+
+/*Attach More*/
+
+.attach_more{
+    display:inline-block;
+    margin-top:15px;
+}
+.attach_more .attach_more_btn{
+    display:inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    color:#555;
+}
+.attach_more .attach_more_btn:hover{
+    color:#63B4FB;    
+}
+.attach_more .attach_more_btn span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.attach_more .attach_more_btn .glyphicon{
+    font-size:25px;   
+    margin-right:5px; 
+}
+/*Attachment Element*/
+.attachment_element{
+    margin-top:10px;
+}
+.up_delete_attachment{ 
+    display: inline-block;
+    vertical-align: middle;
+    font-size:20px;
+    color:#cc0000;
+    margin-left:10px;
+    cursor: pointer;
+}
+
+/*Upload Price Actions*/
+.upload_price_actions {
+    text-align: center;
+}
+.upload_price_actions .button{
+    display:inline-block;
+    margin:30px 15px;
+}
+
+/*All Prices Table*/
+
+.all_prices{
+    margin: auto;
+    max-width: 900px;
+    text-align: center;
+    width: 100%;
+}
+
+.all_prices thead th{
+    background-color: #63B4FB;
+    color:#fff;
+    padding: 10px;
+}
+.all_prices tbody tr{
+    padding:5px 10px;
+}
+.all_prices tbody tr:nth-child(odd){
+    background-color:#f9f9f9;
+}
+
+/********* Contact Us **********/
+
+.contact_us_wrapper{
+    width:100%;
+    max-width:750px;
+    margin: auto;
+}
+
+
+/**************************************** Invite  *******************************************/
+
+.invite_container{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.invite_form{
+    margin-top: 20px;
+}
+
+.invite_mes{
+    text-align:center;
+}
+
+

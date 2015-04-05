@@ -34,6 +34,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.mainPopupActions();
         this.categoriesProductCheckbox();
         this.pccLoader();
+        this.leftPanel();
 
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
@@ -52,7 +53,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
 
     },
-   
     initSocialLogins: function () {
         if (jQuery('#googleLoginBtn').length > 0) {
             gapi.signin.render('googleLoginBtn', {});
@@ -229,19 +229,20 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
     },
     dropDownMenu: function () {
-        function hideAllDropdowns() {
-            jQuery("#navMenu .f_dropdown_menu").slideUp(500);
-            jQuery("#navMenu .f_dropdown_toggle").removeClass("active");
-        }
-        ;
         jQuery("#navMenu .f_dropdown_toggle").click(function () {
-            hideAllDropdowns();
             jQuery(this).siblings(".f_dropdown_menu").slideToggle(500);
             jQuery(this).toggleClass("active");
 
+            /*Close drop down menu*/
+            jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_toggle").removeClass("active");
+            jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_menu").slideUp(500);
+            
+            /*Click on other elements*/
+
             jQuery(document).on("click", function (event) {
                 if (jQuery(event.target).closest(".f_dropdown").length < 1) {
-                    hideAllDropdowns();
+                    jQuery("#navMenu .f_dropdown_menu").slideUp(500);
+                    jQuery("#navMenu .f_dropdown_toggle").removeClass("active");
                 }
             });
         });
@@ -326,6 +327,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     categoriesProductCheckbox: function () {
         jQuery(".f_product_checkbox").on("click", function () {
             window.location.href = jQuery(this).parent().attr("href");
+        });
+    },
+    leftPanel : function(){
+        jQuery(".f_left-panel-btn").on("click",function(){
+           jQuery("#mainLeftPanel").toggleClass("active");
         });
     }
 });

@@ -1,0 +1,357 @@
+/*******
+
+    PRODUCTS
+
+*******/
+
+.home_page_inner_container{
+    position:relative;
+    display:table;
+    width: 100%;
+}
+.listing{
+    display: table;
+    width: 100%;
+    margin: 10px auto 20px;
+}
+.listing .listing_row{
+    display:table-row;
+}
+
+.listing .listing_row .listing_item {
+    position:relative;
+    box-shadow: 0 0px 7px 0px #ccc;
+    width:33.3%;
+    display:table-cell;
+
+    -webkit-transition: box-shadow 0.4s ease;
+    -moz-transition: box-shadow 0.4s ease;
+    -ms-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    transition: box-shadow 0.4s ease;
+}
+/* Listing 1 Column */
+.listing.listing-1-col{
+    display:block;
+    width:auto;
+}
+.listing.listing-1-col .listing_row{
+    display:block;
+}
+.listing.listing-1-col .listing_row .listing_item{
+    width:auto;
+    display: block;
+}
+/* Listing 5 Column */
+.listing.listing-5-col .listing_row .listing_item{
+    width:20%;
+}
+
+.home_page_inner_container .listing_row .listing_item:hover {
+    box-shadow:0 0 7px 3px #63B4FB;
+}
+.listing_item .listing_item_inner{
+    padding:30px 20px 80px;	
+}
+
+/********************* Product Images **********************/
+
+.listing_item .listing_item_img{
+    margin:20px 0;
+    text-align: center;
+}
+
+.listing_item .listing_item_img .listing_item_img_link {
+    display:inline-block;
+    vertical-align: middle;
+    margin: auto;
+    width:150px;
+    height:150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/*******************************************************************/
+.listing_item .listing_item_price{
+    font-size: 15px;
+    color:#333;	
+    display:table;
+    width:100%;
+    border-collapse:collapse;
+}
+.listing_item .listing_item_price p{
+    margin:0px;
+    display:table-row;
+    border-bottom:1px solid #ddd;
+}
+.listing_item .listing_item_price p span{
+    display:table-cell;
+    vertical-align:middle;
+    padding:5px;
+    color:#777;
+    text-align: right;
+}
+.listing_item .listing_item_price p span:first-child{
+    color:#555;
+    text-align: left;
+}
+.listing_item .listing_item_price p.price span,
+.listing_item .listing_item_price p.price span:first-child{
+    color: #0e53a5;
+    font-weight: 600;
+}
+.listing_item .listing_item_btn_wp {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+}
+.listing_item .listing_item_btn_wp a{
+    padding: 7px 10px;
+    width: calc(100% - 20px);
+    margin:auto;
+}
+.listing_item .listing_item_title{
+    font-weight:600;
+    font-size:18px;
+    color:#555;
+    transition:all 0.5s ease;
+    display: block;
+    height: 86px;
+    overflow: hidden;
+}
+.listing_item .listing_item_title .listing_item_brand{
+    color: #0e53a5;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+.listing_item .listing_item_title h4 span{
+    font-size: 15px;
+    color:#777;
+    font-weight:600; 	
+}
+.listing_item .listing_item_title:hover,
+.listing_item .listing_item_title:hover h4{
+    color: #0e53a5;
+    text-decoration: underline;
+}
+
+.listing_item_new{
+    display:block;
+    width:70px;
+    height:70px;
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                  LISTING 1 COLUMN                                  */
+/*                                                                                    */
+/**************************************************************************************/
+
+
+/************************* LISTING **********************/
+
+.listing.listing-1-col{
+    display:block;
+    width: auto;
+}
+.listing.listing-1-col .listing_row{
+    display:block;        
+}
+.listing.listing-1-col .listing_row:first-child{
+    display:none;
+}
+.listing.listing-1-col .listing_row .listing_item{
+    display:block;
+    width:auto;
+}
+
+/************** LISTING ITEM ************/
+.listing.listing-1-col .listing_item{
+    padding:20px;
+}
+.listing.listing-1-col .listing_item .listing_item_inner{
+    display:table;
+    width:100%;
+    padding:0;
+}
+.listing.listing-1-col .listing_item .listing_item_title{
+    display:table-caption;
+    height: auto;
+    margin:auto;
+    text-align: center;
+}
+.listing.listing-1-col .listing_item .listing_item_details{
+    display:table-cell;
+    vertical-align: middle;
+}
+.listing.listing-1-col .listing_item .listing_item_img{
+    display:table-cell;
+    vertical-align: middle;
+    margin:auto;
+    width:250px;
+}
+.listing.listing-1-col .listing_item .listing_item_img .listing_item_img_link{
+    width:250px;
+    height:250px;
+}
+.listing.listing-1-col .listing_item .listing_item_btn_wp {
+    bottom: auto;
+    right: auto;
+    position: static;
+}
+.listing.listing-1-col .listing_item .listing_item_btn_wp a {
+    margin: 20px auto 0;
+    padding: 9px 0;
+    width: auto;
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                  LISTING RESPONSIVE                                */
+/*                                                                                    */
+/**************************************************************************************/
+
+
+@media screen and (max-width : 1250px){
+    .home_page_inner_container{
+        display:block;
+        width: auto;
+    }
+    .right-content{
+        display:block;
+        padding:0;
+    }
+}
+
+@media screen and (max-width : 1000px){
+
+    /************************* LISTING **********************/
+
+    .listing{
+        display:block;
+        width: auto;
+    }
+    .listing .listing_row{
+        display:block;        
+    }
+    .listing .listing_row:first-child{
+        display:none;
+    }
+    .listing.listing-5-col .listing_row .listing_item,
+    .listing .listing_row .listing_item{
+        display:block;
+        width:auto;
+    }
+
+    /************** LISTING ITEM ************/
+    .listing .listing_row .listing_item{
+        padding:20px;
+    }
+    .listing_item .listing_item_inner{
+        display:table;
+        width:100%;
+        padding:0;
+    }
+    .listing .listing_item_title{
+        display:table-caption;
+        height: auto;
+        margin:auto;
+        text-align: center;
+    }
+    .listing_item .listing_item_details{
+        display:table-cell;
+        vertical-align: middle;
+    }
+    .listing_item .listing_item_img{
+        display:table-cell;
+        vertical-align: middle;
+        margin:auto;
+        width:250px;
+    }
+    .listing_item .listing_item_img .listing_item_img_link{
+        width:250px;
+        height:250px;
+    }
+    .listing_item .listing_item_btn_wp {
+        bottom: auto;
+        right: auto;
+        position: static;
+    }
+    .listing_item .listing_item_btn_wp a {
+        margin: 20px auto 0;
+        padding: 9px 0;
+        width: auto;
+    }
+}
+
+@media screen and (max-width : 768px){
+    .listing .listing_row .listing_item{
+        padding:10px;
+    }
+    .listing_item .listing_item_img{
+        width:200px;
+    }
+    .listing_item .listing_item_img .listing_item_img_link{
+        width:200px;
+        height:200px;
+    }
+    .listing_item .listing_item_title{
+        font-size: 15px;
+    }
+    .listing_item .listing_item_price{
+        font-size:13px;
+    }
+    .listing_item .listing_item_price p.price{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width : 620px){
+    .listing_item .listing_item_img{
+        width:150px;
+    }
+    .listing_item .listing_item_img .listing_item_img_link{
+        width:150px;
+        height:150px;
+    }    
+}
+@media screen and (max-width : 480px){
+    .listing_item .listing_item_inner{
+        display:block;
+        width:auto;
+    }
+    .listing .listing_item_title{
+        display:block;
+    }
+    .listing_item .listing_item_img{
+        display:block;
+    }
+    .listing_item .listing_item_details{
+        display:block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
