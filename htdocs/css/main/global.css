@@ -12,13 +12,6 @@
     font-family:OpenSans;
     src:url(../../fonts/OpenSans.ttf);
 }
-
-body{
-    /*background:url(../../img/doc_bg.png) repeat scroll 0 0 transparent;*/
-    font-size: 15px;
-    color:#333;
-    font-family:sans-serif;
-}
 .transition{
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;

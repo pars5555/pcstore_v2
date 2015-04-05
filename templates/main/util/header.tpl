@@ -7,7 +7,7 @@
                     <span>{$ns.lm->getPhrase(105)}</span>
                 </a>
             </li>
-            
+
             {if $ns.userLevel === $ns.userGroupsAdmin}
                 <li>
                     <input type="checkbox" id="admin_chat_on_off"/>
@@ -103,33 +103,6 @@
                     </ul>
                 </li>
 
-
-                {*<li class="rel-block dropdown">
-                <a class="dropdown_toggle f_dropdown_toggle glyphicon" href="javascript:void(0)"></a>
-                <div class="dropdown_menu f_dropdown_menu search_block">
-                <div class="top-arrow"></div>
-                <div class="input-group search_container">
-                <form method="GET" action="{$SITE_PATH}" autocomplete="off">
-                <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text form-control">
-                <button type="submit" class="search_btn">
-                <span class="glyphicon"></span>
-                </button>
-                </form>
-                </div>
-                </div>
-                </li>*}
-
-                {* Notifications Container *}
-
-                <li class="notification f_dropdown" id="notification">
-                    {*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
-                    <a id="notificationBtn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
-                    </a>
-                    <ul style="display: none;" id="notificationListWrapper" class="dropdown_menu f_dropdown_menu nofitication-list-wrapper">
-                        <li class="no_notifications">You have not notifications!</li>
-                    </ul>
-                </li>
-
                 {* Notification Example *}
 
                 <ul id="notification_example" class="hidden">
@@ -150,69 +123,79 @@
                     </li>
                 </ul>
 
+                {* Notifications Container *}
+                <li class="notification f_dropdown" id="notification">
+                    {*                    <span id="new_nots_count" class="new_nots_count">new</span>*}
+                    <a id="notificationBtn" class="dropdown_toggle f_dropdown_toggle navMenu_item" href="javascript:void(0);">
+                    </a>
+                    <ul style="display: none;" id="notificationListWrapper" class="dropdown_menu f_dropdown_menu nofitication-list-wrapper">
+                        <li class="no_notifications">You have not notifications!</li>
+                    </ul>
+                </li>
             {/if}
         </ul>
         <div class="clear"></div>
     </nav>
     <div class="header_content">
-
-        {**************************** LOGO ********************************}
-
-        <a  href="{$SITE_PATH}" class="site_logo">
-            <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
-        </a>
-
-        <div class="search_block">
-            {**************************** CONTACT ********************************}
-            <div class="contact_info">
-                <div class="contact_info_item">
-                    <span class="fontAwesome"></span>
-                    <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
-                </div>
-                <div class="contact_info_item">
-                    <span class="fontAwesome"></span>
-                    <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
-                </div>
-                <div class="contact_info_item">
-                    <span class="fontAwesome"></span>
-                    <a class="contact_link" href="mailto:info@pcstore.am">info@pcstore.am</a>
-                </div>
-                <div class="contact_info_item">
-                    <span class="fontAwesome"></span>
-                    <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
-                </div>
+        {**************************** CONTACT ********************************}
+        <div class="contact_info">
+            <div class="contact_info_item">
+                <span class="fontAwesome"></span>
+                <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
             </div>
-            {**************************** SEARCH ********************************}
-            <div class="search_container">
-                <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
-                    <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
-                    <button type="submit" class="search_btn">
-                        
-                    </button>
-
-                    {if $ns.contentLoad == "main_home"}
-                        <input type="hidden" name="cid" value="{$ns.req.cid|default:''}"/>
-                        <input type="hidden" name="scpids" value="{$ns.req.scpids|default:''}"/>
-                        <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
-                        <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
-                        <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
-                        <input type="hidden" id="listing_cols_select" name="cols" />
-                    {/if}
-                </form>
+            <div class="contact_info_item">
+                <span class="fontAwesome"></span>
+                <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
+            </div>
+            <div class="contact_info_item">
+                <span class="fontAwesome"></span>
+                <a class="contact_link" href="mailto:info@pcstore.am">info@pcstore.am</a>
+            </div>
+            <div class="contact_info_item">
+                <span class="fontAwesome"></span>
+                <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
             </div>
         </div>
+        <div class="header_content_inner">
+            {**************************** LOGO ********************************}
 
-        {**************************** BUILD PC ********************************}
-
-        {if $ns.contentLoad != "main_buildpc"}
-        {/if}
-        <div class="build-pc-link">
-            <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
-                <span class="icon fontAwesome"></span>
-                <span>{$ns.lm->getPhrase(226)}</span>
+            <a  href="{$SITE_PATH}" class="site_logo">
+                <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
             </a>
-        </div>
 
+            <div class="search_block">
+                {**************************** SEARCH ********************************}
+                <div class="search_container">
+                    <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
+                        <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
+                        <button type="submit" class="search_btn">
+                            
+                        </button>
+
+                        {if $ns.contentLoad == "main_home"}
+                            <input type="hidden" name="cid" value="{$ns.req.cid|default:''}"/>
+                            <input type="hidden" name="scpids" value="{$ns.req.scpids|default:''}"/>
+                            <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
+                            <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
+                            <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
+                            <input type="hidden" id="listing_cols_select" name="cols" />
+                        {/if}
+                    </form>
+                </div>
+            </div>
+
+            {**************************** BUILD PC ********************************}
+
+            {if $ns.contentLoad != "main_buildpc"}
+            {/if}
+            <div class="build-pc-link">
+                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
+                    <span class="icon fontAwesome"></span>
+                    <span>{$ns.lm->getPhrase(226)}</span>
+                </a>
+            </div>
+
+        </div>
     </div>
 </header>
 {if $ns.userLevel === $ns.userGroupsGuest}

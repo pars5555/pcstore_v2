@@ -1,159 +1,11 @@
+/**************************************************************************************/
+/*                                   MAIN NAVIGATION                                  */
+/**************************************************************************************/
 
-/****************************************************
-******************************************************
-  HEADER  
-****************************************************
-*****************************************************/
-
-.header_content{
-    clear:both;
-    display:table;
-    max-width:1440px;
-    width:calc(100% - 50px);
-    padding:30px 20px 20px;
-    margin:auto;
+.navbar{
+    border-bottom:1px solid #ddd;
+    max-width: 1440px;
 }
-.site_logo{
-    display:table-cell;
-    vertical-align:middle;
-    width:200px;
-}
-.site_logo img{
-    width:160px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.header_content .search_block{
-    display:table-cell;
-    vertical-align:middle;
-    position:relative;
-}
-
-/********************************** BUILD PC LINK *************************************/
-
-.build-pc-link{
-    width:0;
-    display:table-cell;
-    vertical-align:middle;  
-    text-align: right;
-    white-space: nowrap;
-    padding:0 10px;
-}
-.build-pc-link a{
-    display:inline-block;
-    padding:7px 10px;
-    font-size: 30px;
-    font-weight: 600;
-
-    -moz-border-radius: 11px;
-    -webkit-border-radius: 11px;
-    -khtml-border-radius: 11px; 
-    -o-border-radius: 11px; 
-    -ms-border-radius: 11px;
-    -icab-border-radius: 11px; 
-    border-radius: 11px; 
-
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-
-    animation: 2s linear 0s normal infinite build_pc;
-}
-
-@keyframes build_pc {
-    0% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-    25% {
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    50%{
-        color: #63b4fb;
-        box-shadow:0 0 11px #63b4fb;
-    }
-    75%{
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    100% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-} 
-
-@-webkit-keyframes build_pc {
-    0% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-    25% {
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    50%{
-        color: #63b4fb;
-        box-shadow:0 0 11px #63b4fb;
-    }
-    75%{
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    100% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-} 
-.build-pc-link a.buil_pc_link_am{
-    font-size:20px;   
-}
-.build-pc-link a.buil_pc_link_ru{
-    font-size:25px;    
-}
-.build-pc-link span{
-    display:inline-block;
-    vertical-align: middle;
-    text-align: left;
-}
-.build-pc-link .buil_pc_link_am span{
-    white-space: normal;
-}
-
-/*********************** Build PC Icon **********************/
-
-.build-pc-link .icon{
-    width:35px;
-    height:35px;
-    font-size: 40px;
-
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-
-    animation: 2s linear 0s normal infinite build_pc_icon; 
-}
-@keyframes build_pc_icon {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} 
-
-@-webkit-keyframes build_pc_icon {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} 
-
-/*======= Navigation Bar Header =======*/
 .navbar .navbar-header{
     float:left;
     margin-top:5px;
@@ -162,7 +14,6 @@
     display:none;
 }
 
-/*======= Navigation Menu Header =======*/
 .navbar .navMenu{
     padding:0 20px;
     margin:auto;
@@ -171,7 +22,6 @@
 }
 .navMenuList{
     margin: auto;
-    max-width: 1440px;
     text-align: right;
     font-size: 0;
     white-space: nowrap;
@@ -314,7 +164,203 @@
     margin-right:5px;	
 }
 
-/*====================================== Signup - Creat Account - Social Signup ================================*/
+/**************************************************************************************/
+/*                      HEADER SEARCH & LOGO & BUILD PC                               */
+/**************************************************************************************/
+
+.header_content{
+    clear:both;
+    padding:20px;
+    margin:auto;
+}
+.header_content_inner{
+    display:table;
+    width:100%;
+}
+.site_logo{
+    display:table-cell;
+    vertical-align:middle;
+    width:200px;
+}
+.site_logo img{
+    width:160px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header_content .search_block{
+    display:table-cell;
+    vertical-align:middle;
+    position:relative;
+}
+
+/**************************************************************************************/
+/*                                   CONTACT INFO                                     */
+/**************************************************************************************/
+
+.contact_info {
+    padding-left:200px;
+}
+
+.contact_info .contact_info_item{
+    display:inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-right:15px;
+}
+
+.contact_info .fontAwesome{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 25px;
+    color:#63B4FB;
+    margin-right:5px;
+}
+
+.contact_info .contact_link{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    color:#555;
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.contact_info .contact_link:hover{
+    color:#63B4FB;    
+}
+
+/**************************************************************************************/
+/*                                   BUILD PC LINK                                    */
+/**************************************************************************************/
+
+.build-pc-link{
+    width:1px;
+    display:table-cell;
+    vertical-align:middle;  
+    text-align: right;
+    white-space: nowrap;
+    padding-left:10px;
+}
+.build-pc-link a{
+    display:inline-block;
+    padding:7px 10px;
+    font-size: 30px;
+    font-weight: 600;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    -khtml-border-radius: 11px; 
+    -o-border-radius: 11px; 
+    -ms-border-radius: 11px;
+    -icab-border-radius: 11px; 
+    border-radius: 11px; 
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    animation: 2s linear 0s normal infinite build_pc;
+}
+
+@keyframes build_pc {
+    0% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+    25% {
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    50%{
+        color: #63b4fb;
+        box-shadow:0 0 11px #63b4fb;
+    }
+    75%{
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    100% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+} 
+
+@-webkit-keyframes build_pc {
+    0% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+    25% {
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    50%{
+        color: #63b4fb;
+        box-shadow:0 0 11px #63b4fb;
+    }
+    75%{
+        color: #63b4fb;
+        box-shadow:0 0 7px #63b4fb;
+    }
+    100% {
+        color: #555;
+        box-shadow:0 0 3px #555;
+    }
+} 
+.build-pc-link a.buil_pc_link_am{
+    font-size:20px;   
+}
+.build-pc-link a.buil_pc_link_ru{
+    font-size:25px;    
+}
+.build-pc-link span{
+    display:inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+.build-pc-link .buil_pc_link_am span{
+    white-space: normal;
+}
+
+/*********************** Build PC Icon **********************/
+
+.build-pc-link .icon{
+    width:35px;
+    height:35px;
+    font-size: 40px;
+
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    animation: 2s linear 0s normal infinite build_pc_icon; 
+}
+@keyframes build_pc_icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@-webkit-keyframes build_pc_icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+/**************************************************************************************/
+/*                             MAIN POPUP SIGNIN SIGNUP                               */
+/**************************************************************************************/
 
 .modal{
     width:100%;
@@ -323,6 +369,7 @@
     top:0px;
     left:0;
     z-index:1000000;
+    overflow: auto;
 }
 
 .modal .modal-content{
@@ -371,13 +418,18 @@
     display: block;
     text-align:center;
 }
-
-.modal .modal-content .modal_cols{
-    float:left;
-    width:calc(33.3% - 40px);
+.modal .modal-content .modal-body{
+    display:table;
+    width:100%;
+}
+.modal-body .modal_cols{
+    display:table-cell;
+    vertical-align: top;
     padding:20px;
 }
-
+.modal_cols .button{
+    margin-bottom:0;
+}
 .modal .modal-content h4{
     color:#555;
     font-size:16px;
@@ -386,9 +438,10 @@
     margin-bottom:10px;
 }
 
-/*******
-    LOGIN POP UP 
-*******/
+/**************************************************************************************/
+/*                                   FORGOT PASSWORD                                  */
+/**************************************************************************************/
+
 .modal .modal-content .form-group{
     margin-top:10px;
 }
@@ -403,7 +456,7 @@
 }
 
 .modal .modal-content .social-login .social-login-link{
-    width:230px;
+    max-width: 220px;
     display:block;
     margin:25px auto 0;
     color:#fff;
@@ -448,9 +501,9 @@
     background-color:#de4c34;
 }
 
-/*******
-   Creat Account
-*******/
+/**************************************************************************************/
+/*                                      SIGN UP                                       */
+/**************************************************************************************/
 
 .modal .modal-content .create-account-wrapper p{
     /*color: #3aa031;*/
@@ -460,7 +513,6 @@
 
 .modal .modal-content .create-account-wrapper ul{
     padding-left:30px;
-    margin-bottom:35px;
 }
 
 .modal .modal-content .create-account-wrapper ul li{
@@ -469,11 +521,10 @@
     font-size:13px;
     color:#333;
 }
-/******************
 
- Sign Up Page
-
-******************/
+/**************************************************************************************/
+/*                                     SIGN UP PAGE                                   */
+/**************************************************************************************/
 
 .sign_up_wrapper{
     padding:20px;
@@ -495,174 +546,6 @@
 }
 
 
-/******************
-
- LANDING HEADER
-
-******************/
-.navbar{
-    border-bottom:1px solid #ddd;
-}
-.hot-products-wrapper {
-    margin:20px 0px;
-    padding:10px 0px;
-    border-top:1px solid #CCCCCC;
-    border-bottom:1px solid #CCCCCC;
-}
-.features-wrapper {
-    background-color:#eee;
-    padding:20px 0px;
-    margin:20px 0px;
-}
-.features-wrapper  h2{
-    text-align:center;
-    font-size:55px;
-    color:#9f9f9f;
-    margin-bottom:20px;
-}
-.features-wrapper .ft-row {
-    margin:30px 0px;
-}
-.features-wrapper .ft-block{
-    display:inline-block;
-    vertical-align:top;
-}
-.f_ft_block {
-    -webkit-transition: opacity 0.4s ease;
-    -moz-transition: opacity 0.4s ease;
-    -ms-transition: opacity 0.4s ease;
-    -o-transition: opacity 0.4s ease;
-    transition: opacity 0.4s ease;
-}
-.features-wrapper .ft-block.ft-left {
-
-}
-.features-wrapper .ft-block h5 {
-    font-weight: bold;
-}
-.features-wrapper .ft-block p {
-    overflow: hidden;
-    width: 200px;
-    word-wrap: break-word;
-}
-.features-wrapper .ft-block.ft-left .img{
-    border-radius:50%;
-    width:60px;
-    height:60px;
-    text-align:center;
-    background-color:#ea5859;
-    color:#FFFFFF;
-    font-size:24px;
-    line-height: 64px;
-    display:inline-block;
-}
-.features-wrapper .ft-block.ft-right {
-
-}
-.service-wrapper {
-    margin:20px 0px;
-}
-.service-wrapper  h2 {
-    text-align:center;
-    font-size:55px;
-    color:#9f9f9f;
-    margin-bottom:20px;
-}
-.service-wrapper .service-inner-container{
-    max-width:700px;
-    width:100%;
-    margin:0px auto;
-}
-.service-wrapper .service-inner-container p {
-    color: #797979;
-}
-.service-wrapper .service-inner-container .service-img-wrapper {
-    background-image:url("../../img/service_img.png");
-    background-size:cover;
-    height:60vh;
-}
-#lpSlider .item{
-    background-size:cover;
-    height:60vh;
-}
-#lpSlider .item .slide-desc {
-    color:#FFFFFF;
-    text-align:right;
-    padding:15px;
-}
-#hpSlider .owl-controls{
-    display:none !important;
-}
-#hpSlider .item{
-    color: #333;
-    -webkit-: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    text-align: center;
-}
-#hpSlider .item .hp-img {
-    display:inline-block;
-    height:130px;
-    width:130px;
-    background-size:cover;
-    vertical-align: top;
-}
-#hpSlider .item .hp-text{
-    display:inline-block;
-    text-align:left;
-}
-.hp-slider-wrapper .arrows-wrapper{
-    text-align:right;
-}
-.hp-slider-wrapper .hp-arrow{
-    display:inline-block;
-    margin:0px 5px;
-    vertical-align:top;
-    cursor:pointer;
-}
-.hp-slider-wrapper .hp-arrow:hover {
-    color:#2a6496;
-}
-
-/******************************* Contact Inf ******************************/
-
-.contact_info {
-    position: absolute;
-    top: -15px;
-    left: 0;
-}
-
-.contact_info .contact_info_item{
-    display:inline-block;
-    vertical-align: middle;
-    white-space: nowrap;
-    margin-right:15px;
-}
-
-.contact_info .fontAwesome{
-    display:inline-block;
-    vertical-align: middle;
-    font-size: 25px;
-    color:#63B4FB;
-    margin-right:5px;
-}
-
-.contact_info .contact_link{
-    display:inline-block;
-    vertical-align: middle;
-    font-size: 15px;
-    color:#555;
-
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-
-.contact_info .contact_link:hover{
-    color:#63B4FB;    
-}
-
 /**************************************************************************************/
 /*                                                                                    */
 /*                                  HEDAER RESPONSIVE                                 */
@@ -672,5 +555,69 @@
 @media screen and (max-width : 1250px){
     .navMenuList .left-panel-btn{
         display:inline-block;
+    }
+}
+
+@media screen and (max-width : 768px){
+
+    /**************************************************************************************/
+    /*                                     MAIN POPUP                                     */
+    /**************************************************************************************/
+    .modal-body .modal_cols{
+        padding:10px;
+    }
+    
+    /**************************************************************************************/
+    /*                                 MAIN NAVIGATION                                    */
+    /**************************************************************************************/
+    .navbar{
+        padding-top:46px;
+    }
+    .navbar .navMenu{
+        position:fixed;
+        top:0;
+        left:0;
+        width:calc(100% - 20px);
+        padding:0 10px;
+        z-index: 5000;
+    }
+
+    /**************************************************************************************/
+    /*                            HEADER SEARCH & LOGO & BUILD PC                         */
+    /**************************************************************************************/
+    .header_content{
+        padding:10px;
+    }
+    .contact_info{
+        padding:0;
+        text-align: center;
+    }
+    .site_logo{
+        width:170px;
+    }
+}
+
+@media screen and (max-width : 700px){
+    .modal .modal-content{
+        top:0;
+        left:0;
+        padding-top:30px;
+        padding-bottom:10px;
+
+        transform:translate(0,0);
+        -moz-transform:translate(0,0);  
+        -webkit-transform:translate(0,0);  
+        -o-transform:translate(0,0);  
+        -ms-transform:translate(0,0); 
+    }
+    .modal .modal-content.active{
+        top:0;
+    }
+    .modal .modal-content .modal-body{
+        display:block;
+        width:auto;
+    }
+    .modal-body .modal_cols{
+        display:block;
     }
 }
