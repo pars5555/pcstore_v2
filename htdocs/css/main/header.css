@@ -229,7 +229,7 @@
 /**************************************************************************************/
 
 .contact_info {
-    padding-left:200px;
+    padding:0 0 7px 200px;
 }
 
 .contact_info .contact_info_item{
@@ -268,19 +268,15 @@
 /**************************************************************************************/
 
 .build-pc-link{
-    width:1px;
-    display:table-cell;
-    vertical-align:middle;  
-    text-align: right;
-    white-space: nowrap;
-    padding-left:10px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .build-pc-link.buil_pc_link_top{
     display:none;
 }
 .build-pc-link a{
     display:inline-block;
-    padding:7px 10px;
+    padding:7px 10px 9px;
     font-size: 30px;
     font-weight: 600;
     color:#63B4FB;
@@ -664,10 +660,7 @@
         line-height:initial;
         border-right:none;
     }
-    /****************************************************************************/
-    /*                              Drop Down Menu                              */
-    /****************************************************************************/
-
+    /*******************************Drop Down Menu*******************************/
 
     .dropdown_menu{
         position:static;
@@ -681,6 +674,18 @@
         color: #fff;
     }
 
+    /*****************************HEADER SEARCH & LOGO & BUILD PC*************************/
+
+    .contact_info{
+        padding:0;
+        text-align: center;
+    }
+    .build-pc-link{
+        display:block;
+        margin: 10px auto 5px;
+        text-align: center;
+    }
+
 }
 @media (max-width : 768px){
 
@@ -692,10 +697,6 @@
     /*****************************HEADER SEARCH & LOGO & BUILD PC*************************/
     .header_content{
         padding:10px;
-    }
-    .contact_info{
-        padding:0;
-        text-align: center;
     }
     .site_logo{
         width:170px;
@@ -737,6 +738,7 @@
     }
     .build-pc-link.buil_pc_link_top{
         display:table-cell;
+        text-align: right;
     }
 }
 @media (max-width : 480px){
@@ -765,7 +767,7 @@
         height: auto;
         width: auto;
     }
-    
+
     /*Contact Info*/
     .contact_info {
         margin-bottom: 10px;

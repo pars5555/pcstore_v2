@@ -163,6 +163,13 @@
             <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
             </div>
             {*}
+            <div class="build-pc-link">
+                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
+                    <span class="icon">
+                    </span>
+                    <span>{$ns.lm->getPhrase(226)}</span>
+                </a>
+            </div>
         </div>
         <div class="header_content_inner">
             {**************************** LOGO ********************************}
@@ -170,7 +177,7 @@
             <a  href="{$SITE_PATH}" class="site_logo">
                 <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
             </a>
-            
+
             {**************************** BUILD PC ********************************}
             <div class="build-pc-link buil_pc_link_top">
                 <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
@@ -205,13 +212,6 @@
 
             {if $ns.contentLoad != "main_buildpc"}
             {/if}
-            <div class="build-pc-link">
-                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
-                    <span class="icon">
-                    </span>
-                    <span>{$ns.lm->getPhrase(226)}</span>
-                </a>
-            </div>
 
         </div>
     </div>
