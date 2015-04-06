@@ -46,11 +46,7 @@ var bannerSlider = {
     sliderSwipeControl: function () {
         var self = this;
         this.slider.on("swipeleft swiperight", function (event) {
-            var direction = 1;
-            if (event.type == "swiperight") {
-                direction = -1;
-            }
-            ;
+            var direction = event.type == "swiperight" ? -1 : 1;
             self.sliderRotate(direction);
             self.sliderAutoRotate();
         });
