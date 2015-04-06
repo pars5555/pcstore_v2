@@ -45,11 +45,11 @@ var bannerSlider = {
     //***************** Slider Swipe Control ***************//
     sliderSwipeControl: function () {
         var self = this;
-        this.sliderContent.on("swiperight", function () {
+        this.sliderItem.on("swiperight", function () {
             self.sliderRotate(-1);
             self.sliderAutoRotate();
         });
-        this.sliderContent.on("swipeleft", function () {
+        this.sliderItem.on("swipeleft", function () {
             self.sliderRotate(1);
             self.sliderAutoRotate();
         });
