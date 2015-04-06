@@ -361,21 +361,18 @@
 
 .build-pc-link .icon{
     width:35px;
-    height:35px;
+    height:41px;
     font-size: 30px;
     position:relative;
 }
 .build-pc-link .icon:before{
     content:"";
     font-family: "FontAwesome";
+    vertical-align: middle;
 }
 @media (min-width : 768px){
     .build-pc-link:hover .icon{
         animation: 2s linear 0s normal infinite build_pc_icon_loading; 
-    }
-    .build-pc-link:hover .icon{
-        width:35px;
-        height:41px;
     }
     .build-pc-link:hover .icon:before{
         font-size: 40px;
@@ -748,7 +745,7 @@
     }
     .site_logo,
     .site_logo img{
-        width:120px;
+        width:130px;
     }
     .build-pc-link a{
         font-size: 20px;
@@ -763,7 +760,7 @@
         width: auto;
     }
     .build-pc-link .icon {
-        font-size: 20px;
+        font-size: 25px;
         height: auto;
         width: auto;
     }

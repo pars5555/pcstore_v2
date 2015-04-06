@@ -36,6 +36,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.pccLoader();
         this.leftPanel();
         this.mainNavigationMenu();
+        this.notificationScrolling();
 
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
@@ -341,5 +342,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
            jQuery(".f_nav_menu").toggleClass("active");
            jQuery("#mainLeftPanel").removeClass("active");
         });
+    },
+    notificationScrolling : function(){
+      jQuery("#notificationListWrapper").on("mouseover",function(){
+          jQuery("body").addClass("disable_scrolling");
+      });
+      jQuery("#notificationListWrapper").on("mouseleave",function(){
+          jQuery("body").removeClass("disable_scrolling");
+      });
     }
 });

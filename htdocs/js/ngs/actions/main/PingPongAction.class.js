@@ -35,7 +35,7 @@ ngs.PingPongAction = Class.create(ngs.AbstractAction, {
                 if (self.notificationNotExist(notifications.id)) {
                     jQuery("#notificationListWrapper").addClass("active");
                     var new_not = jQuery("#notification_example .f_notification_block").clone(true);
-                    jQuery("#notificationListWrapper").append(new_not);
+                    jQuery("#notificationListWrapper").prepend(new_not);
                     new_not.attr("id", notifications.id);
                     new_not.find(".f_not_link").attr("href", notifications.url);
                     new_not.find(".f_not_icon img").attr("src", notifications.iconUrl);

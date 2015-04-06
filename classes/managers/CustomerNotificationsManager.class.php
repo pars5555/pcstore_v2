@@ -72,7 +72,7 @@ class CustomerNotificationsManager extends AbstractManager {
             $notificationsIdDateMapArray[$notification->getId()] = $notification->getDatetime();
             $notificationsMappedById[$notification->getId()] = $notification;
         }
-        arsort($notificationsIdDateMapArray);
+        asort($notificationsIdDateMapArray);
         $ret = array();
         foreach ($notificationsIdDateMapArray as $notifId => $datetime) {
             $ret [] = $notificationsMappedById[$notifId];
