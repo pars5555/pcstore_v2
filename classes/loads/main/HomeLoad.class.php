@@ -245,8 +245,10 @@ class HomeLoad extends BaseGuestLoad {
         $allCategoryHierarchiesDtos = $categoryHierarchyManager->selectAll();
         $mappedChildParentCategories = $this->putCategoriesHierarchiesInMapChildParent($allCategoryHierarchiesDtos);
         foreach ($selected_category_property_ids as $key => $value) {
-            $propParentCatId = $mappedChildParentCategories[$value];
-            $ret[$propParentCatId][] = $value;
+            if (array_key_exists($value, $mappedChildParentCategories)) {
+                $propParentCatId = $mappedChildParentCategories[$value];
+                $ret[$propParentCatId][] = $value;
+            }
         }
         return $ret;
     }
@@ -295,7 +297,7 @@ class HomeLoad extends BaseGuestLoad {
     }
 
     public function bannerSlider() {
-        $filterTypes = ["st", "s", "sci", "cid", "pg","cols"];
+        $filterTypes = ["st", "s", "sci", "cid", "pg", "cols"];
         $hideSlider = false;
 
         foreach ($filterTypes as $value) {
@@ -303,7 +305,7 @@ class HomeLoad extends BaseGuestLoad {
                 $hideSlider = true;
             }
         }
-        
+
         $this->addParam("hideBannerSlider", $hideSlider);
     }
 
