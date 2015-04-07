@@ -1,6 +1,8 @@
 <?php
 
 require_once (CLASSES_PATH . "/loads/main/BaseGuestLoad.class.php");
+require_once (CLASSES_PATH . "/managers/UserManager.class.php");
+require_once (CLASSES_PATH . "/managers/UserSubUsersManager.class.php");
 
 class MainLoad extends BaseGuestLoad {
 
@@ -9,6 +11,30 @@ class MainLoad extends BaseGuestLoad {
         $this->addParam('server_ip_address', SERVER_IP_ADDRESS);
         $this->checkInvitation();
         $this->initLanguage();
+        $this->checkUserActivation();
+    }
+
+    public function checkUserActivation() {
+        if (isset($_REQUEST["activation_code"])) {
+            $user_activation_code = $this->secure($_REQUEST["activation_code"]);
+            $userManager = UserManager::getInstance();
+            $inactiveUser = $userManager->getUserByActivationCode($user_activation_code);
+            if ($inactiveUser) {
+                if ($inactiveUser->getActive() == 1) {
+                    $this->addParam('user_activation', 'already_activated');
+                } else {
+                    $inactiveUser->setActive(1);
+                    $userManager->updateByPK($inactiveUser);
+                    $userSubUsersManager = UserSubUsersManager::getInstance();
+                    $prentId = $userSubUsersManager->getUserParentId($inactiveUser->getId());
+                    if ($prentId > 0) {
+                        $invbonus = intval($this->getCmsVar("bonus_points_for_every_accepted_invitation"));
+                        $userManager->addUserPoints($prentId, $invbonus, $invbonus . " bonus for invitation accept from user number: " . $inactiveUser->getId());
+                    }
+                    $this->addParam('user_activation', 'activated');
+                }
+            }
+        }
     }
 
     public function getDefaultLoads($args) {
@@ -35,10 +61,10 @@ class MainLoad extends BaseGuestLoad {
         $loads["content"]["loads"] = array();
         return $loads;
     }
-    
-    public function initLanguage(){
+
+    public function initLanguage() {
         $language = "en";
-        if(isset($_COOKIE["ul"])){
+        if (isset($_COOKIE["ul"])) {
             $language = $_COOKIE["ul"];
         }
         $this->addParam("language", $language);
