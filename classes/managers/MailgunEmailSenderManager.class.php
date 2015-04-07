@@ -20,23 +20,28 @@ class MailgunEmailSenderManager {
     private static $instance = null;
     private $mailgun;
     private $domain;
+    private $maxRecipientsPerEmail;
 
     /**
      * Initializes DB mappers
 
      * @return
      */
-    function __construct($apiKey, $domain) {
+    function __construct($apiKey, $domain, $maxRecipientsPerEmail = 500) {
         $this->mailgun = new Mailgun($apiKey);
         $this->domain = $domain;
+        $this->maxRecipientsPerEmail = intval($maxRecipientsPerEmail);
+        if ($this->maxRecipientsPerEmail <= 10) {
+            $this->maxRecipientsPerEmail = 500;
+        }
     }
 
     /**
      * Returns an singleton instance of this class
      */
-    public static function getInstance($mandrillApiKey) {
+    public static function getInstance() {
         if (self::$instance == null) {
-            self::$instance = new EmailSenderManager($mandrillApiKey);
+            self::$instance = new EmailSenderManager();
         }
         return self::$instance;
     }
@@ -48,14 +53,19 @@ class MailgunEmailSenderManager {
         if (!is_array($to)) {
             $to = array($to);
         }
-        $params = $this->getEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles);
-        try {
-            $res = $this->mailgun->sendMessage($this->domain, $params[0], $params[1]);
-            return $res->http_response_code == 200;
-        } catch (Exception $ex) {
-            return $ex->getMessage();
+        $toArrays = array_chunk($to, $this->maxRecipientsPerEmail);
+        $ret = array();
+        foreach ($toArrays as $toAddressesArray) {
+            $params = $this->getEmailParams($toAddressesArray, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles);
+            try {
+                $res = $this->mailgun->sendMessage($this->domain, $params[0], $params[1]);
+                $ret[] = $res->http_response_code == 200;
+            } catch (Exception $ex) {
+                $ret[] = $ex->getMessage();
+            }
+            $ret[] = 'Unknown Error!';
         }
-        return 'Unknown Error!';
+        return $ret;
     }
 
     private function getEmailParams($to, $subject, $bodyHtml, $fromEmail, $fromName, $attachedFiles = null) {

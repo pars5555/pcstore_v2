@@ -48,7 +48,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
                     $this->error(array('message' => $res));
                 }
             } else {
-                $this->error(array('message' => '`645` ' . $company_price_email_interval_hours . ' `646`'));
+                $this->error(array('message' => $this->getPhrase(645) . $company_price_email_interval_hours . ' ' . $this->getPhrase(646)));
             }
         }
         $this->ok();
@@ -126,9 +126,18 @@ class SendPriceEmailAction extends BaseCompanyAction {
             $res = $mandrillEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments, ($isServiceCompany ? 'service_company' : 'company') . '_' . $companyId);
             $sentSuccess = is_array($res);
         } elseif ($this->getCmsVar("price_emails_service_provider_name") == 'mailgun') {
-            $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"));
-            $res = $mailgunEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments);
-            $sentSuccess = $res === true;
+            $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"), $this->getCmsVar("mailgun_max_recipients_number_per_email"));
+            $mailGunResult = $mailgunEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments);
+            $allIsOk = true;
+            $res = array();
+            foreach ($mailGunResult as $r) {
+                if ($r !== true) {
+                    $allIsOk == false;
+                    $res[] = $r;
+                }
+            }
+            $res = implode('; ', $res);
+            $sentSuccess = $allIsOk === true;
         } else {
             $emailSenderManager = new EmailSenderManager('gmail');
             $res = $emailSenderManager->sendBulkEmailWithAttachmentsUsingPcstoreEmails($dealerEmailsArray, $subject, $body, array(), $allEmailFileAttachments, $fromEmail, $companyName);
