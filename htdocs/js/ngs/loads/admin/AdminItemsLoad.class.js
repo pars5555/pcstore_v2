@@ -14,6 +14,6 @@ ngs.AdminItemsLoad = Class.create(ngs.AbstractLoad, {
     getName: function () {
         return "admin_items";
     },
-    afterLoad: function () {
+    afterLoad: function () { 
     }
 });
