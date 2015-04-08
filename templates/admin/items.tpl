@@ -8,8 +8,10 @@
     </a>
 {/foreach}
 
-
 {if isset($ns.selectedCompanyDto)}
+    <div>
+        <a href="{$SITE_PATH}/dyn/admin/do_increase_items_availablity_days?company_id={$ns.selectedCompanyDto->getId()}">update items</a>
+    </div>
     <h1>{$ns.selectedCompanyDto->getName()}</h1>
 
     <table>
