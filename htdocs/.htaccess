@@ -33,6 +33,7 @@ RewriteRule ^admin/settings$ /dyn/admin/main/$1/?page=settings [L,QSA]
 RewriteRule ^admin/actions$ /dyn/admin/main/$1/?page=actions [L,QSA]
 RewriteRule ^admin/users$ /dyn/admin/main/$1/?page=users [L,QSA]
 RewriteRule ^admin/banners$ /dyn/admin/main/$1/?page=banners [L,QSA]
+RewriteRule ^admin/newsletter$ /dyn/admin/main/$1/?page=newsletter [L,QSA]
 
 #USER
 RewriteRule ^uprofile/?$  /dyn/main/main/$1/?page=profile&dir=user [L,QSA]
@@ -43,8 +44,9 @@ RewriteRule ^uchangepass/?$  /dyn/main/main/$1/?page=change_password&dir=user [L
 RewriteRule ^cprofile/?$  /dyn/main/main/$1/?page=profile&dir=company [L,QSA]
 RewriteRule ^branches/?(.*)$  /dyn/main/main/$1/?page=branches&dir=company [L,QSA]
 RewriteRule ^smsconf/?$  /dyn/main/main/$1/?page=smsconf&dir=company [L,QSA]
-RewriteRule ^dealers  /dyn/main/main/$1/?page=dealers&dir=company [L,QSA]
-RewriteRule ^uploadprice /dyn/main/main/$1/?page=upload_price&dir=company [L,QSA]
+RewriteRule ^dealers$  /dyn/main/main/$1/?page=dealers&dir=company [L,QSA]
+RewriteRule ^uploadprice$ /dyn/main/main/$1/?page=upload_price&dir=company [L,QSA]
+RewriteRule ^sendpriceemail$ /dyn/main/main/$1/?page=send_price_email&dir=company [L,QSA]
 
 #SERVICE COMPANY
 RewriteRule ^scprofile/?$  /dyn/main/main/$1/?page=profile&dir=servicecompany [L,QSA]

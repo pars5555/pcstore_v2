@@ -76,6 +76,9 @@
                                 <li>
                                     <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
                                 </li>
+                                <li>
+                                    <a href="{$SITE_PATH}/sendpriceemail">{$ns.lm->getPhrase(679)}</a>
+                                </li>
                             {/if}
                             {if $ns.userLevel === $ns.userGroupsServiceCompany}
                                 <li>

@@ -115,6 +115,7 @@
                 <file>ngs/loads/company/CompanySmsconfLoad.class.js</file>
                 <file>ngs/loads/company/CompanyBranchesLoad.class.js</file>
                 <file>ngs/loads/company/CompanyUploadPriceLoad.class.js</file>
+                <file>ngs/loads/company/CompanySendPriceEmailLoad.class.js</file>
                 
                 
                 <!-- Service Company -->
@@ -135,6 +136,7 @@
                 <file>ngs/loads/admin/AdminSettingsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminActionsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminUsersLoad.class.js</file>
+                <file>ngs/loads/admin/AdminNewsletterLoad.class.js</file>
             </files>
         </input>
     </builder>

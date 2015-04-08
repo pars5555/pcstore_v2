@@ -23,6 +23,7 @@
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jquery/jquery.js" ></script>
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jquery/jquery.mobile.custom.min.js" ></script>
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jquery/jquery-ui-1.9.2.js"></script>
+<script type="text/javascript" src="{$SITE_PATH}/js/lib/tinymce4/tinymce/js/tinymce/tinymce.js"></script>
 <script type="text/javascript"  src="{$SITE_PATH}/js/lib/jtree/jstree.min.js"></script>
 <script type="text/javascript" src="{$SITE_PATH}/js/lib/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">

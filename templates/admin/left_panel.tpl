@@ -32,4 +32,7 @@
     <a href="{$SITE_PATH}/admin/actions">
         <li>actions</li>
     </a>
+    <a href="{$SITE_PATH}/admin/newsletter">
+        <li>newsletter</li>
+    </a>
 </ul>

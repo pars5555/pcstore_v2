@@ -51,6 +51,7 @@ ngs.LoadFactory.prototype={
         this.loads["company_smsconf"] = function temp(){return new ngs.CompanySmsconfLoad("company_smsconf", ajaxLoader);};
         this.loads["company_branches"] = function temp(){return new ngs.CompanyBranchesLoad("company_branches", ajaxLoader);};
         this.loads["company_upload_price"] = function temp(){return new ngs.CompanyUploadPriceLoad("company_upload_price", ajaxLoader);};
+        this.loads["company_send_price_email"] = function temp(){return new ngs.CompanySendPriceEmailLoad("company_send_price_email", ajaxLoader);};
 
                 //service company
         this.loads["servicecompany_profile"] = function temp(){return new ngs.ServiceCompanyProfileLoad("servicecompany_profile", ajaxLoader);};
@@ -70,6 +71,7 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_settings"] = function temp(){return new ngs.AdminSettingsLoad("admin_settings", ajaxLoader);};
 	this.loads["admin_actions"] = function temp(){return new ngs.AdminActionsLoad("admin_actions", ajaxLoader);};
 	this.loads["admin_users"] = function temp(){return new ngs.AdminUsersLoad("admin_users", ajaxLoader);};
+	this.loads["admin_newsletter"] = function temp(){return new ngs.AdminNewsletterLoad("admin_newsletter", ajaxLoader);};
 },
 	
     getLoad: function (name) {
