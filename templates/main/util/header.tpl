@@ -74,7 +74,7 @@
                                     <a href="{$SITE_PATH}/cprofile">{$ns.lm->getPhrase(94)}</a>
                                 </li>
                                 <li>
-                                    <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(95)}</a>
+                                    <a href="{$SITE_PATH}/uploadprice">{$ns.lm->getPhrase(90)}</a>
                                 </li>
                                 <li>
                                     <a href="{$SITE_PATH}/sendpriceemail">{$ns.lm->getPhrase(679)}</a>
