@@ -14,10 +14,13 @@
 }
 
 .navbar .navMenu{
-    padding:0 20px;
-    margin:auto;
     background-color:#f7f7f7;
     border-bottom:1px solid #ccc;
+}
+.navMenu_inner{
+    max-width: 1920px;
+    padding:0 20px;
+    margin:auto;    
 }
 
 /********************** Navigation Menu *****************/
@@ -203,6 +206,7 @@
     clear:both;
     padding:20px;
     margin:auto;
+    max-width: 1920px;
 }
 .header_content_inner{
     display:table;
@@ -714,7 +718,19 @@
         -ms-transform:translate(0,0); 
     }
     .modal .modal-content.active{
-        top:0;
+        top:50%;
+    }
+    .modal.forgotModal .modal-content{
+        left:50%;
+
+        transform:translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);  
+        -webkit-transform:translate(-50%,-50%);  
+        -o-transform:translate(-50%,-50%);  
+        -ms-transform:translate(-50%,-50%);         
+    }
+    .modal.forgotModal .modal-content.active{
+        top:50%;
     }
     .modal .modal-content .modal-body{
         display:block;
