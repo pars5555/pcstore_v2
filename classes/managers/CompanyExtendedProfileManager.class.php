@@ -115,7 +115,7 @@ class CompanyExtendedProfileManager extends AbstractManager {
         $this->mapper->insertDto($dto);
     }
 
-    public function addUnsubscribeEmailForCompany($companyId, $md_email) {
+    public function addUnsubscribeEmailForCompany($companyId, $emailAddress) {
         $dto = $this->selectByField('company_id', $companyId);
         if (empty($dto)) {
             return false;
@@ -123,13 +123,13 @@ class CompanyExtendedProfileManager extends AbstractManager {
         $dto = $dto[0];
         $dealerEmails = $dto->getDealerEmails();
         $dealerEmailsArray = explode(';', $dealerEmails);
-        if (in_array($md_email, $dealerEmailsArray)) {
+        if (in_array($emailAddress, $dealerEmailsArray)) {
             $unsubscribedEmails = $dto->getUnsubscribedEmails();
             $unsubscribedEmailsArray = array();
             if (!empty($unsubscribedEmails)) {
                 $unsubscribedEmailsArray = explode(';', $unsubscribedEmails);
             }
-            $unsubscribedEmailsArray [] = $md_email;
+            $unsubscribedEmailsArray [] = $emailAddress;
             $unsubscribedEmailsArray = array_unique($unsubscribedEmailsArray);
             $unsubscribedEmails = implode(';', $unsubscribedEmailsArray);
             $this->updateTextField($dto->getId(), 'unsubscribed_emails', $unsubscribedEmails);

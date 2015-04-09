@@ -127,6 +127,8 @@ class SendPriceEmailAction extends BaseCompanyAction {
             $sentSuccess = is_array($res);
         } elseif ($this->getCmsVar("price_emails_service_provider_name") == 'mailgun') {
             $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"), $this->getCmsVar("mailgun_max_recipients_number_per_email"));
+            $body .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
+            $body .= '<p style="font-size:10px"><a href="http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 'c') . '/' . $companyId .'?email=%recipient%">Click here to unsubscribe.</a></p>';
             $mailGunResult = $mailgunEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments);
             $allIsOk = true;
             $res = array();

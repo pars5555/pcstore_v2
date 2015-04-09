@@ -17,7 +17,7 @@ class UnsubscribeEmailFromCompanyLoad extends BaseGuestLoad {
         if (!isset($this->args[1])) {
             exit;
         }
-        if (!isset($_REQUEST['md_email'])) {
+        if (!isset($_REQUEST['email'])) {
             exit;
         }
         $companyId = intval($this->args[1]);
@@ -37,7 +37,7 @@ class UnsubscribeEmailFromCompanyLoad extends BaseGuestLoad {
         } else {
             $companyExtendedProfileManager = CompanyExtendedProfileManager::getInstance();
         }
-        $md_email = $this->secure($_REQUEST['md_email']);
+        $md_email = $this->secure($_REQUEST['email']);
         $companyExtendedProfileManager->addUnsubscribeEmailForCompany($companyId, $md_email);
     }
 
