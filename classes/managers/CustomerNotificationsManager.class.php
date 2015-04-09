@@ -161,7 +161,7 @@ class CustomerNotificationsManager extends AbstractManager {
         foreach ($last24HoursPrices as $cpl) {
             $datetime = $cpl->getUploadDateTime();
             $title = $this->getPhrase(482) . ' (' . $cpl->getCompanyName() . ')';
-            $pageToRedirect = 'companies';
+            $pageToRedirect = HTTP_PROTOCOL . HTTP_HOST . '/price/last_price/' . $cpl->getCompanyId();
             $iconUrl = HTTP_PROTOCOL . HTTP_HOST . '/images/small_logo/' . $cpl->getCompanyId();
             $customerNotificationsDtos[] = new CustomerNotificationDto($datetime, $title, $pageToRedirect, $iconUrl);
         }
