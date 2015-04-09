@@ -4,6 +4,7 @@ require_once (CLASSES_PATH . "/loads/main/BaseGuestLoad.class.php");
 require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryHierarchyManager.class.php");
+require_once (CLASSES_PATH . "/managers/DealsManager.class.php");
 
 /**
  *
@@ -45,6 +46,10 @@ class ItemLoad extends BaseGuestLoad {
                 $this->initRootCategories();
             }
         }
+
+        $dealsManager = DealsManager::getInstance();
+        $dealsDtos = $dealsManager->getAllEnableDeals();
+        $this->addParam("deals", $dealsDtos);
     }
 
     private function initRootCategories() {

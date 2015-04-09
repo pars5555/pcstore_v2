@@ -19,7 +19,7 @@ class DealsManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-   
+
      * @return
      */
     function __construct() {
@@ -28,7 +28,7 @@ class DealsManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-   
+
      * @return
      */
     public static function getInstance() {
@@ -42,6 +42,15 @@ class DealsManager extends AbstractManager {
 
     public function getTodayDeal() {
         return $this->mapper->getDateDailyDeal(date('Y-m-d'));
+    }
+
+    public function getAllEnableDeals() {
+        $allEnableDeals = $this->mapper->getAllEnableDeals();
+        $deals = array();
+        foreach ($allEnableDeals as $deal) {
+            $deals[$deal->getItemId()] = $deal;
+        }
+        return $deals;
     }
 
     public function getLightingDeals() {

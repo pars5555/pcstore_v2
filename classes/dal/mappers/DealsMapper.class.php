@@ -81,6 +81,15 @@ class DealsMapper extends AbstractMapper {
         $result = $this->fetchRows($sqlQuery);
         return $result;
     }
+    
+    public static $GET_ALL_ENABLE_DEALS = "SELECT * FROM `%s` WHERE `enable`=1 AND CONCAT(`date`, ' ', `start_time`)<='%s' AND DATE_ADD( CONCAT(`date`, ' ', `start_time`), INTERVAL `duration_minutes` MINUTE)>='%s'";
+
+    public function getAllEnableDeals() {
+        $datetime = date('Y-m-d H:i:s');
+        $sqlQuery = sprintf(self::$GET_ALL_ENABLE_DEALS, $this->getTableName(), $datetime, $datetime);
+        $result = $this->fetchRows($sqlQuery);
+        return $result;
+    }
 
     public static $GET_DEAL_BY_PROMO_CODE = "SELECT * FROM `%s` WHERE `promo_code`='%s' AND `enable`=1 AND
 		DATE_ADD( CONCAT(`date`, ' ', `start_time`), INTERVAL `duration_minutes` MINUTE)>='%s'";

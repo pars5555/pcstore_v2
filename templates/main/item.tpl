@@ -55,12 +55,45 @@
                             </p> 
                         {else}
                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerItemPrice())}                        
-                            <p><span>{$ns.lm->getPhrase(588)}:</span> <span>{$ns.item->getListPriceAmd()|number_format} Դր.</span></p>
-                            <p class="price"><span>{$ns.lm->getPhrase(88)}:</span> <span>{$price_in_amd|number_format} Դր.</span></p>
-                            <p>{math equation="100-x*100/y" x=$price_in_amd y=$ns.item->getListPriceAmd() assign="list_price_discount"}
-                                <span>{$ns.lm->getPhrase(589)}:</span> <span>{($ns.item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span></p>                        
-                            {/if} 
-                            {if isset($showvatprice)}
+                            <p>
+                                <span>{$ns.lm->getPhrase(588)}:</span> 
+                                <span>{$ns.item->getListPriceAmd()|number_format} Դր.</span>
+                            </p>
+
+
+                            <p class="price">
+                                <span>{$ns.lm->getPhrase(88)}:</span> 
+                                <span>{$price_in_amd|number_format} Դր.</span>
+                            </p>
+
+                            {assign var="item_id" value=$ns.item->getId()}
+                            {if $item_id|array_key_exists:$ns.deals}
+                                <p>
+                                    <span style="color:#8b0000;font-weight: 600">{$ns.lm->getPhrase(560)}:</span>
+                                    <span style="color:#8b0000;font-weight: 600">
+                                        {assign var="deal_price_amd" value=$ns.deals.$item_id->getPriceAmd()}
+                                        {$ns.deals.$item_id->getPriceAmd()|number_format} Դր.
+                                    </span>
+                                </p>
+                                <p>
+                                    <span style="color:#8b0000;font-weight: 600">{$ns.lm->getPhrase(450)}:</span>
+                                    <span style="color:#8b0000;font-weight: 600">{$ns.deals.$item_id->getPromoCode()}</span>
+                                </p>
+                            {/if}
+
+                            <p>
+
+                                {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($ns.item->getCustomerItemPrice())} 
+                                {if isset($deal_price_amd)}
+                                    {assign var="price_in_amd" value=$deal_price_amd}
+                                {/if}
+                                {math equation="100-x*100/y" x=$price_in_amd y=$ns.item->getListPriceAmd() assign="list_price_discount"}
+                                <span>{$ns.lm->getPhrase(589)}:</span> 
+                                <span>{($ns.item->getListPriceAmd()-$price_in_amd)|number_format} ({$list_price_discount|number_format}%)</span>
+                            </p>                        
+                        {/if} 
+
+                        {if isset($showvatprice)}
                             <p>
                                 <span>{$ns.lm->getPhrase(488)}:</span>
                                 <span>
@@ -77,6 +110,7 @@
                                 </span>
                             </p> 
                         {/if}
+
                         {if $ns.item->getIsDealerOfThisCompany()}
                             <p>
                                 <span>{$ns.lm->getPhrase(66)}:</span>
@@ -163,7 +197,7 @@
         {/if}
     </div>
 {else}
-<h1>{$ns.lm->getPhrase(300)}</h1>
+    <h1>{$ns.lm->getPhrase(300)}</h1>
 {/if}
 </div>
 

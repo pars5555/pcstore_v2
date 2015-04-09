@@ -7,6 +7,7 @@ require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryHierarchyManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryManager.class.php");
 require_once (CLASSES_PATH . "/managers/CmsSearchRequestsManager.class.php");
+require_once (CLASSES_PATH . "/managers/DealsManager.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyDealersManager.class.php");
 require_once (CLASSES_PATH . "/managers/checkout/CreditManager.class.php");
 require_once (CLASSES_PATH . "/managers/CreditSuppliersManager.class.php");
@@ -228,7 +229,10 @@ class HomeLoad extends BaseGuestLoad {
         }
         $this->addParam('itemSearchManager', ItemSearchManager::getInstance());
 
-        //var_dump(microtime(true)-$mt);exit;
+
+         $dealsManager = DealsManager::getInstance();
+        $dealsDtos = $dealsManager->getAllEnableDeals();
+        $this->addParam("deals", $dealsDtos);
     }
 
     private function putCategoriesHierarchiesInMapChildParent($allCategoriesHierarchies) {
@@ -328,6 +332,7 @@ class HomeLoad extends BaseGuestLoad {
         return TEMPLATES_DIR . "/main/home.tpl";
     }
 
+    
 }
 
 ?>

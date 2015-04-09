@@ -73,16 +73,35 @@
                                         </span>
                                     </p>
                                 {/if}                                        
+                                {assign var="item_id" value=$item->getId()}
+                                {if $item_id|array_key_exists:$ns.deals}
+                                    <p >
+                                        <span style="color:#8b0000;font-weight: 600">{$ns.lm->getPhrase(560)}:</span>
+                                        <span style="color:#8b0000;font-weight: 600">
+                                            {$ns.deals.$item_id->getPriceAmd()|number_format} Դր.
+                                            {assign var="deal_price_amd" value=$ns.deals.$item_id->getPriceAmd()}
+
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style="color:#8b0000;font-weight: 600">{$ns.lm->getPhrase(450)}:</span>
+                                        <span style="color:#8b0000;font-weight: 600">{$ns.deals.$item_id->getPromoCode()}</span>
+                                    </p>
+                                {/if}
                                 {if $ns.userLevel === $ns.userGroupsAdmin}
                                     <p>
                                         <span>Customer Price:</span>
-                                        <span>
+                                        <span>                                            
                                             {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
                                             {$price_in_amd|number_format} Դր.
                                         </span>
                                     </p>
                                 {/if}                                        
                                 {if $item->getIsDealerOfThisCompany()!=1}
+                                    {assign var="price_in_amd" value=$ns.itemManager->exchangeFromUsdToAMD($item->getCustomerItemPrice())}
+                                    {if isset($deal_price_amd)}
+                                        {assign var="price_in_amd" value=$deal_price_amd}
+                                    {/if}
                                     {math equation="100-x*100/y" x=$price_in_amd y=$item->getListPriceAmd() assign="list_price_discount"}
                                     {if $list_price_discount>0}
                                         <p>
