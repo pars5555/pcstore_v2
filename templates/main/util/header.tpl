@@ -178,7 +178,7 @@
             {**************************** LOGO ********************************}
 
             <a  href="{$SITE_PATH}" class="site_logo">
-                <img src="{$SITE_PATH}/img/pcstore_logo.png" alt="">
+                <img src="{$SITE_PATH}/img/pcstore_logo_small.png" alt="">
             </a>
 
             {**************************** BUILD PC ********************************}
