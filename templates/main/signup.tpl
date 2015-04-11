@@ -2,14 +2,10 @@
         <div class="sign_up_wrapper">
             <form role="form" method="post" action="{$SITE_PATH}/dyn/main/do_signup" autocomplete="off">
                 {if isset($ns.success_message)}
-                    <div class="alert alert-success">
-                        <strong class="success"> {$ns.success_message}</strong>
-                    </div>
+                    <div class="success">{$ns.success_message}</div>
                 {/if}
                 {if isset($ns.error_message)}
-                    <div class="alert alert-danger">
-                        <strong class="error"> {$ns.error_message}</strong>
-                    </div>
+                    <div class="error">{$ns.error_message}</div>
                 {/if}
                 <h4 class="title">Create account</h4>
                 <div class="form-group">

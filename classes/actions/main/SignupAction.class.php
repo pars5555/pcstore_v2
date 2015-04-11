@@ -73,6 +73,7 @@ class SignupAction extends GuestAction {
         $params = array("user_name" => $firstName, "activation_code" => $activation_code);
         $emailSenderManager->sendEmail('registration', $email, $subject, $template, $params);
         unset($_SESSION['signup_req']);
+        $_SESSION["signup_message"] = true;
         $this->redirect('');
     }
 

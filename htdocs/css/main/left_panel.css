@@ -1,6 +1,7 @@
 .left-panel {
     display:table-cell;
     width:300px;
+    min-width:250px;
     vertical-align:top;
     position: relative;
 
@@ -143,7 +144,9 @@
 }
 .left-panel .product_checkbox a{
     color:#428bca;	
+    display: block;
     font-weight: 600;
+    word-wrap: break-word;
 }
 
 /*********************************************************************/

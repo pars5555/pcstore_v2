@@ -12,6 +12,7 @@ class MainLoad extends BaseGuestLoad {
         $this->checkInvitation();
         $this->initLanguage();
         $this->checkUserActivation();
+        $this->getSignupActivationMessage();
     }
 
     public function checkUserActivation() {
@@ -68,6 +69,13 @@ class MainLoad extends BaseGuestLoad {
             $language = $_COOKIE["ul"];
         }
         $this->addParam("language", $language);
+    }
+
+    public function getSignupActivationMessage() {
+        if (isset($_SESSION["signup_message"])) {
+            $this->addParam("signup_message", $_SESSION["signup_message"]);
+            unset($_SESSION["signup_message"]);
+        }
     }
 
     public function getTemplate() {

@@ -221,109 +221,137 @@
         </div>
     </div>
 </header>
-{if $ns.userLevel === $ns.userGroupsGuest}
-    <div id="loginDialog"></div>
-    <!-- Modal -->
-    <div  class="modal myModal hide" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="overlay"></div>
-        <div class="modal-content f_modal_content">
-            <button class="close_button"></button>
-            <div class="modal-body">
-                <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
-                    <div class="login-wrapper">
-                        <h4 class="title">Sign in with your existing account</h4>
-                        <div class="form-group">
-                            <label class="input_label label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
-                            <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
+<section>
+    
+    <div id="scroll_page_top" class="scroll_page_top fontAwesome"></div>
+    
+    {*************************************************************************************************}
+    {*                                                                                               *}
+    {*                                  LOGIN REGISTRATION DIALOG                                    *}
+    {*                                                                                               *}
+    {*************************************************************************************************}
+    
+    {if $ns.userLevel === $ns.userGroupsGuest}
+        <!-- Modal -->
+        <div  class="modal myModal hide" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="overlay"></div>
+            <div class="modal-content f_modal_content">
+                <button class="close_button"></button>
+                <div class="modal-body">
+                    <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
+                        <div class="login-wrapper">
+                            <h4 class="title">Sign in with your existing account</h4>
+                            <div class="form-group">
+                                <label class="input_label label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
+                                <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
+                                <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
+                                <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
+                            </div>
+                            <div style="color:#de4c34;" class="error"></div>
+                            <div class="login-buttons">
+                                <input id="mainLoginBtn" type="submit" class="login_button blue button" value="{$ns.lm->getPhrase(1)}"/>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
-                            <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                            <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
-                        </div>
-                        <div style="color:#de4c34;" class="error"></div>
-                        <div class="login-buttons">
-                            <input id="mainLoginBtn" type="submit" class="login_button blue button" value="{$ns.lm->getPhrase(1)}"/>
-                        </div>
-                    </div>
-                </form>
-                <div class="modal_cols">
-                    <div class="social-login-wrapper">
-                        <h4 class="title">Sign in with your social network</h4>
-                        <div class="social-login">
-                            <a class="facebook social-login-link" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
-                            <a class="linkedin social-login-link" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
-                            <div class="google social-login-link" id="googleLoginBtn" > <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal_cols create-account-wrapper">
-                    <h4 class="title">Create your own account</h4>
-                    <p>
-                        It's fast, easy and personalized!
-                    </p>
-                    <ul>
-                        <li>
-                            Save billing & shipping info for Express Checkout
-                        </li>
-                        <li>
-                            Follow favorite brands & hosts
-                        </li>
-                        <li>
-                            Get product tips & extras
-                        </li>
-                        <li>
-                            Customize settings & track purchases
-                        </li>
-                    </ul>
-                    <div class="create-account-wrapper">
-                        <a href="{$SITE_PATH}/signup" class="registration blue button">{$ns.lm->getPhrase(5)}</a>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <div  class="modal forgotModal hide" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="overlay"></div>
-        <div class="modal-content f_modal_content">
-            <button class="close_button"></button>
-            <div class="modal-body">
-                <div class="form-group">
-                    <div id="forgotPasswordErrorMessage" class="error"></div>
-                    <div id="forgotPasswordSuccessMessage" class="success"></div>
-                    <label class="input_label label" for="email">Your Email Address</label>
-                    <form id="forgotPasswordForm" autocomplete="off">
-                        <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
-                        <button class="send_pass button blue" id="forgotPasswordBtn">
-                            Send
-                        </button>
-                        <p>
-                            we'll send you email with your password
-                        </p>
                     </form>
+                    <div class="modal_cols">
+                        <div class="social-login-wrapper">
+                            <h4 class="title">Sign in with your social network</h4>
+                            <div class="social-login">
+                                <a class="facebook social-login-link" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
+                                <a class="linkedin social-login-link" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
+                                <div class="google social-login-link" id="googleLoginBtn" > <img src="{$SITE_PATH}/img/googleplus.png" alt="" /> sign in with google </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_cols create-account-wrapper">
+                        <h4 class="title">Create your own account</h4>
+                        <p>
+                            It's fast, easy and personalized!
+                        </p>
+                        <ul>
+                            <li>
+                                Save billing & shipping info for Express Checkout
+                            </li>
+                            <li>
+                                Follow favorite brands & hosts
+                            </li>
+                            <li>
+                                Get product tips & extras
+                            </li>
+                            <li>
+                                Customize settings & track purchases
+                            </li>
+                        </ul>
+                        <div class="create-account-wrapper">
+                            <a href="{$SITE_PATH}/signup" class="registration blue button">{$ns.lm->getPhrase(5)}</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
-    </div>
-{/if}
-
-<div id="mainPopup" class="pop_up_container main_pop_up">
-    <div class="overlay"></div>
-    <div class="pop_up">
-        <div class="close_button"></div>
-        <h3 class="pop_up_title f_pop_up_title"></h3>
-        <div class="pop_up_content f_pop_up_content">
-
+                 
+    {*************************************************************************************************}
+    {*                                                                                               *}
+    {*                                       FORGOT PASSWORD                                         *}
+    {*                                                                                               *}
+    {*************************************************************************************************}       
+                        
+                        
+        <div  class="modal forgotModal hide" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="overlay"></div>
+            <div class="modal-content f_modal_content">
+                <button class="close_button"></button>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div id="forgotPasswordErrorMessage" class="error"></div>
+                        <div id="forgotPasswordSuccessMessage" class="success"></div>
+                        <label class="input_label label" for="email">Your Email Address</label>
+                        <form id="forgotPasswordForm" autocomplete="off">
+                            <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
+                            <button class="send_pass button blue" id="forgotPasswordBtn">
+                                Send
+                            </button>
+                            <p>
+                                we'll send you email with your password
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="f_pop_up_confirm_btn button blue"></div>
-        <div class="f_pop_up_cancel_btn button blue"></div>
+    {/if}
+    
+    {*************************************************************************************************}
+    {*                                                                                               *}
+    {*                                           MAIN POPUP                                          *}
+    {*                                                                                               *}
+    {*************************************************************************************************}
+
+    <div id="mainPopup" class="pop_up_container main_pop_up">
+        <div class="overlay"></div>
+        <div class="pop_up">
+            <div class="close_button"></div>
+            <h3 class="pop_up_title f_pop_up_title"></h3>
+            <div class="pop_up_content f_pop_up_content">
+
+            </div>
+            <div class="f_pop_up_confirm_btn button blue"></div>
+            <div class="f_pop_up_cancel_btn button blue"></div>
+        </div>
     </div>
-</div>
 
-<input id="main_popup_default_title" type="hidden" value="{$ns.lm->getPhrase(463)}" />
-<input id="main_popup_default_content" type="hidden" value="{$ns.lm->getPhrase(374)}" />
-<input id="main_popup_default_confirm_btn" type="hidden" value="{$ns.lm->getPhrase(485)}" />
-<input id="main_popup_default_cancel_btn" type="hidden" value="{$ns.lm->getPhrase(49)}" />
+    <input id="main_popup_default_title" type="hidden" value="{$ns.lm->getPhrase(483)}" />
+    <input id="main_popup_default_content" type="hidden" value="{$ns.lm->getPhrase(374)}" />
+    <input id="main_popup_default_confirm_btn" type="hidden" value="{$ns.lm->getPhrase(485)}" />
+    <input id="main_popup_default_cancel_btn" type="hidden" value="{$ns.lm->getPhrase(49)}" />
 
-<div class="main_loader hidden" id="main_loader"></div>
+    <div class="main_loader hidden" id="main_loader"></div>
+
+    {if isset($ns.signup_message)}
+        <input id="signup_activation_message" type="hidden" value="{$ns.lm->getPhrase(522)}" />
+    {/if}
+</section>

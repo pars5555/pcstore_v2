@@ -117,6 +117,7 @@
     display: block;
     height: 86px;
     overflow: hidden;
+    word-break: break-all;
 }
 .listing_item .listing_item_title .listing_item_brand{
     color: #0e53a5;

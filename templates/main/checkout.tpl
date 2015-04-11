@@ -92,8 +92,11 @@
         <div class="pop_up">
             <div class="close_button"></div>
             <div class="pop_up_title">{$ns.lm->getPhrase(316)}</div>
-            <p> Դուք կստանաք հաղորդագրություն այս համարին,որպեսզի հաստատեք Ձեր պատվերը Բջջային հեռախոս</p>
+            <p> {$ns.lm->getPhrase(362)}</p>
             <div class="form-group">
+                <label class="label input_label">
+                    {$ns.lm->getPhrase(309)}
+                </label>
                 <input class="text" type="text" id="confirm_phone_number" />
                 <div class="error" style="display:none;"></div>
                 <button class="button blue">{$ns.lm->getPhrase(317)}</button>

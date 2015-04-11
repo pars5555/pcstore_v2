@@ -44,8 +44,21 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.hideErrorSuccessMessages();
         this.initSocialLogins();
         this.searchForm();
+        this.signupActivationMessage();
+        this.scrollPageToTop();
 
 
+    },
+    scrollPageToTop : function(){
+        jQuery("#scroll_page_top").on("click",function(){
+           jQuery("html,body").animate({scrollTop:0},500); 
+        });
+    },
+    signupActivationMessage: function () {
+        var signup_message = jQuery("#signup_activation_message");
+        if (signup_message.length > 0) {
+            this.initPopup(false,signup_message.val());
+        }
     },
     searchForm: function () {
         jQuery('#search_text_form').submit(function () {
@@ -91,7 +104,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     hideErrorSuccessMessages: function () {
         var msgTimeout;
         function hide(time) {
-            time = time ? time : 5000;
+            time = time ? time : 7000;
             window.clearTimeout(msgTimeout);
             var msg = jQuery(".error,.success");
             msgTimeout = window.setTimeout(function () {
@@ -140,9 +153,9 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         var default_confirm_btn = jQuery("#main_popup_default_confirm_btn").val();
         var default_cancel_btn = jQuery("#main_popup_default_cancel_btn").val();
 
-        title = typeof title === 'undefined' ? default_title : title;
-        content = typeof content === 'undefined' ? default_content : content;
-        confirm = typeof confirm === 'undefined' ? default_confirm_btn : confirm;
+        title = title ? title : default_title;
+        content = content ? content : default_content;
+        confirm = confirm ? confirm : default_confirm_btn;
 
         if (typeof cancel === 'undefined') {
             jQuery(".f_pop_up_cancel_btn").remove();
@@ -162,7 +175,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
                 confirm_click();
             }
             jQuery("#mainPopup").removeClass("active hide");
-
         });
     },
     mainPopupActions: function () {

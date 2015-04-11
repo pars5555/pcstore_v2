@@ -357,7 +357,10 @@
     max-width: 550px;
 }
 .cell_phone_number_pop_up .text{
-    margin:20px auto;
+    margin-bottom:20px;
+}
+.cell_phone_number_pop_up .label{
+    text-align: left;
 }
 .cell_phone_number_pop_up .form-group{
     max-width: 300px;

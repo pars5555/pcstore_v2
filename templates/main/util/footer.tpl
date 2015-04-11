@@ -62,7 +62,7 @@
                             <p>{$ns.lm->getPhrase(6)}</p>
                         </a>
                     {/if}
-                    <a href="/invite">
+                    <a href="/uinvite">
                         <p>{$ns.lm->getPhrase(139)}</p>
                     </a>
                 </div>

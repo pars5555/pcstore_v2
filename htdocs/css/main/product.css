@@ -109,7 +109,7 @@
     background-position: center center;
     background-size:contain;
     background-color: transparent;
-    
+
     -moz-border-radius: inherit;
     -webkit-border-radius: inherit;
     -khtml-border-radius: inherit; 
@@ -266,8 +266,13 @@
 /*****************************************************************************************/
 
 .product_other_info{
-    display:inline-block;
-    vertical-align: top;    
+    /*    display:inline-block;
+        vertical-align: top;  */
+    text-align: center;
+    color:#CC0000;
+    margin:10px auto;
+    font-weight: 600;
+    font-size: 17px;
 }
 .product-wrapper .product-info{
     display:table-cell;
