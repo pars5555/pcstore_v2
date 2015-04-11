@@ -146,6 +146,33 @@
     background: url("../../img/new.png") no-repeat scroll center center / contain transparent;
 }
 
+.listing_item_warranty{
+    display:block;
+    width:70px;
+    height:70px;
+    position:absolute;
+    top:-20px;
+    right:-20px;
+    background: url("../../img/warranty.png") no-repeat scroll center center / contain transparent;
+}
+.listing_item_warranty .listing_item_warranty_text{
+    left: 49%;
+    position: absolute;
+    text-align: center;
+    top: 13px;
+    color:#fff;
+
+    transform:translate(-50%,0%);
+    -moz-transform:translate(-50%,0%);  
+    -webkit-transform:translate(-50%,0%);  
+    -o-transform:translate(-50%,0%);  
+    -ms-transform:translate(-50%,0%);
+}
+.listing_item_warranty .warranty_month_count{
+    font-size: 15px;
+    font-weight: 600;
+}
+
 /**************************************************************************************/
 /*                                                                                    */
 /*                                  LISTING 1 COLUMN                                  */

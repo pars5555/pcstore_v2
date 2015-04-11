@@ -33,6 +33,13 @@
                             {if $new_item == true}
                                 <div class="listing_item_new"></div>
                             {/if}
+                            {if $item->getWarranty()>0 || $item->getWarranty()=='lifetime'}
+                                <div class="listing_item_warranty">
+                                    <div class="listing_item_warranty_text">
+                                        <div class="warranty_month_count">{$item->getWarranty()}</div> 
+                                    </div>
+                                </div>
+                            {/if}
                         </a>
                     </div>
                     <div class="listing_item_details">

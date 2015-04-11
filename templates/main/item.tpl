@@ -124,7 +124,6 @@
                         {if $ns.item->getWarranty()>0 || $ns.item->getWarranty()=='lifetime'}
                             <div class="product_warranty">
                                 <div class="product_warranty_text">
-                                    {*                                    {$ns.lm->getPhrase(82)}*}
                                     <div class="warranty_month_count">{$ns.item->getWarranty()}</div> 
                                     <div>{if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</div>  
                                 </div>

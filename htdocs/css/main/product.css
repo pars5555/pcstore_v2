@@ -247,8 +247,14 @@
     position: absolute;
     text-align: center;
     top: 40px;
-    transform: translate(-50%, 0px);
     width: 80px;
+    color:#fff;
+
+    transform:translate(-50%,0%);
+    -moz-transform:translate(-50%,0%);  
+    -webkit-transform:translate(-50%,0%);  
+    -o-transform:translate(-50%,0%);  
+    -ms-transform:translate(-50%,0%);
 }
 .product_warranty .warranty_month_count{
     font-size: 35px;

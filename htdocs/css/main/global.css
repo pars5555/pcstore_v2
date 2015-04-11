@@ -181,6 +181,7 @@ select::-ms-expand{
 }
 
 .select_wrapper{
+    min-width: 70px;
     overflow:hidden;
     position:relative;
     background-color:#f7f7f7;

@@ -43,7 +43,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
         this.hideErrorSuccessMessages();
         this.initSocialLogins();
+        this.searchForm();
 
+
+    },
+    searchForm: function () {
         jQuery('#search_text_form').submit(function () {
             jQuery('#search_text_form :input').each(function () {
                 if (jQuery(this).val() == '' || jQuery(this).val() == 0)
@@ -53,7 +57,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             });
             return true;
         });
-
     },
     initSocialLogins: function () {
         if (jQuery('#googleLoginBtn').length > 0) {
@@ -86,11 +89,21 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         }
     },
     hideErrorSuccessMessages: function () {
-        window.setInterval(function () {
-            jQuery(".error,.success").slideUp(300, function () {
-                jQuery(".error,.success").html("");
-            });
-        }, 7000);
+        var msgTimeout;
+        function hide(time) {
+            time = time ? time : 5000;
+            window.clearTimeout(msgTimeout);
+            var msg = jQuery(".error,.success");
+            msgTimeout = window.setTimeout(function () {
+                msg.slideUp(300, function () {
+                    msg.html("").show();
+                });
+            }, time);
+        }
+        hide();
+        jQuery("form").on("submit", function () {
+            hide();
+        });
     },
     initMainTabsContents: function () {
         var self = this;
@@ -238,7 +251,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             /*Close drop down menu*/
             jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_toggle").removeClass("active");
             jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_menu").slideUp(500);
-            
+
             /*Click on other elements*/
 
             jQuery(document).on("click", function (event) {
@@ -273,7 +286,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             jQuery('#forgotPasswordErrorMessage').html("");
             jQuery('#forgotPasswordSuccessMessage').html("");
         });
-        jQuery("#forgotPasswordBtn").on("click", function () {
+        jQuery("#forgotPasswordForm").on("submit", function () {
             self.mainLoader(true);
         });
 
@@ -331,24 +344,28 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             window.location.href = jQuery(this).parent().attr("href");
         });
     },
-    leftPanel : function(){
-        jQuery(".f_left-panel-btn").on("click",function(){
-           jQuery("#mainLeftPanel").toggleClass("active");
-           jQuery(".f_nav_menu").removeClass("active");
+    leftPanel: function () {
+        jQuery(".f_left-panel-btn").on("click", function () {
+            jQuery("#mainLeftPanel").toggleClass("active");
+            jQuery(".f_nav_menu").removeClass("active");
         });
     },
-    mainNavigationMenu : function(){
-        jQuery(".f_nav_menu_btn").on("click",function(){
-           jQuery(".f_nav_menu").toggleClass("active");
-           jQuery("#mainLeftPanel").removeClass("active");
+    mainNavigationMenu: function () {
+        jQuery(".f_nav_menu_btn").on("click", function () {
+            jQuery(".f_nav_menu").toggleClass("active");
+            jQuery("#mainLeftPanel").removeClass("active");
         });
     },
-    notificationScrolling : function(){
-      jQuery("#notificationListWrapper").on("mouseover",function(){
-          jQuery("body").addClass("disable_scrolling");
-      });
-      jQuery("#notificationListWrapper").on("mouseleave",function(){
-          jQuery("body").removeClass("disable_scrolling");
-      });
+    notificationScrolling: function () {
+//        jQuery("#notificationListWrapper").on("mouseover", function () {
+//            jQuery(this).bind("scroll mousewheel", function () {
+//                console.log(123);
+//                jQuery("html").animate({scrollTop: 0}, '0');
+//            });
+//        });
+//        jQuery("#notificationListWrapper").on("mouseleave", function () {
+//            console.log(0000000000000000000000000);
+//            jQuery(this).unbind("scroll mousewheel");
+//        });
     }
 });

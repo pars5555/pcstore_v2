@@ -4,9 +4,6 @@ body{
     color:#333;
     font-family:sans-serif;
 }
-body.disable_scrolling{
-    overflow: hidden;
-}
 
 /**************************************************************************************/
 /*                                         WRAPPER                                    */
