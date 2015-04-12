@@ -182,6 +182,19 @@
                     <a  href="{$SITE_PATH}" class="site_logo">
                         <img src="{$SITE_PATH}/img/pcstore_logo_small.png" alt="">
                     </a>
+
+                    {**************************** BUILD PC ********************************}
+                    <div class="build_pc_animation build_pc_animation_top">
+                        <div class="build_pc_link f_build_pc_link" data-href="{$SITE_PATH}/buildpc">
+                            <object class="build_pc_obj">
+                                <param name="movie" value="{$SITE_PATH}/img/buildpc/buildpc.swf">
+                                <param name="wmode" value="transparent" />
+                                <embed class="build_pc_obj" wmode=transparent allowfullscreen="true" allowscriptaccess="always" src="{$SITE_PATH}/img/buildpc/buildpc.swf"></embed>
+                            </object>
+                            <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.png">
+                        </div>
+                    </div> 
+
                     <div class="search_block">
                         {**************************** SEARCH ********************************}
                         <div class="search_container">
@@ -209,12 +222,13 @@
 
             {**************************** BUILD PC ********************************}
             <div class="build_pc_animation">
-                <div id="build_pc_link" class="build_pc_link" data-href="{$SITE_PATH}/buildpc">
+                <div class="build_pc_link f_build_pc_link" data-href="{$SITE_PATH}/buildpc">
                     <object class="build_pc_obj">
                         <param name="movie" value="{$SITE_PATH}/img/buildpc/buildpc.swf">
                         <param name="wmode" value="transparent" />
                         <embed class="build_pc_obj" wmode=transparent allowfullscreen="true" allowscriptaccess="always" src="{$SITE_PATH}/img/buildpc/buildpc.swf"></embed>
                     </object>
+                    <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.png">
                 </div>
             </div> 
 

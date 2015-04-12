@@ -49,9 +49,20 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.buildPcLink();
     },
     buildPcLink: function () {
-        jQuery("#build_pc_link").on("click mousedown touchstart tap", function () {
+        jQuery(".f_build_pc_link").on("click mousedown touchstart tap", function () {
             window.location.href = jQuery(this).attr("data-href");
         });
+        
+        var hasFlash = false;
+        try {
+            hasFlash = Boolean(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
+        } catch (exception) {
+            hasFlash = ('undefined' != typeof navigator.mimeTypes['application/x-shockwave-flash']);
+        }
+        
+        if(!hasFlash){
+            jQuery(".f_build_pc_link").addClass("no_flash");
+        }
     },
     scrollPageToTop: function () {
         jQuery("#scroll_page_top").on("click", function () {

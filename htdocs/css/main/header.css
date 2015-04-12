@@ -217,41 +217,6 @@
     vertical-align: middle;
 }
 
-/***************** BUILD PC ANIMATION ****************/
-
-.build_pc_animation{
-    display: table-cell;
-    vertical-align: middle;
-    padding-left:20px;
-    width:284px;
-    font-size: 0;
-}
-
-.build_pc_animation .build_pc_link{
-    display:block;
-    z-index: 100;
-    cursor: pointer;
-    position: relative;
-}
-.build_pc_animation .build_pc_link::before {
-    color: #63b4fb;
-    content: "Build PC";
-    font-size: 30px;
-    font-weight: 600;
-    height: 100%;
-    left: 5px;
-    position: absolute;
-    top: 5px;
-    width: 100%;
-    z-index: 1000;
-}
-
-.build_pc_animation .build_pc_obj{
-    width:284px;
-    height:160px;
-    z-index: -100;
-}
-
 /*Header Content Inner*/
 
 .header_content_inner{
@@ -316,6 +281,52 @@
 /**************************************************************************************/
 /*                                   BUILD PC LINK                                    */
 /**************************************************************************************/
+
+.build_pc_animation{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left:20px;
+    width:284px;
+    font-size: 0;
+}
+.build_pc_animation.build_pc_animation_top{
+    display:none;
+}
+.build_pc_animation .build_pc_link{
+    display:inline-block;
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+}
+.build_pc_animation .build_pc_link::before {
+    color: #63b4fb;
+    content: "Build PC";
+    font-size: 30px;
+    font-weight: 600;
+    height: 100%;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    z-index: 1000;
+    text-align: left;
+}
+.build_pc_animation .build_pc_link .build_pc_img{
+    display:none;
+}
+.build_pc_animation .build_pc_link.no_flash .build_pc_img.build_pc_obj{
+    display:block;
+}
+
+.build_pc_animation .build_pc_obj{
+    width:284px;
+    height:160px;
+    z-index: -100;
+    display:block;
+}
+.build_pc_animation .build_pc_link.no_flash .build_pc_obj{
+    display:none;
+}
 
 /**************************************************************************************/
 /*                             MAIN POPUP SIGNIN SIGNUP                               */
@@ -603,8 +614,25 @@
         text-align: center;
     }
 
+
+    /***************** BUILD PC ANIMATION ****************/
+
+    .build_pc_animation{
+        padding-left:10px;
+        width:213px;
+    }
+    .build_pc_animation .build_pc_link::before {
+        font-size: 20px;
+    }
+
+    .build_pc_animation .build_pc_obj{
+        width:213px;
+        height:120px;
+    }
+
 }
 @media (max-width : 768px){
+    
 
     /**************************************MAIN POPUP*************************************/
     .modal-body .modal_cols{
@@ -612,11 +640,26 @@
     }
 
     /*****************************HEADER SEARCH & LOGO & BUILD PC*************************/
-    .header_content{
+    .header_content_container{
         padding:10px;
     }
     .site_logo{
         width:170px;
+    }
+
+
+    /***************** BUILD PC ANIMATION ****************/
+
+    .build_pc_animation{
+        width:142px;
+    }
+    .build_pc_animation .build_pc_link::before {
+        font-size: 15px;
+    }
+
+    .build_pc_animation .build_pc_obj{
+        width:142px;
+        height:80px;
     }
 }
 
@@ -661,6 +704,18 @@
         display: table-caption;
         caption-side: bottom;
         margin: 10px auto;
+    }
+    
+    .build_pc_animation{
+        display:none;
+    }
+    .build_pc_animation.build_pc_animation_top{
+        display:table-cell;
+        vertical-align: middle;
+        text-align: right;
+    }
+    .build_pc_animation .build_pc_link {
+        width:142px;
     }
 }
 @media (max-width : 480px){
