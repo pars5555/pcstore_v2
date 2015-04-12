@@ -138,6 +138,7 @@
                 <file>ngs/loads/admin/AdminUsersLoad.class.js</file>
                 <file>ngs/loads/admin/AdminNewsletterLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemCategoriesPopupLoad.class.js</file>
+                <file>ngs/loads/admin/AdminItemPicturesPopupLoad.class.js</file>
             </files>
         </input>
     </builder>
@@ -176,6 +177,8 @@
                 <file>ngs/actions/admin/ChangeCategoryOrderAction.class.js</file>
                 <file>ngs/actions/admin/AddCategoryAction.class.js</file>
                 <file>ngs/actions/admin/AdminGroupActionsAction.class.js</file>
+                <file>ngs/actions/admin/AdminSaveItemCategoriesAction.class.js</file>
+                <file>ngs/actions/admin/AdminAddRemoveItemPictureAction.class.js</file>
             </files>
         </input>
     </builder>

@@ -17,18 +17,33 @@ ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         this.addListeners();
         this.listingCols();
-        this.initAdminItemsCategoriesPopupButtons();
+        this.initAdminItemsCategoriesPopupButton();
+        this.initAdminItemsPicturesPopupButton();
     },
-    initAdminItemsCategoriesPopupButtons: function () {
+    initAdminItemsCategoriesPopupButton: function () {
         var modal = jQuery("#adminItemCategoriesPopup .f_modal_content");
         jQuery(".f_admin_listing_item_categories_buttons").on("click", function () {
-            ngs.load('admin_item_categories_popup', {});
+            var itemId = jQuery(this).attr('item_id');
+            ngs.load('admin_item_categories_popup', {'item_id':itemId});
             jQuery("#adminItemCategoriesPopup").removeClass("hide");
             modal.addClass("active");
         });
         jQuery("#adminItemCategoriesPopup .close_button,#adminItemCategoriesPopup .overlay").click(function () {
             modal.removeClass("active");
             jQuery("#adminItemCategoriesPopup").addClass("hide");
+        });
+    },
+    initAdminItemsPicturesPopupButton: function () {
+        var modal = jQuery("#adminItemPicturesPopup .f_modal_content");
+        jQuery(".f_admin_listing_item_pictures_buttons").on("click", function () {
+            var itemId = jQuery(this).attr('item_id');
+            ngs.load('admin_item_pictures_popup', {'item_id':itemId});
+            jQuery("#adminItemPicturesPopup").removeClass("hide");
+            modal.addClass("active");
+        });
+        jQuery("#adminItemPicturesPopup .close_button,#adminItemPicturesPopup .overlay").click(function () {
+            modal.removeClass("active");
+            jQuery("#adminItemPicturesPopup").addClass("hide");
         });
     },
     setInputValuesToHeaderhiddenInputs: function () {

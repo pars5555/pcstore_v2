@@ -33,6 +33,8 @@ ngs.ActionFactory.prototype={
         this.actions["change_category_order"] = function temp(){return new ngs.ChangeCategoryOrderAction("change_category_order", ajaxLoader);};
         this.actions["add_category"] = function temp(){return new ngs.AddCategoryAction("add_category", ajaxLoader);};
         this.actions["admin_group_actions"] = function temp(){return new ngs.AdminGroupActionsAction("admin_group_actions", ajaxLoader);};
+        this.actions["admin_save_item_categories"] = function temp(){return new ngs.AdminSaveItemCategoriesAction("admin_save_item_categories", ajaxLoader);};
+        this.actions["admin_add_remove_item_picture"] = function temp(){return new ngs.AdminAddRemoveItemPictureAction("admin_add_remove_item_picture", ajaxLoader);};
      },
 
 	getAction: function(name){
