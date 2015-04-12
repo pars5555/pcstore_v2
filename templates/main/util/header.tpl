@@ -147,79 +147,80 @@
             <div class="clear"></div>
         </div>
     </nav>
-    <div class="header_content">
-        {**************************** CONTACT ********************************}
-        <div class="contact_info">
-            <div class="contact_info_item">
-                <span class="fontAwesome"></span>
-                <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
-            </div>
-            <div class="contact_info_item">
-                <span class="fontAwesome"></span>
-                <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
-            </div>
-            <div class="contact_info_item">
-                <span class="fontAwesome"></span>
-                <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
-            </div>
-            {*}
-            <div class="contact_info_item">
-            <span class="fontAwesome"></span>
-            <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
-            </div>
-            {*}
-            <div class="build-pc-link">
-                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
-                    <span class="icon">
-                    </span>
-                    <span>{$ns.lm->getPhrase(226)}</span>
-                </a>
-            </div>
-        </div>
-        <div class="header_content_inner">
-            {**************************** LOGO ********************************}
 
-            <a  href="{$SITE_PATH}" class="site_logo">
-                <img src="{$SITE_PATH}/img/pcstore_logo_small.png" alt="">
-            </a>
+    <div class="header_content_container">
 
-            {**************************** BUILD PC ********************************}
-            <div class="build-pc-link buil_pc_link_top">
-                <a class="buil_pc_link_{$ns.language}" href="{$SITE_PATH}/buildpc">
-                    <span class="icon">
-                    </span>
-                    <span>{$ns.lm->getPhrase(226)}</span>
-                </a>
-            </div>
+        <div class="header_content_table">
 
-            <div class="search_block">
-                {**************************** SEARCH ********************************}
-                <div class="search_container">
-                    <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
-                        <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
-                        <button type="submit" class="search_btn">
-                            
-                        </button>
+            <div class="header_content">
+                {**************************** CONTACT ********************************}
+                <div class="contact_info">
+                    <div class="contact_info_item">
+                        <span class="fontAwesome"></span>
+                        <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
+                    </div>
+                    <div class="contact_info_item">
+                        <span class="fontAwesome"></span>
+                        <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
+                    </div>
+                    <div class="contact_info_item">
+                        <span class="fontAwesome"></span>
+                        <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
+                    </div>
 
-                        {if $ns.contentLoad == "main_home"}
-                            <input type="hidden" name="cid" value="{$ns.req.cid|default:''}"/>
-                            <input type="hidden" name="scpids" value="{$ns.req.scpids|default:''}"/>
-                            <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
-                            <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
-                            <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
-                            <input type="hidden" id="listing_cols_select" name="cols" />
-                        {/if}
-                    </form>
+                    {*}
+                    <div class="contact_info_item">
+                    <span class="fontAwesome"></span>
+                    <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
+                    </div>
+                    {*}
+
+                </div>
+                <div class="header_content_inner">
+                    {**************************** LOGO ********************************}
+
+                    <a  href="{$SITE_PATH}" class="site_logo">
+                        <img src="{$SITE_PATH}/img/pcstore_logo_small.png" alt="">
+                    </a>
+                    <div class="search_block">
+                        {**************************** SEARCH ********************************}
+                        <div class="search_container">
+                            <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
+                                <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
+                                <button type="submit" class="search_btn">
+                                    
+                                </button>
+
+                                {if $ns.contentLoad == "main_home"}
+                                    <input type="hidden" name="cid" value="{$ns.req.cid|default:''}"/>
+                                    <input type="hidden" name="scpids" value="{$ns.req.scpids|default:''}"/>
+                                    <input type="hidden" id="selected_company_id_input" name='sci' value="{$ns.req.sci|default:''}"/>
+                                    <input type="hidden" id="sort_by_input" name="s" value="{$ns.req.s|default:''}"/>
+                                    <input type="hidden" id="show_only_vat_items_checkbox" name='shv' value="{$ns.req.shv|default:''}"/>
+                                    <input type="hidden" id="listing_cols_select" name="cols" />
+                                {/if}
+                            </form>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
             {**************************** BUILD PC ********************************}
-
-            {if $ns.contentLoad != "main_buildpc"}
-            {/if}
+            <div class="build_pc_animation">
+                <div id="build_pc_link" class="build_pc_link" data-href="{$SITE_PATH}/buildpc">
+                    <object class="build_pc_obj">
+                        <param name="movie" value="{$SITE_PATH}/img/buildpc/buildpc.swf">
+                        <param name="wmode" value="transparent" />
+                        <embed class="build_pc_obj" wmode=transparent allowfullscreen="true" allowscriptaccess="always" src="{$SITE_PATH}/img/buildpc/buildpc.swf"></embed>
+                    </object>
+                </div>
+            </div> 
 
         </div>
     </div>
+
 </header>
 <section>
 
@@ -240,7 +241,7 @@
                 <div class="modal-body">
                     <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
                         <div class="login-wrapper">
-                            <h4 class="title">{$ns.lm->getPhrase(660)}</h4>
+                            <h4 class="title">Sign in with your existing account</h4>
                             <div class="form-group">
                                 <label class="input_label label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
                                 <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
@@ -248,7 +249,7 @@
                             <div class="form-group">
                                 <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                                 <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                                <a id="forgot_pass" class="forget_pass" href="javascript:void(0);" data-toggle="modal" data-target="#forgotModal" >{$ns.lm->getPhrase(6)}</a>
+                                <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
                             </div>
                             <div style="color:#de4c34;" class="error"></div>
                             <div class="login-buttons">
@@ -258,7 +259,7 @@
                     </form>
                     <div class="modal_cols">
                         <div class="social-login-wrapper">
-                            <h4 class="title">{$ns.lm->getPhrase(661)}</h4>
+                            <h4 class="title">Sign in with your social network</h4>
                             <div class="social-login">
                                 <a class="facebook social-login-link" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
                                 <a class="linkedin social-login-link" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
@@ -267,22 +268,22 @@
                         </div>
                     </div>
                     <div class="modal_cols create-account-wrapper">
-                        <h4 class="title">{$ns.lm->getPhrase(662)}</h4>
+                        <h4 class="title">Create your own account</h4>
                         <p>
-                            {$ns.lm->getPhrase(663)}
+                            It's fast, easy and personalized!
                         </p>
                         <ul>
                             <li>
-                                {$ns.lm->getPhrase(664)}
+                                Save billing & shipping info for Express Checkout
                             </li>
                             <li>
-                                {$ns.lm->getPhrase(665)}
+                                Follow favorite brands & hosts
                             </li>
                             <li>
-                                {$ns.lm->getPhrase(666)}
+                                Get product tips & extras
                             </li>
                             <li>
-                                {$ns.lm->getPhrase(667)}
+                                Customize settings & track purchases
                             </li>
                         </ul>
                         <div class="create-account-wrapper">
@@ -309,42 +310,20 @@
                     <div class="form-group">
                         <div id="forgotPasswordErrorMessage" class="error"></div>
                         <div id="forgotPasswordSuccessMessage" class="success"></div>
-                        <label class="input_label label" for="email">{$ns.lm->getPhrase(47)}</label>
+                        <label class="input_label label" for="email">Your Email Address</label>
                         <form id="forgotPasswordForm" autocomplete="off">
-                            <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="{$ns.lm->getPhrase(3)}">
+                            <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
                             <button class="send_pass button blue" id="forgotPasswordBtn">
-                                {$ns.lm->getPhrase(48)}
+                                Send
                             </button>
                             <p>
-                                {$ns.lm->getPhrase(355)}
+                                we'll send you email with your password
                             </p>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    {/if}
-
-    {if $ns.userLevel === $ns.userGroupsAdmin}
-        <div  class="modal myModal hide" id="adminItemCategoriesPopup" >
-            <div class="overlay"></div>
-            <div class="modal-content f_modal_content" style="width: 600px;height: 500px;">
-                <button class="close_button"></button>
-                <div class="modal-body" id="adminItemCategoriesPopupBody" style="display: block;height:100%">
-
-                </div>
-            </div>
-        </div>
-        <div  class="modal myModal hide" id="adminItemPicturesPopup" >
-            <div class="overlay"></div>
-            <div class="modal-content f_modal_content" style="width: 600px;height: 500px;">
-                <button class="close_button"></button>
-                <div class="modal-body" id="adminItemPicturesPopupBody" style="display: block;height:100%">
-
-                </div>
-            </div>
-        </div>
-
     {/if}
 
     {*************************************************************************************************}

@@ -24,7 +24,10 @@
                             <!-- <span class="company-num">{$smarty.foreach.cl.index+1}</span> -->
                         <a href="javascript:void(0);" class="service_company_gmap_pin" service_company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin_blue.png" alt="logo"/></a>
                         <div class="company_rating">
-                            <h3 class="company-tittle">{$company->getName()}</h3>
+                            <h3 class="company-tittle">
+                                <span class="company-status {if $ns.onlineUsersManager->getOnlineUserByEmail($company->getEmail())}online{/if} fontAwesome" title="{if $ns.onlineUsersManager->getOnlineUserByEmail($company->getEmail())}online{else}offline{/if}"></span>
+                                <span>{$company->getName()}</span>
+                            </h3>
                         </div>
                         <div class="company-img">
                             {assign var="url" value=$company->getUrl()}

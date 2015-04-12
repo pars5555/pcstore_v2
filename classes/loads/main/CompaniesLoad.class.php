@@ -8,6 +8,7 @@ require_once (CLASSES_PATH . "/managers/CompanyBranchesManager.class.php");
 require_once (CLASSES_PATH . "/managers/ServiceCompanyBranchesManager.class.php");
 require_once (CLASSES_PATH . "/managers/CompaniesPriceListManager.class.php");
 require_once (CLASSES_PATH . "/managers/ServiceCompaniesPriceListManager.class.php");
+require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
 
 /**
  *
@@ -17,6 +18,7 @@ require_once (CLASSES_PATH . "/managers/ServiceCompaniesPriceListManager.class.p
 class CompaniesLoad extends BaseUserCompanyLoad {
 
     public function load() {
+        $this->getOnlineCompanies();
 
         $companyManager = CompanyManager::getInstance();
         $serviceCompanyManager = ServiceCompanyManager::getInstance();
@@ -184,6 +186,11 @@ class CompaniesLoad extends BaseUserCompanyLoad {
             $ret [$companyId][] = $companiesBrancheDto;
         }
         return $ret;
+    }
+    
+    private function getOnlineCompanies(){
+        $onlineUsersManager = OnlineUsersManager::getInstance();
+        $this->addParam("onlineUsersManager", $onlineUsersManager);
     }
 
 }

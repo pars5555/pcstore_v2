@@ -202,12 +202,58 @@
 /*                      HEADER SEARCH & LOGO & BUILD PC                               */
 /**************************************************************************************/
 
-.header_content{
+.header_content_container{
     clear:both;
     padding:20px;
     margin:auto;
     max-width: 1920px;
 }
+.header_content_table{
+    display:table;
+    width:100%;
+}
+.header_content{
+    display:table-cell;
+    vertical-align: middle;
+}
+
+/***************** BUILD PC ANIMATION ****************/
+
+.build_pc_animation{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left:20px;
+    width:284px;
+    font-size: 0;
+}
+
+.build_pc_animation .build_pc_link{
+    display:block;
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+}
+.build_pc_animation .build_pc_link::before {
+    color: #63b4fb;
+    content: "Build PC";
+    font-size: 30px;
+    font-weight: 600;
+    height: 100%;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.build_pc_animation .build_pc_obj{
+    width:284px;
+    height:160px;
+    z-index: -100;
+}
+
+/*Header Content Inner*/
+
 .header_content_inner{
     display:table;
     width:100%;
@@ -270,137 +316,6 @@
 /**************************************************************************************/
 /*                                   BUILD PC LINK                                    */
 /**************************************************************************************/
-
-.build-pc-link{
-    display: inline-block;
-    vertical-align: middle;
-}
-.build-pc-link.buil_pc_link_top{
-    display:none;
-}
-.build-pc-link a{
-    display:inline-block;
-    padding:7px 10px 9px;
-    font-size: 30px;
-    font-weight: 600;
-    color:#63B4FB;
-
-    -moz-border-radius: 11px;
-    -webkit-border-radius: 11px;
-    -khtml-border-radius: 11px; 
-    -o-border-radius: 11px; 
-    -ms-border-radius: 11px;
-    -icab-border-radius: 11px; 
-    border-radius: 11px; 
-
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-
-    animation: 2s linear 0s normal infinite build_pc;
-}
-
-@keyframes build_pc {
-    0% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-    25% {
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    50%{
-        color: #63b4fb;
-        box-shadow:0 0 11px #63b4fb;
-    }
-    75%{
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    100% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-} 
-
-@-webkit-keyframes build_pc {
-    0% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-    25% {
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    50%{
-        color: #63b4fb;
-        box-shadow:0 0 11px #63b4fb;
-    }
-    75%{
-        color: #63b4fb;
-        box-shadow:0 0 7px #63b4fb;
-    }
-    100% {
-        color: #555;
-        box-shadow:0 0 3px #555;
-    }
-} 
-.build-pc-link a.buil_pc_link_am{
-    font-size:20px;   
-}
-.build-pc-link a.buil_pc_link_ru{
-    font-size:25px;    
-}
-.build-pc-link span{
-    display:inline-block;
-    vertical-align: middle;
-    text-align: left;
-}
-.build-pc-link .buil_pc_link_am span{
-    white-space: normal;
-}
-
-/*********************** Build PC Icon **********************/
-
-.build-pc-link .icon{
-    width:35px;
-    height:41px;
-    font-size: 30px;
-    position:relative;
-}
-.build-pc-link .icon:before{
-    content:"";
-    font-family: "FontAwesome";
-    vertical-align: middle;
-}
-@media (min-width : 768px){
-    .build-pc-link:hover .icon{
-        animation: 2s linear 0s normal infinite build_pc_icon_loading; 
-    }
-    .build-pc-link:hover .icon:before{
-        font-size: 40px;
-        content:""; 
-    }
-}
-
-@keyframes build_pc_icon_loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} 
-
-@-webkit-keyframes build_pc_icon_loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} 
 
 /**************************************************************************************/
 /*                             MAIN POPUP SIGNIN SIGNUP                               */
@@ -494,7 +409,7 @@
     color:#428bca;
     display:block;
     margin-top: 7px;
-    
+
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -687,11 +602,6 @@
         padding:0;
         text-align: center;
     }
-    .build-pc-link{
-        display:block;
-        margin: 10px auto 5px;
-        text-align: center;
-    }
 
 }
 @media (max-width : 768px){
@@ -752,13 +662,6 @@
         caption-side: bottom;
         margin: 10px auto;
     }
-    .build-pc-link{
-        display:none;
-    }
-    .build-pc-link.buil_pc_link_top{
-        display:table-cell;
-        text-align: right;
-    }
 }
 @media (max-width : 480px){
     .navMenuContainer {
@@ -768,23 +671,6 @@
     .site_logo,
     .site_logo img{
         width:130px;
-    }
-    .build-pc-link a{
-        font-size: 20px;
-    }
-    .build-pc-link a.buil_pc_link_am{
-        font-size: 15px;
-    }
-    .build-pc-link  a.buil_pc_link_am span{
-        width:100px;
-    }
-    .build-pc-link a.buil_pc_link_am span.icon {
-        width: auto;
-    }
-    .build-pc-link .icon {
-        font-size: 25px;
-        height: auto;
-        width: auto;
     }
 
     /*Contact Info*/

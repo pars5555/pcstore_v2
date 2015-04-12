@@ -46,18 +46,22 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.searchForm();
         this.signupActivationMessage();
         this.scrollPageToTop();
-
-
+        this.buildPcLink();
     },
-    scrollPageToTop : function(){
-        jQuery("#scroll_page_top").on("click",function(){
-           jQuery("html,body").animate({scrollTop:0},500); 
+    buildPcLink: function () {
+        jQuery("#build_pc_link").on("click mousedown touchstart tap", function () {
+            window.location.href = jQuery(this).attr("data-href");
+        });
+    },
+    scrollPageToTop: function () {
+        jQuery("#scroll_page_top").on("click", function () {
+            jQuery("html,body").animate({scrollTop: 0}, 500);
         });
     },
     signupActivationMessage: function () {
         var signup_message = jQuery("#signup_activation_message");
         if (signup_message.length > 0) {
-            this.initPopup(false,signup_message.val());
+            this.initPopup(false, signup_message.val());
         }
     },
     searchForm: function () {

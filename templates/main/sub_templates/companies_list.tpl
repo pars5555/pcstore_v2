@@ -1,5 +1,4 @@
 <div id="companyListTab" class="company_tab">
-
     {if (($ns.allCompanies|@count )>0)}
         <h1 class="main_title">{$ns.lm->getPhrase(578)}</h1>
         <div class="table">
@@ -25,7 +24,10 @@
                     <div class="company-info">
                         <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
                         <div class="company_rating">
-                            <h3 class="company-tittle">{$company->getName()}</h3>
+                            <h3 class="company-tittle">
+                                <span class="company-status {if $ns.onlineUsersManager->getOnlineUserByEmail($company->getEmail())}online{/if} fontAwesome" title="{if $ns.onlineUsersManager->getOnlineUserByEmail($company->getEmail())}online{else}offline{/if}"></span>
+                                <span>{$company->getName()}</span>
+                            </h3>
                             {if $passive != 1}
                                 {assign var="rating" value=$company->getRating()}
                                 <div class="classification" title="{$rating}%">
@@ -44,11 +46,11 @@
                             {if $company->getShowPrice()!=1}
                                 <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/>                             
                             {else}    
-                            <a {if $url != ''}href="http://{$url}"{/if}
-                                              target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"
-                                              class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> 
-                                <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/> 
-                            </a>
+                                <a {if $url != ''}href="http://{$url}"{/if}
+                                                  target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"
+                                                  class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> 
+                                    <img {if $passive == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyId}" alt="logo"/> 
+                                </a>
                             {/if}
                         </div>
                     </div>
