@@ -73,7 +73,7 @@ class MainLoad extends BaseGuestLoad {
 
     public function getSignupActivationMessage() {
         if (isset($_SESSION["signup_message"])) {
-            $this->addParam("signup_message", $_SESSION["signup_message"]);
+            $this->addParam("signup_message", 1);
             unset($_SESSION["signup_message"]);
         }
     }
