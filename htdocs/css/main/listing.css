@@ -105,9 +105,10 @@
     right:20px;
 }
 .listing_item .listing_item_btn_wp a{
+    display: inline-block;
+    margin: auto;
     padding: 7px 10px;
-    width: calc(100% - 20px);
-    margin:auto;
+    width: auto;
 }
 .listing_item .listing_item_title{
     font-weight:600;

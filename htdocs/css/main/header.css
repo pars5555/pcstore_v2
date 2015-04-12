@@ -101,7 +101,7 @@
     background-color:#fff;
     box-shadow:0 0 7px #777;
     padding:5px;
-    z-index: 100;
+    z-index: 1000;
 
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -297,6 +297,15 @@
     z-index: 100;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
+
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px; 
+    -o-border-radius: 7px; 
+    -ms-border-radius: 7px;
+    -icab-border-radius: 7px; 
+    border-radius: 7px; 
 }
 .build_pc_animation .build_pc_link::before {
     color: #63b4fb;
@@ -632,7 +641,7 @@
 
 }
 @media (max-width : 768px){
-    
+
 
     /**************************************MAIN POPUP*************************************/
     .modal-body .modal_cols{
@@ -705,7 +714,7 @@
         caption-side: bottom;
         margin: 10px auto;
     }
-    
+
     .build_pc_animation{
         display:none;
     }
