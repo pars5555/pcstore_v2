@@ -309,14 +309,14 @@
                     <div class="form-group">
                         <div id="forgotPasswordErrorMessage" class="error"></div>
                         <div id="forgotPasswordSuccessMessage" class="success"></div>
-                        <label class="input_label label" for="email">Your Email Address</label>
+                        <label class="input_label label" for="email">{$ns.lm->getPhrase(47)}</label>
                         <form id="forgotPasswordForm" autocomplete="off">
-                            <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="Enter email">
+                            <input name="email" type="email" class="  text" id="forgotPasswordEmailInput" placeholder="{$ns.lm->getPhrase(3)}">
                             <button class="send_pass button blue" id="forgotPasswordBtn">
-                                Send
+                                {$ns.lm->getPhrase(48)}
                             </button>
                             <p>
-                                we'll send you email with your password
+                                {$ns.lm->getPhrase(355)}
                             </p>
                         </form>
                     </div>
