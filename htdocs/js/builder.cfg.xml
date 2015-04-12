@@ -137,6 +137,7 @@
                 <file>ngs/loads/admin/AdminActionsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminUsersLoad.class.js</file>
                 <file>ngs/loads/admin/AdminNewsletterLoad.class.js</file>
+                <file>ngs/loads/admin/AdminItemCategoriesPopupLoad.class.js</file>
             </files>
         </input>
     </builder>

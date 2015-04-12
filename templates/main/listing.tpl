@@ -141,6 +141,11 @@
                                     {*}    <a href="javascript:void(0)" class="button grey not-allowed" title="{$ns.lm->getPhrase(19)}">{$ns.lm->getPhrase(19)}</a>                                                {*}
                                 {/if}
                             {/if}
+                            {if $ns.userLevel === $ns.userGroupsAdmin}
+                                <a href="javascript:void(0);" class="button blue f_admin_listing_item_categories_buttons">Categories</a>
+                                
+                                <a href="javascript:void(0);" class="button blue">Pictures</a>
+                            {/if}
                         </div>
                     </div>
                 </div>

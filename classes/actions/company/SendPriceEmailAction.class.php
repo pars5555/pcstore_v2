@@ -64,6 +64,11 @@ class SendPriceEmailAction extends BaseCompanyAction {
             $unsubscribedEmailsArray = explode(';', $unsubscribedEmails);
         }
         $dealerEmailsArray = array_diff($dealerEmailsArray, $unsubscribedEmailsArray);
+        if ($this->getCmsVar('dev_mode') == 'on' || $this->getCmsVar('dev_mode') == 1) {
+            if (count($dealerEmailsArray) > 5) {
+                return "You are on development mode and you can not send email more that 5 recipientes";
+            }
+        }
         $subject = $companyExProfiledto->getPriceEmailSubject();
         $body = stripslashes($companyExProfiledto->getPriceEmailBody());
         $fromEmail = $companyExProfiledto->getFromEmail();
@@ -72,22 +77,26 @@ class SendPriceEmailAction extends BaseCompanyAction {
         $isServiceCompany = ($this->getUserLevel() == UserGroups::$SERVICE_COMPANY);
         $priceFiles = array();
         if ($isServiceCompany) {
-            $companiesPriceListManager = ServiceCompaniesPriceListManager::getInstance();
             $companyId = $companyExProfiledto->getServiceCompanyId();
-            $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
-            if (!empty($companyLastPrices)) {
-                foreach ($companyLastPrices as $key => $clp) {
-                    $priceFiles[] = DATA_DIR . "/service_companies_prices/" . $companyId . '/' . $clp->getFileName() . '.' . $clp->getFileExt();
+            if ($_REQUEST['attache_last_price'] == 1) {
+                $companiesPriceListManager = ServiceCompaniesPriceListManager::getInstance();
+                $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
+                if (!empty($companyLastPrices)) {
+                    foreach ($companyLastPrices as $key => $clp) {
+                        $priceFiles[] = DATA_DIR . "/service_companies_prices/" . $companyId . '/' . $clp->getFileName() . '.' . $clp->getFileExt();
+                    }
                 }
             }
             $tmpSubdirectoryName = 'service_companies';
         } else {
-            $companiesPriceListManager = CompaniesPriceListManager::getInstance();
             $companyId = $companyExProfiledto->getCompanyId();
-            $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
-            if (!empty($companyLastPrices)) {
-                foreach ($companyLastPrices as $key => $clp) {
-                    $priceFiles[] = DATA_DIR . "/companies_prices/" . $companyId . '/' . $clp->getFileName() . '.' . $clp->getFileExt();
+            if ($_REQUEST['attache_last_price'] == 1) {
+                $companiesPriceListManager = CompaniesPriceListManager::getInstance();
+                $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($companyId);
+                if (!empty($companyLastPrices)) {
+                    foreach ($companyLastPrices as $key => $clp) {
+                        $priceFiles[] = DATA_DIR . "/companies_prices/" . $companyId . '/' . $clp->getFileName() . '.' . $clp->getFileExt();
+                    }
                 }
             }
             $tmpSubdirectoryName = 'companies';
@@ -128,7 +137,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         } elseif ($this->getCmsVar("price_emails_service_provider_name") == 'mailgun') {
             $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"), $this->getCmsVar("mailgun_max_recipients_number_per_email"));
             $body .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
-            $body .= '<p style="font-size:10px"><a href="http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 'c') . '/' . $companyId .'?email=%recipient%">Click here to unsubscribe.</a></p>';
+            $body .= '<p style="font-size:10px"><a href="http://pc.am/unsub/' . ($isServiceCompany ? 'sc' : 'c') . '/' . $companyId . '?email=%recipient%">Click here to unsubscribe.</a></p>';
             $mailGunResult = $mailgunEmailSenderManager->sendHtmlEmail($dealerEmailsArray, $subject, $body, $fromEmail, $companyName, $allEmailFileAttachments);
             $allIsOk = true;
             $res = array();

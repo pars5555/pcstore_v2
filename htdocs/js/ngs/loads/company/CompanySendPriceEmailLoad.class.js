@@ -62,7 +62,9 @@ ngs.CompanySendPriceEmailLoad = Class.create(ngs.AbstractLoad, {
         var subject = jQuery('#price_email_subject').val();
         var body = document.getElementsByName('price_email_body')[0].value;
         var to = jQuery('#dealer_emails_textarea').val();
-        ngs.action("send_price_email", {"save_only": 0, "subject": subject, "body": body, "to": to, "from_email": jQuery('#sender_email').val()});
+        var attache_last_price = jQuery('#attache_last_price').is(":checked") ? 1 : 0;
+        var sender_email = jQuery('#sender_email').val();
+        ngs.action("send_price_email", {"save_only": 0, "subject": subject, "body": body, "to": to, "from_email": sender_email, "attache_last_price": attache_last_price});
         return false;
     },
     onSavePriceEmail: function ()
@@ -72,7 +74,8 @@ ngs.CompanySendPriceEmailLoad = Class.create(ngs.AbstractLoad, {
         var body = document.getElementsByName('price_email_body')[0].value;
         var to = jQuery('#dealer_emails_textarea').val();
         ngs.action("send_price_email", {"save_only": 1, "subject": subject, "body": body, "to": to, "from_email": jQuery('#sender_email').val()});
-        return false;  },
+        return false;
+    },
     addChangeHandlerToFormatRecipients: function ()
     {
         var thisInstance = this;

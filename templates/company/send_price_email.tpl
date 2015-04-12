@@ -26,13 +26,14 @@
     <div style="clear:both"> </div> 
     <a class="last_price_file" href="{$SITE_PATH}/price/last_price/{$ns.userId}">   
         <span class="glyphicon"></span>
-        <span>{$ns.lm->getPhrase(466)}:</span>			     
     </a>
+    <label for="attache_last_price">{$ns.lm->getPhrase(466)}:</label>			     
+    <input id="attache_last_price" type="checkbox" checked autocomplete="off" />
 
     <div style="clear:both"> </div> 
 
     <div class="attach_more">
-        <a class="attach_more_btn" id="company_attach_new_file_button" type="button" ><span class="glyphicon"></span><span>{$ns.lm->getPhrase(615)}</span></a>
+        <a class="attach_more_btn" id="company_attach_new_file_button" type="button" ><span class="glyphicon"></span><span>{$ns.lm->getPhrase(615)}</span></a>
         <form id="up_add_attachment_form" target="upload_target" enctype="multipart/form-data" method="post" action="{$SITE_PATH}/dyn/company/do_upload_attachment">
             <input id="company_attach_file_input" name="attachment"  type="file" style="display:none" />
         </form>

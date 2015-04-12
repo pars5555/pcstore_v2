@@ -240,7 +240,7 @@
                 <div class="modal-body">
                     <form class="modal_cols login-wrapper" id="mainLoginForm" role="form" autocomplete="off" method="POST" action="{$SITE_PATH}/dyn/main/do_login">
                         <div class="login-wrapper">
-                            <h4 class="title">Sign in with your existing account</h4>
+                        <h4 class="title">{$ns.lm->getPhrase(660)}</h4>
                             <div class="form-group">
                                 <label class="input_label label" for="mainLoginEmail">{$ns.lm->getPhrase(21)}</label>
                                 <input name="email" type="email" class="  text" id="mainLoginEmail" placeholder="Enter email">
@@ -248,7 +248,7 @@
                             <div class="form-group">
                                 <label class="input_label label" for="mainLoginPassword">{$ns.lm->getPhrase(4)}</label>
                                 <input name="password" type="password" class="  text" id="mainLoginPassword" placeholder="{$ns.lm->getPhrase(4)}">
-                                <a id="forgot_pass" class="forget_pass" href="#" data-toggle="modal" data-target="#forgotModal" >Forgot Your Password?</a>
+                            <a id="forgot_pass" class="forget_pass" href="javascript:void(0);" data-toggle="modal" data-target="#forgotModal" >{$ns.lm->getPhrase(6)}</a>
                             </div>
                             <div style="color:#de4c34;" class="error"></div>
                             <div class="login-buttons">
@@ -258,7 +258,7 @@
                     </form>
                     <div class="modal_cols">
                         <div class="social-login-wrapper">
-                            <h4 class="title">Sign in with your social network</h4>
+                        <h4 class="title">{$ns.lm->getPhrase(661)}</h4>
                             <div class="social-login">
                                 <a class="facebook social-login-link" href="javascript:void(0);" id="facebookLoginBtn" > <img src="{$SITE_PATH}/img/facebook.png" alt=""/> sign in with facebook </a>
                                 <a class="linkedin social-login-link" id="linkedinLoginBtn" href="javascript:void(0);"> <img src="{$SITE_PATH}/img/linkedin.png" alt="" /> sign in with linkedin </a>
@@ -266,24 +266,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal_cols create-account-wrapper">
-                        <h4 class="title">Create your own account</h4>
-                        <p>
-                            It's fast, easy and personalized!
-                        </p>
-                        <ul>
-                            <li>
-                                Save billing & shipping info for Express Checkout
-                            </li>
-                            <li>
-                                Follow favorite brands & hosts
-                            </li>
-                            <li>
-                                Get product tips & extras
-                            </li>
-                            <li>
-                                Customize settings & track purchases
-                            </li>
+                <div class="modal_cols create-account-wrapper">
+                    <h4 class="title">{$ns.lm->getPhrase(662)}</h4>
+                    <p>
+                        {$ns.lm->getPhrase(663)}
+                    </p>
+                    <ul>
+                        <li>
+                            {$ns.lm->getPhrase(664)}
+                        </li>
+                        <li>
+                            {$ns.lm->getPhrase(665)}
+                        </li>
+                        <li>
+                           {$ns.lm->getPhrase(666)}
+                        </li>
+                        <li>
+                            {$ns.lm->getPhrase(667)}
+                        </li>
                         </ul>
                         <div class="create-account-wrapper">
                             <a href="{$SITE_PATH}/signup" class="registration blue button">{$ns.lm->getPhrase(5)}</a>
@@ -324,6 +324,19 @@
             </div>
         </div>
     {/if}
+
+{if $ns.userLevel === $ns.userGroupsAdmin}
+    <div  class="modal myModal hide" id="adminItemCategoriesPopup" >
+        <div class="overlay"></div>
+        <div class="modal-content f_modal_content" style="width: 600px;height: 500px;">
+            <button class="close_button"></button>
+            <div class="modal-body" id="adminItemCategoriesPopupBody">
+                   
+            </div>
+        </div>
+    </div>
+   
+{/if}
     
     {*************************************************************************************************}
     {*                                                                                               *}

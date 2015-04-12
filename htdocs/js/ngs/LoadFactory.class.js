@@ -72,6 +72,7 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_actions"] = function temp(){return new ngs.AdminActionsLoad("admin_actions", ajaxLoader);};
 	this.loads["admin_users"] = function temp(){return new ngs.AdminUsersLoad("admin_users", ajaxLoader);};
 	this.loads["admin_newsletter"] = function temp(){return new ngs.AdminNewsletterLoad("admin_newsletter", ajaxLoader);};
+	this.loads["admin_item_categories_popup"] = function temp(){return new ngs.AdminItemCategoriesPopupLoad("admin_item_categories_popup", ajaxLoader);};
 },
 	
     getLoad: function (name) {

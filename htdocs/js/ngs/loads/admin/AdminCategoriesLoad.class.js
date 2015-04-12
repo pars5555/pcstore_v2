@@ -15,13 +15,19 @@ ngs.AdminCategoriesLoad = Class.create(ngs.AbstractLoad, {
         return "admin_categories";
     },
     afterLoad: function () {
-        jQuery('#categoriesContainer').on('changed.jstree', function (e, data) {
-            var categoryId = parseInt(data.selected[0]);
-            ngs.load('admin_category_details', {'category_id':categoryId});
-        }).jstree({
+        jQuery('#categoriesContainer').jstree({
             "core": {
                 "multiple": false
             }
+            /*,
+            "checkbox": {
+                "keep_selected_style": false
+            },
+            "plugins": ["wholerow", "checkbox"]*/
+        });
+        jQuery('#categoriesContainer').on('changed.jstree', function (e, data) {
+            var categoryId = parseInt(data.selected[0]);
+            ngs.load('admin_category_details', {'category_id': categoryId});
         });
     }
 });

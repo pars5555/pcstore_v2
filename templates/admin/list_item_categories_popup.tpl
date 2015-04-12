@@ -4,20 +4,12 @@
             {assign var="children" value=$ns.categoryManager->getChildren($category->getId())}
             {foreach $children as $child}
                 <li id="{$child->getId()}_categoryNode">
-                    {drawCategory category=$child} {if $child->getLastClickable()==1}*{/if}
+                    {drawCategory category=$child}
                 </li>
             {/foreach}
         </ul>
     {*/if*}
 {/function}
-
-{include file="$TEMPLATE_DIR/admin/left_panel.tpl"} 
-
-<div id="categoriesContainer" >
+<div id="itemCategoriesContainer" style="margin-top: 40px;">
     {drawCategory category=$ns.rootDto}
-</div>
-
-
-<div id="admin_categoy_details_container">
-
 </div>

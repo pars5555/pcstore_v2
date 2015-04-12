@@ -15,8 +15,21 @@ ngs.HomeLoad = Class.create(ngs.AbstractLoad, {
         return "main_home";
     },
     afterLoad: function () {
-        this.addListeners();       
+        this.addListeners();
         this.listingCols();
+        this.initAdminItemsCategoriesPopupButtons();
+    },
+    initAdminItemsCategoriesPopupButtons: function () {
+        var modal = jQuery("#adminItemCategoriesPopup .f_modal_content");
+        jQuery(".f_admin_listing_item_categories_buttons").on("click", function () {
+            ngs.load('admin_item_categories_popup', {});
+            jQuery("#adminItemCategoriesPopup").removeClass("hide");
+            modal.addClass("active");
+        });
+        jQuery("#adminItemCategoriesPopup .close_button,#adminItemCategoriesPopup .overlay").click(function () {
+            modal.removeClass("active");
+            jQuery("#adminItemCategoriesPopup").addClass("hide");
+        });
     },
     setInputValuesToHeaderhiddenInputs: function () {
         var cehcked = jQuery('#show_only_vat_items').is(':checked');
