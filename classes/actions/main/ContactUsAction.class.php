@@ -31,10 +31,30 @@ class ContactUsAction extends GuestAction {
         } else {
             $fromName = $email;
         }
-        $emailSenderManager->sendEmail('contactus', $pcstore_contact_us_email, $subject, $templateId, $params, $email, $fromName);
+        if (!empty($_FILES)) {
+            $attachment = $this->getAttachment();
+            $emailSenderManager->sendEmailWithAttachments('contactus', $pcstore_contact_us_email, $subject, $templateId, $params, $attachment, $email, $fromName);
+        } else {
+            $emailSenderManager->sendEmail('contactus', $pcstore_contact_us_email, $subject, $templateId, $params, $email, $fromName);
+        }
+        exit;
         $_SESSION['success_message'] = $this->getPhrase(438);
         unset($_SESSION['contact_us_req']);
         $this->redirect('contactus');
+    }
+    
+    private function getAttachment()
+    {
+        ini_set('upload_max_filesize', '7M');
+        $name = $_FILES['attachment']['name'];
+        $tmp_name = $_FILES['attachment']['tmp_name'];
+        if (!is_dir(DATA_TEMP_DIR)) {
+            mkdir(DATA_TEMP_DIR, 0777);
+        }
+        $file = DATA_TEMP_DIR.'/'.$name;
+        move_uploaded_file($tmp_name, DATA_TEMP_DIR.'/'.$name);
+        return array($name=>$file);
+        
     }
 
     public function getRequestGroup() {

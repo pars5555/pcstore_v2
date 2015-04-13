@@ -28,7 +28,7 @@ class EmailSenderManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-    
+
      * @return
      */
     function __construct($server) {
@@ -148,10 +148,10 @@ class EmailSenderManager extends AbstractManager {
         } catch (Exception $e) {
             $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage());
             return false;
-        }        
+        }
     }
 
-    public function sendEmail($fromId, $recipients, $subject, $templateIdOrHtml, $params = array(), $fromEmail = '', $fromName = '', $log = true, $singleTo = false) {
+    public function sendEmail($fromId, $recipients, $subject, $templateIdOrHtml, $params = array(), $fromEmail = '', $fromName = '', $singleTo = false) {
         if (!is_array($recipients)) {
             $recipients = array($recipients);
         }
@@ -188,14 +188,10 @@ class EmailSenderManager extends AbstractManager {
             }
             try {
                 $this->mail->Send();
-                if ($log == true) {
-                    $this->sentEmailsManager->updateRowLogById($rowId, 'Email succussfully sent!');
-                }
+                $this->sentEmailsManager->updateRowLogById($rowId, 'Email succussfully sent!');
             } catch (Exception $e) {
                 $sendByPhpMail = self::sendByPhpMail(empty($fromEmail) ? $emailAccountDto->getLogin() : $fromEmail, $recipients, $subject, $body);
-                if ($log == true) {
-                    $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage() . '. Trying to send by php mail(), returns: ' . $sendByPhpMail ? 'ok' : 'error');
-                }
+                $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage() . '. Trying to send by php mail(), returns: ' . $sendByPhpMail ? 'ok' : 'error');
             }
         }
     }
@@ -220,9 +216,9 @@ class EmailSenderManager extends AbstractManager {
     }
 
     private function compileIfTemplate($templateId, $params) {
-        $ul  = null;
-        if (isset($_COOKIE['ul'])){
-        $ul = $_COOKIE['ul'];
+        $ul = null;
+        if (isset($_COOKIE['ul'])) {
+            $ul = $_COOKIE['ul'];
         }
         if (!($ul === 'en' || $ul === 'ru' || $ul === 'am')) {
             $ul = 'en';

@@ -164,7 +164,7 @@ class UploadAttachmentAction extends BaseCompanyAction {
         $subject = 'New Price form ' . $companyName . '!!!';
         $template = "new_price_uploaded";
         $params = array("company_name" => $companyName);
-        $emailSenderManager->sendEmail('info', $allCompaniesEmails, $subject, $template, $params, '', '', true, true);
+        $emailSenderManager->sendEmail('info', $allCompaniesEmails, $subject, $template, $params, '', '', true);
     }
 
     public function sendNewPriceUploadedEmailToCompanyDealers($company) {
@@ -176,7 +176,7 @@ class UploadAttachmentAction extends BaseCompanyAction {
         $subject = 'New Price form ' . $companyName . '!!!';
         $template = "new_price_uploaded";
         $params = array("company_name" => $companyName);
-        $emailSenderManager->sendEmail('info', $allUsersEmails, $subject, $template, $params, '', '', true, true);
+        $emailSenderManager->sendEmail('info', $allUsersEmails, $subject, $template, $params, '', '', true);
     }
 
     public function getCompaniesEmailByCompaniesDtos($dtos) {

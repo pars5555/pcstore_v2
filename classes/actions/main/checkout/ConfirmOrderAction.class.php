@@ -169,7 +169,7 @@ class ConfirmOrderAction extends GuestAction {
             $grandTotalAmdWithCommission = intval($grandTotalAMD / (1 - $commission / 100));
             $params['grandTotalAmdWithCommission'] = $grandTotalAmdWithCommission;
         }
-        $emailSenderManager->sendEmail('orders', $recipients, $subject, $template, $params, '', '', true, false);
+        $emailSenderManager->sendEmail('orders', $recipients, $subject, $template, $params, '', '');
     }
 
     public function groupBundlesInOrderJoinedDetailsDtos($orderJoinedDetailsDtos) {
