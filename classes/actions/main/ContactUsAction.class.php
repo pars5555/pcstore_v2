@@ -23,7 +23,7 @@ class ContactUsAction extends GuestAction {
             $this->redirect('contactus');
         }
         $pcstore_contact_us_email = $this->getCmsVar('pcstore_contact_us_email');
-        $subject = "Message To PcStore from " . $email;
+        $subject = "Message To PcStore from " . $name . " (" . $email . ")";
         $templateId = "contact_us";
         $params = array("msg" => $msg);
         if ($this->getUserLevel() !== UserGroups::$GUEST) {
@@ -37,24 +37,21 @@ class ContactUsAction extends GuestAction {
         } else {
             $emailSenderManager->sendEmail('contactus', $pcstore_contact_us_email, $subject, $templateId, $params, $email, $fromName);
         }
-        exit;
         $_SESSION['success_message'] = $this->getPhrase(438);
         unset($_SESSION['contact_us_req']);
         $this->redirect('contactus');
     }
-    
-    private function getAttachment()
-    {
+
+    private function getAttachment() {
         ini_set('upload_max_filesize', '7M');
         $name = $_FILES['attachment']['name'];
         $tmp_name = $_FILES['attachment']['tmp_name'];
         if (!is_dir(DATA_TEMP_DIR)) {
             mkdir(DATA_TEMP_DIR, 0777);
         }
-        $file = DATA_TEMP_DIR.'/'.$name;
-        move_uploaded_file($tmp_name, DATA_TEMP_DIR.'/'.$name);
-        return array($name=>$file);
-        
+        $file = DATA_TEMP_DIR . '/' . $name;
+        move_uploaded_file($tmp_name, DATA_TEMP_DIR . '/' . $name);
+        return array($name => $file);
     }
 
     public function getRequestGroup() {
