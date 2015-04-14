@@ -1,4 +1,5 @@
 <div>
+    <div id="admin_item_pictures_popup_error_message"></div>
     {assign var="picCount" value=$ns.itemDto->getPicturesCount()}
     {assign var="itemId" value=$ns.itemDto->getId()}
     {section name=item_picture_id start=0 loop=$picCount step=1}

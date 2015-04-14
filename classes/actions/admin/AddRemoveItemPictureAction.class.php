@@ -33,7 +33,7 @@ class AddRemoveItemPictureAction extends BaseAdminAction {
         $itemManager = ItemManager::getInstance();
         $logoCheck = $this->checkInputFile('item_picture');
         if ($logoCheck != 'ok') {
-            $jsonArr = array('status' => "error", "errText" => $logoCheck);
+            $jsonArr = array('status' => "err", "message" => $logoCheck);
             echo "<script>var l= new parent.ngs.AdminAddRemoveItemPictureAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return false;
         }
@@ -45,7 +45,7 @@ class AddRemoveItemPictureAction extends BaseAdminAction {
             echo "<script>var l= new parent.ngs.AdminAddRemoveItemPictureAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return true;
         } else {
-            $jsonArr = array('status' => "error", "errText" => $ret);
+            $jsonArr = array('status' => "err", "message" => $ret);
             echo "<script>var l= new parent.ngs.AdminAddRemoveItemPictureAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
             return false;
         }
