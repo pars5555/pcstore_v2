@@ -52,7 +52,7 @@
             </label>
             <div class="listing_cols_wp">
                 {foreach from=$ns.listing_cols_values item=value key=key}
-                    <div class="f_listing_cols_item listing_cols_item li_{$value}_col {if $value==$ns.listing_cols}active{/if}" data-value="{$value}"></div>
+                    <div class="f_listing_cols_item listing_cols_item li_{$value}_col {if $value==$ns.listing_cols}active{/if}" data-value="{$value}" title="{$value} column{if $value>1}s{/if}"></div>
                 {/foreach}
             </div>
         </div>
