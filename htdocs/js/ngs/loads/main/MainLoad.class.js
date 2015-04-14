@@ -31,7 +31,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         ngs.nestLoad(jQuery('#contentLoad').val());
 
         this.notifications();
-        this.mainPopupActions();
         this.categoriesProductCheckbox();
         this.pccLoader();
         this.leftPanel();
@@ -52,15 +51,15 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery(".f_build_pc_link").on("click mousedown touchstart tap", function () {
             window.location.href = jQuery(this).attr("data-href");
         });
-        
+
         var hasFlash = false;
         try {
             hasFlash = Boolean(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
         } catch (exception) {
             hasFlash = ('undefined' != typeof navigator.mimeTypes['application/x-shockwave-flash']);
         }
-        
-        if(!hasFlash){
+
+        if (!hasFlash) {
             jQuery(".f_build_pc_link").addClass("no_flash");
         }
     },
@@ -71,8 +70,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     signupActivationMessage: function () {
         var signup_message = jQuery("#signup_activation_message");
+        var signup_done = jQuery("#signup_activation_done");
+        
         if (signup_message.length > 0) {
             this.initPopup(false, signup_message.val());
+        }
+        if (signup_done.length > 0) {
+            this.initPopup(false, signup_done.val());
         }
     },
     searchForm: function () {
@@ -163,49 +167,66 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
     },
     initPopup: function (title, content, confirm, cancel, confirm_click) {
-        var default_title = jQuery("#main_popup_default_title").val();
-        var default_content = jQuery("#main_popup_default_content").val();
-        var default_confirm_btn = jQuery("#main_popup_default_confirm_btn").val();
-        var default_cancel_btn = jQuery("#main_popup_default_cancel_btn").val();
+        var mainPopup = jQuery("#mainPopup").clone(true);
+        mainPopup.removeAttr("id");
+        jQuery("body").append(mainPopup);
+
+        //init default values of fields//
+        var default_title = jQuery("#mainPopupSettings .f_main_popup_default_title").val();
+        var default_content = jQuery("#mainPopupSettings .f_main_popup_default_content").val();
+        var default_confirm_btn = jQuery("#mainPopupSettings .f_main_popup_default_confirm_btn").val();
+        var default_cancel_btn = jQuery("#mainPopupSettings .f_main_popup_default_cancel_btn").val();
 
         title = title ? title : default_title;
         content = content ? content : default_content;
         confirm = confirm ? confirm : default_confirm_btn;
 
-        if (typeof cancel === 'undefined') {
-            jQuery(".f_pop_up_cancel_btn").remove();
+        //init cancel button//
+        if (cancel) {
+            mainPopup.find(".f_pop_up_cancel_btn").html(cancel);
         }
         else {
-            jQuery("#mainPopup .f_pop_up_cancel_btn").html(cancel);
+            mainPopup.find(".f_pop_up_cancel_btn").remove();
         }
 
-        jQuery("#mainPopup").addClass("active");
-        jQuery("#mainPopup .f_pop_up_title").html(title);
-        jQuery("#mainPopup .f_pop_up_content").html(content);
-        jQuery("#mainPopup .f_pop_up_confirm_btn").html(confirm);
+        //Set values of fields//
+        mainPopup.find(".f_pop_up_title").html(title);
+        mainPopup.find(".f_pop_up_content").html(content);
+        mainPopup.find(".f_pop_up_confirm_btn").html(confirm);
 
+        //Show Popup//
+        window.setTimeout(function () {
+            mainPopup.addClass("active");
+        }, 150);
 
-        jQuery("#mainPopup .f_pop_up_confirm_btn").on("click", function () {
+        // Hide and remove popup //
+        function hideRemove(mainPopup) {
+            mainPopup.removeClass("active hide");
+            window.setTimeout(function () {
+                mainPopup.remove();
+            }, 300);
+        }
+        // Popup buttons actions //
+        mainPopup.find(".f_pop_up_confirm_btn").on("click", function () {
             if (typeof confirm_click === "function") {
                 confirm_click();
             }
-            jQuery("#mainPopup").removeClass("active hide");
+            hideRemove(mainPopup);
         });
-    },
-    mainPopupActions: function () {
-        jQuery("#mainPopup .overlay,#mainPopup .f_pop_up_cancel_btn,#mainPopup .close_button").click(function () {
-            jQuery("#mainPopup").removeClass("active hide");
+        mainPopup.find(".overlay").add(mainPopup.find(".f_pop_up_cancel_btn")).add(mainPopup.find(".close_button")).on("click tap", function () {
+            hideRemove(mainPopup);
         });
-        jQuery(".f_main_pop_up_container .overlay,.f_main_pop_up_container .f_pop_up_confirm_btn,.f_main_pop_up_container .close_button").click(function () {
-            jQuery(this).closest(".f_main_pop_up_container").removeClass("active hide");
 
-        });
-    }
-    ,
+    },
     notifications: function () {
         jQuery("#notification").on("click", function () {
             jQuery(this).removeClass("new_notification");
             window.localStorage.setItem("unreadNotificationExist", "");
+        });
+
+        var self = this;
+        jQuery(".contact_info_item").on("click", function () {
+            self.initPopup();
         });
     }
     ,

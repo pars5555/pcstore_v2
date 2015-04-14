@@ -142,9 +142,9 @@
                                 {/if}
                             {/if}
                             {if $ns.userLevel === $ns.userGroupsAdmin}
-                                <a href="javascript:void(0);" item_id="{$item->getId()}" class="button blue f_admin_listing_item_categories_buttons">Categories</a>
+                                <a href="javascript:void(0);" item_id="{$item->getId()}" class="button blue f_admin_listing_item_categories_buttons">{$ns.lm->getPhrase(105)}</a>
                                 
-                                <a href="javascript:void(0);" item_id="{$item->getId()}" class="button blue f_admin_listing_item_pictures_buttons">Pictures</a>
+                                <a href="javascript:void(0);" item_id="{$item->getId()}" class="button blue f_admin_listing_item_pictures_buttons">{$ns.lm->getPhrase(108)}</a>
                             {/if}
                         </div>
                     </div>

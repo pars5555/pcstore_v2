@@ -17,6 +17,8 @@ ngs.AdminItemCategoriesPopupLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         this.initJTree();
         this.initSaveButton();
+        jQuery("#adminItemCategoriesPopup").addClass("active");
+        ngs.MainLoad.prototype.mainLoader(false);
     },
     initJTree: function () {
         jQuery('#itemCategoriesContainer').jstree({

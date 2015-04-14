@@ -30,20 +30,6 @@
                     </div>
                 </div>
             {/if}  
-            <div class="form-group">
-                <label class="label" for="listing_cols">
-                    Listing Cols:
-                </label>
-                <div class="select_wrapper">
-                    <select id="listing_cols">                                    
-                        {foreach from=$ns.listing_cols_values item=value key=key}
-                            <option value="{$value}" {if $value==$ns.listing_cols}selected="selected"{/if}>{$value} cols</option>
-                        {/foreach}
-                    </select>
-                </div>
-            </div>
-            {*}
-            {*}
             <div class="form-group show_vat_products">    
                 <div class="table-cell">
                 </div>           
@@ -59,6 +45,18 @@
     </div>           
 
     <div class="table-cell">
+
+        <div id="listing_cols_view" class="form-group listing_cols_view">
+            <label class="label">
+                Listing Cols:
+            </label>
+            <div class="listing_cols_wp">
+                {foreach from=$ns.listing_cols_values item=value key=key}
+                    <div class="f_listing_cols_item listing_cols_item li_{$value}_col {if $value==$ns.listing_cols}active{/if}" data-value="{$value}"></div>
+                {/foreach}
+            </div>
+        </div>
+
         {nest ns=paging}
     </div>           
 </div>

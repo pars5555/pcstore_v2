@@ -1,7 +1,7 @@
 <h1 class="dealers_title main_title">{$ns.lm->getPhrase(59)}</h1>
 
 {if isset($ns.success_message)}
-    <div class="pop_up_container main_pop_up active f_main_pop_up_container">
+    <div class="pop_up_container main_pop_up active f_dealers_popup">
         <div class="overlay"></div>
         <div class="pop_up">
             <div class="close_button"></div>

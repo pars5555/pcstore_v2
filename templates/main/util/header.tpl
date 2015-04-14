@@ -340,26 +340,27 @@
         </div>
     {/if}
     {if $ns.userLevel === $ns.userGroupsAdmin}
-        <div  class="modal myModal hide" id="adminItemCategoriesPopup" >
+        <div  class="pop_up_container main_pop_up adminItemCategoriesPopup" id="adminItemCategoriesPopup" >
             <div class="overlay"></div>
-            <div class="modal-content f_modal_content" style="width: 600px;height: 500px;">
-                <button class="close_button"></button>
-                <div class="modal-body" id="adminItemCategoriesPopupBody">
+            <div class="pop_up">
+                <div class="close_button"></div>
+                <h3 class="pop_up_title f_pop_up_title">{$ns.lm->getPhrase(105)}</h3>
+                <div id="adminItemCategoriesPopupBody" class="pop_up_content f_pop_up_content">
 
                 </div>
             </div>
         </div>
 
-        <div  class="modal myModal hide" id="adminItemPicturesPopup" >
+        <div  class="pop_up_container main_pop_up adminItemPicturesPopup" id="adminItemPicturesPopup" >
             <div class="overlay"></div>
-            <div class="modal-content f_modal_content" style="width: 600px;height: 500px;">
-                <button class="close_button"></button>
-                <div class="modal-body" id="adminItemPicturesPopupBody">
+            <div class="pop_up">
+                <div class="close_button"></div>
+                <h3 class="pop_up_title f_pop_up_title">{$ns.lm->getPhrase(108)}</h3>
+                <div id="adminItemPicturesPopupBody" class="pop_up_content f_pop_up_content">
 
                 </div>
             </div>
         </div>
-
     {/if}
 
     {*************************************************************************************************}
@@ -380,15 +381,19 @@
             <div class="f_pop_up_cancel_btn button blue"></div>
         </div>
     </div>
-
-    <input id="main_popup_default_title" type="hidden" value="{$ns.lm->getPhrase(483)}" />
-    <input id="main_popup_default_content" type="hidden" value="{$ns.lm->getPhrase(374)}" />
-    <input id="main_popup_default_confirm_btn" type="hidden" value="{$ns.lm->getPhrase(485)}" />
-    <input id="main_popup_default_cancel_btn" type="hidden" value="{$ns.lm->getPhrase(49)}" />
+    <div class="hidden" id="mainPopupSettings">
+        <input class="f_main_popup_default_title" type="hidden" value="{$ns.lm->getPhrase(483)}" />
+        <input class="f_main_popup_default_content" type="hidden" value="{$ns.lm->getPhrase(374)}" />
+        <input class="f_main_popup_default_confirm_btn" type="hidden" value="{$ns.lm->getPhrase(485)}" />
+        <input class="f_main_popup_default_cancel_btn" type="hidden" value="{$ns.lm->getPhrase(49)}" />
+    </div>
 
     <div class="main_loader hidden" id="main_loader"></div>
 
     {if isset($ns.signup_message)}
         <input id="signup_activation_message" type="hidden" value="{$ns.lm->getPhrase(522)}" />
+    {/if}
+    {if isset($ns.signup_activation_done)}
+        <input id="signup_activation_done" type="hidden" value="Already activated" />
     {/if}
 </section>

@@ -1,13 +1,14 @@
+/******************************************************************************/
+/*                            FOOTER MAIN WRAPPER                             */
+/******************************************************************************/
 
-/*******
-    FOOTER
-*******/
 .footer-wrapper {
     padding:20px 0px;
 }
 .footer-wrapper .container{
     margin:auto;
     text-align:center;
+    padding: 10px;
 }
 .footer-wrapper .footer-nav-content{
     margin:15px 0px;
@@ -29,11 +30,13 @@
     margin-top:10px;
     display:block;
 }
-/*******
-    NEWSLETTER FOOTER
-*******/
+
+/******************************************************************************/
+/*                                 NEWSLETTER                                 */
+/******************************************************************************/
+
 .news-letter-wrapper {
-    padding:20px 0px;
+    padding:20px;
     background-color:#f7f7f7;
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
@@ -42,8 +45,6 @@
 }
 .news-letter-wrapper .container{
     max-width:1200px;
-    width:calc(100% - 50px);
-    padding:0 25px;
     margin:auto;
 }
 .news-letter-block{
@@ -52,10 +53,13 @@
 .news-letter-block .input-group{
     position:relative;
     padding-right:40px;
+    max-width: 300px;
+    width: calc(100% - 40px);
+    margin: auto;
 }
 .news-letter-block .input-group .text{
     padding: 5px 10px;
-    width: 300px;
+    width: calc(100% - 20px);
 }
 .news-letter-block .input-group .newsletter_btn{
     position:absolute;
@@ -105,10 +109,15 @@
 .news-letter-below-block a{
     color:#428bca;
 }
+
+/******************************************************************************/
+/*                            SOCIAL SITES LINKS                              */
+/******************************************************************************/
+
 .socialNetworks-linkes-pages{
     margin:0px;
-    padding:10px 0px;
     float:left;
+    font-size: 0;
 }
 .socialNetworks-linkes-pages li{
     list-style:none;
@@ -138,12 +147,10 @@
     background-image:url("../../img/linkedin_1.png");
 }
 
+/******************************************************************************/
+/*                          PAYMENT METHODS SUPPORT                           */
+/******************************************************************************/
 
-/****************
- *
- * FOOTER
- *  
- */
 .payments {
     margin:0px;
     padding:0px;
@@ -159,3 +166,43 @@
 .payments li img {
     width:100%;
 }
+
+/******************************************************************************/
+/*                                                                            */
+/*                             FOOTER RESPONSIVE                              */
+/*                                                                            */
+/******************************************************************************/
+
+@media (max-width : 600px){
+    .socialNetworks-linkes-pages{
+        float:none;
+        margin-bottom:20px;        
+    }
+    .news-letter-block{
+        float:none;
+    }
+    .payments li{
+        width:70px;
+    }
+}
+
+@media (max-width : 600px){
+    .news-letter-wrapper{
+        padding:10px;
+    }
+    .footer-wrapper .footer-nav-content{
+        margin:10px auto;
+    }
+    .footer-wrapper .footer-nav-content .footer-column h5{
+        font-size:14px;
+    }
+    .footer-wrapper .footer-nav-content .footer-column a{
+        font-size:12px;
+    }
+    .payments li{
+        width:50px;
+    }    
+}
+
+
+

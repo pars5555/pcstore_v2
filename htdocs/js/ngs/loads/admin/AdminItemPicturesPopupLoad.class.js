@@ -34,5 +34,8 @@ ngs.AdminItemPicturesPopupLoad = Class.create(ngs.AbstractLoad, {
             var picture_index = jQuery(this).attr('picture_index');
             ngs.action('admin_add_remove_item_picture', {'action': 'make_default', 'item_id': item_id, 'picture_index': picture_index});
         });
+
+        jQuery("#adminItemPicturesPopup").addClass("active");
+        ngs.MainLoad.prototype.mainLoader(false);
     }
 });

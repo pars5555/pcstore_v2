@@ -7,12 +7,12 @@ require_once (CLASSES_PATH . "/managers/UserSubUsersManager.class.php");
 class MainLoad extends BaseGuestLoad {
 
     public function load() {
+        $this->getSignupActivationMessage();
         $this->addParam('req', $_REQUEST);
         $this->addParam('server_ip_address', SERVER_IP_ADDRESS);
         $this->checkInvitation();
         $this->initLanguage();
         $this->checkUserActivation();
-        $this->getSignupActivationMessage();
     }
 
     public function checkUserActivation() {
@@ -73,8 +73,18 @@ class MainLoad extends BaseGuestLoad {
 
     public function getSignupActivationMessage() {
         if (isset($_SESSION["signup_message"])) {
-            $this->addParam("signup_message", 1);
+            $this->addParam("signup_message", true);
             unset($_SESSION["signup_message"]);
+        }
+        
+        if(isset($_REQUEST["activation_code"])){
+            $_SESSION["signup_activation_done"] = $_REQUEST["activation_code"];
+            $this->redirect();            
+        }
+        
+        if (isset($_SESSION["signup_activation_done"])) {
+            $this->addParam("signup_activation_done", true);
+            unset($_SESSION["signup_activation_done"]);
         }
     }
 
