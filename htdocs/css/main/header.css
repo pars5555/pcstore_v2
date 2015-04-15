@@ -4,6 +4,7 @@
 
 .navbar{
     border-bottom:1px solid #ddd;
+    padding-top:46px;
 }
 .navbar .navbar-header{
     float:left;
@@ -16,6 +17,11 @@
 .navbar .navMenu{
     background-color:#f7f7f7;
     border-bottom:1px solid #ccc;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 5000;
 }
 .navMenu_inner{
     max-width: 1920px;
@@ -538,21 +544,8 @@
 /**************************************************************************************/
 
 @media (max-width : 1250px){
-    .left-panel-btn{
+    .ctl_main_home .left-panel-btn{
         display:block;
-    }
-
-    /**********************************MAIN NAVIGATION*************************************/
-    .navbar{
-        padding-top:46px;
-    }
-    .navbar .navMenu{
-        position:fixed;
-        top:0;
-        left:0;
-        width:calc(100% - 20px);
-        padding:0 10px;
-        z-index: 5000;
     }
 }
 
@@ -602,6 +595,9 @@
         line-height:initial;
         border-right:none;
     }
+    .notification .navMenu_item::before{
+        right:10px;
+    }
     /*******************************Drop Down Menu*******************************/
 
     .dropdown_menu{
@@ -641,7 +637,9 @@
 
 }
 @media (max-width : 768px){
-
+    .navMenu_inner{
+        padding:0 10px;
+    }
 
     /**************************************MAIN POPUP*************************************/
     .modal-body .modal_cols{
@@ -686,7 +684,7 @@
         -ms-transform:translate(0,0); 
     }
     .modal .modal-content.active{
-        top:50%;
+        top:0%;
     }
     .modal.forgotModal .modal-content{
         left:50%;

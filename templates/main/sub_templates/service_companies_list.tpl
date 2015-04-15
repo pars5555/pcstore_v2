@@ -20,7 +20,7 @@
 
                 {assign var="companyId" value = $company->getId()}
                 <div class="company_container">
-                    <div class="company-info">
+                    <div class="company-info f_company_col company_col">
                             <!-- <span class="company-num">{$smarty.foreach.cl.index+1}</span> -->
                         <a href="javascript:void(0);" class="service_company_gmap_pin" service_company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin_blue.png" alt="logo"/></a>
                         <div class="company_rating">
@@ -35,9 +35,12 @@
                                               target="_blank" title="{$url|default:$ns.lm->getPhrase(376)}"
                                               class="translatable_attribute_element" attribute_phrase_id="{if !empty($url)}376{/if}" attribute_name_to_translate="title"> <img  src="{$SITE_PATH}/images/sc_small_logo/{$companyId}" alt="logo"/> </a>
                         </div>
+
+                        <div class="company_toggle_btn f_company_toggle_btn"></div>
+
                     </div>
 
-                    <div class="company_confirm">
+                    <div class="company_confirm f_company_col company_col">
                         {if $company->getHasPrice()==1}
                             {if $company->getPriceId()>0} 
                                 {if $company->getShowPrice()==1}                                  
@@ -52,13 +55,17 @@
                                                 <a  href="{$SITE_PATH}/price/service_last_price/{$companyId}"> {assign var="company_last_price_ext" value=$company->getPriceExt()}
                                                     {assign var="priceListDate" value=$company->getPriceUploadDateTime()}
                                                     {assign var="icon_local_path" value="`$ns.DOCUMENT_ROOT`/img/file_types_icons/`$company_last_price_ext`_icon.png"}
-                                                    {assign var="icon_path" value="`$SITE_PATH`/img/file_types_icons/`$company_last_price_ext`_icon.png"} <img src = "{if file_exists($icon_local_path)}{$icon_path}{else}{$SITE_PATH}/img/file_types_icons/unknown_icon.png{/if}"  alt="document"/> <span style="color:{$ns.serviceCompaniesPriceListManager->getCompanyPriceColor($priceListDate)}"> {if $priceListDate}
-                                                            {$priceListDate|date_format:"%m/%d"}
-                                                            <br />
-                                                            {$priceListDate|date_format:"%H:%M"}
+                                                    {assign var="icon_path" value="`$SITE_PATH`/img/file_types_icons/`$company_last_price_ext`_icon.png"} 
+                                                    <img src = "{if file_exists($icon_local_path)}{$icon_path}{else}{$SITE_PATH}/img/file_types_icons/unknown_icon.png{/if}"  alt="document"/>
+                                                    <span style="color:{$ns.serviceCompaniesPriceListManager->getCompanyPriceColor($priceListDate)}">
+                                                        {if $priceListDate}
+                                                            <span class="block">{$priceListDate|date_format:"%m/%d"}</span>
+                                                            <span class="block">{$priceListDate|date_format:"%H:%M"}</span>
                                                         {else}
                                                             {$ns.lm->getPhrase(14)}
-                                                        {/if} </span> </a>
+                                                        {/if}
+                                                    </span>
+                                                </a>
 
                                                 {* company previouse prices*}
                                                 {*assign var="companyHistoryPrices" value = $ns.serviceCompaniesPriceListManager->getCompanyHistoryPricesOrderByDate($companyId,0,100)*}
@@ -67,13 +74,12 @@
                                                         <a href="{$SITE_PATH}/price/service_zipped_price_unzipped/{$pr->getId()}"> 
                                                             <img src = "{$SITE_PATH}/img/file_types_icons/zip_icon.png"  alt="zip"/> 
                                                             {assign var="uploadDateTime" value = $pr->getUploadDateTime()} 
-                                                            <span> 
+                                                            <p> 
                                                                 {if $uploadDateTime}
-                                                                    {$uploadDateTime|date_format:"%m/%d"}
-                                                                    <br />
-                                                                    {$uploadDateTime|date_format:"%H:%M"}
-                                                                {/if} 
-                                                            </span> 
+                                                                <p>{$uploadDateTime|date_format:"%m/%d"}</p>
+                                                                <p>{$uploadDateTime|date_format:"%H:%M"}</p>
+                                                            {/if} 
+                                                            </p> 
                                                         </a>
                                                     {/foreach}
                                                 {/if}
@@ -94,23 +100,22 @@
                         {/if}
                     </div>
 
-                    <div class="company-address">
+                    <div class="company-address f_company_col company_col">
                         <span>                                                  
                             {if (isset($ns.serviceCompanyBranchesDtosMappedByServiceCompanyId[$companyId]))}
                                 {foreach from=$ns.serviceCompanyBranchesDtosMappedByServiceCompanyId[$companyId] item=branchDto}
                                     {assign var="region_phrase_id" value=$ns.lm->getPhraseIdByPhraseEn($branchDto->getRegion())}
-                                    {$branchDto->getStreet()}, {$branchDto->getZip()}, {$ns.lm->getPhrase($region_phrase_id)}
-                                    <br/>
+                                    <p>{$branchDto->getStreet()}, {$branchDto->getZip()}, {$ns.lm->getPhrase($region_phrase_id)}</p>
                                 {/foreach}
                             {/if}
                         </span>
                     </div>
-                    <div class="company-tel">
+                    <div class="company-tel f_company_col company_col">
                         {if (isset($ns.serviceCompanyBranchesDtosMappedByServiceCompanyId[$companyId]))}
                             {foreach from=$ns.serviceCompanyBranchesDtosMappedByServiceCompanyId[$companyId] item=branchDto}                                            
                                 {assign var=phones value=","|explode:$branchDto->getPhones()}
                                 {foreach from=$phones item=phone}
-                                    <span>{$phone}</span></br>
+                                    <p>{$phone}</p>
                                 {/foreach}
                             {/foreach}
                         {/if}

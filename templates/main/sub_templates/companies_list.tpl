@@ -21,7 +21,7 @@
                 {assign var="passive" value=$company->getPassive()}
                 {assign var="url" value=$company->getUrl()}
                 <div class="company_container">
-                    <div class="company-info">
+                    <div class="company-info f_company_col company_col">
                         <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
                         <div class="company_rating">
                             <h3 class="company-tittle">
@@ -53,8 +53,11 @@
                                 </a>
                             {/if}
                         </div>
+
+                        <div class="company_toggle_btn f_company_toggle_btn"></div>
+
                     </div>
-                    <div class="company_confirm">
+                    <div class="company_confirm f_company_col company_col">
                         {if ($ns.userLevel === $ns.userGroupsUser) && $company->getShowPrice()!=1}
                             <div class="form-group">
                                 <!-- <label class="input_label label" for="dealerCode">Code</label> -->
@@ -106,42 +109,42 @@
                         {/if}
                     </div>
                     {if $company->getShowPrice()==1}
-                        <div class="company-address">
+                        <div class="company-address f_company_col company_col">
 
                             <p class="address">
                                 {if (isset($ns.companyBranchesDtosMappedByCompanyId[$company->getId()]))}
                                     {foreach from=$ns.companyBranchesDtosMappedByCompanyId[$company->getId()] item=branchDto}
                                         {assign var="region_phrase_id" value=$ns.lm->getPhraseIdByPhraseEn($branchDto->getRegion())}
-                                        <span> {$branchDto->getStreet()}, {$branchDto->getZip()}, {$ns.lm->getPhrase($region_phrase_id)}
-                                        </span>
-                                        <br/>
-                                    {/foreach}
-                                {/if}
+                                    <p> {$branchDto->getStreet()}, {$branchDto->getZip()}, {$ns.lm->getPhrase($region_phrase_id)}
+                                    </p>
+                                {/foreach}
+                            {/if}
                             </p>
 
                             <p class="offers">
                                 {if $passive != 1}
                                     {assign var="company_offers" value=$company->getOffers()}
-                                <marquee scrollamount="2" behavior="scroll" direction="left">
-                                    {assign var="offers" value="^"|explode:$company_offers}
-                                    {foreach from=$offers item=offer}
-                                        {$offer}
-                                        <br/>
-                                    {/foreach}
-                                </marquee>
+                                    {if !empty($company_offers)}
+                                    <marquee scrollamount="2" behavior="scroll" direction="left">
+                                        {assign var="offers" value="^"|explode:$company_offers}
+                                        {foreach from=$offers item=offer}
+                                            <p>{$offer}</p>
+                                        {/foreach}
+                                    </marquee>
+                                {/if}
                             {/if}
                             </p>
                         </div>
-                        <div class="company-tel">
+                        <div class="company-tel f_company_col company_col">
                             <p class="tel-number">
                                 {if (isset($ns.companyBranchesDtosMappedByCompanyId[$company->getId()]))}
                                     {foreach from=$ns.companyBranchesDtosMappedByCompanyId[$company->getId()] item=branchDto}                                            
                                         {assign var=phones value=","|explode:$branchDto->getPhones()}
                                         {foreach from=$phones item=phone}
-                                            <span>{$phone}</span></br>
-                                        {/foreach}
+                                        <p>{$phone}</p>
                                     {/foreach}
-                                {/if}
+                                {/foreach}
+                            {/if}
                             </p>
                         </div>
                     {/if}

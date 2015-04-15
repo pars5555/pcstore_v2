@@ -349,7 +349,9 @@ select::-ms-expand{
     display:table-cell;
     vertical-align: middle;
 }
-
+.block{
+    display:block;
+}
 .inline-block{
     display:inline-block;
 }
@@ -539,4 +541,36 @@ select::-ms-expand{
     font-weight: 600;
     padding:0 10px;
     cursor: pointer;
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                 GLOBAL RESPONSIVE                                  */
+/*                                                                                    */
+/**************************************************************************************/
+
+
+@media (max-width : 1024px){
+
+    /* Tab Title & Content Container */
+    .tab_content_container{
+        padding:10px;
+    }
+    .tab_title{
+        padding:7px 20px;
+        font-size: 15px;
+    }
+
+    /*Main Title*/
+    .main_title{
+        font-size: 25px;
+        margin-bottom:20px;
+        padding-bottom: 5px;
+    }
+    
+    /*Button*/
+    .button{
+        padding:7px 0;
+        font-size: 15px;
+    }
 }
