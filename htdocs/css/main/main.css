@@ -78,8 +78,6 @@ body{
     .wrapper{
         padding: 10px;
     }
-
-
     .scroll_page_top{
         width:50px;
         height:35px;
@@ -91,6 +89,15 @@ body{
     }
 }
 
+@media (max-width : 700px){
+    .scroll_page_top{
+        width:35px;
+        height:25px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+    
+}
 
 
 

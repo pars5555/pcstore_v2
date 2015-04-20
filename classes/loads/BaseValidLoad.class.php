@@ -65,9 +65,13 @@ abstract class BaseValidLoad extends AbstractLoad {
     public function listingCols() {
         $listingColsValues = [1, 3, 5];
         $listing_cols = 3;
+        if (isset($_COOKIE["listing_cols"])) {
+            $listing_cols = $_COOKIE["listing_cols"];
+        }
         if (isset($_REQUEST["cols"])) {
             $listing_cols = $_REQUEST["cols"];
         }
+        $this->setCookie("listing_cols", $listing_cols, time()+60*60*24*30*24);
         $this->addParam("listing_cols_values", $listingColsValues);
         $this->addParam("listing_cols", $listing_cols);
     }

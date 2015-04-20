@@ -327,7 +327,7 @@
     text-align: left;
 }
 .build_pc_animation .build_pc_link .build_pc_img{
-    display:none;
+    display:block;
 }
 .build_pc_animation .build_pc_link.no_flash .build_pc_img.build_pc_obj{
     display:block;

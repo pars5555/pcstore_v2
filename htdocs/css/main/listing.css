@@ -154,8 +154,8 @@
     width:70px;
     height:70px;
     position:absolute;
-    top:-20px;
-    right:-20px;
+    right: 0;
+    top: 0;
     background: url("../../img/warranty.png") no-repeat scroll center center / contain transparent;
 }
 .listing_item_warranty .listing_item_warranty_text{
@@ -317,13 +317,13 @@
         padding: 9px;
         width: auto;
     }
-    
+
     /************** Listing Cols View *************/
-    
+
     .listing_cols_view{
-     display:none;   
+        display:none;   
     }
-    
+
 }
 
 @media (max-width : 768px){
