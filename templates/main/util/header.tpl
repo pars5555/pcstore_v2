@@ -193,7 +193,7 @@
                             <embed class="build_pc_obj" wmode=transparent allowfullscreen="true" allowscriptaccess="always" src="{$SITE_PATH}/img/buildpc/buildpc.swf"></embed>
                             </object>
                             {*}
-                            <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.png">
+                            <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.jpg">
                         </div>
                     </div> 
 
@@ -232,7 +232,7 @@
                     <embed class="build_pc_obj" wmode=transparent allowfullscreen="true" allowscriptaccess="always" src="{$SITE_PATH}/img/buildpc/buildpc.swf"></embed>
                     </object>
                     {*}
-                    <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.png">
+                    <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.jpg">
                 </div>
             </div> 
 
