@@ -1,10 +1,6 @@
-
-/***************
-
-   COMPANIES
-
-*************/
-
+.activate_map{
+    display: none;
+}
 /*============ Companies Filter and Search block ============*/
 
 .companies_container{
@@ -649,6 +645,36 @@ SMS CONF COMPANY
     .company_container .company-address,
     .company_container .company-tel{
         font-size:13px;
+    }
+
+    /********************************* Google Map ********************************/
+
+    .activate_map{
+        display: block;
+    }
+
+    element.style {
+        background-color: #e5e3df;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    .google_map{
+        position: relative;
+    }
+    .google_map:before {
+        background-color: rgba(0, 0, 0, 0.7);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    .google_map.active:before{
+        display:none;
     }
 }
 

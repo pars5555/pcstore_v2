@@ -3,7 +3,8 @@
 <input type="hidden" value='{$ns.allCompaniesBranchesDtosToArray}' id="all_companies_branches_dtos_to_array_json"/>
 <input type="hidden" value='{$ns.allServiceCompaniesDtosToArray}' id="all_service_companies_dtos_to_array_json"/>
 <input type="hidden" value='{$ns.allServiceCompaniesBranchesDtosToArray}' id="all_service_companies_branches_dtos_to_array_json"/>
-<div id="cl_gmap" style="height:300px"></div>
+<div id="cl_gmap" class="google_map" style="height:300px"></div>
+<div class="activate_map button blue f_activate_map">Activate map</div>
 
 <div class="container">
     <div class="companies_container">

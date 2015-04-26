@@ -21,6 +21,7 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
         this.initAccessKeyInputs();
         this.initShowLastHoursPrices();
         this.companyColumnsToggleSlide();
+        this.activateGoogleMap();
     },
     initShowLastHoursPrices: function () {
         jQuery('#f_show_only_last_hours_select').change(function () {
@@ -248,6 +249,12 @@ ngs.CompaniesLoad = Class.create(ngs.AbstractLoad, {
             event.stopPropagation();
             jQuery(this).toggleClass("active");
             jQuery(this).closest(".f_company_col").siblings().slideToggle(300);
+        });
+    },
+    activateGoogleMap: function () {
+        jQuery(".f_activate_map").on("click tap", function (event) {
+            event.stopPropagation();
+            jQuery("#cl_gmap").toggleClass("active");
         });
     }
 });
