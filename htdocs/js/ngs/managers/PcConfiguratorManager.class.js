@@ -98,6 +98,8 @@ ngs.PcConfiguratorManager = {
         jQuery("#buildPcWrapper").mCustomScrollbar('scrollTo', 'top');
         
         ngs.MainLoad.prototype.pccLoader();
+        ngs.BuildpcLoad.prototype.scrollTopOnComponentSelect();
+        ngs.BuildpcLoad.prototype.pccDetailsToggle();
     },
     getAllCurrentComponentSelectedItemsIdsArray: function () {
         var selectedItemsIds = new Array();

@@ -1,4 +1,4 @@
-<div id="mainLeftPanel"  class="left-panel">
+<div id="mainLeftPanel"  class="left-panel f_side_panel" data-side-panel="categories-panel" data-side-position="left">
     <div class="left-panel_content">
         {if isset($ns.itemsCategoryMenuView)}
             <h1 class="any_categories">

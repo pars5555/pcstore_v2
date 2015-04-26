@@ -18,6 +18,8 @@ ngs.GetSelectedAndRequireComponentsAction = Class.create(ngs.AbstractAction, {
         }
 
         ngs.MainLoad.prototype.pccLoader();
+        ngs.BuildpcLoad.prototype.scrollTopOnComponentSelect();
+        ngs.BuildpcLoad.prototype.pccDetailsToggle();
     },
     scroolToRequiredComponent: function (required_components_ids) {
         var firstRequiredComponentIndex = parseInt(required_components_ids[0]);

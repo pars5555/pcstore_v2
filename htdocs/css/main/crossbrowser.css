@@ -1,13 +1,13 @@
 
 /******************/
 .crossbrowser_linear_gradient{	
+    background: #585e64;	
+    background-color:#585e64;
     background: -webkit-linear-gradient(#585e64, #3b4147); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#585e64, #3b4147); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#585e64, #3b4147); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#585e64, #3b4147); /* Standard syntax */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#585e64', endColorstr='#3b4147',GradientType=0 ); /* IE6-9 */
-    background: #585e64;	
-    background-color:#585e64;
 }
 .crossbrowser_transition{
     -webkit-transition: all 0.3s ease;
@@ -66,6 +66,12 @@
     width: -webkit-calc(100% - 100px);
     width: -moz-calc(100% - 100px);
     width: calc(100% - 100px);
+}
+
+.crossbrowser_box_sizing{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;       
 }
 
 .noselect {

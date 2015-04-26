@@ -22,7 +22,6 @@
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/jquery/jquery.ui.theme.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/style.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/skin.css?{$VERSION}" />
-{*<link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/responsive.css?{$VERSION}" />*}
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/left_panel.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/fonts.css?{$VERSION}" />
 {*}

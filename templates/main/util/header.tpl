@@ -2,11 +2,19 @@
     <nav id="navMenu" class="navMenu" role="navigation">
         <div class="navMenu_inner">
             <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
-            <div class="left-panel-btn f_left-panel-btn">
+            <div class="left-panel-btn f_side_panel_btn" data-side-panel="categories-panel">
                 <span class="fontAwesome"></span>
                 <span>{$ns.lm->getPhrase(105)}</span>
             </div>
-            <div class="navMenuContainer f_nav_menu">
+            <div class="build_pc_components_btn f_side_panel_btn" data-side-panel="pc-components">
+                <span class="fontAwesome"></span>
+                <span>PC Components</span>
+            </div>
+            <div class="pcc_total_calculation_btn f_side_panel_btn" data-side-panel="pcc-total-calculation">
+                <span class="fontAwesome"></span>
+                <span>Your PC</span>
+            </div>
+            <div class="navMenuContainer f_side_panel" data-side-panel="nav-menu" data-side-position="right">
                 <ul class="navMenuList">
 
                     {if $ns.userLevel === $ns.userGroupsAdmin}
@@ -140,7 +148,7 @@
                     {/if}
                 </ul>
             </div>
-            <div class="nav_menu_btn f_nav_menu_btn">
+            <div class="nav_menu_btn f_side_panel_btn" data-side-panel="nav-menu">
                 <span>Menu</span>
                 <span class="fontAwesome"></span>
             </div>
@@ -185,7 +193,7 @@
 
                     {**************************** BUILD PC ********************************}
                     <div class="build_pc_animation build_pc_animation_top">
-                        <div class="build_pc_link f_build_pc_link" data-href="{$SITE_PATH}/buildpc">
+                        <a class="build_pc_link f_build_pc_link" href="{$SITE_PATH}/buildpc">
                             {*}
                             <object class="build_pc_obj">
                             <param name="movie" value="{$SITE_PATH}/img/buildpc/buildpc.swf">
@@ -194,7 +202,7 @@
                             </object>
                             {*}
                             <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.jpg">
-                        </div>
+                        </a>
                     </div> 
 
                     <div class="search_block">
@@ -224,7 +232,7 @@
 
             {**************************** BUILD PC ********************************}
             <div class="build_pc_animation">
-                <div class="build_pc_link f_build_pc_link" data-href="{$SITE_PATH}/buildpc">
+                <a class="build_pc_link f_build_pc_link" href="{$SITE_PATH}/buildpc">
                     {*}
                     <object class="build_pc_obj">
                     <param name="movie" value="{$SITE_PATH}/img/buildpc/buildpc.swf">
@@ -233,7 +241,7 @@
                     </object>
                     {*}
                     <img class="build_pc_obj build_pc_img" src="{$SITE_PATH}/img/buildpc/buildpc.jpg">
-                </div>
+                </a>
             </div> 
 
         </div>

@@ -1,17 +1,17 @@
+/******************************************************************************/
+/*                                                                            */
+/*                                BUILD PC                                    */
+/*                                                                            */
+/******************************************************************************/
 
-/*******
-
-BUILD PC PAGE
-
-*******/
-.mobile-btn {
-    cursor: pointer;
-    font-size: 18px;
-    margin-bottom: -20px;
-    display:none;
-    margin-left: 520px;
+.main_loader.pcc_loader{
+    position: absolute;
+    height: 100%;
+    z-index: 5000;
+    background-attachment: fixed;
 }
 .build_pc_container{
+
 }
 .pc_components {
     font-size: 0px;
@@ -35,6 +35,7 @@ BUILD PC PAGE
 .item-sections-wrapper .current-section{
     display:table-cell;
     width:14.2%;
+    height: 140px;
     vertical-align:top;
     border:1px solid #999;
     border-bottom:none;
@@ -42,11 +43,23 @@ BUILD PC PAGE
     border-top-right-radius:5px;
     position:relative;
     cursor:pointer;
-    background:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #f3f3f3;
-    height: 140px;
+
+    background: #f3f3f3;	
+    background-color:#f3f3f3;
+    background: -webkit-linear-gradient(#f5f5f5, #e8e8e8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f5f5f5, #e8e8e8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f5f5f5, #e8e8e8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f5f5f5, #e8e8e8); /* Standard syntax */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
 }
 .item-sections-wrapper .current-section.active{
-    background:linear-gradient(#63b4fb, #4697de) repeat scroll 0 0 #3278b3;
+    background: #3278b3;	
+    background-color:#3278b3;
+    background: -webkit-linear-gradient(#63b4fb, #4697de); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#63b4fb, #4697de); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#63b4fb, #4697de); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#63b4fb, #4697de); /* Standard syntax */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b4fb', endColorstr='#4697de',GradientType=0 ); /* IE6-9 */
     color: #000;
 }
 .build-pc-component {
@@ -60,10 +73,8 @@ BUILD PC PAGE
     width:50%;
     margin:auto;
 }
-.build-pc-component p{
-    text-align: center;
-}
-.build-pc-component .build-pc-component-img {
+.build-pc-component .build-pc-component-img,
+.build-pc-component .build-pc-component-name{
     text-align: center;
 }
 
@@ -86,13 +97,36 @@ BUILD PC PAGE
 .pcc_selected_component .build-pc-component:before{
     background:url(../../img/selected.png) no-repeat scroll 50% 50% / 100% transparent;    
 }
+/*Build PC components button*/
+.build_pc_components_btn{
+    float: left;
+    display:none;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+    margin-right:10px;
+}
+.build_pc_components_btn span{
+    border-right:none;
+    padding: 0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+}
+.build_pc_components_btn.active span,
+.build_pc_components_btn:active span{
+    color: #63b4fb;
+}
 
-
-/* Components List */
+/******************************************************************************/
+/*                             Components List                                */
+/******************************************************************************/
 
 .components-list-wrapper {
     display: table;
-    margin-top: 20px;
+    margin: 20px auto 0;
     width: 100%;
 }
 .build-pc-main-container{
@@ -119,7 +153,7 @@ BUILD PC PAGE
 }
 .select_component_inner_container>div{
     margin: 5px;    
-    padding:0 5px;
+    padding:5px;
 
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
@@ -184,6 +218,7 @@ BUILD PC PAGE
     display:table;
     width:100%;
     border-collapse:collapse;
+    position: relative;
 }
 .component_block>div{
     display:table-cell;
@@ -209,7 +244,7 @@ BUILD PC PAGE
 }
 .build_pc_container .component_block .component_img,
 .build_pc_container .component_block .component_img img{
-    width:70px;	
+    width:70px;
 }
 .bundle-components-wrapper  .component_block .component_img,
 .bundle-components-wrapper  .component_block .component_img img{
@@ -223,6 +258,9 @@ BUILD PC PAGE
 }
 .component_block .component_info{
     text-align:center;
+}
+.component_block .component_info.component_info_bottom{
+    display:none;
 }
 .cart_items_head .component_block .component_info{
     text-align: center;
@@ -273,7 +311,9 @@ BUILD PC PAGE
     width:40px;
 }
 
-/* Your PC */
+/******************************************************************************/
+/*                           PCC Total Calculation                            */
+/******************************************************************************/
 
 .pcc_total_calc_item_price_row .component_block > div{
     padding:3px 5px;
@@ -289,6 +329,7 @@ BUILD PC PAGE
 }
 .pcc_total_calc_item_price_row .component_block .component_img img{
     width:100%;
+    max-width: 50px;
 }
 .pcc_total_calc_item_price_row .component_block .item-delete{
     display: inline-block;
@@ -298,7 +339,6 @@ BUILD PC PAGE
 }
 
 .your_pc{
-    /*background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%) repeat scroll 0 0 #e8ebed;*/
     border: 1px solid #ccc;
     border-radius: 3px;
     color: #3278b3;
@@ -306,6 +346,15 @@ BUILD PC PAGE
     font-size: 30px;
     margin-bottom: 30px;
     padding: 5px 30px;
+    text-align: center;
+    
+    background: #f3f3f3;	
+    background-color:#f3f3f3;
+    background: -webkit-linear-gradient(#f5f5f5, #e8e8e8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f5f5f5, #e8e8e8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f5f5f5, #e8e8e8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f5f5f5, #e8e8e8); /* Standard syntax */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
 }
 .your_pc span{
     display:inline-block;
@@ -376,3 +425,291 @@ BUILD PC PAGE
     padding: 9px;
     width: auto;
 }
+
+/*PCC Total Calculation button*/
+.pcc_total_calculation_btn{
+    float: left;
+    display:none;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.pcc_total_calculation_btn span{
+    border-right:none;
+    padding: 0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+}
+.pcc_total_calculation_btn.active span,
+.pcc_total_calculation_btn:active span{
+    color: #63b4fb;
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                BUILD PC RESPONSIVE                                 */
+/*                                                                                    */
+/**************************************************************************************/
+
+@media (max-width : 1250px){
+    /**************************************************************************/
+    /*                          Build PC Components                           */
+    /**************************************************************************/
+    .item-sections-wrapper{
+        display:table;
+        width:100%;
+    }
+    .item-sections-wrapper .current-section{
+        height:auto;
+    }
+    .build-pc-component{
+        padding:10px;
+    }
+    .build-pc-component .build-pc-component-img{
+        margin-bottom:7px;
+    }
+
+    /**************************************************************************/
+    /*                      Build PC Components List                          */
+    /**************************************************************************/
+
+    .components-list-wrapper{
+        display:block;
+        width: auto;
+        max-width: 1000px;
+    }
+    .build-pc-main-container{
+        display:block;
+        width:auto;
+    }
+    .build-pc-wrapper{
+        height:auto;
+    }
+    .build-pc-wrapper .current-item-block .no-match-wrapper{
+        opacity:1;
+    }
+
+    /**************************************************************************/
+    /*                          PCC Total Calculation                         */
+    /**************************************************************************/
+
+    .ctl_main_buildpc .pcc_total_calculation_btn{
+        display:block;
+    }
+    .total_calculation_container{
+        display:block;
+        background-color: #fff;
+        box-shadow: 0 0 5px #555;
+        height: 100%;
+        right: -500px;
+        overflow: auto;
+        padding: 60px 10px 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        max-width: 480px;
+        z-index: 7000;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;  
+
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;         
+    }
+    .total_calculation_container.active{
+        right:0;
+    }
+}
+
+@media (max-width : 1024px){
+    .pcc_print_button{
+        display:none;
+    }   
+}
+
+@media (max-width : 768px){
+    .pcc_required_component .build-pc-component::before,
+    .pcc_selected_component .build-pc-component::before {
+        width: 55px;
+        height: 55px;
+        top: -9px;
+        left: -9px;
+    }
+
+
+    /**************************************************************************/
+    /*                      Build PC Components List                          */
+    /**************************************************************************/
+
+    .select_component_inner_container > div:hover{
+        box-shadow: none;
+    }
+}
+
+@media (max-width : 700px){
+    .ctl_main_buildpc .build_pc_components_btn{
+        display:block;
+    }
+    /**************************************************************************/
+    /*                               Build PC Components                      */
+    /**************************************************************************/
+    .pc_components {
+        background-color: #fff;
+        box-shadow: 0 0 5px #555;
+        height: 100%;
+        left: -330px;
+        overflow: auto;
+        padding-top: 47px;
+        position: fixed;
+        top: 0;
+        width: 300px;
+        z-index: 7000;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;  
+
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease; 
+    }
+    .pc_components.active{
+        left:0;
+    }
+    .item-sections-wrapper {
+        display: block;
+        width: auto;
+        border-bottom:none;
+        border-spacing:0;
+        margin:auto;
+    }
+    .item-sections-wrapper .current-section{
+        display:block;
+        width:auto;
+        padding:5px;
+
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -khtml-border-radius: 0; 
+        -o-border-radius: 0; 
+        -ms-border-radius: 0;
+        -icab-border-radius: 0; 
+        border-radius: 0; 
+    }
+    .build-pc-component{
+        display:table;
+        width:100%;
+        padding:0;
+    }
+    .pcc_required_component .build-pc-component::before,
+    .pcc_selected_component .build-pc-component::before {
+        left: -7px;
+        top: -7px;
+    }
+    .build-pc-component .build-pc-component-img{
+        display:table-cell;
+        vertical-align: middle;
+        margin:auto;
+        width:50px;
+        padding-left: 20px;
+    }
+    .build-pc-component img{
+        width:100%;
+    }
+    .build-pc-component .build-pc-component-name{
+        display:table-cell;
+        vertical-align: middle;
+        font-size: 17px;
+    }
+}
+@media (max-width : 590px){
+
+    /**************************************************************************/
+    /*                      Build PC Components List                          */
+    /**************************************************************************/
+    .build-pc-main-container .select_component_inner_container > div{
+        border-bottom:1px solid #ccc;
+    }
+    .build-pc-main-container .select_component_inner_container{
+        padding:0;
+    }
+    .build-pc-main-container .component_block {
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+    .build-pc-main-container .build-pc-wrapper .select_count .pcc_select_wrapper,
+    .build-pc-main-container .component_block > div{
+        display:inline-block;
+    }
+    .build-pc-main-container .build-pc-wrapper .current-item-block,
+    .build-pc-main-container .build-pc-wrapper .select_count .current-item-block{
+        display:block;
+        width:auto;
+    }
+    .build-pc-main-container .current-item-block .component_block .component_info{
+        display:block;
+        text-align: center;
+    }    
+}
+
+@media (max-width : 420px){
+    /**************************************************************************/
+    /*                          PCC Total Calculation                         */
+    /**************************************************************************/
+    .your_pc,
+    .facebook_share{
+        float:none;
+        margin: 0 auto 15px;
+    }
+    .button.add_to_cart, .button.save_pcc, .pcc_print_button{
+        float: none;
+        margin: 15px auto;
+        max-width: none;
+        width: auto;
+    }
+
+    .total_calculation_container .pcc_total_calc_item_price_row{
+        border-bottom:1px solid #ccc;
+    }
+    .component_block .component_info{
+        display:none;
+    }
+    .component_block .component_info.component_info_bottom{
+        caption-side: bottom;
+        display: table-caption;
+    }
+
+}
+
+@media (max-width : 360px){
+    .pc_components {
+        width:100%;
+        left:-100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

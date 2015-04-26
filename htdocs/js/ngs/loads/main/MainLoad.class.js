@@ -33,8 +33,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.notifications();
         this.categoriesProductCheckbox();
         this.pccLoader();
-        this.leftPanel();
-        this.mainNavigationMenu();
+        this.sidePanel();
         this.notificationScrolling();
 
         this.initMainTabsContents();
@@ -45,7 +44,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.searchForm();
         this.signupActivationMessage();
         this.scrollPageToTop();
-        this.buildPcLink();
+//        this.buildPcLink();
+        this.detectDeviceType();
+    },
+    detectDeviceType: function () {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          jQuery("#pcc_print_button").addClass("hidden");
+        };
     },
     buildPcLink: function () {
         jQuery(".f_build_pc_link").on("click mousedown touchstart tap", function () {
@@ -71,7 +76,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     signupActivationMessage: function () {
         var signup_message = jQuery("#signup_activation_message");
         var signup_done = jQuery("#signup_activation_done");
-        
+
         if (signup_message.length > 0) {
             this.initPopup(false, signup_message.val());
         }
@@ -392,16 +397,25 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             window.location.href = jQuery(this).parent().attr("href");
         });
     },
-    leftPanel: function () {
-        jQuery(".f_left-panel-btn").on("click", function () {
-            jQuery("#mainLeftPanel").toggleClass("active");
-            jQuery(".f_nav_menu").removeClass("active");
+    sidePanel: function () {
+        jQuery(".f_side_panel_btn").on("click", function () {
+            var sidePanel = jQuery(this).attr("data-side-panel");
+            jQuery(".f_side_panel").not("[data-side-panel=" + sidePanel + "]").removeClass("active");
+            jQuery(".f_side_panel_btn").not("[data-side-panel=" + sidePanel + "]").removeClass("active");
+            jQuery(".f_side_panel[data-side-panel=" + sidePanel + "]").toggleClass("active");
+            jQuery(this).toggleClass("active");
         });
-    },
-    mainNavigationMenu: function () {
-        jQuery(".f_nav_menu_btn").on("click", function () {
-            jQuery(".f_nav_menu").toggleClass("active");
-            jQuery("#mainLeftPanel").removeClass("active");
+
+        jQuery(".f_side_panel[data-side-position=left]").on("swipeleft", function () {
+            var sidePanel = jQuery(this).attr("data-side-panel");
+            jQuery(this).removeClass("active");
+            jQuery(".f_side_panel_btn[data-side-panel=" + sidePanel + "]").removeClass("active");
+        });
+
+        jQuery(".f_side_panel[data-side-position=right]").on("swiperight", function () {
+            var sidePanel = jQuery(this).attr("data-side-panel");
+            jQuery(this).removeClass("active");
+            jQuery(".f_side_panel_btn[data-side-panel=" + sidePanel + "]").removeClass("active");
         });
     },
     notificationScrolling: function () {

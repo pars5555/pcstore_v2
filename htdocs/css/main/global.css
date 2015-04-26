@@ -508,10 +508,6 @@ select::-ms-expand{
     z-index: 9999999;
     background: url("../../img/loading.gif") no-repeat scroll center center / 300px auto rgba(255,255,255,0.77);
 }
-.main_loader.pcc_loader{
-    position: absolute;
-    height: 520px;
-}
 
 /*************************** Checkbox Container **************************/
 .checkbox{

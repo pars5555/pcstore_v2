@@ -194,7 +194,7 @@
         border:none;
     }
 }
-@media (max-width : 480px){
+@media (max-width : 360px){
     .left-panel {
         width:100%;
         left: -100%;

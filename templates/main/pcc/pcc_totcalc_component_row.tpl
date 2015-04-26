@@ -32,5 +32,8 @@
                     {$amdPrice*$count|number_format:0} Դր.
                 {/if} </span>
         </div>
+        <div class="component_info component_info_bottom">
+            <span class="pcc_total_calc_item_price_title">{$item->getDisplayName()} </span>
+        </div>
     </div>
 </div>

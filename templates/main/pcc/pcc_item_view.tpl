@@ -18,7 +18,7 @@
 {*if ($item->getPccItemCompatible()==1)}#EEFFEE{else}#FFBBBB{/if*}
 <div class="{if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}select_count{/if} {if isset($item_is_selected)}checked_component{/if}">
 
-    <div href="javascript:void(0);" {if isset($error_message)} class="f_current_item_block list-group-item current-item-block no-match"{else}class="f_current_item_block list-group-item current-item-block"{/if}>
+    <div href="javascript:void(0);" {if isset($error_message)} class="f_current_item_block current-item-block no-match"{else}class="f_current_item_block current-item-block"{/if}>
         <label class="label" for="item_{$item->getId()}">
             {if isset($error_message)}
                 <div class="no-match-wrapper">
@@ -83,7 +83,7 @@
 
                 </div>
             </div>
-        </label>  
+        </label> 
     </div>                   	
     {if isset($ns.multi_count_selection_item) && isset($ns.selected_components_ids_array) && in_array($item->getId(), $ns.selected_components_ids_array)}	
         <div class="pcc_select_wrapper f_pcc_select_wrapper">

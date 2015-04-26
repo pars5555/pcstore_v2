@@ -1,9 +1,6 @@
 <div class="container build_pc_container">
-    <div class="pc_components">
+    <div class="pc_components f_side_panel f_pc_components" data-side-panel="pc-components" data-side-position="left">
         <div id="itemSections">
-            <!-- <div id="mobileBtnComp" class="mobile-btn">
-                <i class="glyphicon glyphicon-align-justify"></i>
-            </div> -->
             <div class="item-sections-wrapper">
                 {section name=pid start=1 loop=$ns.pcc_components_count+1 step=1}
                     {assign var="index" value=$smarty.section.pid.index-1}  
@@ -12,7 +9,7 @@
                             <div class="build-pc-component-img">
                                 <img src="{$SITE_PATH}/img/pc_configurator/{$smarty.section.pid.index}.png" />
                             </div>
-                            <p class="text-center">{$ns.lm->getPhrase($ns.component_display_names.$index)}</p>
+                            <p class="build-pc-component-name">{$ns.lm->getPhrase($ns.component_display_names.$index)}</p>
                         </a>
                     </div>
                     {if ($smarty.section.pid.index == 7)}</div><div class="item-sections-wrapper">{/if}
@@ -30,7 +27,7 @@
         </div>
         <div class="main_loader hidden pcc_loader" id="pcc_loader"></div>
     </div>
-    <div class="total_calculation_container" id="pcc_total_calculation_container">
+    <div class="total_calculation_container f_side_panel" id="pcc_total_calculation_container" data-side-panel="pcc-total-calculation" data-side-position="right">
         {nest ns = pcc_total_calculations}
 
         {*}<div class="current-product text-center">
