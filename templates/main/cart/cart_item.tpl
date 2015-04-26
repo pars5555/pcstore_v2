@@ -43,7 +43,7 @@
                 {/if}
                 {/if} </span>
             </div>
-
+            <div class="clear"></div>
 
             <!-- ==============Component Count============== -->
 

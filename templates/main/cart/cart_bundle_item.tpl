@@ -22,6 +22,7 @@
         {assign var="phrase_id" value = $bundleItems.0->getBundleDisplayNameId()}
         {$ns.lm->getPhrase($phrase_id)}
     </div>
+    <div class="clear"></div>
     {if !isset($someItemsMissing)}
         <div class="cart_item_count">
             <div class="select_wrapper">

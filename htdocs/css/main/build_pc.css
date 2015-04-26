@@ -219,6 +219,7 @@
     width:100%;
     border-collapse:collapse;
     position: relative;
+    text-align: center;
 }
 .component_block>div{
     display:table-cell;
@@ -227,7 +228,11 @@
     /*border:1px solid #ccc;*/
     padding: 5px;
 }
-
+.component_block .clear.cart_clear_bottom,
+.component_block .clear{
+    display: none;
+    padding: 0;
+}
 .component_block .component_link {
     width: 55px;
 }

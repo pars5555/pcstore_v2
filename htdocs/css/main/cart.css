@@ -1,10 +1,3 @@
-
-/*******
-
- CART
-
-*******/
-
 /* List Customer Message */
 
 .list-customer-message {
@@ -48,12 +41,21 @@
     position:relative;
     margin-bottom: 10px;
     text-align:center;
+    font-size: 13px;
+}
+.bundle .old_price,
+.bundle .price{
+    font-size: 13px;    
+}
+.bundle .component_block{
+    border-bottom:1px solid #ccc;
 }
 .bundle .bundle-components-wrapper{
     display: none;
-    margin:20px 15%;
+    margin:20px auto;
     width:70%;
-    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 7px #ccc;
+    padding: 15px;
 }
 .bundle_components_table{
     display:table;
@@ -456,3 +458,96 @@
     vertical-align: middle;
     margin-right: 10px;
 }
+
+/**************************************************************************************/
+/*                                                                                    */
+/*                                BUILD PC RESPONSIVE                                 */
+/*                                                                                    */
+/**************************************************************************************/
+
+@media (max-width : 1024px){
+    .cart-item .component_block .cart_item_count,
+    .cart-item .component_block .component_unit_prie,
+    .cart-item .component_block .component_discount,
+    .cart-item .component_block .component_total_price {
+        width: 100px;
+    }
+    .cart-item .bundle_components_table .component_block .component_count,
+    .cart-item .bundle_components_table .component_block .component_unit_prie,
+    .cart-item .bundle_components_table .component_block .component_discount,
+    .cart-item .bundle_components_table .component_block .component_total_price {
+        width: 70px;
+    }
+    .bundle .bundle-components-wrapper{
+        width:90%;
+    }
+    .cart-wrapper .cart-item{
+        padding:5px;
+    }
+    .cart-wrapper .cart-item.cart_items_head{
+        display:none;
+    }
+}
+@media (max-width : 768px){
+    .cart-wrapper{
+        margin-bottom: 20px;
+    }
+    .cart_checkout,
+    .promo_code_container{
+        float:none;
+        clear:both;
+        margin: 20px auto;
+        max-width: none;
+    }
+    .cart_checkout .button.blue{
+        float:none;
+    }
+    
+}
+@media (max-width : 750px){
+    .cart-item .component_block .cart_item_count,
+    .cart-item .component_block .component_unit_prie,
+    .cart-item .component_block .component_discount,
+    .cart-item .component_block .component_total_price {
+        width: auto;
+    }
+    .bundle_components_table .component_block,
+    .bundle_components_table{
+        display:block;
+        width:auto;
+    }
+    .cart-item .bundle .component_block .component_info{
+        width: 80%;        
+    }
+    .cart-item .component_block > div{
+        display:inline-block;
+    }
+    .cart-item .component_block .clear{
+        display:block;
+    }
+}
+@media (max-width : 590px){
+    .cart-item .component_block .clear.cart_clear_bottom{
+        display:block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
