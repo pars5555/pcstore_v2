@@ -1,7 +1,7 @@
-<div class="user-left-panel left-panel">
+<div class="user-left-panel left-panel f_side_panel" data-side-panel="categories-panel" data-side-position="left">
 	<!-- <div id="leftMenuBtn" class="left-menu-btn">  -->
 	<div class="left-panel_content">
-		<h1 class="any_categories"><span class="glyphicon"></span> Profile Settings</h1>
+		<h1 class="any_categories"><span class="glyphicon"></span>Profile Settings</h1>
 		<ul class="sidebar-nav">
 			<li>
 				<a href="{$SITE_PATH}/uprofile"> <span class="cat_name">{$ns.lm->getPhrase(94)}</span> </a>

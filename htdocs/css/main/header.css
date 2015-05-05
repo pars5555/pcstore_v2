@@ -176,29 +176,6 @@
     color: #63b4fb;
 }
 
-
-/*Left panel button*/
-.left-panel-btn{
-    float: left;
-    display:none;
-    height:45px;
-    line-height: 45px;
-    cursor: pointer;
-}
-.left-panel-btn span{
-    border-right:none;
-    padding: 0;
-    display:inline-block;
-    vertical-align: middle;
-    font-size: 15px;
-    font-weight: 600;
-    color: #555;
-}
-.left-panel-btn.active span,
-.left-panel-btn:active span{
-    color: #63b4fb;
-}
-
 /**************************************************************************************/
 /*                      HEADER SEARCH & LOGO & BUILD PC                               */
 /**************************************************************************************/
@@ -537,12 +514,6 @@
 /*                                  HEDAER RESPONSIVE                                 */
 /*                                                                                    */
 /**************************************************************************************/
-
-@media (max-width : 1250px){
-    .ctl_main_home .left-panel-btn{
-        display:block;
-    }
-}
 
 @media (max-width : 1000px){
     .nav_menu_btn{

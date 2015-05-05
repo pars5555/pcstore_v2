@@ -38,8 +38,9 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
     },
     checkoutConfirmPosition: function () {
         var top = jQuery("#checkout_confirm_container").offset().top;
-        jQuery(window).on("scroll", function () {
+        jQuery(document).on("scroll", function () {
             top = jQuery("#checkout_confirm_container").offset().top;
+            console.log(top);
             var scrollTop = jQuery(window).scrollTop();
             if (scrollTop >= top) {
                 jQuery("#checkout_confirm").addClass("fixed");
@@ -107,6 +108,9 @@ ngs.CheckoutLoad = Class.create(ngs.AbstractLoad, {
         var p_type = jQuery("#payment_type .f_payment_type");
         p_type.on("click", function () {
             var self = jQuery(this);
+            var p_type_panel = self.closest(".f_side_panel");
+            p_type_panel.add(".f_side_panel_btn[data-side-panel="+p_type_panel.attr("data-side-panel")+"]").removeClass("active");
+            
             if (!self.hasClass("active")) {
                 p_type.siblings().removeClass("active");
                 p_type.siblings().find("input").prop('checked', false);

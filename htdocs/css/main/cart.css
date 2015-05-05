@@ -11,7 +11,14 @@
     color: #555;
     background-color: #FDEBE8;
     border: 1px solid #D54000;
-    border-radius: 3px;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px; 
+    -o-border-radius: 3px; 
+    -ms-border-radius: 3px;
+    -icab-border-radius: 3px; 
+    border-radius: 3px; 
 }
 
 /*======= Cart Item =======*/
@@ -212,17 +219,17 @@
 /***************** Checkout Confirm Container *******************/
 
 .checkout_confirm_container{
-    padding-right: 550px;
+    padding-right: 520px;
     position:relative;
 }
 
 .checkout_confirm_container .checkout_confirm.cart_checkout{
     position:absolute;
-    top:0;
+    top:46px;
     right:0;
     margin:auto;
     padding:10px 20px;
-    width: calc(100% - 40px);
+    width: 100%;
     box-shadow: 0 0 7px #ddd;
     background-color: rgba(255,255,255,0.77);
     z-index: 1000;
@@ -234,6 +241,10 @@
     -ms-border-radius: 7px;
     -icab-border-radius: 7px; 
     border-radius: 7px; 
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .checkout_confirm_container .checkout_confirm.cart_checkout .main_loader{
     position:absolute;
@@ -268,7 +279,7 @@
 .payment_type_container{
     display:table-cell;
     vertical-align: top;
-    width: 180px;
+    width: auto;
 }
 
 .payment_type_container .payment_type{
@@ -288,6 +299,10 @@
     -ms-border-radius: 5px 0 0 5px;
     -icab-border-radius: 5px 0 0 5px; 
     border-radius: 5px 0 0 5px; 
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .payment_type_container .payment_type input{
     cursor: pointer;    
@@ -297,35 +312,68 @@
 }
 .payment_type_container .payment_type.active{
     border-color:#777;
-    width: calc(100% - 10px);
+    width: auto;
     background-color: #fff;
     z-index: 7;
+    margin-right: -2px;
 }
 .payment_type .payment_img{
     display:inline-block;
     vertical-align: middle;
     width:50px;
+    margin-left: 5px;
 }
 
 .payment_type .payment_name.label{
     display:inline-block;
     vertical-align: middle;
-    padding:5px 10px;
-    width: 90px;
+    padding:0 5px;
     white-space: normal;
+    width: 120px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .payment_type .form-group:hover .payment_name.label{
     color:#63B4FB;
 }
 
+/*Payment type button*/
+.payment_type_btn{
+    float: left;
+    display:none;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.payment_type_btn span{
+    border-right:none;
+    padding: 0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+}
+.payment_type_btn.active span,
+.payment_type_btn:active span{
+    color: #63b4fb;
+}
+
 /* Payment Details */
 
 .payment_details{
+    width:100%;
     display:table-cell;
     vertical-align: top;
     border: 2px solid #777;
     padding: 10px;
     position: relative;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -461,10 +509,38 @@
 
 /**************************************************************************************/
 /*                                                                                    */
-/*                                BUILD PC RESPONSIVE                                 */
+/*                                 CART PC RESPONSIVE                                 */
 /*                                                                                    */
 /**************************************************************************************/
 
+@media (max-width : 1400px) and (min-width:1281px){
+    /**************************************************************************/
+    /*                               Checkout                                 */
+    /**************************************************************************/
+    .checkout_confirm_container{
+        padding-right:420px;
+    }
+    .checkout_confirm_container .checkout_confirm.cart_checkout{
+        max-width:400px;
+    }
+    .payment_type .payment_name.label{
+        width:90px;
+    }
+}
+@media (max-width : 1280px){
+    /**************************************************************************/
+    /*                               Checkout                                 */
+    /**************************************************************************/
+    .checkout_confirm_container{
+        padding-right:0;
+    }
+    .checkout_confirm_container .checkout_confirm.cart_checkout{
+        position:relative !important;
+        top:auto !important;
+        right:auto !important;
+        margin-top:20px;
+    }
+}
 @media (max-width : 1024px){
     .cart-item .component_block .cart_item_count,
     .cart-item .component_block .component_unit_prie,
@@ -502,7 +578,29 @@
     .cart_checkout .button.blue{
         float:none;
     }
-    
+
+    /**************************************************************************/
+    /*                               Checkout                                 */
+    /**************************************************************************/
+
+    .payment_details .title {
+        font-size: 18px;
+        padding-bottom:0;
+        margin-bottom:15px;
+    }
+    @media (min-width:651px){
+        .pcstore_info_text{
+            font-size:15px;
+        }
+        .payment_type .payment_img{
+            width:35px;
+        }
+        .payment_type .payment_name.label{
+            width:70px;
+            font-size:13px;
+        }
+    }
+
 }
 @media (max-width : 750px){
     .cart-item .component_block .cart_item_count,
@@ -526,9 +624,82 @@
         display:block;
     }
 }
+@media (max-width : 650px){
+    /**************************************************************************/
+    /*                               Checkout                                 */
+    /**************************************************************************/
+
+    .payment_method_container{
+        display:block;
+        width:auto;
+    }
+    .payment_details{
+        display:block;
+        width:auto;
+        min-height: 250px;
+    }
+    .payment_details .main_loader{
+        z-index:500;
+    }
+    .payment_type_container{
+        display:block;
+        width: 100%;
+        max-width: 300px;
+        background-color: #fff;
+        height: 100%;
+        left: -332px;
+        overflow: auto;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        padding-top:46px;
+        vertical-align: top;
+        z-index: 10000;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 0 15px #999;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .payment_type_container.active{
+        left:0;
+    }
+    .payment_type_container .payment_type{
+        padding:10px;
+        border:none;
+
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -khtml-border-radius: 0; 
+        -o-border-radius: 0; 
+        -ms-border-radius: 0;
+        -icab-border-radius: 0; 
+        border-radius: 0; 
+    }
+    .payment_type_container .payment_type.active{
+        background-color:rgba(99,180,251,0.7);
+    }
+    .ctl_main_checkout .payment_type_btn{
+        display:block;
+    }
+}
+
 @media (max-width : 590px){
     .cart-item .component_block .clear.cart_clear_bottom{
         display:block;
+    }
+}
+@media (max-width : 360px){
+    .payment_type_container{
+        max-width: none;
+        left: -100%;
     }
 }
 

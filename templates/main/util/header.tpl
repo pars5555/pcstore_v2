@@ -4,7 +4,7 @@
             <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
             <div class="left-panel-btn f_side_panel_btn" data-side-panel="categories-panel">
                 <span class="fontAwesome"></span>
-                <span>{$ns.lm->getPhrase(105)}</span>
+                <span>{if $ns.contentLoad=="main_home"}{$ns.lm->getPhrase(105)}{else}Profile Settings{/if}</span>
             </div>
             <div class="build_pc_components_btn f_side_panel_btn" data-side-panel="pc-components">
                 <span class="fontAwesome"></span>
@@ -13,6 +13,10 @@
             <div class="pcc_total_calculation_btn f_side_panel_btn" data-side-panel="pcc-total-calculation">
                 <span class="fontAwesome"></span>
                 <span>Your PC</span>
+            </div>
+            <div class="payment_type_btn f_side_panel_btn" data-side-panel="payment-type">
+                <span class="fontAwesome"></span>
+                <span>{$ns.lm->getPhrase(367)}</span>
             </div>
             <div class="navMenuContainer f_side_panel" data-side-panel="nav-menu" data-side-position="right">
                 <ul class="navMenuList">

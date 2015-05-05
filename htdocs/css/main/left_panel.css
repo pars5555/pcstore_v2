@@ -167,6 +167,28 @@
     padding: 4px;
 }
 
+/*Left panel button*/
+.left-panel-btn{
+    float: left;
+    display:none;
+    height:45px;
+    line-height: 45px;
+    cursor: pointer;
+}
+.left-panel-btn span{
+    border-right:none;
+    padding: 0;
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+}
+.left-panel-btn.active span,
+.left-panel-btn:active span{
+    color: #63b4fb;
+}
+
 /**************************************************************************************/
 /*                                                                                    */
 /*                                LEFT PANEL RESPONSIVE                               */
@@ -174,24 +196,93 @@
 /**************************************************************************************/
 
 @media (max-width : 1250px){
-    .left-panel {
+    .left-panel.left_categories_panel {
         background-color: #fff;
-        height: calc(100% - 47px);
+        height: 100%;
         left: -332px;
         overflow: auto;
         padding: 0;
         position: fixed;
-        top: 46px;
+        top: 0;
+        padding-top:46px;
         vertical-align: top;
         z-index: 10000;
         border: 1px solid #e0e0e0;
         box-shadow: 0 0 15px #999;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
     }
-    .left-panel.active{
+    .left-panel.left_categories_panel.active{
         left:0;
     }
-    .left-panel .left-panel_content {
+    .left-panel.left_categories_panel .left-panel_content {
         border:none;
+    }
+    .ctl_main_home .left-panel-btn{
+        display:block;
+    }
+}
+@media (max-width : 1024px){
+    .user-left-panel.left-panel{
+        width: 250px;
+    }
+    .profile-wrapper .profile-content{
+        padding-left:20px;
+    }
+    .profile-wrapper .profile-content .current-user-info{
+        margin:auto;
+        padding:0;
+    }
+}
+@media (max-width : 750px){
+    /**************************************************************************/
+    /*                            User Left Panel                             */
+    /**************************************************************************/
+    
+    .user-left-panel.left-panel{
+        background-color: #fff;
+        height: 100%;
+        left: -332px;
+        overflow: auto;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        padding-top:46px;
+        vertical-align: top;
+        z-index: 10000;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 0 15px #999;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;        
+    }
+    .user-left-panel.left-panel.active{
+        left:0;
+    }
+    .user-left-panel.left-panel .left-panel_content {
+        border:none;
+    }
+    .ctl_user_profile .left-panel-btn{
+        display:block;
+    }
+    
+    .profile-wrapper .profile-content{
+        padding-left:0;
     }
 }
 @media (max-width : 360px){

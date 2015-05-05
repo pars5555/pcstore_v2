@@ -17,10 +17,6 @@
         <input type="hidden" value="" name="sms_confirm_code" id="sms_confirm_code"/>
         <div class="checkout_confirm_container" id="checkout_confirm_container">
 
-            <div class="checkout_confirm cart_checkout" id="checkout_confirm">
-                {nest ns=calculation} 
-            </div>
-
             {****************Shipping Address Container******************}
 
             <div class="ship_addr_container f_ship_addr_container">
@@ -69,7 +65,7 @@
 
             <h2 class="title">{$ns.lm->getPhrase(367)}</h2>
             <div class="payment_method_container">
-                <div class="payment_type_container" id="payment_type"> 
+                <div class="payment_type_container f_side_panel" id="payment_type" data-side-panel="payment-type" data-side-position="left"> 
                     {foreach from=$ns.payment_option_values item=paymentTypeValue key=index}
                         <div class="payment_type f_payment_type {if $paymentTypeValue === cash }active{/if}" for="payment_{$paymentTypeValue}" p_type="{$paymentTypeValue}">
                             <input {if $paymentTypeValue === cash }checked="checked"{/if} type="radio" class=""  name="payment_type" id="payment_{$paymentTypeValue}" value="{$paymentTypeValue}"/>
@@ -81,6 +77,10 @@
                 <div class="payment_details" id="payment_details"> 
                     
                 </div>
+            </div>
+
+            <div class="checkout_confirm cart_checkout" id="checkout_confirm">
+                {nest ns=calculation} 
             </div>
         </div>
     </form>
