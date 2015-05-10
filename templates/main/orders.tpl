@@ -15,6 +15,7 @@
             </div>
         {/foreach}
     {/if}
+    
     <h1 class="main_title">{$ns.lm->getPhrase(142)}</h1>
     {include file="$TEMPLATE_DIR/main/orders/table_header.tpl"}
     {foreach from=$ns.groupOrdersByOrderIdAndBundleId key=orderId item=orderItems name=foo}
@@ -30,6 +31,7 @@
             <div class="f_order_more_info" style="display: none" >
                 <div id="order_container_{$orderInfo->getId()}" class="order_more_info">
                     {include file="$TEMPLATE_DIR/main/orders/orders_head_row_table_head.tpl"}
+                    
                     {foreach from=$orderItems key=bundleId item=orderItem name=foo}
                         {if is_array($orderItem)}
                             {include file="$TEMPLATE_DIR/main/orders/order_bundle_item_head_row.tpl"}

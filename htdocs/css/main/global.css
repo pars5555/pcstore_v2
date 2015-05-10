@@ -55,25 +55,37 @@
 
 .tab_title_container{
     font-size: 0;
+    display:table;
 }
 
 .tab_title{
-    background-color: transparent;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: inline-block;
-    font-size: 17px;
-    padding: 10px 30px;
-    text-align: center;
-    transition: all 300ms ease 0s;
+    display: table-cell;
     vertical-align: middle;
+    padding: 10px 30px;
+    background-color: transparent;
+    font-size: 17px;
+    text-align: center;
     color: #63B4FB;
     font-weight: 600;
-    box-shadow: 0 0 0px 0px transparent;
+    box-shadow: 0 0 3px 0px #ddd;
     cursor:pointer;
+
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -khtml-border-radius: 5px 5px 0 0; 
+    -o-border-radius: 5px 5px 0 0; 
+    -ms-border-radius: 5px 5px 0 0;
+    -icab-border-radius: 5px 5px 0 0; 
+    border-radius: 5px 5px 0 0; 
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;	
 }
 .tab_title:hover{
-    box-shadow: 0 0 7px 0px #ddd;
+    box-shadow: 0 0 7px 0px #63B4FB;
 }
 .tab_title.active{
     background-color: #63B4FB;
@@ -363,12 +375,13 @@ select::-ms-expand{
     width:100%;  
     border-collapse:collapse;
     text-align:center;  
+    border:1px solid #63b4fb;
 }
-
 .table_striped .table_header_group .table-cell{
-    background-color:#63B4FB;
-    color:#fff;
+    color:#63B4FB;
     font-size: 20px;    
+    border:1px solid #63B4FB;
+    font-weight: 600;
 }
 .table_striped .table-row{
     display:table-row;
@@ -379,7 +392,7 @@ select::-ms-expand{
 .table_striped .table-cell{
     display:table-cell;
     vertical-align: middle;  
-    padding:10px 0;  
+    padding:10px 5px;  
 }
 
 
@@ -553,7 +566,7 @@ select::-ms-expand{
         padding:10px;
     }
     .tab_title{
-        padding:7px 20px;
+        padding:7px 10px;
         font-size: 15px;
     }
 
@@ -563,10 +576,44 @@ select::-ms-expand{
         margin-bottom:20px;
         padding-bottom: 5px;
     }
-    
+
     /*Button*/
     .button{
         padding:7px 0;
         font-size: 15px;
+    }
+}
+@media (max-width : 768px){
+    .tab_title_content_container {
+        margin: 15px auto;
+    }
+}
+@media (max-width : 480px){
+    /*Tabs and Container*/
+    .tab_title_container{
+        width:100%;
+    }
+    .tab_content_container {
+        padding: 5px;
+    }
+    
+    /*Main Title*/
+    .main_title {
+        font-size: 22px;
+        border-width: 2px;
+    }
+    
+    /*Table Striped*/
+    .table_striped .table_header_group .table-cell{
+        font-size:18px;
+        padding:5px;
+    }
+    .table_striped .table-cell{
+        font-size:13px;
+        padding:3px;
+    }
+    
+    .tab_content h1{
+        font-size:22px;
     }
 }

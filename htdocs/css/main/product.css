@@ -21,6 +21,8 @@
     overflow: hidden;
     height:auto;
     font-size: 22px;
+    padding-bottom: 5px;
+    border-bottom:2px solid #555;
 }
 .product-wrapper .product-title:hover{
     color:#555;
@@ -28,7 +30,7 @@
 }
 .product-wrapper .product-title .product_brand{
     color: #0e53a5;
-    font-size:17px;
+    font-size:0.77em;
     font-weight: 600;
     text-decoration: underline;
     white-space: nowrap;
@@ -296,11 +298,19 @@
 .current-product-description {
     margin-top: 15px;
 }
+.current-product-description table{
+    width:100% !important;
+    max-width:768px !important;
+}
 .current-product-description table td div{
     height:auto !important;
 }
 .current-product-description .title {
     margin-top: 50px;
+}
+.current-product-description img{
+    max-width:100%;
+    max-height:100%;
 }
 
 .current-product-price-list {
@@ -358,4 +368,81 @@
     vertical-align:middle !important;
     float:none  !important;
     border:none !important;
+}
+
+/******************************************************************************/
+/*                                                                            */
+/*                             PRODUVT RESPONSIVE                             */
+/*                                                                            */
+/******************************************************************************/
+
+@media (max-width : 900px){
+    .product-wrapper .product-img{
+        width:320px;
+    }
+    .product-img .product-img-inner {
+        width: 316px;
+    }
+    .product-img-link-wrapper{
+        height: 307px;
+        width: 307px;
+    }
+}
+@media (max-width : 768px){
+    .product-wrapper .product-title{
+        font-size:18px;
+    }
+
+    /*Product Warranty and New*/
+
+    .product_warranty {
+        height: 200px;
+        width: 130px;
+    }
+    .product_warranty .product_warranty_text {
+        font-size: 13px;
+    }
+    .product_warranty .warranty_month_count {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    new_product {
+        height: 95px;
+        width: 95px;
+    }
+}
+@media (max-width : 720px){
+    .product-wrapper{
+        display:block;
+        width:auto;
+    }
+    .product-wrapper .product-img{
+        display:block;
+        margin:auto;
+    }
+    .product-wrapper .product-info{
+        display:block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .product-wrapper .product-info .product-info-inner{
+        max-width:none;
+    }
+    .product-wrapper .product-price{
+        margin: 10px 0;
+    }
+}
+@media (max-width : 360px){
+    .product-wrapper .product-img,
+    .product-img .product-img-inner{
+        width:300px;
+    }
+    .product-img-link-wrapper {
+        height: 291px;
+        width: 291px;
+    }
+    .product-other-images .poi_item{
+        width:66px;
+        height:66px;
+    }
 }

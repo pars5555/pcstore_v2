@@ -1,7 +1,6 @@
-
-/*=====================================================================================*/
-/*===================================  ORDERS PAGE ====================================*/
-/*=====================================================================================*/
+/***************************************************************************/
+/*                            ORDERS PAGE                                  */
+/***************************************************************************/
 
 .orders_main_header{
     display:table;
@@ -9,13 +8,16 @@
     margin-bottom:20px;
 }
 .orders_main_header>div{
-    width:20%;
+    width:17%;
     display:table-cell;
     vertical-align:middle;
     text-align:center;
     font-size:20px;
     font-weight:600;
     color:#555;
+}
+.orders_main_header>div:last-child{
+    width:32%;
 }
 
 /*======= Order Main Block =======*/
@@ -30,6 +32,22 @@
     color:#63B4FB;
     text-decoration: underline;
     cursor: pointer;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.order_slide_btn .osb_hide{
+    display:none;
+}
+.order_slide_btn.active .osb_hide{
+    display:inline;
+}
+.order_slide_btn.active .osb_show{
+    display:none;
 }
 /*Order Info*/
 .order_info{
@@ -37,11 +55,14 @@
     width:100%;
 }
 .order_info>div{
-    width:20%;
+    width:17%;
     display:table-cell;
     vertical-align:middle;
     text-align:center;
     padding: 0 20px;
+}
+.order_info>div.order_status{
+    width:32%;
 }
 
 /*Order Item*/
@@ -90,9 +111,13 @@
 .order_more_info{
     box-shadow: 0 0 7px 0 #ddd;
     display: table;
-    margin: auto;
+    margin: 10px auto auto;
     padding: 10px;
     width: 70%;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .order_bundle_components{
     display:table-row-group;
@@ -115,3 +140,93 @@
     width:100px;
 }
 
+/******************************************************************************/
+/*                                                                            */
+/*                             ORDERS RESPONSIVE                              */
+/*                                                                            */
+/******************************************************************************/
+
+@media (max-width : 768px){
+    .orders_main_header > div{
+        font-size:17px;
+    }
+    .order_main_block{
+        font-size:13px;
+        padding: 5px;
+    }
+    .order_info > div{
+        padding:0 10px;
+    }
+    .order_more_info{
+        width:90%;
+    }
+    .order_bundle_components .order_bundle_item > div,
+    .order_bundle_item_total > div,
+    .order_header > div{
+        padding:5px;
+    }
+}
+
+@media (max-width : 650px){
+    .order_main_block{
+        text-align: center;
+    }
+    .orders_main_header,
+    .order_info{
+        display:block;
+        width: auto;
+    }
+    .orders_main_header > div,
+    .order_info > div{
+        padding:5px;
+        display:block;
+        width: auto;
+    }
+    .orders_main_header > div:last-child,
+    .order_info > div.order_status{
+        width:auto;
+    }
+    .order_more_info{
+        width:100%;
+        padding: 5px;
+    }
+    .order_slide_btn{
+        font-size: 1.3em;
+    }
+}
+@media (max-width : 470px){
+    .order_item_block,
+    .order_item_block > div,
+    .order_more_info,
+    .order_bundle_item_total,
+    .order_header,
+    .order_bundle_components,
+    .order_bundle_components .order_bundle_item,
+    .order_bundle_components .order_bundle_item > div,
+    .order_bundle_item_total > div,
+    .order_header > div{
+        display:block;
+        width:auto;
+    }
+    .order_item_block > div{
+        padding:3px;
+    }
+    .order_header{
+        border-bottom: 2px solid #63b4fb;
+    }
+    .order_header > div{
+        border:none;
+        padding:3px;
+    }
+    .order_bundle_item_total > div{
+        color:#333;
+    }
+    .order_bundle_components .order_bundle_item .order_bundle_price{
+        width:auto;
+    }
+    .order_bundle_components .order_bundle_item > div,
+    .order_bundle_item_total > div{
+        padding:1px;
+    }
+    
+}

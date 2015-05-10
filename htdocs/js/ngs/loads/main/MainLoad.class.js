@@ -49,8 +49,9 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     detectDeviceType: function () {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          jQuery("#pcc_print_button").addClass("hidden");
-        };
+            jQuery("#pcc_print_button").addClass("hidden");
+        }
+        ;
     },
     buildPcLink: function () {
         jQuery(".f_build_pc_link").on("click mousedown touchstart tap", function () {
@@ -130,7 +131,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         function hide(time) {
             time = time ? time : 7000;
             window.clearTimeout(msgTimeout);
-            var msg = jQuery(".error,.success");
+            var msg = jQuery(".error,.success").not(".dont_close_msg");
             msgTimeout = window.setTimeout(function () {
                 msg.slideUp(300, function () {
                     msg.html("").show();
@@ -188,9 +189,14 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
 
         //init cancel button//
         if (cancel) {
-            mainPopup.find(".f_pop_up_cancel_btn").html(cancel);
+            if (cancel === true) {
+                mainPopup.find(".f_pop_up_cancel_btn").html(default_cancel_btn);
+            }
+            else {
+                mainPopup.find(".f_pop_up_cancel_btn").html(cancel);
+            }
         }
-        else {
+        else if (cancel === false) {
             mainPopup.find(".f_pop_up_cancel_btn").remove();
         }
 
@@ -222,6 +228,7 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             hideRemove(mainPopup);
         });
 
+        return mainPopup;
     },
     notifications: function () {
         jQuery("#notification").on("click", function () {

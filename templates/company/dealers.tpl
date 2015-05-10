@@ -6,7 +6,7 @@
         <div class="pop_up">
             <div class="close_button"></div>
             <div class="pop_up_content f_pop_up_content">
-                <div class="success">
+                <div class="success dont_close_msg">
                     {$ns.success_message}
                 </div>
             </div>
@@ -27,8 +27,8 @@
                 </div>
             </div>
             {foreach from=$ns.dealers item=dealer name=dl}
-                <div class="table-row">
-                    <div class="table-cell" >
+                <div class="table-row dealer_item f_dealer_item">
+                    <div class="table-cell dealer_name f_dealer_name" >
                         {$dealer->getUserName()} {$dealer->getUserLastName()}
                     </div>					
                     <div class="table-cell" ><span> 
@@ -43,7 +43,10 @@
                         {$dealer->getUserEmail()}
                     </div>
                     <div class="table-cell">
-                        <a  href="{$SITE_PATH}/dyn/company/do_delete_dealer?user_id={$dealer->getUserId()}">{$ns.lm->getPhrase(148)}<span class="glyphicon"></span></a>
+                        <a class="delete_dealer f_delete_dealer" href="{$SITE_PATH}/dyn/company/do_delete_dealer?user_id={$dealer->getUserId()}">{$ns.lm->getPhrase(148)}<span class="glyphicon"></span></a>
+                        <input type="hidden" class="f_delete_dealer_title" value="Delete dealer" />
+                        <input type="hidden" class="f_delete_dealer_content" value="Are you sure you want to delete dealer <span class='delete_dealer_name f_delete_dealer_name'></span> ?" />
+                        <input type="hidden" class="f_delete_dealer_confirm" value="{$ns.lm->getPhrase(475)}" />
                     </div>
                 </div>
             {/foreach}
