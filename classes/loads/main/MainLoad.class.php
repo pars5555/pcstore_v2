@@ -34,6 +34,8 @@ class MainLoad extends BaseGuestLoad {
                     }
                     $this->addParam('user_activation', 'activated');
                 }
+                $_SESSION["signup_activation_done"] = $_REQUEST["activation_code"];
+                $this->redirect();
             }
         }
     }
@@ -72,19 +74,14 @@ class MainLoad extends BaseGuestLoad {
     }
 
     public function getSignupActivationMessage() {
-        if (isset($_SESSION["signup_message"])) {
-            $this->addParam("signup_message", true);
-            unset($_SESSION["signup_message"]);
-        }
-        
-        if(isset($_REQUEST["activation_code"])){
-            $_SESSION["signup_activation_done"] = $_REQUEST["activation_code"];
-            $this->redirect();            
-        }
-        
         if (isset($_SESSION["signup_activation_done"])) {
             $this->addParam("signup_activation_done", true);
             unset($_SESSION["signup_activation_done"]);
+        }
+
+        if (isset($_SESSION["signup_message"])) {
+            $this->addParam("signup_message", true);
+            unset($_SESSION["signup_message"]);
         }
     }
 

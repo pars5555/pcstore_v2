@@ -188,16 +188,16 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         confirm = confirm ? confirm : default_confirm_btn;
 
         //init cancel button//
-        if (cancel) {
+        if (typeof cancel == "undefined") {
+            mainPopup.find(".f_pop_up_cancel_btn").remove();
+        }
+        else {
             if (cancel === true) {
                 mainPopup.find(".f_pop_up_cancel_btn").html(default_cancel_btn);
             }
             else {
                 mainPopup.find(".f_pop_up_cancel_btn").html(cancel);
             }
-        }
-        else if (cancel === false) {
-            mainPopup.find(".f_pop_up_cancel_btn").remove();
         }
 
         //Set values of fields//
