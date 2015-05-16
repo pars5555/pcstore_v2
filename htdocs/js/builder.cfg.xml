@@ -69,7 +69,6 @@
                 <!-- Main -->
                 <file>ngs/loads/main/MainLoad.class.js</file>
                 <file>ngs/loads/main/HomeLoad.class.js</file>
-                <file>ngs/loads/main/BuildpcLoad.class.js</file>
                 <file>ngs/loads/main/CheckoutLoad.class.js</file>
                 <file>ngs/loads/main/CheckoutCalculationLoad.class.js</file>
                 <file>ngs/loads/main/LandingpageLoad.class.js</file>
@@ -79,7 +78,11 @@
                 <file>ngs/loads/main/ItemLoad.class.js</file>
                 <file>ngs/loads/main/CartLoad.class.js</file>
                 <file>ngs/loads/main/OrdersLoad.class.js</file>
+                <file>ngs/loads/main/BuildpcLoad.class.js</file>
                 <file>ngs/loads/main/BuildPcLoad.class.js</file>								
+                <file>ngs/loads/main/HelpLoad.class.js</file>
+                <file>ngs/loads/main/PrivatepolicyLoad.class.js</file>
+                <file>ngs/loads/main/AboutusLoad.class.js</file>
                 <file>ngs/loads/main/pcc/PccTotalCalculationsLoad.class.js</file>				
                 <file>ngs/loads/main/pcc/PccSelectCaseLoad.class.js</file>				
                 <file>ngs/loads/main/pcc/PccSelectMbLoad.class.js</file>

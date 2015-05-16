@@ -67,6 +67,19 @@ body{
     opacity: 1;
 }
 
+/******************************************************************************/
+/*                     HELP - PRIVATE POLICY - ABOUT US                       */
+/******************************************************************************/
+
+.help_container,
+.privatepolicy_container,
+.aboutus_container{
+    word-wrap: break-word;
+}
+.help_container ol{
+    padding-left:15px;
+}
+
 /**************************************************************************************/
 /*                                                                                    */
 /*                                    MAIN RESPONSIVE                                 */
@@ -96,7 +109,7 @@ body{
         line-height: 25px;
         font-size: 25px;
     }
-    
+
 }
 
 
