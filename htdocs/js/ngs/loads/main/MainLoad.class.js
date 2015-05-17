@@ -235,11 +235,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             jQuery(this).removeClass("new_notification");
             window.localStorage.setItem("unreadNotificationExist", "");
         });
-
-        var self = this;
-        jQuery(".contact_info_item").on("click", function () {
-            self.initPopup();
-        });
     }
     ,
     initGoogleLogoutOnWindowUnload: function () {

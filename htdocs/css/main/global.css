@@ -143,27 +143,7 @@
 .doublespace{
     height:20px;
 }
-.control-group.inline-option {
-    display: table;
-    margin:20px 0px;
-    width: 100%;
-}
-.input-row {
-    margin:20px 0px;
-}
-.input-row span{
-    display:inline-block;
-    width:100px;
-    vertical-align:middle;
-    text-align: left;
-}
-.input-row input{
-    display:inline-block;
-    width:80%;
-}
-.input-row.small input {
-    width:20%;
-}
+
 .close_button{
     display:block;
     width:30px;
@@ -241,6 +221,11 @@ select::-ms-expand{
     padding:3px;
 }
 
+.form-group.form-group-table{
+    display:table;
+    width:100%;
+}
+
 .label{
     padding:9px;
     color:#555;
@@ -256,13 +241,17 @@ select::-ms-expand{
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-
+.form-group.form-group-table .label{
+    display:table-cell;
+    vertical-align: middle;
+    margin:auto;
+    width:auto;
+}
 .label.input_label{
     display:block;
     padding:5px 0;
     font-weight:600;
 }
-
 .text{
     border:1px solid #ccc;
     border-radius:3px;
@@ -278,14 +267,18 @@ select::-ms-expand{
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-
 .text.default_width{
     max-width:270px;
 }
-
 .text:focus{
     border-color:#66afe9;
     box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-group.form-group-table .text{
+    display:table-cell;
+    vertical-align: middle;
+    margin:auto;
+    width:auto;
 }
 
 .button{	

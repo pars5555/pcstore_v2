@@ -28,13 +28,14 @@
                     <a class="listing_item_title" href="{$SITE_PATH}/item/{$item->getId()}" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
                         {$item->getDisplayName()} {if !empty($brand)}<span class="listing_item_brand"> by {$brand}</span>{/if}
                     </a>
-                    <div class="listing_item_img" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">
+{*                    <div class="listing_item_img" title="{$item->getDisplayName()} {if !empty($brand)} by {$brand}{/if}">*}
+                    <div class="listing_item_img">
                         <a class="listing_item_img_link" href="{$SITE_PATH}/item/{$item->getId()}" style="background-image: url({$ns.itemManager->getItemImageURL($item->getId(), $item->getCategoriesIds(), '400_400', 1)});">
                             {if $new_item == true}
                                 <div class="listing_item_new"></div>
                             {/if}
                             {if $item->getWarranty()>0 || $item->getWarranty()=='lifetime'}
-                                <div class="listing_item_warranty">
+                                <div class="listing_item_warranty" title="{$ns.lm->getPhrase(82)}">
                                     <div class="listing_item_warranty_text">
                                         <div class="warranty_month_count">{$item->getWarranty()}</div> 
                                     </div>

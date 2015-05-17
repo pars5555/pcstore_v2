@@ -93,14 +93,14 @@
             <div class="close_button"></div>
             <div class="pop_up_title">{$ns.lm->getPhrase(316)}</div>
             <p> {$ns.lm->getPhrase(362)}</p>
-            <div class="form-group">
+            <div class="form-group form-group-table">
                 <label class="label input_label">
                     {$ns.lm->getPhrase(309)}
                 </label>
                 <input class="text" type="text" id="confirm_phone_number" />
+            </div>
                 <div class="error" style="display:none;"></div>
                 <button class="button blue">{$ns.lm->getPhrase(317)}</button>
-            </div>
         </div>
     </form>
 </div>

@@ -122,10 +122,14 @@
                     </div>
                     <div class="product_new_warranty_wp">
                         {if $ns.item->getWarranty()>0 || $ns.item->getWarranty()=='lifetime'}
-                            <div class="product_warranty">
+                            <div class="product_warranty" title="{if $ns.item->getWarranty()|lower!='lifetime'}{$ns.item->getWarranty()} {$ns.lm->getPhrase(183)} {else} Livetime {/if} {$ns.lm->getPhrase(82)}">
                                 <div class="product_warranty_text">
-                                    <div class="warranty_month_count">{$ns.item->getWarranty()}</div> 
-                                    <div>{if $ns.item->getWarranty()|lower!='lifetime'}{$ns.lm->getPhrase(183)}{/if}</div>  
+                                    {if $ns.item->getWarranty()|lower!='lifetime'}
+                                        <div class="warranty_month_count">{$ns.item->getWarranty()}</div> 
+                                        <div>{$ns.lm->getPhrase(183)}</div>  
+                                    {else}
+                                        Livetime
+                                    {/if}
                                 </div>
                             </div>
                         {/if}
