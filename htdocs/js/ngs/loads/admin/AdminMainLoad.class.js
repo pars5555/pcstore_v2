@@ -15,6 +15,12 @@ ngs.AdminMainLoad = Class.create(ngs.AbstractLoad, {
         return "admin_main";
     },
     afterLoad: function () {
+        this.overlay();
         ngs.nestLoad(jQuery('#contentLoad').val());
-    }
+    },
+    overlay: function () {
+        jQuery(".overlay").click(function () {
+            jQuery(this).parent().addClass("hide");
+        });
+    },
 });

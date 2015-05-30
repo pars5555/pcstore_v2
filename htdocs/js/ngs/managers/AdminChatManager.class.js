@@ -8,16 +8,21 @@ ngs.AdminChatManager = {
         });
     },
     initConnection: function () {
-        var serverUrl = SITE_URL;
-        serverUrl = jQuery('#server_ip_address').val();
-        this.socket = new WebSocket("ws://" + serverUrl + ":65435");
+        var serverIpAddress = SITE_URL;
+        serverIpAddress = jQuery('#server_ip_address').val();
+        serverIpAddress = '95.140.192.34';
+        this.socket = new WebSocket("ws://" + serverIpAddress + ":6583");
         this.socket.onopen = function () {
+            alert(1);
         };
         this.socket.onmessage = function (message) {
+            alert(2);
         };
         this.socket.onclose = function () {
+            alert(3);
         };
         this.socket.onerror = function () {
+            alert(4);
         };
     }
 };

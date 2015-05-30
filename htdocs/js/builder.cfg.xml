@@ -139,7 +139,10 @@
                 <file>ngs/loads/admin/AdminSettingsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminActionsLoad.class.js</file>
                 <file>ngs/loads/admin/AdminUsersLoad.class.js</file>
-                <file>ngs/loads/admin/AdminNewsletterLoad.class.js</file>
+                <file>ngs/loads/admin/newsletter/AdminNewsletterLoad.class.js</file>
+                <file>ngs/loads/admin/newsletter/AdminManageNewslettersLoad.class.js</file>
+                <file>ngs/loads/admin/newsletter/AdminOpenNewsletterLoad.class.js</file>
+                <file>ngs/loads/admin/newsletter/AdminSaveNewsletterLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemCategoriesPopupLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemPicturesPopupLoad.class.js</file>
             </files>
@@ -182,6 +185,10 @@
                 <file>ngs/actions/admin/AdminGroupActionsAction.class.js</file>
                 <file>ngs/actions/admin/AdminSaveItemCategoriesAction.class.js</file>
                 <file>ngs/actions/admin/AdminAddRemoveItemPictureAction.class.js</file>
+                <file>ngs/actions/admin/newsletter/AdminOpenNewsletterAction.class.js</file>
+                <file>ngs/actions/admin/newsletter/AdminSaveNewsletterAction.class.js</file>
+                <file>ngs/actions/admin/newsletter/AdminSendNewsletterAction.class.js</file>
+                <file>ngs/actions/admin/newsletter/AdminDeleteNewsletterAction.class.js</file>
             </files>
         </input>
     </builder>

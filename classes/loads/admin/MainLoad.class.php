@@ -19,7 +19,10 @@ class MainLoad extends BaseGuestLoad {
         if (isset($_REQUEST['page'])) {
             $page = $this->secure($_REQUEST['page']);
         }
-
+        $dir = '';
+        if (isset($_REQUEST['dir'])) {
+            $dir = $this->secure($_REQUEST['dir']);
+        }
         $pagePartsArray = explode('_', $page);
 
         function _ucfirst(&$item, $key) {
@@ -29,7 +32,7 @@ class MainLoad extends BaseGuestLoad {
         array_walk($pagePartsArray, '_ucfirst');
         $loadName = implode('', $pagePartsArray) . "Load";
         $this->addParam('contentLoad', 'admin_' . $page);
-        $loads["content"]["load"] = "loads/admin/" . $loadName;
+        $loads["content"]["load"] = "loads/admin/" . (isset($dir) ? $dir . "/" : "") . $loadName;
         $loads["content"]["args"] = array("mainLoad" => &$this);
         $loads["content"]["loads"] = array();
         return $loads;
@@ -43,7 +46,6 @@ class MainLoad extends BaseGuestLoad {
         return TEMPLATES_DIR . "/admin/main.tpl";
     }
 
-    
 }
 
 ?>

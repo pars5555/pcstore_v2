@@ -35,6 +35,10 @@ ngs.ActionFactory.prototype={
         this.actions["admin_group_actions"] = function temp(){return new ngs.AdminGroupActionsAction("admin_group_actions", ajaxLoader);};
         this.actions["admin_save_item_categories"] = function temp(){return new ngs.AdminSaveItemCategoriesAction("admin_save_item_categories", ajaxLoader);};
         this.actions["admin_add_remove_item_picture"] = function temp(){return new ngs.AdminAddRemoveItemPictureAction("admin_add_remove_item_picture", ajaxLoader);};
+        this.actions["admin_open_newsletter"] = function temp(){return new ngs.AdminOpenNewsletterAction("admin_open_newsletter", ajaxLoader);};
+        this.actions["admin_save_newsletter"] = function temp(){return new ngs.AdminSaveNewsletterAction("admin_save_newsletter", ajaxLoader);};
+        this.actions["admin_delete_newsletter"] = function temp(){return new ngs.AdminDeleteNewsletterAction("admin_delete_newsletter", ajaxLoader);};
+        this.actions["admin_send_newsletter"] = function temp(){return new ngs.AdminSendNewsletterAction("admin_send_newsletter", ajaxLoader);};
      },
 
 	getAction: function(name){

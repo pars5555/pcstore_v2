@@ -53,6 +53,11 @@ class MailgunEmailSenderManager {
         if (!is_array($to)) {
             $to = array($to);
         }
+        if (ENVIRONMENT !== 'production' && count($to)>3) {
+            return true;
+        }
+        
+        
         $toArrays = array_chunk($to, $this->maxRecipientsPerEmail);
         $ret = array();
         foreach ($toArrays as $toAddressesArray) {

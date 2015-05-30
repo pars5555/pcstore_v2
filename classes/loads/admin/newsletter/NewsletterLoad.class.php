@@ -7,7 +7,7 @@ require_once (CLASSES_PATH . "/loads/admin/BaseAdminLoad.class.php");
  * @author Vahagn Sookiasian
  *
  */
-class newsletterLoad extends BaseAdminLoad {
+class NewsletterLoad extends BaseAdminLoad {
 
     public function load() {
         $this->initErrorMessages();
@@ -17,7 +17,7 @@ class newsletterLoad extends BaseAdminLoad {
 
 
     public function getTemplate() {
-        return TEMPLATES_DIR . "/admin/newsletter.tpl";
+        return TEMPLATES_DIR . "/admin/newsletter/newsletter.tpl";
     }
 
 }

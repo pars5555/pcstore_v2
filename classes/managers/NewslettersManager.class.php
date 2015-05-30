@@ -50,7 +50,7 @@ class NewslettersManager extends AbstractManager {
         return $ret;
     }
 
-    public function addNewsletter($title, $html, $include_all_active_users) {
+    public function addNewsletter($title, $html, $include_all_active_users = 0) {
         $dto = $this->mapper->createDto();
         $dto->setTitle($title);
         $dto->setHtml(addslashes($html));
@@ -58,7 +58,7 @@ class NewslettersManager extends AbstractManager {
         return $this->mapper->insertDto($dto, false);
     }
 
-    public function saveNewsletter($id, $html, $include_all_active_users) {
+    public function saveNewsletter($id, $html, $include_all_active_users = 0) {
         $this->mapper->updateTextField($id, 'html', addslashes($html), false);
         $this->mapper->updateTextField($id, 'include_all_active_users', $include_all_active_users);
     }

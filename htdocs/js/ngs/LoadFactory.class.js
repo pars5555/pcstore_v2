@@ -75,6 +75,9 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_actions"] = function temp(){return new ngs.AdminActionsLoad("admin_actions", ajaxLoader);};
 	this.loads["admin_users"] = function temp(){return new ngs.AdminUsersLoad("admin_users", ajaxLoader);};
 	this.loads["admin_newsletter"] = function temp(){return new ngs.AdminNewsletterLoad("admin_newsletter", ajaxLoader);};
+    this.loads["admin_open_newsletter"] = function temp(){return new ngs.AdminOpenNewsletterLoad("admin_open_newsletter", ajaxLoader);};
+	this.loads["admin_save_newsletter"] = function temp(){return new ngs.AdminSaveNewsletterLoad("admin_save_newsletter", ajaxLoader);};
+	this.loads["admin_manage_newsletters"] = function temp(){return new ngs.AdminManageNewslettersLoad("admin_manage_newsletters", ajaxLoader);};
 	this.loads["admin_item_categories_popup"] = function temp(){return new ngs.AdminItemCategoriesPopupLoad("admin_item_categories_popup", ajaxLoader);};
 	this.loads["admin_item_pictures_popup"] = function temp(){return new ngs.AdminItemPicturesPopupLoad("admin_item_pictures_popup", ajaxLoader);};
 },
