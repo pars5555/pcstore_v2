@@ -45,10 +45,10 @@ class CompaniesLoad extends BaseUserCompanyLoad {
         $this->addParam("show_only_last_hours_selected", $show_only_last_hours_selected);
 
         $searchText = "";
-        if (isset($_REQUEST['search_text'])) {
-            $searchText = $this->secure($_REQUEST['search_text']);
+        if (isset($_REQUEST['stp'])) {
+            $searchText = $this->secure($_REQUEST['stp']);
         }
-        $this->addParam("search_text", $searchText);
+        $this->addParam("stp", $searchText);
 
         $userLevel = $this->getUserLevel();
         $userId = $this->getUserId();

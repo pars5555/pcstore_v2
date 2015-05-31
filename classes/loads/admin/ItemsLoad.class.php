@@ -23,8 +23,8 @@ class ItemsLoad extends BaseAdminLoad {
             $itemsDtos = $itemManager->getCompanyItems($selectedCompanyId, true);
             $this->addParam('itemsDtos', $itemsDtos);
             $this->addParam('itemManager', $itemManager);
+            $this->addParam("selectedCompanyDto", $selectedCompanyDto);
         }
-        $this->addParam("selectedCompanyDto", $selectedCompanyDto);
     }
 
     public function getTemplate() {

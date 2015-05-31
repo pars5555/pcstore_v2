@@ -1,6 +1,10 @@
 <div id="companyListTab" class="company_tab">
     {if (($ns.allCompanies|@count )>0)}
         <h1 class="main_title">{$ns.lm->getPhrase(578)}</h1>
+        <form action="{$SITE_PATH}/companies" method="GET" autocomplete="off">
+            <input type="text" value="{$ns.stp}" id="srch-in-price" name="stp" />
+            <input type="submit" value="search in price"/>
+        </form>
         <div class="table">
             <div class="companies_title_row">
                 <h2>

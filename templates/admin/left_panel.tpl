@@ -20,6 +20,9 @@
     <a href="{$SITE_PATH}/admin/uploadprice">
         <li>price upload</li>
     </a>
+    <a href="{$SITE_PATH}/admin/import">
+        <li>Import</li>
+    </a>
     <a href="{$SITE_PATH}/admin/items">
         <li>items</li>
     </a>
