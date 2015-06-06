@@ -7,7 +7,8 @@
 <!-- NGS Theme Styles -->
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/jquery/jquery-ui.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/admin/style.css?{$VERSION}" />
-<link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/admin/skin.css?{$VERSION}" />
+<link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/skin.css?{$VERSION}" />
+<link rel="stylesheet" type="text/css" href="{$SITE_PATH}/css/main/fonts.css?{$VERSION}" />
 <link rel="stylesheet" type="text/css" href="{$SITE_PATH}/js/lib/jtree/themes/default/style.min.css?{$VERSION}" />
 <link rel="shortcut icon" type="image/png" href="{$SITE_PATH}/img/favicon.png" />
 <script type="text/javascript">
@@ -15,7 +16,7 @@
         var ngs = {};
     {/literal}	        
         var SITE_URL = "{$SITE_URL}";
-        var SITE_PATH = "{$SITE_PATH}";   
+        var SITE_PATH = "{$SITE_PATH}";
 </script>
 
 

@@ -6,7 +6,7 @@
         <div class="pop_up">
             <div class="close_button"></div>
             <div class="pop_up_content f_pop_up_content">
-                <div class="success dont_close_msg">
+                <div class="success" data-not-close='true'>
                     {$ns.success_message}
                 </div>
             </div>

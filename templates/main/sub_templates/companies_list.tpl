@@ -1,10 +1,18 @@
+<div class="search_block price_search_form">
+    {**************************** SEARCH ********************************}
+    <div class="search_container">
+        <form action="{$SITE_PATH}/companies" method="GET" autocomplete="off">
+            <input type="search" id="srch-in-price" name="stp" placeholder="Search price" class="search_text" value="{$ns.stp|default:''}">
+            <button type="submit" class="search_btn">
+                
+            </button>
+        </form>
+    </div>
+</div>
+
 <div id="companyListTab" class="company_tab">
     {if (($ns.allCompanies|@count )>0)}
         <h1 class="main_title">{$ns.lm->getPhrase(578)}</h1>
-        <form action="{$SITE_PATH}/companies" method="GET" autocomplete="off">
-            <input type="text" value="{$ns.stp}" id="srch-in-price" name="stp" />
-            <input type="submit" value="search in price"/>
-        </form>
         <div class="table">
             <div class="companies_title_row">
                 <h2>
@@ -26,6 +34,15 @@
                 {assign var="url" value=$company->getUrl()}
                 <div class="company_container">
                     <div class="company-info f_company_col company_col">
+
+                        {if $ns.userLevel === $ns.userGroupsCompany}
+                            {assign var="interested_companies_ids_for_sms" value=$ns.customer->getInterestedCompaniesIdsForSms()}
+                            {assign var="interested_companies_ids_for_sms_array" value=','|explode:$interested_companies_ids_for_sms}
+                            <div class="checkbox f_checkbox {if in_array($companyId,$interested_companies_ids_for_sms_array)} checked{/if}" data-id="{$companyId}">
+                                <input type="checkbox" {if in_array($companyId,$interested_companies_ids_for_sms_array)} checked="checked"{/if}/>
+                            </div>
+                        {/if}
+
                         <a href="javascript:void(0);" class="company_gmap_pin" company_id="{$companyId}"><img src="{$SITE_PATH}/img/google_map_pin.png" width=40 alt="logo"/></a>
                         <div class="company_rating">
                             <h3 class="company-tittle">
@@ -165,6 +182,8 @@
                     {/if}
                 </div>
             {/foreach}
+        {else}
+            {include file="$TEMPLATE_DIR/main/message.tpl" type="error" content="No results"} 
         {/if}
     </div>
 </div>

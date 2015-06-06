@@ -1,13 +1,11 @@
 <div class="container cart-wrapper">
     {if isset($ns.customerMessages)}
         <h1 class="main_title customer_mes_title">The current Products are not available</h1>
-        <ul class="list-customer-message">
+        <div class="list-customer-message">
             {foreach from=$ns.customerMessages item=customerMessage}
-                <li>
-                    {$customerMessage}
-                </li>
+                {include file="$TEMPLATE_DIR/main/message.tpl" type="error" content="{$customerMessage}"} 
             {/foreach}
-        </ul>
+        </div>
     {/if}
     {if $ns.emptyCart == true}
         <h1>{$ns.lm->getPhrase(296)}</h1>		
@@ -107,7 +105,7 @@
     {/if}
     <a class="button {if $disableButton == 1}grey{else}blue{/if}" {if $disableButton == 0}href="{$SITE_PATH}/checkout"{/if} {if $disableButton == 1}disabled{/if}>{$ns.lm->getPhrase(281)}</a>
     {if isset($warningMessage)}
-        <span class="warning_message">{$ns.lm->getPhrase($warningMessage)}</span>
+        {include file="$TEMPLATE_DIR/main/message.tpl" type="warning" content="{$ns.lm->getPhrase($warningMessage)}"}
     {/if}
 </div>
 {if $ns.userLevel==$ns.userGroupsUser}

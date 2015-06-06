@@ -4,22 +4,6 @@
     margin:0 auto 30px;
     padding:0px;
 }
-.list-customer-message li{
-    list-style: none;
-    padding: 7px 15px;
-    margin-bottom: 7px;
-    color: #555;
-    background-color: #FDEBE8;
-    border: 1px solid #D54000;
-
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px; 
-    -o-border-radius: 3px; 
-    -ms-border-radius: 3px;
-    -icab-border-radius: 3px; 
-    border-radius: 3px; 
-}
 
 /*======= Cart Item =======*/
 
@@ -241,7 +225,7 @@
     -ms-border-radius: 7px;
     -icab-border-radius: 7px; 
     border-radius: 7px; 
-    
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

@@ -39,7 +39,8 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
 
-        this.hideErrorSuccessMessages();
+        this.hideErrorSuccessWarningMessages();
+        this.autoHideMessages();
         this.initSocialLogins();
         this.searchForm();
         this.signupActivationMessage();
@@ -126,15 +127,32 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             });
         }
     },
-    hideErrorSuccessMessages: function () {
+    hideErrorSuccessWarningMessages: function () {
         var msgTimeout;
         function hide(time) {
             time = time ? time : 7000;
             window.clearTimeout(msgTimeout);
-            var msg = jQuery(".error,.success").not(".dont_close_msg");
+            var msg = jQuery(".error,.success,.warning").not("[data-not-close='true']");
             msgTimeout = window.setTimeout(function () {
                 msg.slideUp(300, function () {
                     msg.html("").show();
+                });
+            }, time);
+        }
+        hide();
+        jQuery("form").on("submit", function () {
+            hide();
+        });
+    },
+    autoHideMessages: function () {
+        var msgTimeout;
+        function hide(time) {
+            time = time ? time : 7000;
+            window.clearTimeout(msgTimeout);
+            var msg = jQuery(".message[data-auto-close='true']");
+            msgTimeout = window.setTimeout(function () {
+                msg.slideUp(300, function () {
+                    msg.remove();
                 });
             }, time);
         }
@@ -387,11 +405,19 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         });
     },
     checkbox: function () {
-        jQuery(".f_checkbox_label").click(function () {
-            jQuery(this).siblings(".f_checkbox").toggleClass("checked");
+        jQuery(".f_checkbox_label").on("click", function () {
+            jQuery(this).siblings(".f_checkbox").trigger("click");
         });
-        jQuery(".f_checkbox").click(function () {
+        
+        jQuery(".f_checkbox").on("click", function () {
             jQuery(this).toggleClass("checked");
+            var checkbox = jQuery(this).find("input[type='checkbox']");
+            if (jQuery(this).hasClass("checked")) {
+                checkbox.prop("checked", true);
+            }
+            else {
+                checkbox.prop("checked", false);
+            }
         });
     },
     categoriesProductCheckbox: function () {

@@ -1,6 +1,13 @@
 .activate_map{
     display: none;
 }
+/*============ Companies Search Price ============*/
+
+.price_search_form{
+    max-width:500px;
+    margin:auto;
+}
+
 /*============ Companies Filter and Search block ============*/
 
 .companies_container{

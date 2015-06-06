@@ -1,4 +1,4 @@
-<header id="headerWrapper" class="navbar navbar-inverse hero" role="banner">
+<header id="headerWrapper" class="navbar">
     <nav id="navMenu" class="navMenu" role="navigation">
         <div class="navMenu_inner">
             <input type="hidden" id="server_ip_address" value="{$ns.server_ip_address}"/>
@@ -213,7 +213,7 @@
                         {**************************** SEARCH ********************************}
                         <div class="search_container">
                             <form action="{$SITE_PATH}" id="search_text_form" autocomplete="off" method="get">
-                                <input type="text" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
+                                <input type="search" id="srch-term" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text" value="{$ns.req.st|default:''}">
                                 <button type="submit" class="search_btn">
                                     
                                 </button>

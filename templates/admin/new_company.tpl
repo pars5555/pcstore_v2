@@ -1,3 +1,5 @@
-{include file="$TEMPLATE_DIR/admin/left_panel.tpl"} 
+<div class="container_new_company">
 
-<a href="{$SITE_PATH}/admin/companies">Cancel</a>
+    <a href="{$SITE_PATH}/admin/companies">Cancel</a>
+
+</div>

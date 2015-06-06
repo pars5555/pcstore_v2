@@ -25,6 +25,7 @@ ngs.ActionFactory.prototype={
         this.actions["upload_attachment"] = function temp(){return new ngs.UploadAttachmentAction("upload_attachment", ajaxLoader);};
         this.actions["delete_attachment"] = function temp(){return new ngs.DeleteAttachmentAction("delete_attachment", ajaxLoader);};
         this.actions["send_price_email"] = function temp(){return new ngs.SendPriceEmailAction("send_price_email", ajaxLoader);};
+        this.actions["set_company_interested_companies_ids"] = function temp(){return new ngs.SetCompanyInterestedCompaniesIdsAction("set_company_interested_companies_ids", ajaxLoader);};
         this.actions["revert_company_last_price"] = function temp(){return new ngs.RevertCompanyLastPriceAction("revert_company_last_price", ajaxLoader);};
         
         //admin

@@ -3,15 +3,15 @@
     <head>
         {include file="$TEMPLATE_DIR/admin/util/headerControls.tpl"}
     </head>
-    <body>
+    <body class="ctl_{$ns.contentLoad}">
+        {include file="$TEMPLATE_DIR/admin/util/header.tpl"} 
         <div class="wrapper">
             <input type="hidden" id="initialLoad" name="initialLoad" value="admin_main" />		
             <input type="hidden" id="contentLoad" value="{$ns.contentLoad}" />
-            {include file="$TEMPLATE_DIR/admin/util/header.tpl"} 
             <div class="admin-panel-right-wrapper">
-                {nest ns=content}
+                {include file="$TEMPLATE_DIR/admin/main_content.tpl"} 
             </div>
-            {include file="$TEMPLATE_DIR/admin/util/footer.tpl"} 
         </div>
+        {include file="$TEMPLATE_DIR/admin/util/footer.tpl"} 
     </body>
 </html>

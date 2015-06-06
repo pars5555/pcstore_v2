@@ -1,0 +1,22 @@
+/**************************************************************************************/
+/*                                                                                    */
+/*                                   ADMIN HEADER                                     */
+/*                                                                                    */
+/**************************************************************************************/
+
+.header_content{
+    background-color:#f7f7f7;
+    border-bottom:1px solid #ccc;
+    padding:10px;
+    text-align: center;
+}
+.site_logo{
+    display:inline-block;
+    vertical-align:middle;
+    width:200px;
+}
+.site_logo img{
+    width:160px;
+    display: inline-block;
+    vertical-align: middle;
+}

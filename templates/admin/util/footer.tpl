@@ -1,1 +1,3 @@
-admin footer
+<footer>
+    admin footer
+</footer>
