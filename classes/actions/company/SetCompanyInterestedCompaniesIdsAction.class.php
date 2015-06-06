@@ -19,7 +19,7 @@ class SetCompanyInterestedCompaniesIdsAction extends BaseCompanyAction {
             }
         }
         $companies_ids = implode(',', $int_companies_ids);
-        $companyManager = CompanyManager::getInstance($this->config, $this->args);
+        $companyManager = CompanyManager::getInstance();
         $companyManager->setInterestedCompaniesIdsForSms($this->getUserId(), $companies_ids);
         $company = $companyManager->selectByPK($this->getUserId());
         $sms_receive_phone_number = $company->getPriceUploadSmsPhoneNumber();
