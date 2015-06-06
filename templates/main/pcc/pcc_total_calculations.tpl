@@ -2,9 +2,7 @@
     <span>Your PC</span><span class="your_pc_img"></span>
 </div>
 <a href="#" class="facebook_share" onclick="
-        var sharer = '//www.facebook.com/sharer/sharer.php?s=100&p[url]=' +
-                encodeURIComponent(location.href) + '&p[images][0]=' + '{$SITE_PATH}/img/icon_pc.png' +
-                '&p[title]=PcStore PC configurator' + '&p[summary]=';
+        var sharer = 'http://www.facebook.com/sharer.php?s=100\n\&p[url]='+encodeURIComponent(location.href)+'\&p[images][0]='+'{$SITE_PATH}/img/pcstore_logo_small.png'+'&p[title]=PcStore PC configurator'+'&p[summary]=Your PC';
         window.open(sharer,
                 'fb-share-dialog',
                 'width=626,height=436');
