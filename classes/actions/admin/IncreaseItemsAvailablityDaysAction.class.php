@@ -15,7 +15,7 @@ class IncreaseItemsAvailablityDaysAction extends BaseAdminAction {
 
         $itemManager = ItemManager::getInstance();
         //first set all to 1 week availability
-        $availability_expire_days = inval($this->getCmsVar("availability_expire_days"));
+        $availability_expire_days = intval($this->getCmsVar("availability_expire_days"));
         $itemManager->increaseCompanyExpireItemsByGivenDays($company_id, $availability_expire_days );
         // then set by category
         $availability_expire_days_cpu_hdd = inval($this->getCmsVar("availability_expire_days_cpu_hdd"));
