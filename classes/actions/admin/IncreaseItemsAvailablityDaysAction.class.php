@@ -12,17 +12,16 @@ require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
 class IncreaseItemsAvailablityDaysAction extends BaseAdminAction {
 
     public function service() {
-
+        $company_id = $this->secure($_REQUEST["company_id"]);
         $itemManager = ItemManager::getInstance();
         //first set all to 1 week availability
         $availability_expire_days = intval($this->getCmsVar("availability_expire_days"));
-        $itemManager->increaseCompanyExpireItemsByGivenDays($company_id, $availability_expire_days );
+        $itemManager->increaseCompanyExpireItemsByGivenDays($company_id, $availability_expire_days);
         // then set by category
         $availability_expire_days_cpu_hdd = inval($this->getCmsVar("availability_expire_days_cpu_hdd"));
         $itemManager->increaseCompanyExpireItemsByGivenDays($company_id, $availability_expire_days_cpu_hdd, array(CategoriesConstants::HDD_HARD_DRIVE, CategoriesConstants::CPU_PROCESSOR));
         $this->sendStockUpdatedEmailToCompany($company_id);
         $this->redirect("admin/items/" . $company_id);
-        
     }
 
     private function sendStockUpdatedEmailToCompany($company_id) {
