@@ -24,7 +24,7 @@ class SendNewsletterAction extends BaseAdminAction {
         $includeUsers = 1;
         $subject = 'Newsletter from PcStore.am!!!';
 
-        $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain"), $this->getCmsVar("mailgun_max_recipients_number_per_email"));
+        $mailgunEmailSenderManager = new MailgunEmailSenderManager($this->getCmsVar("mailgun_api_key"), $this->getCmsVar("mailgun_email_domain_pc"), $this->getCmsVar("mailgun_max_recipients_number_per_email"));
         if (!empty($_REQUEST['test'])) {
             $testEmail = $_REQUEST['test_email'];
             $mailGunResult = $mailgunEmailSenderManager->sendHtmlEmail($testEmail, $subject, $email_body_html, $fromEmail, $fromName);
