@@ -145,6 +145,7 @@
                 <file>ngs/loads/admin/newsletter/AdminSaveNewsletterLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemCategoriesPopupLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemPicturesPopupLoad.class.js</file>
+                <file>ngs/loads/admin/AdminImportLoad.class.js</file>
             </files>
         </input>
     </builder>

@@ -225,7 +225,7 @@ class EmailSenderManager extends AbstractManager {
         }
         $params["ul"] = $ul;
         $template = null;
-        if (strlen($templateId) <= 50) {
+        if (strlen($templateId) <= 100) {
             $template = EmailTemplatesManager::getInstance()->getTemplate($templateId);
         }
         if (!isset($template)) {

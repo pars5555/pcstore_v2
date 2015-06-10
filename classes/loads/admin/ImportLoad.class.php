@@ -20,7 +20,7 @@ class ImportLoad extends BaseAdminLoad {
             $selectedCompanyId = intval($this->args[0]);
             $selectedCompanyDto = $companyManager->selectByPK($selectedCompanyId);
             $this->addParam("selectedCompanyDto", $selectedCompanyDto);
-        $this->loadLastPrices($selectedCompanyId);
+            $this->loadLastPrices($selectedCompanyId);
         }
     }
 
@@ -44,14 +44,14 @@ class ImportLoad extends BaseAdminLoad {
         }
         $this->addParam('price_names', $companyPriceNames);
         $this->addParam('selected_price_index', $selectPriceIndex);
-
+        
         $companyPriceSheetsNames = $importPriceManager->getCompanyPriceSheetsNamesFromCache($companyId, $selectPriceIndex);
         $this->addParam('price_sheets_names', $companyPriceSheetsNames);
-        $selectSheetIndex = 0;
+        $selectedSheetIndex = 0;
         if (isset($_REQUEST['sheet_index'])) {
-            $selectSheetIndex = intval($_REQUEST['sheet_index']);
+            $selectedSheetIndex = intval($_REQUEST['sheet_index']);
         }
-        $this->addParam('selected_sheet_index', $selectSheetIndex);
+        $this->addParam('selected_sheet_index', $selectedSheetIndex);
 
         $selected_rows_index = array();
         if (isset($_REQUEST['selected_rows_index']) && strlen($_REQUEST['selected_rows_index']) > 0) {
@@ -60,7 +60,7 @@ class ImportLoad extends BaseAdminLoad {
         $this->addParam('selected_rows_index', $selected_rows_index);
 
 
-        $values = $importPriceManager->loadCompanyPriceFromCache($companyId, $selectPriceIndex, $selectSheetIndex);
+        $values = $importPriceManager->loadCompanyPriceFromCache($companyId, $selectPriceIndex, $selectedSheetIndex);
         if (!$values) {
             $this->addParam('priceNotFound', true);
             return false;

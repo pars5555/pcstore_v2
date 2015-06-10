@@ -80,6 +80,7 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_manage_newsletters"] = function temp(){return new ngs.AdminManageNewslettersLoad("admin_manage_newsletters", ajaxLoader);};
 	this.loads["admin_item_categories_popup"] = function temp(){return new ngs.AdminItemCategoriesPopupLoad("admin_item_categories_popup", ajaxLoader);};
 	this.loads["admin_item_pictures_popup"] = function temp(){return new ngs.AdminItemPicturesPopupLoad("admin_item_pictures_popup", ajaxLoader);};
+	this.loads["admin_import"] = function temp(){return new ngs.AdminImportLoad("admin_import", ajaxLoader);};
 },
 	
     getLoad: function (name) {

@@ -16,7 +16,6 @@ class ImportPriceManager extends AbstractManager {
         3 => "Dealer $", 4 => "Dealer Դր", 5 => "VAT $",
         6 => "VAT Դր", 7 => "Warranty Months", 8 => "Warranty Year", 9 => "Brand");
 
-  
     /**
      * @var singleton instance of class
      */
@@ -30,7 +29,7 @@ class ImportPriceManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-    
+
      */
     function __construct() {
         
@@ -38,7 +37,7 @@ class ImportPriceManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-   
+
      */
     public static function getInstance() {
 
@@ -230,7 +229,11 @@ class ImportPriceManager extends AbstractManager {
         ksort($this->columnsNamesMap);
         $average = intval(array_sum($this->columnsNamesMap) / count($this->columnsNamesMap));
         list($this->itemModelColumnName, $this->itemNameColumnName) = $this->findItemModelNameColumnNames($values, $average);
-        list($this->dealerPriceColumnName, $this->dealerPriceAmdColumnName, $this->vatPriceColumnName, $this->vatPriceAmdColumnName) = $this->findDealerPriceVatPriceColumnNames($values, $average, $this->itemNameColumnName);
+        $findDealerPriceVatPriceColumnNames = $this->findDealerPriceVatPriceColumnNames($values, $average, $this->itemNameColumnName);
+        $this->dealerPriceColumnName = array_key_exists(0, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[0] : null;
+        $this->dealerPriceAmdColumnName = array_key_exists(1, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[1] : null;
+        $this->vatPriceColumnName = array_key_exists(2, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[2] : null;
+        $this->vatPriceAmdColumnName = array_key_exists(3, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[3] : null;
     }
 
     public function getColumnsNamesMap() {
