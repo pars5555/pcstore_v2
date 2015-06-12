@@ -179,6 +179,11 @@
                         <span class="fontAwesome"></span>
                         <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
                     </div>
+                    {if $ns.userLevel === $ns.userGroupsCompany && $ns.customer->getHasLocalWebsite()}
+                        <a  href="http://{$ns.customer->getShortName()}.pc.am" target="_blank">
+                            <img src="{$SITE_PATH}/images/big_logo/{$ns.userId}" alt="logo">
+                        </a>
+                    {/if}
 
                     {*}
                     <div class="contact_info_item">
