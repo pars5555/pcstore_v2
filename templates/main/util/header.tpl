@@ -166,33 +166,38 @@
 
             <div class="header_content">
                 {**************************** CONTACT ********************************}
-                <div class="contact_info">
-                    <div class="contact_info_item">
-                        <span class="fontAwesome"></span>
-                        <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
-                    </div>
-                    <div class="contact_info_item">
-                        <span class="fontAwesome"></span>
-                        <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
-                    </div>
-                    <div class="contact_info_item">
-                        <span class="fontAwesome"></span>
-                        <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
-                    </div>
+                <div class="contact_info {if $ns.userLevel === $ns.userGroupsCompany && $ns.customer->getHasLocalWebsite()}has_company_shop{/if}">
+
                     {if $ns.userLevel === $ns.userGroupsCompany && $ns.customer->getHasLocalWebsite()}
-                        <a  href="http://{$ns.customer->getShortName()}.pc.am" target="_blank">
-                            <img src="{$SITE_PATH}/images/big_logo/{$ns.userId}" alt="logo">
+                        <a class="company_shop" href="http://{$ns.customer->getShortName()}.pc.am" target="_blank" title="Company shop">
+                            <img src="{$SITE_PATH}/images/big_logo/{$ns.userId}" alt="Company shop">
                         </a>
                     {/if}
 
-                    {*}
-                    <div class="contact_info_item">
-                    <span class="fontAwesome"></span>
-                    <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
-                    </div>
-                    {*}
+                    <div class="contact_info_inner">
+                        <div class="contact_info_item">
+                            <span class="fontAwesome"></span>
+                            <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number1')}"> {$ns.lm->getCmsVar('pcstore_sales_phone_number1')}</a>
+                        </div>
+                        <div class="contact_info_item">
+                            <span class="fontAwesome"></span>
+                            <a class="contact_link" href="tel:{$ns.lm->getCmsVar('pcstore_sales_phone_number')}">{$ns.lm->getCmsVar('pcstore_sales_phone_number')}</a>
+                        </div>
+                        <div class="contact_info_item">
+                            <span class="fontAwesome"></span>
+                            <a class="contact_link" href="{$SITE_PATH}/contactus">contactus@pcstore.am</a>
+                        </div>
 
+                        {*}
+                        <div class="contact_info_item">
+                        <span class="fontAwesome"></span>
+                        <a class="contact_link" target="_blank" href="https://www.google.com/maps/dir//49+Komitas+Ave,+Yerevan+0014,+%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F/@40.2062561,44.5183635,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x406abd35dfe155cd:0xe0e03bca043244e6!2m2!1d44.5157627!2d40.2070932">{$ns.lm->getPhrase(13)}</a>
+                        </div>
+                        {*}
+
+                    </div>
                 </div>
+
                 <div class="header_content_inner">
                     {**************************** LOGO ********************************}
 

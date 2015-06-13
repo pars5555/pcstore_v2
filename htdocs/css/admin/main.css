@@ -74,6 +74,10 @@ body{
     opacity: 1;
 }
 
+.admin_company_settings{
+    margin-bottom:30px;
+}
+
 /**************************************************************************************/
 /*                                                                                    */
 /*                                    MAIN RESPONSIVE                                 */

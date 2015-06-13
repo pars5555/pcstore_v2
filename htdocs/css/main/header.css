@@ -224,6 +224,16 @@
 .contact_info {
     padding:0 0 7px 200px;
 }
+.contact_info.has_company_shop{
+    display:table;
+    width:100%;
+    padding:0 0 10px 0;
+}
+
+.contact_info.has_company_shop .contact_info_inner{
+    display:table-cell;
+    vertical-align: middle;
+}
 
 .contact_info .contact_info_item{
     display:inline-block;
@@ -254,6 +264,21 @@
 
 .contact_info .contact_link:hover{
     color:#63B4FB;    
+}
+
+/**************************************************************************************/
+/*                                   COMPANY SHOP                                     */
+/**************************************************************************************/
+
+.company_shop {
+    display: table-cell;
+    vertical-align: middle;
+    width: 200px;
+    text-align: center;
+}
+.company_shop img{
+    max-width:100px;
+    max-height:100px;
 }
 
 /**************************************************************************************/
@@ -383,6 +408,7 @@
     display:table-cell;
     vertical-align: top;
     padding:20px;
+    width:33.3%;
 }
 .modal_cols .button{
     margin-bottom:0;
@@ -616,6 +642,7 @@
     .header_content_container{
         padding:10px;
     }
+    .company_shop,
     .site_logo{
         width:170px;
     }
@@ -670,6 +697,7 @@
     }
     .modal-body .modal_cols{
         display:block;
+        width:auto;
     }
 
     /********************************** SEARCH & LOGO & BUILD PC ***************************/
@@ -695,6 +723,14 @@
     .site_logo,
     .site_logo img{
         width:130px;
+    }
+    
+    .company_shop{
+        width:100px;
+    }
+    .company_shop img{
+        max-width:70px;
+        max-height:70px;
     }
 
     /*Contact Info*/

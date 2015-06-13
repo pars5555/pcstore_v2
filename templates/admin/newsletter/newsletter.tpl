@@ -10,11 +10,14 @@
         <textarea name='price_email_body' type="text"  class="msgBodyTinyMCEEditor" id="sc_newsletter_html" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     </div>
     <div id="nl_newsletter_title"></div>
-    <a  href="javascript:void(0);" style="float: right" id="admin_send_newsletter_btn">Send</a>
-    <a  href="javascript:void(0);" style="float: right" id="admin_test_newsletter_btn">Test</a>
-    <a  href="javascript:void(0);" id="admin_load_newsletter_btn">Load</a>
-    <a  href="javascript:void(0);" id="admin_save_newsletter_btn">Save</a>
-    <a  href="javascript:void(0);" id="admin_manage_newsletter_btn">Manage</a>
+    
+    <div class="doublespace"></div>
+    
+    <a class="button inline blue" href="javascript:void(0);" id="admin_send_newsletter_btn">Send</a>
+    <a class="button inline blue" href="javascript:void(0);" id="admin_test_newsletter_btn">Test</a>
+    <a class="button inline blue" href="javascript:void(0);" id="admin_load_newsletter_btn">Load</a>
+    <a class="button inline blue" href="javascript:void(0);" id="admin_save_newsletter_btn">Save</a>
+    <a class="button inline blue" href="javascript:void(0);" id="admin_manage_newsletter_btn">Manage</a>
 
     <div class="pop_up_container hide">
         <div class="overlay"></div>
