@@ -49,7 +49,6 @@
                 <file>ngs/util/crc32.js</file>
                 <file>ngs/util/UrlChangeEventObserver.class.js</file>
                 <file>ngs/util/FacebookLogin.js</file>
-                <file>ngs/util/GooglePlusLogin.js</file>
                 <file>ngs/util/LinkedinLogin.js</file>
                 <file>ngs/util/DialogsManager.class.js</file>
                 <file>ngs/util/BannerSlider.class.js</file>

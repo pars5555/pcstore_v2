@@ -29,16 +29,13 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         this.leftPanelActiveElement();
         this.checkbox();
         ngs.nestLoad(jQuery('#contentLoad').val());
-
         this.notifications();
         this.categoriesProductCheckbox();
         this.pccLoader();
         this.sidePanel();
         this.notificationScrolling();
-
         this.initMainTabsContents();
         this.showActiveTabContent(jQuery(".f_tab_title.active"));
-
         this.hideErrorSuccessWarningMessages();
         this.autoHideMessages();
         this.initSocialLogins();
@@ -58,7 +55,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery(".f_build_pc_link").on("click mousedown touchstart tap", function () {
             window.location.href = jQuery(this).attr("data-href");
         });
-
         var hasFlash = false;
         try {
             hasFlash = Boolean(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
@@ -78,7 +74,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     signupActivationMessage: function () {
         var signup_message = jQuery("#signup_activation_message");
         var signup_done = jQuery("#signup_activation_done");
-
         if (signup_message.length > 0) {
             this.initPopup(false, signup_message.val());
         }
@@ -97,10 +92,32 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             return true;
         });
     },
+    initGoogle: function () {
+        var thisInstance = this;
+        gapi.load('auth2', function () {
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+                client_id: '1035369249-j8j8uc4oacruo2iefonhdj1q0csjb9sj.apps.googleusercontent.com',
+                cookiepolicy: 'single_host_origin',
+                // Request scopes in addition to 'profile' and 'email'
+                //scope: 'additional_scope'
+            });
+            if (jQuery('#googleLoginBtn').length > 0) {
+                thisInstance.attachSignin(document.getElementById('googleLoginBtn'));
+            }
+        });
+    },
+    attachSignin: function (element) {
+        auth2.attachClickHandler(element, {},
+                function (googleUser) {
+                    var profile = googleUser.getBasicProfile();
+                    ngs.action("social_login", {"login_type": 'google', 'social_user_id': profile.getId(), 'first_name': profile.getName(), 'last_name': '', 'json_profile': JSON.stringify(profile)});
+                }, function (error) {
+            alert(JSON.stringify(error, undefined, 2));
+        });
+    },
     initSocialLogins: function () {
-        if (jQuery('#googleLoginBtn').length > 0) {
-            gapi.signin.render('googleLoginBtn', {});
-        }
+        this.initGoogle();
         jQuery("#linkedinLoginBtn").click(function () {
             IN.UI.Authorize().place();
             IN.Event.on(IN, "auth", function () {
@@ -194,17 +211,14 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         var mainPopup = jQuery("#mainPopup").clone(true);
         mainPopup.removeAttr("id");
         jQuery("body").append(mainPopup);
-
         //init default values of fields//
         var default_title = jQuery("#mainPopupSettings .f_main_popup_default_title").val();
         var default_content = jQuery("#mainPopupSettings .f_main_popup_default_content").val();
         var default_confirm_btn = jQuery("#mainPopupSettings .f_main_popup_default_confirm_btn").val();
         var default_cancel_btn = jQuery("#mainPopupSettings .f_main_popup_default_cancel_btn").val();
-
         title = title ? title : default_title;
         content = content ? content : default_content;
         confirm = confirm ? confirm : default_confirm_btn;
-
         //init cancel button//
         if (typeof cancel == "undefined") {
             mainPopup.find(".f_pop_up_cancel_btn").remove();
@@ -222,12 +236,10 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         mainPopup.find(".f_pop_up_title").html(title);
         mainPopup.find(".f_pop_up_content").html(content);
         mainPopup.find(".f_pop_up_confirm_btn").html(confirm);
-
         //Show Popup//
         window.setTimeout(function () {
             mainPopup.addClass("active");
         }, 150);
-
         // Hide and remove popup //
         function hideRemove(mainPopup) {
             mainPopup.removeClass("active hide");
@@ -245,7 +257,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         mainPopup.find(".overlay").add(mainPopup.find(".f_pop_up_cancel_btn")).add(mainPopup.find(".close_button")).on("click tap", function () {
             hideRemove(mainPopup);
         });
-
         return mainPopup;
     },
     notifications: function () {
@@ -257,8 +268,10 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     ,
     initGoogleLogoutOnWindowUnload: function () {
         window.onbeforeunload = function (e) {
-            if (typeof gapi.auth !== 'undefined') {
-                gapi.auth.signOut();
+            if (typeof gapi.auth2 !== 'undefined') {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                });
             }
         };
     },
@@ -291,8 +304,10 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     initSocialLogout: function () {
         jQuery('#mainLogoutBtn').click(function () {
-            if (typeof gapi.auth !== 'undefined') {
-                gapi.auth.signOut();
+            if (typeof gapi.auth2 !== 'undefined') {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                });
             }
             if (typeof IN !== 'undefined' && typeof IN.User !== 'undefined') {
                 IN.User.logout();
@@ -307,7 +322,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             }
             return true;
         });
-
     },
     initLanguages: function () {
         jQuery('.mainSetLanguage').click(function () {
@@ -320,11 +334,9 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#navMenu .f_dropdown_toggle").click(function () {
             jQuery(this).siblings(".f_dropdown_menu").slideToggle(500);
             jQuery(this).toggleClass("active");
-
             /*Close drop down menu*/
             jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_toggle").removeClass("active");
             jQuery(this).closest(".f_dropdown").siblings(".f_dropdown").find(".f_dropdown_menu").slideUp(500);
-
             /*Click on other elements*/
 
             jQuery(document).on("click", function (event) {
@@ -346,7 +358,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             modal.removeClass("active");
             jQuery("#myModal").addClass("hide");
         });
-
         jQuery("#forgot_pass").click(function () {
             jQuery("#forgotModal .f_modal_content").addClass("active");
             jQuery("#forgotModal").removeClass("hide");
@@ -354,7 +365,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#forgotModal .close_button,#forgotModal .overlay").click(function () {
             jQuery("#forgotModal .f_modal_content").removeClass("active");
             jQuery("#forgotModal").addClass("hide");
-
             jQuery("#forgotModal #forgotPasswordEmailInput").val("");
             jQuery('#forgotPasswordErrorMessage').html("");
             jQuery('#forgotPasswordSuccessMessage').html("");
@@ -362,7 +372,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery("#forgotPasswordForm").on("submit", function () {
             self.mainLoader(true);
         });
-
         ngs.checkLogin = true;
         var thisInstace = this;
         jQuery('#mainLoginBtn').click(function () {
@@ -382,7 +391,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
     },
     leftMenu: function () {
         jQuery("#mainLeftPanel ul li").has("ul").addClass("dropdown");
-
         jQuery("#mainLeftPanel .dropdown-toggle").click(function (event) {
             event.preventDefault();
             var closest_li = jQuery(this).closest("li");
@@ -390,7 +398,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             closest_li.toggleClass("opened");
             closest_li.children("ul").slideToggle(300);
         });
-
         var count = jQuery(".cat_count");
         count.each(function () {
             var text = jQuery(this).find("span");
@@ -408,7 +415,6 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
         jQuery(".f_checkbox_label").on("click", function () {
             jQuery(this).siblings(".f_checkbox").trigger("click");
         });
-        
         jQuery(".f_checkbox").on("click", function () {
             jQuery(this).toggleClass("checked");
             var checkbox = jQuery(this).find("input[type='checkbox']");
@@ -433,13 +439,11 @@ ngs.MainLoad = Class.create(ngs.AbstractLoad, {
             jQuery(".f_side_panel[data-side-panel=" + sidePanel + "]").toggleClass("active");
             jQuery(this).toggleClass("active");
         });
-
         jQuery(".f_side_panel[data-side-position=left]").on("swipeleft", function () {
             var sidePanel = jQuery(this).attr("data-side-panel");
             jQuery(this).removeClass("active");
             jQuery(".f_side_panel_btn[data-side-panel=" + sidePanel + "]").removeClass("active");
         });
-
         jQuery(".f_side_panel[data-side-position=right]").on("swiperight", function () {
             var sidePanel = jQuery(this).attr("data-side-panel");
             jQuery(this).removeClass("active");

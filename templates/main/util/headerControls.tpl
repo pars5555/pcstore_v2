@@ -81,28 +81,22 @@
     authorize: true
 </script> 
 {* google pluse login setup *}
-<script type="text/javascript" src="https://apis.google.com/js/client:plusone.js"></script>
-<meta name="google-signin-clientid" content="1035369249-j8j8uc4oacruo2iefonhdj1q0csjb9sj.apps.googleusercontent.com" />
-<meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login  https://www.google.com/m8/feeds" />
-<meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
-<meta name="google-signin-cookiepolicy" content="single_host_origin" />
-<meta name="google-signin-callback" content="googleLoginCallback" />
-
+<script src="https://apis.google.com/js/api:client.js"></script>
 
 {literal}
     <script>
-                (function (i, s, o, g, r, a, m) {
-                    i['GoogleAnalyticsObject'] = r;
-                    i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments);
-                    }, i[r].l = 1 * new Date();
-                    a = s.createElement(o),
-                            m = s.getElementsByTagName(o)[0];
-                    a.async = 1;
-                    a.src = g;
-                    m.parentNode.insertBefore(a, m);
-                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-61087329-3', 'auto');
-        ga('send', 'pageview');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-61087329-3', 'auto');
+    ga('send', 'pageview');
     </script>
 {/literal}
