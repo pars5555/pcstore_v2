@@ -38,6 +38,6 @@
     <form enctype="multipart/form-data" method="post" action="{$SITE_PATH}/dyn/admin/do_add_banner" autocomplete="off">        
         <input type="file" name="banner_image" accept="image/*"/>
         <input type="text" name="path"/>
-        <button type="submit">Add Banner</button>
+        <button class="button blue" type="submit">Add Banner</button>
     </form>
 </div>

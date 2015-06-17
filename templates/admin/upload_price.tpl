@@ -1,12 +1,5 @@
 <div class="container_upload_price">
 
-    {foreach from=$ns.allCompaniesDtos item=companyDto}
-        <a href="{$SITE_PATH}/admin/uploadprice/{$companyDto->getId()}" style="{if isset($ns.selectedCompanyDto) && $ns.selectedCompanyDto->getId()==$companyDto->getId()}color:red{/if}">
-            <img {if $companyDto->getPassive() == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyDto->getId()}" alt="logo"/>
-            {$companyDto->getName()}
-        </a>
-    {/foreach}
-
 
     {if isset($ns.selectedCompanyDto)}
         <h1>{$ns.selectedCompanyDto->getName()}</h1>
@@ -58,4 +51,28 @@
             </tbody>
         </table>
     {/if}
+
+    <div class="table_striped admin_companies_list">
+        <div class="table_header_group">
+            <div class="table-row">
+                <div class="table-cell">
+                    Company logo
+                </div>
+                <div class="table-cell">
+                    Company name
+                </div>
+            </div>
+        </div>
+        {foreach from=$ns.allCompaniesDtos item=companyDto}
+            <a class="table-row" href="{$SITE_PATH}/admin/uploadprice/{$companyDto->getId()}" style="{if isset($ns.selectedCompanyDto) && $ns.selectedCompanyDto->getId()==$companyDto->getId()}color:red{/if}">
+                <span class="table-cell">
+                    <img {if $companyDto->getPassive() == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyDto->getId()}" alt="logo"/>
+                </span>
+                <span class="table-cell">
+                    {$companyDto->getName()}
+                </span>
+            </a>
+        {/foreach}
+    </div>
+
 </div>

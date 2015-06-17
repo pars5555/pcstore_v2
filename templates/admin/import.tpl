@@ -1,28 +1,21 @@
 <div class="container_import">
 
-    {foreach from=$ns.allCompaniesDtos item=companyDto}
-        <a href="{$SITE_PATH}/admin/import/{$companyDto->getId()}" style="{if isset($ns.selectedCompanyDto) && $ns.selectedCompanyDto->getId()==$companyDto->getId()}color:red{/if}">
-            <img {if $companyDto->getPassive() == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyDto->getId()}" alt="logo"/>
-            {$companyDto->getName()}
-        </a>
-    {/foreach}
-
     {if isset($ns.selectedCompanyDto)}
         <div id="im_header_container">
             <select onkeyup="this.blur();
-            this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_price">
+                    this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_price">
                 {foreach from=$ns.price_names item=price_name key=price_index}
                     <option value="{$price_index}" {if $price_index==$ns.selected_price_index}selected="selected"{/if} >{$price_name}</option>
                 {/foreach}
             </select>
             <select onkeyup="this.blur();
-            this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_worksheet">
+                    this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_worksheet">
                 {foreach from=$ns.price_sheets_names item=col_name key=col_index}
                     <option value="{$col_index}" {if $col_index==$ns.selected_sheet_index}selected="selected"{/if} >{$col_name}</option>
                 {/foreach}
             </select>
             <select onkeyup="this.blur();
-            this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_brand_model_name_concat_method">
+                    this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" id="ip_select_brand_model_name_concat_method">
                 <option value="n" selected>Name</option>
                 <option value="bmn" >Brand+Model+Name</option>
                 <option value="bn" >Brand+Name</option>
@@ -61,7 +54,7 @@
                                     {assign var=selected_index value=6}
                                 {/if}
                                 <select onkeyup="this.blur();
-                                this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" column_id="{$columnId}" style="float:left">
+                                        this.focus();" class="cmf-skinned-select cmf-skinned-text f_price_column_name" column_id="{$columnId}" style="float:left">
                                     {foreach from=$ns.priceColumnOptions item=col_name key=col_index}
                                         <option value="{$col_index}" {if $col_index==$selected_index}selected="selected"{/if} class="translatable_element" phrase_id="Model">{$col_name}</option>
                                     {/foreach}
@@ -93,6 +86,28 @@
                 </tbody>
             </table>
         {/if}
-
     {/if}
+
+    <div class="table_striped admin_companies_list">
+        <div class="table_header_group">
+            <div class="table-row">
+                <div class="table-cell">
+                    Company logo
+                </div>
+                <div class="table-cell">
+                    Company name
+                </div>
+            </div>
+        </div>
+        {foreach from=$ns.allCompaniesDtos item=companyDto}
+            <a class="table-row" href="{$SITE_PATH}/admin/import/{$companyDto->getId()}" style="{if isset($ns.selectedCompanyDto) && $ns.selectedCompanyDto->getId()==$companyDto->getId()}color:red{/if}">
+                <span class="table-cell">
+                    <img {if $companyDto->getPassive() == 1} class="grayscale"{/if} src="{$SITE_PATH}/images/small_logo/{$companyDto->getId()}" alt="logo"/>
+                </span>
+                <span class="table-cell">
+                    {$companyDto->getName()}
+                </span>
+            </a>
+        {/foreach}
+    </div>
 </div>
