@@ -49,11 +49,11 @@ class AdminGroupActionsAction extends BaseAdminAction {
                 exit;
             case 'filter_emails':
                 require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
-                require_once (CLASSES_PATH . "/managers/UninterestingEmailsManager.class.php");
+                require_once (CLASSES_PATH . "/managers/InvalidEmailsManager.class.php");
                 $emails = $_REQUEST['emails'];
                 $emailsArray = EmailSenderManager::getEmailsFromText($emails);
-                $uninterestingEmailsManager = UninterestingEmailsManager::getInstance();
-                $filteredEmailsArray = $uninterestingEmailsManager->removeUninterestingEmailsFromList($emailsArray);
+                $invalidEmailsManager = InvalidEmailsManager::getInstance();
+                $filteredEmailsArray = $invalidEmailsManager->removeInvalidEmailsFromList($emailsArray);
                 $params['count'] = count($filteredEmailsArray);
                 $params['emails'] = implode(';', $filteredEmailsArray);
                 break;

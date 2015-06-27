@@ -7,7 +7,7 @@ require_once (FRAMEWORK_PATH . "/dal/dto/AbstractDto.class.php");
  *
  * @author	Vahagn Sookiasian
  */
-class UninterestingEmailsDto extends AbstractDto {
+class InvalidEmailDto extends AbstractDto {
 
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id", "email" => "email");

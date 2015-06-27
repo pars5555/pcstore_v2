@@ -3,7 +3,7 @@
 require_once (CLASSES_PATH . "/actions/company/BaseCompanyAction.class.php");
 require_once (CLASSES_PATH . "/managers/CompanyExtendedProfileManager.class.php");
 require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
-require_once (CLASSES_PATH . "/managers/UninterestingEmailsManager.class.php");
+require_once (CLASSES_PATH . "/managers/InvalidEmailsManager.class.php");
 
 /**
  * @author Vahagn Sookiasian
@@ -14,8 +14,8 @@ class FormatPriceEmailRecipientsAction extends BaseCompanyAction {
 
         $toEmails = strtolower(trim($_REQUEST['to_emails']));
         $valid_addresses = EmailSenderManager::getEmailsFromText($toEmails);
-        $uninterestingEmailsManager = UninterestingEmailsManager::getInstance();
-        $valid_addresses = $uninterestingEmailsManager->removeUninterestingEmailsFromList($valid_addresses);
+        $invalidEmailsManager = InvalidEmailsManager::getInstance();
+        $valid_addresses = $invalidEmailsManager->removeInvalidEmailsFromList($valid_addresses);
         $companyExtendedProfileManager = CompanyExtendedProfileManager::getInstance();
         $dto = $companyExtendedProfileManager->getByCompanyId($this->getUserId());
         $dto->setDealerEmails(implode(';', $valid_addresses));

@@ -1,13 +1,13 @@
 <?php
 
 require_once (FRAMEWORK_PATH . "/dal/mappers/AbstractMapper.class.php");
-require_once (CLASSES_PATH . "/dal/dto/UninterestingEmailsDto.class.php");
+require_once (CLASSES_PATH . "/dal/dto/InvalidEmailDto.class.php");
 
 /**
  *
  * 	@author	Vahagn Sookiasian
  */
-class UninterestingEmailsMapper extends AbstractMapper {
+class InvalidEmailsMapper extends AbstractMapper {
 
     /**
      * @var table name in DB
@@ -27,7 +27,7 @@ class UninterestingEmailsMapper extends AbstractMapper {
         AbstractMapper::__construct();
 
         // Initialize table name.
-        $this->tableName = "uninteresting_emails";
+        $this->tableName = "invalid_emails";
     }
 
     /**
@@ -36,7 +36,7 @@ class UninterestingEmailsMapper extends AbstractMapper {
      */
     public static function getInstance() {
         if (self::$instance == null) {
-            self::$instance = new UninterestingEmailsMapper();
+            self::$instance = new InvalidEmailsMapper();
         }
         return self::$instance;
     }
@@ -44,7 +44,7 @@ class UninterestingEmailsMapper extends AbstractMapper {
     /**
      */
     public function createDto() {
-        return new UninterestingEmailsDto();
+        return new InvalidEmailDto();
     }
 
     /**
