@@ -16,6 +16,8 @@ class SendNewsletterAction extends BaseAdminAction {
         if (empty($email_body_html)) {
             $this->error(array('errText' => 'email body is empty!'));
         }
+        $email_body_html .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
+        $email_body_html .= '<p style="font-size:10px"><a href="http://pc.am/newsunsub?email=%recipient%">Click here to unsubscribe.</a></p>';
 
         $fromEmail = $this->getCmsVar('pcstore_news_email');
         $fromName = 'Pcstore.am Newsletter!';
