@@ -13,8 +13,10 @@ ngs.SetCompanyInterestedCompaniesIdsAction = Class.create(ngs.AbstractAction, {
     afterAction: function (transport) {
         var data = transport.responseText.evalJSON();
         if (data.status === "ok") {
+            var content = data.message + " " + data.company_names;
+            ngs.MainLoad.prototype.initPopup(false, content);
         } else if (data.status === "warning") {
-            ngs.DialogsManager.closeDialog(483, "<div>" + data.message + "</div>");
+            ngs.MainLoad.prototype.initPopup(false, data.message);
         }
 
     }
