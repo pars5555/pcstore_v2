@@ -8,7 +8,7 @@ require_once (CLASSES_PATH . "/managers/NewsletterSubscribersManager.class.php")
  * @author Vahagn Sookiasian
  *
  */
-class UnsubscribeEmailFromCompanyLoad extends BaseGuestLoad {
+class UnsubscribeEmailFromNewsletterLoad extends BaseGuestLoad {
 
     public function load() {
         if (!isset($_REQUEST['email'])) {
