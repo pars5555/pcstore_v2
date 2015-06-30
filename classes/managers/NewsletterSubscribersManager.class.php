@@ -47,6 +47,7 @@ class NewsletterSubscribersManager extends AbstractManager {
     public function addSubscriber($email) {
         $dto = $this->mapper->createDto();
         $dto->setEmail($email);
+        $dto->setDatetime(date('Y-m-d H:i:s'));
         return $this->mapper->insertDto($dto);
     }
 
