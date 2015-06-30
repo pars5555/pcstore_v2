@@ -21,7 +21,6 @@ class UploadPriceAction extends BaseCompanyAction {
 
     public function service() {
 //getting parameters
-        ini_set('upload_max_filesize', '7M');
         $name = $_FILES['company_price']['name'];
         $type = $_FILES['company_price']['type'];
         $tmp_name = $_FILES['company_price']['tmp_name'];

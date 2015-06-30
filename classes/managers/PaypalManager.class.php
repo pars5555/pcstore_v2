@@ -225,7 +225,7 @@ class PaypalManager extends AbstractManager {
 
         $token = urlencode($_SESSION['TOKEN']);
         $paymentType = urlencode($_SESSION['PaymentType']);
-        $currencyCodeType = urlencode($_SESSION['currencyCodeType']);
+        $currencyCodeType = urlencode($_SESSION["currencyCodeType"]);
         $payerID = urlencode($_SESSION['payer_id']);
 
         $serverName = urlencode($_SERVER['SERVER_NAME']);

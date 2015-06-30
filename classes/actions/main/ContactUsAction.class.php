@@ -43,7 +43,6 @@ class ContactUsAction extends GuestAction {
     }
 
     private function getAttachment() {
-        ini_set('upload_max_filesize', '7M');
         $name = $_FILES['attachment']['name'];
         $tmp_name = $_FILES['attachment']['tmp_name'];
         if (!is_dir(DATA_TEMP_DIR)) {

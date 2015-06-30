@@ -14,7 +14,6 @@ class UploadAttachmentAction extends BaseCompanyAction {
         $companyId = $this->getUserId();
         $userLevel = $this->getUserLevel();
 //getting parameters
-        ini_set('upload_max_filesize', '7M');
         $name = $_FILES['attachment']['name'];
         $type = $_FILES['attachment']['type'];
         $tmp_name = $_FILES['attachment']['tmp_name'];
