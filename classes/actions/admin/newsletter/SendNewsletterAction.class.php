@@ -2,7 +2,7 @@
 
 require_once (CLASSES_PATH . "/actions/admin/BaseAdminAction.class.php");
 require_once (CLASSES_PATH . "/managers/UserManager.class.php");
-require_once (CLASSES_PATH . "/managers/UninterestingEmailsManager.class.php");
+require_once (CLASSES_PATH . "/managers/InvalidEmailsManager.class.php");
 require_once (CLASSES_PATH . "/managers/NewsletterSubscribersManager.class.php");
 require_once (CLASSES_PATH . "/managers/MailgunEmailSenderManager.class.php");
 
@@ -16,6 +16,8 @@ class SendNewsletterAction extends BaseAdminAction {
         if (empty($email_body_html)) {
             $this->error(array('errText' => 'email body is empty!'));
         }
+        $email_body_html .= '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
+        $email_body_html .= '<p style="font-size:10px"><a href="http://pc.am/newsunsub?email=%recipient%">Click here to unsubscribe.</a></p>';
 
         $fromEmail = $this->getCmsVar('pcstore_news_email');
         $fromName = 'Pcstore.am Newsletter!';
@@ -31,10 +33,10 @@ class SendNewsletterAction extends BaseAdminAction {
             $this->ok(array('count' => 1, 'result' => $mailGunResult));
         }
 
-        $uninterestingEmailsManager = UninterestingEmailsManager::getInstance();
+        $invalidEmailsManager = InvalidEmailsManager::getInstance();
         $newsletterSubscribersManager = NewsletterSubscribersManager::getInstance();
         $emailsArray = $newsletterSubscribersManager->getAllSubscribers();
-        $filteredEmailsArray = $uninterestingEmailsManager->removeUninterestingEmailsFromList($emailsArray);
+        $filteredEmailsArray = $invalidEmailsManager->removeInvalidEmailsFromList($emailsArray);
 
         if ($includeUsers == 1) {
             $userManager = UserManager::getInstance();

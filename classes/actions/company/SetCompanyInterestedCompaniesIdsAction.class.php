@@ -28,7 +28,9 @@ class SetCompanyInterestedCompaniesIdsAction extends BaseCompanyAction {
             echo json_encode($jsonArr);
             return false;
         }
-        $jsonArr = array('status' => "ok");
+        $companyDtos = $companyManager->selectByPKs($int_companies_ids);
+        $companyNamesArray = $companyManager->getCompaniesNamesArray($companyDtos);
+        $jsonArr = array('status' => "ok", "company_names" => implode(',', $companyNamesArray),"message" => $this->getPhrase(56));
         echo json_encode($jsonArr);
         return true;
     }

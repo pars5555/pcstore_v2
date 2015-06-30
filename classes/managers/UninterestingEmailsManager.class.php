@@ -1,7 +1,7 @@
 <?php
 
 require_once (FRAMEWORK_PATH . "/AbstractManager.class.php");
-require_once (CLASSES_PATH . "/dal/mappers/UninterestingEmailsMapper.class.php");
+require_once (CLASSES_PATH . "/dal/mappers/InvalidEmailsMapper.class.php");
 
 /**
  * UserSubUsersManager class is responsible for creating,
@@ -10,7 +10,7 @@ require_once (CLASSES_PATH . "/dal/mappers/UninterestingEmailsMapper.class.php")
  * @package managers
  * @version 1.0
  */
-class UninterestingEmailsManager extends AbstractManager {
+class InvalidEmailsManager extends AbstractManager {
 
   
     /**
@@ -23,7 +23,7 @@ class UninterestingEmailsManager extends AbstractManager {
   
      */
     function __construct() {
-        $this->mapper = UninterestingEmailsMapper::getInstance();
+        $this->mapper = InvalidEmailsMapper::getInstance();
     }
 
     /**
@@ -34,18 +34,18 @@ class UninterestingEmailsManager extends AbstractManager {
 
         if (self::$instance == null) {
 
-            self::$instance = new UninterestingEmailsManager();
+            self::$instance = new InvalidEmailsManager();
         }
         return self::$instance;
     }
 
-    public function removeUninterestingEmailsFromList($emails) {
+    public function removeInvalidEmailsFromList($emails) {
         $selectAll = $this->selectAll();
-        $uninterestingEmailsArray = array();
+        $invalidEmailsArray = array();
         foreach ($selectAll as $dto) {
-            $uninterestingEmailsArray [] = trim($dto->getEmail());
+            $invalidEmailsArray [] = trim($dto->getEmail());
         }
-        return array_diff($emails, $uninterestingEmailsArray);
+        return array_diff($emails, $invalidEmailsArray);
     }
 
 }
