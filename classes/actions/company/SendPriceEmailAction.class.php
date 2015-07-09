@@ -7,6 +7,7 @@ require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
 require_once (CLASSES_PATH . "/managers/MandrillEmailSenderManager.class.php");
 require_once (CLASSES_PATH . "/managers/MailgunEmailSenderManager.class.php");
 require_once (CLASSES_PATH . '/managers/CompanyPriceEmailHistoryManager.class.php');
+require_once (CLASSES_PATH . '/managers/InvalidEmailsManager.class.php');
 
 /**
  * @author Vahagn Sookiasian
@@ -69,6 +70,9 @@ class SendPriceEmailAction extends BaseCompanyAction {
                 return "You are on development mode and you can not send email more that 5 recipientes";
             }
         }
+        $invalidEmailsManager = InvalidEmailsManager::getInstance();
+        $dealerEmailsArray = $invalidEmailsManager->removeInvalidEmailsFromList($dealerEmailsArray);
+        
         $subject = $companyExProfiledto->getPriceEmailSubject();
         $body = stripslashes($companyExProfiledto->getPriceEmailBody());
         $fromEmail = $companyExProfiledto->getFromEmail();

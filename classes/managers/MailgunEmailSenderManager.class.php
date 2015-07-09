@@ -1,6 +1,4 @@
 <?php
-
-require_once (CLASSES_PATH . '/lib/mandrill-api-php/src/Mandrill.php');
 require_once (CLASSES_PATH . '/lib/mailgun-php-master/vendor/autoload.php');
 
 use Mailgun\Mailgun;
