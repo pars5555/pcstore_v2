@@ -29,9 +29,12 @@ abstract class PccSelectComponentLoad extends BaseGuestLoad {
         $requiredCategoriesFormulasArray = $this->getRequiredCategoriesFormulasArray();
         $neededCategoriesIdsAndOrFormulaArray = $this->getNeededCategoriesIdsAndOrFormulaArray();
         $selected_component_item_id = $this->getSelectedComponentItemId();
-
+        $searchText = '';
+        if (isset($_REQUEST['search_text'])) {
+            $searchText = $this->secure($_REQUEST['search_text']);
+        }
         $this->addPccDiscountParam();
-        $itemsDtos = $itemManager->getPccItemsByCategoryFormula($this->getUserId(), $userLevel, $requiredCategoriesFormulasArray, $neededCategoriesIdsAndOrFormulaArray, 0, 1000, $selected_component_item_id, '');
+        $itemsDtos = $itemManager->getPccItemsByCategoryFormula($this->getUserId(), $userLevel, $requiredCategoriesFormulasArray, $neededCategoriesIdsAndOrFormulaArray, 0, 1000, $selected_component_item_id, $searchText);
         $this->addParam("itemsDtos", $itemsDtos);
         $this->addParam("itemManager", $itemManager);
         $this->addParam('componentLoad', $this);

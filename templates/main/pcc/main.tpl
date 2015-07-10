@@ -21,6 +21,7 @@
 <div class="components-list-wrapper" id="pcc_components_container">
     <div class="build-pc-main-container">
         <div id="buildPcWrapper" class=" build-pc-wrapper">
+            <input class="pccSearchComponent" type="text" autocomplete="off"/>
             <div class="list-group" id="component_selection_container">
                 {nest ns = pcc_select_component}                
             </div>          
