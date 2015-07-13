@@ -56,7 +56,9 @@ ngs.PcConfiguratorManager = {
     onComponentAfterLoad: function () {
         var componentIndex = parseInt(jQuery('#pcc_select_component_inner_container').attr('component_index'));
         var thisInstance = this;
-        jQuery('.pccSearchComponent').on('input', function () {
+        jQuery('#pccSearchComponent').on('input', function () {
+            jQuery("#pcc_loader").removeClass("hidden");
+
             var seatchText = jQuery(this).val();
             window.clearTimeout(jQuery(this).data("timeout"));
             jQuery(this).data("timeout", setTimeout(function () {
@@ -65,7 +67,7 @@ ngs.PcConfiguratorManager = {
                 var params = thisInstance.getSelectedComponentsParam(componentIndex, itemIds);
                 params.search_text = seatchText;
                 ngs.load(loadName, params);
-            }, 700));
+            }, 300));
 
         });
 
@@ -125,7 +127,7 @@ ngs.PcConfiguratorManager = {
         return selectedItemsIds;
     },
     onTabChanged: function (componentIndex) {
-        jQuery('.pccSearchComponent').val('');
+        jQuery('#pccSearchComponent').val('');
         var params = this.getSelectedComponentsParam(null, null);
         var loadName = this.getComponentLoadName(componentIndex);
         ngs.load(loadName, params);
@@ -138,7 +140,7 @@ ngs.PcConfiguratorManager = {
         return output;
     },
     onDeleteItem: function (componentIndex, item_id) {
-        jQuery('.pccSearchComponent').val('');
+        jQuery('#pccSearchComponent').val('');
         var selectedComponentItemsIds = this.selectedComponentsArray[componentIndex];
         var selectedComponentItemsIdsArray = selectedComponentItemsIds.split(',');
         while (selectedComponentItemsIdsArray.indexOf(item_id) >= 0)
@@ -161,7 +163,7 @@ ngs.PcConfiguratorManager = {
         ngs.action('get_selected_and_require_components', params);
     },
     onComponentChanged: function (componentIndex, item_id) {
-        jQuery('.pccSearchComponent').val('');
+        jQuery('#pccSearchComponent').val('');
         if (item_id instanceof Array) {
             item_id = item_id.join(',');
         }

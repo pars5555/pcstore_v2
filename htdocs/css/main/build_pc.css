@@ -133,6 +133,9 @@
     width: 800px;
     position: relative;
 }
+.build-pc-main-inner{
+    position: relative;    
+}
 .build-pc-wrapper {
     height: 520px;
 }
@@ -315,6 +318,21 @@
     width:40px;
 }
 
+
+/**************************************************************************/
+/*                      Build PC Components Search                        */
+/**************************************************************************/
+
+.build-pc-main-container .search_block{
+    margin-top:auto;
+}
+
+.build-pc-main-container .search_block .search_container .search_btn,
+.build-pc-main-container .search_block .search_container .search_btn:hover{
+    color:#fff;
+    cursor: default;
+}
+
 /******************************************************************************/
 /*                           PCC Total Calculation                            */
 /******************************************************************************/
@@ -351,7 +369,7 @@
     margin-bottom: 30px;
     padding: 5px 30px;
     text-align: center;
-    
+
     background: #f3f3f3;	
     background-color:#f3f3f3;
     background: -webkit-linear-gradient(#f5f5f5, #e8e8e8); /* For Safari 5.1 to 6.0 */

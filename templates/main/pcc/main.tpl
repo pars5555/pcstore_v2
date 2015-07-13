@@ -18,15 +18,27 @@
         </div>
     </div>
 </div>
+
 <div class="components-list-wrapper" id="pcc_components_container">
     <div class="build-pc-main-container">
-        <div id="buildPcWrapper" class=" build-pc-wrapper">
-            <input class="pccSearchComponent" type="text" autocomplete="off"/>
-            <div class="list-group" id="component_selection_container">
-                {nest ns = pcc_select_component}                
-            </div>          
+
+        <div class="search_block">
+            <div class="search_container">
+                <input type="search" id="pccSearchComponent" name="st" placeholder="{$ns.lm->getPhrase(91)}" class="search_text">
+                <button type="submit" class="search_btn">
+                    
+                </button>
+            </div>
         </div>
-        <div class="main_loader hidden pcc_loader" id="pcc_loader"></div>
+
+        <div class="build-pc-main-inner">
+            <div id="buildPcWrapper" class=" build-pc-wrapper">
+                <div class="list-group" id="component_selection_container">
+                    {nest ns = pcc_select_component}                
+                </div>          
+            </div>
+            <div class="main_loader hidden pcc_loader" id="pcc_loader"></div>
+        </div>
     </div>
     <div class="total_calculation_container f_side_panel" id="pcc_total_calculation_container" data-side-panel="pcc-total-calculation" data-side-position="right">
         {nest ns = pcc_total_calculations}
