@@ -16,7 +16,7 @@ class SetPromoCodeAction extends GuestAction {
         } else {
             $_COOKIE['promo_codes'] = $_COOKIE['promo_codes'] . ',' . $promo_code;
         }
-        setcookie('promo_codes', $_COOKIE['promo_codes'], time()+60*60*24, '/',"." . DOMAIN );
+        setcookie('promo_codes', $_COOKIE['promo_codes'], time()+60*60*24, '/',"." );
         $this->redirect('cart');
     }
 

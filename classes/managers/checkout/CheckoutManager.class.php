@@ -400,7 +400,7 @@ class CheckoutManager extends AbstractManager {
             list($validPromoDiscount, $totalPromoDiscountAmd) = $checkoutManager->applyAllItemsPromoOnCartItems($groupedCartItems, $promoCodsArray, $includeVat);
             $existingDealsPromoCodesArray [] = $validPromoDiscount;
             $_COOKIE['promo_codes'] = implode(',', $existingDealsPromoCodesArray);
-            setcookie('promo_codes', $_COOKIE['promo_codes'], time() + 60 * 60 * 24, '/', "." . DOMAIN);
+            setcookie('promo_codes', $_COOKIE['promo_codes'], time() + 60 * 60 * 24, '/', ".");
         }
         list($grandTotalAMD, $grandTotalUSD) = $customerCartManager->calcCartTotal($groupedCartItems, true, $userLevel, $includeVat);
         $all_non_bundle_items_has_vat = $customerCartManager->checkAllNonBundleItemsHasVatPrice($groupedCartItems);
