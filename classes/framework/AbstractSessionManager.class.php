@@ -93,9 +93,8 @@ abstract class AbstractSessionManager {
      * @return 
      */
     public function updateUserUniqueId($user) {
-        $domain = ".";
         $cookieParams = $user->getCookieParams();
-        setcookie("uh", $cookieParams["uh"], null, "/", $domain);
+        setcookie("uh", $cookieParams["uh"], null, "/");
     }
 
     /**
@@ -106,11 +105,10 @@ abstract class AbstractSessionManager {
      * @return integer|babyclass
      */
     public function removeUser(AuthenticateUser $user) {
-        $sessionTimeout = time() - 42000;
-        $domain = ".";
+        $sessionTimeout = time() - 42000;    
         $cookieParams = $user->getCookieParams();
         foreach ($cookieParams as $key => $value) {
-            setcookie($key, '', $sessionTimeout, "/", $domain);
+            setcookie($key, '', $sessionTimeout, "/");
         }
 
 

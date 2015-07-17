@@ -217,8 +217,8 @@ abstract class AbstractRequest {
     }
 
     public function setCookie($key, $value, $expire = 0) {
-        $domain = ".";
-        setcookie($key, $value, $expire, "/", $domain);
+       
+        setcookie($key, $value, $expire, "/");
     }
 
     public function logRequestInDB() {
