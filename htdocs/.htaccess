@@ -1,6 +1,10 @@
 RewriteEngine On
 RewriteBase /
 
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+
 RewriteRule ^signup$ /dyn/main/main/$1/?page=signup [L,QSA]
 RewriteRule ^contactus /dyn/main/main/$1/?page=contactus [L,QSA]
 RewriteRule ^checkout$ /dyn/main/main/$1/?page=checkout [L,QSA]
