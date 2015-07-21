@@ -399,7 +399,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
             return $ret;
         }
-        return null;
+        return array();
     }
 
     public function getTotalRamsCount($rams_ids) {
