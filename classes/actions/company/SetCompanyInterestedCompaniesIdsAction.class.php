@@ -30,7 +30,7 @@ class SetCompanyInterestedCompaniesIdsAction extends BaseCompanyAction {
         }
         $companyDtos = $companyManager->selectByPKs($int_companies_ids);
         $companyNamesArray = $companyManager->getCompaniesNamesArray($companyDtos);
-        $jsonArr = array('status' => "ok", "company_names" => implode(',', $companyNamesArray),"message" => $this->getPhrase(681));
+        $jsonArr = array('status' => "ok", "company_names" => implode(', ', $companyNamesArray),"message" => $this->getPhrase(681));
         echo json_encode($jsonArr);
         return true;
     }
