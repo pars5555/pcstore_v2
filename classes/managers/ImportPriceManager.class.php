@@ -10,7 +10,7 @@ require_once (CLASSES_PATH . "/util/PHPExcel_1.7.9_doc/Classes/PHPExcel.php");
  * @package managers
  * @version 1.0
  */
-class ImportPriceManager extends AbstractManager {
+class ImportPriceManager {
 
     public static $COLUMNS = array(0 => "None", 1 => "Model", 2 => "Name",
         3 => "Dealer $", 4 => "Dealer Դր", 5 => "VAT $",
@@ -20,12 +20,7 @@ class ImportPriceManager extends AbstractManager {
      * @var singleton instance of class
      */
     private static $instance = null;
-    private $columnsNamesMap;
-    private $itemModelColumnName;
-    private $dealerPriceColumnName;
-    private $vatPriceColumnName;
-    private $dealerPriceAmdColumnName;
-    private $vatPriceAmdColumnName;
+    private $columnsNamesMap;   
 
     /**
      * Initializes DB mappers
@@ -46,10 +41,6 @@ class ImportPriceManager extends AbstractManager {
             self::$instance = new ImportPriceManager();
         }
         return self::$instance;
-    }
-
-    public function getMapper() {
-        return null;
     }
 
     /**
@@ -226,43 +217,12 @@ class ImportPriceManager extends AbstractManager {
             return false;
         }
         $this->columnsNamesMap = self::getColumnsNamesCountMap($values);
-        ksort($this->columnsNamesMap);
-        $average = intval(array_sum($this->columnsNamesMap) / count($this->columnsNamesMap));
-        list($this->itemModelColumnName, $this->itemNameColumnName) = $this->findItemModelNameColumnNames($values, $average);
-        $findDealerPriceVatPriceColumnNames = $this->findDealerPriceVatPriceColumnNames($values, $average, $this->itemNameColumnName);
-        $this->dealerPriceColumnName = array_key_exists(0, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[0] : null;
-        $this->dealerPriceAmdColumnName = array_key_exists(1, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[1] : null;
-        $this->vatPriceColumnName = array_key_exists(2, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[2] : null;
-        $this->vatPriceAmdColumnName = array_key_exists(3, $findDealerPriceVatPriceColumnNames) ? $findDealerPriceVatPriceColumnNames[3] : null;
     }
 
     public function getColumnsNamesMap() {
         return $this->columnsNamesMap;
     }
 
-    public function getItemModelColumnName() {
-        return $this->itemModelColumnName;
-    }
-
-    public function getItemNameColumnName() {
-        return $this->itemNameColumnName;
-    }
-
-    public function getDealerPriceColumnName() {
-        return $this->dealerPriceColumnName;
-    }
-
-    public function getVatPriceColumnName() {
-        return $this->vatPriceColumnName;
-    }
-
-    public function getDealerPriceAmdColumnName() {
-        return $this->dealerPriceAmdColumnName;
-    }
-
-    public function getVatPriceAmdColumnName() {
-        return $this->vatPriceAmdColumnName;
-    }
 
     private static function clearEmptyColumns($values) {
         $columnItemsCount = array();

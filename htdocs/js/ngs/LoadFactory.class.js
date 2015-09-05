@@ -75,12 +75,16 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_actions"] = function temp(){return new ngs.AdminActionsLoad("admin_actions", ajaxLoader);};
 	this.loads["admin_users"] = function temp(){return new ngs.AdminUsersLoad("admin_users", ajaxLoader);};
 	this.loads["admin_newsletter"] = function temp(){return new ngs.AdminNewsletterLoad("admin_newsletter", ajaxLoader);};
-    this.loads["admin_open_newsletter"] = function temp(){return new ngs.AdminOpenNewsletterLoad("admin_open_newsletter", ajaxLoader);};
+        this.loads["admin_open_newsletter"] = function temp(){return new ngs.AdminOpenNewsletterLoad("admin_open_newsletter", ajaxLoader);};
 	this.loads["admin_save_newsletter"] = function temp(){return new ngs.AdminSaveNewsletterLoad("admin_save_newsletter", ajaxLoader);};
 	this.loads["admin_manage_newsletters"] = function temp(){return new ngs.AdminManageNewslettersLoad("admin_manage_newsletters", ajaxLoader);};
 	this.loads["admin_item_categories_popup"] = function temp(){return new ngs.AdminItemCategoriesPopupLoad("admin_item_categories_popup", ajaxLoader);};
 	this.loads["admin_item_pictures_popup"] = function temp(){return new ngs.AdminItemPicturesPopupLoad("admin_item_pictures_popup", ajaxLoader);};
 	this.loads["admin_import"] = function temp(){return new ngs.AdminImportLoad("admin_import", ajaxLoader);};
+	this.loads["admin_import_index"] = function temp(){return new ngs.AdminImportIndexLoad("admin_import_index", ajaxLoader);};
+	this.loads["admin_import_sheet"] = function temp(){return new ngs.AdminImportSheetLoad("admin_import_sheet", ajaxLoader);};
+	this.loads["admin_import_step1"] = function temp(){return new ngs.AdminImportStep1Load("admin_import_step1", ajaxLoader);};
+	this.loads["admin_import_step2"] = function temp(){return new ngs.AdminImportStep2Load("admin_import_step2", ajaxLoader);};
 },
 	
     getLoad: function (name) {

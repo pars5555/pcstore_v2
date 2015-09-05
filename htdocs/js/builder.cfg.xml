@@ -145,6 +145,10 @@
                 <file>ngs/loads/admin/AdminItemCategoriesPopupLoad.class.js</file>
                 <file>ngs/loads/admin/AdminItemPicturesPopupLoad.class.js</file>
                 <file>ngs/loads/admin/AdminImportLoad.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportIndexLoad.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportSheetLoad.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportStep1Load.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportStep2Load.class.js</file>
             </files>
         </input>
     </builder>

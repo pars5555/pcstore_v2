@@ -39,7 +39,10 @@ RewriteRule ^admin/actions$ /dyn/admin/main/$1/?page=actions [L,QSA]
 RewriteRule ^admin/users$ /dyn/admin/main/$1/?page=users [L,QSA]
 RewriteRule ^admin/banners$ /dyn/admin/main/$1/?page=banners [L,QSA]
 RewriteRule ^admin/newsletter$ /dyn/admin/main/$1/?page=newsletter&dir=newsletter [L,QSA]
-RewriteRule ^admin/import/?(.*)$ /dyn/admin/main/$1/?page=import [L,QSA]
+RewriteRule ^admin/import/?(.*)$ /dyn/admin/main/$1/?page=import_index&dir=import [L,QSA]
+RewriteRule ^admin/imp/sheet /dyn/admin/main/$1/?page=import_sheet&dir=import [L,QSA]
+RewriteRule ^admin/imp/step1 /dyn/admin/main/$1/?page=import_step1&dir=import [L,QSA]
+RewriteRule ^admin/imp/step2 /dyn/admin/main/$1/?page=import_step2&dir=import [L,QSA]
 
 
 #USER
