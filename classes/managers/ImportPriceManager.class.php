@@ -20,7 +20,7 @@ class ImportPriceManager {
      * @var singleton instance of class
      */
     private static $instance = null;
-    private $columnsNamesMap;   
+    private $columnsNamesMap;
 
     /**
      * Initializes DB mappers
@@ -129,6 +129,17 @@ class ImportPriceManager {
         return $values;
     }
 
+    public function loadCompanyPriceFromCacheByRowIds($ids) {
+        $priceValuesManager = PriceValuesManager::getInstance();
+        $values = $priceValuesManager->getCompanyPriceSheetValuesByIds($ids);
+        if (!empty($values)) {
+            $this->parsePrice($values);
+        } else {
+            return false;
+        }
+        return $values;
+    }
+
     /**
      * 
      * @param type $itemDto
@@ -222,7 +233,6 @@ class ImportPriceManager {
     public function getColumnsNamesMap() {
         return $this->columnsNamesMap;
     }
-
 
     private static function clearEmptyColumns($values) {
         $columnItemsCount = array();

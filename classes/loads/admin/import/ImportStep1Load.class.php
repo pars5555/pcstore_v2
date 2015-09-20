@@ -13,7 +13,12 @@ class ImportStep1Load extends BaseAdminLoad {
 
     public function load() {
         ini_set('memory_limit', "2G");
-
+        
+        if (!isset($_REQUEST['company_id']) || !isset($_REQUEST['price_index']) || !isset($_REQUEST['sheet_index']))
+        {
+            $this->redirect('admin/import');
+        }
+        
         $company_id = $_REQUEST['company_id'];
         $price_index = $_REQUEST['price_index'];
         $sheet_index = $_REQUEST['sheet_index'];

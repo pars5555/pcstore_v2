@@ -1,5 +1,15 @@
 {$ns.companyDto->getName()} Import Price (Step2)
 
+<form method="POST" action="{$SITE_PATH}/admin/imp/step2">
+    <input type="hidden" name="company_id" value="{$ns.company_id}"/>
+    <input type="hidden" name="price_index" value="{$ns.price_index}"/>
+    <input type="hidden" name="sheet_index" value="{$ns.sheet_index}"/>
+    <input id="selected_row_ids" type="hidden" name="selected_row_ids" value=""/>
+    <input id="select_values" type="hidden" name="select_values" value=""/>
+    <input class="button blue" type="submit" value="next"/>
+</form>
+
+
 <div>
     items simillarity aceptable percent: 
     <div class="select_wrapper">
@@ -28,7 +38,7 @@
         </div>
     </div>
 
-    <div class="table-cell">
+    <div class="table-cell" style="vertical-align: top">
         <div class="table">
             <div class="table-row table_header_group">
                 {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle}
@@ -42,7 +52,7 @@
                 {assign var=correspondingStockItemId value=$rowDto->getMatchedItemId()}
                 {if isset($correspondingStockItemId)}
                     {assign var=correspondingStockItemDto value=$ns.stockItemsDtosMappedByIds.$correspondingStockItemId}
-                    <div class="table-row" data-istock_table_pk_value="{$correspondingStockItemId}">
+                    <div class="table-row-import" data-istock_table_pk_value="{$correspondingStockItemId}">
                         <div class="table-cell">							
                         </div>
 
@@ -52,13 +62,13 @@
                             {else}
                                 {assign var=fieldName value=$dtoFieldName} 
                             {/if}
-                            <div class="table-cell" dtoFieldName="{$fieldName}">
+                            <div class="table-cell"  dtoFieldName="{$fieldName}">
                                 {$correspondingStockItemDto->$fieldName}
                             </div>
                         {/foreach}
                     </div>
                 {else}
-                    <div class="table-row">
+                    <div class="table-row-import">
                         {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle}		
                             <div class="table-cell">
                             </div>
@@ -70,8 +80,8 @@
             {*unmatched stock items list to price items*}
             {foreach from=$ns.unmatchedCompanyItems item=stockItemDto}
 
-                <div class="table-row">
-                    <div class="table-cell">
+                <div class="table-row-import">
+                    <div class="table-cell" >
                         <button class="ii_link_source_button button blue" pk_value="{$stockItemDto->getId()}">link<br>source</button>
                     </div>
                     {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle}
@@ -80,7 +90,7 @@
                         {else}
                             {assign var=fieldName value=$dtoFieldName} 
                         {/if}
-                        <div class="table-cell" dtoFieldName="{$fieldName}">
+                        <div class="table-cell" style="vertical-align: top" dtoFieldName="{$fieldName}">
                             {$stockItemDto->$fieldName}<br>&nbsp
                         </div>
                     {/foreach}
@@ -92,7 +102,7 @@
     </div>
 
     {*price items table*}
-    <div class="table-cell">
+    <div class="table-cell" style="vertical-align: top">
         <div class="table">
             <div class="table-row table_header_group">
                 <div class="table-cell">
@@ -109,7 +119,7 @@
                 {if isset($correspondingStockItemId)}
                     {assign var=correspondingStockItemDto value=$ns.stockItemsDtosMappedByIds.$correspondingStockItemId}
                 {/if}
-                <div class="table-row" ii_table_pk_value="{$rowDto->id}" style="height:60px">
+                <div class="table-row-import" ii_table_pk_value="{$rowDto->id}">
                     <div class="table-cell">
                         {if $rowDto->getMatchedItemId()>0}
                             <button class="is1_unbind_item" price_item_id="{$rowDto->getId()}">X</button>
@@ -123,7 +133,7 @@
                         {if $dtoFieldName=="warrantyMonths"}
                             {assign var=originalFieldName value="originalWarranty"} 
                         {else}
-                            {assign var=cap value=$dtoFieldName|capitalize}
+                            {assign var=cap value=$dtoFieldName|@ucfirst}
                             {assign var=originalFieldName value="original`$cap`"} 
                         {/if}
                         <div class="table-cell" dtoFieldName="{$dtoFieldName}" dtoOriginalFieldName="{$originalFieldName}" pk_value="{$rowDto->id}" cellValue = "{$rowDto->$dtoFieldName}" originalCellValue = "{$rowDto->$originalFieldName}" class="is1_popup_menu_td">							

@@ -38,7 +38,7 @@
     {foreach from=$ns.price_values item=price_row name=pvFor}
         <div class="table-row">
             <div class="table-cell">
-                <input data-row-id="{$smarty.foreach.pvFor.index}" type="checkbox" />
+                <input data-row-id="{$price_row.id}" type="checkbox" />
             </div>
             {foreach from=$price_row key=colName item=colValue}
                 <div class="table-cell">

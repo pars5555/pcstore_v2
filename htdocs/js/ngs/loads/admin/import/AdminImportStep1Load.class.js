@@ -35,8 +35,8 @@ ngs.AdminImportStep1Load = Class.create(ngs.AbstractLoad, {
                 }
             });
             jQuery("#select_values").val(JSON.stringify(select_values));
-
-            if (checked_array.length > 0) {
+            
+            if (checked_array.length > 0 && !jQuery.isEmptyObject(select_values)) {
                 jQuery(this).closest("form").submit();
             }
         });

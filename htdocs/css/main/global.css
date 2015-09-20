@@ -430,6 +430,11 @@ select::-ms-expand{
 .table-row{
     display:table-row;
 }
+.table-row-import{
+    display:table-row;
+    height: 80px;
+}
+
 .table-cell{
     display:table-cell;
     vertical-align: middle;

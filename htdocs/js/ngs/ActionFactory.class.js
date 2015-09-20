@@ -40,6 +40,7 @@ ngs.ActionFactory.prototype={
         this.actions["admin_save_newsletter"] = function temp(){return new ngs.AdminSaveNewsletterAction("admin_save_newsletter", ajaxLoader);};
         this.actions["admin_delete_newsletter"] = function temp(){return new ngs.AdminDeleteNewsletterAction("admin_delete_newsletter", ajaxLoader);};
         this.actions["admin_send_newsletter"] = function temp(){return new ngs.AdminSendNewsletterAction("admin_send_newsletter", ajaxLoader);};
+        this.actions["import_steps_actions_group_action"] = function temp(){return new ngs.ImportStepsActionsGroupAction("import_steps_actions_group_action", ajaxLoader);};
      },
 
 	getAction: function(name){

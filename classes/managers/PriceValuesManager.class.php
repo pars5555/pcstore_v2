@@ -44,6 +44,21 @@ class PriceValuesManager extends AbstractManager {
         $values = array();
         $dtos = $this->mapper->getCompanyPriceSheetValues($companyId, $priceIndex, $sheetIndex);
         foreach ($dtos as $rowIndex => $dto) {
+            $values[$rowIndex]['id'] = $dto->getId();
+            for ($i = 0; $i < 26; $i++) {
+                $columnChar = chr(65 + $i);
+                $fname = 'getColumn' . $columnChar;
+                $values[$rowIndex][$columnChar] = $dto->$fname();
+            }
+        }
+        return $values;
+    }
+    
+    public function getCompanyPriceSheetValuesByIds($ids) {
+        $values = array();
+        $dtos = $this->selectByPKs($ids);
+        foreach ($dtos as $rowIndex => $dto) {
+            $values[$rowIndex]['id'] = $dto->getId();
             for ($i = 0; $i < 26; $i++) {
                 $columnChar = chr(65 + $i);
                 $fname = 'getColumn' . $columnChar;
