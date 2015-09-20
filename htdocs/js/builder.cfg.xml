@@ -194,6 +194,7 @@
                 <file>ngs/actions/admin/newsletter/AdminSaveNewsletterAction.class.js</file>
                 <file>ngs/actions/admin/newsletter/AdminSendNewsletterAction.class.js</file>
                 <file>ngs/actions/admin/newsletter/AdminDeleteNewsletterAction.class.js</file>
+                <file>ngs/actions/admin/ImportStepsActionsGroupAction.class.js</file>
             </files>
         </input>
     </builder>

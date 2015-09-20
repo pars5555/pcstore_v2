@@ -16,6 +16,7 @@ ngs.AdminImportStep2Load = Class.create(ngs.AbstractLoad, {
     },
     afterLoad: function () {
         this.initLinkSourceTargetButtons();
+        this.initUnbindRowEvent();
     },
     initLinkSourceTargetButtons: function() {
         var thisObject = this;
@@ -26,9 +27,9 @@ ngs.AdminImportStep2Load = Class.create(ngs.AbstractLoad, {
         jQuery('.ii_link_target_button').click(function() {
             if (thisObject.linkSourceStockItemId > 0) {
                 var linkTargetPriceRowId = jQuery(this).attr('pk_value');
-                var params = jQuery.extend(thisObject.params, {'action': 'step_1_link_stock_item_to_price_item',
+                var params = {'action': 'step_1_link_stock_item_to_price_item',
                     'price_item_id': linkTargetPriceRowId,
-                    'stock_item_id': thisObject.linkSourceStockItemId});
+                    'stock_item_id': thisObject.linkSourceStockItemId};
                 ngs.action('import_steps_actions_group_action', params);
                 thisObject.linkSourceStockItemId = 0;
             } else {
@@ -36,4 +37,11 @@ ngs.AdminImportStep2Load = Class.create(ngs.AbstractLoad, {
             }
         });
     },
+    initUnbindRowEvent: function() {
+        jQuery('.is1_unbind_item').click(function() {
+            var price_item_id = jQuery(this).attr('price_item_id');
+            var params = {'action': 'step_1_unbind_price_row', 'price_item_id': price_item_id};
+            ngs.action('import_steps_actions_group_action', params);
+        });
+    }
 });

@@ -23,8 +23,10 @@ class ImportStep2Load extends BaseAdminLoad {
         $price_index = $_REQUEST['price_index'];
         $sheet_index = $_REQUEST['sheet_index'];
         $select_columns = $_REQUEST['select_values'];
+        $this->addParam('select_values', $select_columns);
         $select_columns = (array) json_decode($select_columns);
         $selected_row_ids = $_REQUEST['selected_row_ids'];
+        $this->addParam('selected_row_ids', $selected_row_ids);
         $selected_row_ids_array = explode(',', $_REQUEST['selected_row_ids']);
 
         $companyManager = CompanyManager::getInstance();
@@ -63,7 +65,6 @@ class ImportStep2Load extends BaseAdminLoad {
                 
                 $nameColumn = "";
                 foreach ($select_columns as $colName => $index) {
-                    $modelColumn = '';
                     if ($index == 1) {
                         $modelColumn = $row[$colName];
                     }
@@ -71,42 +72,48 @@ class ImportStep2Load extends BaseAdminLoad {
                         $nameColumn .= $priceTranslationsManager->translateItemDisplayNameNonEnglishWordsToEnglish($row[$colName]) . ' ';
                         $nameColumn = preg_replace('/[^(\x20-\x7F)]*/', '', $nameColumn);
                     }
-                    $dealerPriceColumn = '';
                     if ($index == 3) {
                         $dealerPriceColumn = $row[$colName];
                     }
-                    $dealerPriceAmdColumn = '';
                     if ($index == 4) {
                         $dealerPriceAmdColumn = $row[$colName];
                     }
-                    $vatPriceColumn = '';
                     if ($index == 5) {
                         $vatPriceColumn = $row[$colName];
                     }
-                    $vatPriceAmdColumn = '';
                     if ($index == 6) {
                         $vatPriceAmdColumn = $row[$colName];
                     }
-                    $warrantyMonthColumn = '';
                     if ($index == 7) {
                         $warrantyMonthColumn = $row[$colName];
                     }
-                    $warrantyYearColumn = '';
                     if ($index == 8) {
                         $warrantyYearColumn = $row[$colName];
                     }
-                    $brandColumn = '';
                     if ($index == 9) {
                         $brandColumn = $row[$colName];
                     }
                 }
                 if ($brand_model_name_concat_method === 'bmn') {
+                    $modelColumn = isset($modelColumn)?$modelColumn:'';
+                    $brandColumn = isset($brandColumn)?$brandColumn:'';
                     $nameColumn = $brandColumn . ' ' . $modelColumn . ' ' . $nameColumn;
                 } elseif ($brand_model_name_concat_method === 'bn') {
+                    $brandColumn = isset($brandColumn)?$brandColumn:'';
                     $nameColumn = $brandColumn . ' ' . $nameColumn;
                 } elseif ($brand_model_name_concat_method === 'mn') {
+                    $modelColumn = isset($modelColumn)?$modelColumn:'';
                     $nameColumn = $modelColumn . ' ' . $nameColumn;
                 }
+                
+                $modelColumn = isset($modelColumn)?$modelColumn:'';
+                $brandColumn = isset($brandColumn)?$brandColumn:'';
+                $dealerPriceColumn = isset($dealerPriceColumn)?$dealerPriceColumn:'';
+                $dealerPriceAmdColumn = isset($dealerPriceAmdColumn)?$dealerPriceAmdColumn:'';
+                $vatPriceColumn = isset($vatPriceColumn)?$vatPriceColumn:'';
+                $vatPriceAmdColumn= isset($vatPriceAmdColumn)?$vatPriceAmdColumn:'';
+                $warrantyMonthColumn= isset($warrantyMonthColumn)?$warrantyMonthColumn:'';
+                $warrantyYearColumn= isset($warrantyYearColumn)?$warrantyYearColumn:'';
                 $importItemsTempManager->addRow($customerLogin, $modelColumn, $nameColumn, $dealerPriceColumn, $dealerPriceAmdColumn, $vatPriceColumn, $vatPriceAmdColumn, $warrantyMonthColumn, $warrantyYearColumn, $brandColumn);
             }
         }
@@ -159,8 +166,8 @@ class ImportStep2Load extends BaseAdminLoad {
 
         $this->addParam('priceRowsDtos', $priceRowsDtos);
 
-        $this->addParam('matched_price_items_count', count($stockAndPriceItemsMatchingMap));
-        $this->addParam('unmatched_price_items_count', count($priceRowsDtos) - count($stockAndPriceItemsMatchingMap));
+        //$this->addParam('matched_price_items_count', count($stockAndPriceItemsMatchingMap));
+       // $this->addParam('unmatched_price_items_count', count($priceRowsDtos) - count($stockAndPriceItemsMatchingMap));
     }
 
     private function convertDtosArrayToArrayMapById($dtos) {
