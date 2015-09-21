@@ -85,7 +85,7 @@ ngs.CompanySendPriceEmailLoad = Class.create(ngs.AbstractLoad, {
             }
             thisInstance.timer = window.setTimeout(function () {
                 ngs.action("format_price_email_recipients", {"to_emails": $('dealer_emails_textarea').value});
-            }, 2000);
+            }, 5000);
         });
         jQuery('#dealer_emails_textarea').on('blur', function () {
             if (thisInstance.timer) {
