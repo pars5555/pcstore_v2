@@ -21,8 +21,8 @@ class ImportItemsTempDto extends AbstractDto {
         "original_vat_price_amd" => "originalVatPriceAmd",
         "warranty_months" => "warrantyMonths", "original_warranty" => "originalWarranty",
         "matched_item_id" => "matchedItemId",
-        "simillar_item_id" => "simillarItemId",
-        "root_category_id" => "rootCategoryId",
+        "simillar_item_id" => "simillarItemId",      
+        "import" => "import",
         "sub_categories_ids" => "subCategoriesIds",
         "short_spec" => "shortSpec",
         "full_spec" => "fullSpec"

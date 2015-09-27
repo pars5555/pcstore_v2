@@ -58,7 +58,7 @@ abstract class BaseValidLoad extends AbstractLoad {
                 $this->args['mainLoad']->addParam('page_keywords', $pageKeywords);
             }
         }
-        
+
         $this->listingCols();
     }
 
@@ -71,7 +71,7 @@ abstract class BaseValidLoad extends AbstractLoad {
         if (isset($_REQUEST["cols"])) {
             $listing_cols = $_REQUEST["cols"];
         }
-        $this->setCookie("listing_cols", $listing_cols, time()+60*60*24*30*24);
+        $this->setCookie("listing_cols", $listing_cols, time() + 60 * 60 * 24 * 30 * 24);
         $this->addParam("listing_cols_values", $listingColsValues);
         $this->addParam("listing_cols", $listing_cols);
     }
@@ -83,7 +83,7 @@ abstract class BaseValidLoad extends AbstractLoad {
 
     protected function initErrorMessages() {
         if (!empty($_SESSION['error_message'])) {
-            $message = $this->secure($_SESSION['error_message']);
+            $message = $_SESSION['error_message'];
             $this->addParam('error_message', $message);
             unset($_SESSION['error_message']);
         }
@@ -91,7 +91,7 @@ abstract class BaseValidLoad extends AbstractLoad {
 
     protected function initSucessMessages() {
         if (!empty($_SESSION['success_message'])) {
-            $message = $this->secure($_SESSION['success_message']);
+            $message = $_SESSION['success_message'];
             $this->addParam('success_message', $message);
             unset($_SESSION['success_message']);
         }

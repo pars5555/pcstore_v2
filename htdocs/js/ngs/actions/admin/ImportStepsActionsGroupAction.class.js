@@ -29,12 +29,9 @@ ngs.ImportStepsActionsGroupAction = Class.create(ngs.AbstractAction, {
             switch (this.params.action) {
                 case 'step_1_unbind_price_row':
                 case 'step_1_link_stock_item_to_price_item':
-                    jQuery('#dont_recalculate').val(1);
-                    jQuery('#importStep2Form').trigger('submit');
-//                      var params = jQuery.extend(this.params, {'dont_recalculate': '1',
-//                        'company_id': jQuery('#mi_select_company').val(),
-//                        'used_columns_indexes': jQuery('#is1_used_columns_indexes_array').val()});
-                    //ngs.load('import_step_one', params);
+                    var formParams = jQuery('#importStep2Form').serializeObject();
+                    formParams.dont_recalculate = 1;
+                    ngs.load('admin_import_step2', formParams);
                     break;
                 case 'edit_cell_value':
                     if (jQuery('#ii_table_view').length > 0) {

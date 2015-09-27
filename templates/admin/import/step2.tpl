@@ -1,12 +1,11 @@
 {$ns.companyDto->getName()} Import Price (Step2)
 
-<form method="POST" action="{$SITE_PATH}/admin/imp/step2" id="importStep2Form" autocomplete="off">
+<form method="POST" action="{$SITE_PATH}/admin/imp/step3" id="importStep2Form" autocomplete="off">
     <input type="hidden" name="company_id" value="{$ns.company_id}"/>
     <input type="hidden" name="price_index" value="{$ns.price_index}"/>
     <input type="hidden" name="sheet_index" value="{$ns.sheet_index}"/>
     <input id="selected_row_ids" type="hidden" name="selected_row_ids" value="{$ns.selected_row_ids}"/>
     <input id="select_values" type="hidden" name="select_values" value='{$ns.select_values}'/>
-    <input id="dont_recalculate" type="hidden" name="dont_recalculate" value=''/>
     <input class="button blue" type="submit" value="next"/>
 </form>
 

@@ -17,6 +17,7 @@ ngs.AdminMainLoad = Class.create(ngs.AbstractLoad, {
     afterLoad: function () {
         this.overlay();
         this.checkbox();
+        this.popupClose();
         ngs.nestLoad(jQuery('#contentLoad').val());
     },
     overlay: function () {
@@ -37,6 +38,12 @@ ngs.AdminMainLoad = Class.create(ngs.AbstractLoad, {
             else {
                 checkbox.prop("checked", false);
             }
+        });
+    },
+    popupClose: function () {
+        var mainPopup = jQuery(".main_pop_up");
+        mainPopup.find(".overlay").add(mainPopup.find(".f_pop_up_cancel_btn")).add(mainPopup.find(".close_button")).on("click tap", function () {
+            mainPopup.removeClass("active hide");
         });
     }
 });

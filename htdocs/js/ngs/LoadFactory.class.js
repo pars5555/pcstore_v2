@@ -85,6 +85,10 @@ ngs.LoadFactory.prototype={
 	this.loads["admin_import_sheet"] = function temp(){return new ngs.AdminImportSheetLoad("admin_import_sheet", ajaxLoader);};
 	this.loads["admin_import_step1"] = function temp(){return new ngs.AdminImportStep1Load("admin_import_step1", ajaxLoader);};
 	this.loads["admin_import_step2"] = function temp(){return new ngs.AdminImportStep2Load("admin_import_step2", ajaxLoader);};
+	this.loads["admin_import_step3"] = function temp(){return new ngs.AdminImportStep3Load("admin_import_step3", ajaxLoader);};
+	this.loads["admin_import_step4"] = function temp(){return new ngs.AdminImportStep4Load("admin_import_step4", ajaxLoader);};
+	this.loads["admin_import_item_categories_popup"] = function temp(){return new ngs.AdminImportItemCategoriesPopupLoad("admin_import_item_categories_popup", ajaxLoader);};
+	
 },
 	
     getLoad: function (name) {

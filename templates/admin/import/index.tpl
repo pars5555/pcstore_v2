@@ -1,4 +1,9 @@
 <div class="container_import">
+
+    {if isset($ns.success_message)}
+        {include file="$TEMPLATE_DIR/main/message.tpl" type="success" content="{$ns.success_message}"}
+    {/if}
+
     {if isset($ns.selectedCompanyDto)}
         {$selectedCompanyDto->getName()} Import Price
         <form method="POST" action="{$SITE_PATH}/admin/imp/sheet">

@@ -9,7 +9,7 @@ ngs.AdminImportStep2Load = Class.create(ngs.AbstractLoad, {
         return "POST";
     },
     getContainer: function () {
-        return "content";
+        return "admin-right-content";
     },
     getName: function () {
         return "admin_import_step2";

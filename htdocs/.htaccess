@@ -43,6 +43,8 @@ RewriteRule ^admin/import/?(.*)$ /dyn/admin/main/$1/?page=import_index&dir=impor
 RewriteRule ^admin/imp/sheet /dyn/admin/main/$1/?page=import_sheet&dir=import [L,QSA]
 RewriteRule ^admin/imp/step1 /dyn/admin/main/$1/?page=import_step1&dir=import [L,QSA]
 RewriteRule ^admin/imp/step2 /dyn/admin/main/$1/?page=import_step2&dir=import [L,QSA]
+RewriteRule ^admin/imp/step3 /dyn/admin/main/$1/?page=import_step3&dir=import [L,QSA]
+RewriteRule ^admin/imp/step4 /dyn/admin/main/$1/?page=import_step4&dir=import [L,QSA]
 
 
 #USER

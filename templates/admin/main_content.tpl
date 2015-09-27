@@ -2,7 +2,7 @@
     <div class="home_page_inner_container">
         {include file="$TEMPLATE_DIR/admin/left_panel.tpl"} 
 
-        <div class="right-content">
+        <div class="right-content" id="admin-right-content">
             {nest ns=content}
         </div>
     </div>

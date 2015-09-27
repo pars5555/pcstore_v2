@@ -12,6 +12,7 @@ require_once (CLASSES_PATH . "/managers/ImportPriceManager.class.php");
 class ImportIndexLoad extends BaseAdminLoad {
 
     public function load() {
+        $this->initSucessMessages();
         $companyManager = CompanyManager::getInstance();
         $allCompaniesDtos = $companyManager->getAllCompanies(true, true);
         $this->addParam('allCompaniesDtos', $allCompaniesDtos);

@@ -14,8 +14,6 @@ require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
  */
 class ImportItemsTempManager extends AbstractManager {
 
-  
-   
     public static $ALL_BRANS = array("Asus", "Mitsubishi", "Toshiba", "Dell", "Acer", "AOC", "Elixir", "Mercury", "Lenovo", "Apple", " I-Nix", "Gigabyte", "Dany",
         "Eton", "MyGica", "Chicony", "Sony", "HP", "Compaq", "Samsung", "Gateway", "MSI", "Fujitsu", "Point Of View", "POV", "Hyundai",
         "Viewsonic", "MID", "Seagate", "Western Digital", "WD", "Hitachi", "Maxtor", "Corsair", "OCZ", "Kingston", "Intel", "Patriot",
@@ -44,7 +42,7 @@ class ImportItemsTempManager extends AbstractManager {
 
     /**
      * Initializes DB mappers
-   
+
      */
     function __construct() {
         $this->mapper = ImportItemsTempMapper::getInstance();
@@ -57,7 +55,7 @@ class ImportItemsTempManager extends AbstractManager {
 
     /**
      * Returns an singleton instance of this class
-    
+
      */
     public static function getInstance() {
 
@@ -68,12 +66,18 @@ class ImportItemsTempManager extends AbstractManager {
         return self::$instance;
     }
 
-    public function getUserCurrentRows($customerLogin) {
-        return $this->mapper->getUserCurrentRows($customerLogin);
+    public function getUserCurrentRows($customerLogin, $includedOnly = false) {
+        return $this->mapper->getUserCurrentRows($customerLogin, $includedOnly);
     }
 
     public function getUserCurrentPriceNewRows($customerLogin) {
         return $this->mapper->getUserCurrentPriceNewRows($customerLogin);
+    }
+
+    public function setIncludedRows($rowIds, $value) {
+        foreach ($rowIds as $rowId) {
+            $this->updateNumericField($rowId, 'import', intval($value));
+        }
     }
 
     public function getUserCurrentPriceChangedRows($customerLogin) {
@@ -186,7 +190,7 @@ class ImportItemsTempManager extends AbstractManager {
         return $this->mapper->deleteCustomerRows($login);
     }
 
-    public function importToItemsTable($login, $company_id, $new_items_row_ids, $changed_rows_ids) {
+    public function importToItemsTable($login, $company_id) {
         $allPriceRows = $this->getUserCurrentRows($login);
         $itemManager = ItemManager::getInstance();
         $newItemsCount = 0;
@@ -206,14 +210,14 @@ class ImportItemsTempManager extends AbstractManager {
                     $catIds = explode(',', $catIdsStr);
                 }
             }
-            if ($priceRow->getMatchedItemId() > 0 && in_array($priceRow->getId(), $changed_rows_ids)) {
+            if ($priceRow->getMatchedItemId() > 0) {
                 // item is changes
                 $editedItemId = intval($priceRow->getMatchedItemId());
                 $itemId = $editedItemId;
                 $itemManager->updateItem($editedItemId, $this->secure($priceRow->getDisplayName()), $priceRow->getShortSpec(), $priceRow->getFullSpec(), $priceRow->getWarrantyMonths(), $priceRow->getDealerPrice(), $priceRow->getVatPrice(), $priceRow->getDealerPriceAmd(), $priceRow->getVatPriceAmd(), $company_id, $priceRow->getModel(), $priceRow->getBrand(), $catIds, null, $priceOrderIndex, $login);
                 $itemManager->setItemHidden($editedItemId, 0);
                 $updatedItemsCount++;
-            } elseif (in_array($priceRow->getId(), $new_items_row_ids)) {
+            } else {
                 //item is new
                 $rootCategoryId = $priceRow->getRootCategoryId();
                 $subCategoriesIds = trim($priceRow->getSubCategoriesIds());

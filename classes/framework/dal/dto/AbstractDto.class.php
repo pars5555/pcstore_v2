@@ -93,6 +93,10 @@ abstract class AbstractDto {
             $mapArray = $fieldsMap;
         }
         foreach ($mapArray as $key => $value) {
+            if (!isset($dto->$value))
+            {
+                $dto->$value = null;
+            }
             $josn_text .= '"' . $key . '"' . ':' . '"' . ($htmlSpecialChar == true ? htmlspecialchars($dto->$value) : $dto->$value) . '"' . ',';
         }
         $len = strlen($josn_text);

@@ -80,8 +80,11 @@ class ImportItemsTempMapper extends AbstractMapper {
         return $this->fetchRows($sqlReady);
     }
 
-    public function getUserCurrentRows($customerLogin) {
+    public function getUserCurrentRows($customerLogin, $includedOnly = false) {
         $sql = "SELECT * FROM `%s` WHERE login='%s'";
+        if ($includedOnly) {
+            $sql .= " AND `import` = 1";
+        }
         $sqlReady = sprintf($sql, $this->tableName, $customerLogin);
         return $this->fetchRows($sqlReady);
     }

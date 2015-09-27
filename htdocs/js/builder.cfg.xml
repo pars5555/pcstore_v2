@@ -52,6 +52,8 @@
                 <file>ngs/util/LinkedinLogin.js</file>
                 <file>ngs/util/DialogsManager.class.js</file>
                 <file>ngs/util/BannerSlider.class.js</file>
+                <file>ngs/util/util_functions.js</file>
+                <file>ngs/util/jquery.serialize-object.min.js</file>
             </files>
         </input >
     </builder>
@@ -149,6 +151,9 @@
                 <file>ngs/loads/admin/import/AdminImportSheetLoad.class.js</file>
                 <file>ngs/loads/admin/import/AdminImportStep1Load.class.js</file>
                 <file>ngs/loads/admin/import/AdminImportStep2Load.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportStep3Load.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportStep4Load.class.js</file>
+                <file>ngs/loads/admin/import/AdminImportItemCategoriesPopupLoad.class.js</file>
             </files>
         </input>
     </builder>
