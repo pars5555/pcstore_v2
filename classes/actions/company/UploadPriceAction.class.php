@@ -300,7 +300,7 @@ class UploadPriceAction extends BaseCompanyAction {
         if ($this->getCmsVar('dev_mode') == 'on' || $this->getCmsVar('dev_mode') == 1) {
             exec('d:\xampp\php\php.exe ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyId $priceIndex");
         } else {
-            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyId $priceIndex > /dev/null &");
+            exec('/usr/bin/php ' . CLASSES_PATH . "/util/UpdateCompaniesPriceText.class.php $companyId $priceIndex production > /dev/null &");
         }
     }
 
