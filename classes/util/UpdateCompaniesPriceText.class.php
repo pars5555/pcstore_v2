@@ -6,7 +6,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', true);
 defined('__DIR__') or define('__DIR__', dirname(__FILE__));
 $_SERVER["DOCUMENT_ROOT"] = rtrim(__DIR__, 'util\/classes');
-ini_set('memory_limit', '1G');
+ini_set('memory_limit', '4G');
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/conf/constants.php");
 require_once(CLASSES_PATH . "/framework/Dispatcher.class.php");
