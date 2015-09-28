@@ -17,14 +17,7 @@ define('DOMAIN', get_domain(HTTP_HOST));
 //---defining document root
 define("DOCUMENT_ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
-//---defining HOMEPAGE ROOT root
-$ngsRoot = DOCUMENT_ROOT;
-
-if (strpos(getcwd(), "/htdocs") !== false) {
-	define("NGS_ROOT", substr(getcwd(), 0, strrpos(getcwd(), "/htdocs")));
-} else {
-	define("NGS_ROOT", substr(getcwd(), 0, strrpos(getcwd(), "\htdocs")));
-}
+define("NGS_ROOT", rtrim(DOCUMENT_ROOT, 'htdocs/\\'));
 
 //---defining smarty root
 define("SMARTY_DIR", NGS_ROOT . "/classes/lib/smarty/");
