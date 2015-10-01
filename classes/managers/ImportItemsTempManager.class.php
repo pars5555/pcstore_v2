@@ -102,42 +102,42 @@ class ImportItemsTempManager extends AbstractManager {
 
 
         $dto->setOriginalDisplayName($nameColumn);
-        if (isset($modelColumn)) {
+        if (!empty($modelColumn)) {
             $dto->setModel($modelColumn);
             $dto->setOriginalModel($modelColumn);
         }
-        if (isset($dealerPriceColumn)) {
+        if (!empty($dealerPriceColumn)) {
             $dto->setDealerPrice(ImportPriceManager::convertCurrencyToDollar($dealerPriceColumn));
             $dto->setOriginalDealerPrice($dealerPriceColumn);
         }
-        if (isset($dealerPriceAmdColumn)) {
+        if (!empty($dealerPriceAmdColumn)) {
             $AMDprice = ImportPriceManager::convertCurrencyToAmd($dealerPriceAmdColumn);
             $dto->setDealerPriceAmd($AMDprice);
             $dto->setOriginalDealerPriceAmd($dealerPriceAmdColumn);
-            if (!isset($dealerPriceColumn)) {
+            if (empty($dealerPriceColumn)) {
                 $dealerPriceUSD = $itemManager->exchangeFromAMDToUSD($AMDprice);
                 $dto->setDealerPrice($dealerPriceUSD);
             }
         }
 
-        if (isset($vatPriceColumn)) {
+        if (!empty($vatPriceColumn)) {
             $usdPrice = ImportPriceManager::convertCurrencyToDollar($vatPriceColumn);
             $dto->setVatPrice($usdPrice);
             $dto->setOriginalVatPrice($vatPriceColumn);
-            if (!isset($dealerPriceColumn)) {
+            if (empty($dealerPriceColumn)) {
                 $dto->setDealerPrice($usdPrice);
                 $dto->setOriginalDealerPrice($vatPriceColumn);
             }
         }
-        if (isset($vatPriceAmdColumn)) {
+        if (!empty($vatPriceAmdColumn)) {
             $ADMprice = ImportPriceManager::convertCurrencyToAmd($vatPriceAmdColumn);
             $dto->setVatPriceAmd($ADMprice);
             $dto->setOriginalVatPriceAmd($vatPriceAmdColumn);
-            if (!isset($dealerPriceAmdColumn)) {
+            if (empty($dealerPriceAmdColumn)) {
                 $dto->setDealerPriceAmd($ADMprice);
                 $dto->setOriginalDealerPriceAmd($vatPriceAmdColumn);
             }
-            if (!isset($vatPriceColumn) && !isset($dealerPriceColumn)) {
+            if (empty($vatPriceColumn) && empty($dealerPriceColumn)) {
                 $dealerPriceUSD = $itemManager->exchangeFromAMDToUSD($ADMprice);
                 $dto->setDealerPrice($dealerPriceUSD);
                 $dto->setVatPrice($dealerPriceUSD);
@@ -154,11 +154,11 @@ class ImportItemsTempManager extends AbstractManager {
             $brand = $this->findBrandFromItemTitle($nameColumn);
             $dto->setBrand($brand);
         }
-        if (isset($warrantyMonthColumn)) {
+        if (!empty($warrantyMonthColumn)) {
             $dto->setWarrantyMonths(ImportPriceManager::convertWarrantyMonthsFieldToWarrantyMonths($warrantyMonthColumn));
             $dto->setOriginalWarranty($warrantyMonthColumn);
         }
-        if (isset($warrantyYearColumn)) {
+        if (!empty($warrantyYearColumn)) {
             $dto->setWarrantyMonths(ImportPriceManager::convertWarrantyYearsFieldToWarrantyMonths($warrantyYearColumn));
             $dto->setOriginalWarranty($warrantyYearColumn);
         }
@@ -219,14 +219,12 @@ class ImportItemsTempManager extends AbstractManager {
                 $updatedItemsCount++;
             } else {
                 //item is new
-                $rootCategoryId = $priceRow->getRootCategoryId();
-                $subCategoriesIds = trim($priceRow->getSubCategoriesIds());
-                $subCategoriesIdsArray = array();
-                if (!empty($subCategoriesIds)) {
-                    $subCategoriesIdsArray = explode(',', $subCategoriesIds);
+                $catIds = trim($priceRow->getSubCategoriesIds());
+                $catIdsArray = array();
+                if (!empty($catIds)) {
+                    $catIdsArray = explode(',', $catIds);
                 }
-                $catIds = array_merge(array($rootCategoryId), $subCategoriesIdsArray);
-                $itemId = $itemManager->addItem($this->secure($priceRow->getDisplayName()), $priceRow->getShortSpec(), $priceRow->getFullSpec(), $priceRow->getWarrantyMonths(), $priceRow->getDealerPrice(), $priceRow->getVatPrice(), $priceRow->getDealerPriceAmd(), $priceRow->getVatPriceAmd(), $company_id, $priceRow->getModel(), $priceRow->getBrand(), $catIds, date('Y-m-d'), $priceOrderIndex, $login);
+                $itemId = $itemManager->addItem($this->secure($priceRow->getDisplayName()), $priceRow->getShortSpec(), $priceRow->getFullSpec(), $priceRow->getWarrantyMonths(), $priceRow->getDealerPrice(), $priceRow->getVatPrice(), $priceRow->getDealerPriceAmd(), $priceRow->getVatPriceAmd(), $company_id, $priceRow->getModel(), $priceRow->getBrand(), $catIdsArray, date('Y-m-d'), $priceOrderIndex, $login);
                 $newItemsCount++;
             }
             if ($simillarItemId > 0) {
