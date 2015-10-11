@@ -10,7 +10,7 @@
 </form>
 
 
-<div>
+<div class="import-filter">
     items simillarity aceptable percent: 
     <div class="select_wrapper">
         <select id="is1_aceptable_simillarity_percent"  onkeyup="this.blur();
@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<div id="step2Container" class="table table_striped">
+<div id="step2Container" class="table table_striped ii_step2_table">
 
     {*stock items table*}
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="table-cell" style="vertical-align: top">
-        <div class="table" style="table-layout:fixed;">
+        <div class="table">
             <div class="table-row table_header_group">
                 <div class="table-cell">							
                 </div>
@@ -66,6 +66,8 @@
                     </div>
                 {else}
                     <div class="table-row-import">
+                        <div class="table-cell">							
+                        </div>
                         {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle}		
                             <div class="table-cell">
                             </div>
@@ -79,7 +81,7 @@
 
                 <div class="table-row-import">
                     <div class="table-cell" >
-                        <button class="ii_link_source_button button blue" pk_value="{$stockItemDto->getId()}">link source</button>
+                        <button class="ii_link_source_button button blue small inline" pk_value="{$stockItemDto->getId()}">link source</button>
                     </div>
                     {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle}
                         {if $dtoFieldName=="warrantyMonths"}
@@ -87,8 +89,8 @@
                         {else}
                             {assign var=fieldName value=$dtoFieldName} 
                         {/if}
-                        <div class="table-cell" style="vertical-align: top" dtoFieldName="{$fieldName}">
-                            {$stockItemDto->$fieldName}<br>&nbsp
+                        <div class="table-cell" dtoFieldName="{$fieldName}">
+                            {$stockItemDto->$fieldName}
                         </div>
                     {/foreach}
                 </div>
@@ -100,7 +102,7 @@
 
     {*price items table*}
     <div class="table-cell" style="vertical-align: top">
-        <div class="table" style="table-layout:fixed;">
+        <div class="table">
             <div class="table-row table_header_group">
                 <div class="table-cell">
                 </div>
@@ -119,9 +121,9 @@
                 <div class="table-row-import" ii_table_pk_value="{$rowDto->id}">
                     <div class="table-cell">
                         {if $rowDto->getMatchedItemId()>0}
-                            <button class="is1_unbind_item button blue" price_item_id="{$rowDto->getId()}">X</button>
+                            <button class="is1_unbind_item button blue small inline" price_item_id="{$rowDto->getId()}">X</button>
                         {else}
-                            <button class="ii_link_target_button button blue" pk_value="{$rowDto->getId()}">link target</button>
+                            <button class="ii_link_target_button button blue small inline" pk_value="{$rowDto->getId()}">link target</button>
                         {/if}
                     </div>
                     {foreach from=$ns.columnNames key=dtoFieldName item=columnTitle name=columnNamesForeach}
@@ -132,8 +134,8 @@
                             {assign var=cap value=$dtoFieldName|@ucfirst}
                             {assign var=originalFieldName value="original`$cap`"} 
                         {/if}
-                        <div class="table-cell" dtoFieldName="{$dtoFieldName}" dtoOriginalFieldName="{$originalFieldName}" pk_value="{$rowDto->id}" cellValue = "{$rowDto->$dtoFieldName}" originalCellValue = "{$rowDto->$originalFieldName}" class="is1_popup_menu_td">							
-                            <span class="editable_cell" id="ii_table_editable_span_{$rowDto->getId()}_{$dtoFieldName}" dtoFieldName='{$dtoFieldName}' pk_value="{$rowDto->id}" 
+                        <div class="table-cell" dtoFieldName="{$dtoFieldName|escape}" dtoOriginalFieldName="{$originalFieldName|escape}" pk_value="{$rowDto->id}" cellValue = "{$rowDto->$dtoFieldName|escape}" originalCellValue = "{$rowDto->$originalFieldName|escape}" class="is1_popup_menu_td">							
+                            <span class="editable_cell" id="ii_table_editable_span_{$rowDto->getId()}_{$dtoFieldName|escape}" dtoFieldName='{$dtoFieldName|escape}' pk_value="{$rowDto->id}" 
                                   style='width:100%;
                                   {if !($rowDto->getMatchedItemId()>0)}color:red{/if}		
                                   {if isset($correspondingStockItemDto) && $correspondingStockItemDto->$dtoFieldName|regex_replace:"#\s+#":""|lower!=

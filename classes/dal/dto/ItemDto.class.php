@@ -15,7 +15,7 @@ class ItemDto extends AbstractDto {
         "warranty" => "warranty", "dealer_price" => "dealerPrice", "vat_price" => "vatPrice",
         "dealer_price_amd" => "dealerPriceAmd", "vat_price_amd" => "vatPriceAmd",
         "list_price_amd" => "listPriceAmd", "company_id" => "companyId",
-        "hidden" => "hidden", "model" => "model", "brand" => "brand", "categories_names" => "categoriesNames", "categories_ids" => "categoriesIds",
+        "hidden" => "hidden","tmp_hidden" => "tmpHidden", "model" => "model", "brand" => "brand", "categories_names" => "categoriesNames", "categories_ids" => "categoriesIds",
         "item_available_till_date" => "itemAvailableTillDate", "shows_count" => "showsCount", "order_index_in_price" => "orderIndexInPrice", "pictures_count" => "picturesCount",
         "created_date" => "createdDate", "updated_date" => "updatedDate", "created_by_email" => "createdByEmail", "updated_by_email" => "updatedByEmail",
         "image1" => "image1", "image2" => "image2",

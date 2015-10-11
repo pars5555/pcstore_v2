@@ -83,6 +83,18 @@ class ImportStepsActionsGroupAction extends BaseAdminAction {
                 $row_id = intval($_REQUEST['row_id']);
                 $this->uploadNewIntemPicture($row_id);
                 break;
+            case 'start_import':
+                $companyId = $this->secure($_REQUEST['company_id']);
+                $itemManager = ItemManager::getInstance();
+                $itemManager->setTmpHidden($companyId);
+                $this->ok();
+                break;
+            case 'finish_import':
+                $companyId = $this->secure($_REQUEST['company_id']);
+                $itemManager = ItemManager::getInstance();
+                $itemManager->copyTmpHiddenToHiddenField($companyId);
+                $this->ok();
+                break;
 
             default:
                 break;

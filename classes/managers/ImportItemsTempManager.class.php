@@ -197,6 +197,9 @@ class ImportItemsTempManager extends AbstractManager {
         $updatedItemsCount = 0;
         $priceOrderIndex = 1;
         foreach ($allPriceRows as $priceRow) {
+            if ($priceRow->getImport() != 1) {
+                continue;
+            }
             $priceOrderIndex+=5;
             $catIds = null;
             $simillarItemId = intval($priceRow->getSimillarItemId());
@@ -216,6 +219,7 @@ class ImportItemsTempManager extends AbstractManager {
                 $itemId = $editedItemId;
                 $itemManager->updateItem($editedItemId, $this->secure($priceRow->getDisplayName()), $priceRow->getShortSpec(), $priceRow->getFullSpec(), $priceRow->getWarrantyMonths(), $priceRow->getDealerPrice(), $priceRow->getVatPrice(), $priceRow->getDealerPriceAmd(), $priceRow->getVatPriceAmd(), $company_id, $priceRow->getModel(), $priceRow->getBrand(), $catIds, null, $priceOrderIndex, $login);
                 $itemManager->setItemHidden($editedItemId, 0);
+                $itemManager->updateNumericField($editedItemId, "tmp_hidden", 0);
                 $updatedItemsCount++;
             } else {
                 //item is new

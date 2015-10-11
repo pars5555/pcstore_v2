@@ -425,14 +425,14 @@ select::-ms-expand{
     width:100%;
 }
 .table_header_group{
-    display:table-header-group
+    display:table-header-group;
 }
 .table-row{
     display:table-row;
 }
 .table-row-import{
     display:table-row;
-    height: 110px;
+    height: 150px;
 }
 
 .table-cell{
@@ -464,7 +464,8 @@ select::-ms-expand{
 .table_striped .table-row{
     display:table-row;
 }
-.table_striped .table-row:nth-child(odd){
+.table_striped .table-row:nth-child(odd),
+.table_striped .table-row-import:nth-child(odd){
     background-color:#F9F9F9;
 }
 .table_striped .table-cell{

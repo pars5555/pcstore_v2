@@ -18,7 +18,7 @@
 </div>
 
 {*price new items table*}
-<div class="table table_striped" style="width: 100%;" id="ii_table_view">
+<div class="table table_striped ii_step3_table" style="width: 100%;" id="ii_table_view">
     <div class="table_header_group">	
         <div class="table-row">
             <div class="table-cell">
@@ -86,7 +86,7 @@
             <div class="table-cell">
                 <input type="text" id="is2_simillar_item_search_text_{$rowDto->getId()}" class="is2_simillar_item_search_texts text" pk_value="{$rowDto->getId()}" value="{$rowDto->getSupposedModel()}" style="margin-bottom:10px;"/>
                 <button class="is2_find_simillar_items_button button blue inline small" id="is2_find_simillar_items_button_{$rowDto->getId()}" pk_value="{$rowDto->getId()}">load</button>
-                <div class="is2_simillar_items_select_wrapper select_wrapper select_wrapper_min inline-block" style="margin-top:10px;">
+                <div class="is2_simillar_items_select_wrapper select_wrapper select_wrapper_min inline-block">
                     <select class="is2_simillar_items_select" id="simillar_items_select_{$rowDto->getId()}" pk_value="{$rowDto->getId()}">
                     </select>                                                        
                 </div>

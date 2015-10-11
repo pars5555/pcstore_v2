@@ -45,6 +45,14 @@ class ItemManager extends AbstractManager {
         return $this->mapper->getItemsByIds($items_ids);
     }
 
+    public function setTmpHidden($companyId) {
+        return $this->mapper->setTmpHidden($companyId);
+    }
+
+    public function copyTmpHiddenToHiddenField($companyId) {
+        return $this->mapper->copyTmpHiddenToHiddenField($companyId);
+    }
+
     public function getCompanyItems($companyId, $includeHiddens = false) {
         return $this->mapper->getCompanyItems($companyId, $includeHiddens);
     }
@@ -83,7 +91,7 @@ class ItemManager extends AbstractManager {
     public function getAllItemsWithDealerAmdOrVatAmdPrices() {
         return $this->mapper->getAllItemsWithDealerAmdOrVatAmdPrices();
     }
-    
+
     public function getAllItemsDealerPriceListPrice() {
         return $this->mapper->getAllItemsDealerPriceListPrice();
     }

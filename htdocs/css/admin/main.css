@@ -4,6 +4,28 @@ body{
     font-family:sans-serif;
 }
 
+.import-filter{
+    margin-bottom:10px;
+}
+
+.ii_link_target_button,
+.ii_link_source_button{
+    width:70px;
+}
+
+.ii_step3_table .select_wrapper.select_wrapper_min{
+    display:block;
+    max-width:200px;
+    margin: 10px auto 0;
+}
+
+.ii_step2_table{
+    table-layout: fixed;
+}
+.ii_step2_table .table_header_group{
+    white-space: nowrap;
+}
+
 /**************************************************************************************/
 /*                                         WRAPPER                                    */
 /**************************************************************************************/

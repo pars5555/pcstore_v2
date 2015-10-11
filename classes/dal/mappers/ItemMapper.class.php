@@ -76,6 +76,20 @@ class ItemMapper extends AbstractMapper {
         return $result;
     }
 
+    public static $SET_TMP_HIDDEN = "UPDATE `%s` SET `tmp_hidden` = 1 WHERE company_id = %d";
+
+    public function setTmpHidden($companyId) {
+        $sqlQuery = sprintf(self::$SET_TMP_HIDDEN, $this->getTableName(), $companyId);
+        $this->dbms->query($sqlQuery);
+    }
+
+    public static $COPY_TMP_HIDDEN_TO_HIDDEN = "UPDATE `%s` SET `hidden` = `tmp_hidden` WHERE company_id = %d";
+
+    public function copyTmpHiddenToHiddenField($companyId) {
+        $sqlQuery = sprintf(self::$COPY_TMP_HIDDEN_TO_HIDDEN, $this->getTableName(), $companyId);
+        $this->dbms->query($sqlQuery);
+    }
+
     public static $RESET_COMPANY_ITEMS_INDEXES = "UPDATE `%s` SET `order_index_in_price`=0 WHERE company_id = %d";
 
     public function resetCompanyItemsIndexes($companyId) {

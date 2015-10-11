@@ -14,8 +14,10 @@
                     {/foreach}
                 </select> 
             </div>
-            <input type="hidden" name="company_id" value="{$selectedCompanyDto->getId()}"/>
+            <input id="import_index_company_id" type="hidden" name="company_id" value="{$selectedCompanyDto->getId()}"/>
             <input class="button blue" type="submit" value="next"/>
+            <div class="button blue f_import_action_btn" data-type="start">Start import</div>
+            <div class="button blue f_import_action_btn" data-type="finish">Finish import</div>
         </form>
     {else}
         <div class="table_striped admin_companies_list">
