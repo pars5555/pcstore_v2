@@ -209,7 +209,11 @@ class ImportPriceManager {
         $name1Words = self::trimArrayElementsAndRemoveSmallWords($name1Words, " \t\n\r\0/\\-'\"", 1);
         $name2Words = self::trimArrayElementsAndRemoveSmallWords($name2Words, " \t\n\r\0/\\-'\"", 1);
         $intersectedWords = array_intersect($name1Words, $name2Words);
-        return count($intersectedWords) * 100 / max(count($name1Words), count($name2Words));
+        $wordsCount = max(count($name1Words), count($name2Words));
+        if ($wordsCount > 0) {
+            return count($intersectedWords) * 100 / max(count($name1Words), count($name2Words));
+        }
+        return 0;
     }
 
     private static function trimArrayElementsAndRemoveSmallWords($wordsArray, $trimCharecters, $smallWordCharsCount) {
