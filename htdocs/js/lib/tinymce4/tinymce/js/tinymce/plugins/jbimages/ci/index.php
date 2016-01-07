@@ -1,6 +1,5 @@
 <?php
 //hook for jobshape
-$_SERVER['REQUEST_URI'] = "/htdocs".$_SERVER['REQUEST_URI'];
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
