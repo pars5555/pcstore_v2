@@ -133,7 +133,7 @@ class CI_Router {
 		{
 			include(APPPATH.'config/'.ENVIRONMENT.'/routes.php');
 		}
-		elseif (is_file(APPPATH.'config/routes.php'))
+                elseif (is_file(APPPATH.'config/routes.php'))
 		{
 			include(APPPATH.'config/routes.php');
 		}
@@ -273,7 +273,6 @@ class CI_Router {
 		{
 			return $segments;
 		}
-
 		// Is the controller in a sub-folder?
 		if (is_dir(APPPATH.'controllers/'.$segments[0]))
 		{

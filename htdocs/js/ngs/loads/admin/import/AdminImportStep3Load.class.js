@@ -15,6 +15,10 @@ ngs.AdminImportStep3Load = Class.create(ngs.AbstractLoad, {
         return "admin_import_step3";
     },
     afterLoad: function () {
+        jQuery('.pop_up').css('position','relative');
+        jQuery('.pop_up').css('left',500);
+        jQuery('.pop_up').css('top',-300);
+        jQuery('.pop_up').draggable({containment: "#adminImportItemCategoriesPopup"});
         var thisInstance = this;
         this.subCategoriesSelectionButtonsInit();
         this.imageSelectionButtonsInit();
