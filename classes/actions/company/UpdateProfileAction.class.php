@@ -12,8 +12,7 @@ class UpdateProfileAction extends BaseCompanyAction {
         $companyManager = new CompanyManager();
         $name = $this->secure($_REQUEST["name"]);
         $url = $this->secure($_REQUEST["url"]);
-        $access_key = $this->secure($_REQUEST["access_key"]);
-        $validFields = $this->validateUserProfileFields($name, $url, $access_key);
+        $validFields = $this->validateUserProfileFields($name, $url);
         if ($this->getUserLevel() === UserGroups::$ADMIN) {
             $companyId = intval($_REQUEST['company_id']);
         } else {
@@ -29,7 +28,7 @@ class UpdateProfileAction extends BaseCompanyAction {
         }
 
         if ($validFields === true) {
-            $companyManager->updateProfile($companyId, $name, $url, $access_key);
+            $companyManager->updateProfile($companyId, $name, $url);
             if ($this->getUserLevel() === UserGroups::$ADMIN) {
                 $password = $this->secure($_REQUEST["password"]);
                 $companyManager->changePassword($companyId, $password);
@@ -50,14 +49,11 @@ class UpdateProfileAction extends BaseCompanyAction {
         }
     }
 
-    public function validateUserProfileFields($name, $url, $access_key) {
+    public function validateUserProfileFields($name, $url) {
 
         if (empty($name)) {
             return $this->getPhrase(635);
-        }
-        if (empty($access_key) || strlen($access_key) < 6) {
-            return $this->getPhrase(656);
-        }
+        }     
         if (!empty($url) && !filter_var($url, FILTER_VALIDATE_URL)) {
             return $this->getPhrase(657);
         }

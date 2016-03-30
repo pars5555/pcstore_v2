@@ -109,10 +109,9 @@ class CompanyManager extends AbstractManager {
     }
    
 
-    public function updateProfile($id, $name, $url, $accessKey) {
+    public function updateProfile($id, $name, $url) {
         $companyDto = $this->selectByPK($id);
         $companyDto->setName($name);
-        $companyDto->setAccessKey($accessKey);
         $companyDto->setUrl($url);
         $this->mapper->updateByPK($companyDto);
     }
