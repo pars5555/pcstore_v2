@@ -34,11 +34,6 @@ class UploadPriceAction extends BaseCompanyAction {
             return false;
         }
 
-        if (!$size || $size > 7 * 1024 * 1024) {
-            $jsonArr = array('status' => "err", "errText" => "Maximum file size can be 7MB");
-            echo "<script>var l= new parent.ngs.UploadPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
-            return false;
-        }
 
 //start to save new price file
 
