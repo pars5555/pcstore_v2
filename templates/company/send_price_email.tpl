@@ -2,7 +2,7 @@
 <div id="send_price_email_container" class="send_price_email_container">
     <div class="sender_details">
         <label class="input_label label" for="sender_email">{$ns.lm->getPhrase(614)}:</label>
-        <input class="text sender_email" type="text" name='sender_email' type="text"  id="sender_email" value="{$ns.customer->getEmail()}" />
+        <input class="text sender_email" type="text" name='sender_email' type="text"  id="sender_email" value="{$ns.customer->getEmail()}" autocomplete="off"/>
         <input class="text" type="text" name='sender_name' type="text"  disabled id="sender_name" value="{$ns.customer->getName()}" />
     </div>
     <div style="clear:both"> </div> 
