@@ -111,7 +111,7 @@ class EmailSenderManager extends AbstractManager {
         $this->mail->Password = $emailAccountDto->getPass();
         $this->mail->ClearAllRecipients();
         $this->mail->ClearAttachments();
-
+        
         foreach ($recipients as $emailAddress) {
             try {
                 $this->mail->AddAddress(trim($emailAddress));
@@ -146,6 +146,61 @@ class EmailSenderManager extends AbstractManager {
             $this->sentEmailsManager->updateRowLogById($rowId, 'Email succussfully sent!');
             return true;
         } catch (Exception $e) {
+            $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function sendBulkEmailsWithAttachments($fromId, $recipients, $subject, $templateIdOrHtml, $params = array(), $attachments, $fromEmail = '', $fromName = '') {
+        if (!is_array($recipients)) {
+            $recipients = array($recipients);
+        }
+        $emailAccountDto = $this->emailAccountsManager->selectByPK($fromId);
+        $this->mail->SingleTo = true;
+        if (!isset($emailAccountDto)) {
+            return false;
+        }
+        $this->mail->Username = $emailAccountDto->getLogin();
+        $this->mail->Password = $emailAccountDto->getPass();
+        $this->mail->ClearAllRecipients();
+        $this->mail->ClearAttachments();
+        
+        foreach ($recipients as $emailAddress) {
+            try {
+                $this->mail->addAddress(trim($emailAddress));
+            } catch (Exception $ex) {
+                
+            }
+        }
+
+//        if (!empty($fromEmail)) {
+//            $this->mail->SetFrom($fromEmail, $fromName);
+//            $this->mail->AddReplyTo($fromEmail);
+//        } else {
+//            $this->mail->SetFrom($emailAccountDto->getLogin(), $emailAccountDto->getFromName());
+//        }
+         $this->mail->SetFrom($fromEmail, $fromName);
+        $this->mail->Subject = $subject;
+
+        $body = $this->compileIfTemplate($templateIdOrHtml, $params);
+        $this->mail->MsgHTML($body);
+        if (!empty($attachments)) {
+            if (!is_array($attachments)) {
+                $attachments = array($attachments);
+            }
+            foreach ($attachments as $title => $file) {
+                if (file_exists($file)) {
+                    $this->mail->AddAttachment($file, $title);
+                }
+            }
+        }
+        $rowId = $this->sentEmailsManager->addRow($emailAccountDto->getLogin(), implode(',', $recipients), $subject, $body);
+        try {
+            $this->mail->Send();
+            $this->sentEmailsManager->updateRowLogById($rowId, 'Email succussfully sent!');
+            return true;
+        } catch (Exception $e) {
+            var_dump($emailAccountDto->getLogin(),$emailAccountDto->getPass(),$e->getMessage() );exit;
             $this->sentEmailsManager->updateRowLogById($rowId, $e->getMessage());
             return false;
         }

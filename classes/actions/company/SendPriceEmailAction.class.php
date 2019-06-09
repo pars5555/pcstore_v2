@@ -72,7 +72,7 @@ class SendPriceEmailAction extends BaseCompanyAction {
         }
         $invalidEmailsManager = InvalidEmailsManager::getInstance();
         $dealerEmailsArray = $invalidEmailsManager->removeInvalidEmailsFromList($dealerEmailsArray);
-        
+
         $subject = $companyExProfiledto->getPriceEmailSubject();
         $body = stripslashes($companyExProfiledto->getPriceEmailBody());
         $fromEmail = $companyExProfiledto->getFromEmail();
@@ -153,6 +153,10 @@ class SendPriceEmailAction extends BaseCompanyAction {
             }
             $res = implode('; ', $res);
             $sentSuccess = $allIsOk === true;
+        } elseif ($this->getCmsVar("price_emails_service_provider_name") == 'amazon') {
+            $emailSenderManager = new EmailSenderManager('amazon');
+            $res = $emailSenderManager->sendBulkEmailsWithAttachments('amazon', $dealerEmailsArray, $subject, $body, array(), $allEmailFileAttachments, 'price@pc.am', $companyName);
+            $sentSuccess = ($res === true);
         } else {
             $emailSenderManager = new EmailSenderManager('gmail');
             $res = $emailSenderManager->sendBulkEmailWithAttachmentsUsingPcstoreEmails($dealerEmailsArray, $subject, $body, array(), $allEmailFileAttachments, $fromEmail, $companyName);
